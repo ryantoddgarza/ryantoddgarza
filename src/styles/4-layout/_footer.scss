@@ -1,0 +1,22 @@
+// _footer.scss
+
+footer {
+  display: block;
+  position: relative;
+  background-color: $black;
+  z-index: 50;
+  font-size: .9em;
+  line-height: $rhythm-unit;
+  text-align: center;
+
+  p, a {
+    color: $gray;
+  }
+
+  h6 {
+    font-family: $font-light;
+    margin-top: $rhythm-unit;
+    margin-bottom: $rhythm-unit;
+    color: $dark-gray;
+  }
+}

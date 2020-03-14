@@ -1,0 +1,28 @@
+// fixedElements.scss
+$pg-change-height: 50px;
+
+.pg-change img {
+  min-width: $pg-change-height;
+}
+
+// convert to sass
+// @media (max-width: 768px), (orientation: landscape) not (min-width: 769px;) {
+//   .pg-change img {
+//     min-width: 32px;
+//   }
+// }
+
+.pg-down {
+  position: fixed;
+  right: $rhythm-unit;
+  bottom: $rhythm-unit;
+  cursor: pointer;
+  z-index: 1020;
+  transform: none;
+  transition: transform $transition-normal linear;
+}
+
+// Slide `.pg-down` out of view once the last section is reached.
+.pg-down.fin {
+  transform: translateY($pg-change-height*2);
+}

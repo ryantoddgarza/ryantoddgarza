@@ -1,0 +1,10 @@
+// File: _video.scss
+
+// 16:9
+.responsive-video {
+  @include responsive-wrapper(56.25%);
+}
+
+.responsive-video iframe {
+  @include responsive-element(100%, 100%);
+}

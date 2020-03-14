@@ -1,0 +1,49 @@
+// File: _images.scss
+
+// For "insta fit" style image containers
+.aspect-ratio-box {
+  @include responsive-wrapper(100%);
+  background: white;
+}
+
+.aspect-ratio-box-inside {
+  @include responsive-element(100%, 100%);
+  padding: .1em;
+  background-color: rgb(250, 250, 250);
+}
+
+.flexbox-centering {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait { // change to .vert
+  object-fit: scale-down;
+  height: 100%;
+}
+
+.landscape { // change to .horiz
+  object-fit: scale-down;
+  width: 100%;
+}
+
+.square {
+  object-fit: scale-down;
+  width: 85%;
+}
+
+// ----------- Review and discard below this line -----------
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}

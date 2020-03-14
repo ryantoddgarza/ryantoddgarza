@@ -1,0 +1,9 @@
+// _animate.scss
+// Imports from animate folder
+
+// Required
+@import '_properties';
+
+// Imported animations
+@import '_fading-entrances/fadeIn';
+@import '_fading-exits/fadeOut';

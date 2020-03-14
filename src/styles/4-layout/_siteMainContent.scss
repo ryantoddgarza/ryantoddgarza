@@ -1,0 +1,150 @@
+// File: _siteMainContent.scss
+
+section {
+  &.fixed-height {
+    min-height: 100vh;
+  }
+}
+
+// Make main CSS grid
+.main-grid {
+  display: grid;
+  grid-template-rows: minmax(50px, auto) auto repeat(4, $rhythm-unit*3) auto minmax(50px, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  height: 100%;
+  padding: 0 ($rhythm-unit/2); // Left/right padding to match hamburger and floating elements
+  
+  @include respond-to(sm) {
+    grid-template-rows: minmax(50px, 1fr) auto repeat(4, $rhythm-unit*4) auto minmax(50px, 1fr);
+    padding: 0 $rhythm-unit;
+  }
+}
+
+// Molecules
+.section-header {
+  display: flex;
+  position: relative;
+  grid-row: 2;
+  grid-column: 1 / -1;
+  padding: $rhythm-unit/4;
+
+  @include respond-to(sm) {
+    grid-column: 1 / -3;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  @include respond-to(lg) {
+    grid-row: 3 / -1;
+    grid-column: 1 / 3;
+    justify-self: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: left;
+    margin-bottom: $rhythm-unit;
+  }
+
+  h2 {
+    text-transform: lowercase;
+  }
+}
+
+.section-main-carousel {
+  display: flex;
+  justify-content: center;
+  grid-row: 3 / 7;
+  grid-column: 1 / -1;
+  position: relative;
+  padding: $rhythm-unit/4;
+
+  @include respond-to(sm) {
+    grid-column: 2 / 10;
+    justify-content: flex-start;
+  }
+
+  @include respond-to(lg) {
+    grid-column: 3 / -3;
+  }
+  
+  img {
+    height: 100%; // Redundant from global styles for future proof
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+.section-main-description {
+  display: flex;    
+  grid-row: 7;
+  grid-column: 1 / -1;
+  padding: $rhythm-unit/4; // refine or remove after
+  margin-top: $rhythm-unit;
+
+  @include respond-to(sm) {
+    grid-column: 5 / -2;
+  }
+
+  @include respond-to(lg) {
+    grid-column: 6 / -2;
+  } 
+}
+
+.section-metadata {
+  grid-row: 8;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: $rhythm-unit $rhythm-unit/4 0;
+  margin-bottom: $rhythm-unit;
+
+  @include respond-to(sm) {
+    grid-column: 1 / -1;
+  }
+
+  @include respond-to(lg) {
+    grid-column: 3 / 10;
+  }
+
+  // Style metadata font
+  span {
+    font-family: "Catamaran";
+    font-size: $base-font-size;
+    line-height: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  // Add margin to flex items
+  &>div[class] {
+    margin-right: $rhythm-unit;
+  }
+}
+
+.date-meta {
+  &:before {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-right: $rhythm-unit/4;
+    background-image: url('../images/icons/calendar-7.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.location-meta {
+  &:before {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-right: $rhythm-unit/4;
+    background-image: url('../images/icons/location-1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }  
+}
+
+
+// Atoms

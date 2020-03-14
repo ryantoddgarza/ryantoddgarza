@@ -1,0 +1,25 @@
+// File: _audioPlayers.scss
+
+// Spotify
+//
+
+// Small player
+.responsive-sptfy-sm {
+  @include responsive-wrapper(80px);
+}
+
+.responsive-sptfy-sm iframe {
+  @include responsive-element(100%, 80px);
+}
+
+// Bandcamp
+//
+
+// Medium player
+.responsive-bndcmp-md {
+  @include responsive-wrapper(120px);
+}
+
+.responsive-bndcmp-md iframe {
+  @include responsive-element(100%, 120px);
+}

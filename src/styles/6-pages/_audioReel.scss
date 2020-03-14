@@ -1,0 +1,29 @@
+// File: _audioReel.scss
+
+.audio-reel {
+    padding: $rhythm-unit*3 0;
+
+    // Heading align
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    // Section padding
+    section {
+        padding-top: $rhythm-unit*3;
+        padding-bottom: $rhythm-unit*2;
+    }
+
+    // Personal message at top of page
+    .header-message {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .project-wrapper {
+        margin: $rhythm-unit*2 0;
+    }
+}
+
+
+

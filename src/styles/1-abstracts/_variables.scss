@@ -1,0 +1,60 @@
+// _variables.scss
+
+// COLOR VARIABLES
+//
+
+$white: #fff;
+$off-white: #f7f7f7;
+$gray: #7f7f7f;
+$dark-gray: #343a40;
+$milky-black: #484848;
+$black: #000;
+$bronze: #AD9A83;
+
+// Text
+$body-primary: $milky-black;// primary color for body text. 'inherit' on future elements refers to this color.
+// Backgrounds
+$bg-primary: $off-white; // primary background color of the body.
+
+// TYPOGRAPHY
+//
+
+// Root vertical rhythm variables
+$base-font-size: 16px; // scales entire vertical rhythm structure
+$base-font-weight: normal;
+$rhythm-unit: 1.75rem; // basis for vertical rhythm
+
+// Typography variables
+$font-light: "OpenSans-Light", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
+$font-book: "OpenSans", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
+$font-medium: "OpenSans-SemiBold",  "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
+$font-bold: "OpenSans-ExtraBold", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+// MEDIA QUERIES
+// Migrate to mixin.
+
+// Defining values
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+// Target laptop/desktop
+// For more info read:
+// https://dzone.com/articles/finally-a-css-only-solution-to-hover-on-touchscree
+$non-touchscreen: "(hover: hover) and (pointer: fine)";
+
+// ANIMATIONS
+//
+
+// Transition speeds
+$transition-quick: 0.1s;
+$transition-easy: 0.4s;
+$transition-normal: 0.6s;
+$transition-lazy: 1s;
+
+// NAVIGATION
+//
+$init-nav-height: 50px;

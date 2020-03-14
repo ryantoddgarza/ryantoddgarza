@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="touchscroll">
 
 <head>
+  <!--
+
+    Okay, you can look at this code - but only if you let me know if something I made is helpful.
+
+    ryantoddgarza@gmail.com
+    
+  -->
+
   <!-- Meta -->
   <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
 
   <!-- Title -->
   <title>ryan todd garza</title>
@@ -22,784 +29,188 @@
   <meta property="og:url" content="https://ryantoddgarza.com/">
   <meta property="og:title" content="Ryan Todd Garza">
   <meta property="og:site_name" content="ryantoddgarza.com">
-  <meta property="og:description"
-    content="The portfolio of Ryan Todd Garza, an creative based in Los Angeles, California.">
+  <meta property="og:description" content="The portfolio of Ryan Todd Garza, an creative based in Los Angeles, California.">
   <meta property="og:image" content="">
+
+  <!-- Font TODO: remove and replace with @font-face -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
 
   <!-- Style -->
   <link rel="stylesheet" href="styles/main.css">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107706366-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-107706366-2');
-  </script>
+  <!-- Scripts -->
+  <!--[if lt IE 9]> <script src="scripts/html5shiv.min.js"></script> <![endif]-->
+  <script src="scripts/modernizr.js"></script>
 </head>
 
-<body class="legacy">
+<body>
 
   <!-- Nav -->
-  <nav>
+    <nav>
 
-    <div id="navBar" class="navbar nav-down">
+      <div id="navBar" class="navbar nav-down">
 
-      <a id="navBrand" class="navbar-brand" href="#">ryan todd garza</a>
+        <a id="navBrand" class="navbar-brand" href="#">ryan todd garza</a>
 
-      <div id="navToggler" class="nav-toggler" tabindex="0">
-        <a class="hamburger"></a>
+        <div id="navToggler" class="nav-toggler" tabindex="0">
+          <a class="hamburger"></a>
+        </div>
+
       </div>
 
-    </div>
+      <div id="navbarNav" class="navbar-nav">
+        <ul class="nav-contents">
+          <li class="nav-item">
+            <a class="nav-link active" href="#foo">foo<!--music--></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bar">bar<!--photo--></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#baz">baz<!--works--></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#qux">qux<!--info--></a>
+          </li>
+        </ul>
+      </div>
 
-
-
-    <div id="navbarNav" class="navbar-nav">
-      <ul class="nav-contents">
-        <li class="nav-item">
-          <a class="nav-link" href="#works">works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#music">music</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#reel">reel</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#info">info</a>
-        </li>
-      </ul>
-    </div>
-
-  </nav>
+    </nav>
   <!-- END:Nav -->
 
-  <!-- Main -->
-  <main class="container">
-
-    <div id="works">
-      <h2 class="section-title">works</h2>
-
-      <h3 class="section-title">performance</h3>
-
-      <div class="row">
-        <div class="col-sm-8"><img src="images/performance/ttsp/0050_012-MF-web.jpg"
-            onclick="openModal();currentSlide(1)"></div>
-        <div class="col-sm-4"><span onclick="openModal();currentSlide(1)">
-            <h4>toward the south plains</h4>
-          </span>2019 - present</div>
-      </div>
-
-      <h3 class="section-title">installation</h3>
-
-      <div class="row">
-        <div class="col-sm-8"><img src="images/installation/gestures/18015_011-vivid-MF-web.jpg" 
-            onclick="openModal();currentSlide(2)"></div>
-        <div class="col-sm-4"><span onclick="openModal();currentSlide(2)">
-            <h4>gestures</h4>
-          </span>2019 | photography</div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="col-sm-8"><img src="images/installation/repetition/17034_004-MF-web.jpg"
-            onclick="openModal();currentSlide(3)"></div>
-        <div class="col-sm-4"><span onclick="openModal();currentSlide(3)">
-            <h4>repetition</h4>
-          </span>2019 | photography</div>
-      </div>
-
-    <!--
-
-      <br>
-
-      <div class="row">
-        <div class="col-sm-6 offset-sm-0 col-8 offset-2"><img
-            src="images/installation/photos-graphein/install01-photos-graphein.jpg" 
-            onclick="openModal();currentSlide(4)" style=" width: 100%; height: auto;"></div>
-        <div class="col-6 d-none d-md-none"></div>
-        <div class="col-sm-6"><span onclick="openModal();currentSlide(4)">
-            <h4>photos graphein</h4>
-          </span>2011 | light, objects and sound design<br>collaboration</div>
-      </div>
-    -->
-
-      <h3 class="section-title">studies</h3>
-
-      <div class="row">
-        <div class="col-sm-8"><img src="images/photography-portfolio/portraits/17048_006-MF_web.jpg"
-            onclick="openModal();currentSlide(6)"></div>
-        <div class="col-sm-4"><span onclick="openModal();currentSlide(6)">
-            <h4>portraits</h4>
-          </span>2017 - 2018 | photography</div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="responsive-video">
-            <iframe src="https://www.youtube.com/embed/lX9JNdBvrjA" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <h4>smyer, tx 2016 + ephemera</h4>2019 | generative sketch
-        </div>
-      </div>
-
+  <!-- Fixed elements -->
+    <div class="page-num-container">
+      <span id="pageNum" class="pg-1"></span>
     </div>
 
-    <br>
+    <span id="pgNext" class="pg-change pg-down" onclick="nextPage()">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yNCAxMmMwLTYuNjIzLTUuMzc3LTEyLTEyLTEycy0xMiA1LjM3Ny0xMiAxMiA1LjM3NyAxMiAxMiAxMiAxMi01LjM3NyAxMi0xMnptLTEgMGMwLTYuMDcxLTQuOTI5LTExLTExLTExcy0xMSA0LjkyOS0xMSAxMSA0LjkyOSAxMSAxMSAxMSAxMS00LjkyOSAxMS0xMXptLTExLjUgNC44MjhsLTMuNzYzLTQuNjA4LS43MzcuNjc5IDUgNi4xMDEgNS02LjExMi0uNzUzLS42NjYtMy43NDcgNC42MDR2LTExLjgyNmgtMXYxMS44Mjh6Ii8+PC9zdmc+">
+    </span>
+  <!-- END: Fixed elements -->
 
-    <div id="music">
+  <main>
 
-      <h2 class="section-title">music</h2>
+    <div class="page-content">
 
-      <div class="row">
-        <div class="col-sm-4"><img src="images/thumbs-albums/pieces-ryan-todd-garza_0500.jpg" class="border"
-            onclick="window.open('http://smarturl.it/pieces-single')"></div>
-        <div class="col-sm-8">
-          <h4>pieces</h4>
-          <p>ryan todd garza<br>2016 | digital
-        </div>
-      </div>
+      <div class="page-content_inner">
 
-      <br>
+        <section id="foo" class="fixed-height main-grid">
 
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="responsive-video">
-            <iframe src="https://www.youtube.com/embed/cVwxjRVmCz0" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="section-header">
+            <h2>Toward The South Plains</h2>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <h4>headed out</h4>2016 | live studio recording
-        </div>
+              
+          <div class="section-main-carousel">
+            <img src="images/performance/ttsp/0050_012-MF-web.jpg">
+          </div>
+
+          <div class="section-main-description">
+            <span>centered around the cyclical nature of existence,
+              cycles of the moon and of water, stages of
+              grief, the transmigration of the soul, and the constant presence of change in our lives, the work is
+              highly conceptual and multidimensional in scope. In its entirety it contains... [more]
+            </span>
+          </div>
+
+          <div class="section-metadata">
+
+            <div class="location-meta">
+              <span>texas, us</span>
+            </div>
+
+            <div class="date-meta">
+              <span>2019 - present</span>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section id="bar" class="fixed-height main-grid">
+
+          <div class="section-header">
+            <h2>bar</h2>
+          </div>
+
+          <div class="section-main-carousel">
+            <img src="images/thumbs-albums/ekam-quickRelease_1500.jpg">
+          </div>
+
+          <div class="section-main-description">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo... [more]
+            </span>
+          </div>
+
+          <div class="section-metadata">
+
+            <div class="location-meta">
+              <span>los angeles, us</span>
+            </div>
+
+            <div class="date-meta">
+              <span>2020</span>
+            </div>
+            
+          </div>
+
+        </section>
+
+        <section id="baz" class="fixed-height main-grid">
+
+          <div class="section-header">
+            <h2>baz</h2>
+          </div>
+          
+          <div class="section-main-carousel">
+            <img src="images/thumbs-albums/wk01-ENSens_1500.jpg">
+          </div>
+
+          <div class="section-main-description">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo... [more]
+            </span>
+          </div>
+
+          <div class="section-metadata">
+
+            <div class="location-meta">
+              <span>texas, us</span>
+            </div>
+
+            <div class="date-meta">
+              <span>2019</span>
+            </div>
+            
+          </div>
+          
+        </section>
+
+        <section id="qux" class="fixed-height main-grid">
+          
+          <div class="section-header">
+            <h2>qux</h2>
+          </div>
+          
+        </section>
+
       </div>
-
-      <h3 class="section-title">Ens Ensemble</h3>
-
-      <div class="col-sm-4 p-0">
-
-        <p>ENS [<span style="font-family: times, serif;">ɛnz</span>] noun, abstract being; existence, in the most
-          abstract sense. <p>Ens Ensemble is a moniker used by Ryan as an outlet to voice creative explorations
-            regardless of the state of proficiency or perfection. The wk (week) collections are an endeavor to perform
-            and release one track per day for nine weeks.</p>
-
-      </div>
-
-      <br>
-
-      <div class="row">
-
-        <div class="col-sm-4"><img src="images/thumbs-albums/wk01-ENSens_0500.jpg" class="border"
-            onclick="window.open('https://ensensemble.bandcamp.com/album/wk01')">
-        </div>
-        <div class="col-sm-2">
-          <h4>wk01</h4>
-          <p>ens ensemble<br>2019 | digital
-        </div>
-
-        <div class="col-sm-4"><img src="images/thumbs-albums/wk02-ENSens_0500.jpg" class="border"
-            onclick="window.open('https://ensensemble.bandcamp.com/album/wk02')">
-        </div>
-        <div class="col-sm-2">
-          <h4>wk02</h4>
-          <p>ens ensemble<br>2019 | digital
-        </div>
-
-      </div>
-
-      <br>
-
-      <ul>
-        <li>
-          <h4>links</h4>
-        </li>
-        <li><a href="https://www.allmusic.com/artist/ryan-todd-garza-mn0003848531" target="_blank"
-            class="text-magnify">AllMusic credits</a></li>
-      </ul>
-
-    </div>
-
-    <br>
-
-    <div id="reel">
-
-      <h2 class="section-title" onclick="openModal();currentSlide(5)">audiovisual media reel</h2>
-
-      <div class="row">
-        <div class="col-sm-8"><img src="images/thumbs-video/thumb_For-All.png"
-            onclick="openModal();currentSlide(5)"></div>
-        <div class="col-sm-4">
-          <h4>reel</h4>
-          <p>sound & music department</p>
-        </div>
-      </div>
-
-      <br>
-
-      <ul>
-        <li>
-          <h4>links</h4>
-        </li>
-        <li><a href="https://www.imdb.com/name/nm9906654/?ref_=ttfc_fc_cr11" target="_blank" class="text-magnify">IMDb
-            credits</a></li>
-      </ul>
-
-      <br>
 
     </div>
 
   </main>
-  <!-- END:Main -->
 
-  <!-- Footer -->
-  <!-- responsive-sm -->
-  <footer id="info">
-    <h6>email</h6><a href="mailto:ryantoddgarza@gmail.com" class="text-magnify">ryantoddgarza@gmail.com</a>
-    <h6>phone</h6><a href="tel:17205198231" class="text-magnify">+1(720)519-8231</a>
-    <h6>follow</h6>
-    <a href="https://www.instagram.com/ryantoddgarza/" target="_blank" class="text-magnify">instagram</a> <br>
-    <a href="https://www.twitter.com/ryantoddgarza/" target="_blank" class="text-magnify">twitter</a> <br>
-    <a href="https://www.facebook.com/ryantoddgarza/" target="_blank" class="text-magnify">facebook</a> <br>
-    <a href="https://linkedin.com/in/ryantoddgarza" target="_blank" class="text-magnify">linkedin</a> <br>
-    <h6>location</h6>
-    <p>los angeles | california</p><br>
-    <p class="xs-font">© 2020 - ryan todd garza</p>
-  </footer>
-  <!-- END:responsive-sm -->
-  <!-- END:Footer -->
-
-  <!-- Modals -->
-  <div id="myModal" class="my-modal">
-
-    <span class="close" onclick="closeModal()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path
-          d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
-      </svg>
-    </span>
-
-      <!-- toward the south plains (1) -->
-      <div class="mySlides">
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>toward the south plains</strong><br>2019 - present</span>
-          <hr>
-
-          <div class="col p-0"><img src="images/performance/ttsp/0050_012-MF-web.jpg" alt="the mojave desert">
-            <p class="xs-font">the mojave desert</p>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-5 gutter">october 12 2019<br>st andrew's episcopal church<br>amarillo, tx</div>
-            <div class="col-sm-7 gutter">
-              <p>[in progress] a collaboration with <strong>harlan hodges</strong>
-
-                <p><em>(this is a subjective expression of my direct involvement with the work. my perspective is not to
-                    be confused with the intentions of the project. please visit</em> <a
-                    href="https://www.towardthesouthplains.com" target="_blank">towardthesouthplains.com</a><em> to
-                    learn how you can experience the work for yourself)</em></p>
-
-                <p>on february 8, 2016 composer harlan hodges who has been like a brother to me was, let's see what the
-                  right word is...inspired; invoked; reduced...to write what would become the beginnings of Toward The
-                  South Plains after a phone call in which i would reveal that i was making my way towards the
-                  south plains from los angeles after my father had been killed in an act of gun violence the previous
-                  afternoon.</p>
-
-                <p>over the years the work has widened from focus on this singular circumstance to the all too common
-                  occurences of malice of the sort happening every day in our communities.</p>
-
-                <p><strong>centered around the cyclical nature of existence, cycles of the moon and of water, stages of
-                    grief, the transmigration of the soul, and the constant presence of change in our lives, the work is
-                    highly conceptual and multidimensional in scope.</strong> In its entirety it contains not only 30
-                  pieces of written music for piano, organ, orchestra, and choir, but field recordings and photographs
-                  from across the southwestern united states, sound design,video, and animation. plans for geomapped
-                  interactivity are being discussed as well.</p>
-            </div>
-          </div>
-
-          <hr>
-
-          <div>
-            <p><strong>animation</strong> | the cyclical nature of the moon is central to the theme of this work. over
-              700 images of the moon were obtained from nasa's scientific visualization studio, animated and driven by
-              <strong>max</strong>. one lunar cycle is to be projected over the span of the piece but since the timing
-              requirements vary drastically per perfomance, multiple methods of advancement have been programmed at the
-              input level.</p>
-          </div>
-          <div class="col-12 p-0"><img src="images/performance/ttsp/thumb-max-moon.png"
-              alt="max jitter screenshot"></div>
-          <br>
-          <div class="col p-0">
-            <div class="responsive-video">
-              <iframe src="https://www.youtube.com/embed/TKHHF3jsw8M" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <br><br>
-
-          <div>
-            <p><strong>photography</strong> | over several trips through the southwestern United States, a series of
-              photographs is being curated alongside audio field recordings and gps data. these photographs correlate
-              directly to one of nine major musical movements that outline the literal journey across the landscape.
-              i've employed a 6x6 medium format hasselblad 503cx film camera for the task.</p>
-          </div>
-          <div class="row">
-            <div class="col-6"><img src="images/performance/ttsp/0040_03-MF-web.jpg"></div>
-            <div class="col-6"><img src="images/performance/ttsp/0041_05-MF-web.jpg"></div>
-          </div>
-
-          <div>
-            <p><strong>field recordings & sound design</strong> | <em>coming soon</em></p>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-5 gutter">
-              <p><strong>composition</strong> | the introspectivity of my involvement as a lyricist proved to be
-                personally healing. my self a product of the west texas landscape, i had spent many years trying to just
-                get out. my conclusion has been that without the recognition that the body very much belongs to and is a
-                product of a landscape, the spirit of the land will pull and plague the individual until one discerns in
-                a very visceral way that no matter where one resides, the body we refer to as ourselves is but an
-                aggregate of our past. text has been set throughout the work in both english and latin in order to
-                contrast the subjective and objective scope of this phenomena.</p>
-            </div>
-            <div class="col-sm-7 gutter">
-              <pre class="center">
-                Could it be sacred ground
-                That we wander
-                Estranged this soul be bound
-                Led asunder
-
-                A spirit ‘neath is found
-                Ancient wonder
-                Possess this sacred ground
-                We discover
-
-                Behold this sacred ground
-                Tears fall over
-                Beneath the stones be found
-                Holy water
-
-                Consume us sacred ground
-                Lest we wander
-                Eternally resound
-                Bear within us home
-                </pre>
-              <p class="xs-font">“Sacred Ground” © 2019 Harlan Hodges (ASCAP) Lyrics © 2019 Ryan Todd Garza (BMI)</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- END: toward the south plains (1) -->
-
-      <!-- gestures (2) -->
-      <div class="mySlides">
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>gestures</strong><br>2019 | photography</span>
-          <hr>
-
-          <div class="col p-0"><img src="images/installation/gestures/18015_011-vivid-MF-web.jpg">
-            <p class="xs-font">dusk at spade ranch | image no. 18015_011 | 18 in x 12 in</p>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-5 gutter">may 01 2019 - july 26 2019<br>first friday art trail<br>lubbock, tx</div>
-            <div class="col-sm-7 gutter"><strong>struggling to find a subject in a place with such flat terrain and hard
-                edges as west texas, she offered her beauty not in form but in palette and grade.</strong> gestures is a
-              series of photographic abstractions depicting the gradients revealed by the landscape of west
-              texas.<br><br>a subtler study in d&eacute;coup&eacute;, the abstraction of the sequential moments from a
-              larger experience, extracts sections of landscapes from their context and resequences them as if one were
-              to look at one patch of sky, then another, then another, etc. since the extractions still bear all of the
-              content, what degree of content versus context is necessary to retain meaning across iterations?</div>
-          </div>
-
-          <div class="row">
-            <div class="col-6">
-              <img src="images/installation/gestures/DaSR.concept-001v3.jpg">
-              <p class="xs-font">dusk at spade ranch | image no. DaSR.concept-001v3 | 12 in x 14.4 in</p>
-            </div>
-            <div class="col-6"><img src="images/installation/gestures/DaSR.concept-001v5_web.jpg">
-              <p class="xs-font">dusk at spade ranch | image no. DaSR.concept-001v5 | 12 in x 14.4 in</p>
-            </div>
-          </div>
-          <div class="col-12 p-0"><img src="images/installation/gestures/19004_037-MF_web.jpg">
-            <p class="xs-font">dust storm | image no. 19004_037 | 24 in x 18 in</p>
-          </div>
-        </div>
-      </div>
-      <!-- END: gestures (2) -->
-
-      <!-- repetition (3) -->
-      <div class="mySlides">
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>repetition</strong><br>2019 | photography</span>
-          <hr>
-
-          <div class="row">
-            <div class="col-sm-5 gutter">may 01 2019 - july 26 2019<br>first friday art trail<br>lubbock, tx</div>
-            <div class="col-sm-7 gutter">enough exhausts what hands made precious...guilty</div>
-          </div>
-
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/17025_114-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/17052_002-MF-web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/17052_026-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/17034_004-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/18004_119-MF-web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/17034_003-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0038_03_44-MF-web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0005_34-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0025_00-MF-web.jpg" class="img-responsive square">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0013_00-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0009_06-MF-web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/0031_02-MF-web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/installation/repetition/19004_008-MF-web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- END: repetition (3) -->
-
-      <!-- photos graphein (4) -->
-      <div class="mySlides">
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>photos graphein</strong><br>2011 | light, objects and sound design</span>
-          <hr>
-
-          <br>
-
-          <div style="text-align: center; letter-spacing: .1em;">under construction</div>
-
-        </div>
-      </div>
-      <!-- END: photos graphein (4) -->
-
-      <!-- audiovisual media (5) -->
-      <div class="mySlides">
-
-        <!-- Reel -->
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>audiovisual media reel</strong><br>selected works</span>
-          <hr>
-
-          <div class="av-grid">
-
-            <div class="responsive-video">
-              <iframe src="https://player.vimeo.com/video/225121038?title=0&byline=0&portrait=0" frameborder="0"
-                allow="autoplay; fullscreen" allowfullscreen></iframe>
-              <!-- <img  src="images/thumbs-video/thumb_For-All.png" onclick="window.open('https://vimeo.com/225121038');"> -->
-            </div>
-            <div>
-              <span><strong>for all</strong> academy sports</span>
-              <ul>
-                <li>film mix</li>
-                <li>sound design</li>
-              </ul>
-            </div>
-
-            <div class="responsive-video">
-              <iframe src="https://player.vimeo.com/video/236454995?title=0&byline=0&portrait=0" frameborder="0"
-                allow="autoplay; fullscreen" allowfullscreen></iframe>
-              <!-- <img  src="images/thumbs-video/thumb_The-Driver.png" onclick="window.open('https://vimeo.com/236454995');"> -->
-            </div>
-            <div>
-              <span><strong>the driver</strong> hulu</span>
-              <ul>
-                <li>film mix - season 1</li>
-              </ul>
-            </div>
-
-            <div class="responsive-video">
-              <iframe src="https://player.vimeo.com/video/208350354?title=0&byline=0&portrait=0" frameborder="0"
-                allow="autoplay; fullscreen" allowfullscreen></iframe>
-              <!-- <img  src="images/thumbs-video/thumb_If.png" onclick="window.open('https://vimeo.com/208350354');"> -->
-            </div>
-            <div>
-              <span><strong>if</strong> house of cooper</span>
-              <ul>
-                <li>film mix</li>
-              </ul>
-            </div>
-
-            <div class="responsive-video">
-              <iframe src="https://www.youtube.com/embed/1DDAFUg14M0?rel=0&modestbranding=1" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-              <!-- <img  src="images/thumbs-video/thumb_Carbon-TV.png" onclick="window.open('https://youtu.be/1DDAFUg14M0');"> -->
-            </div>
-            <div>
-              <span><strong>carbon tv</strong></span>
-              <ul>
-                <li>composer</li>
-                <li>music engineer/mix</li>
-                <li>instrumentalist</li>
-              </ul>
-            </div>
-
-            <div class="responsive-video">
-              <iframe src="https://player.vimeo.com/video/181812872?title=0&byline=0&portrait=0" frameborder="0"
-                allow="autoplay; fullscreen" allowfullscreen></iframe>
-              <!-- <img  src="images/thumbs-video/thumb_Mercedes.png" onclick="window.open('https://vimeo.com/181812872');"> -->
-            </div>
-            <div>
-              <span><strong>uncharted</strong> mercedes benz</span>
-              <ul>
-                <li>music mix</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-        <!-- END: Reel -->
-
-        <br>
-
-        <!-- clients -->
-
-        <div class="container-fluid">
-
-          <h4 style="text-transform: uppercase; text-align: center;">Honored To Have<br>Created Content For</h4>
-
-          <div class="client-container container-fluid d-flex flex-wrap justify-content-center">
-            <img class="" src="images/graphics/client-vectors/300x200/apple.png">
-            <img class="" src="images/graphics/client-vectors/300x200/hulu.png">
-            <img class="" src="images/graphics/client-vectors/300x200/reebok.png">
-            <img class="" src="images/graphics/client-vectors/300x200/mercedes-benz.png">
-            <img class="" src="images/graphics/client-vectors/300x200/academy.png">
-            <img class="" src="images/graphics/client-vectors/300x200/blue-cross-blue-shield.png">
-            <img class="" src="images/graphics/client-vectors/300x200/allina-health.png">
-            <img class="" src="images/graphics/client-vectors/300x200/sundance-tv.png">
-          </div>
-
-          <h4 style="text-transform: uppercase; text-align: center;">In Partner With</h4>
-
-          <div class="client-container container-fluid d-flex flex-wrap justify-content-center">
-            <img class="" src="images/graphics/client-vectors/300x200/yonder-content.png">
-            <img class="" src="images/graphics/client-vectors/300x200/house-of-cooper.png">
-            <img class="" src="images/graphics/client-vectors/300x200/hack-studios.png">
-          </div>
-
-        </div>
-        <!-- END: clients -->
-      </div>
-      <!-- END: audiovisual media (5) -->
-
-      <!-- portraits (6) -->
-      <div class="mySlides">
-        <div class="col-12 col-lg-8 offset-lg-2">
-
-          <span><strong>portraits</strong><br>photography</span>
-          <hr>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17001_025-MF_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/18013_105-MF_web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/18011_054-ML_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17061_276-MF_web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17048_006-MF_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17024_038-MF_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/20002_0319-MF_web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17011_094-MF_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/18010_069-ML_web.jpg" class="img-responsive portrait">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/17032_253-MF_web.jpg" class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 p-0">
-            <div class="aspect-ratio-box">
-              <div class="aspect-ratio-box-inside flexbox-centering">
-                <img src="images/photography-portfolio/portraits/160901_211531-MF_web.jpg"
-                  class="img-responsive landscape">
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <!-- END: portraits (6) -->
-
-  </div>
-  <!-- END: Modals -->
+  <footer></footer>
 
   <!-- Scripts -->
-  <!-- jQuery first then Bootstrap JS -->
-  <script src="scripts/jquery.min.js"></script>
-  <script src="scripts/bootstrap.min.js"></script>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 
-  <!-- main -->
-  <script src="scripts/main.js"></script>
+    <!-- Main -->
+    <script src="scripts/main.js"></script>
   <!-- END:Scripts -->
 </body>
 

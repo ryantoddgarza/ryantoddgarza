@@ -1,0 +1,35 @@
+// file: _variables.scss
+
+// Margins, padding and compensation
+//
+$outer-margin: 16px;
+$gutter-width: 24px;
+$half-gutter-width: $gutter-width / 2;
+$gutter-compensation: ($gutter-width / 2) * -1;
+
+// Breakpoints
+//
+// Minimum dimensions at which the layout will change. For use in media queries.
+$sm-min: 600;
+$md-min: 900;
+$lg-min: 1200;
+$xl-min: 1800;
+$screen-sm-min: $sm-min + px;
+$screen-md-min: $md-min + px;
+$screen-lg-min: $lg-min + px;
+$screen-xl-min: $xl-min + px;
+
+// Containers
+//
+// Maximum width of `container` for different screen sizes.
+$container-sm: $sm-min + $gutter-width;
+$container-md: $md-min + $gutter-width;
+$container-lg: $lg-min + $gutter-width;
+$container-xl: $xl-min + $gutter-width;
+
+// Vertical rhythm
+//
+// Base font size scales entire vertical rhythm structure.
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 1.5;
+$base-line-divisor: 2; // Rounds line height up to nearest 1/2.

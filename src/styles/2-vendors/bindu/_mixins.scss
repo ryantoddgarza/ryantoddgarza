@@ -1,0 +1,45 @@
+// file: _mixins.scss
+
+// BREAKPOINTS
+//
+
+// Map
+$breakpoints:(
+  "sm": (min-width: $screen-sm-min),
+  "md": (min-width: $screen-md-min),
+  "lg": (min-width: $screen-lg-min),
+  "xl": (min-width: $screen-xl-min),
+);
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name){
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))}{
+      @content;
+    }
+  }
+
+  // If the key does not exist in the map
+  @else{
+    @warn "No value could be retrieved from `#{$breakpoints}`."
+      + "Please make sure it is defined in the `#{$breakpoints}` map.";
+  }
+}
+
+// VERTICAL RHYTHM
+//
+
+// $em scales the rest of the mixin relative to $base-font-size.
+// 1. Line height is rounded up based on $base-line-divisor.
+// 2. Margin...
+// @mixin vertical-rhythm($em) {
+  // font-size: $base-font-size * $em;
+  // line-height: (ceil((($base-font-size * $em) / $base-line-height) * $base-line-divisor) * $base-line-height) / $base-line-divisor; // 1
+// }
+
+// use with modular scale
+@mixin vertical-rhythm($ms) {
+  font-size: $ms;
+  line-height: (ceil(($ms / $base-line-height) * $base-line-divisor) * $base-line-height) / $base-line-divisor; // 1
+}

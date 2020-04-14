@@ -2,7 +2,7 @@
 
 // For "insta fit" style image containers
 .aspect-ratio-box {
-  @include responsive-wrapper(100%);
+  @include responsive-wrapper(100%, 100%);
   background: white;
 }
 

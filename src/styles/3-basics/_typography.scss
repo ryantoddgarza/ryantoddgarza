@@ -1,5 +1,8 @@
 // typography.scss
 
+// Primary font
+//
+
 @font-face {
   font-family: 'OpenSans-Light'; // light
   src: url('../fonts/OpenSans-Light.eot');
@@ -120,81 +123,86 @@
   font-style: italic;
 }
 
+// Accent font
+//
 
-
-// Root (HTML) declarations from _variables.scss
-
-:root {
-  font-size: $base-font-size;
-  line-height: $rhythm-unit;
+@font-face {
+  font-family: 'Catamaran'; // regular
+  src: url('../fonts/Catamaran-Regular.eot');
+  src: url('../fonts/Catamaran-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Catamaran-Regular.svg#Catamaran-Regular') format('svg'),
+       url('../fonts/Catamaran-Regular.ttf') format('truetype'),
+       url('../fonts/Catamaran-Regular.woff') format('woff'),
+       url('../fonts/Catamaran-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
+
+// Modular Scale
+$modularscale: (
+  base: $base-font-size,
+  ratio: $minor-third
+);
+
 
 // Style fonts
 
 body {
   font-family: $font-book;
-  font-size: $base-font-size;
-  font-weight: $base-font-weight;
-  line-height: $rhythm-unit;
+  font-weight: normal;
+  font-size: ms(0);
+  // @include vertical-rhythm(1);
   color: $body-primary;
   text-align: left; // Set explicitly to allow `inherit` on other elements.
 }
 
 h1 {
   font-family: $font-bold;
-  font-size: $rhythm-unit*2;
-  line-height: $rhythm-unit*2;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(5));
+  margin-bottom: $base-line-height;
 }
 
 h2 {
   font-family: $font-light;
-  font-size: $rhythm-unit*1.2;
-  line-height: $rhythm-unit*1.5;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(4));
+  margin-bottom: $base-line-height;
   color: $black;
 
-  @include respond-to(sm) {
-    font-size: $rhythm-unit*1.25;
-    line-height: $rhythm-unit*1.5;
+  @include respond-to(md) {
+    @include vertical-rhythm(ms(5));
   }
 
   @include respond-to(lg) {
-    font-size: $rhythm-unit*2;
-    line-height: $rhythm-unit*2;
+    @include vertical-rhythm(ms(6));
   }
 }
 
 h3 {
   font-family: $font-light;
-  font-size: $rhythm-unit*1.25;
-  line-height: $rhythm-unit*1.5;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(3));
+  margin-bottom: $base-line-height;
 }
 
 h4 {
   font-family: $font-light;
-  font-size: $rhythm-unit*1;
-  line-height: $rhythm-unit;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(2));
+  margin-bottom: $base-line-height;
 }
 
 h5 {
   font-family: $font-book;
-  font-size: $rhythm-unit*0.8;
-  line-height: $rhythm-unit;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(1));
+  margin-bottom: $base-line-height;
 }
 
 h6 {
   font-family: $font-book;
-  font-size: $rhythm-unit*0.7;
-  line-height: $rhythm-unit;
-  margin-bottom: $rhythm-unit;
+  @include vertical-rhythm(ms(0));
+  margin-bottom: $base-line-height;
 }
 
 p {
-  margin-bottom: $rhythm-unit;
+  margin-bottom: $base-line-height;
 }
 
 // Font weight classes - CLEANUP!

@@ -1,31 +1,39 @@
 // _base-extension.scss
 
-// Useful bits not included in normalize/reset
+// Useful bits not included in normalize.scss
 //
 
+// Backwards compatability for `:focus-visible`
 // See https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
 
 // Shiv for "new" HTML5 structural elements to display correctly (IE10, older browsers)
-// TODO: Remove based on desired support for old browsers.
+// TODO: Remove based on desired support for older browsers.
+
 article, aside, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
 
+// Wrap the `pre` element
+
 pre {
-  white-space: pre-wrap; // Don't allow content to break outside
+  white-space: pre-wrap;
   word-break: keep-all;
 }
 
+// Prevent double borders
+
 table {
-  border-collapse: collapse; // Prevent double borders
+  border-collapse: collapse;
 }
 
+// Workaround for the SVG overflow bug in IE10/11 is still required.
+// See https://github.com/twbs/bootstrap/issues/26878
+
 svg {
-  // Workaround for the SVG overflow bug in IE10/11 is still required.
-  // See https://github.com/twbs/bootstrap/issues/26878
   overflow: hidden;
   vertical-align: middle;
 }

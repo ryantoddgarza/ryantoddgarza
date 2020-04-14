@@ -1,5 +1,13 @@
 // _global.scss
 
+// Root (HTML) declarations from _variables.scss
+
+:root {
+  font-family: $font-book;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
 html {
   scroll-behavior: smooth; // TODO: consider acessibility concerns
 }
@@ -12,7 +20,6 @@ body {
 
 body {
   background-color: $bg-primary;
-  overscroll-behavior: none; // consider removing
   text-rendering: geometricPrecision;
 
   // Remove focus ring if user is not using "tab" to navigate

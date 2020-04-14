@@ -1,14 +1,13 @@
 // _links.scss
 
-a {
+a, .link {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 
   @media #{$non-touchscreen} {
 
     &:hover {
-      color: $bronze;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }

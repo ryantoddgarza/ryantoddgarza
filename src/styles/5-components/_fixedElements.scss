@@ -1,28 +1,33 @@
 // fixedElements.scss
-$pg-change-height: 50px;
 
-.pg-change img {
-  min-width: $pg-change-height;
+// Page change
+//
+
+$pg-change-height: $rhythm-unit*1.5;
+
+.pg-change {
+  display: none;
+  z-index: 1020;
+
+  @include respond-to(md) {
+    display: flex;
+  }
 }
-
-// convert to sass
-// @media (max-width: 768px), (orientation: landscape) not (min-width: 769px;) {
-//   .pg-change img {
-//     min-width: 32px;
-//   }
-// }
 
 .pg-down {
   position: fixed;
   right: $rhythm-unit;
   bottom: $rhythm-unit;
-  cursor: pointer;
-  z-index: 1020;
   transform: none;
   transition: transform $transition-normal linear;
-}
 
-// Slide `.pg-down` out of view once the last section is reached.
-.pg-down.fin {
+  &:before {
+    @include svg-background($pg-change-height, $pg-change-height);
+    background-image: url('../images/icons/arrow-down-circle-thin.svg');
+  }
+
+  &.fin {
+  // Slide `.pg-down` out of view once the last section is reached.
   transform: translateY($pg-change-height*2);
+  }
 }

@@ -2,17 +2,9 @@
 <html lang="en" dir="ltr" class="touchscroll">
 
 <head>
-  <!--
-
-    Okay, you can look at this code - but only if you let me know if something I made is helpful.
-
-    ryantoddgarza@gmail.com
-    
-  -->
-
   <!-- Meta -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
   <title>ryan todd garza</title>
@@ -31,9 +23,6 @@
   <meta property="og:site_name" content="ryantoddgarza.com">
   <meta property="og:description" content="The portfolio of Ryan Todd Garza, an creative based in Los Angeles, California.">
   <meta property="og:image" content="">
-
-  <!-- Font TODO: remove and replace with @font-face -->
-  <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
 
   <!-- Style -->
   <link rel="stylesheet" href="styles/main.css">
@@ -61,16 +50,16 @@
       <div id="navbarNav" class="navbar-nav">
         <ul class="nav-contents">
           <li class="nav-item">
-            <a class="nav-link active" href="#foo">foo<!--music--></a>
+            <a class="nav-link" href="#foo">works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#bar">bar<!--photo--></a>
+            <a class="nav-link" href="#bar">studies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#baz">baz<!--works--></a>
+            <a class="nav-link" href="#baz">music</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#qux">qux<!--info--></a>
+            <a class="nav-link" href="#qux">info</a>
           </li>
         </ul>
       </div>
@@ -79,13 +68,7 @@
   <!-- END:Nav -->
 
   <!-- Fixed elements -->
-    <div class="page-num-container">
-      <span id="pageNum" class="pg-1"></span>
-    </div>
-
-    <span id="pgNext" class="pg-change pg-down" onclick="nextPage()">
-      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yNCAxMmMwLTYuNjIzLTUuMzc3LTEyLTEyLTEycy0xMiA1LjM3Ny0xMiAxMiA1LjM3NyAxMiAxMiAxMiAxMi01LjM3NyAxMi0xMnptLTEgMGMwLTYuMDcxLTQuOTI5LTExLTExLTExcy0xMSA0LjkyOS0xMSAxMSA0LjkyOSAxMSAxMSAxMSAxMS00LjkyOSAxMS0xMXptLTExLjUgNC44MjhsLTMuNzYzLTQuNjA4LS43MzcuNjc5IDUgNi4xMDEgNS02LjExMi0uNzUzLS42NjYtMy43NDcgNC42MDR2LTExLjgyNmgtMXYxMS44Mjh6Ii8+PC9zdmc+">
-    </span>
+    <div id="pgDown" class="pg-change pg-down" onclick="nextPage()"></div>
   <!-- END: Fixed elements -->
 
   <main>
@@ -94,107 +77,301 @@
 
       <div class="page-content_inner">
 
-        <section id="foo" class="fixed-height main-grid">
+        <!-- Works -->
+        <div id="foo">
 
-          <div class="section-header">
-            <h2>Toward The South Plains</h2>
-          </div>
+          <!-- Toward The South Plains -->
+          <section class="fixed-height main-grid">
+
+            <div class="section-header">
+              <h2>Toward The South Plains</h2>
+            </div>
+                
+            <div class="section-main-carousel">
+              <img onclick="openModal();currentSlide(1)" src="images/performance/ttsp/0050_012-MF-web.jpg">
+            </div>
+
+            <div class="section-main-description">
+              <p>Centered around the cyclical nature of existence, cycles of the moon and of water, stages of grief, the transmigration of the soul, and the constant presence of change in our lives, the work is highly conceptual and multidimensional in scope. In its entirety it contains... <span class="link" onclick="openModal();currentSlide(1)"><i>more</i></span>
+              </p>
+            </div>
+
+            <div class="section-metadata">
+
+              <div class="location-meta">
+                <span>texas, us</span>
+              </div>
+
+              <div class="date-meta">
+                <span>2019 - present</span>
+              </div>
+
+            </div>
+
+          </section>
+          <!-- END: Toward The South Plains -->
+
+          <!-- Gestures -->
+          <section class="fixed-height main-grid">
+
+            <div class="section-header">
+              <h2>Gestures</h2>
+            </div>
+
+            <div class="section-main-carousel">
+              <img onclick="openModal();currentSlide(2)" src="images/installation/gestures/18015_011-vivid-MF-web.jpg">
+            </div>
+
+            <div class="section-main-description">
+              <p>Struggling to find a subject in a place with such flat terrain and hard edges as West Texas, she offered her beauty not in form but in palette and grade. Gestures is a series of photographic abstractions depicting the gradients revealed by the landscape of West Texas... <span class="link" onclick="openModal();currentSlide(2)"><i>more</i></p>
+              </span>
+            </div>
+
+            <div class="section-metadata">
+
+              <div class="location-meta">
+                <span>texas, us</span>
+              </div>
+
+              <div class="date-meta">
+                <span>2019</span>
+              </div>
               
-          <div class="section-main-carousel">
-            <img src="images/performance/ttsp/0050_012-MF-web.jpg">
-          </div>
-
-          <div class="section-main-description">
-            <span>centered around the cyclical nature of existence,
-              cycles of the moon and of water, stages of
-              grief, the transmigration of the soul, and the constant presence of change in our lives, the work is
-              highly conceptual and multidimensional in scope. In its entirety it contains... [more]
-            </span>
-          </div>
-
-          <div class="section-metadata">
-
-            <div class="location-meta">
-              <span>texas, us</span>
             </div>
 
-            <div class="date-meta">
-              <span>2019 - present</span>
-            </div>
+          </section>
+          <!-- END: Gestures -->
 
-          </div>
+          <!-- Repetition -->
+          <section class="fixed-height main-grid">
 
-        </section>
-
-        <section id="bar" class="fixed-height main-grid">
-
-          <div class="section-header">
-            <h2>bar</h2>
-          </div>
-
-          <div class="section-main-carousel">
-            <img src="images/thumbs-albums/ekam-quickRelease_1500.jpg">
-          </div>
-
-          <div class="section-main-description">
-            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo... [more]
-            </span>
-          </div>
-
-          <div class="section-metadata">
-
-            <div class="location-meta">
-              <span>los angeles, us</span>
-            </div>
-
-            <div class="date-meta">
-              <span>2020</span>
+            <div class="section-header">
+              <h2>repetition</h2>
             </div>
             
-          </div>
-
-        </section>
-
-        <section id="baz" class="fixed-height main-grid">
-
-          <div class="section-header">
-            <h2>baz</h2>
-          </div>
-          
-          <div class="section-main-carousel">
-            <img src="images/thumbs-albums/wk01-ENSens_1500.jpg">
-          </div>
-
-          <div class="section-main-description">
-            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo... [more]
-            </span>
-          </div>
-
-          <div class="section-metadata">
-
-            <div class="location-meta">
-              <span>texas, us</span>
+            <div class="section-main-carousel">
+              <img onclick="openModal();currentSlide(3)" src="images/installation/repetition/17034_004-MF-web.jpg">
             </div>
 
-            <div class="date-meta">
-              <span>2019</span>
+            <div class="section-main-description">
+              <p>enough exhausts what hands made precious...guilty</p>
+              <p class="link" onclick="openModal();currentSlide(3)">view</p>
+            </div>
+
+            <div class="section-metadata">
+
+              <div class="location-meta">
+                <span>rural us</span>
+              </div>
+
+              <div class="date-meta">
+                <span>2019</span>
+              </div>
+              
             </div>
             
-          </div>
-          
-        </section>
+          </section>
+          <!-- END: Repetition -->
 
-        <section id="qux" class="fixed-height main-grid">
+        </div>
+        <!-- END: Works -->
+
+        <!-- Studies -->
+        <div id="bar">
           
-          <div class="section-header">
-            <h2>qux</h2>
-          </div>
+          <!-- Portraits -->
+          <section class="fixed-height main-grid">
+
+            <div class="section-header">
+              <h2>portraits</h2>
+            </div>
+            
+            <div class="section-main-carousel">
+              <img onclick="openModal();currentSlide(4)" src="images/photography-portfolio/portraits/17048_006-MF_web.jpg">
+            </div>
+
+            <div class="section-main-description">
+              <p>In 2017, as my focus shifted toward photography, I used portraiture studies to learn light and composition, but most importantly how to understand someones energy in order to capture the story they exhibit and not just the one I imagine.</p>
+              <p class="link" onclick="openModal();currentSlide(4)">view</p>
+            </div>
+
+            <div class="section-metadata">
+
+              <div class="location-meta">
+                <span>earth</span>
+              </div>
+
+              <div class="date-meta">
+                <span>2017-2019</span>
+              </div>
+              
+            </div>
+            
+          </section>
+          <!-- END: Portraits -->
+
+          <!-- Ephemera -->
+          <section class="fixed-height main-grid">
+
+            <div class="section-header">
+                <h2>smyer, tx 2016 + ephemera</h2>
+            </div>
+
+              <div class="section-main-carousel">
+
+                <div class="responsive-video">
+                  <iframe src="https://www.youtube.com/embed/lX9JNdBvrjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+              </div>
+
+              <div class="section-main-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                </p>
+              </div>
+
+              <div class="section-metadata">
+
+                <div class="location-meta">
+                  <span>smyer, tx</span>
+                </div>
+
+                <div class="date-meta">
+                  <span>2019</span>
+                </div>
+                
+              </div>
+              
+          </section>
+          <!-- END: Ephemera -->
+
+        </div>
+        <!-- END: Studies -->
+
+        <!-- Music -->
+        <div id="baz">
+
+          <!-- Pieces -->
+          <section class="fixed-height main-grid">
+            
+            <div class="section-header">
+                <h2>Pieces</h2>
+            </div>
+
+              <div class="section-main-carousel">
+                <img src="images/thumbs-albums/pieces-ryan-todd-garza_0500.jpg"
+                  class="border pointer"
+                  onclick="window.open('http://smarturl.it/pieces-single')">
+              </div>
+
+              <div class="section-main-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                </p>
+              </div>
+
+              <div class="section-metadata">
+
+                <div class="date-meta">
+                  <span>2016</span>
+                </div>
+                
+              </div>
+              
+          </section>
+          <!-- END: Pieces -->
           
-        </section>
+          <!-- Ens Ensemble -->
+          <section class="fixed-height main-grid">
+            
+            <div class="section-header">
+                <h2>Ens Ensemble</h2>
+            </div>
+
+              <div class="section-main-carousel">
+                <img src="images/thumbs-albums/wk01-ENSens_0500.jpg"
+                  class="border pointer"
+                  onclick="window.open('https://ensensemble.bandcamp.com')">
+              </div>
+
+              <div class="section-main-description">
+                <p>ENS <i>[ɛnz]</i> noun, abstract being; existence, in the most abstract sense.</p>
+
+                <p>Ens Ensemble is a moniker used by Ryan as an outlet to voice creative explorations regardless of the state of proficiency or perfection. The "wk." (week) collections are an endeavor to perform, record and release one track per day for nine weeks.</p>
+
+                <p class="link" onclick="window.open('https://ensensemble.bandcamp.com')">ensensemble.bandcamp.com</a>
+              </div>
+
+              <div class="section-metadata">
+
+                <div class="date-meta">
+                  <span>2019-present</span>
+                </div>
+                
+              </div>
+              
+          </section>
+          <!-- END: Ens Ensemble -->
+          
+          <!-- Video -->
+          <section class="fixed-height main-grid">
+
+            <div class="section-header">
+                <h2>Headed Out</h2>
+            </div>
+
+              <div class="section-main-carousel">
+
+                <div class="responsive-video">
+                  <iframe src="https://www.youtube.com/embed/cVwxjRVmCz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+              </div>
+
+              <div class="section-main-description">
+                <p>Live studio recording</p>
+              </div>
+
+              <div class="section-metadata">
+
+                <div class="date-meta">
+                  <span>2016</span>
+                </div>
+                
+              </div>
+              
+          </section>
+          <!-- END: Video -->
+
+          <!-- AV Media Reel -->
+          <section class="fixed-height main-grid">
+            
+            <div class="section-header">
+                <h2>Audiovisual Media Reel</h2>
+            </div>
+
+              <div class="section-main-carousel">
+                <img onclick="openModal();currentSlide(5)" src="images/thumbs-video/thumb_For-All.png">
+              </div>
+
+              <div class="section-main-description">
+                <h4 class="link" onclick="openModal();currentSlide(5)">view reel</h4>
+
+                <p>Sound & music department for film, television and commercial work. Honored to have created content for brands like Apple, HULU, Mercedes-Benz, and Reebok in partner with Yonder Content, Hack Studios, and House of Cooper.</p>
+
+                <p class="link" onclick="window.open('https://www.imdb.com/name/nm9906654/?ref_=ttfc_fc_cr11')">IMDB credits</a>
+              </div>
+
+              <div class="section-metadata"></div>
+              
+          </section>
+          <!-- END: AV Media Reel -->
+
+        </div>
+        <!-- END: Music -->
 
       </div>
 
@@ -203,6 +380,131 @@
   </main>
 
   <footer></footer>
+
+  <!-- Modals -->
+  <div id="myModal" class="my-modal">
+
+    <!-- Close modal -->
+    <div class="close-modal" onclick="closeModal()"></div>
+
+    <!-- toward the south plains (1) -->
+    <div class="modal-content">
+      <section class="my-slides">
+
+          <span><strong>toward the south plains</strong><br>2019 - present</span>
+          <hr>
+
+          <div class="col nopadding"><img src="images/performance/ttsp/0050_012-MF-web.jpg" alt="the mojave desert">
+            <p class="xs-font">the mojave desert</p>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-5 gutter">october 12 2019<br>st andrew's episcopal church<br>amarillo, tx</div>
+            <div class="col-sm-7 gutter">
+              <p>[in progress] a collaboration with <strong>harlan hodges</strong>
+
+                <p><em>(this is a subjective expression of my direct involvement with the work. my perspective is not to
+                    be confused with the intentions of the project. please visit</em> <a
+                    href="https://www.towardthesouthplains.com" target="_blank">towardthesouthplains.com</a><em> to
+                    learn how you can experience the work for yourself)</em></p>
+
+                <p>on february 8, 2016 composer harlan hodges who has been like a brother to me was, let's see what the
+                  right word is...inspired; invoked; reduced...to write what would become the beginnings of Toward The
+                  South Plains after a phone call in which i would reveal that i was making my way towards the
+                  south plains from los angeles after my father had been killed in an act of gun violence the previous
+                  afternoon.</p>
+
+                <p>over the years the work has widened from focus on this singular circumstance to the all too common
+                  occurences of malice of the sort happening every day in our communities.</p>
+
+                <p><strong>centered around the cyclical nature of existence, cycles of the moon and of water, stages of
+                    grief, the transmigration of the soul, and the constant presence of change in our lives, the work is
+                    highly conceptual and multidimensional in scope.</strong> In its entirety it contains not only 30
+                  pieces of written music for piano, organ, orchestra, and choir, but field recordings and photographs
+                  from across the southwestern united states, sound design,video, and animation. plans for geomapped
+                  interactivity are being discussed as well.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div>
+            <p><strong>animation</strong> | the cyclical nature of the moon is central to the theme of this work. over
+              700 images of the moon were obtained from nasa's scientific visualization studio, animated and driven by
+              <strong>max</strong>. one lunar cycle is to be projected over the span of the piece but since the timing
+              requirements vary drastically per perfomance, multiple methods of advancement have been programmed at the
+              input level.</p>
+          </div>
+          <div class="col-12 nopadding"><img src="images/performance/ttsp/thumb-max-moon.png"
+              alt="max jitter screenshot"></div>
+          <br>
+          <div class="col nopadding">
+            <div class="responsive-video">
+              <iframe src="https://www.youtube.com/embed/TKHHF3jsw8M" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <br><br>
+
+          <div>
+            <p><strong>photography</strong> | over several trips through the southwestern United States, a series of
+              photographs is being curated alongside audio field recordings and gps data. these photographs correlate
+              directly to one of nine major musical movements that outline the literal journey across the landscape.
+              i've employed a 6x6 medium format hasselblad 503cx film camera for the task.</p>
+          </div>
+          <div class="row">
+            <div class="col-6"><img src="images/performance/ttsp/0040_03-MF-web.jpg"></div>
+            <div class="col-6"><img src="images/performance/ttsp/0041_05-MF-web.jpg"></div>
+          </div>
+
+          <div>
+            <p><strong>field recordings & sound design</strong> | <em>coming soon</em></p>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-5 gutter">
+              <p><strong>composition</strong> | the introspectivity of my involvement as a lyricist proved to be
+                personally healing. my self a product of the west texas landscape, i had spent many years trying to just
+                get out. my conclusion has been that without the recognition that the body very much belongs to and is a
+                product of a landscape, the spirit of the land will pull and plague the individual until one discerns in
+                a very visceral way that no matter where one resides, the body we refer to as ourselves is but an
+                aggregate of our past. text has been set throughout the work in both english and latin in order to
+                contrast the subjective and objective scope of this phenomena.</p>
+            </div>
+            <div class="">
+              <article>
+                <p>Could it be sacred ground <br>
+                That we wander <br>
+                Estranged this soul be bound <br>
+                Led asunder</p>
+
+                <p>A spirit ‘neath is found <br>
+                Ancient wonder <br>
+                Possess this sacred ground <br>
+                We discover</p>
+
+                <p>Behold this sacred ground <br>
+                Tears fall over <br>
+                Beneath the stones be found <br>
+                Holy water</p>
+
+                <p>Consume us sacred ground <br>
+                Lest we wander <br>
+                Eternally resound <br>
+                Bear within us home</p>
+              </article>
+              <p class="xs-font">“Sacred Ground” © 2019 Harlan Hodges (ASCAP) Lyrics © 2019 Ryan Todd Garza (BMI)</p>
+            </div>
+          </div>
+      </section>
+      
+    </div>
+    <!-- END: toward the south plains -->
+
+  </div>
+  <!-- END: Modals -->
 
   <!-- Scripts -->
     <!-- jQuery first, then Bootstrap JS -->

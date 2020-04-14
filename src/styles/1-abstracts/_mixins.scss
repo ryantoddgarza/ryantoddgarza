@@ -1,29 +1,15 @@
 // _mixins.scss
 
-// BREAKPOINTS
+// Display
 //
 
+// Hide scrollbar
+@mixin hide-scrollbar {
+  -ms-overflow-style: none; // IE 10+
+  scrollbar-width: none; // Firefox
 
-// Map
-$breakpoints:(
-  'sm'  : (min-width: 768px),
-  'md'  : (min-width: 992px),
-  'lg'  : (min-width: 1200px),
-);
-
-@mixin respond-to($name) {
-  // If the key exists in the map
-  @if map-has-key($breakpoints, $name){
-    // Prints a media query based on the value
-    @media #{inspect(map-get($breakpoints, $name))}{
-      @content;
-    }
-  }
-
-  // If the key does not exist in the map
-  @else{
-    @warn "No value could be retrieved from `#{$breakpoints}`."
-      + "Please make sure it is defined in the `#{$breakpoints}` map.";
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
   }
 }
 
@@ -31,9 +17,10 @@ $breakpoints:(
 //
 
 // Responsive Wrapper.
-@mixin responsive-wrapper ($padding-bottom) {
+@mixin responsive-wrapper ($width, $padding-bottom) {
   position: relative;
   overflow: hidden;
+  width: $width;
   height: 0;
   padding-bottom: $padding-bottom; // value in % or px determines aspect ratio
 }
@@ -47,18 +34,16 @@ $breakpoints:(
   height: $height; // 100% fits to wrapper or value in px
 }
 
-// Animations
+// Images
 //
 
-// Increase letter spacing on hover for clickables
-// TODO: replace with _animate.scss
-@mixin text-magnify ($duration: 0.6s) {
-  transition: $duration;
-  letter-spacing: 0em;
-
-  &:hover {
-    transition: $duration;
-    letter-spacing: .1em;
-  }
+// SVG as pseudo-element background.
+@mixin svg-background ($width, $height){
+  display: inline-block;
+  content: '';
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 

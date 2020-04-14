@@ -76,14 +76,14 @@ nav {
 }
 
 .nav-item {
-  font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+  font-family: $font-accent;
   font-size: 1.5rem;
   line-height: $rhythm-unit;
   margin-bottom: $rhythm-unit;
 }
 .navbar-brand {
   margin: 0 $rhythm-unit;
-  font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+  font-family: $font-accent;
   font-size: 1rem;
   line-height: $rhythm-unit;
 }
@@ -135,7 +135,7 @@ html.nav-is-open {
   .navbar-nav {
     width: 100%;
 
-    @include respond-to(sm) {
+    @include respond-to(md) {
       width: 33.33%;
     }
   }

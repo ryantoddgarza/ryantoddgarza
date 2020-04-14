@@ -1,0 +1,46 @@
+// file: _grid.scss
+
+// Lightweight mobile first grid based on CSS Flexbox
+// v1.0.0
+// Author: Ryan Todd Garza <https://ryantoddgarza.com>
+
+.flex-container {
+  display: flex;
+}
+
+// flex-direction
+//
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+// flex-wrap
+//
+
+.wrap-no {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+} 
+
+// flex
+//
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}

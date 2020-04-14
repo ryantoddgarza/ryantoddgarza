@@ -2,7 +2,7 @@
 
 // 16:9
 .responsive-video {
-  @include responsive-wrapper(56.25%);
+  @include responsive-wrapper(100%, 56.25%);
 }
 
 .responsive-video iframe {

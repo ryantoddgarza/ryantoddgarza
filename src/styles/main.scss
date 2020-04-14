@@ -6,13 +6,15 @@
 @import '1-abstracts/mixins';
 
 // 2 - VENDORS
-@import '2-vendors/bootstrap/bootstrap'; // Before enabling a framework review potential redundancies (ie. normalize, reset, base)
-@import '2-vendors/animate/animate';
+// @import '2-vendors/bootstrap/bootstrap'; // Before enabling a framework review potential redundancies (ie. normalize, reset, base)
 @import '2-vendors/normalize';
-@import '2-vendors/base.scss';
+@import '2-vendors/base';
+@import '2-vendors/bindu/bindu';
+@import '2-vendors/modularscale';
+@import '2-vendors/animate/animate';
 
 // 2 - VENDORS - EXTENSIONS
-@import '2-vendors-extensions/base-extension.scss';
+@import '2-vendors-extensions/base-extension';
 
 // 3 - BASICS
 @import '3-basics/global';

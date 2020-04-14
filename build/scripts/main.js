@@ -93,6 +93,8 @@ setInterval(function() {
 
 function hasScrolled() {
     const scrollTop = $(this).scrollTop();
+    const windowHeight = $(window).height();
+    const documentHeight = $(document).height();
 
     // Make sure they scroll more than delta
     if(Math.abs(lastScrollTop - scrollTop) <= delta)
@@ -105,7 +107,7 @@ function hasScrolled() {
         $('#navBar').removeClass('nav-down').addClass('nav-up');
     } else {
         // Scroll Up
-        if(scrollTop + $(window).height() < $(document).height()) {
+        if(scrollTop + windowHeight < documentHeight) {
           $('#navBar').removeClass('nav-up').addClass('nav-down');
         }
     }
@@ -115,27 +117,22 @@ function hasScrolled() {
       $('html').removeClass('nav-is-open');
     }
 
+    // Halfway through the last section add class hide `pgDown`.
+    if (scrollTop + windowHeight > documentHeight - windowHeight/2) {
+      $('#pgDown').addClass('fin');
+    } else {
+      $('#pgDown').removeClass('fin');
+    }
+
     lastScrollTop = scrollTop;
 }
-
-// Half through the last section add class .fin to hide `#pgNext`.
-$(window).scroll(function() {
-  var vh = $(window).height();
-  var dh = $(document).height();
-
-  if ($(window).scrollTop() + vh > dh - (vh/2)) {
-    $('#pgNext').addClass('fin');
-  } else {
-    $('#pgNext').removeClass('fin');
-  }
-})
 
 // FIXED ELEMENTS
 // 
 
 // Page change
-// 1. `pgNext`` scroll to next section on click.
-const pgNext = document.getElementById('pgNext');
+// 1. Scroll to next section on click.
+const pgDown = document.getElementById('pgDown');
 
 let nextPage = function nextPage() {
   let i = 2;
@@ -144,22 +141,29 @@ let nextPage = function nextPage() {
   sectionEl.scrollIntoView();
 } 
 
-pgNext.addEventListener('click', nextPage); // 1
+pgDown.addEventListener('click', nextPage); // 1
 
 // MODALS
-// For old site. Delete after.
+//
 
 function openModal() {
-  document.body.classList.toggle("modal-open");
-  document.getElementById("myModal").style.display = "block";
-  document.getElementById("myModal").classList.remove("fade-out");
-  document.getElementById("myModal").scrollTop = 0;
+  // Move into viewport
+  document.getElementById("myModal").style.transform = "translateX(0)";
+
+  // Always scroll modal content to top on open.
+  //
+  const modalContent = document.getElementsByClassName("modal-content");
+  // Converts modal-content array into individual elements.
+  Array.from(modalContent).forEach(function(element) {
+    element.scrollTop = '0';
+  });
+  // Disable scroll on body.
+  // document.body.style.position = "fixed";
 }
 
 function closeModal() {
-  document.body.classList.toggle("modal-open");
-  document.getElementById("myModal").classList.add("fade-out");
-  document.getElementById("myModal").style.display = "none";
+  // Move out of viewport
+  document.getElementById("myModal").style.transform = "translateX(-100%)";
 }
 
 var slideIndex = 1;
@@ -175,7 +179,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("my-slides");
   var dots = document.getElementsByClassName("demo");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
@@ -185,22 +189,22 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  // slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "block";
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+// function topFunction() {
+//   document.body.scrollTop = 0;
+//   document.documentElement.scrollTop = 0;
+// }
 
-$(window).scroll(function() {
-  $('#topBtn').each(function(){
-  var imagePos = $(this).offset().top;
+// $(window).scroll(function() {
+//   $('#topBtn').each(function(){
+//   var imagePos = $(this).offset().top;
 
-  var topOfWindow = $(window).scrollTop();
-    if (imagePos < topOfWindow+400) {
-      $(this).addClass("slideLeft");
-    }
-  });
-});
+//   var topOfWindow = $(window).scrollTop();
+//     if (imagePos < topOfWindow+400) {
+//       $(this).addClass("slideLeft");
+//     }
+//   });
+// });

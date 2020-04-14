@@ -18,28 +18,18 @@ $bg-primary: $off-white; // primary background color of the body.
 
 // TYPOGRAPHY
 //
-
-// Root vertical rhythm variables
-$base-font-size: 16px; // scales entire vertical rhythm structure
-$base-font-weight: normal;
-$rhythm-unit: 1.75rem; // basis for vertical rhythm
+// TODO migrate to Bindu.
+$rhythm-unit: 1.75rem; // Basis for vertical rhythm of non text elements.
 
 // Typography variables
 $font-light: "OpenSans-Light", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
 $font-book: "OpenSans", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
 $font-medium: "OpenSans-SemiBold",  "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
 $font-bold: "OpenSans-ExtraBold", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
+$font-accent: "Catamaran", "Helvetica Nue", "Helvetica", "Roboto", "Arial", sans-serif;
 
 // MEDIA QUERIES
 // Migrate to mixin.
-
-// Defining values
-$screen-sm-min: 768px;
-$screen-xs-max: ($screen-sm-min - 1);
-$screen-md-min: 992px;
-$screen-sm-max: ($screen-md-min - 1);
-$screen-lg-min: 1200px;
-$screen-md-max: ($screen-lg-min - 1);
 
 // Target laptop/desktop
 // For more info read:

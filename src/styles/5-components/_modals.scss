@@ -1,7 +1,7 @@
 // File: _modals.scss
 
 // The Modal (background)
-.my-modal {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,10 +12,14 @@
   // overflow-y: scroll;
   z-index: 1050;
   background-color: $white;
-  outline: 0; // Prevent Chrome on Windows from adding a focus outline. For details, see
+  outline: 0; // Prevent Chrome on Windows from adding a focus outline.
   overscroll-behavior: contain; // Kill scroll on `body`. No Safari support.
   transform: translateX(-100%);
   transition: all $transition-lazy ease-in-out;
+}
+
+.modal-is-open {
+  transform: translateX(0);
 }
 
 // Modal Content

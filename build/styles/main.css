@@ -1194,7 +1194,7 @@ a, .link {
   transform: translateY(5.25rem);
 }
 
-.my-modal {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -1208,6 +1208,10 @@ a, .link {
   overscroll-behavior: contain;
   transform: translateX(-100%);
   transition: all 1s ease-in-out;
+}
+
+.modal-is-open {
+  transform: translateX(0);
 }
 
 .modal-content {

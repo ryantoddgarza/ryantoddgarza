@@ -146,26 +146,32 @@ pgDown.addEventListener('click', nextPage); // 1
 // MODALS
 //
 
-function openModal() {
-  // Move into viewport
-  document.getElementById("myModal").style.transform = "translateX(0)";
-
-  // Always scroll modal content to top on open.
-  //
-  const modalContent = document.getElementsByClassName("modal-content");
-  // Converts modal-content array into individual elements.
-  Array.from(modalContent).forEach(function(element) {
-    element.scrollTop = '0';
-  });
-  // Disable scroll on body.
-  // document.body.style.position = "fixed";
+// Modal open/close constructor function
+function Modal(id) {
+  var id = '#' + id;
+  this.openModal = function() {
+    document.querySelector(id).classList.add('modal-is-open');
+    // Scroll modal content to top on open.
+    // 1. Convert `modalContent` array into individual elements.
+    const modalContent = document.querySelectorAll(".modal-content");
+    Array.from(modalContent).forEach(function(element) { // 1
+      element.scrollTop = '0';
+    });
+  }
+  this.closeModal = function() {
+    document.querySelector(id).classList.remove('modal-is-open');
+  }
 }
 
-function closeModal() {
-  // Move out of viewport
-  document.getElementById("myModal").style.transform = "translateX(-100%)";
+// Create `myModal`` object
+function myModal() {
+  myModal = new Modal('myModal');
 }
+// Call object
+myModal();
 
+
+// Slides
 var slideIndex = 1;
 showSlides(slideIndex);
 

@@ -88,7 +88,7 @@
             </div>
                 
             <div class="section-main-carousel">
-              <img onclick="openModal();currentSlide(1)" src="images/performance/ttsp/0050_012-MF-web.jpg">
+              <img onclick="myModal.openModal();currentSlide(1)" src="images/performance/ttsp/0050_012-MF-web.jpg">
             </div>
 
             <div class="section-main-description">
@@ -382,10 +382,10 @@
   <footer></footer>
 
   <!-- Modals -->
-  <div id="myModal" class="my-modal">
+  <div id="myModal" class="modal">
 
     <!-- Close modal -->
-    <div class="close-modal" onclick="closeModal()"></div>
+    <div class="close-modal" onclick="myModal.closeModal()"></div>
 
     <!-- toward the south plains (1) -->
     <div class="modal-content">

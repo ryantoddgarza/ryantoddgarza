@@ -1,0 +1,100 @@
+{
+  "name": "ryantoddgarza",
+  "version": "1.0.0",
+  "description": "portfolio site",
+  "main": "n/a",
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://ryantoddgarza.com",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint --ext .js,.jsx --config .eslintrc.js",
+    "dev": "gatsby develop",
+    "clean": "rm -rf .cache && rm -rf public",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.6",
+    "core-js": "^3.6.5",
+    "gatsby": "^2.24.36",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^3.10.0",
+    "react-toggle": "^4.1.1",
+    "react-truncate": "^2.4.0",
+    "react-twitter-widgets": "^1.9.5",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-pipeline-operator": "^7.10.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-emotion": "^10.0.33",
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-import-resolver-webpack": "^0.12.2",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "gatsby-plugin-google-analytics": "^2.3.13",
+    "gatsby-plugin-manifest": "^2.4.22",
+    "gatsby-plugin-offline": "^3.2.22",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-sharp": "^2.6.25",
+    "gatsby-plugin-sitemap": "^2.4.11",
+    "gatsby-plugin-styled-components": "^3.3.10",
+    "gatsby-remark-copy-linked-files": "^2.3.12",
+    "gatsby-remark-images": "^3.3.25",
+    "gatsby-remark-prismjs": "^3.5.10",
+    "gatsby-remark-responsive-iframe": "^2.4.12",
+    "gatsby-remark-smartypants": "^2.3.10",
+    "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-transformer-remark": "^2.8.28",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "prettier-eslint-cli": "^5.0.0",
+    "prismjs": "^1.21.0"
+  },
+  "browserslist": [
+    "> 10%",
+    "IE >= 9",
+    "last 2 versions"
+  ],
+  "lint-staged": {
+    "linters": {
+      "*.{js,jsx}": [
+        "npm run lint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "./.*.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
+}

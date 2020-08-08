@@ -40,7 +40,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 640,
+              quality: 70,
+              maxWidth: 800,
+              showCaptions: true,
             },
           },
           {

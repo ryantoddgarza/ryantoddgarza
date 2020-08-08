@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PRIMARY_COLOR } from '~/components/Common/Constants';
+import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Tags = styled.div`
   margin: 1em 0;

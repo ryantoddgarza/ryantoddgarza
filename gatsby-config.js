@@ -42,7 +42,7 @@ module.exports = {
             options: {
               quality: 70,
               maxWidth: 800,
-              showCaptions: true,
+              showCaptions: ['title'],
             },
           },
           {

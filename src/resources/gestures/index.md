@@ -15,14 +15,12 @@ Struggling to find a subject in a place with such flat terrain and hard edges as
 
 ## Role
 
-- Photographer
+Photographer
 
-## On display
+## Exhibitions
 
-- May 01 2019 - July 26 2019
-- First Friday Art Trail, Lubbock, TX
+May - July 2019 First Friday Art Trail, Lubbock, TX
 
-## Metadata
+## Prints
 
-- 2019
-- West Texas
+Several of the images in this series are available as archival prints.

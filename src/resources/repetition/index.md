@@ -11,23 +11,27 @@ images: [
   'repetition/repetition-05.jpg',
   'repetition/repetition-06.jpg',
   'repetition/repetition-07.jpg',
+  'repetition/repetition-08.jpg',
+  'repetition/repetition-09.jpg',
 ]
 ---
 
 # Repetition
 
-Enough exhausts what hands made precious...guilty
+(Ongoing)
+
+Enough exhausts what hands made precious...guilty.
+
+Repetition is an ongoing photo essay depicting the forgotten and entropic corners of West Texas.
 
 ## Role
 
-- Photographer
+Photographer
 
-## On display
+## Exhibitions
 
-- May 01 2019 - July 26 2019
-- First Friday Art Trail, Lubbock, TX
+May - July 2019 First Friday Art Trail, Lubbock, TX
 
-## Metadata
+## Prints
 
-- 2019
-- Rural US
+Several of the images in this series are available as archival prints.

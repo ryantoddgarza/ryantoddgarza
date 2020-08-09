@@ -21,6 +21,7 @@ export const PortfolioDescription = styled.section`
   float: left;
   padding: 0 0 0 36px;
   width: 50%;
+  font-size: 14px;
   line-height: 1.6em;
 
   @media (max-width: 414px) {
@@ -31,18 +32,22 @@ export const PortfolioDescription = styled.section`
   }
 
   h1 {
-    margin: 0.67em 0;
-    font-size: 28px;
+    margin: 24px 0 10px;
+    font-size: 24px;
   }
 
   h2 {
-    margin: 0.67em 0;
-    font-size: 20px;
+    margin: 24px 0 10px;
+    font-size: 21px;
+  }
+
+  h3 {
+    margin: 24px 0 10px;
+    font-size: 19px;
   }
 
   p {
     margin: 16px 0 0;
-    font-size: 16px;
   }
 
   ul {

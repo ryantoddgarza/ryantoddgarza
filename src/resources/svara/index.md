@@ -4,7 +4,7 @@ title: 'svara'
 date: '2020-08-08:00:00.000Z'
 path: '/portfolios/svara/'
 images: [
-  'svara/svara-01.png',
+  'svara/svara-01.jpg',
 ]
 ---
 
@@ -14,10 +14,14 @@ Svara is a generative music application based on the traditional rules of Hindus
 
 The application currently exists as a proof of concept and can be found at [svara.dev](https://svara.dev).
 
+## Role
+
+Concept, Developer and Design
+
 ## Links
 
-- [Project web site](https://svara.dev)
-- [Github](https://github.com/ryantoddgarza/svara)
+- [Project web site →](https://svara.dev)
+- [Github →](https://github.com/ryantoddgarza/svara)
 
 ## Tech stack
 
@@ -36,6 +40,6 @@ In the visualization section of the app, the user is shown frequency and amplitu
 
 Additional rules responsible in generating the piece are the ascending scale, an altered descending scale, primary character note, supporting character note, common melodic themes, and suggested rhythmic structure.
 
-## In progress
+## Ongoing
 
 In the next iterations of the application, I plan to expand the raga API, make the resource publicly available, and add an additional dataset comprised of traditional rhythmic structures called taals. I will continue to evolve the app with more advanced synthesis techniques and refine the logic of the improvisation logic. It takes time to learn how to play music and this app just started.

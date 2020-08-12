@@ -25,7 +25,7 @@ Concept, Developer and Design
 
 ## Tech stack
 
-- React.js
+- ReactJS
 - SASS
 - Webpack
 - Web Audio API

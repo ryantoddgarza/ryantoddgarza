@@ -3,7 +3,7 @@ path: '/recursive-metric-modulation/introduction/'
 category: 'music'
 tags: ['music', 'rhythm', 'metric', 'modulation']
 title: 'Recursive Metric Modulation - Introduction'
-date: '2020-08-12T23:44:00.000Z'
+date: '2020-08-08T23:44:00.000Z'
 summary: 'By deriving "child" meters one branch at a time, new grids will always be relatable in some way to the first "parent" meter no matter how many new derivations have been made....'
 images: ['images/metric-modulation-01.jpg']
 ---
@@ -12,11 +12,13 @@ images: ['images/metric-modulation-01.jpg']
 
 ## Concept
 
-Without leaving common time how can we improvise/compose more rhythmically interesting grids?
+Without leaving a static meter, how can we improvise/compose over more rhythmically interesting grids?
 
-- Quantify the given meter into subdivisions, big beats, and phrase groups. For example: common time is generally composed of quarter notes (big beats) in groupings of 4 (phrase) with subdivisions defined by the "feel." Duple meter feel yields 8th/16th/32nd/etc. note subdivisions and triple meter feel yields triplets/sextuplets/duodectuplets etc.
-- Determine which of those elements you would like to reference a new grid from (key)
+- Quantify the given meter as subdivisions of big beats and phrase groups. For example: common time is composed of quarter notes (big beats) in groupings of 4 (phrase) with subdivisions defined by the "feel." Duple meter feel yields 8th/16th/32nd/etc. note subdivisions and triple meter feel yields triplets/sextuplets/duodectuplets etc.
+- Determine which of those elements will be the reference (key) for a new grid
 - Divide, multiply or regroup the key
 - Repeat
 
-By deriving "child" meters one branch at a time, new grids will always be relatable in some way to the first "parent" meter no matter how many new derivations have been made. So in some cases I suppose it would be more technically correct to call the first meter the "great-grandparent" or the "great-great-great-great-grandparent." This opens many improvisational/compositional possibilities in multiple meters at once.
+By recursively deriving "child" meters, new grids will always relate in some way to the initial "parent" meter regardless of the number of derivations. So I suppose that technically over iterations you can think of the first meter as the "great-grandparent" or the "great-great-great-great-grandparent" and the route can always be traced back from the most recent child to the original meter.
+
+This opens many improvisational/compositional possibilities in multiple meters at once.

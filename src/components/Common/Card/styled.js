@@ -54,6 +54,7 @@ export const StyledArticle = styled.article`
     background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
     border-radius: 6px;
     border: 1px solid #e5e5e5;
+    overflow: hidden;
 
     &:hover {
       top: -8px;
@@ -84,6 +85,7 @@ export const StyledArticle = styled.article`
     display: block;
     margin: 10px 0 0;
     font-size: 12px;
+    color: #919191;
   }
 
   p {
@@ -99,6 +101,6 @@ export const StyledArticle = styled.article`
 
   small {
     margin: 0 0 0 4px;
-    font-size: 14px;
+    font-size: 10px;
   }
 `;

@@ -49,6 +49,7 @@ export const GnbWrapper = styled.div`
   width: 100%;
   font-size: 15px;
   font-weight: 600;
+  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
   z-index: 3000;
 
   @media (max-width: 414px) {

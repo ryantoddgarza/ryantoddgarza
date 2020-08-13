@@ -1,11 +1,11 @@
 ---
-path: '/the-ashtanga-of-patanjali/'
+path: '/white-notebook/the-ashtanga-of-patanjali/'
 category: 'yoga'
-tags: ['yoga', 'white-notebook', 'yoga-sutras']
-title: 'The Ashtanga of Patanjali'
-date: '2020-08-08T07:12:00.000Z'
+tags: ['yoga', 'white-notebook', 'sutras']
+title: 'White Notebook - The Ashtanga of Patanjali'
+date: '2020-08-08T22:09:00.000Z'
 summary: 'The Yoga Sūtras of Patañjali are a condensed and systematic exposition of the essential philosophy and technique of Yoga in...'
-images: ['images/yoga-0424.jpg']
+images: ['images/yoga-0455.jpg']
 ---
 
 _Article awaiting completion. Hope you enjoy what's here. Check back soon._
@@ -97,9 +97,6 @@ Spoke with my teacher Noah Williams. When I asked about the best time to do prā
 #### Pratyahara
 
 (YS 2.54-55)
-
-// TODO: expand to Pratyahara and Dharana.
-Abhyasa (practice) and vairagya (detachment) - Bhagavad Gita
 
 #### Dharana
 

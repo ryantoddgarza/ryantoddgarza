@@ -59,11 +59,13 @@ export const PostContent = styled.section`
     margin: 0.5em 0 0 2em;
   }
 
-  em, i {
+  em,
+  i {
     font-style: italic;
   }
 
-  strong, b {
+  strong,
+  b {
     font-weight: 600;
   }
 
@@ -72,10 +74,10 @@ export const PostContent = styled.section`
     font-size: 12px;
     line-height: 1;
     vertical-align: super;
+  }
 
-    & a {
-      color: ${PRIMARY_COLOR};
-    }
+  a {
+    color: ${PRIMARY_COLOR};
   }
 `;
 

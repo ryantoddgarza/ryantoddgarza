@@ -56,6 +56,16 @@ export const PortfolioDescription = styled.section`
     list-style: disc;
   }
 
+  em,
+  i {
+    font-style: italic;
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
   a {
     color: ${PRIMARY_COLOR};
   }

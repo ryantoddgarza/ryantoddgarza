@@ -14,7 +14,7 @@ It is my intention to posit "recursive metric modulation" as a musical device to
 
 Metric modulation as such is a change in meter based on a note value from an existing meter and recursion is a repeating process whose output at each stage is applied as input in the succeeding stage. Thus, recursive metric modulation suggests that through iterations of modulations to closely related meters, distantly related meters can be implied or outright modulated to while maintaining a relationship to the original.
 
-## Basics of Rhythm
+## Rhythm Basics
 
 A brief walk through of basic definitions for sake of clarity in the concepts used throughout.
 
@@ -39,7 +39,7 @@ An elementary example for sake of clarity: a value of 1/4 (quarter note) at the 
 ## Metric Modulation
 
 > ...metric modulation is a technique in which a rhythmic pattern is superposed on another, heterometrically, and then supersedes it and becomes the basic meter.
-> -- <cite>Nicolas Slonimsky [^2]</cite>
+> <cite>-- Nicolas Slonimsky [^2]</cite>
 
 What differentiates a metric modulation from any other tempo change is that the superposed rhythm is based on a note value from the preceding meter, making the duration of the minimal denominator consistent. For example, the superposition of 6/8 over 4/4 yields a consistent 1/8 note value.
 
@@ -77,11 +77,11 @@ _Iteration 2_
 
 What results is a half note in relation to the downbeat of the 5/4 phrase but something vastly different in relation to the original 4/4 meter.
 
-### Tabla example
+### Tabla Example
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wlntlvO6x6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Step by step abstraction
+### Step by Step Abstraction
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Ym9WgisuBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

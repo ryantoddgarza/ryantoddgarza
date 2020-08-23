@@ -3,10 +3,11 @@ import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Tags = styled.div`
   margin: 1em 0;
+  font-size: 12px;
 
   a {
     margin: 0 0 0 4px;
-    color: ${PRIMARY_COLOR};
+    color: #919191;
 
     &:hover {
       text-decoration: underline;
@@ -46,8 +47,18 @@ export const PostContent = styled.section`
     font-size: 24px;
   }
 
+  cite {
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
   pre {
     margin: 20px 0 0;
+  }
+
+  code {
+    font-family: monospace;
   }
 
   ul {
@@ -69,11 +80,19 @@ export const PostContent = styled.section`
     font-weight: 600;
   }
 
-  sup {
+  sup,
+  sub {
     margin: 0 0.2em;
     font-size: 12px;
     line-height: 1;
+  }
+
+  sup {
     vertical-align: super;
+  }
+
+  sub {
+   vertical-align: sub;
   }
 
   a {

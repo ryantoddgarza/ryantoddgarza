@@ -1,22 +1,24 @@
 ---
-path: '/posts/recursive-metric-modulation/'
+path: '/posts/superimposed-recursive-metric-modulation/'
 category: 'music'
 tags: ['music', 'rhythm', 'meter', 'tempo', 'modulation']
-title: 'Recursive Metric Modulation - Rough Draft'
+title: 'Superimposed Recursive Metric Modulation - Rough Draft'
 date: '2020-08-23T23:44:00.000Z'
-summary: ''
+summary: 'Thus, recursive metric modulation suggests that through subsequent modulations to closely related meters, distantly related meters can be accessed while maintaining a relationship to the original.'
 images: ['images/metric-modulation-01.jpg']
 ---
 
 ## Concept
 
-It is my intention to posit "recursive metric modulation" as a musical device to alter the substructure upon which common rhythmic devices are based.
+It is my intention to posit "superimposed recursive metric modulation" as a musical device used to alter the substructure upon which commonly used rhythmic devices are based.
 
-Metric modulation as such is a change in meter based on a note value from an existing meter and recursion is a repeating process whose output at each stage is applied as input in the succeeding stage. Thus, recursive metric modulation suggests that through iterations of modulations to closely related meters, distantly related meters can be implied or outright modulated to while maintaining a relationship to the original.
+Metric modulation as such is a change in meter based on a note value from an existing meter. Recursion is a repeating process whose output at each stage is applied as input in the succeeding stage. Thus, recursive metric modulation suggests that through subsequent modulations to closely related meters, distantly related meters can be accessed while maintaining a relationship to the original.
+
+More specifically, the technique I would like to propose is the superimposition of metric modulations over one or more of the preceding iterations to create rhythmic dissonance.
 
 ## Rhythm Basics
 
-A brief walk through of basic definitions for sake of clarity in the concepts used throughout.
+A brief overview of basic rhythmic concepts for sake of clarity in the terms used throughout.
 
 ### Organization of Time
 
@@ -32,9 +34,9 @@ Each occupies a specific role in the way time is perceived with varying degrees 
 
 ### Metric Levels
 
-Meter can be separated into three basic levels. _beat level_, _multiple levels_, and _division levels_. In relation to the _beat level_, multiples yield slower and quotients faster durational values.
+Meter can be separated into three basic levels: _beat level_, _multiple levels_, and _division levels_. In relation to the _beat level_, multiples yield slower and quotients faster durational values.
 
-An elementary example for sake of clarity: a value of 1/4 (quarter note) at the **beat level** multiplied by 2 results in 1/2 (half note), a value at the **multiple level**; divided by 2 results in 1/8 (eighth note) at the **division level**.
+An elementary example being that a value of 1/4 (quarter note) at the **beat level** multiplied by 2 results in 1/2 (half note), a value at the **multiple level**; divided by 2 results in 1/8 (eighth note), a value at the **division level**.
 
 ## Metric Modulation
 
@@ -53,13 +55,37 @@ A process exhibits recursive behavior when the procedure refers to itself. So a 
 
 ## Process
 
-One iteration of the recursive process would be:
+The process to be iterated:
 
-- Quantify the metric levels belonging to a given meter
-- Determine which of those elements will be the basis of a new grid
-- Divide, multiply or regroup the key
+- Quantify the metric levels in a given meter
+- Designate a metric level as the basis for a new grid (_beat level_)
+- Apply an operation to the _beat level_
 
-Here is a simple example to show how a complex rhythmical grid can be achieved with just one iteration of recursivity. A video example follows.
+### Quantify Metric Levels
+
+Quantify the durational values that make up a given meter as the appropriate metric levels.
+
+### Designate a Beat Level
+
+Once the existing metric levels have been identified, we can designate a durational value to define the basis for the modulation; referred to here as the _beat level_.
+
+### Basic Operations
+
+There are three basic operations that can be applied to a durational value.
+
+- Group
+- Multiply
+- Divide
+
+**Grouping** is the process of segmenting lesser values to imply a desired pulse.
+
+**Multiply** the _beat level_ value to render larger segments of time.
+
+**Divide** the _beat level_ value to render smaller segments of time.
+
+### Example 1
+
+Here is a simple example to show how a complex rhythmical grid can be achieved with just one iteration of recursivity.
 
 _Iteration 1_
 
@@ -77,11 +103,23 @@ _Iteration 2_
 
 What results is a half note in relation to the downbeat of the 5/4 phrase but something vastly different in relation to the original 4/4 meter.
 
-### Tabla Example
+#### Example 1 - Video
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wlntlvO6x6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Step by Step Abstraction
+
+Simple operations can imply complexity. This example shows the step by step abstraction from a common meter in small increments. In western music, we are typically comfortable with operations based on 2 and 3, so all it takes is one unfamiliar prime (5 in this case) to detach a listener's ear from what is expected and create rhythmic tension.
+
+- Original meter is 4/4
+- Divide the entire measure by 5. 1/5 is the beat level
+- Multiply 1/5 by 2. 2/5 is the beat level
+- Multiply 1/5 by 3. 3/5 is the beat level
+- Divide 3/5 by 2. 3/10 is the beat level
+
+#### Step by Step Abstraction - Video
+
+_Apologies. The 3/5 section is incorrectly performed in this video. New video soon._
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Ym9WgisuBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -6,8 +6,8 @@ exports.PORTFOLIO = 'portfolio';
 exports.RESUME = 'resume';
 
 // Site Information
-exports.NAME = 'ryan todd garza';
-exports.TITLE = 'ryan todd garza';
+exports.NAME = 'Ryan Todd Garza';
+exports.TITLE = 'Ryan Todd Garza';
 exports.PREFIX = 'ryantoddgarza | ';
 exports.DESCRIPTION = 'A creative based in Los Angeles, CA';
 exports.AUTHOR = 'Ryan Todd Garza';
@@ -28,6 +28,7 @@ exports.PROFILE = 'https://avatars3.githubusercontent.com/u/46946731?s=200&v=4';
 exports.GITHUB_ID = 'ryantoddgarza';
 exports.TWITTER_ID = 'ryantoddgarza';
 exports.FACEBOOK_ID = 'ryantoddgarza';
+exports.INSTAGRAM_ID = 'ryantoddgarza';
 exports.LINKEDIN_ID = 'ryantoddgarza';
 
 // Disqus (Recommend you to use this)

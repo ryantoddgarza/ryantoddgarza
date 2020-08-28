@@ -50,9 +50,18 @@ export const PortfolioDescription = styled.section`
     margin: 16px 0 0;
   }
 
+  ol,
   ul {
-    margin: 10px 0;
-    padding: 0 0 0 40px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 3em;
+  }
+
+  ol {
+    list-style: decimal-leading-zero;
+  }
+
+  ul {
     list-style: disc;
   }
 

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -14,6 +17,10 @@ export const Wrapper = styled.div`
   ;
   color: ${({ theme: { color } }) => color};
   background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
+
+  main {
+    flex: 1 0 auto;
+  }
 
   @media print {
     & > nav,

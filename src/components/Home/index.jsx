@@ -21,8 +21,8 @@ const Home = ({ portfolios }) => (
     <SimpleWrapper>
       <SectionHeader
         title="Featured Projects"
-        cta="View All"
-        link="/portfolios"
+        link="View All"
+        path="/portfolios"
       />
       {portfolios.length >= 4 ? (
         <SimpleWrapper>

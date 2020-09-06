@@ -5,9 +5,7 @@ import { Header, Title, StyledLink } from './styled';
 const SectionHeader = ({ title, link, path }) => (
   <Header>
     <Title>{title}</Title>
-    {link ? (
-      <StyledLink to={path}>{link}</StyledLink>
-    ) : null}
+    {link ? <StyledLink to={path}>{link}</StyledLink> : null}
   </Header>
 );
 

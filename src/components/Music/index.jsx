@@ -9,10 +9,8 @@ import { Wrapper, AlbumCard, Cover, Links } from './styled';
 const Music = () => (
   <>
     <Helmet>
-      <title>
-        {`${PREFIX}music`}
-      </title>
-      <meta name="og:title" content={`${PREFIX}music`} />
+      <title>{`${PREFIX}MUSIC`}</title>
+      <meta name="og:title" content={`${PREFIX}MUSIC`} />
     </Helmet>
     <Wrapper>
       <AlbumCard>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { PRIMARY_COLOR } from '~/components/common/constants';
+import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Wrapper = styled(SimpleWrapper)`
   padding: 100px 0 0;
@@ -15,7 +15,7 @@ export const Wrapper = styled(SimpleWrapper)`
     content: '';
     clear: both;
   }
-`
+`;
 
 export const AlbumCard = styled.div`
   font-size: 14px;
@@ -25,16 +25,16 @@ export const AlbumCard = styled.div`
     font-size: 32px;
     margin-bottom: 1em;
   }
-`
+`;
 
-export const Cover= styled.div`
+export const Cover = styled.div`
   margin: 16px 0;
 
   img {
     width: 100%;
     max-width: 500px;
   }
-`
+`;
 
 export const Links = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ export const Links = styled.div`
   a {
     color: ${PRIMARY_COLOR};
   }
-   a:hover {
-     color: #000;
-   }
-`
+  a:hover {
+    color: #000;
+  }
+`;

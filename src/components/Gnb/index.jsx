@@ -119,8 +119,9 @@ const Gnb = ({
   const { pathname } = location;
   const isPortfolio = pathname.replace(/\/$/, '').startsWith('/portfolios');
   const isHome = pathname.replace(/\/$/, '') === '';
+  const isMusic = pathname.replace(/\/$/, '') === '/music';
   const isResume = pathname.replace(/\/$/, '') === '/resume';
-  const isPost = !(isPortfolio || isHome || isResume);
+  const isPost = !(isPortfolio || isHome || isMusic || isResume);
 
   return (
     <GnbWrapper>
@@ -181,6 +182,15 @@ const Gnb = ({
                 </StyledLink>
               </ListMenu>
             ) : null}
+            <ListMenu>
+              <StyledLink
+                to="/music"
+                className={isMusic ? 'active' : ''}
+                onClick={toggleMenu}
+              >
+                Music
+              </StyledLink>
+            </ListMenu>
             <ListMenu>
               <StyledLink
                 to="/resume"
@@ -287,6 +297,11 @@ const Gnb = ({
             </StyledLink>
           </ListMenu>
         ) : null}
+        <ListMenu>
+          <StyledLink to="/music" className={isMusic ? 'active' : ''}>
+            Music
+          </StyledLink>
+        </ListMenu>
         <ListMenu>
           <StyledLink to="/resume" className={isResume ? 'active' : ''}>
             Resume

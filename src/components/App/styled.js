@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     Ubuntu,
     Cantarell,
     "Helvetica Neue",
-    sans-serif;
+    sans-serif
   ;
   color: ${({ theme: { color } }) => color};
   background-color: ${({ theme: { backgroundColor } }) => backgroundColor};

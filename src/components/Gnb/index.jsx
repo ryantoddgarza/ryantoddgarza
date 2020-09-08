@@ -28,12 +28,10 @@ import {
 
 const TOGGLE_MENU = 'TOGGLE_MENU';
 const TOGGLE_SUB_MENU = 'TOGGLE_SUB_MENU';
-const INPUT_KEYWORD = 'INPUT_KEYWORD';
 
 const initialState = {
   isMenuOpened: false,
   isSubMenuClosed: true,
-  searchKeyword: '',
 };
 
 const reducer = (state = initialState, action) => {
@@ -54,14 +52,6 @@ const reducer = (state = initialState, action) => {
         isSubMenuClosed,
       };
     }
-    case INPUT_KEYWORD: {
-      const { searchKeyword } = action;
-
-      return {
-        ...state,
-        searchKeyword,
-      };
-    }
     default:
       return state;
   }
@@ -72,11 +62,10 @@ const Gnb = ({
   toggleTheme,
   isDracula,
   categories,
-  postInformations,
   hasPortfolio,
 }) => {
   const [
-    { isMenuOpened, isSubMenuClosed, searchKeyword },
+    { isMenuOpened, isSubMenuClosed },
     dispatch,
   ] = useReducer(reducer, initialState);
   const toggleMenu = useCallback(() => {
@@ -85,14 +74,6 @@ const Gnb = ({
   const toggleSubMenu = useCallback(() => {
     dispatch({ type: TOGGLE_SUB_MENU });
   }, []);
-  const navigateToPath = useCallback((path) => {
-    navigate(path);
-  }, []);
-  const inputKeyword = useCallback((e) => {
-    const searchKeyword = e.target.value;
-
-    dispatch({ type: INPUT_KEYWORD, searchKeyword });
-  });
   useEffect(() => {
     if (isMenuOpened) {
       global.document.body.style.overflow = 'hidden';
@@ -101,27 +82,11 @@ const Gnb = ({
     }
   }, [isMenuOpened]);
 
-  const filteredPosts =
-    searchKeyword.length > 0
-      ? postInformations.filter(({ category = '', title = '', tags = [] }) => {
-          const c = category.toLowerCase();
-          const h = title.toLowerCase();
-          const t = tags.map((tag) => tag.toLowerCase());
-
-          const searchedWithCategory = c.search(searchKeyword) !== -1;
-          const searchedWithTitle = h.search(searchKeyword) !== -1;
-          const searchedWithTags =
-            t.filter((t) => t.search(searchKeyword) !== -1).length > 0;
-
-          return searchedWithCategory || searchedWithTitle || searchedWithTags;
-        })
-      : [];
   const { pathname } = location;
   const isPortfolio = pathname.replace(/\/$/, '').startsWith('/portfolios');
   const isHome = pathname.replace(/\/$/, '') === '';
   const isMusic = pathname.replace(/\/$/, '') === '/music';
-  const isResume = pathname.replace(/\/$/, '') === '/resume';
-  const isPost = !(isPortfolio || isHome || isMusic || isResume);
+  const isPost = !(isPortfolio || isHome || isMusic);
 
   return (
     <GnbWrapper>
@@ -191,48 +156,6 @@ const Gnb = ({
                 Music
               </StyledLink>
             </ListMenu>
-            <ListMenu>
-              <StyledLink
-                to="/resume"
-                className={isResume ? 'active' : ''}
-                onClick={toggleMenu}
-              >
-                Resume
-              </StyledLink>
-            </ListMenu>
-            {/* <SearchBarWrapper> */}
-            {/*   <label htmlFor="search"> */}
-            {/*     <FaSearch /> */}
-            {/*   </label> */}
-            {/*   <SearchBar */}
-            {/*     id="search" */}
-            {/*     type="text" */}
-            {/*     value={searchKeyword} */}
-            {/*     onChange={inputKeyword} */}
-            {/*   /> */}
-            {/* </SearchBarWrapper> */}
-            {/* <SearchedPosts isEmpty={filteredPosts.length === 0}> */}
-            {/*   {filteredPosts.map(({ path, title, summary, tags }) => ( */}
-            {/*     <SearchedPost key={path}> */}
-            {/*       <Title onClick={() => { navigateToPath(path); }}> */}
-            {/*         {title} */}
-            {/*       </Title> */}
-            {/*       <Summary onClick={() => { navigateToPath(path); }}> */}
-            {/*         {summary} */}
-            {/*       </Summary> */}
-            {/*       {tags.length > 0 ? ( */}
-            {/*         <FaTags /> */}
-            {/*       ) : null} */}
-            {/*       {[...new Set(tags)].map(tag => ( */}
-            {/*         <Tag key={tag} onClick={() => { navigateToPath(`/tags/${tag}/1`); }}> */}
-            {/*           <small> */}
-            {/*             {tag} */}
-            {/*           </small> */}
-            {/*         </Tag> */}
-            {/*       ))} */}
-            {/*     </SearchedPost> */}
-            {/*   ))} */}
-            {/* </SearchedPosts> */}
           </ul>
         </MobileMenus>
       </MobileMenu>
@@ -302,45 +225,7 @@ const Gnb = ({
             Music
           </StyledLink>
         </ListMenu>
-        <ListMenu>
-          <StyledLink to="/resume" className={isResume ? 'active' : ''}>
-            Resume
-          </StyledLink>
-        </ListMenu>
       </List>
-      {/* <SearchBarWrapper> */}
-      {/*   <label htmlFor="search"> */}
-      {/*     <FaSearch /> */}
-      {/*   </label> */}
-      {/*   <SearchBar */}
-      {/*     id="search" */}
-      {/*     type="text" */}
-      {/*     value={searchKeyword} */}
-      {/*     onChange={inputKeyword} */}
-      {/*   /> */}
-      {/* </SearchBarWrapper> */}
-      {/* <SearchedPosts isEmpty={filteredPosts.length === 0}> */}
-      {/*   {filteredPosts.map(({ path, title, summary, tags }) => ( */}
-      {/*     <SearchedPost key={path}> */}
-      {/*       <Title onClick={() => { navigateToPath(path); }}> */}
-      {/*         {title} */}
-      {/*       </Title> */}
-      {/*       <Summary onClick={() => { navigateToPath(path); }}> */}
-      {/*         {summary} */}
-      {/*       </Summary> */}
-      {/*       {tags.length > 0 ? ( */}
-      {/*         <FaTags /> */}
-      {/*       ) : null} */}
-      {/*       {[...new Set(tags)].map(tag => ( */}
-      {/*         <Tag key={tag} onClick={() => { navigateToPath(`/tags/${tag}/1`); }}> */}
-      {/*           <small> */}
-      {/*             {tag} */}
-      {/*           </small> */}
-      {/*         </Tag> */}
-      {/*       ))} */}
-      {/*     </SearchedPost> */}
-      {/*   ))} */}
-      {/* </SearchedPosts> */}
     </GnbWrapper>
   );
 };
@@ -351,13 +236,11 @@ Gnb.propTypes = {
   toggleTheme: PropTypes.func.isRequired,
   isDracula: PropTypes.bool.isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})),
-  postInformations: PropTypes.arrayOf(PropTypes.shape({})),
   hasPortfolio: PropTypes.bool.isRequired,
 };
 
 Gnb.defaultProps = {
   categories: [],
-  postInformations: [],
 };
 
 export default Gnb;

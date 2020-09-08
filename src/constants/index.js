@@ -30,6 +30,7 @@ exports.TWITTER_ID = 'ryantoddgarza';
 exports.FACEBOOK_ID = 'ryantoddgarza';
 exports.INSTAGRAM_ID = 'ryantoddgarza';
 exports.LINKEDIN_ID = 'ryantoddgarza';
+exports.PATREON_ID = 'ryantoddgarza';
 
 // Disqus (Recommend you to use this)
 exports.DISQUS_ID = 'sample';

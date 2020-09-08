@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaRegEnvelope, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { EMAIL, GITHUB_ID, INSTAGRAM_ID, LINKEDIN_ID } from '~/constants';
+import { FaRegEnvelope, FaGithub, FaLinkedin, FaInstagram, FaPatreon } from 'react-icons/fa';
+import { EMAIL, GITHUB_ID, INSTAGRAM_ID, LINKEDIN_ID, PATREON_ID } from '~/constants';
 import { FooterWrapper, SocialInformation, Copyright } from './styled';
 
 const Footer = () => (
@@ -9,6 +9,15 @@ const Footer = () => (
       {EMAIL ? (
         <a href={`mailto:${EMAIL}`} rel="noreferrer noopener">
           <FaRegEnvelope />
+        </a>
+      ) : null}
+      {INSTAGRAM_ID ? (
+        <a
+          href={`https://instagram.com/${INSTAGRAM_ID}/`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaInstagram />
         </a>
       ) : null}
       {GITHUB_ID ? (
@@ -29,13 +38,13 @@ const Footer = () => (
           <FaLinkedin />
         </a>
       ) : null}
-      {INSTAGRAM_ID ? (
+      {PATREON_ID ? (
         <a
-          href={`https://instagram.com/${INSTAGRAM_ID}/`}
+          href={`https://patreon.com/${PATREON_ID}`}
           target="_blank"
           rel="noreferrer noopener"
         >
-          <FaInstagram />
+          <FaPatreon />
         </a>
       ) : null}
     </SocialInformation>

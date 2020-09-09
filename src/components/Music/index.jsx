@@ -18,31 +18,37 @@ const Music = () => (
         <Cover>
           <img src={CoverEkam} alt="album cover" />
         </Cover>
-        <p>September 09, 2020</p>
         <Links>
           <a
-            href="https://ryantoddgarza.bandcamp.com/"
+            href="https://ryantoddgarza.bandcamp.com/album/ekam"
             target="_blank"
             rel="noreferrer noopener"
           >
             Bandcamp →
           </a>
           <a
-            href="https://open.spotify.com/artist/7IWzHdwu7JSvad216IyNoe"
+            href="https://open.spotify.com/album/5kcR0DN8RXN54AfmIngvl6"
             target="_blank"
             rel="noreferrer noopener"
           >
             Spotify →
           </a>
           <a
-            href="https://music.apple.com/us/artist/ryan-todd-garza/1094837829"
+            href="https://music.apple.com/us/album/ekam/1530523304"
             target="_blank"
             rel="noreferrer noopener"
           >
             Apple Music →
           </a>
           <a
-            href="https://listen.tidal.com/artist/7686132"
+            href="https://music.amazon.com/albums/B08HKQ1XFL"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Amazon Music →
+          </a>
+          <a
+            href="https://listen.tidal.com/album/154208173"
             target="_blank"
             rel="noreferrer noopener"
           >

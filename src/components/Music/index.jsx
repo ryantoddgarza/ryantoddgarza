@@ -6,6 +6,34 @@ import CoverEkam from '~/resources/images/cover-ekam.jpg';
 import { PREFIX } from '~/constants';
 import { Wrapper, AlbumCard, Cover, Links } from './styled';
 
+const dist = [
+  {
+    distributor: 'Bandcamp',
+    url: 'https://ryantoddgarza.bandcamp.com/album/ekam',
+  },
+  {
+    distributor: 'Spotify',
+    url: 'https://open.spotify.com/album/5kcR0DN8RXN54AfmIngvl6',
+  },
+  {
+    distributor: 'Tidal',
+    url: 'https://listen.tidal.com/album/154208173',
+  },
+  {
+    distributor: 'Apple Music',
+    url: 'https://music.apple.com/us/album/ekam/1530523304',
+  },
+  {
+    distributor: 'Amazon Music',
+    url: 'https://music.amazon.com/albums/B08HKQ1XFL',
+  },
+  {
+    distributor: 'YouTube Music',
+    url:
+      'https://music.youtube.com/playlist?list=OLAK5uy_lC9q35EmKWO5uDCKvnTu9MsDP20wLMSKk',
+  },
+];
+
 const Music = () => (
   <>
     <Helmet>
@@ -19,41 +47,16 @@ const Music = () => (
           <img src={CoverEkam} alt="album cover" />
         </Cover>
         <Links>
-          <a
-            href="https://ryantoddgarza.bandcamp.com/album/ekam"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Bandcamp →
-          </a>
-          <a
-            href="https://open.spotify.com/album/5kcR0DN8RXN54AfmIngvl6"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Spotify →
-          </a>
-          <a
-            href="https://music.apple.com/us/album/ekam/1530523304"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Apple Music →
-          </a>
-          <a
-            href="https://music.amazon.com/albums/B08HKQ1XFL"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Amazon Music →
-          </a>
-          <a
-            href="https://listen.tidal.com/album/154208173"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Tidal →
-          </a>
+          {dist.map(({ distributor, url }) => (
+            <a
+              href={url}
+              key={distributor}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {distributor} →
+            </a>
+          ))}
         </Links>
       </AlbumCard>
     </Wrapper>

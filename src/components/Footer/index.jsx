@@ -1,6 +1,20 @@
 import React from 'react';
-import { FaRegEnvelope, FaGithub, FaLinkedin, FaInstagram, FaPatreon } from 'react-icons/fa';
-import { EMAIL, GITHUB_ID, INSTAGRAM_ID, LINKEDIN_ID, PATREON_ID } from '~/constants';
+import {
+  FaRegEnvelope,
+  FaGithub,
+  FaFacebook,
+  FaLinkedin,
+  FaInstagram,
+  FaPatreon,
+} from 'react-icons/fa';
+import {
+  EMAIL,
+  GITHUB_ID,
+  FACEBOOK_ID,
+  INSTAGRAM_ID,
+  LINKEDIN_ID,
+  PATREON_ID,
+} from '~/constants';
 import { FooterWrapper, SocialInformation, Copyright } from './styled';
 
 const Footer = () => (
@@ -18,6 +32,15 @@ const Footer = () => (
           rel="noreferrer noopener"
         >
           <FaInstagram />
+        </a>
+      ) : null}
+      {FACEBOOK_ID ? (
+        <a
+          href={`https://facebook.com/${FACEBOOK_ID}`}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaFacebook />
         </a>
       ) : null}
       {GITHUB_ID ? (

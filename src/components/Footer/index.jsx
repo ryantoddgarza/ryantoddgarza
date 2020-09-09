@@ -36,7 +36,7 @@ const Footer = () => (
       ) : null}
       {FACEBOOK_ID ? (
         <a
-          href={`https://instagram.com/${FACEBOOK_ID}`}
+          href={`https://facebook.com/${FACEBOOK_ID}`}
           target="_blank"
           rel="noreferrer noopener"
         >

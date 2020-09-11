@@ -22,6 +22,10 @@ Dynamic site ∙ Application ∙ 2020 ∙ <a href="https://svara.dev" target="_b
 
 Static site ∙ Portfolio ∙ 2020 ∙ <a href="https://harlanhodges.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
 
+### Ryan Todd Garza
+
+Static site ∙ Portfolio ∙ Blog ∙ 2020 ∙ <a href="https://ryantoddgarza.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
+
 ### Toward The South Plains
 
 Static site ∙ 2019 ∙ <a href="http://towardthesouthplains.com" target="_blank" rel="noreferrer noopener">Visit site →</a>

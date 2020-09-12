@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
 import SectionHeader from '~/components/Common/SectionHeader';
 import CoverEkam from '~/resources/images/cover-ekam.jpg';
 import { PREFIX } from '~/constants';
@@ -44,7 +45,9 @@ const Music = () => (
       <AlbumCard>
         <h2>Ekam</h2>
         <Cover>
-          <img src={CoverEkam} alt="album cover" />
+          <Link to="/music/ekam">
+            <img src={CoverEkam} alt="album cover" />
+          </Link>
         </Cover>
         <Links>
           {dist.map(({ distributor, url }) => (

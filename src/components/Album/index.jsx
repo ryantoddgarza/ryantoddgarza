@@ -67,17 +67,19 @@ const Album = ({
         </Tracklist>
       </AlbumStart>
       <AlbumEnd>
+        <h2>Listen</h2>
         <Links>
-          <h2>Listen</h2>
           {links.map(({ distributor, url }) => (
-            <a
-              href={url}
-              key={distributor}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {distributor} →
-            </a>
+            <li>
+              <a
+                href={url}
+                key={distributor}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {distributor} →
+              </a>
+            </li>
           ))}
         </Links>
       </AlbumEnd>

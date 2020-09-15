@@ -93,18 +93,17 @@ export const Tracklist = styled.div`
   }
 `;
 
-export const Links = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Links = styled.ul`
   margin: 1em 0;
 
-  & > * {
+  li {
     margin-bottom: 8px;
   }
 
   a {
     color: ${PRIMARY_COLOR};
   }
+
   a:hover {
     color: #000;
   }

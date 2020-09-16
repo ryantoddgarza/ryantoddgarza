@@ -3,102 +3,130 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Wrapper = styled(SimpleWrapper)`
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  min-height: 100vh;
   padding: 100px 0 0;
-  margin: auto;
   font-size: 14px;
 
   @media (max-width: 414px) {
     padding: 70px 16px 0;
   }
 
-  &:before,
-  &:after {
-    display: block;
-    content: '';
-    clear: both;
+  h2 {
+    margin-bottom: 36px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  li {
+    margin-bottom: 12px;
   }
 `;
 
-export const AlbumPanel = styled.div`
-  flex: 1 0 auto;
+export const AlbumPrimary = styled.section`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
+`;
+
+export const AlbumSecondary = styled.section`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
+`;
+
+export const ContentLeft = styled.div`
+  position: relative;
+  flex: 1 0 0;
+
+  @media (min-width: 769px) {
+    flex: 3 0 0;
+    margin-left: 36px;
+    margin-right: 5%;
+  }
+`;
+
+export const ContentRight = styled.div`
+  position: relative;
+  flex: 1 0 0;
+
+  @media (min-width: 769px) {
+    flex: 2 0 0;
+    margin-right: 36px;
+  }
+`;
+
+export const Title = styled.div`
+  margin-bottom: 36px;
 
   h1 {
-    font-size: 32px;
-    margin-bottom: 1em;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 1em;
+    font-size: 36px;
+    margin-bottom: 24px;
   }
 `;
-
-export const AlbumStart = styled.section`
-  display: flex;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-
-  & > * {
-    flex: 1 0 0;
-    margin-bottom: 16px;
-  }
-`;
-
-export const AlbumEnd = styled.section``;
 
 export const Cover = styled.div`
+  margin-bottom: 40px;
+
   img {
     width: 100%;
-    max-width: 500px;
 
-    @media (max-width: 768px) {
-      max-width: unset;
+    @media (min-width: 769px) {
+      max-width: 500px;
     }
   }
+`;
+
+export const Details = styled.div`
+  margin-bottom: 40px;
+  font-size: 11px;
+  color: #adadad;
 `;
 
 export const Tracklist = styled.div`
+  margin-bottom: 40px;
+
   .track-row {
     display: flex;
-    padding: 6px 0;
-
-    & > * {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+    margin-bottom: 16px;
   }
 
   .track-counter {
     flex: 0 0 10%;
-    min-width: fit-content;
-    padding-right: 8px;
+    min-width: 2em;
   }
 
   .track-name {
     flex: 1 1 auto;
+    min-width: 4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .track-lyrics,
   .track-video {
     flex: 0 0 10%;
-    min-width: 3em;
+    min-width: 4em;
+    font-size: 11px;
+    text-transform: uppercase;
     text-align: right;
+
+    & a {
+      color: #adadad;
+    }
+
+    & a:hover {
+      color: ${PRIMARY_COLOR};
+    }
   }
 `;
 
 export const Links = styled.ul`
-  margin: 1em 0;
-
-  li {
-    margin-bottom: 8px;
-  }
+  margin-bottom: 40px;
 
   a {
     color: ${PRIMARY_COLOR};
@@ -106,5 +134,19 @@ export const Links = styled.ul`
 
   a:hover {
     color: #000;
+  }
+`;
+
+export const Credits = styled.div`
+  margin-bottom: 40px;
+
+  dl {
+    display: flex;
+
+    & dt,
+    & dd {
+      flex: 1 0 0;
+      margin-bottom: 16px;
+    }
   }
 `;

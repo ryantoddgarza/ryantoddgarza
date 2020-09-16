@@ -30,12 +30,19 @@ export const pageQuery = graphql`
         title
         cover
         metadata {
+          date
+          format
+          upc
           tracks {
             title
             runtime
             lyrics
             video
           }
+        }
+        credits {
+          name
+          role
         }
         links {
           distributor

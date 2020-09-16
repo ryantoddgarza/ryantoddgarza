@@ -2,11 +2,13 @@
 type: 'album'
 artist: 'Ryan Todd Garza'
 title: 'Ekam'
-date: '2020-09-09T00:00:00.000Z'
 path: '/music/ekam'
 cover: 'ekam/ekam-cover.jpg'
 metadata:
   {
+    date: '2020-09-09T00:00:00.000Z',
+    format: 'Digital',
+    upc: '195595702252',
     tracks:
       [
         {
@@ -59,6 +61,21 @@ metadata:
         },
       ],
   }
+credits:
+  [
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Written and produced by',
+    },
+    {
+      name: 'William Caleb Parker',
+      role: 'Mixed by',
+    },
+    {
+      name: 'Dale Becker',
+      role: 'Mastered by',
+    },
+  ]
 links:
   [
     {

@@ -9,6 +9,7 @@ metadata:
     date: '2020-09-09T00:00:00.000Z',
     format: 'Digital',
     upc: '195595702252',
+    publishing: 'All compositions © 2020 Ryan Todd Garza (BMI)',
     tracks:
       [
         {
@@ -75,6 +76,82 @@ credits:
       name: 'Dale Becker',
       role: 'Mastered by',
     },
+    {
+      name: 'Justin Sinclair',
+      role: 'Associate producer',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Acoustic guitar',
+    },
+    {
+      name: 'Sterling Masat',
+      role: 'Acoustic guitar [6] and banjo [3]',
+    },
+    {
+      name: 'Caleb Jude Green',
+      role: 'Background vocals [6]',
+    },
+    {
+      name: 'Cameron Moreland',
+      role: 'Bass',
+    },
+    {
+      name: 'Sara Nelson',
+      role: 'Cello',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Drums',
+    },
+    {
+      name: 'Dustin Garrett',
+      role: 'Electric guitar [3]',
+    },
+    {
+      name: 'Steven Marcus',
+      role: 'Electric guitar',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Electric guitar [2]',
+    },
+    {
+      name: 'Todd Caldwell',
+      role: 'Hammond B3',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Harmonium',
+    },
+    {
+      name: 'Steve Williams',
+      role: 'Pedal steel and dobro',
+    },
+    {
+      name: 'Harlan Hodges',
+      role: 'String arrangement [7] and harmonium',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Vocals',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Recording engineer',
+    },
+    {
+      name: 'Grant Johnson',
+      role: 'Additional engineering',
+    },
+    {
+      name: 'Tanner Jacobsen',
+      role: 'Additional engineering',
+    },
+    {
+      name: 'Ryan Todd Garza',
+      role: 'Graphic design',
+    },
   ]
 links:
   [
@@ -98,6 +175,10 @@ links:
     {
       distributor: 'YouTube Music',
       url: 'https://music.youtube.com/playlist?list=OLAK5uy_lC9q35EmKWO5uDCKvnTu9MsDP20wLMSKk',
+    },
+    {
+      distributor: 'Deezer',
+      url: 'https://www.deezer.com/en/album/171313222',
     },
   ]
 ---

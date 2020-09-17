@@ -25,7 +25,7 @@ const Album = ({
         artist,
         title,
         cover,
-        metadata: { date, format, upc, tracks },
+        metadata: { date, format, upc, publishing, tracks },
         credits = [],
         links = [],
       },
@@ -43,6 +43,8 @@ const Album = ({
 
     return Math.round(seconds / 60);
   };
+
+  const dlChildren = (t, d) => [<dt key={t}>{t}</dt>, <dd key={d}>{d}</dd>];
 
   return (
     <Wrapper>
@@ -120,15 +122,15 @@ const Album = ({
               })}
             </ul>
           </Tracklist>
-          {credits ? (
+          {credits || publishing ? (
             <Credits>
               <h2>Credits</h2>
-              {credits.map(({ name, role }) => (
+              {credits ? (
                 <dl>
-                  <dd>{role}</dd>
-                  <dt>{name}</dt>
+                  {credits.map(({ name, role }) => dlChildren(role, name))}
                 </dl>
-              ))}
+              ) : null}
+              {publishing ? <p>{publishing}</p> : null}
             </Credits>
           ) : null}
         </ContentLeft>
@@ -137,9 +139,5 @@ const Album = ({
     </Wrapper>
   );
 };
-
-// Album.propTypes = {
-//   data: PropTypes.shape({ date: PropTypes.object }).isRequired,
-// };
 
 export default Album;

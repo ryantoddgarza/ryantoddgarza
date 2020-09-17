@@ -33,6 +33,7 @@ export const pageQuery = graphql`
           date
           format
           upc
+          publishing
           tracks {
             title
             runtime

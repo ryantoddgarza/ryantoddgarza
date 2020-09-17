@@ -139,14 +139,28 @@ export const Links = styled.ul`
 
 export const Credits = styled.div`
   margin-bottom: 40px;
+  font-size: 11px;
 
   dl {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 24px;
 
     & dt,
     & dd {
-      flex: 1 0 0;
-      margin-bottom: 16px;
+      line-height: 2;
+      margin-bottom: 6px;
+    }
+
+    & > :nth-child(odd) {
+      margin-right: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &::after {
+        content: "${'.'.repeat(250)}";
+      }
     }
   }
 `;

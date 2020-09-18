@@ -81,20 +81,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#a88f48',
         display: 'minimal-ui',
-        icons: [
-          {
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          /*
-        , {
-          src: `/favicons/android-chrome-512x512.png`,
-          sizes: `512x512`,
-          type: `image/png`,
-        }
-        */
-        ],
+        icon: 'src/resources/images/icon.png',
       },
     },
     'gatsby-plugin-sitemap',

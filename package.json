@@ -17,7 +17,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint --ext .js,.jsx --config .eslintrc.js",
-    "dev": "gatsby develop",
+    "dev": "gatsby clean && gatsby develop",
     "clean": "rm -rf .cache && rm -rf public",
     "build": "gatsby build",
     "serve": "gatsby serve",

@@ -92,7 +92,7 @@ export const PostContent = styled.section`
   }
 
   sub {
-   vertical-align: sub;
+    vertical-align: sub;
   }
 
   a {

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
+import { Container } from '~/components/Common/Container';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
-export const Wrapper = styled(SimpleWrapper)`
+export const Wrapper = styled(Container)`
+  position: relative;
   padding: 100px 0 0;
 
   @media (max-width: 414px) {

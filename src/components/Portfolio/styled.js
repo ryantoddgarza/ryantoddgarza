@@ -19,7 +19,7 @@ export const Wrapper = styled(SimpleWrapper)`
 
 export const PortfolioDescription = styled.section`
   float: left;
-  padding: 0 0 0 36px;
+  padding: 0 0 0 5%;
   width: 50%;
   font-size: 14px;
   line-height: 1.6em;
@@ -82,7 +82,7 @@ export const PortfolioDescription = styled.section`
 
 export const PortfolioImages = styled.section`
   float: left;
-  padding: 0 36px 0 0;
+  padding: 0 5% 0 0;
   width: 50%;
   max-height: calc(100vh - 100px);
   overflow-y: scroll;

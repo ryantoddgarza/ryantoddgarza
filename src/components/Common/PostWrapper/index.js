@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const PostWrapper = styled.section`
   margin: auto;
   padding: 120px 0 0;
-  max-width: 720px;
+  max-width: 800px;
   font-size: 14px;
   @media (max-width: 414px) {
-    padding: 70px 16px 0;
+    padding: 70px 0 0;
   }
 
   &:before,

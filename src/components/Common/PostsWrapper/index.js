@@ -1,12 +1,12 @@
 import styled from 'styled-components';
+import { Container } from '~/components/Common/Container';
 
-const PostsWrapper = styled.section`
-  margin: auto;
+const PostsWrapper = styled(Container)`
   padding: 120px 0 0;
-  max-width: 1176px;
   font-size: 0;
+
   @media (max-width: 414px) {
-    padding: 70px 16px 0;
+    padding: 70px 0 0;
   }
 
   &:before,
@@ -23,7 +23,7 @@ const PostsWrapper = styled.section`
 
   time {
     margin: 1em 0;
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 

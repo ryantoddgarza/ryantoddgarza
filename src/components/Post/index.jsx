@@ -8,9 +8,15 @@ import { FaTags } from 'react-icons/fa';
 import Clipboard from 'clipboard';
 import Bio from '~/components/Bio';
 import PostWrapper from '~/components/Common/PostWrapper';
+import { Container } from '~/components/Common/Container';
 import { PREFIX, SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
-import { Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
+import {
+  Tags,
+  PostContent,
+  ImageWrapper,
+  ComponentInPost,
+} from './styled';
 
 const PostTemplate = ({
   data: {
@@ -47,7 +53,9 @@ const PostTemplate = ({
   }, []);
 
   const createCopyButton = useCallback(() => {
-    const codes = global.document.querySelectorAll('#post-contents .gatsby-highlight');
+    const codes = global.document.querySelectorAll(
+      '#post-contents .gatsby-highlight',
+    );
 
     codes.forEach((code) => {
       const button = document.createElement('button');
@@ -69,17 +77,22 @@ const PostTemplate = ({
   const renderComponents = useCallback((components) => {
     if (Array.isArray(components)) {
       try {
-        components.forEach(({ rootId: componentRootId, fileName: componentFileName }) => {
-          const $componentContainer = global.document.getElementById(componentRootId);
-          const App = require(`~/postComponents/${componentFileName}`).default;
+        components.forEach(
+          ({ rootId: componentRootId, fileName: componentFileName }) => {
+            const $componentContainer = global.document.getElementById(
+              componentRootId,
+            );
+            const App = require(`~/postComponents/${componentFileName}`)
+              .default;
 
-          render(
-            <ComponentInPost>
-              <App />
-            </ComponentInPost>,
-            $componentContainer
-          );
-        });
+            render(
+              <ComponentInPost>
+                <App />
+              </ComponentInPost>,
+              $componentContainer,
+            );
+          },
+        );
       } catch (e) {
         console.warn(e); // eslint-disable-line no-console
       }
@@ -96,7 +109,7 @@ const PostTemplate = ({
             <div>
               <Tweet tweetId={tweetId} options={{ username }} />
             </div>,
-            $tweetContainer
+            $tweetContainer,
           );
         });
       } catch (e) {
@@ -126,53 +139,45 @@ const PostTemplate = ({
 
   return (
     <PostWrapper>
-      <Helmet>
-        <title>
-          {`${PREFIX}${title}`}
-        </title>
-        <meta name="og:title" content={`${PREFIX}${title}`} />
-      </Helmet>
-      {image === null ? null : (
-        <ImageWrapper>
-          <img
-            src={image.includes('//') ? image : require(`~/resources/${image}`)}
-            alt={title}
-          />
-        </ImageWrapper>
-      )}
-      <h1>
-        {title}
-      </h1>
-      <time>
-        {formattedDate(date)}
-      </time>
-      {tags.length === 0 ? null : (
-        <Tags>
-          <FaTags />
-          {tags.map(tag => (
-            <Link
-              key={tag}
-              to={`/tags/${tag}/1`}
-            >
-              <small>
-                {tag}
-              </small>
-            </Link>
-          ))}
-        </Tags>
-      )}
-      <Bio />
-      <PostContent>
-        <div id="post-contents" dangerouslySetInnerHTML={{ __html: html }} />
-      </PostContent>
-      <div id="disqus_thread" />
-      <noscript>
-        Please enable JavaScript to view the
-        &nbsp;
-        <a href="https://disqus.com/?ref_noscript">
-          comments powered by Disqus.
-        </a>
-      </noscript>
+      <Container>
+        <Helmet>
+          <title>{`${PREFIX}${title}`}</title>
+          <meta name="og:title" content={`${PREFIX}${title}`} />
+        </Helmet>
+        {image === null ? null : (
+          <ImageWrapper>
+            <img
+              src={
+                image.includes('//') ? image : require(`~/resources/${image}`)
+              }
+              alt={title}
+            />
+          </ImageWrapper>
+        )}
+        <h1>{title}</h1>
+        <time>{formattedDate(date)}</time>
+        {tags.length === 0 ? null : (
+          <Tags>
+            <FaTags />
+            {tags.map((tag) => (
+              <Link key={tag} to={`/tags/${tag}/1`}>
+                <small>{tag}</small>
+              </Link>
+            ))}
+          </Tags>
+        )}
+        <Bio />
+        <PostContent>
+          <div id="post-contents" dangerouslySetInnerHTML={{ __html: html }} />
+        </PostContent>
+        <div id="disqus_thread" />
+        <noscript>
+          Please enable JavaScript to view the &nbsp;
+          <a href="https://disqus.com/?ref_noscript">
+            comments powered by Disqus.
+          </a>
+        </noscript>
+      </Container>
     </PostWrapper>
   );
 };

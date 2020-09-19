@@ -7,7 +7,8 @@ import { FaCaretDown, FaSearch, FaTags } from 'react-icons/fa';
 import {
   Hamburger,
   MovableFaCaretDown,
-  GnbWrapper,
+  GnbWrapperOuter,
+  GnbWrapperInner,
   List,
   SubMenu,
   ListMenu,
@@ -64,10 +65,10 @@ const Gnb = ({
   categories,
   hasPortfolio,
 }) => {
-  const [
-    { isMenuOpened, isSubMenuClosed },
-    dispatch,
-  ] = useReducer(reducer, initialState);
+  const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
+    reducer,
+    initialState,
+  );
   const toggleMenu = useCallback(() => {
     dispatch({ type: TOGGLE_MENU });
   }, []);
@@ -89,144 +90,149 @@ const Gnb = ({
   const isPost = !(isPortfolio || isHome || isMusic);
 
   return (
-    <GnbWrapper>
-      <MobileMenu isActive={isMenuOpened} isSubActive={isSubMenuClosed}>
-        <Background onClick={toggleMenu} isActive={isMenuOpened} />
-        <MobileMenus>
-          <ul>
-            <ListMenu>
-              <StyledLink to="/" onClick={toggleMenu}>
-                <Home>{TITLE}</Home>
-              </StyledLink>
-            </ListMenu>
-            <ListMenu>
-              <StyledLink
-                to="/pages/1"
-                className={isPost ? 'active' : ''}
-                onClick={toggleMenu}
-              >
-                Posts
-              </StyledLink>
-              {categories.length > 0 ? (
-                <>
-                  &nbsp;
-                  <MovableFaCaretDown
-                    className={isSubMenuClosed ? 'is-active' : ''}
-                    onClick={toggleSubMenu}
-                  />
-                </>
-              ) : null}
-              <SubMenu>
-                <div>
-                  {categories.map(({ key, length }) => {
-                    if (key === '__ALL__') {
-                      return null;
-                    }
-
-                    return (
-                      <li key={key}>
-                        <Link to={`/categories/${key}/1`} onClick={toggleMenu}>
-                          {key}
-                          &nbsp;
-                          <small>{`(${length})`}</small>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </div>
-              </SubMenu>
-            </ListMenu>
-            {hasPortfolio ? (
+    <GnbWrapperOuter>
+      <GnbWrapperInner>
+        <MobileMenu isActive={isMenuOpened} isSubActive={isSubMenuClosed}>
+          <Background onClick={toggleMenu} isActive={isMenuOpened} />
+          <MobileMenus>
+            <ul>
               <ListMenu>
-                <StyledLink
-                  to="/portfolios"
-                  className={isPortfolio ? 'active' : ''}
-                  onClick={toggleMenu}
-                >
-                  Portfolio
+                <StyledLink to="/" onClick={toggleMenu}>
+                  <Home>{TITLE}</Home>
                 </StyledLink>
               </ListMenu>
-            ) : null}
-            <ListMenu>
-              <StyledLink
-                to="/music"
-                className={isMusic ? 'active' : ''}
-                onClick={toggleMenu}
-              >
-                Music
-              </StyledLink>
-            </ListMenu>
-          </ul>
-        </MobileMenus>
-      </MobileMenu>
-      <ToggleWrapper>
-        <Toggle
-          defaultChecked={isDracula}
-          icons={{
-            checked: <span role="img" aria-label="change-theme" />,
-            unchecked: <span role="img" aria-label="change-theme" />,
-          }}
-          onChange={toggleTheme}
-        />
-      </ToggleWrapper>
-      <Hamburger
-        className={`hamburger hamburger--spin js-hamburger ${
-          isMenuOpened ? 'is-active' : ''
-        }`}
-        onClick={toggleMenu}
-      >
-        <div className="hamburger-box">
-          <div className="hamburger-inner" />
-        </div>
-      </Hamburger>
-      <List>
-        <ListMenu>
-          <StyledLink to="/">
-            <Home>{TITLE}</Home>
-          </StyledLink>
-        </ListMenu>
-        <ListMenu>
-          <StyledLink to="/pages/1" className={isPost ? 'active' : ''}>
-            Posts &nbsp;
-            {categories.length > 0 ? <FaCaretDown /> : null}
-          </StyledLink>
-          <SubMenu>
-            <div>
-              {categories.map(({ key, length }) => {
-                if (key === '__ALL__') {
-                  return null;
-                }
+              <ListMenu>
+                <StyledLink
+                  to="/pages/1"
+                  className={isPost ? 'active' : ''}
+                  onClick={toggleMenu}
+                >
+                  Posts
+                </StyledLink>
+                {categories.length > 0 ? (
+                  <>
+                    &nbsp;
+                    <MovableFaCaretDown
+                      className={isSubMenuClosed ? 'is-active' : ''}
+                      onClick={toggleSubMenu}
+                    />
+                  </>
+                ) : null}
+                <SubMenu>
+                  <div>
+                    {categories.map(({ key, length }) => {
+                      if (key === '__ALL__') {
+                        return null;
+                      }
 
-                return (
-                  <li key={key}>
-                    <Link to={`/categories/${key}/1`}>
-                      {key}
-                      &nbsp;
-                      <small>{`(${length})`}</small>
-                    </Link>
-                  </li>
-                );
-              })}
-            </div>
-          </SubMenu>
-        </ListMenu>
-        {hasPortfolio ? (
+                      return (
+                        <li key={key}>
+                          <Link
+                            to={`/categories/${key}/1`}
+                            onClick={toggleMenu}
+                          >
+                            {key}
+                            &nbsp;
+                            <small>{`(${length})`}</small>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </div>
+                </SubMenu>
+              </ListMenu>
+              {hasPortfolio ? (
+                <ListMenu>
+                  <StyledLink
+                    to="/portfolios"
+                    className={isPortfolio ? 'active' : ''}
+                    onClick={toggleMenu}
+                  >
+                    Portfolio
+                  </StyledLink>
+                </ListMenu>
+              ) : null}
+              <ListMenu>
+                <StyledLink
+                  to="/music"
+                  className={isMusic ? 'active' : ''}
+                  onClick={toggleMenu}
+                >
+                  Music
+                </StyledLink>
+              </ListMenu>
+            </ul>
+          </MobileMenus>
+        </MobileMenu>
+        <ToggleWrapper>
+          <Toggle
+            defaultChecked={isDracula}
+            icons={{
+              checked: <span role="img" aria-label="change-theme" />,
+              unchecked: <span role="img" aria-label="change-theme" />,
+            }}
+            onChange={toggleTheme}
+          />
+        </ToggleWrapper>
+        <Hamburger
+          className={`hamburger hamburger--spin js-hamburger ${
+            isMenuOpened ? 'is-active' : ''
+          }`}
+          onClick={toggleMenu}
+        >
+          <div className="hamburger-box">
+            <div className="hamburger-inner" />
+          </div>
+        </Hamburger>
+        <List>
           <ListMenu>
-            <StyledLink
-              to="/portfolios"
-              className={isPortfolio ? 'active' : ''}
-            >
-              Portfolio
+            <StyledLink to="/">
+              <Home>{TITLE}</Home>
             </StyledLink>
           </ListMenu>
-        ) : null}
-        <ListMenu>
-          <StyledLink to="/music" className={isMusic ? 'active' : ''}>
-            Music
-          </StyledLink>
-        </ListMenu>
-      </List>
-    </GnbWrapper>
+          <ListMenu>
+            <StyledLink to="/pages/1" className={isPost ? 'active' : ''}>
+              Posts &nbsp;
+              {categories.length > 0 ? <FaCaretDown /> : null}
+            </StyledLink>
+            <SubMenu>
+              <div>
+                {categories.map(({ key, length }) => {
+                  if (key === '__ALL__') {
+                    return null;
+                  }
+
+                  return (
+                    <li key={key}>
+                      <Link to={`/categories/${key}/1`}>
+                        {key}
+                        &nbsp;
+                        <small>{`(${length})`}</small>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </div>
+            </SubMenu>
+          </ListMenu>
+          {hasPortfolio ? (
+            <ListMenu>
+              <StyledLink
+                to="/portfolios"
+                className={isPortfolio ? 'active' : ''}
+              >
+                Portfolio
+              </StyledLink>
+            </ListMenu>
+          ) : null}
+          <ListMenu>
+            <StyledLink to="/music" className={isMusic ? 'active' : ''}>
+              Music
+            </StyledLink>
+          </ListMenu>
+        </List>
+      </GnbWrapperInner>
+    </GnbWrapperOuter>
   );
 };
 

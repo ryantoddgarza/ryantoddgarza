@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
+import { Container } from '~/components/Common/Container';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Wrapper = styled(SimpleWrapper)`
@@ -22,7 +23,7 @@ export const Wrapper = styled(SimpleWrapper)`
   }
 `;
 
-export const AlbumPrimary = styled.section`
+export const AlbumPrimary = styled(Container)`
   display: flex;
   flex-direction: column;
   @media (min-width: 769px) {
@@ -30,7 +31,7 @@ export const AlbumPrimary = styled.section`
   }
 `;
 
-export const AlbumSecondary = styled.section`
+export const AlbumSecondary = styled(Container)`
   display: flex;
   flex-direction: column;
   @media (min-width: 769px) {
@@ -44,7 +45,6 @@ export const ContentLeft = styled.div`
 
   @media (min-width: 769px) {
     flex: 3 0 0;
-    margin-left: 36px;
     margin-right: 5%;
   }
 `;
@@ -55,7 +55,6 @@ export const ContentRight = styled.div`
 
   @media (min-width: 769px) {
     flex: 2 0 0;
-    margin-right: 36px;
   }
 `;
 

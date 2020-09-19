@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 import { FaCaretDown, FaHome } from 'react-icons/fa';
+import { Container } from '~/components/Common/Container';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Hamburger = styled.div`
-  position: fixed;
+  position: absolute;
   display: none;
-  top: 0;
   right: 0;
   z-index: 5000;
 
@@ -48,7 +48,6 @@ const hamburger = css`
     display: inline-block;
     overflow: visible;
     margin: 0;
-    padding: 16px;
     cursor: pointer;
     transition-timing-function: linear;
     transition-duration: 0.15s;
@@ -825,27 +824,29 @@ const hamburger = css`
   }
 `;
 
-export const GnbWrapper = styled.div`
+export const GnbWrapperOuter = styled.div`
   position: fixed;
   width: 100%;
   font-size: 15px;
   font-weight: 600;
   background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
   z-index: 3000;
+`;
+
+export const GnbWrapperInner = styled(Container)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80px;
 
   @media (max-width: 414px) {
     height: 60px;
-    line-height: 60px;
 
     ${hamburger}
   }
 `;
 
 export const List = styled.ul`
-  display: flex;
-  align-items: center;
-  height: 80px;
-
   @media (max-width: 414px) {
     display: none;
   }
@@ -873,7 +874,7 @@ export const SubMenu = styled.ul`
 export const ListMenu = styled.li`
   display: inline-block;
   position: relative;
-  padding: 0 0 0 2em;
+  padding-right: 2em;
   font-weight: 400;
 
   @media (max-width: 414px) {
@@ -1141,20 +1142,17 @@ export const MobileMenu = styled.section`
 
 export const ToggleWrapper = styled.label`
   position: absolute;
-  top: 28px;
-  right: 32px;
+  right: 0;
   z-index: 3;
 
   @media (max-width: 414px) {
-    top: 0;
+    left: 0;
     right: auto;
-    left: 16px;
   }
 
   .react-toggle {
     touch-action: pan-x;
 
-    display: inline-block;
     position: relative;
     cursor: pointer;
     background-color: transparent;

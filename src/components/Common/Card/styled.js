@@ -36,15 +36,15 @@ export const TagWrapper = styled.div`
 
 export const StyledArticle = styled.article`
   display: inline-block;
-  padding: 0 16px 16px;
-  width: 25%;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0 0 16px;
   font-size: 14px;
   vertical-align: top;
-  @media (max-width: 414px) {
-    margin: 0 0 16px;
-    padding: 0 0 16px;
-    width: 100%;
-    border-bottom: 1px solid #eee;
+
+  @media (min-width: 769px) {
+    width: 25%;
+    padding: 0 16px 16px;
   }
 
   & > div {

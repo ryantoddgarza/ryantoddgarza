@@ -1,28 +1,33 @@
 import styled from 'styled-components';
+import { Container } from '~/components/Common/Container';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
-export const FooterWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
+export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;
   color: #adadad;
   background-color: #f0f0f0;
-  @media (max-width: 414px) {
-    grid-template-columns: 1fr;
-    padding-left: 16px;
-    padding-right: 16px;
+`;
+
+export const FooterWrapperInner = styled(Container)`
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: baseline;
+  padding: 16px 0;
+
+  @media (min-width: 769px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 export const SocialInformation = styled.div`
   display: flex;
+  justify-content: center;
+  margin: 0 0 16px;
   font-size: 20px;
-  @media (max-width: 414px) {
-    justify-content: center;
-    margin-bottom: 16px;
+
+  @media (min-width: 769px) {
+    justify-content: flex-start;
+    margin: 0;
   }
 
   & > *:not(:last-child) {
@@ -39,6 +44,6 @@ export const SocialInformation = styled.div`
   }
 `;
 
-export const Copyright = styled.span`
+export const Copyright = styled.div`
   text-align: center;
 `;

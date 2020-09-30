@@ -2,6 +2,7 @@ import React from 'react';
 import {
   FaRegEnvelope,
   FaGithub,
+  FaTwitter,
   FaFacebook,
   FaLinkedin,
   FaInstagram,
@@ -10,6 +11,7 @@ import {
 import {
   EMAIL,
   GITHUB_ID,
+  TWITTER_ID,
   FACEBOOK_ID,
   INSTAGRAM_ID,
   LINKEDIN_ID,
@@ -38,6 +40,15 @@ const Footer = () => (
             rel="noreferrer noopener"
           >
             <FaInstagram />
+          </a>
+        ) : null}
+        {TWITTER_ID ? (
+          <a
+            href={`https://twitter.com/${TWITTER_ID}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FaTwitter />
           </a>
         ) : null}
         {FACEBOOK_ID ? (

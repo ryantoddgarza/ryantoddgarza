@@ -15,7 +15,9 @@ exports.AUTHOR = 'Ryan Todd Garza';
 exports.EMAIL = 'ryantoddgarza@gmail.com';
 exports.KEYWORDS = [
   'portfolio',
-  'web developer',
+  'developer',
+  'software',
+  'web',
   'music',
   'musician',
   'photography',
@@ -32,6 +34,7 @@ exports.FACEBOOK_ID = 'ryantoddgarza';
 exports.INSTAGRAM_ID = 'ryantoddgarza';
 exports.LINKEDIN_ID = 'ryantoddgarza';
 exports.PATREON_ID = 'ryantoddgarza';
+exports.MEDIUM_ID = 'ryantoddgarza';
 
 // Disqus (Recommend you to use this)
 exports.DISQUS_ID = 'sample';

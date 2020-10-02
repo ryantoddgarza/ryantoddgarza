@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaPatreon,
+  FaMediumM,
 } from 'react-icons/fa';
 import {
   GITHUB_ID,
@@ -14,6 +15,7 @@ import {
   INSTAGRAM_ID,
   LINKEDIN_ID,
   PATREON_ID,
+  MEDIUM_ID,
 } from '~/constants';
 
 export default [
@@ -51,6 +53,12 @@ export default [
     name: 'Patreon',
     url: `https://patreon.com/${PATREON_ID}`,
     icon: <FaPatreon />,
+    display: false,
+  },
+  {
+    name: 'Medium',
+    url: `https://medium.com/@${MEDIUM_ID}`,
+    icon: <FaMediumM />,
     display: true,
   },
 ];

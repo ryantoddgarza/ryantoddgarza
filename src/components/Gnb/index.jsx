@@ -1,9 +1,9 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link, navigate } from 'gatsby';
-import { TITLE } from '~/constants';
+import { Link } from 'gatsby';
 import Toggle from 'react-toggle';
-import { FaCaretDown, FaSearch, FaTags } from 'react-icons/fa';
+import { FaCaretDown } from 'react-icons/fa';
+import { TITLE } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
@@ -14,13 +14,6 @@ import {
   ListMenu,
   Home,
   StyledLink,
-  SearchBarWrapper,
-  SearchBar,
-  SearchedPosts,
-  Title,
-  Summary,
-  Tag,
-  SearchedPost,
   Background,
   MobileMenus,
   MobileMenu,

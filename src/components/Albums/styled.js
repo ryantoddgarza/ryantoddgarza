@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Container } from '~/components/Common/Container';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Wrapper = styled(Container)`
   position: relative;
@@ -34,22 +33,5 @@ export const Cover = styled.div`
   img {
     width: 100%;
     max-width: 500px;
-  }
-`;
-
-export const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 1em 0;
-
-  & > * {
-    margin-bottom: 8px;
-  }
-
-  a {
-    color: ${PRIMARY_COLOR};
-  }
-  a:hover {
-    color: #000;
   }
 `;

@@ -79,7 +79,7 @@ const Gnb = ({
   const { pathname } = location;
   const isPortfolio = pathname.replace(/\/$/, '').startsWith('/portfolios');
   const isHome = pathname.replace(/\/$/, '') === '';
-  const isMusic = pathname.replace(/\/$/, '') === '/music';
+  const isMusic = pathname.replace(/\/$/, '') === '/albums';
   const isPost = !(isPortfolio || isHome || isMusic);
 
   return (
@@ -147,7 +147,7 @@ const Gnb = ({
               ) : null}
               <ListMenu>
                 <StyledLink
-                  to="/music"
+                  to="/albums"
                   className={isMusic ? 'active' : ''}
                   onClick={toggleMenu}
                 >
@@ -219,7 +219,7 @@ const Gnb = ({
             </ListMenu>
           ) : null}
           <ListMenu>
-            <StyledLink to="/music" className={isMusic ? 'active' : ''}>
+            <StyledLink to="/albums" className={isMusic ? 'active' : ''}>
               Music
             </StyledLink>
           </ListMenu>

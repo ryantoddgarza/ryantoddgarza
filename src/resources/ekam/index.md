@@ -1,12 +1,13 @@
 ---
 type: 'album'
-artist: 'Ryan Todd Garza'
 title: 'Ekam'
-path: '/music/ekam'
+artist: 'Ryan Todd Garza'
+date: '2020-09-09T00:00:00.000Z'
+path: '/albums/ekam'
 cover: 'ekam/ekam-cover.jpg'
 metadata:
   {
-    date: '2020-09-09T00:00:00.000Z',
+    date: '2020-09-09',
     format: 'Digital',
     upc: '195595702252',
     publishing: 'All compositions © 2020 Ryan Todd Garza (BMI)',

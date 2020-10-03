@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fontSizeFluid } from '~/components/Common/fontSize';
 
 export const Title = styled.div`
   position: absolute;
@@ -10,8 +11,7 @@ export const Title = styled.div`
   width: 80%;
   height: 1.5em;
   line-height: 1.5em;
-  font-size: 48px;
-  font-size: 10vw;
+  font-size: ${fontSizeFluid(48, 16)};
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;

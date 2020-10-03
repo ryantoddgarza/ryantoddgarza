@@ -20,9 +20,9 @@ const Home = ({ portfolios }) => (
     </Wrapper>
     <SimpleWrapper>
       <SectionHeader
-        title="Music"
+        title="Albums"
         linkName="View All"
-        linkURL="/music"
+        linkURL="/albums"
       />
       <SectionHeader
         title="Featured Projects"

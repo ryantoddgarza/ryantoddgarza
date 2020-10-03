@@ -6,7 +6,7 @@ import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import { TITLE } from '~/constants';
+import { TITLE, MEDIUM_ID } from '~/constants';
 import { Title } from './styled';
 
 const Home = ({ portfolios }) => (
@@ -20,9 +20,14 @@ const Home = ({ portfolios }) => (
     </Wrapper>
     <SimpleWrapper>
       <SectionHeader
+        title="Music"
+        linkName="View All"
+        linkURL="/music"
+      />
+      <SectionHeader
         title="Featured Projects"
-        link="View All"
-        path="/portfolios"
+        linkName="View All"
+        linkURL="/portfolios"
       />
       {portfolios.length >= 4 ? (
         <SimpleWrapper>
@@ -63,6 +68,16 @@ const Home = ({ portfolios }) => (
           )}
         </SimpleWrapper>
       ) : null}
+      <SectionHeader
+        title="Featured Posts"
+        linkName="View All"
+        linkURL="/pages/1"
+      />
+      <SectionHeader
+        title="Medium Articles"
+        linkName="Visit"
+        linkURL={`https://medium.com/@${MEDIUM_ID}`}
+      />
     </SimpleWrapper>
   </>
 );

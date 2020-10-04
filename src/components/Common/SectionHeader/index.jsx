@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Header, Title } from './styled';
 
 const Link = ({ data: { linkName, linkURL } }) => {
-  if (linkURL.startsWith('http')) {
+  if (linkURL.includes('//')) {
     return (
       <a href={linkURL} target="_blank" rel="noreferrer noopener">
         {linkName}

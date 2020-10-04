@@ -1,7 +1,7 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import { POST, PORTFOLIO } from '~/constants';
+import { POST, PORTFOLIO, ALBUM } from '~/constants';
 import App from '~/components/App';
 
 const Layout = ({ children, location }) => (
@@ -21,6 +21,7 @@ const Layout = ({ children, location }) => (
                 summary
                 tags
                 images
+                cover
               }
             }
           }
@@ -29,6 +30,7 @@ const Layout = ({ children, location }) => (
     `}
     render={({ posts }) => {
       const { edges } = posts;
+      const albums = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM);
       const portfolios = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
       const categories = edges.reduce((categories, { node }) => {
         const { category } = node.frontmatter;
@@ -76,7 +78,7 @@ const Layout = ({ children, location }) => (
 
       const hasPortfolio = portfolios.length > 0;
 
-      const childrenWithProps = Children.map(children, child => cloneElement(child, { portfolios }));
+      const childrenWithProps = Children.map(children, (child) => cloneElement(child, { albums, portfolios }));
 
       return (
         <App

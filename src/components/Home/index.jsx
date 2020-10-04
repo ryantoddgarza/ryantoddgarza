@@ -4,12 +4,13 @@ import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
+import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import { TITLE, MEDIUM_ID } from '~/constants';
 import { Title } from './styled';
 
-const Home = ({ portfolios }) => (
+const Home = ({ albums, portfolios }) => (
   <>
     <Helmet>
       <title>{TITLE}</title>
@@ -20,10 +21,25 @@ const Home = ({ portfolios }) => (
     </Wrapper>
     <SimpleWrapper>
       <SectionHeader
-        title="Albums"
+        title="Featured Albums"
         linkName="View All"
         linkURL="/albums"
       />
+      <SimpleWrapper>
+        {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
+          <Link to={path} key={title}>
+            <AlbumCard>
+              <img
+                src={require(`~/resources/${cover}`)}
+                alt={`${title} - album cover`}
+              />
+              <div>
+                <h2>{title}</h2>
+              </div>
+            </AlbumCard>
+          </Link>
+        ))}
+      </SimpleWrapper>
       <SectionHeader
         title="Featured Projects"
         linkName="View All"
@@ -64,7 +80,7 @@ const Home = ({ portfolios }) => (
                   </Link>
                 </PortfolioCard>
               );
-            },
+            }
           )}
         </SimpleWrapper>
       ) : null}
@@ -83,10 +99,12 @@ const Home = ({ portfolios }) => (
 );
 
 Home.propTypes = {
+  albums: PropTypes.arrayOf(PropTypes.shape({})),
   portfolios: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 Home.defaultProps = {
+  albums: [],
   portfolios: [],
 };
 

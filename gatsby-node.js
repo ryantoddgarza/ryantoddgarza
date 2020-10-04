@@ -104,10 +104,10 @@ exports.createPages = ({ graphql, actions }) => {
                   case ALBUM:
                     component = album;
                     break;
+                  default:
                   case POST:
                     component = post;
                     break;
-                  default:
                 }
 
                 if (component !== null) {

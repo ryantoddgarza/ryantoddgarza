@@ -5,12 +5,12 @@ import { PRIMARY_COLOR, BLACK_COLOR } from '~/components/Common/constants';
 const AlbumCard = styled.section`
   position: relative;
   height: 0;
-  padding: 200% 0 0;
+  padding: 50% 0 0;
   background-color: #fff;
   color: ${BLACK_COLOR};
   overflow: hidden;
-  @media (min-width: 769px) {
-    padding: 50% 0 0;
+  @media (max-width: 414px) {
+    padding: 200% 0 0;
   }
 
   &:hover,
@@ -28,13 +28,14 @@ const AlbumCard = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 50%;
+    width: 50%;
+    height: 100%;
     padding: 16px;
     text-align: center;
-    @media (min-width: 769px) {
-      width: 50%;
-      height: 100%;
+    border: 1px solid #f0f0f0;
+    @media (max-width: 414px) {
+      width: 100%;
+      height: 50%;
     }
   }
 
@@ -56,9 +57,9 @@ const AlbumCard = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    @media (min-width: 769px) {
-      width: 50%;
+    width: 50%;
+    @media (max-width: 414px) {
+      width: 100%;
     }
   }
 `;

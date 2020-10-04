@@ -3,7 +3,7 @@ import { fontSizeFluid } from '~/components/Common/fontSize';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Header = styled.header`
-  padding: 24px 0;
+  padding: 48px 0;
   text-align: center;
 
   a {

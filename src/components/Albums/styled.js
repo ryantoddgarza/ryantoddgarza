@@ -6,6 +6,10 @@ export const Wrapper = styled(Container)`
   padding: 100px 0 0;
 
   @media (max-width: 414px) {
-    padding: 70px 16px 0;
+    padding: 70px 0 0;
+  }
+
+  section {
+    margin: 0 0 60px;
   }
 `;

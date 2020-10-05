@@ -50,7 +50,7 @@ const AlbumCard = styled.section`
       height: 2px;
       margin: 32px auto;
       background-color: #adadad;
-      transition: all 0.6s ease-in-out;
+      transition: width 0.6s, background-color 0.2s;
     }
   }
 

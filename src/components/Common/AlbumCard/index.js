@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import { PRIMARY_COLOR, BLACK_COLOR } from '~/components/Common/constants';
+import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 const AlbumCard = styled.section`
   position: relative;
   height: 0;
   padding: 50% 0 0;
   background-color: #fff;
-  color: ${BLACK_COLOR};
   overflow: hidden;
   @media (max-width: 414px) {
     padding: 200% 0 0;
@@ -30,12 +29,14 @@ const AlbumCard = styled.section`
     justify-content: center;
     width: 50%;
     height: 100%;
-    padding: 16px;
+    padding: 8px;
     text-align: center;
-    border: 1px solid #f0f0f0;
+    border-left: 1px solid #f9f9f9;
     @media (max-width: 414px) {
       width: 100%;
       height: 50%;
+      border-top: 1px solid #f9f9f9;
+      border-left: unset;
     }
   }
 

@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'svara'
 date: '2020-08-08:00:00.000Z'
 path: '/portfolios/svara/'
+summary: 'Svara is a generative music application based on the traditional rules of Hindustani ragas.'
 images: [
   'svara/svara-01.jpg',
 ]

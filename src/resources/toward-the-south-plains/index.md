@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'Toward the South Plains'
 date: '2019-06-11T00:00:00.000Z'
 path: '/portfolios/toward-the-south-plains/'
+summary: 'Multimedia collaborative work centered around the cyclical nature of existence and the constant presence of change in our lives.'
 images: [
   'toward-the-south-plains/ttsp-01.jpg',
   'toward-the-south-plains/ttsp-02.jpg',

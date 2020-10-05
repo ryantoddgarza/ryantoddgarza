@@ -26,7 +26,7 @@ const Home = ({ albums, portfolios }) => (
         linkURL="/albums"
       />
       <SimpleWrapper>
-        {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
+        {albums.slice(0, 1).map(({ node: { frontmatter: { path, title, cover } } }) => (
           <Link to={path} key={title}>
             <AlbumCard>
               <img

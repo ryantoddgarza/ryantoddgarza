@@ -60,7 +60,7 @@ const PortfolioCard = styled.section`
 
   article {
     position: absolute;
-    top: 0;
+    top: 20%;
     left: 0;
     width: 100%;
     max-width: calc(288px + 10vw);
@@ -70,18 +70,21 @@ const PortfolioCard = styled.section`
     padding: 16px;
     color: #fff;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-    ${breakpoint('from-mobile-lg')} {
-      top: 20%;
-      padding: 0 16px;
-    }
   }
 
   p {
+    display: none;
     font-size: 0.875rem;
     line-height: 1.4;
     margin-bottom: 1em;
+    ${breakpoint('mobile-lg')} {
+      display: block;
+    }
     ${breakpoint('tablet')} {
       display: none;
+    }
+    ${breakpoint('from-tablet-lg')} {
+      display: block;
     }
   }
 

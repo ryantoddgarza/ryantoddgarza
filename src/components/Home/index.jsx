@@ -50,7 +50,7 @@ const Home = ({ albums, portfolios }) => (
           {portfolios.slice(0, 4).map(
             ({
               node: {
-                frontmatter: { path, title, images },
+                frontmatter: { path, title, summary, images },
               },
             }) => {
               const image = Array.isArray(images) ? images[0] : null;
@@ -67,7 +67,15 @@ const Home = ({ albums, portfolios }) => (
                           alt="portfolio"
                         />
                       )}
-                      <h6>{title}</h6>
+                      <article>
+                        <h6>{title}</h6>
+                        {summary ? (
+                          <>
+                            <p>{summary}</p>
+                            <p><em>Learn More</em></p>
+                          </>
+                        ) : null}
+                      </article>
                     </Link>
                   </PortfolioCard>
                 );

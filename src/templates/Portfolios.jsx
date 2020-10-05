@@ -34,6 +34,7 @@ export const pageQuery = graphql`
           frontmatter {
             type
             title
+            summary
             path
             images
             date

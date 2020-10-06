@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { PREFIX } from '~/constants';
 import {
   Wrapper,
-  AlbumPanel,
   AlbumPrimary,
   AlbumSecondary,
   ContentLeft,
@@ -20,7 +19,6 @@ import {
 const Album = ({
   data: {
     album: {
-      html,
       frontmatter: {
         artist,
         title,
@@ -35,16 +33,16 @@ const Album = ({
   const getAlbumRuntime = () => {
     let seconds = 0;
 
-    const runtimeInSeconds = tracks.forEach(({ runtime }) => {
-      const min = parseInt(runtime.split(':')[0]) * 60;
-      const sec = parseInt(runtime.split(':')[1]);
+    tracks.forEach(({ runtime }) => {
+      const min = Number(runtime.split(':')[0]) * 60;
+      const sec = Number(runtime.split(':')[1]);
       seconds += min + sec;
     });
 
     return Math.round(seconds / 60);
   };
 
-  const dlChildren = (t, d) => [<dt key={t}>{t}</dt>, <dd key={d}>{d}</dd>];
+  const credit = (t, d) => [<dt key={t}>{t}</dt>, <dd key={d}>{d}</dd>];
 
   return (
     <Wrapper>
@@ -73,7 +71,7 @@ const Album = ({
             <ul>
               <li>{artist}</li>
               <li>{date.split('-')[0]}</li>
-              <li>{getAlbumRuntime()} minutes</li>
+              <li>{`${getAlbumRuntime()} minutes`}</li>
               <li>{format}</li>
               <li>{upc}</li>
             </ul>
@@ -83,7 +81,7 @@ const Album = ({
             {links.map(({ distributor, url }) => (
               <li key={distributor}>
                 <a href={url} target="_blank" rel="noreferrer noopener">
-                  {distributor} →
+                  {`${distributor} →`}
                 </a>
               </li>
             ))}
@@ -92,52 +90,73 @@ const Album = ({
       </AlbumPrimary>
       <AlbumSecondary>
         <ContentLeft>
-          <Tracklist>
-            <h2>Tracks</h2>
-            <ul>
-              {tracks.map(({ title, lyrics, video }, i) => {
-                let num = ++i;
-                return (
-                  <li className="track-row" key={title}>
-                    <div className="track-counter">
-                      {num.toString().padStart(2, '0')}
-                    </div>
-                    <div className="track-name">{title}</div>
-                    <div className="track-lyrics">
-                      {lyrics ? <a href="">Lyrics</a> : null}
-                    </div>
-                    <div className="track-video">
-                      {video ? (
-                        <a
-                          href={video}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          Video
-                        </a>
-                      ) : null}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </Tracklist>
+          {tracks ? (
+            <Tracklist>
+              <h2>Tracks</h2>
+              <ul>
+                {tracks.map(({ title, lyrics, video }, i) => {
+                  const trackNum = i + 1;
+                  return (
+                    <li className="track-row" key={title}>
+                      <div className="track-counter">
+                        {trackNum.toString().padStart(2, '0')}
+                      </div>
+                      <div className="track-name">{title}</div>
+                      <div className="track-lyrics">
+                        {lyrics ? <a href="">Lyrics</a> : null}
+                      </div>
+                      <div className="track-video">
+                        {video ? (
+                          <a
+                            href={video}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            Video
+                          </a>
+                        ) : null}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </Tracklist>
+          ) : null}
           {credits || publishing ? (
             <Credits>
               <h2>Credits</h2>
               {credits ? (
-                <dl>
-                  {credits.map(({ name, role }) => dlChildren(role, name))}
-                </dl>
+                <dl>{credits.map(({ name, role }) => credit(role, name))}</dl>
               ) : null}
               {publishing ? <p>{publishing}</p> : null}
             </Credits>
           ) : null}
         </ContentLeft>
-        <ContentRight></ContentRight>
+        <ContentRight />
       </AlbumSecondary>
     </Wrapper>
   );
+};
+
+Album.propTypes = {
+  data: PropTypes.shape({
+    album: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        artist: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        cover: PropTypes.string.isRequired,
+        metadata: PropTypes.shape({
+          date: PropTypes.string,
+          format: PropTypes.string,
+          upc: PropTypes.string,
+          publishing: PropTypes.string,
+          tracks: PropTypes.instanceOf(Array),
+        }),
+        credits: PropTypes.instanceOf(Array),
+        links: PropTypes.instanceOf(Array),
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Album;

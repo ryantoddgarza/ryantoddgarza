@@ -18,6 +18,8 @@ function Feature(name) {
       },
     }) => featured
   );
+
+  return this.filtered;
 }
 
 const Home = ({ albums, portfolios }) => {
@@ -34,14 +36,14 @@ const Home = ({ albums, portfolios }) => {
         <Title>Hi, I'm Ryan.</Title>
       </Wrapper>
       <SimpleWrapper>
-        {featuredAlbums.filtered.length >= 1 ? (
+        {featuredAlbums.length >= 1 ? (
           <SimpleWrapper>
             <SectionHeader
               title="Featured Albums"
               linkName="View All"
               linkURL="/albums"
             />
-            {featuredAlbums.filtered
+            {featuredAlbums
               .slice(0, 1)
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
                 <Link to={path} key={title}>
@@ -58,14 +60,14 @@ const Home = ({ albums, portfolios }) => {
               ))}
           </SimpleWrapper>
         ) : null}
-        {featuredPortfolios.filtered.length >= 4 ? (
+        {featuredPortfolios.length >= 4 ? (
           <SimpleWrapper>
             <SectionHeader
               title="Featured Projects"
               linkName="View All"
               linkURL="/portfolios"
             />
-            {featuredPortfolios.filtered.slice(0, 4).map(
+            {featuredPortfolios.slice(0, 4).map(
               ({
                 node: {
                   frontmatter: { path, title, summary, images },

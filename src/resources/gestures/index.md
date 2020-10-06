@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'Gestures'
 date: '2019-05-01T00:00:00.000Z'
 path: '/portfolios/gestures/'
+featured: false
 summary: 'Gestures is a series of photographic abstractions depicting the gradients revealed by the landscape of West Texas.'
 images: [
   'gestures/gestures-01.jpg',

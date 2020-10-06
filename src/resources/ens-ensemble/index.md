@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'Ens Ensemble'
 date: '2019-06-11T00:00:00.000Z'
 path: '/portfolios/ens-ensemble/'
+featured: false
 summary: 'Ens Ensemble is a moniker used as an outlet to voice creative musical expressions regardless of the state of proficiency or perfection.'
 images: [
   'ens-ensemble/ens-wk01.jpg',

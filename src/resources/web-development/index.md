@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'Web Development'
 date: '2020-07-30:00:00.000Z'
 path: '/portfolios/web-development/'
+featured: true
 summary: 'Striving to write elegant solutions for web applications in which design, performance, user experience, and accessibility all coexist.'
 images: [
   'web-development/web-dev-01.jpg',

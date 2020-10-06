@@ -22,6 +22,7 @@ const Layout = ({ children, location }) => (
                 tags
                 images
                 cover
+                featured
               }
             }
           }

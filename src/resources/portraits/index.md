@@ -3,6 +3,7 @@ type: 'portfolio'
 title: 'Portraits'
 date: '2018-07-02T00:00:00.000Z'
 path: '/portfolios/portraits/'
+featured: false
 images: [
   'portraits/18011_054.jpg',
   'portraits/17061_276.jpg',

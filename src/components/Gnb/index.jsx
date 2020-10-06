@@ -2,7 +2,7 @@ import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
-import { TITLE } from '~/constants';
+import { TITLE, EMAIL } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
@@ -146,6 +146,11 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
                   Music
                 </StyledLink>
               </ListMenu>
+              <ListMenu>
+                <StyledLink href={`mailto:${EMAIL}`}>
+                  Contact
+                </StyledLink>
+              </ListMenu>
             </ul>
           </MobileMenus>
         </MobileMenu>
@@ -203,6 +208,11 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
           <ListMenu>
             <StyledLink to="/albums" className={isMusic ? 'active' : ''}>
               Music
+            </StyledLink>
+          </ListMenu>
+          <ListMenu>
+            <StyledLink href={`mailto:${EMAIL}`}>
+              Contact
             </StyledLink>
           </ListMenu>
         </List>

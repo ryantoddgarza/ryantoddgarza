@@ -56,7 +56,9 @@ export default class App extends Component {
 
     // Reverts theme for users who have
     // used the temporarily deprecated toggle.
-    localStorage.removeItem('theme');
+    if (global.localStorage) {
+      global.localStorage.removeItem('theme');
+    }
 
     return (
       <ThemeProvider theme={theme}>

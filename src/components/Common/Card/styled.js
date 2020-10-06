@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { breakpoint } from '~/components/Common/breakpoints';
+import { PRIMARY_COLOR, BLACK_COLOR } from '~/components/Common/constants';
 
 export const ImageWrapper = styled.figure`
   position: relative;
   margin: -14px -14px 14px;
   padding: 50% 0 0;
   height: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f9f9f9;
   overflow: hidden;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
 
@@ -41,20 +43,26 @@ export const StyledArticle = styled.article`
   padding: 0 0 16px;
   font-size: 14px;
   vertical-align: top;
-
-  @media (min-width: 769px) {
-    width: 25%;
+  ${breakpoint('from-tablet')} {
     padding: 0 16px 16px;
+  }
+  ${breakpoint('tablet')} {
+    width: 50%;
+  }
+  ${breakpoint('desktop')} {
+    width: 33%;
+  }
+  ${breakpoint('widescreen')} {
+    width: 25%;
   }
 
   & > div {
     position: relative;
     top: 0;
     padding: 14px;
-    background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
-    border-radius: 6px;
-    border: 1px solid #e5e5e5;
+    background-color: #fff;
     overflow: hidden;
+    transition: top 0.1s;
 
     &:hover {
       top: -8px;
@@ -62,36 +70,21 @@ export const StyledArticle = styled.article`
   }
 
   a {
-    color: ${({ theme: { color } }) => color};
-
-    &:hover {
-      h3,
-      p,
-      small {
-        text-decoration: underline;
-      }
-    }
+    color: ${BLACK_COLOR};
   }
 
   h3 {
     padding: 0 0 6px;
     height: 2.4em;
-    line-height: 1.2em;
+    line-height: 1.2;
     font-size: 20px;
     font-weight: 700;
-  }
-
-  time {
-    display: block;
-    margin: 10px 0 0;
-    font-size: 12px;
-    color: #919191;
   }
 
   p {
     padding: 24px 0 16px;
     height: 106px;
-    line-height: 1.4em;
+    line-height: 1.4;
     font-size: 16px;
 
     span {
@@ -99,8 +92,13 @@ export const StyledArticle = styled.article`
     }
   }
 
-  small {
-    margin: 0 0 0 4px;
-    font-size: 10px;
+  tag {
+    color: #757575;
+    font-size: 11px;
+    line-height: 1.4;
+
+    &:hover {
+      color: ${PRIMARY_COLOR};
+    }
   }
 `;

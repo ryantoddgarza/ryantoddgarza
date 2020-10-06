@@ -54,6 +54,10 @@ export default class App extends Component {
       backgroundColor: WHITE_COLOR,
     };
 
+    // Reverts theme for users who have
+    // used the temporarily deprecated toggle.
+    global.localStorage.removeItem('theme');
+
     return (
       <ThemeProvider theme={theme}>
         <Wrapper>

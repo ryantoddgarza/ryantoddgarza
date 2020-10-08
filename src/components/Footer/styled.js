@@ -11,31 +11,30 @@ export const FooterWrapperOuter = styled.div`
 export const FooterWrapperInner = styled(Container)`
   display: grid;
   grid-template-columns: 1fr;
-  align-items: baseline;
-  padding: 16px 0;
-
+  grid-template-areas: 'links' 'social' 'copyright';
+  align-items: end;
+  padding: 32px 0;
   @media (min-width: 769px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'social copyright links';
   }
 `;
 
 export const SocialInformation = styled.div`
+  grid-area: social;
   display: flex;
-  justify-content: center;
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   font-size: 20px;
-
   @media (min-width: 769px) {
-    justify-content: flex-start;
     margin: 0;
-  }
-
-  & > *:not(:last-child) {
-    margin-right: 16px;
   }
 
   a {
     display: inline-flex;
+
+    &:not(:last-of-type) {
+      margin-right: 16px;
+    }
 
     &:hover,
     &:active {
@@ -45,5 +44,36 @@ export const SocialInformation = styled.div`
 `;
 
 export const Copyright = styled.div`
-  text-align: center;
+  grid-area: copyright;
+  @media (min-width: 769px) {
+    text-align: center;
+  }
+`;
+
+export const Links = styled.div`
+  grid-area: links;
+  margin: 0 0 24px;
+  @media (min-width: 769px) {
+    margin: 0;
+    text-align: right;
+  }
+
+  ul {
+    li {
+      &:not(:last-of-type) {
+        margin: 0 0 1.4em;
+      }
+      @media (min-width: 769px) {
+        display: inline-block;
+        &:not(:last-of-type) {
+          margin: 0 1em 0 0;
+        }
+      }
+    }
+  }
+
+  a:hover,
+  a:active {
+    color: ${PRIMARY_COLOR};
+  }
 `;

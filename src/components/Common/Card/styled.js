@@ -34,6 +34,16 @@ export const TagWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  span {
+    color: #757575;
+    font-size: 11px;
+    line-height: 1.4;
+
+    &:hover {
+      color: ${PRIMARY_COLOR};
+    }
+  }
 `;
 
 export const StyledArticle = styled.article`
@@ -89,16 +99,6 @@ export const StyledArticle = styled.article`
 
     span {
       white-space: nowrap;
-    }
-  }
-
-  tag {
-    color: #757575;
-    font-size: 11px;
-    line-height: 1.4;
-
-    &:hover {
-      color: ${PRIMARY_COLOR};
     }
   }
 `;

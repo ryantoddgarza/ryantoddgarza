@@ -8,11 +8,7 @@ import {
   FaAngleRight,
   FaEllipsisH,
 } from 'react-icons/fa';
-import {
-  CONTENT_PER_PAGE,
-  PAGE_PER_SCREEN,
-  POSTS_PATH,
-} from '~/constants';
+import { CONTENT_PER_PAGE, PAGE_PER_SCREEN, POSTS_PATH } from '~/constants';
 import getPage from '~/utils/getPage';
 import { Wrapper } from './styled';
 
@@ -94,8 +90,9 @@ const Pagination = ({ postCount, location, prefix }) => {
 
 Pagination.propTypes = {
   postCount: PropTypes.number.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   prefix: PropTypes.string,
 };
 

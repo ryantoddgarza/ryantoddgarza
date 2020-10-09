@@ -7,16 +7,11 @@ import { BLACK_COLOR, WHITE_COLOR } from '~/components/Common/constants';
 import { Wrapper } from './styled';
 
 export default class App extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
-    categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    postInformations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    hasPortfolio: PropTypes.bool.isRequired,
-  }
-
-  state = {
-    isDracula: global.localStorage && global.localStorage.getItem('theme') === 'dracula',
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDracula: global.localStorage && global.localStorage.getItem('theme') === 'dracula',
+    };
   }
 
   toggleTheme = () => {
@@ -84,3 +79,11 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  postInformations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  hasPortfolio: PropTypes.bool.isRequired,
+};

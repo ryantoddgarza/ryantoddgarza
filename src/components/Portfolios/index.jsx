@@ -38,7 +38,9 @@ const Portfolios = ({
                   {summary ? (
                     <>
                       <p>{summary}</p>
-                      <p><em>Learn More</em></p>
+                      <p>
+                        <em>Learn More</em>
+                      </p>
                     </>
                   ) : null}
                 </article>
@@ -60,7 +62,11 @@ const Portfolios = ({
 );
 
 Portfolios.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    portfolios: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Portfolios;

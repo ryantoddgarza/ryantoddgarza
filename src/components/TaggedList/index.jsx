@@ -46,7 +46,9 @@ const TaggedList = ({ data, location }) => {
 
 TaggedList.propTypes = {
   data: PropTypes.shape({}).isRequired,
-  location: PropTypes.shape({}).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default TaggedList;

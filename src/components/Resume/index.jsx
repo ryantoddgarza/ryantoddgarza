@@ -1,17 +1,35 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { FaPrint, FaGithub, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import {
+  FaPrint,
+  FaGithub,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+} from 'react-icons/fa';
 import Clearfix from '~/components/Common/Clearfix';
-import { PREFIX, AUTHOR, EMAIL, GITHUB_ID, TWITTER_ID, FACEBOOK_ID, LINKEDIN_ID } from '~/constants';
+import {
+  PREFIX,
+  AUTHOR,
+  EMAIL,
+  GITHUB_ID,
+  TWITTER_ID,
+  FACEBOOK_ID,
+  LINKEDIN_ID,
+} from '~/constants';
 import * as profileUrl from '~/resources/me.png';
-import { Wrapper, BasicInformation, SocialInformation, MDInformation, Button } from './styled';
+import {
+  Wrapper,
+  BasicInformation,
+  SocialInformation,
+  MDInformation,
+  Button,
+} from './styled';
 
 const Resume = ({
   data: {
-    resume: {
-      html,
-    },
+    resume: { html },
   },
 }) => {
   const $mdWrapper = useRef(null);
@@ -37,9 +55,7 @@ const Resume = ({
     <Wrapper>
       <Clearfix>
         <Helmet>
-          <title>
-            {`${PREFIX}resume`}
-          </title>
+          <title>{`${PREFIX}resume`}</title>
           <meta name="og:title" content={`${PREFIX}RESUME`} />
         </Helmet>
         <Clearfix>
@@ -49,18 +65,9 @@ const Resume = ({
           </Button>
         </Clearfix>
         <BasicInformation>
-          <img
-            src={profileUrl.default}
-            alt=""
-            width="120"
-            height="120"
-          />
-          <h1>
-            {AUTHOR}
-          </h1>
-          <p>
-            {EMAIL}
-          </p>
+          <img src={profileUrl.default} alt="" width="120" height="120" />
+          <h1>{AUTHOR}</h1>
+          <p>{EMAIL}</p>
         </BasicInformation>
         <SocialInformation>
           {GITHUB_ID ? (
@@ -101,10 +108,7 @@ const Resume = ({
           ) : null}
         </SocialInformation>
         <MDInformation>
-          <div
-            ref={$mdWrapper}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div ref={$mdWrapper} dangerouslySetInnerHTML={{ __html: html }} />
         </MDInformation>
       </Clearfix>
     </Wrapper>
@@ -112,7 +116,11 @@ const Resume = ({
 };
 
 Resume.propTypes = {
-  data: PropTypes.shape({ date: PropTypes.object }).isRequired,
+  data: PropTypes.shape({
+    resume: PropTypes.shape({
+      html: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default Resume;

@@ -11,12 +11,7 @@ import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
 import { PREFIX, SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
-import {
-  Tags,
-  PostContent,
-  ImageWrapper,
-  ComponentInPost,
-} from './styled';
+import { Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
 
 const PostTemplate = ({
   data: {
@@ -54,7 +49,7 @@ const PostTemplate = ({
 
   const createCopyButton = useCallback(() => {
     const codes = global.document.querySelectorAll(
-      '#post-contents .gatsby-highlight',
+      '#post-contents .gatsby-highlight'
     );
 
     codes.forEach((code) => {
@@ -80,7 +75,7 @@ const PostTemplate = ({
         components.forEach(
           ({ rootId: componentRootId, fileName: componentFileName }) => {
             const $componentContainer = global.document.getElementById(
-              componentRootId,
+              componentRootId
             );
             const App = require(`~/postComponents/${componentFileName}`)
               .default;
@@ -89,9 +84,9 @@ const PostTemplate = ({
               <ComponentInPost>
                 <App />
               </ComponentInPost>,
-              $componentContainer,
+              $componentContainer
             );
-          },
+          }
         );
       } catch (e) {
         console.warn(e); // eslint-disable-line no-console
@@ -109,7 +104,7 @@ const PostTemplate = ({
             <div>
               <Tweet tweetId={tweetId} options={{ username }} />
             </div>,
-            $tweetContainer,
+            $tweetContainer
           );
         });
       } catch (e) {
@@ -183,7 +178,19 @@ const PostTemplate = ({
 };
 
 PostTemplate.propTypes = {
-  data: PropTypes.shape({ date: PropTypes.object }).isRequired,
+  data: PropTypes.shape({
+    post: PropTypes.shape({
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string),
+        images: PropTypes.arrayOf(PropTypes.string),
+        tweets: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+        components: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+      }),
+    }),
+  }).isRequired,
   location: PropTypes.shape({}).isRequired,
 };
 

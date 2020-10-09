@@ -33,7 +33,11 @@ const Albums = ({
 );
 
 Albums.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    albums: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Albums;

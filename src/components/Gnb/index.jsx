@@ -215,8 +215,9 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
 };
 
 Gnb.propTypes = {
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})),
   hasPortfolio: PropTypes.bool.isRequired,
 };

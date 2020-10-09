@@ -2,7 +2,7 @@ import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
-import { TITLE } from '~/constants';
+import { TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
@@ -69,10 +69,10 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
   }, [isMenuOpened]);
 
   const { pathname } = location;
-  const isPortfolio = pathname.replace(/\/$/, '').startsWith('/portfolios');
   const isHome = pathname.replace(/\/$/, '') === '';
-  const isMusic = pathname.replace(/\/$/, '') === '/albums';
-  const isPost = !(isPortfolio || isHome || isMusic);
+  const isMusic = pathname.replace(/\/$/, '').startsWith(ALBUMS_PATH);
+  const isPortfolio = pathname.replace(/\/$/, '').startsWith(PORTFOLIOS_PATH);
+  const isPost = !(isHome || isMusic || isPortfolio);
 
   return (
     <GnbWrapperOuter>
@@ -88,7 +88,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
               </ListMenu>
               <ListMenu>
                 <StyledLink
-                  to="/pages/1"
+                  to={`${POSTS_PATH}/1`}
                   className={isPost ? 'active' : ''}
                   onClick={toggleMenu}
                 >
@@ -129,7 +129,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
               {hasPortfolio ? (
                 <ListMenu>
                   <StyledLink
-                    to="/portfolios"
+                    to={PORTFOLIOS_PATH}
                     className={isPortfolio ? 'active' : ''}
                     onClick={toggleMenu}
                   >
@@ -139,7 +139,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
               ) : null}
               <ListMenu>
                 <StyledLink
-                  to="/albums"
+                  to={ALBUMS_PATH}
                   className={isMusic ? 'active' : ''}
                   onClick={toggleMenu}
                 >
@@ -166,7 +166,10 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
             </StyledLink>
           </ListMenu>
           <ListMenu>
-            <StyledLink to="/pages/1" className={isPost ? 'active' : ''}>
+            <StyledLink
+              to={`${POSTS_PATH}/1`}
+              className={isPost ? 'active' : ''}
+            >
               Posts &nbsp;
               {categories.length > 0 ? <FaCaretDown /> : null}
             </StyledLink>
@@ -193,7 +196,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
           {hasPortfolio ? (
             <ListMenu>
               <StyledLink
-                to="/portfolios"
+                to={PORTFOLIOS_PATH}
                 className={isPortfolio ? 'active' : ''}
               >
                 Portfolio
@@ -201,7 +204,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
             </ListMenu>
           ) : null}
           <ListMenu>
-            <StyledLink to="/albums" className={isMusic ? 'active' : ''}>
+            <StyledLink to={ALBUMS_PATH} className={isMusic ? 'active' : ''}>
               Music
             </StyledLink>
           </ListMenu>

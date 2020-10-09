@@ -35,7 +35,7 @@ const Card = ({ tags, path, images, title, summary }) => {
         <TagWrapper>
           {tags.map((tag) => (
             <Link key={tag} to={`/tags/${tag}/1`}>
-              <tag>{`${tag} `}</tag>
+              <span>{`${tag} `}</span>
             </Link>
           ))}
         </TagWrapper>

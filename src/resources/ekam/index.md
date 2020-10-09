@@ -3,7 +3,7 @@ type: 'album'
 title: 'Ekam'
 artist: 'Ryan Todd Garza'
 date: '2020-09-09T00:00:00.000Z'
-path: '/albums/ekam'
+path: '/albums/ekam/'
 featured: true
 cover: 'ekam/ekam-cover.jpg'
 metadata:

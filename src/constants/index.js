@@ -1,11 +1,6 @@
 exports.CONTENT_PER_PAGE = 8;
 exports.PAGE_PER_SCREEN = 4;
 
-exports.POST = 'post';
-exports.PORTFOLIO = 'portfolio';
-exports.RESUME = 'resume';
-exports.ALBUM = 'album';
-
 // Site Information
 exports.NAME = 'Ryan Todd Garza';
 exports.TITLE = 'Ryan Todd Garza';
@@ -26,6 +21,18 @@ exports.KEYWORDS = [
 ].join(', ');
 exports.SITE_URL = 'https://ryantoddgarza.com';
 exports.PROFILE = 'https://avatars3.githubusercontent.com/u/46946731?s=200&v=4';
+
+// Paths
+exports.ALBUMS_PATH = '/albums';
+exports.PORTFOLIOS_PATH = '/portfolios';
+exports.POSTS_PATH = '/pages';
+exports.RESUME_PATH = '/resume';
+
+// Components
+exports.ALBUM = 'album';
+exports.PORTFOLIO = 'portfolio';
+exports.POST = 'post';
+exports.RESUME = 'resume';
 
 // Social
 exports.GITHUB_ID = 'ryantoddgarza';

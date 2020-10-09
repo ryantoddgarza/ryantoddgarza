@@ -7,7 +7,13 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import { TITLE, MEDIUM_ID } from '~/constants';
+import {
+  TITLE,
+  ALBUMS_PATH,
+  PORTFOLIOS_PATH,
+  POSTS_PATH,
+  MEDIUM_ID,
+} from '~/constants';
 import { Title } from './styled';
 
 function Feature(name) {
@@ -41,7 +47,7 @@ const Home = ({ albums, portfolios }) => {
             <SectionHeader
               title="Featured Albums"
               linkName="View All"
-              linkURL="/albums"
+              linkURL={ALBUMS_PATH}
             />
             {featuredAlbums
               .slice(0, 1)
@@ -65,7 +71,7 @@ const Home = ({ albums, portfolios }) => {
             <SectionHeader
               title="Featured Projects"
               linkName="View All"
-              linkURL="/portfolios"
+              linkURL={PORTFOLIOS_PATH}
             />
             {featuredPortfolios.slice(0, 4).map(
               ({
@@ -117,7 +123,7 @@ const Home = ({ albums, portfolios }) => {
         <SectionHeader
           title="Featured Posts"
           linkName="View All"
-          linkURL="/pages/1"
+          linkURL={`${POSTS_PATH}/1`}
         />
         <SectionHeader
           title="Medium Articles"

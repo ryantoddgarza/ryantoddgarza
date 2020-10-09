@@ -1,5 +1,5 @@
 ---
-path: '/posts/superimposed-recursive-metric-modulation/'
+path: '/superimposed-recursive-metric-modulation/'
 category: 'music'
 tags: ['music', 'rhythm', 'meter', 'tempo', 'modulation']
 title: 'Superimposed Recursive Metric Modulation - Rough Draft'

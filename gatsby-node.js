@@ -6,10 +6,13 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const {
   CONTENT_PER_PAGE,
-  POST,
-  PORTFOLIO,
-  RESUME,
   ALBUM,
+  PORTFOLIO,
+  POST,
+  RESUME,
+  ALBUMS_PATH,
+  PORTFOLIOS_PATH,
+  POSTS_PATH,
 } = require('./src/constants');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
@@ -131,7 +134,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           if (albumsCount) {
             createPage({
-              path: '/albums',
+              path: ALBUMS_PATH,
               component: albums,
               context: {},
             });
@@ -147,7 +150,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           if (portfoliosCount) {
             createPage({
-              path: '/portfolios',
+              path: PORTFOLIOS_PATH,
               component: portfolios,
               context: {},
             });
@@ -168,14 +171,14 @@ exports.createPages = ({ graphql, actions }) => {
           if (pages.length > 0) {
             pages.forEach((page) => {
               createPage({
-                path: `/pages/${page}`,
+                path: `${POSTS_PATH}/${page}`,
                 component: list,
                 context: {},
               });
             });
           } else {
             createPage({
-              path: '/pages/1',
+              path: `${POSTS_PATH}/1`,
               component: list,
               context: {},
             });

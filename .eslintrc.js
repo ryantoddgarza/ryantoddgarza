@@ -24,10 +24,8 @@ module.exports = {
     'function-paren-newline': [error, 'consistent'],
     'global-require': off,
     'implicit-arrow-linebreak': off,
-    'import/extensions': off,
     'import/no-deprecated': warn,
     'import/no-dynamic-require': off,
-    'import/no-unresolved': off,
     'import/no-webpack-loader-syntax': off,
     'import/prefer-default-export': off,
     indent: [
@@ -105,6 +103,12 @@ module.exports = {
     react: {
       pragma: 'React',
       version: '16.8.5',
-    }
+    },
+    'import/resolver': {
+      alias: {
+        map: [['~', './src']],
+        extensions: ['.js', '.jsx', 'json'],
+      },
+    },
   }
 };

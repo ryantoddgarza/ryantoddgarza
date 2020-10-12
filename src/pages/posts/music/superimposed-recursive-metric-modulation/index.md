@@ -5,7 +5,7 @@ tags: ['music', 'rhythm', 'meter', 'tempo', 'modulation']
 title: 'Superimposed Recursive Metric Modulation - Rough Draft'
 date: '2020-08-23T23:44:00.000Z'
 summary: 'Thus, recursive metric modulation suggests that through subsequent modulations to closely related meters, distantly related meters can be accessed while maintaining a relationship to the original.'
-images: ['images/metric-modulation-01.jpg']
+images: ['https://images.unsplash.com/photo-1532908336432-6ab8ec3d56c1?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 
 ## Concept

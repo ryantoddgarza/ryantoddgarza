@@ -4,7 +4,7 @@ category: 'technology'
 tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 2'
 date: '2020-10-02T12:03:00.000Z'
-summary: ''
+summary: 'In part 1 we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment.'
 images: ['https://images.unsplash.com/photo-1483366774565-c783b9f70e2c']
 ---
 
@@ -15,9 +15,7 @@ In part 1 we did some basic setup to get the history mechanism working in Zsh. I
 Default behavior is to overwrite the existing history file upon shell exit. The following are all methods of appending rather than rewriting the file — taking advantage of that potentially massive history size we set up in part one.
 
 - `APPEND_HISTORY`
-
 - `INC_APPEND_HISTORY`
-
 - `SHARE_HISTORY`
 
 The difference being that `APPEND_HISTORY` appends lines in the order in which each session is closed while `INC_APPEND_HISTORY` adds lines to the history in the order in which they are executed. `SHARE_HISTORY` is the equivalent of `INC_APPEND_HISTORY` but also imports new commands, allowing lines to be shared across multiple open sessions.
@@ -35,13 +33,9 @@ setopt INC_APPEND_HISTORY
 Now let’s take a look at how we can handle duplicate lines. For example, if I’ve just run `exit` on three open TMUX windows and would like to cycle back to a history item just before, I will have to traverse the duplicates. We can do better.
 
 - `HIST_IGNORE_DUPS`
-
 - `HIST_IGNORE_ALL_DUPS`
-
 - `HIST_EXPIRE_DUPS_FIRST`
-
 - `HIST_SAVE_NO_DUPS`
-
 - `HIST_FIND_NO_DUPS`
 
 `HIST_IGNORE_DUPS` prevents storing only repeated lines that are adjacent to one another, `HIST_IGNORE_ALL_DUPS` removes old duplicates of the line and keeps the new one even if lines are not adjacent, while `HIST_EXPIRE_DUPS_FIRST` removes old duplicates only when the history is filled up.`HIST_SAVE_NO_DUPS` is the most aggressive of these options since, as the name suggests, it saves no more than one duplicate.

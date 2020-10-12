@@ -4,7 +4,7 @@ category: 'technology'
 tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 1'
 date: '2020-10-01T18:46:00.000Z'
-summary: ''
+summary: 'I recently combed through the dot files in my mac’s home directory and was shocked to see just how polluted it had become. I took the opportunity to take a closer look into some configurations.'
 images: ['https://images.unsplash.com/photo-1582303520952-11fe6a0c2058']
 ---
 
@@ -19,9 +19,7 @@ If you are unfamiliar with the types of zsh configuration files and their uses, 
 The Zsh history mechanism only requires these first two parameters to be set up, but inside of the `.zsrc` we can configure three:
 
 - `HISTFILE`
-
 - `SAVEHIST`
-
 - `HISTSIZE`
 
 To satisfy my original annoyance, let’s change the location of the history file. By default, the zsh setup wizard sets this parameter to `~/.zsh_history` using `HISTFILE`. I prefer this to be kept with some other generated zsh specific files at `~/.cache/zsh`. So in the `.zshrc` we can add:

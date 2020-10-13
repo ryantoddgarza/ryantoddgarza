@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import PostsWrapper from '~/components/Common/PostsWrapper';
-import Card from '~/components/Common/Card';
+import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
@@ -24,7 +24,7 @@ const List = ({ data, location }) => {
           <meta name="og:title" content={`${PREFIX}POST`} />
         </Helmet>
         {posts.map(({ node: { frontmatter: { images, tags, path, ...otherProps } } }) => (
-          <Card key={path} path={path} images={images} tags={tags} {...otherProps} />
+          <PostCard key={path} path={path} images={images} tags={tags} {...otherProps} />
         ))}
       </PostsWrapper>
       <Pagination postCount={postCount} location={location} />

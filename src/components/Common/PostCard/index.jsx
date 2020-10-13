@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Truncate from 'react-truncate';
 import { ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
-const Card = ({ tags, path, images, title, summary }) => {
+const PostCard = ({ tags, path, images, title, summary }) => {
   const [image = null] = images;
 
   return (
@@ -44,7 +44,7 @@ const Card = ({ tags, path, images, title, summary }) => {
   );
 };
 
-Card.propTypes = {
+PostCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),
   path: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.string),
@@ -52,11 +52,11 @@ Card.propTypes = {
   summary: PropTypes.string,
 };
 
-Card.defaultProps = {
+PostCard.defaultProps = {
   tags: [],
   images: [],
   title: '',
   summary: '',
 };
 
-export default Card;
+export default PostCard;

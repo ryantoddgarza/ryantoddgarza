@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { PREFIX } from '~/constants';
+import ScopedImage from '~/components/Common/ScopedImage';
 import { Wrapper, PortfolioDescription, PortfolioImages } from './styled';
 
 const Portfolio = ({
@@ -22,14 +23,9 @@ const Portfolio = ({
     </PortfolioDescription>
     {images ? (
       <PortfolioImages>
-        {images.map((image) => {
-          if (image.includes('//')) {
-            return <img key={image} src={image} alt={title} />;
-          }
-
-          const url = require(`~/resources/${image}`);
-          return <img key={image} src={url} alt={title} />;
-        })}
+        {images.map((image) => (
+          <ScopedImage key={image} src={image} alt={title} />
+        ))}
       </PortfolioImages>
     ) : null}
   </Wrapper>

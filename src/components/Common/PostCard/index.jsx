@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Truncate from 'react-truncate';
+import ScopedImage from '~/components/Common/ScopedImage';
 import { ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
 const PostCard = ({ tags, path, images, title, summary }) => {
@@ -13,12 +14,7 @@ const PostCard = ({ tags, path, images, title, summary }) => {
         <Link to={path}>
           <ImageWrapper>
             {image === null ? null : (
-              <img
-                src={
-                  image.includes('//') ? image : require(`~/resources/${image}`)
-                }
-                alt={title}
-              />
+              <ScopedImage src={image} alt="title" />
             )}
           </ImageWrapper>
           <h3>

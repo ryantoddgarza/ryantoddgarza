@@ -9,6 +9,7 @@ import Clipboard from 'clipboard';
 import Bio from '~/components/Bio';
 import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
+import ScopedImage from '~/components/Common/ScopedImage';
 import { PREFIX, SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
 import { Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
@@ -141,12 +142,7 @@ const PostTemplate = ({
         </Helmet>
         {image === null ? null : (
           <ImageWrapper>
-            <img
-              src={
-                image.includes('//') ? image : require(`~/resources/${image}`)
-              }
-              alt={title}
-            />
+            <ScopedImage src={image} alt={title} />
           </ImageWrapper>
         )}
         <h1>{title}</h1>

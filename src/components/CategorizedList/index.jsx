@@ -21,19 +21,26 @@ const CategorizedList = ({ data, location }) => {
     <>
       <PostsWrapper>
         <Helmet>
-          <title>
-            {`${PREFIX}${category.toUpperCase()}`}
-          </title>
-          <meta name="og:title" content={`${PREFIX}${category.toUpperCase()}`} />
+          <title>{`${PREFIX}${category}`}</title>
+          <meta name="og:title" content={`${PREFIX}${category}`} />
         </Helmet>
-        {posts.length === 0 ? (
-          <div>
-            No posts.
-          </div>
-        ) : null}
-        {posts.map(({ node: { frontmatter: { images, tags, path, ...otherProps } } }) => (
-          <PostCard key={path} path={path} images={images} tags={tags} {...otherProps} />
-        ))}
+        {posts.length === 0 ? <div>No posts.</div> : null}
+        {posts.map(
+          ({
+            node: {
+              frontmatter: { title, summary, tags, path, images },
+            },
+          }) => (
+            <PostCard
+              key={path}
+              title={title}
+              summary={summary}
+              tags={tags}
+              path={path}
+              images={images}
+            />
+          )
+        )}
       </PostsWrapper>
       <Pagination
         prefix={`/categories/${category}/`}
@@ -46,7 +53,9 @@ const CategorizedList = ({ data, location }) => {
 
 CategorizedList.propTypes = {
   data: PropTypes.shape({}).isRequired,
-  location: PropTypes.shape({}).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CategorizedList;

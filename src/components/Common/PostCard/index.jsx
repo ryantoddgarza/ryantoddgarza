@@ -5,7 +5,7 @@ import Truncate from 'react-truncate';
 import ScopedImage from '~/components/Common/ScopedImage';
 import { ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
-const PostCard = ({ tags, path, images, title, summary }) => {
+const PostCard = ({ title, summary, path, tags, images }) => {
   const [image = null] = images;
 
   return (
@@ -13,9 +13,7 @@ const PostCard = ({ tags, path, images, title, summary }) => {
       <div>
         <Link to={path}>
           <ImageWrapper>
-            {image === null ? null : (
-              <ScopedImage src={image} alt="title" />
-            )}
+            {image === null ? null : <ScopedImage src={image} alt="title" />}
           </ImageWrapper>
           <h3>
             <Truncate lines={2} ellipsis={<span>...</span>}>
@@ -41,18 +39,18 @@ const PostCard = ({ tags, path, images, title, summary }) => {
 };
 
 PostCard.propTypes = {
+  title: PropTypes.string,
+  summary: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   path: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string,
-  summary: PropTypes.string,
 };
 
 PostCard.defaultProps = {
-  tags: [],
-  images: [],
   title: '',
   summary: '',
+  tags: [],
+  images: [],
 };
 
 export default PostCard;

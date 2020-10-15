@@ -15,7 +15,7 @@ const Albums = ({
   <Wrapper>
     <Helmet>
       <title>{`${PREFIX}Albums`}</title>
-      <meta name="og:title" content={`${PREFIX}ALBUMS`} />
+      <meta name="og:title" content={`${PREFIX}Albums`} />
     </Helmet>
     {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
       <Link to={path} key={title}>

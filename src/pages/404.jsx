@@ -27,9 +27,9 @@ const NotFoundPage = () => (
   <Wrapper>
     <Helmet>
       <title>
-        {`${PREFIX}PAGE NOT FOUND`}
+        {`${PREFIX}Page Not Found`}
       </title>
-      <meta name="og:title" content={`${PREFIX}PAGE NOT FOUND`} />
+      <meta name="og:title" content={`${PREFIX}Page Not Found`} />
     </Helmet>
     <h1>
       Page Not Found

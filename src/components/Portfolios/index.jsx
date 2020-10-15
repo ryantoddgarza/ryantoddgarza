@@ -14,8 +14,8 @@ const Portfolios = ({
 }) => (
   <Wrapper>
     <Helmet>
-      <title>{`${PREFIX}PORTFOLIOS`}</title>
-      <meta name="og:title" content={`${PREFIX}PORTFOLIOS`} />
+      <title>{`${PREFIX}Portfolios`}</title>
+      <meta name="og:title" content={`${PREFIX}Portfolios`} />
     </Helmet>
     {portfolios.map(
       ({

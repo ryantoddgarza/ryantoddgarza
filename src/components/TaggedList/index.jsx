@@ -22,9 +22,9 @@ const TaggedList = ({ data, location }) => {
       <PostsWrapper>
         <Helmet>
           <title>
-            {`${PREFIX}${tag.toUpperCase()}`}
+            {`${PREFIX}${tag}`}
           </title>
-          <meta name="og:title" content={`${PREFIX}${tag.toUpperCase()}`} />
+          <meta name="og:title" content={`${PREFIX}${tag}`} />
         </Helmet>
         {posts.map(
           ({

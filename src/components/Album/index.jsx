@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { PREFIX } from '~/constants';
+import ScopedImage from '~/components/Common/ScopedImage';
 import {
   Wrapper,
   AlbumPrimary,
@@ -53,12 +54,7 @@ const Album = ({
       <AlbumPrimary>
         <ContentLeft>
           <Cover>
-            <img
-              src={
-                cover.includes('//') ? cover : require(`~/resources/${cover}`)
-              }
-              alt={`${artist} - ${title}`}
-            />
+            <ScopedImage src={cover} alt={`${artist} - ${title}`} />
           </Cover>
         </ContentLeft>
         <ContentRight>

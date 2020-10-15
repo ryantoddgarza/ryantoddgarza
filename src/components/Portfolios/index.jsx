@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import { PREFIX } from '~/constants';
+import ScopedImage from '~/components/Common/ScopedImage';
 import { Wrapper } from './styled';
 
 const Portfolios = ({
@@ -28,11 +29,7 @@ const Portfolios = ({
           return (
             <PortfolioCard key={path}>
               <Link to={path}>
-                {image.includes('//') ? (
-                  <img src={image} alt="portfolio" />
-                ) : (
-                  <img src={require(`~/resources/${image}`)} alt="portfolio" />
-                )}
+                <ScopedImage src={image} alt={`${title} - portfolio`} />
                 <article>
                   <h6>{title}</h6>
                   {summary ? (

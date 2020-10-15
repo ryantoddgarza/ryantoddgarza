@@ -1,31 +1,12 @@
 import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
+import ScopedLink from '~/components/Common/ScopedLink';
 import { Header, Title } from './styled';
-
-const Link = ({ data: { linkName, linkURL } }) => {
-  if (linkURL.includes('//')) {
-    return (
-      <a href={linkURL} target="_blank" rel="noreferrer noopener">
-        {linkName}
-      </a>
-    );
-  }
-
-  return <GatsbyLink to={linkURL}>{linkName}</GatsbyLink>;
-};
-
-Link.propTypes = {
-  data: PropTypes.shape({
-    linkName: PropTypes.string.isRequired,
-    linkURL: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 const SectionHeader = ({ title, linkName, linkURL }) => (
   <Header>
     <Title>{title}</Title>
-    {linkName && linkURL ? <Link data={{ linkName, linkURL }} /> : null}
+    {linkName && linkURL ? <ScopedLink to={linkURL}>{linkName}</ScopedLink> : null}
   </Header>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import PostsWrapper from '~/components/Common/PostsWrapper';
-import Card from '~/components/Common/Card';
+import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
@@ -13,7 +13,7 @@ const TaggedList = ({ data, location }) => {
   const [, , tag] = location.pathname.split('/');
   const allPosts = data
     |> getPosts
-    |> (posts => posts.filter(({ node: { frontmatter: { tags } } }) => tags.includes(tag)));
+    |> ((posts) => posts.filter(({ node: { frontmatter: { tags } } }) => tags.includes(tag)));
   const postCount = allPosts.length;
   const posts = allPosts.slice((page - 1) * CONTENT_PER_PAGE, page * CONTENT_PER_PAGE);
 
@@ -32,7 +32,7 @@ const TaggedList = ({ data, location }) => {
           </div>
         ) : null}
         {posts.map(({ node: { frontmatter: { images, tags, path, ...otherProps } } }) => (
-          <Card key={path} path={path} tags={tags} images={images} {...otherProps} />
+          <PostCard key={path} path={path} tags={tags} images={images} {...otherProps} />
         ))}
       </PostsWrapper>
       <Pagination

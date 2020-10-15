@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Truncate from 'react-truncate';
+import ScopedImage from '~/components/Common/ScopedImage';
 import { ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
-const Card = ({ tags, path, images, title, summary }) => {
+const PostCard = ({ tags, path, images, title, summary }) => {
   const [image = null] = images;
 
   return (
@@ -13,12 +14,7 @@ const Card = ({ tags, path, images, title, summary }) => {
         <Link to={path}>
           <ImageWrapper>
             {image === null ? null : (
-              <img
-                src={
-                  image.includes('//') ? image : require(`~/resources/${image}`)
-                }
-                alt={title}
-              />
+              <ScopedImage src={image} alt="title" />
             )}
           </ImageWrapper>
           <h3>
@@ -44,7 +40,7 @@ const Card = ({ tags, path, images, title, summary }) => {
   );
 };
 
-Card.propTypes = {
+PostCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),
   path: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.string),
@@ -52,11 +48,11 @@ Card.propTypes = {
   summary: PropTypes.string,
 };
 
-Card.defaultProps = {
+PostCard.defaultProps = {
   tags: [],
   images: [],
   title: '',
   summary: '',
 };
 
-export default Card;
+export default PostCard;

@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import AlbumCard from '~/components/Common/AlbumCard';
+import ScopedImage from '~/components/Common/ScopedImage';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import {
@@ -54,10 +55,7 @@ const Home = ({ albums, portfolios }) => {
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
                 <Link to={path} key={title}>
                   <AlbumCard>
-                    <img
-                      src={require(`~/resources/${cover}`)}
-                      alt={`${title} - album cover`}
-                    />
+                    <ScopedImage src={cover} alt="album" />
                     <div>
                       <h2>{title}</h2>
                     </div>
@@ -85,14 +83,7 @@ const Home = ({ albums, portfolios }) => {
                   return (
                     <PortfolioCard key={path}>
                       <Link to={path}>
-                        {image.includes('//') ? (
-                          <img src={image} alt="portfolio" />
-                        ) : (
-                          <img
-                            src={require(`~/resources/${image}`)}
-                            alt="portfolio"
-                          />
-                        )}
+                        <ScopedImage src={image} alt="portfolio" />
                         <article>
                           <h6>{title}</h6>
                           {summary ? (

@@ -15,8 +15,8 @@ const Portfolio = ({
 }) => (
   <Wrapper>
     <Helmet>
-      <title>{`${PREFIX}${title.toUpperCase()}`}</title>
-      <meta name="og:title" content={`${PREFIX}${title.toUpperCase()}`} />
+      <title>{`${PREFIX}${title}`}</title>
+      <meta name="og:title" content={`${PREFIX}${title}`} />
     </Helmet>
     <PortfolioDescription>
       <section dangerouslySetInnerHTML={{ __html: html }} />

@@ -4,7 +4,7 @@ exports.PAGE_PER_SCREEN = 4;
 // Site Information
 exports.NAME = 'Ryan Todd Garza';
 exports.TITLE = 'Ryan Todd Garza';
-exports.PREFIX = 'ryantoddgarza | ';
+exports.PREFIX = 'Ryan Todd Garza | ';
 exports.DESCRIPTION = 'A creative based in Los Angeles, CA';
 exports.AUTHOR = 'Ryan Todd Garza';
 exports.EMAIL = 'ryantoddgarza@gmail.com';

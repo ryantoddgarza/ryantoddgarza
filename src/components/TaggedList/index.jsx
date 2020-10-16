@@ -22,18 +22,26 @@ const TaggedList = ({ data, location }) => {
       <PostsWrapper>
         <Helmet>
           <title>
-            {`${PREFIX}${tag.toUpperCase()}`}
+            {`${PREFIX}${tag}`}
           </title>
-          <meta name="og:title" content={`${PREFIX}${tag.toUpperCase()}`} />
+          <meta name="og:title" content={`${PREFIX}${tag}`} />
         </Helmet>
-        {posts.length === 0 ? (
-          <div>
-            No posts.
-          </div>
-        ) : null}
-        {posts.map(({ node: { frontmatter: { images, tags, path, ...otherProps } } }) => (
-          <PostCard key={path} path={path} tags={tags} images={images} {...otherProps} />
-        ))}
+        {posts.map(
+          ({
+            node: {
+              frontmatter: { title, summary, tags, path, images },
+            },
+          }) => (
+            <PostCard
+              key={path}
+              title={title}
+              summary={summary}
+              tags={tags}
+              path={path}
+              images={images}
+            />
+          )
+        )}
       </PostsWrapper>
       <Pagination
         prefix={`/tags/${tag}/`}

@@ -19,13 +19,26 @@ const List = ({ data, location }) => {
       <PostsWrapper>
         <Helmet>
           <title>
-            {`${PREFIX}POST`}
+            {`${PREFIX}Posts`}
           </title>
-          <meta name="og:title" content={`${PREFIX}POST`} />
+          <meta name="og:title" content={`${PREFIX}Posts`} />
         </Helmet>
-        {posts.map(({ node: { frontmatter: { images, tags, path, ...otherProps } } }) => (
-          <PostCard key={path} path={path} images={images} tags={tags} {...otherProps} />
-        ))}
+        {posts.map(
+          ({
+            node: {
+              frontmatter: { title, summary, tags, path, images },
+            },
+          }) => (
+            <PostCard
+              key={path}
+              title={title}
+              summary={summary}
+              tags={tags}
+              path={path}
+              images={images}
+            />
+          )
+        )}
       </PostsWrapper>
       <Pagination postCount={postCount} location={location} />
     </>

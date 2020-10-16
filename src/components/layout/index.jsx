@@ -33,6 +33,7 @@ const Layout = ({ children, location }) => (
       const { edges } = posts;
       const albums = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM);
       const portfolios = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
+
       const categories = edges.reduce((categories, { node }) => {
         const { category } = node.frontmatter;
 
@@ -46,8 +47,8 @@ const Layout = ({ children, location }) => (
         if (categoryIndex === -1) {
           return [
             { key: '__ALL__', length: total + 1 },
-            ...categories.slice(1),
             { key: category, length: 1 },
+            ...categories.slice(1),
           ];
         }
 
@@ -58,6 +59,7 @@ const Layout = ({ children, location }) => (
           ...categories.slice(categoryIndex + 1),
         ];
       }, [{ key: '__ALL__', length: 0 }]);
+
       const postInformations = edges.reduce((postInformations, { node: { frontmatter } }) => {
         const { type, path, title, summary, tags = [], category } = frontmatter;
 

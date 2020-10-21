@@ -79,7 +79,9 @@ const Layout = ({ children, location }) => (
         return postInformations;
       }, []);
 
+      const hasPost = categories.length > 0;
       const hasPortfolio = portfolios.length > 0;
+      const hasAlbum = albums.length > 0;
 
       const childrenWithProps = Children.map(children, (child) => cloneElement(child, { albums, portfolios }));
 
@@ -88,7 +90,9 @@ const Layout = ({ children, location }) => (
           location={location}
           categories={categories}
           postInformations={postInformations}
+          hasPost={hasPost}
           hasPortfolio={hasPortfolio}
+          hasAlbum={hasAlbum}
         >
           {childrenWithProps}
         </App>

@@ -37,7 +37,9 @@ export default class App extends Component {
       location,
       categories,
       postInformations,
+      hasPost,
       hasPortfolio,
+      hasAlbum,
       children,
     } = this.props;
     const { isDracula } = this.state;
@@ -63,7 +65,9 @@ export default class App extends Component {
               location={location}
               categories={categories}
               postInformations={postInformations}
+              hasPost={hasPost}
               hasPortfolio={hasPortfolio}
+              hasAlbum={hasAlbum}
               toggleTheme={this.toggleTheme}
               isDracula={isDracula}
             />
@@ -85,5 +89,7 @@ App.propTypes = {
   location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   postInformations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  hasPost: PropTypes.bool.isRequired,
   hasPortfolio: PropTypes.bool.isRequired,
+  hasAlbum: PropTypes.bool.isRequired,
 };

@@ -1,11 +1,9 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
+import { TITLE } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
-  SubMenu,
   ListMenu,
   Home,
   StyledLink,
@@ -45,11 +43,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const MobileNav = ({
-  location: { isMusic, isPortfolio, isPost },
-  categories,
-  hasPortfolio,
-}) => {
+const MobileNav = ({ navLists: { mainNav } }) => {
   const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
     reducer,
     initialState
@@ -79,63 +73,40 @@ const MobileNav = ({
                 <Home>{TITLE}</Home>
               </StyledLink>
             </ListMenu>
-            <ListMenu>
-              <StyledLink
-                to={`${POSTS_PATH}/1`}
-                className={isPost ? 'active' : ''}
-                onClick={toggleMenu}
-              >
-                Posts
-              </StyledLink>
-              {categories.length > 0 ? (
-                <>
-                  &nbsp;
-                  <MovableFaCaretDown
-                    className={isSubMenuClosed ? 'is-active' : ''}
-                    onClick={toggleSubMenu}
-                  />
-                </>
-              ) : null}
-              <SubMenu>
-                <div>
-                  {categories.map(({ key, length }) => {
-                    if (key === '__ALL__') {
-                      return null;
-                    }
+            {mainNav.map(({ name, url, isActive, subMenu }) => {
+              if (subMenu) {
+                return (
+                  <ListMenu key={name}>
+                    <StyledLink
+                      to={url}
+                      className={isActive ? 'active' : ''}
+                      onClick={toggleSubMenu}
+                    >
+                      {`${name} `}
+                    </StyledLink>
+                    {subMenu.list.length > 0 ? (
+                      <MovableFaCaretDown
+                        className={isSubMenuClosed ? 'is-active' : ''}
+                        onClick={toggleSubMenu}
+                      />
+                    ) : null}
+                    {subMenu.component}
+                  </ListMenu>
+                );
+              }
 
-                    return (
-                      <li key={key}>
-                        <Link to={`/categories/${key}/1`} onClick={toggleMenu}>
-                          {key}
-                          &nbsp;
-                          <small>{`(${length})`}</small>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </div>
-              </SubMenu>
-            </ListMenu>
-            {hasPortfolio ? (
-              <ListMenu>
-                <StyledLink
-                  to={PORTFOLIOS_PATH}
-                  className={isPortfolio ? 'active' : ''}
-                  onClick={toggleMenu}
-                >
-                  Portfolio
-                </StyledLink>
-              </ListMenu>
-            ) : null}
-            <ListMenu>
-              <StyledLink
-                to={ALBUMS_PATH}
-                className={isMusic ? 'active' : ''}
-                onClick={toggleMenu}
-              >
-                Music
-              </StyledLink>
-            </ListMenu>
+              return (
+                <ListMenu key={name}>
+                  <StyledLink
+                    to={url}
+                    className={isActive ? 'active' : ''}
+                    onClick={toggleSubMenu}
+                  >
+                    {name}
+                  </StyledLink>
+                </ListMenu>
+              );
+            })}
           </ul>
         </MobileMenus>
       </MobileMenu>
@@ -154,17 +125,9 @@ const MobileNav = ({
 };
 
 MobileNav.propTypes = {
-  location: PropTypes.shape({
-    isMusic: PropTypes.bool,
-    isPortfolio: PropTypes.bool,
-    isPost: PropTypes.bool,
+  navLists: PropTypes.shape({
+    mainNav: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
-  categories: PropTypes.arrayOf(PropTypes.shape({})),
-  hasPortfolio: PropTypes.bool.isRequired,
-};
-
-MobileNav.defaultProps = {
-  categories: [],
 };
 
 export default MobileNav;

@@ -6,7 +6,7 @@ import PostCategoriesSubMenu from './PostCategoriesSubMenu';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import { GnbWrapperOuter, GnbWrapperInner } from './styled';
 
-const Gnb = ({ location, categories, hasPortfolio }) => {
+const Gnb = ({ location, categories }) => {
   const { pathname } = location;
   const isHome = pathname.replace(/\/$/, '') === '';
   const isMusic = pathname.replace(/\/$/, '').startsWith(ALBUMS_PATH);
@@ -42,11 +42,7 @@ const Gnb = ({ location, categories, hasPortfolio }) => {
   return (
     <GnbWrapperOuter>
       <GnbWrapperInner>
-        <MobileNav
-          location={{ isHome, isMusic, isPortfolio, isPost }}
-          categories={categories}
-          hasPortfolio={hasPortfolio}
-        />
+        <MobileNav navLists={{ mainNav }} />
         <DesktopNav navLists={{ mainNav }} />
       </GnbWrapperInner>
     </GnbWrapperOuter>
@@ -58,7 +54,6 @@ Gnb.propTypes = {
     pathname: PropTypes.string.isRequired,
   }).isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})),
-  hasPortfolio: PropTypes.bool.isRequired,
 };
 
 Gnb.defaultProps = {

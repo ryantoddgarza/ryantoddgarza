@@ -1,6 +1,7 @@
 ---
 path: '/white-notebook/introduction/'
 category: 'yoga'
+featured: false
 tags: ['yoga', 'white-notebook']
 title: 'White Notebook - Introduction'
 date: '2020-08-08T17:06:00.000Z'

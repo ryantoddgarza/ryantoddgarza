@@ -1,6 +1,7 @@
 ---
 path: '/white-notebook/the-ashtanga-of-patanjali/'
 category: 'yoga'
+featured: true
 tags: ['yoga', 'white-notebook', 'sutras']
 title: 'White Notebook - The Ashtanga of Patanjali'
 date: '2020-08-08T22:09:00.000Z'

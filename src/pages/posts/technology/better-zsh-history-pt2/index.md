@@ -1,6 +1,7 @@
 ---
 path: '/a-better-zsh-history-pt-2/'
 category: 'technology'
+featured: true
 tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 2'
 date: '2020-10-02T12:03:00.000Z'

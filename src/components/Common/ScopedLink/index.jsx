@@ -3,15 +3,17 @@ import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 
 const ScopedLink = ({ children, to }) => {
-  const isExternal = to.includes('//');
+  const isExternal = to.includes('//') || to.startsWith('http');
 
-  return isExternal ? (
-    <a href={to} target="_blank" rel="noreferrer noopener">
-      {children}
-    </a>
-  ) : (
-    <GatsbyLink to={to}>{children}</GatsbyLink>
-  );
+  if (isExternal) {
+    return (
+      <a href={to} target="_blank" rel="noreferrer noopener">
+        {children}
+      </a>
+    );
+  }
+
+  return <GatsbyLink to={to}>{children}</GatsbyLink>;
 };
 
 ScopedLink.propTypes = {

@@ -4,9 +4,10 @@ import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import AlbumCard from '~/components/Common/AlbumCard';
 import ScopedImage from '~/components/Common/ScopedImage';
+import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
+import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import { TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import { Title } from './styled';
@@ -23,7 +24,8 @@ function Feature(name) {
   return this.filtered;
 }
 
-const Home = ({ albums, portfolios }) => {
+const Home = ({ posts, albums, portfolios }) => {
+  const featuredPosts = new Feature(posts);
   const featuredAlbums = new Feature(albums);
   const featuredPortfolios = new Feature(portfolios);
 
@@ -105,11 +107,31 @@ const Home = ({ albums, portfolios }) => {
             )}
           </SimpleWrapper>
         ) : null}
-        <SectionHeader
-          title="Featured Posts"
-          linkName="View All"
-          linkURL={`${POSTS_PATH}/1`}
-        />
+        {featuredPosts.length >= 4 ? (
+          <SimpleWrapper>
+            <SectionHeader
+              title="Featured Posts"
+              linkName="View All"
+              linkURL={`${POSTS_PATH}/1`}
+            />
+            {featuredPosts.slice(0, 4).map(
+              ({
+                node: {
+                  frontmatter: { title, summary, tags, path, images },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  summary={summary}
+                  tags={tags}
+                  path={path}
+                  images={images}
+                />
+              )
+            )}
+          </SimpleWrapper>
+        ) : null}
       </SimpleWrapper>
     </>
   );
@@ -118,11 +140,13 @@ const Home = ({ albums, portfolios }) => {
 Home.propTypes = {
   albums: PropTypes.arrayOf(PropTypes.shape({})),
   portfolios: PropTypes.arrayOf(PropTypes.shape({})),
+  posts: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 Home.defaultProps = {
   albums: [],
   portfolios: [],
+  posts: [],
 };
 
 export default Home;

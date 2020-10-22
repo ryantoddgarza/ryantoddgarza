@@ -8,7 +8,7 @@ const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query GatsbyQuery {
-        posts: allMarkdownRemark(
+        all: allMarkdownRemark(
           filter: { frontmatter: { hide: { ne: true } } }
         ){
           edges {
@@ -18,19 +18,20 @@ const Layout = ({ children, location }) => (
                 type
                 title
                 category
+                featured
                 summary
                 tags
                 images
                 cover
-                featured
               }
             }
           }
         }
       }
     `}
-    render={({ posts }) => {
-      const { edges } = posts;
+    render={({ all }) => {
+      const { edges } = all;
+      const posts = edges.filter(({ node: { frontmatter: { type } } }) => type === POST || type === null);
       const albums = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM);
       const portfolios = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
 
@@ -83,7 +84,7 @@ const Layout = ({ children, location }) => (
       const hasPortfolio = portfolios.length > 0;
       const hasAlbum = albums.length > 0;
 
-      const childrenWithProps = Children.map(children, (child) => cloneElement(child, { albums, portfolios }));
+      const childrenWithProps = Children.map(children, (child) => cloneElement(child, { posts, albums, portfolios }));
 
       return (
         <App

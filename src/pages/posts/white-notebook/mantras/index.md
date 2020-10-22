@@ -1,6 +1,7 @@
 ---
 path: '/white-notebook/mantras/'
 category: 'yoga'
+featured: false
 tags: ['yoga', 'white-notebook', 'mantra']
 title: 'White Notebook - Mantras'
 date: '2020-08-08T21:46:00.000Z'

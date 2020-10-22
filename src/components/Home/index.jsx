@@ -8,13 +8,7 @@ import AlbumCard from '~/components/Common/AlbumCard';
 import ScopedImage from '~/components/Common/ScopedImage';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import {
-  TITLE,
-  ALBUMS_PATH,
-  PORTFOLIOS_PATH,
-  POSTS_PATH,
-  MEDIUM_ID,
-} from '~/constants';
+import { TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import { Title } from './styled';
 
 function Feature(name) {
@@ -115,11 +109,6 @@ const Home = ({ albums, portfolios }) => {
           title="Featured Posts"
           linkName="View All"
           linkURL={`${POSTS_PATH}/1`}
-        />
-        <SectionHeader
-          title="Medium Articles"
-          linkName="Visit"
-          linkURL={`https://medium.com/@${MEDIUM_ID}`}
         />
       </SimpleWrapper>
     </>

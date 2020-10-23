@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import { PREFIX } from '~/constants';
-import ScopedImage from '~/components/Common/ScopedImage';
 import { Wrapper } from './styled';
 
 const Portfolios = ({
@@ -25,33 +24,14 @@ const Portfolios = ({
       }) => {
         const [image = null] = images;
 
-        if (image !== null) {
-          return (
-            <PortfolioCard key={path}>
-              <Link to={path}>
-                <ScopedImage src={image} alt={`${title} - portfolio`} />
-                <article>
-                  <h6>{title}</h6>
-                  {summary ? (
-                    <>
-                      <p>{summary}</p>
-                      <p>
-                        <em>Learn More</em>
-                      </p>
-                    </>
-                  ) : null}
-                </article>
-              </Link>
-            </PortfolioCard>
-          );
-        }
-
         return (
-          <PortfolioCard key={path}>
-            <Link to={path}>
-              <h4>{title}</h4>
-            </Link>
-          </PortfolioCard>
+          <Link to={path} key={path}>
+            <PortfolioCard
+              title={title}
+              summary={summary}
+              image={image}
+            />
+          </Link>
         );
       }
     )}

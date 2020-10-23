@@ -50,12 +50,7 @@ const Home = ({ posts, albums, portfolios }) => {
               .slice(0, 1)
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
                 <Link to={path} key={title}>
-                  <AlbumCard>
-                    <ScopedImage src={cover} alt="album" />
-                    <div>
-                      <h2>{title}</h2>
-                    </div>
-                  </AlbumCard>
+                  <AlbumCard title={title} image={cover} />
                 </Link>
               ))}
           </SimpleWrapper>
@@ -114,22 +109,24 @@ const Home = ({ posts, albums, portfolios }) => {
               linkName="View All"
               linkURL={`${POSTS_PATH}/1`}
             />
-            {featuredPosts.slice(0, 4).map(
-              ({
-                node: {
-                  frontmatter: { title, summary, tags, path, images },
-                },
-              }) => (
-                <PostCard
-                  key={path}
-                  title={title}
-                  summary={summary}
-                  tags={tags}
-                  path={path}
-                  images={images}
-                />
-              )
-            )}
+            {featuredPosts
+              .slice(0, 4)
+              .map(
+                ({
+                  node: {
+                    frontmatter: { title, summary, tags, path, images },
+                  },
+                }) => (
+                  <PostCard
+                    key={path}
+                    title={title}
+                    summary={summary}
+                    tags={tags}
+                    path={path}
+                    images={images}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
       </SimpleWrapper>

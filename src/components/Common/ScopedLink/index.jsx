@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 
 const ScopedLink = ({ children, to }) => {
-  const isExternal = to.includes('//') || to.startsWith('http');
+  const isExternal = to.includes('//');
 
   if (isExternal) {
     return (

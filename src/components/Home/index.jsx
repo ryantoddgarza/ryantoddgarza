@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import ScopedImage from '~/components/Common/ScopedImage';
 import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
@@ -50,12 +49,7 @@ const Home = ({ posts, albums, portfolios }) => {
               .slice(0, 1)
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
                 <Link to={path} key={title}>
-                  <AlbumCard>
-                    <ScopedImage src={cover} alt="album" />
-                    <div>
-                      <h2>{title}</h2>
-                    </div>
-                  </AlbumCard>
+                  <AlbumCard title={title} image={cover} />
                 </Link>
               ))}
           </SimpleWrapper>
@@ -75,33 +69,14 @@ const Home = ({ posts, albums, portfolios }) => {
               }) => {
                 const image = Array.isArray(images) ? images[0] : null;
 
-                if (image !== null) {
-                  return (
-                    <PortfolioCard key={path}>
-                      <Link to={path}>
-                        <ScopedImage src={image} alt="portfolio" />
-                        <article>
-                          <h6>{title}</h6>
-                          {summary ? (
-                            <>
-                              <p>{summary}</p>
-                              <p>
-                                <em>Learn More</em>
-                              </p>
-                            </>
-                          ) : null}
-                        </article>
-                      </Link>
-                    </PortfolioCard>
-                  );
-                }
-
                 return (
-                  <PortfolioCard key={path}>
-                    <Link to={path}>
-                      <h4>{title}</h4>
-                    </Link>
-                  </PortfolioCard>
+                  <Link to={path} key={path}>
+                    <PortfolioCard
+                      title={title}
+                      summary={summary}
+                      image={image}
+                    />
+                  </Link>
                 );
               }
             )}
@@ -114,22 +89,24 @@ const Home = ({ posts, albums, portfolios }) => {
               linkName="View All"
               linkURL={`${POSTS_PATH}/1`}
             />
-            {featuredPosts.slice(0, 4).map(
-              ({
-                node: {
-                  frontmatter: { title, summary, tags, path, images },
-                },
-              }) => (
-                <PostCard
-                  key={path}
-                  title={title}
-                  summary={summary}
-                  tags={tags}
-                  path={path}
-                  images={images}
-                />
-              )
-            )}
+            {featuredPosts
+              .slice(0, 4)
+              .map(
+                ({
+                  node: {
+                    frontmatter: { title, summary, tags, path, images },
+                  },
+                }) => (
+                  <PostCard
+                    key={path}
+                    title={title}
+                    summary={summary}
+                    tags={tags}
+                    path={path}
+                    images={images}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
       </SimpleWrapper>

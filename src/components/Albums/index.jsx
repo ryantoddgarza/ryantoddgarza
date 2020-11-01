@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import AlbumCard from '~/components/Common/AlbumCard';
-import ScopedImage from '~/components/Common/ScopedImage';
 import { PREFIX } from '~/constants';
 import { Wrapper } from './styled';
 
@@ -19,12 +18,7 @@ const Albums = ({
     </Helmet>
     {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
       <Link to={path} key={title}>
-        <AlbumCard>
-          <ScopedImage src={cover} alt={`${title} - album`} />
-          <div>
-            <h2>{title}</h2>
-          </div>
-        </AlbumCard>
+        <AlbumCard title={title} image={cover} />
       </Link>
     ))}
   </Wrapper>

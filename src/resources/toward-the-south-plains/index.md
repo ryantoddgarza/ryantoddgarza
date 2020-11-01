@@ -29,7 +29,7 @@ October 12 2019 St Andrew's Episcopal Church, Amarillo, TX
 
 ## Overview
 
-_(This is a subjective expression of my direct involvement with the work. It is not my intent to blur the intentions of the project in any way. Visit [towardthesouthplains.com](http://www.towardthesouthplains.com) to learn how you can experience the work for yourself)._
+_This is a subjective expression of my direct involvement with the work. It is not my intent to blur the intentions of the project in any way. Visit [towardthesouthplains.com](http://www.towardthesouthplains.com) to learn how you can experience the work for yourself._
 
 On February 8, 2016 composer Harlan Hodges who has been like a brother to me was, let's see what the right word is...inspired; invoked; reduced...to write what would become the beginnings of Toward The South Plains after a phone call in which I would reveal that I was making my way back towards the south plains from Los Angeles after my father had been killed in an act of gun violence the previous afternoon.
 
@@ -55,11 +55,11 @@ _coming soon_
 
 ### Lyrics
 
-The introspectivity of my involvement as a lyricist proved to be personally healing. My self being a product of the West Texas landscape, I had spent many years trying to just get out. My conclusion has been that without the recognition that the body very much belongs to and is a product of a landscape, the spirit of the land will pull and plague the individual until one discerns in a very visceral way that no matter where one resides, the body we refer to as ourselves is but an aggregate of our past. Text has been set throughout the work in both English and Latin in order to contrast the subjective and objective scope of this phenomena.
+The introspectivity of my involvement as a lyricist proved to be personally healing. Being a product of the West Texas landscape myself, I had spent many years just wanting to leave. My recent inclination has been to think that without the recognition of the gross body being a product of and very much belonging to the landscape, the _spirit_ of the land will pull and plague the individual until one discerns in a very visceral way that no matter where the body resides, it is but an aggregate and thus carries biological memories that can be even more elusive than the subconscious.
 
-The piece "Sacred Ground" is themed heavily after traditional hymns.
+Verse has been set throughout the work in both English and Latin in order to contrast the subjective and objective scope of this phenomena. The lyrics to "Sacred Ground", for example, are themed heavily after traditional christian hymns common for the culture in West Texas albeit more familiar to an older generation.
 
-<pre>
+<pre style="padding: 1rem;">
 Could it be sacred ground
 That we wander
 Estranged this soul be bound
@@ -81,4 +81,4 @@ Eternally resound
 Bear within us home
 </pre>
 
-<small>“Sacred Ground” © 2019 Harlan Hodges (ASCAP) Lyrics © 2019 Ryan Todd Garza (BMI)</small>
+<small style="font-size: 0.75rem; color: #757575;">“Sacred Ground” © 2019 Harlan Hodges (ASCAP) Lyrics © 2019 Ryan Todd Garza (BMI)</small>

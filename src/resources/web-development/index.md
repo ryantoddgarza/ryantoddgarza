@@ -12,7 +12,7 @@ images: [
 
 # Web Development
 
-My focus is writing concise and scalable code for web applications that provides for a market where design, performance, user experience, and accessibility must all coexist. Striving to build elegant solutions to complex problems keeps me in search of constant opportunity for challenge, learning, and growth.
+My focus is writing concise and scalable code for web applications that provides for a market where design, efficiency, user experience, and accessibility must all coexist. Striving to create elegant solutions to complex problems keeps me in search of opportunity for constant challenge, learning, and growth.
 
 ## Projects
 
@@ -20,13 +20,13 @@ My focus is writing concise and scalable code for web applications that provides
 
 Dynamic site ∙ Application ∙ 2020 ∙ <a href="https://svara.dev" target="_blank" rel="noreferrer noopener">Visit site →</a>
 
-### Harlan Hodges
-
-Static site ∙ Portfolio ∙ 2020 ∙ <a href="https://harlanhodges.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
-
 ### Ryan Todd Garza
 
 Static site ∙ Portfolio ∙ Blog ∙ 2020 ∙ <a href="https://ryantoddgarza.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
+
+### Harlan Hodges
+
+Static site ∙ Portfolio ∙ 2020 ∙ <a href="https://harlanhodges.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
 
 ### Toward The South Plains
 

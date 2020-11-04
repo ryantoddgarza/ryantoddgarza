@@ -57,7 +57,7 @@ export default [
   },
   {
     name: 'Medium',
-    url: `https://medium.com/@${MEDIUM_ID}`,
+    url: `https://${MEDIUM_ID}.medium.com`,
     icon: <FaMediumM />,
     display: true,
   },

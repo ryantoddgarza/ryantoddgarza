@@ -90,7 +90,16 @@ module.exports = {
       options: {
         host: SITE_URL,
         sitemap: `${SITE_URL}/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: [
+              '/linkinbio/',
+            ],
+            crawlDelay: 10,
+          },
+        ],
       },
     },
   ],

@@ -30,6 +30,7 @@ const PortfolioCard = styled.article`
   &:hover {
     img {
       width: 110%;
+      left: -5%;
     }
 
     h4 {

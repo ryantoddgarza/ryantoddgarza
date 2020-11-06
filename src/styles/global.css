@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  font-family:
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen-Sans",
+    "Ubuntu",
+    "Cantarell",
+    "Helvetica Neue",
+    "sans-serif"
+  ;
+  -webkit-font-smoothing: antialiased;
+}
+a, a:focus, a:hover, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  user-select: none;
+}
+button, a, label {
+  cursor: pointer;
+}
+*[disabled] {
+  cursor: not-allowed;
+}

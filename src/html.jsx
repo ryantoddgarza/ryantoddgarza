@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NAME, TITLE, DESCRIPTION, AUTHOR, KEYWORDS } from '~/constants';
 
-const stylesStr = require('!raw-loader!./reset.css');
+const resetStyleStr = require('!raw-loader!./styles/reset.css');
+const globalStyleStr = require('!raw-loader!./styles/global.css');
 
 export default class HTML extends Component {
   render() {
@@ -38,7 +39,8 @@ export default class HTML extends Component {
           {/* <meta name="msapplication-TileImage" content="" /> */}
           {/* <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="" /> */}
           {/* <link rel="apple-touch-icon" type="image/vnd.microsoft.icon" href="" /> */}
-          <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />
+          <style id="gatsby-inlined-reset-css" dangerouslySetInnerHTML={{ __html: resetStyleStr }} />
+          <style id="gatsby-inlined-global-css" dangerouslySetInnerHTML={{ __html: globalStyleStr }} />
         </head>
         <body {...bodyAttributes}>
           {preBodyComponents}

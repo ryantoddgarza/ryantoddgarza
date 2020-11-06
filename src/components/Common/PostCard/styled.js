@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { breakpoint } from '~/components/Common/breakpoints';
-import { PRIMARY_COLOR, BLACK_COLOR } from '~/components/Common/constants';
+import {
+  PRIMARY_COLOR,
+  BLACK_COLOR,
+  DURATION_FAST,
+  TIMING_BEZIER,
+} from '~/components/Common/constants';
 
 export const ImageWrapper = styled.figure`
   position: relative;
@@ -72,7 +77,7 @@ export const StyledArticle = styled.article`
     padding: 14px;
     background-color: #fff;
     overflow: hidden;
-    transition: top 0.1s;
+    transition: top ${DURATION_FAST} ${TIMING_BEZIER};
 
     &:hover {
       top: -8px;

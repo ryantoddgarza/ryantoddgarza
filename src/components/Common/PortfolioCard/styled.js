@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import {
+  PRIMARY_COLOR,
+  DURATION_NORMAL,
+  DURATION_SLOW,
+  TIMING_BEZIER,
+} from '~/components/Common/constants';
 
 const PortfolioCard = styled.article`
   display: inline-block;
@@ -25,6 +30,7 @@ const PortfolioCard = styled.article`
   &:hover {
     img {
       width: 110%;
+      left: -5%;
     }
 
     h4 {
@@ -55,7 +61,7 @@ const PortfolioCard = styled.article`
     margin: auto;
     width: 100%;
     height: auto;
-    transition: all 0.4s ease 0s;
+    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
   }
 
   & > div {
@@ -108,7 +114,8 @@ const PortfolioCard = styled.article`
       height: 2px;
       margin: 1em 0;
       background-color: #adadad;
-      transition: width 0.6s, background-color 0.2s;
+      transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
+        background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
     }
   }
 `;

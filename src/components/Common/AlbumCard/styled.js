@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import {
+  PRIMARY_COLOR,
+  DURATION_NORMAL,
+  DURATION_SLOW,
+  TIMING_BEZIER,
+} from '~/components/Common/constants';
 
 const StyledArticle = styled.article`
   position: relative;
@@ -50,7 +55,8 @@ const StyledArticle = styled.article`
       height: 2px;
       margin: 32px auto;
       background-color: #adadad;
-      transition: width 0.6s, background-color 0.2s;
+      transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
+        background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
     }
   }
 

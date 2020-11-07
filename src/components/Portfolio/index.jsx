@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { PREFIX } from '~/constants';
+import SEO from '~/components/Common/SEO';
 import ScopedImage from '~/components/Common/ScopedImage';
 import { Wrapper, PortfolioDescription, PortfolioImages } from './styled';
 
@@ -13,22 +12,21 @@ const Portfolio = ({
     },
   },
 }) => (
-  <Wrapper>
-    <Helmet>
-      <title>{`${PREFIX}${title}`}</title>
-      <meta name="og:title" content={`${PREFIX}${title}`} />
-    </Helmet>
-    <PortfolioDescription>
-      <section dangerouslySetInnerHTML={{ __html: html }} />
-    </PortfolioDescription>
-    {images ? (
-      <PortfolioImages>
-        {images.map((image) => (
-          <ScopedImage key={image} src={image} alt={title} />
-        ))}
-      </PortfolioImages>
-    ) : null}
-  </Wrapper>
+  <>
+    <SEO title={title} />
+    <Wrapper>
+      <PortfolioDescription>
+        <section dangerouslySetInnerHTML={{ __html: html }} />
+      </PortfolioDescription>
+      {images ? (
+        <PortfolioImages>
+          {images.map((image) => (
+            <ScopedImage key={image} src={image} alt={title} />
+          ))}
+        </PortfolioImages>
+      ) : null}
+    </Wrapper>
+  </>
 );
 
 Portfolio.propTypes = {

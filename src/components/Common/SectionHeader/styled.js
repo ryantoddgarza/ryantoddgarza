@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import {
+  PRIMARY_COLOR,
+  DURATION_NORMAL,
+  TIMING_BEZIER,
+} from '~/components/Common/constants';
 
 export const Header = styled.header`
   padding: 48px 0;
@@ -8,6 +12,7 @@ export const Header = styled.header`
 
   a {
     font-size: 1rem;
+    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
 
     &::after {
       content: ' →';

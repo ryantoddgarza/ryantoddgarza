@@ -3,14 +3,14 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
 import { FaTags } from 'react-icons/fa';
 import Clipboard from 'clipboard';
+import SEO from '~/components/Common/SEO';
 import Bio from '~/components/Bio';
 import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
-import { PREFIX, SITE_URL, DISQUS_ID } from '~/constants';
+import { SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
 import { Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
 
@@ -134,42 +134,44 @@ const PostTemplate = ({
   const [image = null] = images;
 
   return (
-    <PostWrapper>
-      <Container>
-        <Helmet>
-          <title>{`${PREFIX}${title}`}</title>
-          <meta name="og:title" content={`${PREFIX}${title}`} />
-        </Helmet>
-        {image === null ? null : (
-          <ImageWrapper>
-            <ScopedImage src={image} alt={title} />
-          </ImageWrapper>
-        )}
-        <h1>{title}</h1>
-        <time>{formattedDate(date)}</time>
-        {tags.length === 0 ? null : (
-          <Tags>
-            <FaTags />
-            {tags.map((tag) => (
-              <Link key={tag} to={`/tags/${tag}/1`}>
-                <small>{tag}</small>
-              </Link>
-            ))}
-          </Tags>
-        )}
-        <Bio />
-        <PostContent>
-          <div id="post-contents" dangerouslySetInnerHTML={{ __html: html }} />
-        </PostContent>
-        <div id="disqus_thread" />
-        <noscript>
-          Please enable JavaScript to view the &nbsp;
-          <a href="https://disqus.com/?ref_noscript">
-            comments powered by Disqus.
-          </a>
-        </noscript>
-      </Container>
-    </PostWrapper>
+    <>
+      <SEO title={title} />
+      <PostWrapper>
+        <Container>
+          {image === null ? null : (
+            <ImageWrapper>
+              <ScopedImage src={image} alt={title} />
+            </ImageWrapper>
+          )}
+          <h1>{title}</h1>
+          <time>{formattedDate(date)}</time>
+          {tags.length === 0 ? null : (
+            <Tags>
+              <FaTags />
+              {tags.map((tag) => (
+                <Link key={tag} to={`/tags/${tag}/1`}>
+                  <small>{tag}</small>
+                </Link>
+              ))}
+            </Tags>
+          )}
+          <Bio />
+          <PostContent>
+            <div
+              id="post-contents"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          </PostContent>
+          <div id="disqus_thread" />
+          <noscript>
+            Please enable JavaScript to view the &nbsp;
+            <a href="https://disqus.com/?ref_noscript">
+              comments powered by Disqus.
+            </a>
+          </noscript>
+        </Container>
+      </PostWrapper>
+    </>
   );
 };
 

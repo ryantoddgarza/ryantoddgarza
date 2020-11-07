@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Container } from '~/components/Common/Container';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import {
+  PRIMARY_COLOR,
+  DURATION_NORMAL,
+  TIMING_BEZIER,
+} from '~/components/Common/constants';
 
 export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;
@@ -31,6 +35,7 @@ export const SocialInformation = styled.div`
 
   a {
     display: inline-flex;
+    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
 
     &:not(:last-of-type) {
       margin-right: 16px;
@@ -53,6 +58,7 @@ export const Copyright = styled.div`
 export const Links = styled.div`
   grid-area: links;
   margin: 0 0 24px;
+  transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
   @media (min-width: 769px) {
     margin: 0;
     text-align: right;

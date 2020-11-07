@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import SEO from '~/components/Common/SEO';
 import PostsWrapper from '~/components/Common/PostsWrapper';
 import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
-import { PREFIX, CONTENT_PER_PAGE } from '~/constants';
+import { CONTENT_PER_PAGE } from '~/constants';
 
 const CategorizedList = ({ data, location }) => {
   const page = getPage(location);
@@ -19,11 +19,8 @@ const CategorizedList = ({ data, location }) => {
 
   return (
     <>
+      <SEO title={category} />
       <PostsWrapper>
-        <Helmet>
-          <title>{`${PREFIX}${category}`}</title>
-          <meta name="og:title" content={`${PREFIX}${category}`} />
-        </Helmet>
         {posts.length === 0 ? <div>No posts.</div> : null}
         {posts.map(
           ({

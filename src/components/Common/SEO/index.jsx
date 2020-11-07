@@ -9,7 +9,7 @@ const SEO = ({ title }) => {
   return (
     <Helmet>
       <title>{formattedTitle}</title>
-      <meta name="og:title" content={`${PREFIX}${title}`} />
+      <meta name="og:title" content={formattedTitle} />
     </Helmet>
   );
 };

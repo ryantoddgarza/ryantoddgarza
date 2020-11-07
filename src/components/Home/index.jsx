@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
+import SEO from '~/components/Common/SEO';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import AlbumCard from '~/components/Common/AlbumCard';
@@ -30,10 +30,7 @@ const Home = ({ posts, albums, portfolios }) => {
 
   return (
     <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="og:title" content={TITLE} />
-      </Helmet>
+      <SEO title={TITLE} />
       <Wrapper isHome>
         <Title>Hi, I'm Ryan.</Title>
       </Wrapper>

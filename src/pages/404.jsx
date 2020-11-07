@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import { PREFIX } from '~/constants';
+import SEO from '~/components/Common/SEO';
+import { TITLE } from '~/constants';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 
 const Wrapper = styled(SimpleWrapper)`
@@ -14,7 +14,7 @@ const Wrapper = styled(SimpleWrapper)`
   }
 
   h1 {
-    margin: 0 0 .67em;
+    margin: 0 0 0.67em;
     font-size: 24px;
   }
 
@@ -24,20 +24,13 @@ const Wrapper = styled(SimpleWrapper)`
 `;
 
 const NotFoundPage = () => (
-  <Wrapper>
-    <Helmet>
-      <title>
-        {`${PREFIX}Page Not Found`}
-      </title>
-      <meta name="og:title" content={`${PREFIX}Page Not Found`} />
-    </Helmet>
-    <h1>
-      Page Not Found
-    </h1>
-    <Link to="/">
-      ← Go Home
-    </Link>
-  </Wrapper>
+  <>
+    <SEO title={TITLE} />
+    <Wrapper>
+      <h1>Page Not Found</h1>
+      <Link to="/">← Go Home</Link>
+    </Wrapper>
+  </>
 );
 
 export default NotFoundPage;

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import SEO from '~/components/Common/SEO';
 import PostsWrapper from '~/components/Common/PostsWrapper';
 import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
-import { PREFIX, CONTENT_PER_PAGE } from '~/constants';
+import { CONTENT_PER_PAGE } from '~/constants';
 
 const TaggedList = ({ data, location }) => {
   const page = getPage(location);
@@ -19,13 +19,8 @@ const TaggedList = ({ data, location }) => {
 
   return (
     <>
+      <SEO title={tag} />
       <PostsWrapper>
-        <Helmet>
-          <title>
-            {`${PREFIX}${tag}`}
-          </title>
-          <meta name="og:title" content={`${PREFIX}${tag}`} />
-        </Helmet>
         {posts.map(
           ({
             node: {

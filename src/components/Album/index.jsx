@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { nanoid } from 'nanoid';
 import { PREFIX } from '~/constants';
 import ScopedImage from '~/components/Common/ScopedImage';
 import {
@@ -16,6 +17,17 @@ import {
   Links,
   Credits,
 } from './styled';
+
+const Credit = (name, role) => {
+  const id1 = nanoid();
+  const id2 = nanoid();
+  const componentArray = [
+    <dt key={id1}>{name}</dt>,
+    <dd key={id2}>{role}</dd>,
+  ];
+
+  return componentArray;
+};
 
 const Album = ({
   data: {
@@ -42,8 +54,6 @@ const Album = ({
 
     return Math.round(seconds / 60);
   };
-
-  const credit = (t, d) => [<dt key={t}>{t}</dt>, <dd key={d}>{d}</dd>];
 
   return (
     <Wrapper>
@@ -93,7 +103,7 @@ const Album = ({
                 {tracks.map(({ title, lyrics, video }, i) => {
                   const trackNum = i + 1;
                   return (
-                    <li className="track-row" key={title}>
+                    <li className="track-row" key={trackNum.toString()}>
                       <div className="track-counter">
                         {trackNum.toString().padStart(2, '0')}
                       </div>
@@ -122,7 +132,7 @@ const Album = ({
             <Credits>
               <h2>Credits</h2>
               {credits ? (
-                <dl>{credits.map(({ name, role }) => credit(role, name))}</dl>
+                <dl>{credits.map(({ role, name }) => Credit(role, name))}</dl>
               ) : null}
               {publishing ? <p>{publishing}</p> : null}
             </Credits>

@@ -17,19 +17,15 @@ const Portfolios = ({
           node: {
             frontmatter: { path, title, summary, images = [] },
           },
-        }) => {
-          const [image = null] = images;
-
-          return (
-            <PortfolioCard
-              key={path}
-              title={title}
-              summary={summary}
-              path={path}
-              image={image}
-            />
-          );
-        }
+        }) => (
+          <PortfolioCard
+            key={path}
+            title={title}
+            summary={summary}
+            path={path}
+            images={images}
+          />
+        )
       )}
     </Wrapper>
   </>

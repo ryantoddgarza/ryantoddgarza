@@ -43,14 +43,20 @@ const Home = ({ posts, albums, portfolios }) => {
             />
             {featuredAlbums
               .slice(0, 1)
-              .map(({ node: { frontmatter: { path, title, cover } } }) => (
-                <AlbumCard
-                  key={title}
-                  title={title}
-                  path={path}
-                  image={cover}
-                />
-              ))}
+              .map(
+                ({
+                  node: {
+                    frontmatter: { path, title, cover },
+                  },
+                }) => (
+                  <AlbumCard
+                    key={title}
+                    title={title}
+                    path={path}
+                    image={cover}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
         {featuredPortfolios.length >= 4 ? (
@@ -60,25 +66,23 @@ const Home = ({ posts, albums, portfolios }) => {
               linkName="View All"
               linkURL={PORTFOLIOS_PATH}
             />
-            {featuredPortfolios.slice(0, 4).map(
-              ({
-                node: {
-                  frontmatter: { path, title, summary, images },
-                },
-              }) => {
-                const image = Array.isArray(images) ? images[0] : null;
-
-                return (
+            {featuredPortfolios
+              .slice(0, 4)
+              .map(
+                ({
+                  node: {
+                    frontmatter: { path, title, summary, images },
+                  },
+                }) => (
                   <PortfolioCard
                     key={path}
                     title={title}
                     summary={summary}
                     path={path}
-                    image={image}
+                    images={images}
                   />
-                );
-              }
-            )}
+                )
+              )}
           </SimpleWrapper>
         ) : null}
         {featuredPosts.length >= 4 ? (

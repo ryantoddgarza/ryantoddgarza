@@ -64,7 +64,7 @@ const PortfolioCard = styled.article`
     transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
   }
 
-  & > div {
+  & div {
     position: absolute;
     top: 20%;
     left: 0;

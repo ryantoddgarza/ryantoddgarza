@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'gatsby';
 import SEO from '~/components/Common/SEO';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import { Wrapper } from './styled';
@@ -18,15 +17,15 @@ const Portfolios = ({
           node: {
             frontmatter: { path, title, summary, images = [] },
           },
-        }) => {
-          const [image = null] = images;
-
-          return (
-            <Link to={path} key={path}>
-              <PortfolioCard title={title} summary={summary} image={image} />
-            </Link>
-          );
-        }
+        }) => (
+          <PortfolioCard
+            key={path}
+            title={title}
+            summary={summary}
+            path={path}
+            images={images}
+          />
+        )
       )}
     </Wrapper>
   </>

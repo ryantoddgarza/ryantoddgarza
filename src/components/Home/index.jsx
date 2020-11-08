@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import SEO from '~/components/Common/SEO';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
@@ -44,11 +43,20 @@ const Home = ({ posts, albums, portfolios }) => {
             />
             {featuredAlbums
               .slice(0, 1)
-              .map(({ node: { frontmatter: { path, title, cover } } }) => (
-                <Link to={path} key={title}>
-                  <AlbumCard title={title} image={cover} />
-                </Link>
-              ))}
+              .map(
+                ({
+                  node: {
+                    frontmatter: { path, title, cover },
+                  },
+                }) => (
+                  <AlbumCard
+                    key={title}
+                    title={title}
+                    path={path}
+                    image={cover}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
         {featuredPortfolios.length >= 4 ? (
@@ -58,25 +66,23 @@ const Home = ({ posts, albums, portfolios }) => {
               linkName="View All"
               linkURL={PORTFOLIOS_PATH}
             />
-            {featuredPortfolios.slice(0, 4).map(
-              ({
-                node: {
-                  frontmatter: { path, title, summary, images },
-                },
-              }) => {
-                const image = Array.isArray(images) ? images[0] : null;
-
-                return (
-                  <Link to={path} key={path}>
-                    <PortfolioCard
-                      title={title}
-                      summary={summary}
-                      image={image}
-                    />
-                  </Link>
-                );
-              }
-            )}
+            {featuredPortfolios
+              .slice(0, 4)
+              .map(
+                ({
+                  node: {
+                    frontmatter: { path, title, summary, images },
+                  },
+                }) => (
+                  <PortfolioCard
+                    key={path}
+                    title={title}
+                    summary={summary}
+                    path={path}
+                    images={images}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
         {featuredPosts.length >= 4 ? (

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import SEO from '~/components/Common/SEO';
 import AlbumCard from '~/components/Common/AlbumCard';
 import { Wrapper } from './styled';
@@ -14,9 +13,7 @@ const Albums = ({
     <SEO title="Albums" />
     <Wrapper>
       {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
-        <Link to={path} key={title}>
-          <AlbumCard title={title} image={cover} />
-        </Link>
+        <AlbumCard key={title} title={title} path={path} image={cover} />
       ))}
     </Wrapper>
   </>

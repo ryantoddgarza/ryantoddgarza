@@ -45,9 +45,7 @@ const Home = ({ posts, albums, portfolios }) => {
             {featuredAlbums
               .slice(0, 1)
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
-                <Link to={path} key={title}>
-                  <AlbumCard title={title} image={cover} />
-                </Link>
+                <AlbumCard key={title} title={title} path={path} image={cover} />
               ))}
           </SimpleWrapper>
         ) : null}

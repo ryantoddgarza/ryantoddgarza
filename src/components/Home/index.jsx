@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import SEO from '~/components/Common/SEO';
 import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
@@ -45,7 +44,12 @@ const Home = ({ posts, albums, portfolios }) => {
             {featuredAlbums
               .slice(0, 1)
               .map(({ node: { frontmatter: { path, title, cover } } }) => (
-                <AlbumCard key={title} title={title} path={path} image={cover} />
+                <AlbumCard
+                  key={title}
+                  title={title}
+                  path={path}
+                  image={cover}
+                />
               ))}
           </SimpleWrapper>
         ) : null}
@@ -65,13 +69,13 @@ const Home = ({ posts, albums, portfolios }) => {
                 const image = Array.isArray(images) ? images[0] : null;
 
                 return (
-                  <Link to={path} key={path}>
-                    <PortfolioCard
-                      title={title}
-                      summary={summary}
-                      image={image}
-                    />
-                  </Link>
+                  <PortfolioCard
+                    key={path}
+                    title={title}
+                    summary={summary}
+                    path={path}
+                    image={image}
+                  />
                 );
               }
             )}

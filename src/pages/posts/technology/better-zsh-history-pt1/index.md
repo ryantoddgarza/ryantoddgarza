@@ -13,17 +13,17 @@ I recently combed through the dot (hidden) files in my mac’s home directory an
 
 ## Zsh config files
 
-If you are unfamiliar with the types of zsh configuration files and their uses, I recommend looking through [this article](https://scriptingosx.com/2019/06/moving-to-zsh-part-2-configuration-files/) in a great series over at scriptingosx.com. For this example we will keep everything in the `.zshrc` file. If one doesn’t already exist in your home folder, in the terminal run `touch .zshrc` from inside of the home directory to make one.
+If you are unfamiliar with the types of zsh configuration files and their uses, I recommend looking through [this article](https://scriptingosx.com/2019/06/moving-to-zsh-part-2-configuration-files/) in a great series over at scriptingosx.com. For this example we will keep everything in the _.zshrc_ file. If one doesn’t already exist in your home folder, in the terminal run `touch .zshrc` from inside of the home directory to make one.
 
 ## Setup
 
-The Zsh history mechanism only requires these first two parameters to be set up, but inside of the `.zsrc` we can configure three:
+The Zsh history mechanism only requires these first two parameters to be set up, but inside of the _.zshrc_ we can configure three:
 
 - `HISTFILE`
 - `SAVEHIST`
 - `HISTSIZE`
 
-To satisfy my original annoyance, let’s change the location of the history file. By default, the zsh setup wizard sets this parameter to `~/.zsh_history` using `HISTFILE`. I prefer this to be kept with some other generated zsh specific files at `~/.cache/zsh`. So in the `.zshrc` we can add:
+To satisfy my original annoyance, let’s change the location of the history file. By default, the zsh setup wizard sets this parameter to `~/.zsh_history` using `HISTFILE`. I prefer this to be kept with some other generated zsh specific files at `~/.cache/zsh`. So in the _.zshrc_ we can add:
 
 ```
 # ~/.zshrc
@@ -56,4 +56,4 @@ export SAVEHIST=$HISTSIZE
 
 And that’s all there is to the initial setup. We’ve defined the history file’s location using `HISTFILE`, specified how many lines will be saved using `SAVEHIST`, and how many the shell keeps in the session with `HISTSIZE`.
 
-In part 2 we will dive into the history options that make zsh customizable to your workflow.
+In [part 2](/a-better-zsh-history-pt-2/) we will dive into the history options that make zsh customizable to your workflow.

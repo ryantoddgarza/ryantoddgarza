@@ -57,10 +57,6 @@ export const PostContent = styled.section`
     margin: 20px 0 0;
   }
 
-  code {
-    font-family: monospace;
-  }
-
   ul {
     margin: 1em 0;
     list-style: disc;

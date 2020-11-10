@@ -23,11 +23,14 @@ const PostWrapper = styled.section`
 
   time {
     margin: 1em 0;
-    font-size: 14px;
     color: #919191;
   }
 
-  @import url("https://fonts.googleapis.com/css?family=Inconsolata");
+  code {
+    padding: 0.15em 0.3em;
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
 
   /**
    * based on zenburn.css
@@ -94,7 +97,7 @@ const PostWrapper = styled.section`
     padding: 1.58333rem;
     white-space: inherit;
     word-wrap: normal;
-    font-family: Inconsolata, monospace;
+    font-family: monospace;
   }
 
   .gatsby-highlight code {
@@ -111,7 +114,7 @@ const PostWrapper = styled.section`
     background: transparent;
     color: #3B9CFF;
     display: inline;
-    font-family: D2Coding, 'D2 coding', monospace, serif;
+    font-family: monospace;
     max-width: 100%;
     overflow: auto;
     padding: 0 0.1625rem;

@@ -1,12 +1,12 @@
 ---
 type: 'portfolio'
-title: 'svara'
+title: 'Svara'
 date: '2020-08-08:00:00.000Z'
 path: '/portfolios/svara/'
 featured: true
 summary: 'Svara is a generative music application based on the traditional rules of Hindustani ragas.'
 images: [
-  'svara/svara-01.jpg',
+  'svara/images/svara-01.jpg',
 ]
 ---
 
@@ -20,12 +20,11 @@ The application currently exists as a proof of concept and can be found at [svar
 
 Concept, Developer and Design
 
-## Links
+## Details
 
-- [Project web site →](https://svara.dev)
-- [Github →](https://github.com/ryantoddgarza/svara)
+<article class="tech-card">
 
-## Tech stack
+Tech stack
 
 - ReactJS
 - SASS
@@ -34,7 +33,11 @@ Concept, Developer and Design
 - Canvas API
 - Web Worker API
 
-## Details
+<a href="https://svara.dev" target="_blank" rel="noreferrer noopener">Visit site →</a>
+<br>
+<a href="https://github.com/ryantoddgarza/svara" target="_blank" rel="noreferrer noopener">Project Github →</a>
+
+</article>
 
 Being truly generative, no musical motifs are predetermined and parameters such as tempo, favored musical intervals, and random seeding are determined as the user accesses the application. All audio synthesis is done in the browser. Everything heard occurs in real time.
 

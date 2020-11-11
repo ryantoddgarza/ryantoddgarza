@@ -6,15 +6,15 @@ path: '/portfolios/repetition/'
 featured: true
 summary: 'Repetition is an ongoing photo essay depicting the forgotten and entropic corners of West Texas.'
 images: [
-  'repetition/repetition-01.jpg',
-  'repetition/repetition-02.jpg',
-  'repetition/repetition-03.jpg',
-  'repetition/repetition-04.jpg',
-  'repetition/repetition-05.jpg',
-  'repetition/repetition-06.jpg',
-  'repetition/repetition-07.jpg',
-  'repetition/repetition-08.jpg',
-  'repetition/repetition-09.jpg',
+  'repetition/images/repetition-01.jpg',
+  'repetition/images/repetition-02.jpg',
+  'repetition/images/repetition-03.jpg',
+  'repetition/images/repetition-04.jpg',
+  'repetition/images/repetition-05.jpg',
+  'repetition/images/repetition-06.jpg',
+  'repetition/images/repetition-07.jpg',
+  'repetition/images/repetition-08.jpg',
+  'repetition/images/repetition-09.jpg',
 ]
 ---
 

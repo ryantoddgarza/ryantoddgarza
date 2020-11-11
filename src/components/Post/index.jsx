@@ -12,7 +12,7 @@ import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
 import { SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
-import { Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
+import { PostHeader, Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
 
 const PostTemplate = ({
   data: {
@@ -42,9 +42,11 @@ const PostTemplate = ({
     }
 
     global.disqus_config = function disqusCallback() {
+      /* eslint-disable react/no-this-in-sfc */
       this.page.url = url;
       this.page.identifier = identifier;
       this.page.title = title;
+      /* eslint-enable react/no-this-in-sfc */
     };
   }, []);
 
@@ -143,19 +145,21 @@ const PostTemplate = ({
               <ScopedImage src={image} alt={title} />
             </ImageWrapper>
           )}
-          <h1>{title}</h1>
-          <time>{formattedDate(date)}</time>
-          {tags.length === 0 ? null : (
-            <Tags>
-              <FaTags />
-              {tags.map((tag) => (
-                <Link key={tag} to={`/tags/${tag}/1`}>
-                  <small>{tag}</small>
-                </Link>
-              ))}
-            </Tags>
-          )}
-          <Bio />
+          <PostHeader>
+            <h1>{title}</h1>
+            <time>{formattedDate(date)}</time>
+            {tags.length === 0 ? null : (
+              <Tags>
+                <FaTags />
+                {tags.map((tag) => (
+                  <Link key={tag} to={`/tags/${tag}/1`}>
+                    <small>{tag}</small>
+                  </Link>
+                ))}
+              </Tags>
+            )}
+            <Bio />
+          </PostHeader>
           <PostContent>
             <div
               id="post-contents"
@@ -189,7 +193,9 @@ PostTemplate.propTypes = {
       }),
     }),
   }).isRequired,
-  location: PropTypes.shape({}).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default PostTemplate;

@@ -9,7 +9,7 @@ summary: 'In part 1 we did some basic setup to get the history mechanism working
 images: ['https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 
-In part 1 we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment using `setopt` in the `.zshrc`. The full list of options can be found in the [documentation](http://zsh.sourceforge.net/Doc/Release/Options.html#History).
+In [part 1](/a-better-zsh-history-pt-1/) we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment using `setopt` in the _.zshrc_. The full list of options can be found in the [documentation](http://zsh.sourceforge.net/Doc/Release/Options.html#History).
 
 ## Persistence
 
@@ -23,7 +23,7 @@ The difference being that `APPEND_HISTORY` appends lines in the order in which e
 
 So what does any of this mean? It means that someone like me who works with a [terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer) like TMUX can configure Zsh so that every shell command persists in the history beyond open/close and are immediately available across all open windows, making the terminal feel much more integrated.
 
-In the `.zshrc` I’ve added:
+In the _.zshrc_ I’ve added:
 
 ```
 setopt INC_APPEND_HISTORY
@@ -31,7 +31,7 @@ setopt INC_APPEND_HISTORY
 
 ## Duplicates
 
-Now let’s take a look at how we can handle duplicate lines. For example, if I’ve just run `exit` on three open TMUX windows and would like to cycle back to a history item just before, I will have to traverse the duplicates. We can do better.
+Now let’s take a look at how we can handle duplicate lines. For example, if we’ve just run `exit` on three open TMUX windows and would like to cycle back to a history item just before, we would have to traverse the duplicates. We can do better.
 
 - `HIST_IGNORE_DUPS`
 - `HIST_IGNORE_ALL_DUPS`

@@ -4,19 +4,32 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+*[disabled] {
+  cursor: not-allowed;
+}
 body {
   font-family:
-    "-apple-system",
-    "BlinkMacSystemFont",
+    -apple-system,
+    BlinkMacSystemFont,
     "Segoe UI",
-    "Roboto",
-    "Oxygen-Sans",
-    "Ubuntu",
-    "Cantarell",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
     "Helvetica Neue",
-    "sans-serif"
+    sans-serif
   ;
   -webkit-font-smoothing: antialiased;
+}
+code {
+  font-family:
+    Menlo,
+    Consolas,
+    Monaco,
+    "Liberation Mono",
+    "Lucida Console",
+    monospace
+  ;
 }
 a, a:focus, a:hover, a:visited {
   color: inherit;
@@ -27,7 +40,4 @@ img {
 }
 button, a, label {
   cursor: pointer;
-}
-*[disabled] {
-  cursor: not-allowed;
 }

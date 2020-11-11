@@ -1,5 +1,18 @@
 import styled from 'styled-components';
+import styledCodeBlock from './styledCodeBlock';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
+
+export const PostHeader = styled.header`
+  h1 {
+    margin: 0.67em 0;
+    font-size: 36px;
+  }
+
+  time {
+    margin: 1em 0;
+    color: #919191;
+  }
+`;
 
 export const Tags = styled.div`
   margin: 1em 0;
@@ -57,6 +70,19 @@ export const PostContent = styled.section`
     margin: 20px 0 0;
   }
 
+  code {
+    padding: 0.15em 0.3em;
+    font-size: 85%;
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  figcaption {
+    font-size: 11px;
+    text-align: center;
+    color: #757575;
+  }
+
   ul {
     margin: 1em 0;
     list-style: disc;
@@ -94,6 +120,8 @@ export const PostContent = styled.section`
   a {
     color: ${PRIMARY_COLOR};
   }
+
+  ${styledCodeBlock}
 `;
 
 export const ImageWrapper = styled.figure`

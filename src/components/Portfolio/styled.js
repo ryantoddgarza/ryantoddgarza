@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { PRIMARY_COLOR } from '~/components/Common/constants';
-import techCard from './techCard';
+import styledTechCard from './styledTechCard';
 
 export const Wrapper = styled(SimpleWrapper)`
   width: 90%;
@@ -99,7 +99,7 @@ export const PortfolioDescription = styled.section`
     color: ${PRIMARY_COLOR};
   }
 
-  ${techCard}
+  ${styledTechCard}
 `;
 
 export const PortfolioImages = styled.section`

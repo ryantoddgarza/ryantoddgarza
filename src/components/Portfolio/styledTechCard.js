@@ -1,11 +1,15 @@
 import { css } from 'styled-components';
 import { BLACK_COLOR } from '~/components/Common/constants';
 
-const techCard = css`
+const styledTechCard = css`
   article.tech-card {
     background: #fff;
     margin: 1.5rem 0;
     padding: 1rem;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
 
     h3 {
       margin: 0 0 1.5rem;
@@ -36,4 +40,4 @@ const techCard = css`
   }
 `;
 
-export default techCard;
+export default styledTechCard;

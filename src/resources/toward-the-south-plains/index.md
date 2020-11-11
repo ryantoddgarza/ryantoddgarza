@@ -39,6 +39,17 @@ Over the years the work has widened from focus on this singular circumstance to 
 
 ### Programming
 
+
+<article class="tech-card">
+
+Tech stack
+
+- Max
+- MSP
+- Jitter
+
+</article>
+
 The cyclical nature of the moon is central to the theme of this work. Over 700 images of the moon were obtained from NASA's Scientific Visualization Studio and sequenced in **Max**. One lunar cycle is to be projected over the span of the piece but since the timing requirements vary drastically per performance, multiple methods of advancement have been programmed at the input level.
 
 ![max jitter screenshot](./images/ttsp-max-moon.png)

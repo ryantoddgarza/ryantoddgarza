@@ -6,7 +6,7 @@ path: '/portfolios/web-development/'
 featured: true
 summary: 'Striving to write elegant solutions for web applications in which design, performance, user experience, and accessibility all coexist.'
 images: [
-  'web-development/web-dev-01.jpg',
+  'web-development/images/web-dev-01.jpg',
 ]
 ---
 

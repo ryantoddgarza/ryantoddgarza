@@ -6,10 +6,10 @@ path: '/portfolios/toward-the-south-plains/'
 featured: true
 summary: 'Multimedia collaborative work centered around the cyclical nature of existence and the constant presence of change in our lives.'
 images: [
-  'toward-the-south-plains/ttsp-01.jpg',
-  'toward-the-south-plains/ttsp-02.jpg',
-  'toward-the-south-plains/ttsp-03.jpg',
-  'toward-the-south-plains/ttsp-04.jpg',
+  'toward-the-south-plains/images/ttsp-01.jpg',
+  'toward-the-south-plains/images/ttsp-02.jpg',
+  'toward-the-south-plains/images/ttsp-03.jpg',
+  'toward-the-south-plains/images/ttsp-04.jpg',
 ]
 ---
 
@@ -41,7 +41,7 @@ Over the years the work has widened from focus on this singular circumstance to 
 
 The cyclical nature of the moon is central to the theme of this work. Over 700 images of the moon were obtained from NASA's Scientific Visualization Studio and sequenced in **Max**. One lunar cycle is to be projected over the span of the piece but since the timing requirements vary drastically per performance, multiple methods of advancement have been programmed at the input level.
 
-![max jitter screenshot](./ttsp-max-moon.png)
+![max jitter screenshot](./images/ttsp-max-moon.png)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TKHHF3jsw8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

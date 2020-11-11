@@ -6,8 +6,8 @@ path: '/portfolios/gestures/'
 featured: false
 summary: 'Gestures is a series of photographic abstractions depicting the gradients revealed by the landscape of West Texas.'
 images: [
-  'gestures/gestures-01.jpg',
-  'gestures/gestures-02.jpg',
+  'gestures/images/gestures-01.jpg',
+  'gestures/images/gestures-02.jpg',
 ]
 ---
 

@@ -6,8 +6,8 @@ path: '/portfolios/ens-ensemble/'
 featured: false
 summary: 'Ens Ensemble is a moniker used as an outlet to voice creative musical expressions regardless of the state of proficiency or perfection.'
 images: [
-  'ens-ensemble/ens-wk01.jpg',
-  'ens-ensemble/ens-wk02.jpg',
+  'ens-ensemble/images/ens-wk01.jpg',
+  'ens-ensemble/images/ens-wk02.jpg',
 ]
 ---
 

@@ -7,9 +7,9 @@ featured: false
 summary: 'Sound & music department for film, television and commercial work.'
 images:
   [
-    'music-for-media/music-media-01.jpg',
-    'music-for-media/music-media-02.jpg',
-    'music-for-media/music-media-03.jpg',
+    'music-for-media/images/music-media-01.jpg',
+    'music-for-media/images/music-media-02.jpg',
+    'music-for-media/images/music-media-03.jpg',
   ]
 ---
 

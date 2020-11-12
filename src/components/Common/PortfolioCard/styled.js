@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, textColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
@@ -74,7 +74,7 @@ const PortfolioCard = styled.article`
     flex-direction: column;
     justify-content: center;
     padding: 16px;
-    color: #fff;
+    color: ${textColor.onDark};
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   }
 

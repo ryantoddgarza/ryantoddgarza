@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, textColor } from '~/design-system';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { Container } from '~/components/Common/Container';
 
@@ -82,7 +82,7 @@ export const Cover = styled.div`
 export const Details = styled.div`
   margin-bottom: 40px;
   font-size: 11px;
-  color: #adadad;
+  color: ${textColor.light};
 `;
 
 export const Tracklist = styled.div`
@@ -115,7 +115,7 @@ export const Tracklist = styled.div`
     text-align: right;
 
     & a {
-      color: #adadad;
+      color: ${textColor.light};
     }
 
     & a:hover {
@@ -132,7 +132,7 @@ export const Links = styled.ul`
   }
 
   a:hover {
-    color: ${primaryColor.darker};
+    color: ${textColor.default};
   }
 `;
 

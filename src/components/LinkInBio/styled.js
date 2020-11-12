@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, textColor } from '~/design-system';
 import {
   BLACK_COLOR,
   WHITE_COLOR,
@@ -9,7 +9,7 @@ import {
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    color: ${BLACK_COLOR};
+    color: ${textColor.default};
     background-color: ${WHITE_COLOR};
   }
 
@@ -40,7 +40,7 @@ export const StyledButton = styled.div`
   }
 
   &.featured {
-    color: #fff;
+    color: ${textColor.onDark};
     background-color: ${BLACK_COLOR};
 
     &:hover,

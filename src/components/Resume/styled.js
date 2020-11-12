@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, textColor } from '~/design-system';
 import Clearfix from '~/components/Common/Clearfix';
 
 export const Wrapper = styled.section`
@@ -77,7 +77,7 @@ export const MDInformation = styled.section`
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color};
+  color: ${textColor.default};
   background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
   border: 1px solid ${({ theme: { color } }) => color};
   border-radius: 4px;

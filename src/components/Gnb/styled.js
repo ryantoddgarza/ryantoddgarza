@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
-import { primaryColor } from '~/design-system';
+import { primaryColor, textColor } from '~/design-system';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
 
@@ -94,7 +94,7 @@ export const ListMenu = styled.li`
   }
 
   a {
-    color: ${({ theme: { color } }) => color};
+    color: ${textColor.default};
   }
 
   ul {

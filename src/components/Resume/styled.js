@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import Clearfix from '~/components/Common/Clearfix';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const Wrapper = styled.section`
   padding: 100px 0 0;
@@ -42,7 +42,7 @@ export const SocialInformation = styled.section`
   text-align: center;
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
     padding: 0 6px;
   }
 `;
@@ -69,7 +69,7 @@ export const MDInformation = styled.section`
   }
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
     text-decoration: underline;
   }
 `;
@@ -77,8 +77,8 @@ export const MDInformation = styled.section`
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  color: ${({ theme: { color } }) => color};
-  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
+  color: ${textColor.default};
+  background-color: ${backgroundColor.default};
   border: 1px solid ${({ theme: { color } }) => color};
   border-radius: 4px;
   outline: 0;

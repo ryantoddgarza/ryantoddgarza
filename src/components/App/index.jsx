@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import Gnb from '~/components/Gnb';
 import Footer from '~/components/Footer';
+import { textColor } from '~/design-system';
 import { BLACK_COLOR, WHITE_COLOR } from '~/components/Common/constants';
 import { Wrapper } from './styled';
 
@@ -44,10 +45,10 @@ export default class App extends Component {
     } = this.props;
     const { isDracula } = this.state;
     const theme = isDracula ? {
-      color: WHITE_COLOR,
+      color: textColor.onDark,
       backgroundColor: BLACK_COLOR,
     } : {
-      color: BLACK_COLOR,
+      color: textColor.onLight,
       backgroundColor: WHITE_COLOR,
     };
 

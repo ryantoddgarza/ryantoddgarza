@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
-  PRIMARY_COLOR,
   DURATION_NORMAL,
   DURATION_SLOW,
   TIMING_BEZIER,
@@ -15,7 +15,7 @@ const PortfolioCard = styled.article`
   padding: 56.25% 0 0;
   width: 100%;
   height: 0;
-  background-color: #eee;
+  background-color: ${backgroundColor.darker};
   overflow: hidden;
   ${breakpoint('from-tablet')} {
     padding: 28.125% 0 0;
@@ -24,7 +24,7 @@ const PortfolioCard = styled.article`
 
   &:nth-child(4n + 2),
   &:nth-child(4n + 3) {
-    background-color: #fff;
+    background-color: ${backgroundColor.light};
   }
 
   &:hover {
@@ -39,7 +39,7 @@ const PortfolioCard = styled.article`
 
     h3::after {
       width: 33%;
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 
@@ -74,7 +74,7 @@ const PortfolioCard = styled.article`
     flex-direction: column;
     justify-content: center;
     padding: 16px;
-    color: #fff;
+    color: ${textColor.onDark};
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   }
 
@@ -100,7 +100,7 @@ const PortfolioCard = styled.article`
     text-transform: uppercase;
 
     &:hover {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 
@@ -113,7 +113,7 @@ const PortfolioCard = styled.article`
       width: 32px;
       height: 2px;
       margin: 1em 0;
-      background-color: #adadad;
+      background-color: ${textColor.disabled};
       transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
         background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
     }

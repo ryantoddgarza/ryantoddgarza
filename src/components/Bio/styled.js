@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { textColor } from '~/design-system';
 
 export const Wrapper = styled.section`
   margin: 1em 0;
 
   a {
-    color: ${({ theme: { color } }) => color};
+    color: ${textColor.default};
   }
 
   span,
@@ -19,7 +20,7 @@ export const Wrapper = styled.section`
   }
 
   small {
-    color: #919191;
+    color: ${textColor.light};
     font-size: 90%;
   }
 `;

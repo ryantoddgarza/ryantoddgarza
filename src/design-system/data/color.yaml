@@ -1,0 +1,49 @@
+# palette
+
+color:
+  white: &color-white '#f9f9f9'
+  black: &color-black '#1b1b1b'
+  trueWhite: &color-true-white '#fff'
+  trueBlack: &color-true-black '#000'
+  gray:
+    1: &color-gray-1 '#fcfcfc'
+    2: &color-gray-2 '#f9f9f9'
+    3: &color-gray-3 '#f6f6f6'
+    4: &color-gray-4 '#f3f3f3'
+    5: &color-gray-5 '#f0f0f0'
+    10: &color-gray-10 '#e6e6e6'
+    20: &color-gray-20 '#c9c9c9'
+    30: &color-gray-30 '#adadad'
+    40: &color-gray-40 '#919191'
+    50: &color-gray-50 '#757575'
+    60: &color-gray-60 '#5c5c5c'
+    70: &color-gray-70 '#454545'
+    80: &color-gray-80 '#2e2e2e'
+    90: &color-gray-90 '#1b1b1b'
+  yellow:
+    30: &color-yellow-30 '#c9ab48'
+    40: &color-yellow-40 '#a88f48'
+    50: &color-yellow-50 '#8a7237'
+
+# tokens
+
+primaryColor:
+  default: *color-yellow-40
+  lighter: *color-yellow-30
+  darker: *color-yellow-50
+
+backgroundColor:
+  default: *color-gray-2
+  light: *color-true-white
+  lighter: *color-gray-1
+  darker: *color-gray-5
+  dark: *color-gray-90
+
+textColor:
+  default: *color-black
+  light: *color-gray-40
+  onLight: *color-black
+  onDark: *color-white
+  disabled: *color-gray-30
+  link:
+    default: *color-yellow-30

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
-  PRIMARY_COLOR,
   DURATION_NORMAL,
   DURATION_SLOW,
   TIMING_BEZIER,
@@ -11,7 +11,7 @@ const StyledArticle = styled.article`
   position: relative;
   height: 0;
   padding: 50% 0 0;
-  background-color: #fff;
+  background-color: ${backgroundColor.light};
   overflow: hidden;
   @media (max-width: 414px) {
     padding: 200% 0 0;
@@ -21,7 +21,7 @@ const StyledArticle = styled.article`
   &:active {
     h3::after {
       width: 33%;
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 
@@ -54,7 +54,7 @@ const StyledArticle = styled.article`
       width: 32px;
       height: 2px;
       margin: 32px auto;
-      background-color: #adadad;
+      background-color: ${textColor.disabled};
       transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
         background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
     }

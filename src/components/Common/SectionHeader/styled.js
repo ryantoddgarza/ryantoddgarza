@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import {
-  PRIMARY_COLOR,
-  DURATION_NORMAL,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
+import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const Header = styled.header`
   padding: 48px 0;
@@ -19,7 +16,7 @@ export const Header = styled.header`
     }
 
     &:hover {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;

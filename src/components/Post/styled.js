@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const PostHeader = styled.header`
   h1 {
@@ -10,7 +10,7 @@ export const PostHeader = styled.header`
 
   time {
     margin: 1em 0;
-    color: #919191;
+    color: ${textColor.light};
   }
 `;
 
@@ -20,10 +20,10 @@ export const Tags = styled.div`
 
   a {
     margin: 0 0 0 4px;
-    color: #919191;
+    color: ${textColor.light};
 
     &:hover {
-      text-decoration: underline;
+      color: ${textColor.default};
     }
   }
 `;
@@ -55,7 +55,7 @@ export const PostContent = styled.section`
     margin: 40px 0;
     padding: 0 0 0 2em;
     line-height: 1.2em;
-    color: #919191;
+    color: ${textColor.light};
     font-style: italic;
     font-size: 24px;
   }
@@ -73,14 +73,14 @@ export const PostContent = styled.section`
   code {
     padding: 0.15em 0.3em;
     font-size: 85%;
-    background: #f0f0f0;
+    background-color: ${backgroundColor.darker};
     border-radius: 5px;
   }
 
   figcaption {
     font-size: 11px;
     text-align: center;
-    color: #757575;
+    color: ${textColor.light};
   }
 
   ul {
@@ -118,7 +118,11 @@ export const PostContent = styled.section`
   }
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
+
+    &:hover {
+      color: ${textColor.default};
+    }
   }
 
   ${styledCodeBlock}

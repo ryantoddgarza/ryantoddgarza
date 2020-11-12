@@ -1,11 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
-import {
-  PRIMARY_COLOR,
-  BLACK_COLOR,
-  DURATION_FAST,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
+import { DURATION_FAST, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const ImageWrapper = styled.figure`
   position: relative;
@@ -41,12 +37,12 @@ export const TagWrapper = styled.div`
   text-overflow: ellipsis;
 
   span {
-    color: #757575;
+    color: ${textColor.light};
     font-size: 11px;
     line-height: 1.4;
 
     &:hover {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;
@@ -75,7 +71,7 @@ export const StyledArticle = styled.article`
     position: relative;
     top: 0;
     padding: 14px;
-    background-color: #fff;
+    background-color: ${backgroundColor.light};
     overflow: hidden;
     transition: top ${DURATION_FAST} ${TIMING_BEZIER};
 
@@ -85,7 +81,7 @@ export const StyledArticle = styled.article`
   }
 
   a {
-    color: ${BLACK_COLOR};
+    color: ${textColor.default};
   }
 
   h3 {

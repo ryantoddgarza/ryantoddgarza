@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { Container } from '~/components/Common/Container';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 import hamburger from './hamburger';
 
 export const Hamburger = styled.div`
@@ -41,7 +41,7 @@ export const GnbWrapperOuter = styled.div`
   width: 100%;
   font-size: 15px;
   font-weight: 600;
-  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
+  background-color: ${backgroundColor.default};
   z-index: 3000;
 `;
 
@@ -68,7 +68,7 @@ export const SubMenu = styled.ul`
   position: absolute;
   top: 40px;
   line-height: 1.8em;
-  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
+  background-color: ${backgroundColor.default};
   font-size: 13px;
   font-weight: 400;
   overflow: hidden;
@@ -79,7 +79,7 @@ export const SubMenu = styled.ul`
   }
 
   a:hover {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 `;
 
@@ -94,7 +94,7 @@ export const ListMenu = styled.li`
   }
 
   a {
-    color: ${({ theme: { color } }) => color};
+    color: ${textColor.default};
   }
 
   ul {
@@ -127,11 +127,11 @@ export const StyledLink = styled(Link)`
   }
 
   &.active {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 
   &:hover {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 `;
 
@@ -140,7 +140,7 @@ export const Background = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme: { color } }) => color};
+  background-color: ${backgroundColor.default};
   transition: opacity 0.4s ease-out 0.1s;
   opacity: ${({ isActive }) => (isActive ? '.5' : '0')};
 
@@ -157,7 +157,7 @@ export const MobileMenus = styled.div`
   padding: 0 16px;
   width: 80%;
   height: 100%;
-  background-color: ${({ theme: { backgroundColor } }) => backgroundColor};
+  background-color: ${backgroundColor.default};
   transition: left.4s ease-out 0.1s;
   z-index: 3;
   overflow-y: auto;

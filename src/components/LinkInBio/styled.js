@@ -1,16 +1,15 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import {
-  PRIMARY_COLOR,
   BLACK_COLOR,
-  WHITE_COLOR,
   DURATION_NORMAL,
   TIMING_BEZIER,
 } from '~/components/Common/constants';
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    color: ${BLACK_COLOR};
-    background-color: ${WHITE_COLOR};
+    color: ${textColor.default};
+    background-color: ${backgroundColor.default};
   }
 
   footer {
@@ -35,17 +34,17 @@ export const StyledButton = styled.div`
 
   &:hover,
   &:active {
-    color: ${PRIMARY_COLOR};
-    border-color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
+    border-color: ${primaryColor.default};
   }
 
   &.featured {
-    color: #fff;
-    background-color: ${BLACK_COLOR};
+    color: ${textColor.onDark};
+    background-color: ${backgroundColor.dark};
 
     &:hover,
     &:active {
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 `;
@@ -66,7 +65,7 @@ export const SocialInformation = styled.div`
 
     &:hover,
     &:active {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;

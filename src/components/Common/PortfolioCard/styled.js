@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
-  PRIMARY_COLOR,
   DURATION_NORMAL,
   DURATION_SLOW,
   TIMING_BEZIER,
@@ -39,7 +39,7 @@ const PortfolioCard = styled.article`
 
     h3::after {
       width: 33%;
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 
@@ -100,7 +100,7 @@ const PortfolioCard = styled.article`
     text-transform: uppercase;
 
     &:hover {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 

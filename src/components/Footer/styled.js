@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import { Container } from '~/components/Common/Container';
-import {
-  PRIMARY_COLOR,
-  DURATION_NORMAL,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
+import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;
@@ -43,7 +40,7 @@ export const SocialInformation = styled.div`
 
     &:hover,
     &:active {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;
@@ -80,6 +77,6 @@ export const Links = styled.div`
 
   a:hover,
   a:active {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 `;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
+import { primaryColor } from '~/design-system';
 import { Container } from '~/components/Common/Container';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 import hamburger from './hamburger';
 
 export const Hamburger = styled.div`
@@ -79,7 +79,7 @@ export const SubMenu = styled.ul`
   }
 
   a:hover {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 `;
 
@@ -127,11 +127,11 @@ export const StyledLink = styled(Link)`
   }
 
   &.active {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 
   &:hover {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 `;
 

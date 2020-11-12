@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { primaryColor } from '~/design-system';
 import {
-  PRIMARY_COLOR,
   BLACK_COLOR,
   WHITE_COLOR,
   DURATION_NORMAL,
@@ -35,8 +35,8 @@ export const StyledButton = styled.div`
 
   &:hover,
   &:active {
-    color: ${PRIMARY_COLOR};
-    border-color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
+    border-color: ${primaryColor.default};
   }
 
   &.featured {
@@ -45,7 +45,7 @@ export const StyledButton = styled.div`
 
     &:hover,
     &:active {
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 `;
@@ -66,7 +66,7 @@ export const SocialInformation = styled.div`
 
     &:hover,
     &:active {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;

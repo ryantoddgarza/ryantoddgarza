@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import {
-  PRIMARY_COLOR,
   BLACK_COLOR,
   DURATION_FAST,
   TIMING_BEZIER,
@@ -46,7 +46,7 @@ export const TagWrapper = styled.div`
     line-height: 1.4;
 
     &:hover {
-      color: ${PRIMARY_COLOR};
+      color: ${primaryColor.default};
     }
   }
 `;

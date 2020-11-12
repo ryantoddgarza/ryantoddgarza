@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
-  PRIMARY_COLOR,
   DURATION_NORMAL,
   DURATION_SLOW,
   TIMING_BEZIER,
@@ -21,7 +21,7 @@ const StyledArticle = styled.article`
   &:active {
     h3::after {
       width: 33%;
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
     }
   }
 

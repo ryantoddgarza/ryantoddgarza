@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import { primaryColor } from '~/design-system';
 import styledTechCard from './styledTechCard';
 
 export const Wrapper = styled(SimpleWrapper)`
@@ -36,7 +36,7 @@ export const Wrapper = styled(SimpleWrapper)`
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor.default};
       border-radius: 6px;
     }
   }
@@ -96,7 +96,7 @@ export const PortfolioDescription = styled.section`
   }
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 
   ${styledTechCard}

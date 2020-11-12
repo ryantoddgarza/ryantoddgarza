@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { primaryColor } from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
 
 export const PostHeader = styled.header`
   h1 {
@@ -118,7 +118,7 @@ export const PostContent = styled.section`
   }
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 
   ${styledCodeBlock}

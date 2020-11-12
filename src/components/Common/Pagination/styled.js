@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { PRIMARY_COLOR } from '~/components/Common/constants';
+import { primaryColor } from '~/design-system';
 
 export const Wrapper = styled.nav`
   margin: 1em 0;
   text-align: center;
 
   a {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor.default};
   }
 
   ul {

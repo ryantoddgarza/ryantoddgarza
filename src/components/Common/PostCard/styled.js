@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { DURATION_FAST, TIMING_BEZIER } from '~/components/Common/constants';
 
@@ -71,7 +71,7 @@ export const StyledArticle = styled.article`
     position: relative;
     top: 0;
     padding: 14px;
-    background-color: #fff;
+    background-color: ${backgroundColor.light};
     overflow: hidden;
     transition: top ${DURATION_FAST} ${TIMING_BEZIER};
 

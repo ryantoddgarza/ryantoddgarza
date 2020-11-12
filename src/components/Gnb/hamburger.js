@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { textColor } from '~/design-system';
 
 /*!
  * Hamburgers
@@ -46,7 +47,7 @@ export default css`
     transition-timing-function: ease;
     transition-duration: 0.15s;
     transition-property: transform;
-    background-color: ${({ theme: { color } }) => color};
+    background-color: ${textColor.default};
   }
   .hamburger-inner:after,
   .hamburger-inner:before {

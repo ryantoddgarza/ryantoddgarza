@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
+import { backgroundColor } from '~/design-system';
 import { BLACK_COLOR } from '~/components/Common/constants';
 
 const styledTechCard = css`
   article.tech-card {
-    background: #fff;
+    background-color: ${backgroundColor.light};
     margin: 1.5rem 0;
     padding: 1rem;
 
@@ -24,7 +25,7 @@ const styledTechCard = css`
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      margin: 0 0 1rem;;
+      margin: 0 0 1rem;
       padding: 0;
 
       li {

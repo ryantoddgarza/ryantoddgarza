@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
@@ -15,7 +15,7 @@ const PortfolioCard = styled.article`
   padding: 56.25% 0 0;
   width: 100%;
   height: 0;
-  background-color: #eee;
+  background-color: ${backgroundColor.darker};
   overflow: hidden;
   ${breakpoint('from-tablet')} {
     padding: 28.125% 0 0;
@@ -24,7 +24,7 @@ const PortfolioCard = styled.article`
 
   &:nth-child(4n + 2),
   &:nth-child(4n + 3) {
-    background-color: #fff;
+    background-color: ${backgroundColor.light};
   }
 
   &:hover {
@@ -113,7 +113,7 @@ const PortfolioCard = styled.article`
       width: 32px;
       height: 2px;
       margin: 1em 0;
-      background-color: #adadad;
+      background-color: ${textColor.disabled};
       transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
         background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
     }

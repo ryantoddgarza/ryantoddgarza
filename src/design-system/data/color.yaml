@@ -3,6 +3,8 @@
 color:
   white: &color-white '#f9f9f9'
   black: &color-black '#1b1b1b'
+  trueWhite: &color-true-white '#fff'
+  trueBlack: &color-true-black '#000'
   gray:
     1: &color-gray-1 '#fcfcfc'
     2: &color-gray-2 '#f9f9f9'
@@ -32,8 +34,10 @@ primaryColor:
 
 backgroundColor:
   default: *color-gray-2
+  light: *color-true-white
   lighter: *color-gray-1
   darker: *color-gray-5
+  dark: *color-gray-90
 
 textColor:
   default: *color-black

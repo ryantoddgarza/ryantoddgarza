@@ -20,7 +20,7 @@ export const Wrapper = styled.section`
   }
 
   small {
-    color: #919191;
+    color: ${textColor.light};
     font-size: 90%;
   }
 `;

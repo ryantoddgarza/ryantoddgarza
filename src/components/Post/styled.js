@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
 
 export const PostHeader = styled.header`
@@ -73,7 +73,7 @@ export const PostContent = styled.section`
   code {
     padding: 0.15em 0.3em;
     font-size: 85%;
-    background: #f0f0f0;
+    background-color: ${backgroundColor.darker};
     border-radius: 5px;
   }
 

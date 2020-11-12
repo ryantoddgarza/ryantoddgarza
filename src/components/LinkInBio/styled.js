@@ -1,8 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import {
   BLACK_COLOR,
-  WHITE_COLOR,
   DURATION_NORMAL,
   TIMING_BEZIER,
 } from '~/components/Common/constants';
@@ -10,7 +9,7 @@ import {
 export const GlobalStyle = createGlobalStyle`
   body {
     color: ${textColor.default};
-    background-color: ${WHITE_COLOR};
+    background-color: ${backgroundColor.default};
   }
 
   footer {
@@ -41,7 +40,7 @@ export const StyledButton = styled.div`
 
   &.featured {
     color: ${textColor.onDark};
-    background-color: ${BLACK_COLOR};
+    background-color: ${backgroundColor.dark};
 
     &:hover,
     &:active {

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import { Container } from '~/components/Common/Container';
 import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;
   color: ${textColor.light};
-  background-color: #f0f0f0;
+  background-color: ${backgroundColor.darker};
 `;
 
 export const FooterWrapperInner = styled(Container)`

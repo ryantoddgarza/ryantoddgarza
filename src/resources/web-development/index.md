@@ -16,6 +16,7 @@ My focus is writing readable, maintainable, and scalable code for web applicatio
 
 ## Projects
 
+<!-- Svara -->
 <article class="tech-card">
 
 [View project in portfolio](/portfolios/svara/)
@@ -40,6 +41,7 @@ Tech stack
 
 </article>
 
+<!-- Ryan Todd Garza -->
 <article class="tech-card">
 
 ### Ryan Todd Garza
@@ -57,13 +59,48 @@ Tech stack
 - GraphQL
 - Markdown
 - Continuous Integration
-- Analytics
+- Google Analytics
 - Git
 
 <a href="https://ryantoddgarza.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
 
 </article>
 
+<!-- Warbly -->
+<article class="tech-card">
+
+### Warbly
+
+- NPM package
+- Component library
+- Educational
+- 2020
+
+Tech stack
+
+- JavaScript
+- Web Audio API
+- Git
+
+</article>
+
+<!-- autonoME -->
+<article class="tech-card">
+
+### autonoME
+
+- Chrome extension
+- Productivity
+- 2020
+
+Tech stack
+
+- JavaScript
+- Git
+
+</article>
+
+<!-- Harlan Hodges -->
 <article class="tech-card">
 
 ### Harlan Hodges
@@ -84,6 +121,7 @@ Tech stack
 
 </article>
 
+<!-- Toward The South Plains -->
 <article class="tech-card">
 
 [View project in portfolio](/portfolios/toward-the-south-plains/)

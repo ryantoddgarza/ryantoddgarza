@@ -98,6 +98,8 @@ Tech stack
 - JavaScript
 - Git
 
+<a href="https://github.com/ryantoddgarza/autonoME" target="_blank" rel="noreferrer noopener">GitHub →</a>
+
 </article>
 
 <!-- Harlan Hodges -->

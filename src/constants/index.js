@@ -23,6 +23,7 @@ exports.SITE_URL = 'https://ryantoddgarza.com';
 exports.PROFILE = 'https://avatars3.githubusercontent.com/u/46946731?s=200&v=4';
 
 // Paths
+exports.HOME_PATH = '/';
 exports.ALBUMS_PATH = '/albums';
 exports.PORTFOLIOS_PATH = '/portfolios';
 exports.POSTS_PATH = '/pages';

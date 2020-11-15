@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '~/components/layout';
 import CategorizedList from '~/components/CategorizedList';
 
-const CategorizedListTemplate = props => (
+const CategorizedListTemplate = (props) => (
   <Layout {...props}>
     <CategorizedList {...props} />
   </Layout>
@@ -20,12 +20,13 @@ export const pageQuery = graphql`
         homepage
       }
     }
-    posts: allMarkdownRemark (
+    posts: allMarkdownRemark(
       filter: { frontmatter: { hide: { ne: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
+          html
           frontmatter {
             type
             title

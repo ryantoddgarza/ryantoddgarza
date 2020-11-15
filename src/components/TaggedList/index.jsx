@@ -24,6 +24,7 @@ const TaggedList = ({ data, location }) => {
         {posts.map(
           ({
             node: {
+              html,
               frontmatter: { title, summary, tags, path, images },
             },
           }) => (
@@ -31,9 +32,10 @@ const TaggedList = ({ data, location }) => {
               key={path}
               title={title}
               summary={summary}
-              tags={tags}
               path={path}
+              tags={tags}
               images={images}
+              html={html}
             />
           )
         )}

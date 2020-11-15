@@ -1,6 +1,6 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { TITLE } from '~/constants';
+import { TITLE, HOME_PATH } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
@@ -43,7 +43,8 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const MobileNav = ({ navLists: { mainNav } }) => {
+const MobileNav = ({ navLists }) => {
+  const catNavList = Object.values(navLists).flat();
   const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
     reducer,
     initialState
@@ -69,11 +70,11 @@ const MobileNav = ({ navLists: { mainNav } }) => {
         <MobileMenus>
           <ul>
             <ListMenu>
-              <StyledLink to="/" onClick={toggleMenu}>
+              <StyledLink to={HOME_PATH} onClick={toggleMenu}>
                 <Home>{TITLE}</Home>
               </StyledLink>
             </ListMenu>
-            {mainNav.map(({ name, url, isActive, subMenu }) => {
+            {catNavList.map(({ name, url, isActive, subMenu }) => {
               if (subMenu) {
                 return (
                   <ListMenu key={name}>
@@ -125,9 +126,7 @@ const MobileNav = ({ navLists: { mainNav } }) => {
 };
 
 MobileNav.propTypes = {
-  navLists: PropTypes.shape({
-    mainNav: PropTypes.arrayOf(PropTypes.shape({})),
-  }).isRequired,
+  navLists: PropTypes.shape({}).isRequired,
 };
 
 export default MobileNav;

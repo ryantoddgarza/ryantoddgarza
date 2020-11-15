@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
 import PostCategoriesSubMenu from './PostCategoriesSubMenu';
-import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
+import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH, EMAIL } from '~/constants';
 import { GnbWrapperOuter, GnbWrapperInner } from './styled';
 
 const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
@@ -53,10 +53,17 @@ const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
     mainNav.push(albumNavData);
   }
 
+  const mobileAppendNav = [
+    {
+      name: 'Contact',
+      url: `mailto:${EMAIL}`,
+    },
+  ];
+
   return (
     <GnbWrapperOuter>
       <GnbWrapperInner>
-        <MobileNav navLists={{ mainNav }} />
+        <MobileNav navLists={{ mainNav, mobileAppendNav }} />
         <DesktopNav navLists={{ mainNav }} />
       </GnbWrapperInner>
     </GnbWrapperOuter>

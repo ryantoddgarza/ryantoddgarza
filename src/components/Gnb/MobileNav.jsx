@@ -43,7 +43,10 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const MobileNav = ({ navLists: { mainNav } }) => {
+const MobileNav = ({ navLists }) => {
+  const catNavList = Object.keys(navLists)
+    .map((key) => navLists[key])
+    .flat();
   const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
     reducer,
     initialState
@@ -73,7 +76,7 @@ const MobileNav = ({ navLists: { mainNav } }) => {
                 <Home>{TITLE}</Home>
               </StyledLink>
             </ListMenu>
-            {mainNav.map(({ name, url, isActive, subMenu }) => {
+            {catNavList.map(({ name, url, isActive, subMenu }) => {
               if (subMenu) {
                 return (
                   <ListMenu key={name}>
@@ -125,9 +128,7 @@ const MobileNav = ({ navLists: { mainNav } }) => {
 };
 
 MobileNav.propTypes = {
-  navLists: PropTypes.shape({
-    mainNav: PropTypes.arrayOf(PropTypes.shape({})),
-  }).isRequired,
+  navLists: PropTypes.shape({}).isRequired,
 };
 
 export default MobileNav;

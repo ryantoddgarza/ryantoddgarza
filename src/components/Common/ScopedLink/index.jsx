@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 
 const ScopedLink = ({ children, to }) => {
-  const isExternal = to.includes('//');
+  const isURIScheme = to.includes(':');
+  const hasAuthComp = to.includes('//');
 
-  if (isExternal) {
+  if (isURIScheme || hasAuthComp) {
     return (
       <a href={to} target="_blank" rel="noreferrer noopener">
         {children}

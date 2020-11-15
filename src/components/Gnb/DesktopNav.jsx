@@ -5,9 +5,7 @@ import { TITLE } from '~/constants';
 import { List, ListMenu, Home, StyledLink } from './styled';
 
 const DesktopNav = ({ navLists }) => {
-  const catNavList = Object.keys(navLists)
-    .map((key) => navLists[key])
-    .flat();
+  const catNavList = Object.values(navLists).flat();
 
   return (
     <List>

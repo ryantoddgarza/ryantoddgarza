@@ -44,9 +44,7 @@ const reducer = (state = initialState, action) => {
 };
 
 const MobileNav = ({ navLists }) => {
-  const catNavList = Object.keys(navLists)
-    .map((key) => navLists[key])
-    .flat();
+  const catNavList = Object.values(navLists).flat();
   const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
     reducer,
     initialState

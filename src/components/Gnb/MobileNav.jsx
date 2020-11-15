@@ -1,6 +1,6 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { TITLE } from '~/constants';
+import { TITLE, HOME_PATH } from '~/constants';
 import {
   Hamburger,
   MovableFaCaretDown,
@@ -70,7 +70,7 @@ const MobileNav = ({ navLists }) => {
         <MobileMenus>
           <ul>
             <ListMenu>
-              <StyledLink to="/" onClick={toggleMenu}>
+              <StyledLink to={HOME_PATH} onClick={toggleMenu}>
                 <Home>{TITLE}</Home>
               </StyledLink>
             </ListMenu>

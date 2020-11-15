@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaCaretDown } from 'react-icons/fa';
-import { TITLE } from '~/constants';
+import { TITLE, HOME_PATH } from '~/constants';
 import { List, ListMenu, Home, StyledLink } from './styled';
 
 const DesktopNav = ({ navLists }) => {
@@ -10,7 +10,7 @@ const DesktopNav = ({ navLists }) => {
   return (
     <List>
       <ListMenu>
-        <StyledLink to="/">
+        <StyledLink to={HOME_PATH}>
           <Home>{TITLE}</Home>
         </StyledLink>
       </ListMenu>

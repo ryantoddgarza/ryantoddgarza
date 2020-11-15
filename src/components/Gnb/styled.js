@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import { FaCaretDown } from 'react-icons/fa';
 import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import ScopedLink from '~/components/Common/ScopedLink';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
 
@@ -117,7 +117,7 @@ export const Home = styled.h1`
   font-weight: 500;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(ScopedLink)`
   @media (max-width: 414px) {
     &[href='/'] {
       display: flex;

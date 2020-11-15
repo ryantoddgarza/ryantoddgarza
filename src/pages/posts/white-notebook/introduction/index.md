@@ -9,7 +9,7 @@ summary: 'Yoga is a living science in that it takes individuals to tint the more
 images: ['https://images.unsplash.com/photo-1517664121940-f819957bb072?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 
-I have decided to make digital what has existed for a long time now as scattered entries in a tattered white notebook. Initially, I dedicated this particular notebook to what I considered matters of my own spiritual seeking. However, as I jotted down notes after a particlularly interesting asana practice, or it accompanied me to workshops, or as texts I read began to blur the lines between the "metaphysical subtle body" and "empirical western physiology", the types of things that ended up in this one little notebook surprised me.
+I have decided to make digital what has existed for a long time now as scattered entries in a tattered white notebook. Initially, I dedicated this particular notebook to what I considered matters of my own spiritual seeking. However, as I jotted down notes after a particularly interesting asana practice, or it accompanied me to workshops, or as texts I read began to blur the lines between the "metaphysical subtle body" and "empirical western physiology", the types of things that ended up in this one little notebook surprised me.
 
 I ask that the reader view what follows as notes from my personal path utilizing the system of Ashtanga Vinyasa Yoga and not an attempt at any sort of definitive treatise on the subject. It is only that I have considered it possible that to some rare individual it might function as either an introduction to a newcomer or an aid to a seasoned practitioner.
 

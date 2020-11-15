@@ -5,7 +5,7 @@ featured: false
 tags: ['yoga', 'white-notebook', 'sanskrit']
 title: 'White Notebook - A Brief Note On Sanskrit'
 date: '2020-08-08T18:34:00.000Z'
-summary: 'There are many terms in Yogic philosophy that cannot be explained without a handful of sentences. To approximate with a term that is "close enough" for the sake of brevity is a huge disservice to anyone truly trying to understand...'
+summary: ''
 images: ['images/yoga-0629.jpg']
 ---
 

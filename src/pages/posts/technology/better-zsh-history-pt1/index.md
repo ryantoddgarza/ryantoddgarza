@@ -5,7 +5,7 @@ featured: true
 tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 1'
 date: '2020-10-01T18:46:00.000Z'
-summary: 'I recently combed through the dot files in my mac’s home directory and was shocked to see just how polluted it had become. I took the opportunity to take a closer look into some configurations.'
+summary: ''
 images: ['https://images.unsplash.com/photo-1582303520952-11fe6a0c2058?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 

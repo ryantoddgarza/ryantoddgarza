@@ -97,7 +97,7 @@ const Home = ({ posts, albums, portfolios }) => {
               .map(
                 ({
                   node: {
-                    frontmatter: { title, summary, tags, path, images },
+                    frontmatter: { title, summary, tags, path, images, html },
                   },
                 }) => (
                   <PostCard
@@ -107,6 +107,7 @@ const Home = ({ posts, albums, portfolios }) => {
                     tags={tags}
                     path={path}
                     images={images}
+                    html={html}
                   />
                 )
               )}

@@ -2,7 +2,7 @@
 path: '/aliases-you-didnt-know-you-wanted-options-iv/'
 category: 'technology'
 featured: false
-tags: ['shell', 'zsh', 'terminal', 'alias']
+tags: ['shell', 'zsh', 'terminal']
 title: "Aliases You Didn't Know You Wanted: Options `-iv`"
 date: '2020-11-08T15:11:00.000Z'
 summary: ''

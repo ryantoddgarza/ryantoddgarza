@@ -2,7 +2,7 @@
 path: '/superimposed-recursive-metric-modulation/'
 category: 'music'
 featured: true
-tags: ['music', 'rhythm', 'meter', 'tempo', 'modulation']
+tags: ['music', 'rhythm', 'meter']
 title: 'Superimposed Recursive Metric Modulation - Rough Draft'
 date: '2020-08-23T23:44:00.000Z'
 summary: 'Through subsequent modulations to closely related meters, distantly related meters can be accessed while maintaining a relationship to the original.'

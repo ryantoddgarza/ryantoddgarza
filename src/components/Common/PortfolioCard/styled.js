@@ -33,10 +33,6 @@ const PortfolioCard = styled.article`
       left: -5%;
     }
 
-    h4 {
-      font-size: 2.2vw;
-    }
-
     h3::after {
       width: 33%;
       background-color: ${primaryColor.default};

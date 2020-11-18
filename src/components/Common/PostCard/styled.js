@@ -88,7 +88,7 @@ export const StyledArticle = styled.article`
     padding: 0 0 6px;
     height: 2.4em;
     line-height: 1.2;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
   }
 

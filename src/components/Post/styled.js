@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  primaryColor,
+  textColor,
+  backgroundColor,
+  heading,
+} from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
 
 export const PostHeader = styled.header`
   h1 {
     margin: 0.67em 0;
-    font-size: 36px;
+    font-size: ${heading.lvl1.size.desktop};
   }
 
   time {
@@ -34,17 +39,17 @@ export const PostContent = styled.section`
 
   h2 {
     margin: 24px 0 10px;
-    font-size: 28px;
+    font-size: ${heading.lvl2.size.desktop};
   }
 
   h3 {
     margin: 24px 0 10px;
-    font-size: 24px;
+    font-size: ${heading.lvl3.size.desktop};
   }
 
   h4 {
     margin: 24px 0 10px;
-    font-size: 21px;
+    font-size: ${heading.lvl4.size.desktop};
   }
 
   p {

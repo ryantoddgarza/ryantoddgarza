@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { primaryColor } from '~/design-system';
+import { primaryColor, heading } from '~/design-system';
 import styledTechCard from './styledTechCard';
 
 export const Wrapper = styled(SimpleWrapper)`
@@ -53,17 +53,17 @@ export const PortfolioDescription = styled.section`
 
   h1 {
     margin: 16px 0 10px;
-    font-size: 32px;
+    font-size: ${heading.lvl1.size.desktop};
   }
 
   h2 {
     margin: 24px 0 10px;
-    font-size: 28px;
+    font-size: ${heading.lvl2.size.desktop};
   }
 
   h3 {
     margin: 24px 0 10px;
-    font-size: 24px;
+    font-size: ${heading.lvl3.size.desktop};
   }
 
   p {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, textColor } from '~/design-system';
+import { primaryColor, textColor, heading } from '~/design-system';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { Container } from '~/components/Common/Container';
 
@@ -13,7 +13,7 @@ export const Wrapper = styled(SimpleWrapper)`
 
   h2 {
     margin-bottom: 36px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -62,7 +62,7 @@ export const Title = styled.div`
   margin-bottom: 36px;
 
   h1 {
-    font-size: 36px;
+    font-size: ${heading.lvl1.size.desktop};
     margin-bottom: 24px;
   }
 `;
@@ -158,7 +158,7 @@ export const Credits = styled.div`
       white-space: nowrap;
 
       &::after {
-        content: "${'.'.repeat(250)}";
+        content: '${'.'.repeat(250)}';
       }
     }
   }

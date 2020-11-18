@@ -2,7 +2,7 @@
 path: '/white-notebook/the-ashtanga-of-patanjali/'
 category: 'yoga'
 featured: true
-tags: ['yoga', 'white-notebook', 'sutras']
+tags: ['yoga', 'white-notebook', 'sutra']
 title: 'White Notebook - The Ashtanga of Patanjali'
 date: '2020-08-08T22:09:00.000Z'
 summary: 'The Yoga Sūtras of Patañjali are a condensed and systematic exposition of the essential philosophy and technique of Yoga in...'
@@ -11,7 +11,7 @@ images: ['images/yoga-0455.jpg']
 
 _Article awaiting completion. Hope you enjoy what's here. Check back soon._
 
-The _Yoga Sūtras of Patañjali_ are a condensed and systematic exposition of the essential philosophy and technique of Yoga in 196 _sūtras_ (aphorisms). Because the text is inherently cryptic it requires a great deal of unpacking and interpretation and has therefore not been recommended by my teacher as a guide but rather an exercise in gaining familiarity with Yogic terms so that as certain experiences unfold, there is some context for what is occuring.
+The _Yoga Sūtras of Patañjali_ are a condensed and systematic exposition of the essential philosophy and technique of Yoga in 196 _sūtras_ (aphorisms). Because the text is inherently cryptic it requires a great deal of unpacking and interpretation and has therefore not been recommended by my teacher as a guide but rather an exercise in gaining familiarity with Yogic terms so that as certain experiences unfold, there is some context for what is occurring.
 
 The _Sūtras_ begin with a succinct definition of Yoga in no more than four terms – _yogaś-citta-vṛtti-nirodhaḥ_. The remaining one hundred ninety-four sutras are an explication of this declaration. Patañjali goes on to describe Eight Limbs (aṣṭāṅga) – Yama, Niyama, Asana, Pranayama, Pratyahara, Dharana, Dhyana, and Samadhi – and Three Paths (trimārga) – Karma, Jnana, and Bhakti.
 

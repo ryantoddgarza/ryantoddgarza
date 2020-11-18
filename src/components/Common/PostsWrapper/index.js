@@ -15,16 +15,6 @@ const PostsWrapper = styled(Container)`
     content: '';
     clear: both;
   }
-
-  h1 {
-    margin: .67em 0;
-    font-size: 32px;
-  }
-
-  time {
-    margin: 1em 0;
-    font-size: 12px;
-  }
 `;
 
 export default PostsWrapper;

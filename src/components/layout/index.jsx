@@ -13,6 +13,7 @@ const Layout = ({ children, location }) => (
         ){
           edges {
             node {
+              html
               frontmatter {
                 path
                 type

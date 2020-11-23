@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaTwitter,
   FaFacebook,
-  FaInstagram,
   FaLinkedin,
   FaPatreon,
   FaMediumM,
@@ -12,7 +11,6 @@ import {
   GITHUB_ID,
   TWITTER_ID,
   FACEBOOK_ID,
-  INSTAGRAM_ID,
   LINKEDIN_ID,
   PATREON_ID,
   MEDIUM_ID,
@@ -35,12 +33,6 @@ export default [
     name: 'Facebook',
     url: `https://facebook.com/${FACEBOOK_ID}`,
     icon: <FaFacebook />,
-    display: true,
-  },
-  {
-    name: 'Instagram',
-    url: `https://instagram.com/${INSTAGRAM_ID}`,
-    icon: <FaInstagram />,
     display: true,
   },
   {

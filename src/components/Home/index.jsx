@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SEO from '~/components/Common/SEO';
 import Wrapper from '~/components/Common/Wrapper';
@@ -7,7 +7,7 @@ import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import { TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
+import { TITLE as SITE_TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import { Title } from './styled';
 
 function Feature(name) {
@@ -26,12 +26,40 @@ const Home = ({ posts, albums, portfolios }) => {
   const featuredPosts = new Feature(posts);
   const featuredAlbums = new Feature(albums);
   const featuredPortfolios = new Feature(portfolios);
+  const [title, setTitle] = useState('');
+
+  const typeMessage = (string) => {
+    const message = string;
+    const interval = 120;
+    let count = 0;
+    let output = '';
+
+    const typeChar = () => {
+      if (count >= message.length) {
+        return;
+      }
+
+      output += message[count];
+      setTitle(output);
+      count += 1;
+
+      setTimeout(() => {
+        typeChar();
+      }, interval);
+    };
+
+    typeChar();
+  };
+
+  useEffect(() => {
+    typeMessage('Hi, I\'m Ryan.');
+  }, []);
 
   return (
     <>
-      <SEO title={TITLE} />
+      <SEO title={SITE_TITLE} />
       <Wrapper isHome>
-        <Title>Hi, I'm Ryan.</Title>
+        <Title>{title}</Title>
       </Wrapper>
       <SimpleWrapper>
         {featuredAlbums.length >= 1 ? (
@@ -43,20 +71,14 @@ const Home = ({ posts, albums, portfolios }) => {
             />
             {featuredAlbums
               .slice(0, 1)
-              .map(
-                ({
-                  node: {
-                    frontmatter: { path, title, cover },
-                  },
-                }) => (
-                  <AlbumCard
-                    key={title}
-                    title={title}
-                    path={path}
-                    image={cover}
-                  />
-                )
-              )}
+              .map(({ node: { frontmatter: { path, title, cover } } }) => (
+                <AlbumCard
+                  key={title}
+                  title={title}
+                  path={path}
+                  image={cover}
+                />
+              ))}
           </SimpleWrapper>
         ) : null}
         {featuredPortfolios.length >= 4 ? (

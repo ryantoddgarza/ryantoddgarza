@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 import { FaTags } from 'react-icons/fa';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
-import Bio from '~/components/Bio';
 import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
@@ -158,7 +157,6 @@ const PostTemplate = ({
                 ))}
               </Tags>
             )}
-            <Bio />
           </PostHeader>
           <PostContent>
             <div

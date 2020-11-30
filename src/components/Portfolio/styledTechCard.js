@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
-import { backgroundColor, space } from '~/design-system';
-import { BLACK_COLOR } from '~/components/Common/constants';
+import { backgroundColor, textColor, space } from '~/design-system';
 
 const styledTechCard = css`
   article.tech-card {
@@ -34,7 +33,7 @@ const styledTechCard = css`
         font-size: 0.6875rem;
         line-height: 1.25rem;
         text-transform: lowercase;
-        border: 1px solid ${BLACK_COLOR};
+        border: 1px solid ${textColor.default};
         white-space: nowrap;
       }
     }

@@ -6,7 +6,6 @@ import {
   textColor,
 } from '~/design-system';
 import {
-  BLACK_COLOR,
   DURATION_NORMAL,
   TIMING_BEZIER,
 } from '~/components/Common/constants';
@@ -32,7 +31,7 @@ export const StyledButton = styled.div`
   margin: 0 0 ${space.x4};
   padding: ${space.x4};
   text-align: center;
-  border: 1px solid ${BLACK_COLOR};
+  border: 1px solid ${backgroundColor.dark};
   font-weight: 500;
   transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
   cursor: pointer;

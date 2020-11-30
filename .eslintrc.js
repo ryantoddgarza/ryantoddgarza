@@ -64,6 +64,7 @@ module.exports = {
     ],
     'object-curly-newline': [error, { consistent: true }],
     'prefer-spread': off,
+    'quote-props': [error, 'consistent'],
     'react/jsx-filename-extension': [error, { extensions: ['.js', '.jsx'] }],
     'react/jsx-no-target-blank': error,
     'react/no-typos': error,

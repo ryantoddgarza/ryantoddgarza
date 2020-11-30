@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { textColor } from '~/design-system';
+import { textColor, space } from '~/design-system';
 
 export const Wrapper = styled.section`
-  margin: 1em 0;
+  margin: ${space.x4} 0;
 
   a {
     color: ${textColor.default};
@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
   }
 
   img {
-    margin: 0 4px 0 0;
+    margin: 0 ${space.x1} 0 0;
     border-radius: 50%;
   }
 

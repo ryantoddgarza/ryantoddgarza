@@ -8,8 +8,4 @@ export const Wrapper = styled(Container)`
   @media (max-width: 414px) {
     padding: 70px 0 0;
   }
-
-  section {
-    margin: 0 0 60px;
-  }
 `;

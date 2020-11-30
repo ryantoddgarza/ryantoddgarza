@@ -1,22 +1,23 @@
 import styled from 'styled-components';
 import {
-  primaryColor,
-  textColor,
   backgroundColor,
   heading,
+  primaryColor,
+  space,
+  textColor,
 } from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
 
 export const PostHeader = styled.header`
   h1 {
-    margin: 0.67em 0;
+    margin: ${space.x6} 0 ${space.x12};
     font-size: ${heading.lvl1.size.desktop};
   }
 
   ul {
     display: flex;
     justify-content: space-between;
-    margin: 1em 0;
+    margin: ${space.x4} 0;
     font-size: 0.875rem;
   }
 
@@ -34,41 +35,41 @@ export const Tags = styled.div`
     }
 
     &:not(:last-child) {
-      margin-right: 0.5em;
+      margin-right: ${space.x2};
     }
   }
 `;
 
 export const PostContent = styled.section`
-  padding: 1em 0 4em;
-  line-height: 1.6em;
+  padding: ${space.x8} 0 ${space.x16};
+  line-height: 1.6;
 
   h2 {
-    margin: 24px 0 10px;
+    margin: ${space.x6} 0 ${space.x4};
     font-size: ${heading.lvl2.size.desktop};
   }
 
   h3 {
-    margin: 24px 0 10px;
+    margin: ${space.x6} 0 ${space.x4};
     font-size: ${heading.lvl3.size.desktop};
   }
 
   h4 {
-    margin: 24px 0 10px;
+    margin: ${space.x6} 0 ${space.x4};
     font-size: ${heading.lvl4.size.desktop};
   }
 
   p {
-    margin: 16px 0 0;
+    margin: ${space.x4} 0 0;
   }
 
   blockquote {
-    margin: 40px 0;
-    padding: 0 0 0 2em;
-    line-height: 1.2em;
+    margin: ${space.x12} 0;
+    padding: 0 0 0 ${space.x8};
+    line-height: 1.2;
     color: ${textColor.light};
     font-style: italic;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   cite {
@@ -78,7 +79,7 @@ export const PostContent = styled.section`
   }
 
   pre {
-    margin: 20px 0 0;
+    margin: ${space.x6} 0;
   }
 
   code {
@@ -95,12 +96,12 @@ export const PostContent = styled.section`
   }
 
   ul {
-    margin: 1em 0;
-    list-style: disc;
+    list-style-type: disc;
+    list-style-position: inside;
   }
 
   li {
-    margin: 0.5em 0 0 2em;
+    margin: ${space.x3} 0 0 ${space.x6};
   }
 
   em,
@@ -141,7 +142,7 @@ export const PostContent = styled.section`
 
 export const ImageWrapper = styled.figure`
   position: relative;
-  margin: 0 0 48px;
+  margin: 0 0 ${space.xl};
   padding: 56.25% 0 0;
   width: 100%;
   overflow: hidden;
@@ -160,7 +161,7 @@ export const ImageWrapper = styled.figure`
 
 export const ComponentInPost = styled.div`
   position: relative;
-  margin: 1em 0 1em;
+  margin: 1em 0;
   padding: 55px 16px 16px;
   color: #263238;
   border: 1px solid #263238;

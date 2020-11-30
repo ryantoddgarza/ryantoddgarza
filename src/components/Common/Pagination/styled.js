@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, space } from '~/design-system';
 
 export const Wrapper = styled.nav`
-  margin: 1em 0;
+  margin: ${space.x4} 0;
   text-align: center;
 
   a {
@@ -18,6 +18,6 @@ export const Wrapper = styled.nav`
 
   li {
     display: flex;
-    padding: 0 0.4em;
+    padding: 0 ${space.x1};
   }
 `;

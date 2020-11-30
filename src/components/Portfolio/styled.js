@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { primaryColor, heading } from '~/design-system';
+import { primaryColor, heading, space } from '~/design-system';
 import styledTechCard from './styledTechCard';
 
 export const Wrapper = styled(SimpleWrapper)`
@@ -43,7 +43,7 @@ export const Wrapper = styled(SimpleWrapper)`
 `;
 
 export const PortfolioDescription = styled.section`
-  padding: 0 16px 16px 0;
+  padding: 0 ${space.x4} ${space.x4} 0;
   font-size: 14px;
   line-height: 1.6em;
   @media (max-width: 414px) {
@@ -52,8 +52,9 @@ export const PortfolioDescription = styled.section`
   }
 
   h1 {
-    margin: 16px 0 10px;
+    margin: 0 0 ${space.x6};
     font-size: ${heading.lvl1.size.desktop};
+    line-height: 1;
   }
 
   h2 {
@@ -67,7 +68,7 @@ export const PortfolioDescription = styled.section`
   }
 
   p {
-    margin: 16px 0 0;
+    margin: ${space.x4} 0 0;
   }
 
   ol,
@@ -104,15 +105,15 @@ export const PortfolioDescription = styled.section`
 
 export const PortfolioImages = styled.section`
   img {
-    padding: 16px;
+    padding: 0 ${space.x4} ${space.x4};
     width: 100%;
     height: auto;
     @media (max-width: 414px) {
       float: left;
-      margin: 0 0 8px;
+      margin: 0 0 ${space.x2};
       padding: 0;
       &:last-child {
-        margin: 0 0 16px;
+        margin: 0 0 ${space.x4};
       }
     }
   }

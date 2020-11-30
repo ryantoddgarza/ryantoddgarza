@@ -1,5 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import {
   BLACK_COLOR,
   DURATION_NORMAL,
@@ -13,19 +18,19 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   footer {
-    padding: 1rem 0;
+    padding: ${space.x4} 0;
   }
 `;
 
 export const LinkInBioWrapper = styled.section`
   max-width: 640px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: ${space.x4};
 `;
 
 export const StyledButton = styled.div`
-  margin: 0 0 1rem;
-  padding: 1rem;
+  margin: 0 0 ${space.x4};
+  padding: ${space.x4};
   text-align: center;
   border: 1px solid ${BLACK_COLOR};
   font-weight: 500;
@@ -56,11 +61,11 @@ export const SocialInformation = styled.div`
 
   a {
     display: inline-flex;
-    padding: 0.25rem;
+    padding: ${space.x4};
     transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
 
     &:not(:last-of-type) {
-      margin-right: 1rem;
+      margin-right: ${space.x4};
     }
 
     &:hover,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, heading } from '~/design-system';
+import { primaryColor, textColor, heading, space } from '~/design-system';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { Container } from '~/components/Common/Container';
 
@@ -12,14 +12,14 @@ export const Wrapper = styled(SimpleWrapper)`
   }
 
   h2 {
-    margin-bottom: 36px;
+    margin-bottom: ${space.x8};
     font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
   }
 
   li {
-    margin-bottom: 12px;
+    margin-bottom: ${space.x3};
   }
 `;
 
@@ -59,16 +59,16 @@ export const ContentRight = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-bottom: 36px;
+  margin-bottom: ${space.x12};
 
   h1 {
     font-size: ${heading.lvl1.size.desktop};
-    margin-bottom: 24px;
+    margin-bottom: ${space.x6};
   }
 `;
 
 export const Cover = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: ${space.x12};
 
   img {
     width: 100%;
@@ -80,17 +80,17 @@ export const Cover = styled.div`
 `;
 
 export const Details = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: ${space.x12};
   font-size: 11px;
   color: ${textColor.light};
 `;
 
 export const Tracklist = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: ${space.x12};
 
   .track-row {
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: ${space.x4};
   }
 
   .track-counter {
@@ -125,7 +125,7 @@ export const Tracklist = styled.div`
 `;
 
 export const Links = styled.ul`
-  margin-bottom: 40px;
+  margin-bottom: ${space.x12};
 
   a {
     color: ${primaryColor.default};
@@ -137,22 +137,22 @@ export const Links = styled.ul`
 `;
 
 export const Credits = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: ${space.x12};
   font-size: 11px;
 
   dl {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 24px;
+    margin-bottom: ${space.x6};
 
     & dt,
     & dd {
       line-height: 2;
-      margin-bottom: 6px;
+      margin-bottom: ${space.x3};
     }
 
     & > :nth-child(odd) {
-      margin-right: 8px;
+      margin-right: ${space.x2};
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

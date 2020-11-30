@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { FaCaretDown } from 'react-icons/fa';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import ScopedLink from '~/components/Common/ScopedLink';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
@@ -75,7 +80,7 @@ export const SubMenu = styled.ul`
   transition: max-height 0.4s ease-out 0.1s;
 
   li {
-    padding: 6px 12px;
+    padding: ${space.x1} ${space.x3};
   }
 
   a:hover {
@@ -86,7 +91,7 @@ export const SubMenu = styled.ul`
 export const ListMenu = styled.li`
   display: inline-block;
   position: relative;
-  padding-right: 2em;
+  padding-right: ${space.x8};
   font-weight: 400;
 
   @media (max-width: 414px) {
@@ -201,7 +206,7 @@ export const MobileMenu = styled.section`
 
       li {
         @media (max-width: 414px) {
-          padding: 0 0 0 16px;
+          padding: 0 0 0 ${space.x4};
         }
       }
     }

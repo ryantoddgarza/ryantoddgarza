@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
@@ -69,7 +74,7 @@ const PortfolioCard = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 16px;
+    padding: ${space.x4};
     color: ${textColor.onDark};
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   }
@@ -78,7 +83,7 @@ const PortfolioCard = styled.article`
     display: none;
     font-size: 0.875rem;
     line-height: 1.4;
-    margin-bottom: 1em;
+    margin-bottom: ${space.x4};
     ${breakpoint('mobile-lg')} {
       display: block;
     }

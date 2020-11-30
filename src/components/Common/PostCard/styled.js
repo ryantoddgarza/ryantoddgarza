@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { DURATION_FAST, TIMING_BEZIER } from '~/components/Common/constants';
 
@@ -50,12 +55,12 @@ export const TagWrapper = styled.div`
 export const StyledArticle = styled.article`
   display: inline-block;
   width: 100%;
-  margin: 0 0 16px;
-  padding: 0 0 16px;
+  margin: 0 0 ${space.x4};
+  padding: 0 0 ${space.x4};
   font-size: 14px;
   vertical-align: top;
   ${breakpoint('from-tablet')} {
-    padding: 0 16px 16px;
+    padding: 0 ${space.x4} ${space.x4};
   }
   ${breakpoint('tablet')} {
     width: 50%;

@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
   DURATION_NORMAL,
@@ -34,7 +39,7 @@ const StyledArticle = styled.article`
     justify-content: center;
     width: 50%;
     height: 100%;
-    padding: 8px;
+    padding: ${space.x2};
     text-align: center;
     border-left: 1px solid #f9f9f9;
     @media (max-width: 414px) {
@@ -53,7 +58,7 @@ const StyledArticle = styled.article`
       content: '';
       width: 32px;
       height: 2px;
-      margin: 32px auto;
+      margin: ${space.x8} auto;
       background-color: ${textColor.disabled};
       transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
         background-color ${DURATION_NORMAL} ${TIMING_BEZIER};

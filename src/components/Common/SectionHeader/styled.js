@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor } from '~/design-system';
+import { primaryColor, space } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
@@ -22,6 +22,6 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h2`
-  margin: 16px 0;
+  margin: ${space.x6} 0;
   font-size: ${fontSizeFluid(28, 2)};
 `;

@@ -13,22 +13,28 @@ export const PostHeader = styled.header`
     font-size: ${heading.lvl1.size.desktop};
   }
 
-  time {
+  ul {
+    display: flex;
+    justify-content: space-between;
     margin: 1em 0;
+    font-size: 0.875rem;
+  }
+
+  time {
     color: ${textColor.light};
   }
 `;
 
 export const Tags = styled.div`
-  margin: 1em 0;
-  font-size: 12px;
-
   a {
-    margin: 0 0 0 4px;
     color: ${textColor.light};
 
     &:hover {
       color: ${textColor.default};
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5em;
     }
   }
 `;

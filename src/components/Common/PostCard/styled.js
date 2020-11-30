@@ -4,9 +4,9 @@ import {
   primaryColor,
   space,
   textColor,
+  transition,
 } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
-import { DURATION_FAST, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const ImageWrapper = styled.figure`
   position: relative;
@@ -78,7 +78,7 @@ export const StyledArticle = styled.article`
     padding: 14px;
     background-color: ${backgroundColor.light};
     overflow: hidden;
-    transition: top ${DURATION_FAST} ${TIMING_BEZIER};
+    transition: top ${transition.duration.fast} ${transition.function.default};
 
     &:hover {
       top: -8px;

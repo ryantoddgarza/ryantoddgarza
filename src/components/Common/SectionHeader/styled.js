@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { primaryColor, space } from '~/design-system';
+import { primaryColor, space, transition } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const Header = styled.header`
   padding: ${space.x12} 0;
@@ -9,7 +8,7 @@ export const Header = styled.header`
 
   a {
     font-size: 1rem;
-    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+    transition: all ${transition.duration.normal} ${transition.function.default};
 
     &:hover {
       color: ${primaryColor.default};

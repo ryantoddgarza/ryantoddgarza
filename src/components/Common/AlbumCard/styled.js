@@ -4,13 +4,9 @@ import {
   primaryColor,
   space,
   textColor,
+  transition,
 } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import {
-  DURATION_NORMAL,
-  DURATION_SLOW,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
 
 const StyledArticle = styled.article`
   position: relative;
@@ -60,8 +56,10 @@ const StyledArticle = styled.article`
       height: 2px;
       margin: ${space.x8} auto;
       background-color: ${textColor.disabled};
-      transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
-        background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
+      transition: width ${transition.duration.slow}
+          ${transition.function.default},
+        background-color ${transition.duration.normal}
+          ${transition.function.default};
     }
   }
 

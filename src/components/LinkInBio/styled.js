@@ -4,11 +4,8 @@ import {
   primaryColor,
   space,
   textColor,
+  transition,
 } from '~/design-system';
-import {
-  DURATION_NORMAL,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -33,7 +30,7 @@ export const StyledButton = styled.div`
   text-align: center;
   border: 1px solid ${backgroundColor.dark};
   font-weight: 500;
-  transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+  transition: all ${transition.duration.normal} ${transition.function.default};
   cursor: pointer;
 
   &:hover,
@@ -61,7 +58,7 @@ export const SocialInformation = styled.div`
   a {
     display: inline-flex;
     padding: ${space.x4};
-    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+    transition: all ${transition.duration.normal} ${transition.function.default};
 
     &:not(:last-of-type) {
       margin-right: ${space.x4};

@@ -4,14 +4,10 @@ import {
   primaryColor,
   space,
   textColor,
+  transition,
 } from '~/design-system';
 import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
-import {
-  DURATION_NORMAL,
-  DURATION_SLOW,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
 
 const PortfolioCard = styled.article`
   display: inline-block;
@@ -62,7 +58,7 @@ const PortfolioCard = styled.article`
     margin: auto;
     width: 100%;
     height: auto;
-    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+    transition: all ${transition.duration.normal} ${transition.function.default};
   }
 
   & div {
@@ -115,8 +111,8 @@ const PortfolioCard = styled.article`
       height: 2px;
       margin: 1em 0;
       background-color: ${textColor.disabled};
-      transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
-        background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
+      transition: width ${transition.duration.slow} ${transition.function.default},
+        background-color ${transition.duration.normal} ${transition.function.default};
     }
   }
 `;

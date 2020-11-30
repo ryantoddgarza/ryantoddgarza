@@ -3,16 +3,20 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
-import { FaTags } from 'react-icons/fa';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
-import Bio from '~/components/Bio';
 import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
 import { SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
-import { PostHeader, Tags, PostContent, ImageWrapper, ComponentInPost } from './styled';
+import {
+  PostHeader,
+  Tags,
+  PostContent,
+  ImageWrapper,
+  ComponentInPost,
+} from './styled';
 
 const PostTemplate = ({
   data: {
@@ -140,25 +144,29 @@ const PostTemplate = ({
       <SEO title={title} />
       <PostWrapper>
         <Container>
-          {image === null ? null : (
-            <ImageWrapper>
-              <ScopedImage src={image} alt={title} />
-            </ImageWrapper>
-          )}
           <PostHeader>
+            <ul>
+              <li>
+                <time>{formattedDate(date)}</time>
+              </li>
+              <li>
+                {tags.length === 0 ? null : (
+                  <Tags>
+                    {tags.map((tag) => (
+                      <Link key={tag} to={`/tags/${tag}/1`}>
+                        <small>{tag}</small>
+                      </Link>
+                    ))}
+                  </Tags>
+                )}
+              </li>
+            </ul>
             <h1>{title}</h1>
-            <time>{formattedDate(date)}</time>
-            {tags.length === 0 ? null : (
-              <Tags>
-                <FaTags />
-                {tags.map((tag) => (
-                  <Link key={tag} to={`/tags/${tag}/1`}>
-                    <small>{tag}</small>
-                  </Link>
-                ))}
-              </Tags>
+            {image === null ? null : (
+              <ImageWrapper>
+                <ScopedImage src={image} alt={title} />
+              </ImageWrapper>
             )}
-            <Bio />
           </PostHeader>
           <PostContent>
             <div

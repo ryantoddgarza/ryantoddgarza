@@ -1,5 +1,7 @@
 export default (str) => {
-  const [date = '', time = ''] = str.split('T');
+  const ms = Date.parse(str);
+  const options = { month: 'short', day: 'numeric', year: 'numeric' };
+  const formattedDate = new Date(ms).toLocaleDateString('default', options);
 
-  return `${date} ${time.slice(0, 5)}`;
+  return formattedDate;
 };

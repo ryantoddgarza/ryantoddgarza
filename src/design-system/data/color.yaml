@@ -1,10 +1,8 @@
-# palette
+# Palette
 
 color:
-  white: &color-white '#f9f9f9'
-  black: &color-black '#1b1b1b'
-  trueWhite: &color-true-white '#fff'
-  trueBlack: &color-true-black '#000'
+  white: &color-white '#fff'
+  black: &color-black '#000'
   gray:
     1: &color-gray-1 '#fcfcfc'
     2: &color-gray-2 '#f9f9f9'
@@ -25,7 +23,7 @@ color:
     40: &color-yellow-40 '#a88f48'
     50: &color-yellow-50 '#8a7237'
 
-# tokens
+# Tokens
 
 primaryColor:
   default: *color-yellow-40
@@ -34,16 +32,16 @@ primaryColor:
 
 backgroundColor:
   default: *color-gray-2
-  light: *color-true-white
+  light: *color-white
   lighter: *color-gray-1
   darker: *color-gray-5
   dark: *color-gray-90
 
 textColor:
-  default: *color-black
+  default: *color-gray-90
   light: *color-gray-40
-  onLight: *color-black
-  onDark: *color-white
+  onLight: *color-gray-90
+  onDark: *color-gray-2
   disabled: *color-gray-30
   link:
     default: *color-yellow-30

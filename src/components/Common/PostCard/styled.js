@@ -1,7 +1,12 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
-import { breakpoint } from '~/components/Common/breakpoints';
-import { DURATION_FAST, TIMING_BEZIER } from '~/components/Common/constants';
+import {
+  backgroundColor,
+  breakpoint,
+  primaryColor,
+  space,
+  textColor,
+  transition,
+} from '~/design-system';
 
 export const ImageWrapper = styled.figure`
   position: relative;
@@ -50,20 +55,18 @@ export const TagWrapper = styled.div`
 export const StyledArticle = styled.article`
   display: inline-block;
   width: 100%;
-  margin: 0 0 16px;
-  padding: 0 0 16px;
+  margin: 0 0 ${space.x4};
+  padding: 0 0 ${space.x4};
   font-size: 14px;
   vertical-align: top;
-  ${breakpoint('from-tablet')} {
-    padding: 0 16px 16px;
-  }
-  ${breakpoint('tablet')} {
+  ${breakpoint.from('tablet')} {
+    padding: 0 ${space.x4} ${space.x4};
     width: 50%;
   }
-  ${breakpoint('desktop')} {
+  ${breakpoint.from('desktop')} {
     width: 33%;
   }
-  ${breakpoint('widescreen')} {
+  ${breakpoint.from('widescreen')} {
     width: 25%;
   }
 
@@ -73,7 +76,7 @@ export const StyledArticle = styled.article`
     padding: 14px;
     background-color: ${backgroundColor.light};
     overflow: hidden;
-    transition: top ${DURATION_FAST} ${TIMING_BEZIER};
+    transition: top ${transition.duration.fast} ${transition.function.default};
 
     &:hover {
       top: -8px;

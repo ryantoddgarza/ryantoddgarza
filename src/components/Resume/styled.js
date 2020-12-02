@@ -1,11 +1,16 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  breakpoint,
+  primaryColor,
+  textColor,
+} from '~/design-system';
 import Clearfix from '~/components/Common/Clearfix';
 
 export const Wrapper = styled.section`
-  padding: 100px 0 0;
-  @media (max-width: 414px) {
-    padding: 70px 16px 0;
+  padding: 70px 16px 0;
+  ${breakpoint.from('tablet')} {
+    padding: 100px 0 0;
   }
 
   & > ${Clearfix} {

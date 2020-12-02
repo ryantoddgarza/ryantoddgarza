@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 import { FaCaretDown } from 'react-icons/fa';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  breakpoint,
+  primaryColor,
+  space,
+  textColor,
+} from '~/design-system';
 import ScopedLink from '~/components/Common/ScopedLink';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
 
 export const Hamburger = styled.div`
   position: absolute;
-  display: none;
+  display: block;
   right: 0;
   z-index: 5000;
-
-  @media (max-width: 414px) {
-    display: block;
+  ${breakpoint.from('tablet')} {
+    display: none;
   }
 
   &:before,
@@ -50,8 +55,7 @@ export const GnbWrapperInner = styled(Container)`
   display: flex;
   align-items: center;
   height: 80px;
-
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     height: 60px;
 
     ${hamburger}
@@ -59,7 +63,7 @@ export const GnbWrapperInner = styled(Container)`
 `;
 
 export const List = styled.ul`
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     display: none;
   }
 `;
@@ -75,7 +79,7 @@ export const SubMenu = styled.ul`
   transition: max-height 0.4s ease-out 0.1s;
 
   li {
-    padding: 6px 12px;
+    padding: ${space.x1} ${space.x3};
   }
 
   a:hover {
@@ -84,13 +88,12 @@ export const SubMenu = styled.ul`
 `;
 
 export const ListMenu = styled.li`
-  display: inline-block;
+  display: none;
   position: relative;
-  padding-right: 2em;
+  padding-right: ${space.x8};
   font-weight: 400;
-
-  @media (max-width: 414px) {
-    display: none;
+  ${breakpoint.from('tablet')} {
+    display: inline-block;
   }
 
   a {
@@ -118,7 +121,7 @@ export const Home = styled.h1`
 `;
 
 export const StyledLink = styled(ScopedLink)`
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     &[href='/'] {
       display: flex;
       height: 60px;
@@ -136,35 +139,33 @@ export const StyledLink = styled(ScopedLink)`
 `;
 
 export const Background = styled.div`
-  display: none;
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
   background-color: ${backgroundColor.default};
   transition: opacity 0.4s ease-out 0.1s;
   opacity: ${({ isActive }) => (isActive ? '.5' : '0')};
-
-  @media (max-width: 414px) {
-    display: block;
+  ${breakpoint.from('tablet')} {
+    display: none;
   }
 `;
 
 export const MobileMenus = styled.div`
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   padding: 0 16px;
   width: 80%;
-  height: 100%;
+  height: 100vh;
   background-color: ${backgroundColor.default};
   transition: left.4s ease-out 0.1s;
   z-index: 3;
   overflow-y: auto;
-
-  @media (max-width: 414px) {
-    display: block;
-    height: 100vh;
+  ${breakpoint.from('tablet')} {
+    display: none;
+    height: 100%;
   }
 `;
 
@@ -176,8 +177,7 @@ export const MobileMenu = styled.section`
   width: 100%;
   height: 100%;
   z-index: 99;
-
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     display: block;
     line-height: 60px;
     pointer-events: ${({ isActive }) => (isActive ? 'all' : 'none')};
@@ -200,8 +200,8 @@ export const MobileMenu = styled.section`
         isSubActive ? '0' : '360px'} !important;
 
       li {
-        @media (max-width: 414px) {
-          padding: 0 0 0 16px;
+        ${breakpoint.to('phone')} {
+          padding: 0 0 0 ${space.x4};
         }
       }
     }

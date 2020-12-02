@@ -1,7 +1,13 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
+import {
+  backgroundColor,
+  breakpoint,
+  primaryColor,
+  space,
+  textColor,
+  transition,
+} from '~/design-system';
 import { Container } from '~/components/Common/Container';
-import { DURATION_NORMAL, TIMING_BEZIER } from '~/components/Common/constants';
 
 export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;
@@ -14,8 +20,8 @@ export const FooterWrapperInner = styled(Container)`
   grid-template-columns: 1fr;
   grid-template-areas: 'links' 'social' 'copyright';
   align-items: end;
-  padding: 32px 0;
-  @media (min-width: 769px) {
+  padding: ${space.x8} 0;
+  ${breakpoint.from('tablet')} {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'social copyright links';
   }
@@ -24,18 +30,18 @@ export const FooterWrapperInner = styled(Container)`
 export const SocialInformation = styled.div`
   grid-area: social;
   display: flex;
-  margin: 0 0 24px;
+  margin: 0 0 ${space.x6};
   font-size: 20px;
-  @media (min-width: 769px) {
+  ${breakpoint.from('tablet')} {
     margin: 0;
   }
 
   a {
     display: inline-flex;
-    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+    transition: all ${transition.duration.normal} ${transition.function.default};
 
     &:not(:last-of-type) {
-      margin-right: 16px;
+      margin-right: ${space.x4};
     }
 
     &:hover,
@@ -47,16 +53,16 @@ export const SocialInformation = styled.div`
 
 export const Copyright = styled.div`
   grid-area: copyright;
-  @media (min-width: 769px) {
+  ${breakpoint.from('tablet')} {
     text-align: center;
   }
 `;
 
 export const Links = styled.div`
   grid-area: links;
-  margin: 0 0 24px;
-  transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
-  @media (min-width: 769px) {
+  margin: 0 0 ${space.x6};
+  transition: all ${transition.duration.normal} ${transition.function.default};
+  ${breakpoint.from('tablet')} {
     margin: 0;
     text-align: right;
   }
@@ -64,12 +70,12 @@ export const Links = styled.div`
   ul {
     li {
       &:not(:last-of-type) {
-        margin: 0 0 1.4em;
+        margin: 0 0 ${space.x4};
       }
-      @media (min-width: 769px) {
+      ${breakpoint.from('tablet')} {
         display: inline-block;
         &:not(:last-of-type) {
-          margin: 0 1em 0 0;
+          margin: 0 ${space.x3} 0 0;
         }
       }
     }

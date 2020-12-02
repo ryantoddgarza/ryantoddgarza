@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoint } from '~/design-system';
 import Layout from '~/components/layout';
 import SEO from '~/components/Common/SEO';
 import { TITLE } from '~/constants';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
 
 const Wrapper = styled(SimpleWrapper)`
-  padding: 100px 0 0;
+  padding: 70px 0 0;
   text-align: center;
-  @media (max-width: 414px) {
-    padding: 70px 0 0;
+  ${breakpoint.from('tablet')} {
+    padding: 100px 0 0;
   }
 
   h1 {

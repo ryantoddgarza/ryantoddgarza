@@ -1,0 +1,7 @@
+transition:
+  duration:
+    fast: '0.2s'
+    normal: '0.5s'
+    slow: '1s'
+  function:
+    default: 'cubic-bezier(.2,1,.3,1)'

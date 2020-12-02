@@ -1,10 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
 import {
-  BLACK_COLOR,
-  DURATION_NORMAL,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
+  backgroundColor,
+  primaryColor,
+  space,
+  textColor,
+  transition,
+} from '~/design-system';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -13,23 +14,23 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   footer {
-    padding: 1rem 0;
+    padding: ${space.x4} 0;
   }
 `;
 
 export const LinkInBioWrapper = styled.section`
   max-width: 640px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: ${space.x4};
 `;
 
 export const StyledButton = styled.div`
-  margin: 0 0 1rem;
-  padding: 1rem;
+  margin: 0 0 ${space.x4};
+  padding: ${space.x4};
   text-align: center;
-  border: 1px solid ${BLACK_COLOR};
+  border: 1px solid ${backgroundColor.dark};
   font-weight: 500;
-  transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+  transition: all ${transition.duration.normal} ${transition.function.default};
   cursor: pointer;
 
   &:hover,
@@ -56,11 +57,11 @@ export const SocialInformation = styled.div`
 
   a {
     display: inline-flex;
-    padding: 0.25rem;
-    transition: all ${DURATION_NORMAL} ${TIMING_BEZIER};
+    padding: ${space.x4};
+    transition: all ${transition.duration.normal} ${transition.function.default};
 
     &:not(:last-of-type) {
-      margin-right: 1rem;
+      margin-right: ${space.x4};
     }
 
     &:hover,

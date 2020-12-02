@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import { primaryColor, textColor, backgroundColor } from '~/design-system';
-import { fontSizeFluid } from '~/components/Common/fontSize';
 import {
-  DURATION_NORMAL,
-  DURATION_SLOW,
-  TIMING_BEZIER,
-} from '~/components/Common/constants';
+  backgroundColor,
+  breakpoint,
+  primaryColor,
+  space,
+  textColor,
+  transition,
+} from '~/design-system';
+import { fontSizeFluid } from '~/components/Common/fontSize';
 
 const StyledArticle = styled.article`
   position: relative;
@@ -13,7 +15,7 @@ const StyledArticle = styled.article`
   padding: 50% 0 0;
   background-color: ${backgroundColor.light};
   overflow: hidden;
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     padding: 200% 0 0;
   }
 
@@ -34,10 +36,10 @@ const StyledArticle = styled.article`
     justify-content: center;
     width: 50%;
     height: 100%;
-    padding: 8px;
+    padding: ${space.x2};
     text-align: center;
     border-left: 1px solid #f9f9f9;
-    @media (max-width: 414px) {
+    ${breakpoint.to('phone')} {
       width: 100%;
       height: 50%;
       border-top: 1px solid #f9f9f9;
@@ -53,10 +55,12 @@ const StyledArticle = styled.article`
       content: '';
       width: 32px;
       height: 2px;
-      margin: 32px auto;
+      margin: ${space.x8} auto;
       background-color: ${textColor.disabled};
-      transition: width ${DURATION_SLOW} ${TIMING_BEZIER},
-        background-color ${DURATION_NORMAL} ${TIMING_BEZIER};
+      transition: width ${transition.duration.slow}
+          ${transition.function.default},
+        background-color ${transition.duration.normal}
+          ${transition.function.default};
     }
   }
 
@@ -64,9 +68,9 @@ const StyledArticle = styled.article`
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    @media (max-width: 414px) {
-      width: 100%;
+    width: 100%;
+    ${breakpoint.from('tablet')} {
+      width: 50%;
     }
   }
 `;

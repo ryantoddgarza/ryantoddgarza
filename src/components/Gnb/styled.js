@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { FaCaretDown } from 'react-icons/fa';
+import { MdExpandMore } from 'react-icons/md';
 import {
   backgroundColor,
   breakpoint,
+  navbar,
   primaryColor,
   space,
   textColor,
@@ -10,6 +11,93 @@ import {
 import ScopedLink from '~/components/Common/ScopedLink';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
+
+export const GnbWrapperOuter = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  font-size: 0.875rem;
+  background-color: ${backgroundColor.default};
+  border-bottom: 1px solid ${backgroundColor.darker};
+  z-index: 3000;
+`;
+
+export const GnbWrapperInner = styled(Container)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: ${navbar.height.desktop};
+  ${breakpoint.to('phone')} {
+    height: ${navbar.height.mobile};
+
+    ${hamburger}
+  }
+`;
+
+export const NavList = styled.ul`
+  display: none;
+  ${breakpoint.from('tablet')} {
+    display: block;
+  }
+
+  a:hover {
+    color: ${primaryColor.default};
+  }
+`;
+
+export const NavListItem = styled.li`
+  position: relative;
+  line-height: 3;
+  ${breakpoint.from('tablet')} {
+    display: inline-block;
+    padding: 0 ${space.x4};
+  }
+
+  a {
+    color: ${textColor.default};
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  ul {
+    max-height: 0;
+  }
+
+  &:hover {
+    ul {
+      max-height: 360px;
+    }
+  }
+`;
+
+export const NavMenu = styled.ul`
+  position: static;
+  white-space: nowrap;
+  background-color: ${backgroundColor.default};
+  overflow: hidden;
+  transition: max-height 0.4s ease-out 0.1s;
+  ${breakpoint.from('tablet')} {
+    position: absolute;
+    top: ${navbar.height.mobile};
+  }
+`;
+
+export const NavMenuItem = styled(NavListItem)`
+  display: block;
+  padding: 0 0 0 ${space.x4};
+  ${breakpoint.from('tablet')} {
+    padding: 0 ${space.x4};
+  }
+`;
+
+export const HeaderName = styled.h1`
+  padding: 0 ${space.x4} 0 0;
+  font-weight: 500;
+  white-space: nowrap;
+`;
 
 export const Hamburger = styled.div`
   position: absolute;
@@ -32,7 +120,7 @@ export const Hamburger = styled.div`
   }
 `;
 
-export const MovableFaCaretDown = styled(FaCaretDown)`
+export const MovableCaretDown = styled(MdExpandMore)`
   transition: transform 0.4s ease-out 0.1s;
   transform: rotate(180deg);
 
@@ -41,90 +129,11 @@ export const MovableFaCaretDown = styled(FaCaretDown)`
   }
 `;
 
-export const GnbWrapperOuter = styled.div`
-  position: fixed;
-  width: 100%;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: ${backgroundColor.default};
-  z-index: 3000;
-`;
-
-export const GnbWrapperInner = styled(Container)`
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 80px;
-  ${breakpoint.to('phone')} {
-    height: 60px;
-
-    ${hamburger}
-  }
-`;
-
-export const List = styled.ul`
-  ${breakpoint.to('phone')} {
-    display: none;
-  }
-`;
-
-export const SubMenu = styled.ul`
-  position: absolute;
-  top: 40px;
-  line-height: 1.8em;
-  background-color: ${backgroundColor.default};
-  font-size: 13px;
-  font-weight: 400;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out 0.1s;
-
-  li {
-    padding: ${space.x1} ${space.x3};
-  }
-
-  a:hover {
-    color: ${primaryColor.default};
-  }
-`;
-
-export const ListMenu = styled.li`
-  display: none;
-  position: relative;
-  padding-right: ${space.x8};
-  font-weight: 400;
-  ${breakpoint.from('tablet')} {
-    display: inline-block;
-  }
-
-  a {
-    color: ${textColor.default};
-  }
-
-  ul {
-    max-height: 0;
-    white-space: nowrap;
-  }
-
-  &:hover {
-    ul {
-      max-height: 360px;
-    }
-  }
-
-  small {
-    font-size: 11px;
-  }
-`;
-
-export const Home = styled.h1`
-  font-weight: 500;
-`;
-
 export const StyledLink = styled(ScopedLink)`
   ${breakpoint.to('phone')} {
     &[href='/'] {
       display: flex;
-      height: 60px;
+      height: ${navbar.height.mobile};
       align-items: center;
     }
   }
@@ -156,7 +165,7 @@ export const MobileMenus = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0 16px;
+  padding: 0 ${space.x4};
   width: 80%;
   height: 100vh;
   background-color: ${backgroundColor.default};
@@ -170,50 +179,28 @@ export const MobileMenus = styled.div`
 `;
 
 export const MobileMenu = styled.section`
-  display: none;
   position: fixed;
-  top: 0;
+  top: ${navbar.height.mobile};
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: ${({ isActive }) => (isActive ? 'all' : 'none')};
   z-index: 99;
-  ${breakpoint.to('phone')} {
-    display: block;
-    line-height: 60px;
-    pointer-events: ${({ isActive }) => (isActive ? 'all' : 'none')};
-
-    ul,
-    li,
-    div,
-    input {
-      display: block;
-    }
+  ${breakpoint.from('tablet')} {
+    display: none;
   }
 
-  li {
-    padding: 0;
-    width: 100%;
+  ul,
+  div,
+  input {
+    display: block;
+  }
 
-    & > ul {
-      position: static;
-      max-height: ${({ isSubActive }) =>
-        isSubActive ? '0' : '360px'} !important;
-
-      li {
-        ${breakpoint.to('phone')} {
-          padding: 0 0 0 ${space.x4};
-        }
-      }
-    }
+  li > ul {
+    max-height: ${({ isSubActive }) => (isSubActive ? '0' : '360px')} !important;
   }
 
   & > div + div {
     left: ${({ isActive }) => (isActive ? '0' : '-100%')};
-    box-shadow: ${({ isActive }) =>
-      isActive ? '0 2px 4px rgba(0,0,0,0.2)' : '0 0 0'};
-    box-shadow: ${({ isActive }) =>
-      isActive
-        ? '0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08)'
-        : '0 0 0'};
   }
 `;

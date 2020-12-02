@@ -1,11 +1,10 @@
 import React, { useReducer, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { TITLE, HOME_PATH } from '~/constants';
 import {
   Hamburger,
-  MovableFaCaretDown,
-  ListMenu,
-  Home,
+  MovableCaretDown,
+  NavList,
+  NavListItem,
   StyledLink,
   Background,
   MobileMenus,
@@ -68,47 +67,26 @@ const MobileNav = ({ navLists }) => {
       <MobileMenu isActive={isMenuOpened} isSubActive={isSubMenuClosed}>
         <Background onClick={toggleMenu} isActive={isMenuOpened} />
         <MobileMenus>
-          <ul>
-            <ListMenu>
-              <StyledLink to={HOME_PATH} onClick={toggleMenu}>
-                <Home>{TITLE}</Home>
-              </StyledLink>
-            </ListMenu>
-            {catNavList.map(({ name, url, isActive, subMenu }) => {
-              if (subMenu) {
-                return (
-                  <ListMenu key={name}>
-                    <StyledLink
-                      to={url}
-                      className={isActive ? 'active' : ''}
-                      onClick={toggleSubMenu}
-                    >
-                      {`${name} `}
-                    </StyledLink>
-                    {subMenu.list.length > 0 ? (
-                      <MovableFaCaretDown
-                        className={isSubMenuClosed ? 'is-active' : ''}
-                        onClick={toggleSubMenu}
-                      />
-                    ) : null}
-                    {subMenu.component}
-                  </ListMenu>
-                );
-              }
-
-              return (
-                <ListMenu key={name}>
-                  <StyledLink
-                    to={url}
-                    className={isActive ? 'active' : ''}
+          <NavList>
+            {catNavList.map(({ name, url, isActive, subMenu }) => (
+              <NavListItem key={name}>
+                <StyledLink
+                  to={url}
+                  className={isActive ? 'active' : ''}
+                  onClick={toggleSubMenu}
+                >
+                  {subMenu ? `${name} ` : name}
+                </StyledLink>
+                {subMenu ? (
+                  <MovableCaretDown
+                    className={isSubMenuClosed ? 'is-active' : ''}
                     onClick={toggleSubMenu}
-                  >
-                    {name}
-                  </StyledLink>
-                </ListMenu>
-              );
-            })}
-          </ul>
+                  />
+                ) : null}
+                {subMenu ? subMenu.component : null}
+              </NavListItem>
+            ))}
+          </NavList>
         </MobileMenus>
       </MobileMenu>
       <Hamburger

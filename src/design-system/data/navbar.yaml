@@ -1,0 +1,4 @@
+navbar:
+  height:
+    mobile: '3rem'
+    desktop: '3rem'

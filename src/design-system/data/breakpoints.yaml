@@ -1,0 +1,8 @@
+breakpoints:
+  phone: 320
+  phone_l: 480
+  tablet: 640
+  tablet_l: 880
+  desktop: 1024
+  desktop_l: 1200
+  widescreen: 1400

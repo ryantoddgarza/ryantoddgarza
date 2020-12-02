@@ -2,9 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
-import PostCategoriesSubMenu from './PostCategoriesSubMenu';
-import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH, EMAIL } from '~/constants';
-import { GnbWrapperOuter, GnbWrapperInner } from './styled';
+import SubMenu from './SubMenu';
+import {
+  ALBUMS_PATH,
+  EMAIL,
+  HOME_PATH,
+  PORTFOLIOS_PATH,
+  POSTS_PATH,
+  TITLE,
+} from '~/constants';
+import { GnbWrapperOuter, GnbWrapperInner, HeaderName, StyledLink } from './styled';
 
 const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
   const { pathname } = location;
@@ -16,7 +23,7 @@ const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
   const subMenus = {
     postCategories: {
       list: categories,
-      component: <PostCategoriesSubMenu listItems={categories} />,
+      component: <SubMenu listItems={categories} />,
     },
   };
 
@@ -63,6 +70,9 @@ const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
   return (
     <GnbWrapperOuter>
       <GnbWrapperInner>
+        <HeaderName>
+          <StyledLink to={HOME_PATH}>{TITLE}</StyledLink>
+        </HeaderName>
         <MobileNav navLists={{ mainNav, mobileAppendNav }} />
         <DesktopNav navLists={{ mainNav }} />
       </GnbWrapperInner>

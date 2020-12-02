@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { primaryColor, heading, space } from '~/design-system';
+import { breakpoint, primaryColor, heading, space } from '~/design-system';
 import styledTechCard from './styledTechCard';
 
 export const Wrapper = styled(SimpleWrapper)`
   width: 90%;
   margin: 0 auto;
-  padding: 100px 0 0;
-  @media (max-width: 414px) {
-    padding: 70px 0 0;
+  padding: 70px 0 0;
+  ${breakpoint.from('tablet')} {
+    padding: 100px 0 0;
   }
 
   &:before,
@@ -19,15 +19,11 @@ export const Wrapper = styled(SimpleWrapper)`
   }
 
   & > section {
-    float: left;
-    width: 50%;
-    max-height: calc(100vh - 100px);
-    overflow-y: scroll;
-    @media (max-width: 414px) {
-      float: none;
-      width: 100%;
-      max-height: unset;
-      overflow: visible;
+    ${breakpoint.from('tablet-l')} {
+      float: left;
+      width: 50%;
+      max-height: calc(100vh - 100px);
+      overflow-y: scroll;
     }
 
     ::-webkit-scrollbar {
@@ -46,7 +42,7 @@ export const PortfolioDescription = styled.section`
   padding: 0 ${space.x4} ${space.x4} 0;
   font-size: 14px;
   line-height: 1.6em;
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     margin: 0 0 16px;
     padding: 0 0 16px;
   }
@@ -108,7 +104,7 @@ export const PortfolioImages = styled.section`
     padding: 0 ${space.x4} ${space.x4};
     width: 100%;
     height: auto;
-    @media (max-width: 414px) {
+    ${breakpoint.to('phone')} {
       float: left;
       margin: 0 0 ${space.x2};
       padding: 0;

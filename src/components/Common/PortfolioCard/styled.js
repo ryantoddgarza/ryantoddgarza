@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {
   backgroundColor,
+  breakpoint,
   primaryColor,
   space,
   textColor,
   transition,
 } from '~/design-system';
-import { breakpoint } from '~/components/Common/breakpoints';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 
 const PortfolioCard = styled.article`
@@ -18,7 +18,7 @@ const PortfolioCard = styled.article`
   height: 0;
   background-color: ${backgroundColor.darker};
   overflow: hidden;
-  ${breakpoint('from-tablet')} {
+  ${breakpoint.from('tablet')} {
     padding: 28.125% 0 0;
     width: 50%;
   }
@@ -80,13 +80,10 @@ const PortfolioCard = styled.article`
     font-size: 0.875rem;
     line-height: 1.4;
     margin-bottom: ${space.x4};
-    ${breakpoint('mobile-lg')} {
+    ${breakpoint.get('phone-l')} {
       display: block;
     }
-    ${breakpoint('tablet')} {
-      display: none;
-    }
-    ${breakpoint('from-tablet-lg')} {
+    ${breakpoint.from('tablet-l')} {
       display: block;
     }
   }

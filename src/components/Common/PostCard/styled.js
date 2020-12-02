@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {
   backgroundColor,
+  breakpoint,
   primaryColor,
   space,
   textColor,
   transition,
 } from '~/design-system';
-import { breakpoint } from '~/components/Common/breakpoints';
 
 export const ImageWrapper = styled.figure`
   position: relative;
@@ -59,16 +59,14 @@ export const StyledArticle = styled.article`
   padding: 0 0 ${space.x4};
   font-size: 14px;
   vertical-align: top;
-  ${breakpoint('from-tablet')} {
+  ${breakpoint.from('tablet')} {
     padding: 0 ${space.x4} ${space.x4};
-  }
-  ${breakpoint('tablet')} {
     width: 50%;
   }
-  ${breakpoint('desktop')} {
+  ${breakpoint.from('desktop')} {
     width: 33%;
   }
-  ${breakpoint('widescreen')} {
+  ${breakpoint.from('widescreen')} {
     width: 25%;
   }
 

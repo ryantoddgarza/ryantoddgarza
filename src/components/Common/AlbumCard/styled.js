@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {
   backgroundColor,
+  breakpoint,
   primaryColor,
   space,
   textColor,
@@ -14,7 +15,7 @@ const StyledArticle = styled.article`
   padding: 50% 0 0;
   background-color: ${backgroundColor.light};
   overflow: hidden;
-  @media (max-width: 414px) {
+  ${breakpoint.to('phone')} {
     padding: 200% 0 0;
   }
 
@@ -38,7 +39,7 @@ const StyledArticle = styled.article`
     padding: ${space.x2};
     text-align: center;
     border-left: 1px solid #f9f9f9;
-    @media (max-width: 414px) {
+    ${breakpoint.to('phone')} {
       width: 100%;
       height: 50%;
       border-top: 1px solid #f9f9f9;
@@ -67,9 +68,9 @@ const StyledArticle = styled.article`
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    @media (max-width: 414px) {
-      width: 100%;
+    width: 100%;
+    ${breakpoint.from('tablet')} {
+      width: 50%;
     }
   }
 `;

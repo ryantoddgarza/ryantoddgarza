@@ -1,6 +1,6 @@
 import React from 'react';
 import LinkInBio from '~/components/LinkInBio';
 
-const LinkInBioLayout = () => <LinkInBio />;
+const LinkInBioPage = () => <LinkInBio />;
 
-export default LinkInBioLayout;
+export default LinkInBioPage;

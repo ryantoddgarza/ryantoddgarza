@@ -10,10 +10,10 @@ export const Title = styled.div`
   margin: auto;
   width: 80%;
   height: 1.5em;
-  line-height: 1.5em;
+  overflow: hidden;
   font-size: ${fontSizeFluid(48, 16)};
+  line-height: 1.5;
   text-align: center;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 `;

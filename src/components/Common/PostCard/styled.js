@@ -55,12 +55,10 @@ export const TagWrapper = styled.div`
 export const StyledArticle = styled.article`
   display: inline-block;
   width: 100%;
-  margin: 0 0 ${space.x4};
-  padding: 0 0 ${space.x4};
   font-size: 14px;
   vertical-align: top;
   ${breakpoint.from('tablet')} {
-    padding: 0 ${space.x4} ${space.x4};
+    padding: 0 ${space.x2} ${space.x4};
     width: 50%;
   }
   ${breakpoint.from('desktop')} {
@@ -91,7 +89,7 @@ export const StyledArticle = styled.article`
     padding: 0 0 6px;
     height: 2.4em;
     line-height: 1.2;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 700;
   }
 

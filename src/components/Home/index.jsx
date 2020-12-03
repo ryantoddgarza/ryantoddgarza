@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SEO from '~/components/Common/SEO';
-import Wrapper from '~/components/Common/Wrapper';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
+import Hero from '~/components/Common/Hero';
 import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
@@ -58,9 +58,9 @@ const Home = ({ posts, albums, portfolios }) => {
   return (
     <>
       <SEO title={SITE_TITLE} />
-      <Wrapper isHome>
+      <Hero isTop>
         <Title>{title}</Title>
-      </Wrapper>
+      </Hero>
       <SimpleWrapper>
         {featuredAlbums.length >= 1 ? (
           <SimpleWrapper>

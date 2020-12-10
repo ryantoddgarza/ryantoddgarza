@@ -37,7 +37,7 @@ Tech stack
 - Web Workers API
 - Git
 
-<a href="https://svara.dev" target="_blank" rel="noreferrer noopener">Visit site →</a>
+[Visit site →](https://svara.dev)
 
 </article>
 
@@ -58,11 +58,12 @@ Tech stack
 - Styled Components
 - GraphQL
 - Markdown
+- Jest
 - Continuous Integration
 - Google Analytics
 - Git
 
-<a href="https://ryantoddgarza.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
+[Visit site →](https://ryantoddgarza.com)
 
 </article>
 
@@ -82,6 +83,8 @@ Tech stack
 - Web Audio API
 - Git
 
+[GitHub →](https://github.com/warbly)
+
 </article>
 
 <!-- autonoME -->
@@ -98,7 +101,7 @@ Tech stack
 - JavaScript
 - Git
 
-<a href="https://github.com/ryantoddgarza/autonoME" target="_blank" rel="noreferrer noopener">GitHub →</a>
+[GitHub →](https://github.com/ryantoddgarza/autonoME)
 
 </article>
 
@@ -117,9 +120,10 @@ Tech stack
 - CSS
 - JavaScript
 - Bootstrap
+- Google Analytics
 - Git
 
-<a href="https://harlanhodges.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
+[Visit site →](https://harlanhodges.com)
 
 </article>
 
@@ -141,6 +145,6 @@ Tech stack
 - Bootstrap
 - Git
 
-<a href="http://towardthesouthplains.com" target="_blank" rel="noreferrer noopener">Visit site →</a>
+[Visit site →](http://towardthesouthplains.com)
 
 </article>

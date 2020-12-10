@@ -30,69 +30,69 @@ const Layout = ({ children, location }) => {
     }
   `);
 
-  const nodeType = (edges, opts) => (
-    Object.freeze({
-      filtered() {
-        return edges.filter(({ node: { frontmatter: { type } } }) => type === opts.type);
-      },
-    })
-  );
-
   const { edges } = allMarkdown;
-  const posts = nodeType(edges, { type: POST }).filtered();
-  const albums = nodeType(edges, { type: ALBUM }).filtered();
-  const portfolios = nodeType(edges, { type: PORTFOLIO }).filtered();
+  const posts = edges.filter(({ node: { frontmatter: { type } } }) => type === POST || type === null);
+  const albums = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM);
+  const portfolios = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
 
-  const categories = edges.reduce((categories, { node }) => {
-    const { category } = node.frontmatter;
+  const categories = edges.reduce(
+    (categories, { node }) => {
+      const { category } = node.frontmatter;
 
-    if (category === null) {
-      return categories;
-    }
+      if (category === null) {
+        return categories;
+      }
 
-    const [{ length: total }] = categories;
-    const categoryIndex = categories.findIndex(({ key }) => key === category);
+      const [{ length: total }] = categories;
+      const categoryIndex = categories.findIndex(({ key }) => key === category);
 
-    if (categoryIndex === -1) {
+      if (categoryIndex === -1) {
+        return [
+          { key: '__ALL__', length: total + 1 },
+          { key: category, length: 1 },
+          ...categories.slice(1),
+        ];
+      }
+
       return [
         { key: '__ALL__', length: total + 1 },
-        { key: category, length: 1 },
-        ...categories.slice(1),
+        ...categories.slice(1, categoryIndex - 1),
+        { key: category, length: categories[categoryIndex].length + 1 },
+        ...categories.slice(categoryIndex + 1),
       ];
-    }
+    },
+    [{ key: '__ALL__', length: 0 }]
+  );
 
-    return [
-      { key: '__ALL__', length: total + 1 },
-      ...categories.slice(1, categoryIndex - 1),
-      { key: category, length: categories[categoryIndex].length + 1 },
-      ...categories.slice(categoryIndex + 1),
-    ];
-  }, [{ key: '__ALL__', length: 0 }]);
+  const postInformations = edges.reduce(
+    (postInformations, { node: { frontmatter } }) => {
+      const { type, path, title, summary, tags = [], category } = frontmatter;
 
-  const postInformations = edges.reduce((postInformations, { node: { frontmatter } }) => {
-    const { type, path, title, summary, tags = [], category } = frontmatter;
+      if (type === POST || type === null) {
+        return [
+          ...postInformations,
+          {
+            path,
+            title,
+            summary,
+            tags,
+            category,
+          },
+        ];
+      }
 
-    if (type === POST || type === null) {
-      return [
-        ...postInformations,
-        {
-          path,
-          title,
-          summary,
-          tags,
-          category,
-        },
-      ];
-    }
-
-    return postInformations;
-  }, []);
+      return postInformations;
+    },
+    []
+  );
 
   const hasPost = categories.length > 0;
   const hasPortfolio = portfolios.length > 0;
   const hasAlbum = albums.length > 0;
 
-  const childrenWithProps = Children.map(children, (child) => cloneElement(child, { posts, albums, portfolios }));
+  const childrenWithProps = Children.map(children, (child) =>
+    cloneElement(child, { posts, albums, portfolios }));
+
   return (
     <App
       location={location}
@@ -109,7 +109,8 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
 export default Layout;

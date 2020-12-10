@@ -33,18 +33,20 @@ Tech stack
 - Canvas API
 - Web Worker API
 
-<a href="https://svara.dev" target="_blank" rel="noreferrer noopener">Visit site →</a>
+[Visit site →](https://svara.dev)
 <br>
-<a href="https://github.com/ryantoddgarza/svara" target="_blank" rel="noreferrer noopener">Project Github →</a>
+[GitHub →](https://github.com/ryantoddgarza/svara)
 
 </article>
 
-Being truly generative, no musical motifs are predetermined and parameters such as tempo, favored musical intervals, and random seeding are determined as the user accesses the application. All audio synthesis is done in the browser. Everything heard occurs in real time.
+### Overview
 
-In the visualization section of the app, the user is shown frequency and amplitude feedback as well as relevant information about the raga being performed. For example, one of the rules of a raga is the time of day which it should be performed. The day being traditionally divided into eight equal parts beginning at 6 am, the users local time is used to make the appropriate selection.
+Being truly generative, musical motifs are not predetermined and the time which a user accesses the application defines parameters such as tempo, favored musical intervals, and random seeding. All musical processes occur in real time.
 
-Additional rules responsible in generating the piece are the ascending scale, an altered descending scale, primary character note, supporting character note, common melodic themes, and suggested rhythmic structure.
+The visualization section of the app shows the user frequency and amplitude feedback as well as relevant information about the raga. For example, one of the rules of a raga is the _prahar_ or time of day in which it should be performed. The traditional system divides a day into eight equal parts beginning at 6 am and this application references the user’s local time to make the appropriate selection.
 
-## Ongoing
+Additional rules implemented in generating the piece are the ascending scale, an altered descending scale, primary character note, supporting character note, common melodic themes, and suggested rhythmic structure.
 
-In the next iterations of the application, I plan to expand the raga API, make the resource publicly available, and add an additional dataset comprised of traditional rhythmic structures called taals. I will continue to evolve the app with more advanced synthesis techniques and refine the logic of the improvisation logic. It takes time to learn how to play music and this app just started.
+### Ongoing
+
+In future iterations of the application, I plan to expand the raga API, make the resource publicly available, and add an additional dataset comprised of traditional rhythmic structures called _taals_. I will continue to evolve the app with more advanced synthesis techniques and refine the logic of the improvisation logic. It takes time to learn how to play music and this app just started.

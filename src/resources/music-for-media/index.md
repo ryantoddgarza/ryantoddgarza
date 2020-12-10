@@ -17,7 +17,7 @@ images:
 
 Sound & music department for film, television and commercial work.
 
-[IMDB →](https://www.imdb.com/name/nm9906654/?ref_=ttfc_fc_cr11)
+[IMDB →](https://www.imdb.com/name/nm9906654/)
 
 ## Honored to have created content for
 

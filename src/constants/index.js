@@ -27,13 +27,11 @@ exports.HOME_PATH = '/';
 exports.ALBUMS_PATH = '/albums';
 exports.PORTFOLIOS_PATH = '/portfolios';
 exports.POSTS_PATH = '/pages';
-exports.RESUME_PATH = '/resume';
 
 // Components
 exports.ALBUM = 'album';
 exports.PORTFOLIO = 'portfolio';
 exports.POST = 'post';
-exports.RESUME = 'resume';
 
 // Social
 exports.GITHUB_ID = 'ryantoddgarza';
@@ -42,6 +40,3 @@ exports.FACEBOOK_ID = 'ryantoddgarza';
 exports.LINKEDIN_ID = 'ryantoddgarza';
 exports.PATREON_ID = 'ryantoddgarza';
 exports.MEDIUM_ID = 'ryantoddgarza';
-
-// Disqus (Recommend you to use this)
-exports.DISQUS_ID = 'sample';

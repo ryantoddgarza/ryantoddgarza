@@ -9,7 +9,6 @@ const {
   ALBUM,
   PORTFOLIO,
   POST,
-  RESUME,
   ALBUMS_PATH,
   PORTFOLIOS_PATH,
   POSTS_PATH,
@@ -42,7 +41,6 @@ exports.createPages = ({ graphql, actions }) => {
     const list = path.resolve('./src/templates/List.jsx');
     const taggedList = path.resolve('./src/templates/TaggedList.jsx');
     const categorizedList = path.resolve('./src/templates/CategorizedList.jsx');
-    const resume = path.resolve('./src/templates/Resume.jsx');
     const portfolios = path.resolve('./src/templates/Portfolios.jsx');
     const portfolio = path.resolve('./src/templates/Portfolio.jsx');
     const albums = path.resolve('./src/templates/Albums.jsx');
@@ -100,9 +98,6 @@ exports.createPages = ({ graphql, actions }) => {
                 switch (type) {
                   case PORTFOLIO:
                     component = portfolio;
-                    break;
-                  case RESUME:
-                    component = resume;
                     break;
                   case ALBUM:
                     component = album;

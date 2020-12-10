@@ -25,4 +25,4 @@ May - July 2019 First Friday Art Trail, Lubbock, TX
 
 ## Prints
 
-Several of the images in this series are available as archival prints.
+The images in this series are available as archival prints.

@@ -58,6 +58,12 @@ module.exports = {
               classPrefix: 'hljs-',
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+            },
+          },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
@@ -94,9 +100,7 @@ module.exports = {
           {
             userAgent: '*',
             allow: '/',
-            disallow: [
-              '/linkinbio/',
-            ],
+            disallow: ['/linkinbio/'],
             crawlDelay: 10,
           },
         ],

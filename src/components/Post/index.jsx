@@ -8,7 +8,6 @@ import SEO from '~/components/Common/SEO';
 import PostWrapper from '~/components/Common/PostWrapper';
 import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
-import { SITE_URL, DISQUS_ID } from '~/constants';
 import formattedDate from '~/utils/formattedDate';
 import {
   PostHeader,
@@ -32,28 +31,7 @@ const PostTemplate = ({
       },
     },
   },
-  location,
 }) => {
-  const loadDisqus = useCallback(({ url, identifier, title }) => {
-    const d = global.document;
-
-    if (!d.getElementById('disqus-sdk')) {
-      const s = d.createElement('script');
-
-      s.src = `https://${DISQUS_ID}.disqus.com/embed.js`;
-      s.setAttribute('data-timestamp', Date.now());
-      d.body.appendChild(s);
-    }
-
-    global.disqus_config = function disqusCallback() {
-      /* eslint-disable react/no-this-in-sfc */
-      this.page.url = url;
-      this.page.identifier = identifier;
-      this.page.title = title;
-      /* eslint-enable react/no-this-in-sfc */
-    };
-  }, []);
-
   const createCopyButton = useCallback(() => {
     const codes = global.document.querySelectorAll(
       '#post-contents .gatsby-highlight'
@@ -121,17 +99,6 @@ const PostTemplate = ({
   }, []);
 
   useEffect(() => {
-    const { pathname: identifier } = location;
-    const url = `${SITE_URL}${identifier}`;
-
-    loadDisqus({
-      url,
-      identifier,
-      title,
-    });
-  }, []);
-
-  useEffect(() => {
     createCopyButton();
     renderTweets(tweets);
     renderComponents(components);
@@ -174,13 +141,6 @@ const PostTemplate = ({
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </PostContent>
-          <div id="disqus_thread" />
-          <noscript>
-            Please enable JavaScript to view the &nbsp;
-            <a href="https://disqus.com/?ref_noscript">
-              comments powered by Disqus.
-            </a>
-          </noscript>
         </Container>
       </PostWrapper>
     </>

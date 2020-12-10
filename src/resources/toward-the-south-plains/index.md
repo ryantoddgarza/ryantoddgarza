@@ -33,7 +33,7 @@ _This is a subjective expression of my direct involvement with the work. It is n
 
 On February 8, 2016 composer Harlan Hodges who has been like a brother to me was, let's see what the right word is...inspired; invoked; reduced...to write what would become the beginnings of Toward The South Plains after a phone call in which I would reveal that I was making my way back towards the south plains from Los Angeles after my father had been killed in an act of gun violence the previous afternoon.
 
-Over the years the work has widened from focus on this singular circumstance to the all too common occurences of malice of the sort happening every day in our communities.
+Over the years the work has widened from focus on this singular circumstance to the all too common occurrences of malice of the sort happening every day in our communities.
 
 **Centered around the cyclical nature of existence, cycles of the moon and of water, stages of grief, the transmigration of the soul, and the constant presence of change in our lives, the work is highly conceptual and multidimensional in scope.** In its entirety it contains not only 30 pieces of written music for piano, organ, orchestra, and choir, but field recordings and photographs from across the southwestern united states, sound design,video, and animation. Plans for geomapped interactivity are being discussed as well.
 

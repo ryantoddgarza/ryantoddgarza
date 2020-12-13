@@ -4,9 +4,7 @@ exports.PAGE_PER_SCREEN = 4;
 // Site Information
 exports.NAME = 'Ryan Todd Garza';
 exports.TITLE = 'Ryan Todd Garza';
-exports.PREFIX = 'Ryan Todd Garza | ';
 exports.DESCRIPTION = 'A creative based in Los Angeles, CA';
-exports.AUTHOR = 'Ryan Todd Garza';
 exports.EMAIL = 'ryantoddgarza@gmail.com';
 exports.KEYWORDS = [
   'portfolio',
@@ -20,7 +18,6 @@ exports.KEYWORDS = [
   'yoga',
 ].join(', ');
 exports.SITE_URL = 'https://ryantoddgarza.com';
-exports.PROFILE = 'https://avatars3.githubusercontent.com/u/46946731?s=200&v=4';
 
 // Paths
 exports.HOME_PATH = '/';

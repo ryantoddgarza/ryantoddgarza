@@ -1,5 +1,5 @@
 ---
-path: '/white-notebook/the-ashtanga-of-patanjali/'
+path: '/the-ashtanga-of-patanjali/'
 category: 'yoga'
 featured: true
 tags: ['yoga', 'white-notebook', 'sutra']

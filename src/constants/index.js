@@ -26,7 +26,7 @@ exports.PROFILE = 'https://avatars3.githubusercontent.com/u/46946731?s=200&v=4';
 exports.HOME_PATH = '/';
 exports.ALBUMS_PATH = '/albums';
 exports.PORTFOLIOS_PATH = '/portfolios';
-exports.POSTS_PATH = '/pages';
+exports.POSTS_PATH = '/posts';
 
 // Components
 exports.ALBUM = 'album';

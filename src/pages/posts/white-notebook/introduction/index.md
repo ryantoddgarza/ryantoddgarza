@@ -1,5 +1,5 @@
 ---
-path: '/white-notebook/introduction/'
+path: '/white-notebook-introduction/'
 category: 'yoga'
 featured: false
 tags: ['yoga', 'white-notebook']

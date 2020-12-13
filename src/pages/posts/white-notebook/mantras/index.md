@@ -1,5 +1,5 @@
 ---
-path: '/white-notebook/mantras/'
+path: '/mantras/'
 category: 'yoga'
 featured: false
 tags: ['yoga', 'white-notebook', 'mantra']

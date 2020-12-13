@@ -1,5 +1,5 @@
 ---
-path: '/white-notebook/a-brief-note-on-sanskrit/'
+path: '/a-brief-note-on-sanskrit/'
 category: 'yoga'
 featured: false
 tags: ['yoga', 'white-notebook', 'sanskrit']

@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { TITLE, PREFIX } from '~/constants';
+import { TITLE } from '~/constants';
+import titleCase from '~/utils/titleCase';
 
 const SEO = ({ title }) => {
-  const formattedTitle = title !== TITLE ? `${PREFIX}${title}` : TITLE;
+  const SITE_NAME = TITLE;
+  const pageName = titleCase(title);
+  const formattedTitle = (title !== SITE_NAME ? `${pageName} | ${SITE_NAME}` : SITE_NAME);
 
   return (
     <Helmet>

@@ -120,13 +120,14 @@ const Home = ({ posts, albums, portfolios }) => {
                 ({
                   node: {
                     html,
+                    excerpt,
                     frontmatter: { title, summary, tags, path, images },
                   },
                 }) => (
                   <PostCard
                     key={path}
                     title={title}
-                    summary={summary}
+                    summary={summary || excerpt}
                     tags={tags}
                     path={path}
                     images={images}

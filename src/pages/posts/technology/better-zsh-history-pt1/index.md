@@ -5,7 +5,6 @@ featured: true
 tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 1'
 date: '2020-10-01T18:46:00.000Z'
-summary: ''
 images: ['https://images.unsplash.com/photo-1582303520952-11fe6a0c2058?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 

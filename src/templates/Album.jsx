@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '~/components/layout';
 import Album from '~/components/Album';
 
-const AlbumTemplate = props => (
+const AlbumTemplate = (props) => (
   <Layout {...props}>
     <Album {...props} />
   </Layout>
@@ -12,17 +12,8 @@ const AlbumTemplate = props => (
 export default AlbumTemplate;
 
 export const pageQuery = graphql`
-  query AlbumQuery ($path: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-        homepage
-      }
-    }
-    album: markdownRemark(
-      frontmatter: { path: { eq: $path } }
-    ) {
+  query AlbumQuery($path: String!) {
+    album: markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
       frontmatter {

@@ -21,18 +21,17 @@ const List = ({ data, location }) => {
         {posts.map(
           ({
             node: {
-              html,
+              excerpt,
               frontmatter: { title, summary, tags, path, images },
             },
           }) => (
             <PostCard
               key={path}
               title={title}
-              summary={summary}
+              summary={summary || excerpt}
               path={path}
               tags={tags}
               images={images}
-              html={html}
             />
           )
         )}

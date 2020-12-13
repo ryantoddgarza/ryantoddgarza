@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '~/components/layout';
 import Post from '~/components/Post';
 
-const PostTemplate = props => (
+const PostTemplate = (props) => (
   <Layout {...props}>
     <Post {...props} />
   </Layout>
@@ -13,21 +13,20 @@ export default PostTemplate;
 
 export const pageQuery = graphql`
   query PostByPath($path: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-        homepage
-      }
-    }
-    post: markdownRemark (
-      frontmatter: { path: { eq: $path } }
-    ) {
+    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
       frontmatter {
         title
         path
+        banner {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
         images
         category
         tags
@@ -40,7 +39,8 @@ export const pageQuery = graphql`
           rootId
           userId
           tweetId
-        } summary
+        }
+        summary
       }
     }
   }

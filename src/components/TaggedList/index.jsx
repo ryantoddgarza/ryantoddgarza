@@ -6,6 +6,7 @@ import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
+import titleCase from '~/utils/titleCase';
 import { CONTENT_PER_PAGE } from '~/constants';
 
 const TaggedList = ({ data, location }) => {
@@ -19,19 +20,20 @@ const TaggedList = ({ data, location }) => {
 
   return (
     <>
-      <SEO title={tag} />
+      <SEO title={titleCase(tag)} />
       <PostsWrapper>
         {posts.map(
           ({
             node: {
               html,
+              excerpt,
               frontmatter: { title, summary, tags, path, images },
             },
           }) => (
             <PostCard
               key={path}
               title={title}
-              summary={summary}
+              summary={summary || excerpt}
               path={path}
               tags={tags}
               images={images}

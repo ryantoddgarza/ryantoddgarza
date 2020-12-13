@@ -2,7 +2,7 @@
 type: 'portfolio'
 title: 'Portraits'
 date: '2018-07-02T00:00:00.000Z'
-path: '/portfolios/portraits/'
+path: '/portraits/'
 featured: false
 images: [
   'portraits/images/18011_054.jpg',

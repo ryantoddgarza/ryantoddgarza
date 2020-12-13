@@ -1,9 +1,8 @@
-const { TITLE, AUTHOR, SITE_URL } = require('./src/constants');
+const { TITLE, DESCRIPTION, SITE_URL } = require('./src/constants');
 
 const siteMetadata = {
   title: TITLE,
-  author: AUTHOR,
-  homepage: SITE_URL,
+  description: DESCRIPTION,
   siteUrl: SITE_URL,
 };
 
@@ -25,6 +24,7 @@ module.exports = {
         name: 'resources',
       },
     },
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -73,6 +73,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-107706366-2',
+        respectDNT: true,
       },
     },
     'gatsby-plugin-offline',

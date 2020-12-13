@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
 
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
@@ -41,7 +39,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     errors,
   } = await graphql(`
     {
-      allMarkdownRemark(limit: 10000) {
+      allMarkdownRemark(
+        limit: 10000
+        filter: { frontmatter: { hide: { ne: true } } }
+      ) {
         edges {
           node {
             frontmatter {
@@ -49,7 +50,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               category
               tags
               type
-              hide
             }
           }
         }
@@ -59,6 +59,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (errors) {
     reporter.panicOnBuild(errors);
+    return;
   }
 
   const post = path.resolve('./src/templates/Post.jsx');
@@ -73,53 +74,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tagMatrix = [];
   const categoryMatrix = [];
 
-  edges.forEach(
-    ({
-      node: {
-        frontmatter: {
-          path,
-          tags,
-          category,
-          type,
-          hide,
-        },
-      },
-    }) => {
-      if (hide !== true) {
-        if (Array.isArray(tags)) {
-          tagMatrix.push(tags);
-        }
-
-        if (typeof category === 'string') {
-          categoryMatrix.push(category);
-        }
-
-        let component = null;
-        switch (type) {
-          case PORTFOLIO:
-            component = portfolio;
-            break;
-          case ALBUM:
-            component = album;
-            break;
-          default:
-          case POST:
-            component = post;
-            break;
-        }
-
-        if (component !== null) {
-          createPage({
-            path,
-            component,
-            context: {},
-          });
-        }
-      }
+  edges.forEach(({ node: { frontmatter: { path, tags, category, type } } }) => {
+    if (Array.isArray(tags)) {
+      tagMatrix.push(tags);
     }
-  );
 
-  const albumsCount = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM).length;
+    if (typeof category === 'string') {
+      categoryMatrix.push(category);
+    }
+
+    let component = null;
+    switch (type) {
+      case PORTFOLIO:
+        component = portfolio;
+        break;
+      case ALBUM:
+        component = album;
+        break;
+      default:
+      case POST:
+        component = post;
+        break;
+    }
+
+    if (component !== null) {
+      createPage({
+        path,
+        component,
+        context: {},
+      });
+    }
+  });
+
+  const albumsCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+    type === ALBUM).length;
 
   if (albumsCount) {
     createPage({
@@ -129,7 +117,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  const portfoliosCount = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO).length;
+  const portfoliosCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+    type === PORTFOLIO).length;
 
   if (portfoliosCount) {
     createPage({
@@ -139,29 +128,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  const postsCount = edges.filter(({ node: { frontmatter: { hide, type } } }) => !hide && (type || POST) === POST).length;
-  const pagesCount = postsCount ? Math.ceil(postsCount / CONTENT_PER_PAGE) + 1 : 1;
-  const pages = Array.from(new Array(pagesCount), (el, i) => i + 1);
+  const separatePages = (total) => (total ? Math.ceil(total / CONTENT_PER_PAGE + 1) : 1);
+  const numberOfPages = (count) => Array.from(new Array(count), (el, i) => i + 1);
 
-  if (pages.length > 0) {
-    pages.forEach((page) => {
-      createPage({
-        path: `${POSTS_PATH}/${page}`,
-        component: list,
-        context: {},
-      });
-    });
-  } else {
+  const postsCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+    (type || POST) === POST).length;
+  const pagesCount = separatePages(postsCount);
+  const pages = numberOfPages(pagesCount);
+
+  pages.forEach((page) => {
     createPage({
-      path: `${POSTS_PATH}/1`,
+      path: `${POSTS_PATH}/${page}`,
       component: list,
       context: {},
     });
-  }
+  });
 
   const tags = [
     ...new Set(
-      tagMatrix.reduce((prev, curr) => (curr !== null ? [...prev, ...curr] : prev), [])
+      tagMatrix.reduce((prev, curr) => (
+        curr !== null ? [...prev, ...curr] : prev
+      ), [])
     ),
   ];
 
@@ -173,8 +160,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       return count;
     }, 0);
-    const taggedListCount = taggedPostCount ? Math.ceil(taggedPostCount / CONTENT_PER_PAGE) + 1 : 1;
-    const taggedListPages = Array.from(new Array(taggedListCount), (el, i) => i + 1);
+    const taggedListCount = separatePages(taggedPostCount);
+    const taggedListPages = numberOfPages(taggedListCount);
 
     taggedListPages.forEach((taggedListPage) => {
       createPage({
@@ -195,8 +182,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       return count;
     }, 0);
-    const categorizedListCount = categorizedPostCount ? Math.ceil(categorizedPostCount / CONTENT_PER_PAGE) + 1 : 1;
-    const categorizedListPages = Array.from(new Array(categorizedListCount), (el, i) => i + 1);
+    const categorizedListCount = separatePages(categorizedPostCount);
+    const categorizedListPages = numberOfPages(categorizedListCount);
 
     categorizedListPages.forEach((categorizedListPage) => {
       createPage({

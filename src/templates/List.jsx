@@ -14,11 +14,7 @@ export default ListTemplate;
 export const pageQuery = graphql`
   query ListQuery {
     site {
-      siteMetadata {
-        title
-        author
-        homepage
-      }
+      ...SiteInformation
     }
     posts: allMarkdownRemark(
       filter: { frontmatter: { hide: { ne: true } } }
@@ -26,7 +22,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          html
+          excerpt
           frontmatter {
             type
             title

@@ -24,7 +24,7 @@ The Zsh history mechanism only requires these first two parameters to be set up,
 
 To satisfy my original annoyance, let’s change the location of the history file. By default, the zsh setup wizard sets this parameter to `~/.zsh_history` using `HISTFILE`. I prefer this to be kept with some other generated zsh specific files at `~/.cache/zsh`. So in the _.zshrc_ we can add:
 
-```
+```shell
 # ~/.zshrc
 
 export HISTFILE="$HOME/.cache/zsh/zsh_history"
@@ -34,7 +34,7 @@ _Note that you can name the file and the path differently than I have chosen._
 
 Next, the `SAVEHIST` parameter sets the number of lines that you would like saved in your history and can be set according to your machines available resources. I’ve set it to 1000 but you can decrease or increase this number until your heart is content as explained [here](https://www.zsh.org/mla/users/2013/msg00691.html).
 
-```
+```shell
 # ~/.zshrc
 
 export HISTFILE="$HOME/.cache/zsh/zsh_history"
@@ -43,7 +43,7 @@ export SAVEHIST=1000
 
 The `HISTSIZE` parameter defines how many lines the shell will keep in one session and has a default of 30 lines. The [documentation](http://zsh.sourceforge.net/Guide/zshguide02.html#l17) recommends a value that is no more than `SAVEHIST`, so to give our shortcut seeking programmer selves just one value to maintain we can set this to 1000 and forward the value as a variable to `SAVEHIST`.
 
-```
+```shell
 # ~/.zshrc
 
 export HISTFILE="$HOME/.cache/zsh/zsh_history"

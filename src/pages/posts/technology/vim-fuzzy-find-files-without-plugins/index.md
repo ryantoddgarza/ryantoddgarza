@@ -16,10 +16,10 @@ If you learn better by video, [this](https://youtu.be/XA2WjJbmmoM) is a great on
 
 Configuration requires just two settings in _.vimrc_ to enable fuzzy find behavior and an optional third to specify what not to include. The settings are:
 
-```
+```vim
 set path+=**
 set wildmenu
-set wildignore+=<list of file patterns>
+set wildignore+=comma,separated,list,of,file,patterns
 ```
 
 So one by one…

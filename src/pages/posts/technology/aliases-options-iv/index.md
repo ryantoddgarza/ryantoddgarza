@@ -14,7 +14,7 @@ Today we’ll look at aliasing two options, `-i` and `-v`, to three common Unix 
 
 Add the following lines to the file where you keep your aliases:
 
-```sh
+```shell
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -iv"
@@ -40,7 +40,7 @@ Open the file where you keep your aliases. If you aren’t quite sure what this 
 
 First we’ll alias the `cp` command. Add the following to your alias file:
 
-```sh
+```shell
 alias cp="cp -iv"
 ```
 
@@ -54,7 +54,7 @@ If we copy _foo.txt_ to a new directory, we will see confirmation via the `-v` o
 
 Next we’ll alias the `mv` command. Add the following to your alias file:
 
-```sh
+```shell
 alias mv="mv -iv"
 ```
 
@@ -66,7 +66,7 @@ Source the alias file and let’s test the alias. If we move bar.txt into a new 
 
 Lastly we’ll alias the `rm` command. Add the following to your alias file:
 
-```sh
+```shell
 alias rm="rm -iv"
 ```
 

@@ -24,7 +24,7 @@ So what does any of this mean? It means that someone like me who works with a [t
 
 In the _.zshrc_ I’ve added:
 
-```
+```shell
 setopt INC_APPEND_HISTORY
 ```
 
@@ -44,7 +44,7 @@ And lastly, `HIST_FIND_NO_DUPS` means that even if duplicates are saved in the h
 
 My current duplicates handling is on the heavy handed side and along with everything else we’ve set up to this point looks like this:
 
-```
+```shell
 # ~/.zshrc
 
 export HISTFILE="$HOME/.cache/zsh/zsh_history"

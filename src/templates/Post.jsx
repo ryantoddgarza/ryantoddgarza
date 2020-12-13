@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '~/components/layout';
 import Post from '~/components/Post';
 
-const PostTemplate = props => (
+const PostTemplate = (props) => (
   <Layout {...props}>
     <Post {...props} />
   </Layout>
@@ -28,6 +28,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         path
+        banner {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
         images
         category
         tags

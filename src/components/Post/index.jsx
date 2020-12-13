@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
 import PostWrapper from '~/components/Common/PostWrapper';
@@ -10,24 +11,25 @@ import { Container } from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
 import formattedDate from '~/utils/formattedDate';
 import {
+  ComponentInPost,
+  BannerWrapper,
+  PostContent,
   PostHeader,
   Tags,
-  PostContent,
-  ImageWrapper,
-  ComponentInPost,
 } from './styled';
 
-const PostTemplate = ({
+const Post = ({
   data: {
     post: {
       html,
       frontmatter: {
-        title,
-        date,
-        tags = [],
-        images = [],
-        tweets = [],
+        banner,
         components = [],
+        date,
+        images = [],
+        tags = [],
+        title,
+        tweets = [],
       },
     },
   },
@@ -129,10 +131,14 @@ const PostTemplate = ({
               </li>
             </ul>
             <h1>{title}</h1>
-            {image === null ? null : (
-              <ImageWrapper>
-                <ScopedImage src={image} alt={title} />
-              </ImageWrapper>
+            {image === null && banner === null ? null : (
+              <BannerWrapper>
+                {banner ? (
+                  <Img fluid={banner.childImageSharp.fluid} />
+                ) : (
+                  <ScopedImage src={image} alt={title} />
+                )}
+              </BannerWrapper>
             )}
           </PostHeader>
           <PostContent>
@@ -147,17 +153,22 @@ const PostTemplate = ({
   );
 };
 
-PostTemplate.propTypes = {
+Post.propTypes = {
   data: PropTypes.shape({
     post: PropTypes.shape({
       html: PropTypes.string,
       frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        tags: PropTypes.arrayOf(PropTypes.string),
-        images: PropTypes.arrayOf(PropTypes.string),
-        tweets: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+        banner: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            fluid: PropTypes.shape({}),
+          }),
+        }),
         components: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+        date: PropTypes.string.isRequired,
+        images: PropTypes.arrayOf(PropTypes.string),
+        tags: PropTypes.arrayOf(PropTypes.string),
+        title: PropTypes.string.isRequired,
+        tweets: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
       }),
     }),
   }).isRequired,
@@ -166,4 +177,4 @@ PostTemplate.propTypes = {
   }).isRequired,
 };
 
-export default PostTemplate;
+export default Post;

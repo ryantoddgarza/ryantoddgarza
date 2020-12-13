@@ -23,7 +23,8 @@ const PostCard = ({ title, summary, path, tags, images, html }) => {
           </h3>
           <p>
             <Truncate lines={3} ellipsis={<span>...</span>}>
-              {summary || cleanText(html).slice(0, 160)}
+              {/* {summary || cleanText(html).slice(0, 160)} */}
+              {summary}
             </Truncate>
           </p>
         </Link>

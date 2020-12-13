@@ -25,6 +25,7 @@ module.exports = {
         name: 'resources',
       },
     },
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {

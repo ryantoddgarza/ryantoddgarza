@@ -49,14 +49,14 @@ const Layout = ({ children, location }) => {
       if (categoryIndex === -1) {
         return [
           { key: '__ALL__', length: total + 1 },
-          { key: category, length: 1 },
           ...categories.slice(1),
+          { key: category, length: 1 },
         ];
       }
 
       return [
         { key: '__ALL__', length: total + 1 },
-        ...categories.slice(1, categoryIndex - 1),
+        ...categories.slice(1, categoryIndex),
         { key: category, length: categories[categoryIndex].length + 1 },
         ...categories.slice(categoryIndex + 1),
       ];

@@ -140,22 +140,9 @@ export const PostContent = styled.section`
   ${styledCodeBlock}
 `;
 
-export const ImageWrapper = styled.figure`
-  position: relative;
-  margin: 0 0 ${space.xl};
-  padding: 56.25% 0 0;
-  width: 100%;
-  overflow: hidden;
-
+export const BannerWrapper = styled.figure`
   img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
     width: 100%;
-    height: auto;
   }
 `;
 

@@ -21,7 +21,6 @@ const List = ({ data, location }) => {
         {posts.map(
           ({
             node: {
-              html,
               excerpt,
               frontmatter: { title, summary, tags, path, images },
             },
@@ -33,7 +32,6 @@ const List = ({ data, location }) => {
               path={path}
               tags={tags}
               images={images}
-              html={html}
             />
           )
         )}

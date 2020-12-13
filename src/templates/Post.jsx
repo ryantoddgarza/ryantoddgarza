@@ -13,16 +13,7 @@ export default PostTemplate;
 
 export const pageQuery = graphql`
   query PostByPath($path: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-        homepage
-      }
-    }
-    post: markdownRemark (
-      frontmatter: { path: { eq: $path } }
-    ) {
+    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
       frontmatter {
@@ -48,7 +39,8 @@ export const pageQuery = graphql`
           rootId
           userId
           tweetId
-        } summary
+        }
+        summary
       }
     }
   }

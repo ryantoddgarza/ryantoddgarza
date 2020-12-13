@@ -13,20 +13,12 @@ export default CategorizedListTemplate;
 
 export const pageQuery = graphql`
   query CategorizedListQuery {
-    site {
-      siteMetadata {
-        title
-        author
-        homepage
-      }
-    }
     posts: allMarkdownRemark(
       filter: { frontmatter: { hide: { ne: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
-          html
           excerpt
           frontmatter {
             type

@@ -1,19 +1,21 @@
 import React from 'react';
 import {
-  FaGithub,
-  FaTwitter,
   FaFacebook,
+  FaGithub,
+  FaInstagram,
   FaLinkedin,
-  FaPatreon,
   FaMediumM,
+  FaPatreon,
+  FaTwitter,
 } from 'react-icons/fa';
 import {
-  GITHUB_ID,
-  TWITTER_ID,
   FACEBOOK_ID,
+  GITHUB_ID,
+  INSTAGRAM_ID,
   LINKEDIN_ID,
-  PATREON_ID,
   MEDIUM_ID,
+  PATREON_ID,
+  TWITTER_ID,
 } from '~/constants';
 
 export default [
@@ -27,6 +29,12 @@ export default [
     name: 'Twitter',
     url: `https://twitter.com/${TWITTER_ID}`,
     icon: <FaTwitter />,
+    display: true,
+  },
+  {
+    name: 'Instagram',
+    url: `https://instagram.com/${INSTAGRAM_ID}/`,
+    icon: <FaInstagram />,
     display: true,
   },
   {

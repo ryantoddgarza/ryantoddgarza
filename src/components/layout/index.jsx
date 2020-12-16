@@ -9,6 +9,7 @@ const Layout = ({ children, location }) => {
     query GatsbyQuery {
       allMarkdown: allMarkdownRemark(
         filter: { frontmatter: { hide: { ne: true } } }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {

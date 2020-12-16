@@ -6,7 +6,7 @@ tags: ['yoga', 'white-notebook', 'mantra']
 title: 'White Notebook - Mantras'
 date: '2020-08-08T21:46:00.000Z'
 summary: 'In the Vedic chanting tradition of India exists a profound distillation of the feats of human language and mnemonic devices. Just as the Sanskrit language has...'
-banner: 'images/yoga-110718-88.jpg'
+banner: './images/yoga-110718-88.jpg'
 images: ['images/yoga-110718-88.jpg']
 ---
 

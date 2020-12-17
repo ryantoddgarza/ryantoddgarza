@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   backgroundColor,
   breakpoint,
@@ -9,7 +9,17 @@ import {
 } from '~/design-system';
 import { fontSizeFluid } from '~/components/Common/fontSize';
 
-const StyledArticle = styled.article`
+const Block = css`
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  ${breakpoint.to('phone')} {
+    width: 100%;
+    height: 50%;
+  }
+`;
+
+export const StyledArticle = styled.article`
   position: relative;
   height: 0;
   padding: 50% 0 0;
@@ -27,16 +37,14 @@ const StyledArticle = styled.article`
     }
   }
 
-  div {
-    position: absolute;
+  main {
+    ${Block}
     bottom: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-    height: 100%;
-    padding: ${space.x2};
+    padding: ${space.x4};
     text-align: center;
     border-left: 1px solid #f9f9f9;
     ${breakpoint.to('phone')} {
@@ -63,16 +71,10 @@ const StyledArticle = styled.article`
           ${transition.function.default};
     }
   }
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    ${breakpoint.from('tablet')} {
-      width: 50%;
-    }
-  }
 `;
 
-export default StyledArticle;
+export const Cover = styled.figure`
+  ${Block}
+  top: 0;
+  left: 0;
+`;

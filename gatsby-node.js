@@ -34,11 +34,16 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const {
-    data: { allMarkdownRemark: { edges } },
-    errors,
-  } = await graphql(`
+  const { data, errors } = await graphql(`
     {
+      allProjectsJson(filter: { hide: { ne: true } }) {
+        edges {
+          node {
+            path
+            type
+          }
+        }
+      }
       allMarkdownRemark(
         limit: 10000
         filter: { frontmatter: { hide: { ne: true } } }
@@ -62,6 +67,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
+  const { allProjectsJson, allMarkdownRemark } = data;
+  const postEdges = allMarkdownRemark.edges;
+  const projectEdges = allProjectsJson.edges;
+
   const post = path.resolve('./src/templates/Post.jsx');
   const list = path.resolve('./src/templates/List.jsx');
   const taggedList = path.resolve('./src/templates/TaggedList.jsx');
@@ -71,10 +80,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const albums = path.resolve('./src/templates/Albums.jsx');
   const album = path.resolve('./src/templates/Album.jsx');
 
+  projectEdges.forEach(({ node: { path, type } }) => {
+    let component = null;
+    switch (type) {
+      case ALBUM:
+        component = album;
+        break;
+      default:
+        break;
+    }
+
+    if (component !== null) {
+      createPage({
+        path,
+        component,
+        context: {},
+      });
+    }
+  });
+
   const tagMatrix = [];
   const categoryMatrix = [];
 
-  edges.forEach(({ node: { frontmatter: { path, tags, category, type } } }) => {
+  postEdges.forEach(({ node: { frontmatter: { path, tags, category, type } } }) => {
     if (Array.isArray(tags)) {
       tagMatrix.push(tags);
     }
@@ -87,9 +115,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     switch (type) {
       case PORTFOLIO:
         component = portfolio;
-        break;
-      case ALBUM:
-        component = album;
         break;
       default:
       case POST:
@@ -106,7 +131,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   });
 
-  const albumsCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+  const albumsCount = projectEdges.filter(({ node: { type } }) =>
     type === ALBUM).length;
 
   if (albumsCount) {
@@ -117,7 +142,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  const portfoliosCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+  const portfoliosCount = postEdges.filter(({ node: { frontmatter: { type } } }) =>
     type === PORTFOLIO).length;
 
   if (portfoliosCount) {
@@ -131,7 +156,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const separatePages = (total) => (total ? Math.ceil(total / CONTENT_PER_PAGE + 1) : 1);
   const numberOfPages = (count) => Array.from(new Array(count), (el, i) => i + 1);
 
-  const postsCount = edges.filter(({ node: { frontmatter: { type } } }) =>
+  const postsCount = postEdges.filter(({ node: { frontmatter: { type } } }) =>
     (type || POST) === POST).length;
   const pagesCount = separatePages(postsCount);
   const pages = numberOfPages(pagesCount);
@@ -153,7 +178,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   ];
 
   tags.forEach((tag) => {
-    const taggedPostCount = edges.reduce((count, { node: { frontmatter: { tags: postTags } } }) => {
+    const taggedPostCount = postEdges.reduce((count, { node: { frontmatter: { tags: postTags } } }) => {
       if (postTags !== null && postTags.includes(tag)) {
         return count + 1;
       }
@@ -175,7 +200,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const categories = [...new Set(categoryMatrix)];
 
   categories.forEach((category) => {
-    const categorizedPostCount = edges.reduce((count, { node: { frontmatter: { category: postCategory } } }) => {
+    const categorizedPostCount = postEdges.reduce((count, { node: { frontmatter: { category: postCategory } } }) => {
       if (postCategory !== null && postCategory.includes(category)) {
         return count + 1;
       }

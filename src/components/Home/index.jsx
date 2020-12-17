@@ -23,8 +23,8 @@ function Feature(name) {
 }
 
 const Home = ({ posts, albums, portfolios }) => {
+  const featuredAlbums = albums.filter(({ node: { featured } }) => featured === true);
   const featuredPosts = new Feature(posts);
-  const featuredAlbums = new Feature(albums);
   const featuredPortfolios = new Feature(portfolios);
   const [title, setTitle] = useState('');
 
@@ -58,7 +58,7 @@ const Home = ({ posts, albums, portfolios }) => {
   return (
     <>
       <SEO title={SITE_TITLE} />
-      <Hero isTop>
+      <Hero>
         <Title>{title}</Title>
       </Hero>
       <SimpleWrapper>
@@ -71,7 +71,7 @@ const Home = ({ posts, albums, portfolios }) => {
             />
             {featuredAlbums
               .slice(0, 1)
-              .map(({ node: { frontmatter: { path, title, cover } } }) => (
+              .map(({ node: { path, metadata: { title, cover } } }) => (
                 <AlbumCard
                   key={title}
                   title={title}

@@ -68,14 +68,8 @@ export const Title = styled.div`
 `;
 
 export const Cover = styled.div`
+  max-width: 600px;
   margin-bottom: ${space.x12};
-
-  img {
-    width: 100%;
-    ${breakpoint.from('tablet-l')} {
-      max-width: 500px;
-    }
-  }
 `;
 
 export const Details = styled.div`

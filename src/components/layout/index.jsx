@@ -5,9 +5,32 @@ import { POST, PORTFOLIO, ALBUM } from '~/constants';
 import App from '~/components/App';
 
 const Layout = ({ children, location }) => {
-  const { allMarkdown } = useStaticQuery(graphql`
+  const { allProjectsJson, allMarkdownRemark } = useStaticQuery(graphql`
     query GatsbyQuery {
-      allMarkdown: allMarkdownRemark(
+      allProjectsJson(
+        filter: { hide: { ne: true } }
+        sort: { fields: [metadata___date], order: DESC }
+      ) {
+        edges {
+          node {
+            path
+            type
+            featured
+            metadata {
+              title
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 1600) {
+                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluidLimitPresentationSize
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      allMarkdownRemark(
         filter: { frontmatter: { hide: { ne: true } } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
@@ -24,7 +47,6 @@ const Layout = ({ children, location }) => {
               summary
               tags
               images
-              cover
             }
           }
         }
@@ -32,12 +54,14 @@ const Layout = ({ children, location }) => {
     }
   `);
 
-  const { edges } = allMarkdown;
-  const posts = edges.filter(({ node: { frontmatter: { type } } }) => type === POST || type === null);
-  const albums = edges.filter(({ node: { frontmatter: { type } } }) => type === ALBUM);
-  const portfolios = edges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
+  const postEdges = allMarkdownRemark.edges;
+  const projectEdges = allProjectsJson.edges;
 
-  const categories = edges.reduce(
+  const albums = projectEdges.filter(({ node: { type } }) => type === ALBUM);
+  const posts = postEdges.filter(({ node: { frontmatter: { type } } }) => type === POST || type === null);
+  const portfolios = postEdges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
+
+  const categories = postEdges.reduce(
     (categories, { node }) => {
       const { category } = node.frontmatter;
 
@@ -66,7 +90,7 @@ const Layout = ({ children, location }) => {
     [{ key: '__ALL__', length: 0 }]
   );
 
-  const postInformations = edges.reduce(
+  const postInformations = postEdges.reduce(
     (postInformations, { node: { frontmatter } }) => {
       const { type, path, title, summary, tags = [], category } = frontmatter;
 

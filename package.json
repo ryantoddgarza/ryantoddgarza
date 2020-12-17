@@ -29,6 +29,7 @@
     "gatsby": "^2.24.77",
     "gatsby-image": "^2.7.0",
     "gatsby-remark-external-links": "0.0.4",
+    "gatsby-transformer-json": "^2.8.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "nanoid": "^3.1.16",
     "prop-types": "^15.7.2",

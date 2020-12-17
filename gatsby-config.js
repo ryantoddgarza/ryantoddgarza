@@ -33,6 +33,7 @@ module.exports = {
         defaultQuality: 75,
       },
     },
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

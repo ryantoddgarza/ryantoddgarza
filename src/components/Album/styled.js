@@ -10,11 +10,8 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { Container } from '~/components/Common/Container';
 
 export const Wrapper = styled(SimpleWrapper)`
-  padding: 70px 16px 0;
+  padding: 3rem 0 0;
   font-size: 14px;
-  ${breakpoint.from('tablet')} {
-    padding: 100px 0 0;
-  }
 
   h2 {
     margin-bottom: ${space.x8};

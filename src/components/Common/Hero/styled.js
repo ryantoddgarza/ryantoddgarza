@@ -6,11 +6,9 @@ export const HeroWrapperOuter = styled.section`
   padding: 56.25% 0 0;
   width: 100%;
   height: 0;
-  ${({ isTop }) => (isTop ? `margin: ${navbar.height.desktop} 0 0;` : '')}
   ${breakpoint.to('phone')} {
     padding: 178% 0 0;
-    padding: calc(100vh - ${navbar.height.mobile}) 0 0;
-    ${({ isTop }) => (isTop ? `margin: ${navbar.height.mobile} 0 0;` : '')}
+    padding: calc(100vh - ${navbar.height}) 0 0;
   }
 `;
 

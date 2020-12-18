@@ -14,3 +14,4 @@ exports.KEYWORDS = [
   'yoga',
 ].join(', ');
 exports.SITE_URL = 'https://ryantoddgarza.com';
+exports.AUTHOR = 'Ryan Todd Garza';

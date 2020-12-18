@@ -27,10 +27,8 @@ export const GnbWrapperInner = styled(Container)`
   position: relative;
   display: flex;
   align-items: center;
-  height: ${navbar.height.desktop};
+  height: ${navbar.height};
   ${breakpoint.to('phone')} {
-    height: ${navbar.height.mobile};
-
     ${hamburger}
   }
 `;
@@ -81,7 +79,7 @@ export const NavMenu = styled.ul`
   transition: max-height 0.4s ease-out 0.1s;
   ${breakpoint.from('tablet')} {
     position: absolute;
-    top: ${navbar.height.mobile};
+    top: ${navbar.height};
   }
 `;
 
@@ -133,7 +131,7 @@ export const StyledLink = styled(ScopedLink)`
   ${breakpoint.to('phone')} {
     &[href='/'] {
       display: flex;
-      height: ${navbar.height.mobile};
+      height: ${navbar.height};
       align-items: center;
     }
   }
@@ -180,7 +178,7 @@ export const MobileMenus = styled.div`
 
 export const MobileMenu = styled.section`
   position: fixed;
-  top: ${navbar.height.mobile};
+  top: ${navbar.height};
   left: 0;
   width: 100%;
   height: 100%;

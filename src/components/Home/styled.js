@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSizeFluid } from '~/components/Common/fontSize';
+import { fontSizeFluid } from '~/design-system';
 
 export const Title = styled.div`
   position: absolute;

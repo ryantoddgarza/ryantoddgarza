@@ -3,9 +3,8 @@ import { breakpoint } from '~/design-system/';
 
 const PostWrapper = styled.section`
   margin: auto;
-  padding: 70px 0 0;
+  padding: 3rem 0 0;
   ${breakpoint.from('tablet')} {
-    padding: 120px 0 0;
     font-size: 1.125rem;
     max-width: 800px;
   }

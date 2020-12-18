@@ -1,8 +1,8 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import SEO from '~/components/Common/SEO';
-import ScopedImage from '~/components/Common/ScopedImage';
 import {
   Wrapper,
   AlbumPrimary,
@@ -28,14 +28,10 @@ const Credit = (name, role) => {
 const Album = ({
   data: {
     album: {
-      frontmatter: {
-        artist,
-        title,
-        cover,
-        metadata: { date, format, upc, publishing, tracks },
-        credits = [],
-        links = [],
-      },
+      metadata: { title, artist, cover, date, format, upc, publishing },
+      tracks,
+      credits,
+      links,
     },
   },
 }) => {
@@ -58,7 +54,7 @@ const Album = ({
         <AlbumPrimary>
           <ContentLeft>
             <Cover>
-              <ScopedImage src={cover} alt={`${artist} - ${title}`} />
+              <Img fluid={cover.childImageSharp.fluid} />
             </Cover>
           </ContentLeft>
           <ContentRight>
@@ -142,20 +138,22 @@ const Album = ({
 Album.propTypes = {
   data: PropTypes.shape({
     album: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        artist: PropTypes.string.isRequired,
+      metadata: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        cover: PropTypes.string.isRequired,
-        metadata: PropTypes.shape({
-          date: PropTypes.string,
-          format: PropTypes.string,
-          upc: PropTypes.string,
-          publishing: PropTypes.string,
-          tracks: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-        }),
-        credits: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-        links: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-      }).isRequired,
+        artist: PropTypes.string.isRequired,
+        cover: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            fluid: PropTypes.shape({}),
+          }),
+        }).isRequired,
+        date: PropTypes.string,
+        format: PropTypes.string,
+        upc: PropTypes.string,
+        publishing: PropTypes.string,
+      }),
+      tracks: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+      credits: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+      links: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
     }).isRequired,
   }).isRequired,
 };

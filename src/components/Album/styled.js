@@ -10,11 +10,8 @@ import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { Container } from '~/components/Common/Container';
 
 export const Wrapper = styled(SimpleWrapper)`
-  padding: 70px 16px 0;
-  font-size: 14px;
-  ${breakpoint.from('tablet')} {
-    padding: 100px 0 0;
-  }
+  padding: 3rem 0 0;
+  font-size: 0.875rem;
 
   h2 {
     margin-bottom: ${space.x8};
@@ -71,28 +68,24 @@ export const Title = styled.div`
 `;
 
 export const Cover = styled.div`
+  max-width: 600px;
   margin-bottom: ${space.x12};
-
-  img {
-    width: 100%;
-    ${breakpoint.from('tablet-l')} {
-      max-width: 500px;
-    }
-  }
 `;
 
 export const Details = styled.div`
   margin-bottom: ${space.x12};
-  font-size: 11px;
+  font-size: 0.75rem;
   color: ${textColor.light};
 `;
 
 export const Tracklist = styled.div`
   margin-bottom: ${space.x12};
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 
   .track-row {
     display: flex;
-    margin-bottom: ${space.x4};
+    margin-bottom: 0.875rem;
   }
 
   .track-counter {
@@ -112,7 +105,7 @@ export const Tracklist = styled.div`
   .track-video {
     flex: 0 0 10%;
     min-width: 4em;
-    font-size: 11px;
+    font-size: 0.75rem;
     text-transform: uppercase;
     text-align: right;
 
@@ -140,7 +133,7 @@ export const Links = styled.ul`
 
 export const Credits = styled.div`
   margin-bottom: ${space.x12};
-  font-size: 11px;
+  font-size: 0.75rem;
 
   dl {
     display: grid;

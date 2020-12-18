@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import {
   backgroundColor,
   breakpoint,
+  fontSizeFluid,
   primaryColor,
   space,
   textColor,
   transition,
 } from '~/design-system';
-import { fontSizeFluid } from '~/components/Common/fontSize';
 
 const PortfolioCard = styled.article`
   display: inline-block;

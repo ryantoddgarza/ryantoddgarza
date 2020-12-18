@@ -1,45 +1,54 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Layout from '~/components/layout';
 import Album from '~/components/Album';
 
-const AlbumTemplate = (props) => (
+const AlbumTemplate = ({ data, ...props }) => (
   <Layout {...props}>
-    <Album {...props} />
+    <Album data={data} />
   </Layout>
 );
+
+AlbumTemplate.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
 
 export default AlbumTemplate;
 
 export const pageQuery = graphql`
   query AlbumQuery($path: String!) {
-    album: markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        artist
+    album: projectsJson(path: { eq: $path }) {
+      type
+      metadata {
         title
-        cover
-        metadata {
-          date
-          format
-          upc
-          publishing
-          tracks {
-            title
-            runtime
-            lyrics
-            video
+        artist
+        cover {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
           }
         }
-        credits {
-          name
-          role
-        }
-        links {
-          distributor
-          url
-        }
+        date
+        format
+        upc
+        publishing
+      }
+      tracks {
+        title
+        runtime
+        lyrics
+        video
+      }
+      credits {
+        name
+        role
+      }
+      links {
+        distributor
+        url
       }
     }
   }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { textColor, backgroundColor } from '~/design-system';
+import { textColor, backgroundColor, navbar } from '~/design-system';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,8 +8,9 @@ export const Wrapper = styled.div`
   color: ${textColor.default};
   background-color: ${backgroundColor.default};
 
-  main {
+  & > main {
     flex: 1 0 auto;
+    padding: ${navbar.height} 0 0;
   }
 
   @media print {
@@ -19,6 +20,7 @@ export const Wrapper = styled.div`
     }
 
     & > main {
+      padding: 0;
       & > section {
         padding: 0;
       }

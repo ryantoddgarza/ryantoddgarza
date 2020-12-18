@@ -12,8 +12,8 @@ const Albums = ({
   <>
     <SEO title="Albums" />
     <Wrapper>
-      {albums.map(({ node: { frontmatter: { path, title, cover } } }) => (
-        <AlbumCard key={title} title={title} path={path} image={cover} />
+      {albums.map(({ node: { path, metadata: { title, cover } } }) => (
+        <AlbumCard key={title} title={title} image={cover} path={path} />
       ))}
     </Wrapper>
   </>

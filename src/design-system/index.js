@@ -1,3 +1,5 @@
+export * from './type';
+
 export { navbar } from './components';
 export { breakpoint } from './layout';
 

@@ -1,0 +1,77 @@
+{
+  "type": "album",
+  "hide": false,
+  "featured": false,
+  "path": "/wk01",
+  "metadata": {
+    "title": "wk01",
+    "artist": "Ens Ensemble",
+    "cover": "images/wk01-cover.jpg",
+    "date": "2019-06-11",
+    "format": "Digital",
+    "upc": "",
+    "publishing": "All compositions © 2020 Ryan Todd Garza (BMI)"
+  },
+  "tracks": [
+    {
+      "title": "And Now...",
+      "runtime": "4:38"
+    },
+    {
+      "title": "None Not Never",
+      "runtime": "4:52"
+    },
+    {
+      "title": "II Hands",
+      "runtime": "1:26"
+    },
+    {
+      "title": "Gum Shoe",
+      "runtime": "1:45"
+    },
+    {
+      "title": "Father [intro]",
+      "runtime": "2:04"
+    },
+    {
+      "title": "Father",
+      "runtime": "7:40"
+    },
+    {
+      "title": "lrnng",
+      "runtime": "2:35"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Written and produced by"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Engineered and mixed by"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Bansuri"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Guitar"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Synthesizers and programming"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Tabla and hand percussion"
+    }
+  ],
+  "links": [
+    {
+      "distributor": "Bandcamp",
+      "url": "https://ensensemble.bandcamp.com/album/wk01"
+    }
+  ]
+}

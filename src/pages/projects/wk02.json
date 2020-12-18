@@ -1,0 +1,69 @@
+{
+  "type": "album",
+  "hide": false,
+  "featured": false,
+  "path": "/wk02",
+  "metadata": {
+    "title": "wk02",
+    "artist": "Ens Ensemble",
+    "cover": "images/wk02-cover.jpg",
+    "date": "2019-06-25",
+    "format": "Digital",
+    "upc": "",
+    "publishing": "All compositions © 2020 Ryan Todd Garza (BMI)"
+  },
+  "tracks": [
+    {
+      "title": "2b4ystd",
+      "runtime": "1:44"
+    },
+    {
+      "title": "Mother [intro]",
+      "runtime": "0:56"
+    },
+    {
+      "title": "Mother",
+      "runtime": "5:54"
+    },
+    {
+      "title": "Wait OK Go",
+      "runtime": "2:08"
+    },
+    {
+      "title": "Because I Realized You'll Never Need Me",
+      "runtime": "2:51"
+    },
+    {
+      "title": "Verbs",
+      "runtime": "2:58"
+    },
+    {
+      "title": "Instant Classic",
+      "runtime": "3:10"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Written and produced by"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Engineered and mixed by"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Classical guitar"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Synthesizers and programming"
+    }
+  ],
+  "links": [
+    {
+      "distributor": "Bandcamp",
+      "url": "https://ensensemble.bandcamp.com/album/wk02"
+    }
+  ]
+}

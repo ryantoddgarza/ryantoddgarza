@@ -6,10 +6,7 @@ import styledTechCard from './styledTechCard';
 export const Wrapper = styled(SimpleWrapper)`
   width: 90%;
   margin: 0 auto;
-  padding: 70px 0 0;
-  ${breakpoint.from('tablet')} {
-    padding: 100px 0 0;
-  }
+  padding: 3rem 0 0;
 
   &:before,
   &:after {

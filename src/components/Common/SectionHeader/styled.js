@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { primaryColor, space, transition } from '~/design-system';
-import { fontSizeFluid } from '~/components/Common/fontSize';
+import { fontSizeFluid, primaryColor, space, transition } from '~/design-system';
 
 export const Header = styled.header`
   padding: ${space.x12} 0;

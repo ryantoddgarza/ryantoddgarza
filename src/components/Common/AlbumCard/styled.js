@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components';
 import {
   backgroundColor,
   breakpoint,
+  fontSizeFluid,
   primaryColor,
   space,
   textColor,
   transition,
 } from '~/design-system';
-import { fontSizeFluid } from '~/components/Common/fontSize';
 
 const Block = css`
   position: absolute;

@@ -9,7 +9,7 @@ import {
   transition,
 } from '~/design-system';
 
-const PortfolioCard = styled.article`
+export const StyledArticle = styled.article`
   display: inline-block;
   position: relative;
   float: left;
@@ -34,19 +34,10 @@ const PortfolioCard = styled.article`
       left: -5%;
     }
 
-    h3::after {
+    h5::after {
       width: 33%;
       background-color: ${primaryColor.default};
     }
-  }
-
-  a {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 
   img {
@@ -61,44 +52,7 @@ const PortfolioCard = styled.article`
     transition: all ${transition.duration.normal} ${transition.function.default};
   }
 
-  & div {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 100%;
-    max-width: calc(288px + 10vw);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: ${space.x4};
-    color: ${textColor.onDark};
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  }
-
-  p {
-    display: none;
-    font-size: 0.875rem;
-    line-height: 1.4;
-    margin-bottom: ${space.x4};
-    ${breakpoint.get('phone-l')} {
-      display: block;
-    }
-    ${breakpoint.from('tablet-l')} {
-      display: block;
-    }
-  }
-
-  em {
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-
-    &:hover {
-      color: ${primaryColor.default};
-    }
-  }
-
-  h3 {
+  h5 {
     font-size: ${fontSizeFluid(20)};
 
     &::after {
@@ -108,10 +62,44 @@ const PortfolioCard = styled.article`
       height: 2px;
       margin: 1em 0;
       background-color: ${textColor.disabled};
-      transition: width ${transition.duration.slow} ${transition.function.default},
-        background-color ${transition.duration.normal} ${transition.function.default};
+      transition: width ${transition.duration.slow}
+          ${transition.function.default},
+        background-color ${transition.duration.normal}
+          ${transition.function.default};
     }
   }
 `;
 
-export default PortfolioCard;
+export const CardBody = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: calc(288px + 10vw);
+  padding: ${space.x4};
+  color: ${textColor.onDark};
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  em {
+    display: none;
+    margin: 1.5em 0 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    ${breakpoint.get('phone-l')} {
+      display: inline-block;
+    }
+    ${breakpoint.from('tablet-l')} {
+      display: inline-block;
+    }
+
+    &:hover {
+      color: ${primaryColor.default};
+    }
+  }
+`;

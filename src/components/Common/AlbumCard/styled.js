@@ -29,33 +29,14 @@ export const StyledArticle = styled.article`
     padding: 200% 0 0;
   }
 
-  &:hover,
-  &:active {
-    h3::after {
+  &:hover {
+    h5::after {
       width: 33%;
       background-color: ${primaryColor.default};
     }
   }
 
-  main {
-    ${Block}
-    bottom: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: ${space.x4};
-    text-align: center;
-    border-left: 1px solid #f9f9f9;
-    ${breakpoint.to('phone')} {
-      width: 100%;
-      height: 50%;
-      border-top: 1px solid #f9f9f9;
-      border-left: unset;
-    }
-  }
-
-  h3 {
+  h5 {
     font-size: ${fontSizeFluid(24)};
 
     &::after {
@@ -70,6 +51,24 @@ export const StyledArticle = styled.article`
         background-color ${transition.duration.normal}
           ${transition.function.default};
     }
+  }
+`;
+
+export const CardBody = styled.div`
+  ${Block}
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: ${space.x4};
+  text-align: center;
+  border-left: 1px solid #f9f9f9;
+  ${breakpoint.to('phone')} {
+    width: 100%;
+    height: 50%;
+    border-top: 1px solid #f9f9f9;
+    border-left: unset;
   }
 `;
 

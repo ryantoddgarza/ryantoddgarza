@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Truncate from 'react-truncate';
 import ScopedImage from '~/components/Common/ScopedImage';
-import { ImageWrapper, TagWrapper, StyledArticle } from './styled';
+import { Container, ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
 const PostCard = ({ title, summary, path, tags, image }) => (
   <StyledArticle>
-    <div>
+    <Container>
       <Link to={path}>
         <ImageWrapper>
-          {image === null ? null : <ScopedImage src={image} alt="title" />}
+          <ScopedImage src={image} alt="title" />
         </ImageWrapper>
-        <h3>
+        <h5>
           <Truncate lines={2} ellipsis={<span>...</span>}>
             {title}
           </Truncate>
-        </h3>
+        </h5>
         <p>
           <Truncate lines={3} ellipsis={<span>...</span>}>
             {summary}
@@ -30,21 +30,21 @@ const PostCard = ({ title, summary, path, tags, image }) => (
           </Link>
         ))}
       </TagWrapper>
-    </div>
+    </Container>
   </StyledArticle>
 );
+
 PostCard.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string,
   path: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-  image: PropTypes.string,
+  image: PropTypes.string.isRequired,
 };
 
 PostCard.defaultProps = {
   summary: '',
   tags: [],
-  image: '',
 };
 
 export default PostCard;

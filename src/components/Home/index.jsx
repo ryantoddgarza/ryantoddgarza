@@ -16,24 +16,12 @@ import {
 import makeTypist from '~/utils/makeTypist';
 import { Title } from './styled';
 
-function Feature(name) {
-  this.filtered = name.filter(
-    ({
-      node: {
-        frontmatter: { featured },
-      },
-    }) => featured
-  );
-
-  return this.filtered;
-}
-
 const Home = ({ posts, albums, portfolios }) => {
   const featuredAlbums = albums.filter(({ node: { featured } }) => featured === true);
-  const featuredPosts = new Feature(posts);
-  const featuredPortfolios = new Feature(portfolios);
-  const [intro, setIntro] = useState('');
+  const featuredPosts = posts.filter(({ node: { frontmatter: { featured } } }) => featured === true);
+  const featuredPortfolios = portfolios.filter(({ node: { frontmatter: { featured } } }) => featured === true);
 
+  const [intro, setIntro] = useState('');
   const introduction = makeTypist("Hi, I'm Ryan.", setIntro);
 
   useEffect(() => {

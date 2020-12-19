@@ -19,7 +19,7 @@ My focus is writing readable, maintainable, and scalable code for web applicatio
 <!-- Svara -->
 <article class="tech-card">
 
-[View project in portfolio](/portfolios/svara/)
+[View project in portfolio](/svara/)
 
 ### Svara
 
@@ -105,32 +105,10 @@ Tech stack
 
 </article>
 
-<!-- Harlan Hodges -->
-<article class="tech-card">
-
-### Harlan Hodges
-
-- Static
-- Portfolio
-- 2020
-
-Tech stack
-
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-- Google Analytics
-- Git
-
-[Visit site →](https://harlanhodges.com)
-
-</article>
-
 <!-- Toward The South Plains -->
 <article class="tech-card">
 
-[View project in portfolio](/portfolios/toward-the-south-plains/)
+[View project in portfolio](/toward-the-south-plains/)
 
 ### Toward The South Plains
 

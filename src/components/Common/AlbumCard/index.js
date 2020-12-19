@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { StyledArticle, Cover } from './styled';
+import { StyledArticle, CardBody, Cover } from './styled';
 
 const AlbumCard = ({ title, image, path }) => (
   <StyledArticle>
@@ -10,9 +10,9 @@ const AlbumCard = ({ title, image, path }) => (
       <Cover>
         <Img fluid={image.childImageSharp.fluid} />
       </Cover>
-      <main>
-        <h3>{title}</h3>
-      </main>
+      <CardBody>
+        <h5>{title}</h5>
+      </CardBody>
     </Link>
   </StyledArticle>
 );

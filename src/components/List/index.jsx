@@ -31,7 +31,7 @@ const List = ({ data, location }) => {
               summary={summary || excerpt}
               path={path}
               tags={tags}
-              images={images}
+              image={images[0]}
             />
           )
         )}

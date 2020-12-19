@@ -15,7 +15,7 @@ const Portfolios = ({
       {portfolios.map(
         ({
           node: {
-            frontmatter: { path, title, summary, images = [] },
+            frontmatter: { path, title, summary, images },
           },
         }) => (
           <PortfolioCard
@@ -23,7 +23,7 @@ const Portfolios = ({
             title={title}
             summary={summary}
             path={path}
-            images={images}
+            image={images[0]}
           />
         )
       )}

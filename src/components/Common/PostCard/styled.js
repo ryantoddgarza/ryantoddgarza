@@ -8,6 +8,59 @@ import {
   transition,
 } from '~/design-system';
 
+export const StyledArticle = styled.article`
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  vertical-align: top;
+  ${breakpoint.from('tablet')} {
+    padding: 0 ${space.x2} ${space.x4};
+    width: 50%;
+  }
+  ${breakpoint.from('desktop')} {
+    width: 33%;
+  }
+  ${breakpoint.from('widescreen')} {
+    width: 25%;
+  }
+
+  a {
+    color: ${textColor.default};
+  }
+
+  h5 {
+    padding: 0 0 6px;
+    height: 2.4em;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  p {
+    padding: 24px 0 16px;
+    height: 106px;
+    line-height: 1.4;
+    font-size: 16px;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+`;
+
+export const Container = styled.div`
+  position: relative;
+  top: 0;
+  padding: 14px;
+  background-color: ${backgroundColor.light};
+  overflow: hidden;
+  transition: top ${transition.duration.fast} ${transition.function.default};
+
+  &:hover {
+    top: -8px;
+  }
+`;
+
 export const ImageWrapper = styled.figure`
   position: relative;
   margin: -14px -14px 14px;
@@ -48,59 +101,6 @@ export const TagWrapper = styled.div`
 
     &:hover {
       color: ${primaryColor.default};
-    }
-  }
-`;
-
-export const StyledArticle = styled.article`
-  display: inline-block;
-  width: 100%;
-  font-size: 14px;
-  vertical-align: top;
-  ${breakpoint.from('tablet')} {
-    padding: 0 ${space.x2} ${space.x4};
-    width: 50%;
-  }
-  ${breakpoint.from('desktop')} {
-    width: 33%;
-  }
-  ${breakpoint.from('widescreen')} {
-    width: 25%;
-  }
-
-  & > div {
-    position: relative;
-    top: 0;
-    padding: 14px;
-    background-color: ${backgroundColor.light};
-    overflow: hidden;
-    transition: top ${transition.duration.fast} ${transition.function.default};
-
-    &:hover {
-      top: -8px;
-    }
-  }
-
-  a {
-    color: ${textColor.default};
-  }
-
-  h3 {
-    padding: 0 0 6px;
-    height: 2.4em;
-    line-height: 1.2;
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  p {
-    padding: 24px 0 16px;
-    height: 106px;
-    line-height: 1.4;
-    font-size: 16px;
-
-    span {
-      white-space: nowrap;
     }
   }
 `;

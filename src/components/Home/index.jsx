@@ -96,7 +96,6 @@ const Home = ({ posts, albums, portfolios }) => {
               .map(
                 ({
                   node: {
-                    html,
                     excerpt,
                     frontmatter: { title, summary, tags, path, images },
                   },
@@ -107,8 +106,7 @@ const Home = ({ posts, albums, portfolios }) => {
                     summary={summary || excerpt}
                     tags={tags}
                     path={path}
-                    images={images}
-                    html={html}
+                    image={images[0]}
                   />
                 )
               )}

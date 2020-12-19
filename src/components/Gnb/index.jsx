@@ -15,10 +15,9 @@ import { GnbWrapperOuter, GnbWrapperInner, HeaderName, StyledLink } from './styl
 
 const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
   const { pathname } = location;
-  const isHome = pathname.replace(/\/$/, '') === '';
   const isMusic = pathname.replace(/\/$/, '').startsWith(ALBUMS_PATH);
   const isPortfolio = pathname.replace(/\/$/, '').startsWith(PORTFOLIOS_PATH);
-  const isPost = !(isHome || isMusic || isPortfolio);
+  const isPost = pathname.replace(/\/$/, '').startsWith(POSTS_PATH);
 
   const subMenus = {
     postCategories: {

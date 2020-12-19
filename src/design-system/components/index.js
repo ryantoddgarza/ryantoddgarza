@@ -1,1 +1,1 @@
-export { navbar } from '~/design-system/data/navbar.yaml';
+export { navbar } from './data/navbar.yaml';

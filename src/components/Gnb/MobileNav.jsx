@@ -90,9 +90,7 @@ const MobileNav = ({ navLists }) => {
         </MobileMenus>
       </MobileMenu>
       <Hamburger
-        className={`hamburger hamburger--spin js-hamburger ${
-          isMenuOpened ? 'is-active' : ''
-        }`}
+        className={`hamburger ${isMenuOpened ? 'is-active' : ''}`}
         onClick={toggleMenu}
       >
         <div className="hamburger-box">

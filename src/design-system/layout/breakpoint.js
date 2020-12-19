@@ -1,8 +1,5 @@
-import { breakpoints } from '~/design-system/data/breakpoints.yaml';
-
-function px(value) {
-  return `${value}px`;
-}
+import { breakpoints } from './data/breakpoints.yaml';
+import { px } from '../utils';
 
 const device = {
   'phone': {

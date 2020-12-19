@@ -7,7 +7,13 @@ import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import { TITLE as SITE_TITLE, ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
+import {
+  TITLE as SITE_TITLE,
+  ALBUMS_PATH,
+  PORTFOLIOS_PATH,
+  POSTS_PATH,
+} from '~/constants';
+import makeTypist from '~/utils/makeTypist';
 import { Title } from './styled';
 
 function Feature(name) {
@@ -26,40 +32,23 @@ const Home = ({ posts, albums, portfolios }) => {
   const featuredAlbums = albums.filter(({ node: { featured } }) => featured === true);
   const featuredPosts = new Feature(posts);
   const featuredPortfolios = new Feature(portfolios);
-  const [title, setTitle] = useState('');
+  const [intro, setIntro] = useState('');
 
-  const typeMessage = (string) => {
-    const message = string;
-    const interval = 120;
-    let count = 0;
-    let output = '';
-
-    const typeChar = () => {
-      if (count >= message.length) {
-        return;
-      }
-
-      output += message[count];
-      setTitle(output);
-      count += 1;
-
-      setTimeout(() => {
-        typeChar();
-      }, interval);
-    };
-
-    typeChar();
-  };
+  const introduction = makeTypist("Hi, I'm Ryan.", setIntro);
 
   useEffect(() => {
-    typeMessage('Hi, I\'m Ryan.');
+    introduction.type();
+
+    return function cleanup() {
+      introduction.stop();
+    };
   }, []);
 
   return (
     <>
       <SEO title={SITE_TITLE} />
       <Hero>
-        <Title>{title}</Title>
+        <Title>{intro}</Title>
       </Hero>
       <SimpleWrapper>
         {featuredAlbums.length >= 1 ? (

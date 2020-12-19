@@ -38,10 +38,6 @@ export const NavList = styled.ul`
   ${breakpoint.from('tablet')} {
     display: block;
   }
-
-  a:hover {
-    color: ${primaryColor.default};
-  }
 `;
 
 export const NavListItem = styled.li`
@@ -54,6 +50,10 @@ export const NavListItem = styled.li`
 
   a {
     color: ${textColor.default};
+
+    &:hover {
+      color: ${primaryColor.default};
+    }
   }
 
   small {
@@ -99,22 +99,10 @@ export const HeaderName = styled.h1`
 
 export const Hamburger = styled.div`
   position: absolute;
-  display: block;
   right: 0;
   z-index: 5000;
   ${breakpoint.from('tablet')} {
     display: none;
-  }
-
-  &:before,
-  &:after {
-    display: block;
-    content: '';
-    clear: both;
-  }
-
-  & > div {
-    float: left;
   }
 `;
 

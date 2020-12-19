@@ -78,7 +78,7 @@ const Home = ({ posts, albums, portfolios }) => {
                     title={title}
                     summary={summary}
                     path={path}
-                    images={images}
+                    image={images[0]}
                   />
                 )
               )}

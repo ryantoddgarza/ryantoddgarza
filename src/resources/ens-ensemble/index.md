@@ -6,8 +6,11 @@ path: '/ens-ensemble/'
 featured: false
 summary: 'Ens Ensemble is a moniker used as an outlet to voice creative musical expressions regardless of the state of proficiency or perfection.'
 images: [
-  'ens-ensemble/images/ens-wk01.jpg',
-  'ens-ensemble/images/ens-wk02.jpg',
+  'ens-ensemble/images/modular-synth-01.jpg',
+  'ens-ensemble/images/modular-synth-02.jpg',
+  'ens-ensemble/images/modular-synth-03.jpg',
+  'ens-ensemble/images/modular-synth-04.jpg',
+  'ens-ensemble/images/tele-gretsch-amp.jpg',
 ]
 ---
 
@@ -26,3 +29,9 @@ Intended as a nine week undertaking to create and release one track per day, eac
 ## Role
 
 Programming, Synthesizer, Bansuri, Tabla, Percussion, Classical Guitar, Electric Guitar, Recording Engineer, Mixing, Design
+
+## Releases
+
+1. [wk01](/wk01)
+2. [wk02](/wk02)
+3. Jae

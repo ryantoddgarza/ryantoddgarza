@@ -13,7 +13,6 @@ const Layout = ({ children, location }) => {
       ) {
         edges {
           node {
-            path
             type
             featured
             metadata {
@@ -26,6 +25,9 @@ const Layout = ({ children, location }) => {
                   }
                 }
               }
+            }
+            fields {
+              path
             }
           }
         }

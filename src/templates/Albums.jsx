@@ -24,7 +24,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          path
           metadata {
             title
             cover {
@@ -35,6 +34,9 @@ export const pageQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            path
           }
         }
       }

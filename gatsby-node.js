@@ -39,8 +39,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allProjectsJson(filter: { hide: { ne: true } }) {
         edges {
           node {
-            path
             type
+            fields {
+              path
+            }
           }
         }
       }
@@ -80,7 +82,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const albums = path.resolve('./src/templates/Albums.jsx');
   const album = path.resolve('./src/templates/Album.jsx');
 
-  projectEdges.forEach(({ node: { path, type } }) => {
+  projectEdges.forEach(({ node: { type, fields: { path } } }) => {
     let component = null;
     switch (type) {
       case ALBUM:
@@ -222,6 +224,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+
+  if (node.internal.type === 'ProjectsJson') {
+    const path = createFilePath({ node, getNode, basePath: 'projects' });
+
+    createNodeField({
+      node,
+      name: 'path',
+      value: path,
+    });
+  }
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });

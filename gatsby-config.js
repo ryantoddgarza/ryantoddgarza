@@ -103,7 +103,7 @@ module.exports = {
           {
             userAgent: '*',
             allow: '/',
-            disallow: ['/linkinbio/'],
+            disallow: [],
             crawlDelay: 10,
           },
         ],

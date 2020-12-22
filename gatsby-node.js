@@ -58,6 +58,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               tags
               type
             }
+            fields {
+              path
+            }
           }
         }
       }
@@ -104,7 +107,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tagMatrix = [];
   const categoryMatrix = [];
 
-  postEdges.forEach(({ node: { frontmatter: { path, tags, category, type } } }) => {
+  postEdges.forEach(({
+    node: {
+      frontmatter: { path: fmPath, tags, category, type },
+      fields: { path },
+    },
+  }) => {
     if (Array.isArray(tags)) {
       tagMatrix.push(tags);
     }
@@ -126,7 +134,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (component !== null) {
       createPage({
-        path,
+        path: path || fmPath,
         component,
         context: {},
       });
@@ -224,8 +232,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+  const isProject = node.internal.type === 'ProjectsJson';
+  const isMarkdown = node.internal.type === 'MarkdownRemark';
+  const isPost = isMarkdown && !node.frontmatter.type;
+  const isPage = isMarkdown && node.frontmatter.type;
 
-  if (node.internal.type === 'ProjectsJson') {
+  if (isProject) {
     const path = createFilePath({ node, getNode, basePath: 'projects' });
 
     createNodeField({
@@ -235,13 +247,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 
-  if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode });
+  if (isPost) {
+    const path = createFilePath({ node, getNode, basePath: 'posts' });
 
     createNodeField({
       node,
-      name: 'slug',
-      value,
+      name: 'path',
+      value: path,
+    });
+  }
+
+  if (isPage) {
+    const path = createFilePath({ node, getNode });
+
+    createNodeField({
+      node,
+      name: 'path',
+      value: path,
     });
   }
 };

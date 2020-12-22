@@ -25,10 +25,12 @@ export const pageQuery = graphql`
             title
             category
             images
-            path
             tags
             date
             summary
+          }
+          fields {
+            path
           }
         }
       }

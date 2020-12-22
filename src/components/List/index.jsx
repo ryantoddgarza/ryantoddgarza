@@ -22,14 +22,15 @@ const List = ({ data, location }) => {
           ({
             node: {
               excerpt,
-              frontmatter: { title, summary, tags, path, images },
+              frontmatter: { title, summary, tags, images },
+              fields: { path: slug },
             },
           }) => (
             <PostCard
-              key={path}
+              key={slug}
               title={title}
               summary={summary || excerpt}
-              path={path}
+              path={slug}
               tags={tags}
               image={images[0]}
             />

@@ -1,10 +1,9 @@
 ---
-path: '/vim-fuzzy-find-files-without-plugins/'
 category: 'technology'
 featured: true
-tags: ['vim', 'terminal']
 title: 'Vim Fuzzy Find Files Without Plugins'
 date: '2020-11-17T15:12:00.000Z'
+tags: ['vim', 'terminal']
 images: ['https://images.unsplash.com/photo-1473163928189-364b2c4e1135??ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 

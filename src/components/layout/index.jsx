@@ -50,6 +50,9 @@ const Layout = ({ children, location }) => {
               tags
               images
             }
+            fields {
+              path
+            }
           }
         }
       }
@@ -93,8 +96,9 @@ const Layout = ({ children, location }) => {
   );
 
   const postInformations = postEdges.reduce(
-    (postInformations, { node: { frontmatter } }) => {
-      const { type, path, title, summary, tags = [], category } = frontmatter;
+    (postInformations, { node: { frontmatter, fields } }) => {
+      const { type, title, summary, tags = [], category } = frontmatter;
+      const { path } = fields;
 
       if (type === POST || type === null) {
         return [

@@ -13,7 +13,7 @@ export default PostTemplate;
 
 export const pageQuery = graphql`
   query PostByPath($path: String!) {
-    post: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    post: markdownRemark(fields: { path: { eq: $path } }) {
       id
       html
       frontmatter {

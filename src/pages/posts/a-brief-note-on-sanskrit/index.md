@@ -1,10 +1,9 @@
 ---
-path: '/a-brief-note-on-sanskrit/'
 category: 'yoga'
 featured: false
-tags: ['yoga', 'white-notebook', 'sanskrit']
 title: 'White Notebook - A Brief Note On Sanskrit'
 date: '2020-08-08T18:34:00.000Z'
+tags: ['yoga', 'white-notebook', 'sanskrit']
 banner: './images/yoga-0629.jpg'
 images: ['images/yoga-0629.jpg']
 ---

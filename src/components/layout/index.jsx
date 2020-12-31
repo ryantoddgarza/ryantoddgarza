@@ -41,7 +41,6 @@ const Layout = ({ children, location }) => {
             html
             excerpt
             frontmatter {
-              path
               type
               title
               category

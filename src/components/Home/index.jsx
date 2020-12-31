@@ -91,7 +91,8 @@ const Home = ({ posts, albums, portfolios }) => {
               .map(
                 ({
                   node: {
-                    frontmatter: { path, title, summary, images },
+                    frontmatter: { title, summary, images },
+                    fields: { path },
                   },
                 }) => (
                   <PortfolioCard

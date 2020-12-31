@@ -53,7 +53,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             frontmatter {
-              path
               category
               tags
               type
@@ -109,7 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   postEdges.forEach(({
     node: {
-      frontmatter: { path: fmPath, tags, category, type },
+      frontmatter: { tags, category, type },
       fields: { path },
     },
   }) => {
@@ -134,7 +133,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (component !== null) {
       createPage({
-        path: path || fmPath,
+        path,
         component,
         context: {},
       });
@@ -238,7 +237,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const isPage = isMarkdown && node.frontmatter.type;
 
   if (isProject) {
-    const path = createFilePath({ node, getNode, basePath: 'projects' });
+    const path = createFilePath({
+      node,
+      getNode,
+      basePath: 'projects',
+      trailingSlash: false,
+    });
 
     createNodeField({
       node,
@@ -248,7 +252,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   if (isPost) {
-    const path = createFilePath({ node, getNode, basePath: 'posts' });
+    const path = createFilePath({
+      node,
+      getNode,
+      basePath: 'posts',
+      trailingSlash: false,
+    });
 
     createNodeField({
       node,
@@ -258,7 +267,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   if (isPage) {
-    const path = createFilePath({ node, getNode });
+    const path = createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    });
 
     createNodeField({
       node,

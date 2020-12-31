@@ -2,7 +2,6 @@
 type: 'portfolio'
 title: 'Toward the South Plains'
 date: '2019-10-12T00:00:00.000Z'
-path: '/toward-the-south-plains/'
 featured: true
 summary: 'Multimedia collaborative work centered around the cyclical nature of existence and the constant presence of change in our lives.'
 images: [

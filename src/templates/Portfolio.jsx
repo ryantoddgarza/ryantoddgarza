@@ -13,7 +13,7 @@ export default PortfolioTemplate;
 
 export const pageQuery = graphql`
   query PortfolioQuery($path: String!) {
-    portfolio: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    portfolio: markdownRemark(fields: { path: { eq: $path } }) {
       id
       html
       frontmatter {

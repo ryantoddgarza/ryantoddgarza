@@ -28,6 +28,14 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
       }),
     ],
+    module: {
+      rules: [
+        {
+          test: /\.md$/,
+          use: ['html-loader', 'markdown-loader'],
+        },
+      ],
+    },
   });
 };
 

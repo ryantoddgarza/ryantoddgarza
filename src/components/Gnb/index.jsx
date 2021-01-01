@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useMatch } from '@reach/router';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
 import SubMenu from './SubMenu';
@@ -11,13 +12,17 @@ import {
   POSTS_PATH,
   TITLE,
 } from '~/constants';
-import { GnbWrapperOuter, GnbWrapperInner, HeaderName, StyledLink } from './styled';
+import {
+  GnbWrapperOuter,
+  GnbWrapperInner,
+  HeaderName,
+  StyledLink,
+} from './styled';
 
-const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
-  const { pathname } = location;
-  const isMusic = pathname.replace(/\/$/, '').startsWith(ALBUMS_PATH);
-  const isPortfolio = pathname.replace(/\/$/, '').startsWith(PORTFOLIOS_PATH);
-  const isPost = pathname.replace(/\/$/, '').startsWith(POSTS_PATH);
+const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
+  const isMusic = useMatch(ALBUMS_PATH);
+  const isPortfolio = useMatch(PORTFOLIOS_PATH);
+  const isPost = useMatch(`${POSTS_PATH}/:page`);
 
   const subMenus = {
     postCategories: {
@@ -80,9 +85,6 @@ const Gnb = ({ location, categories, hasPost, hasPortfolio, hasAlbum }) => {
 };
 
 Gnb.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})),
   hasPost: PropTypes.bool.isRequired,
   hasPortfolio: PropTypes.bool.isRequired,

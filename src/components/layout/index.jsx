@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { POST, PORTFOLIO, ALBUM } from '~/constants';
 import App from '~/components/App';
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children }) => {
   const { allProjectsJson, allMarkdownRemark } = useStaticQuery(graphql`
     query GatsbyQuery {
       allProjectsJson(
@@ -126,7 +126,6 @@ const Layout = ({ children, location }) => {
 
   return (
     <App
-      location={location}
       categories={categories}
       postInformations={postInformations}
       hasPost={hasPost}
@@ -138,10 +137,8 @@ const Layout = ({ children, location }) => {
   );
 };
 
+export default Layout;
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
 };
-
-export default Layout;

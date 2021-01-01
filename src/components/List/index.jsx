@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from '@reach/router';
 import SEO from '~/components/Common/SEO';
 import PostsWrapper from '~/components/Common/PostsWrapper';
 import PostCard from '~/components/Common/PostCard';
@@ -8,7 +9,8 @@ import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
 import { CONTENT_PER_PAGE } from '~/constants';
 
-const List = ({ data, location }) => {
+const List = ({ data }) => {
+  const location = useLocation();
   const page = getPage(location);
   const allPosts = getPosts(data);
   const postCount = allPosts.length;
@@ -44,7 +46,6 @@ const List = ({ data, location }) => {
 
 List.propTypes = {
   data: PropTypes.shape({}).isRequired,
-  location: PropTypes.shape({}).isRequired,
 };
 
 export default List;

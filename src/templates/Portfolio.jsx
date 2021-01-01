@@ -1,15 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '~/components/layout';
 import Portfolio from '~/components/Portfolio';
 
-const PortfolioTemplate = (props) => (
+const PortfolioTemplate = ({ data, ...props }) => (
   <Layout {...props}>
-    <Portfolio {...props} />
+    <Portfolio data={data} />
   </Layout>
 );
 
 export default PortfolioTemplate;
+
+PortfolioTemplate.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
 
 export const pageQuery = graphql`
   query PortfolioQuery($path: String!) {

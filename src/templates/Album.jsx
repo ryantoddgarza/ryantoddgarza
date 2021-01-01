@@ -10,11 +10,11 @@ const AlbumTemplate = ({ data, ...props }) => (
   </Layout>
 );
 
+export default AlbumTemplate;
+
 AlbumTemplate.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
-
-export default AlbumTemplate;
 
 export const pageQuery = graphql`
   query AlbumQuery($path: String!) {

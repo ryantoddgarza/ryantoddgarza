@@ -8,7 +8,6 @@ import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import {
-  TITLE as SITE_TITLE,
   ALBUMS_PATH,
   PORTFOLIOS_PATH,
   POSTS_PATH,
@@ -48,7 +47,7 @@ const Home = ({ posts, albums, portfolios }) => {
 
   return (
     <>
-      <SEO title={SITE_TITLE} />
+      <SEO />
       <Hero>
         <Title>{intro}</Title>
       </Hero>

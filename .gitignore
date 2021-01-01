@@ -19,7 +19,6 @@ node_modules/
 build/
 
 # configure
-config/
 .env.development
 .env.production
 

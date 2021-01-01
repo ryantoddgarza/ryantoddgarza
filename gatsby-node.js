@@ -170,7 +170,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  const separatePages = (total) => (total ? Math.ceil(total / CONTENT_PER_PAGE + 1) : 1);
+  const separatePages = (total) => (total ? Math.ceil(total / CONTENT_PER_PAGE) : 1);
   const numberOfPages = (count) => Array.from(new Array(count), (el, i) => i + 1);
 
   const postsCount = postEdges.filter(({ node: { frontmatter: { type } } }) =>

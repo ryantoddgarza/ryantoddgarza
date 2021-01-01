@@ -1,25 +1,18 @@
-const {
-  TITLE,
-  DESCRIPTION,
-  KEYWORDS,
-  IMAGE,
-  SITE_URL,
-  AUTHOR,
-} = require('./src/constants');
+const website = require('./config/website');
 
-const siteMetadata = {
-  siteUrl: SITE_URL,
-  title: TITLE,
-  titleTemplate: `%s | ${TITLE}`,
-  description: DESCRIPTION,
-  keywords: KEYWORDS,
-  image: IMAGE,
-  author: AUTHOR,
-};
+const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix;
 
 module.exports = {
-  siteMetadata,
-  pathPrefix: '/',
+  pathPrefix,
+  siteMetadata: {
+    siteUrl: website.url,
+    title: website.title,
+    titleTemplate: `%s | ${website.title}`,
+    description: website.description,
+    keywords: website.keywords,
+    image: website.image,
+    author: website.author,
+  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -85,7 +78,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-107706366-2',
+        trackingId: website.googleAnalyticsId,
         respectDNT: true,
       },
     },
@@ -96,21 +89,21 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Ryan Todd Garza',
-        short_name: 'Ryan Todd Garza',
-        start_url: '/',
-        background_color: '#fff',
-        theme_color: '#a88f48',
+        name: website.title,
+        short_name: website.shortName,
+        start_url: website.pathPrefix,
+        background_color: website.backgroundColor,
+        theme_color: website.themeColor,
         display: 'minimal-ui',
-        icon: 'src/resources/images/icon.png',
+        icon: website.favicon,
       },
     },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: SITE_URL,
-        sitemap: `${SITE_URL}/sitemap.xml`,
+        host: website.url,
+        sitemap: `${website.url}/sitemap.xml`,
         policy: [
           {
             userAgent: '*',

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
 import { useMatch } from '@reach/router';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
@@ -10,7 +11,6 @@ import {
   HOME_PATH,
   PORTFOLIOS_PATH,
   POSTS_PATH,
-  TITLE,
 } from '~/constants';
 import {
   GnbWrapperOuter,
@@ -20,6 +20,18 @@ import {
 } from './styled';
 
 const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          siteTitle: title
+        }
+      }
+    }
+  `);
+
+  const { siteTitle } = site.siteMetadata;
+
   const isMusic = useMatch(ALBUMS_PATH);
   const isPortfolio = useMatch(PORTFOLIOS_PATH);
   const isPost = useMatch(`${POSTS_PATH}/:page`);
@@ -75,7 +87,7 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
     <GnbWrapperOuter>
       <GnbWrapperInner>
         <HeaderName>
-          <StyledLink to={HOME_PATH}>{TITLE}</StyledLink>
+          <StyledLink to={HOME_PATH}>{siteTitle}</StyledLink>
         </HeaderName>
         <MobileNav navLists={{ mainNav, mobileAppendNav }} />
         <DesktopNav navLists={{ mainNav }} />

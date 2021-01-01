@@ -1,10 +1,9 @@
 ---
-path: '/white-notebook-introduction/'
 category: 'yoga'
 featured: false
-tags: ['yoga', 'white-notebook']
 title: 'White Notebook - Introduction'
 date: '2020-08-08T17:06:00.000Z'
+tags: ['yoga', 'white-notebook']
 summary: 'Yoga is a living science in that it takes individuals to tint the more superficial facets individualistically, culturally, and archetypally in order to maintain its relevance in the present...'
 images: ['https://images.unsplash.com/photo-1517664121940-f819957bb072?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---

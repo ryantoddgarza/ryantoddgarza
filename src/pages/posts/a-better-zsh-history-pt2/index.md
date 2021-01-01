@@ -1,10 +1,9 @@
 ---
-path: '/a-better-zsh-history-pt-2/'
 category: 'technology'
 featured: true
-tags: ['shell', 'zsh', 'terminal']
 title: 'A Better Zsh History, pt. 2'
 date: '2020-10-02T12:03:00.000Z'
+tags: ['shell', 'zsh', 'terminal']
 images: ['https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 

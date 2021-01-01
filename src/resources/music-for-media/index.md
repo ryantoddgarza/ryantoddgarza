@@ -2,7 +2,6 @@
 type: 'portfolio'
 title: 'Music for Media'
 date: '2019-01-01T00:00:00.000Z'
-path: '/music-for-media/'
 featured: false
 summary: 'Sound & music department for film, television and commercial work.'
 images:

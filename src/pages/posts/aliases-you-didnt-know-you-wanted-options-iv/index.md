@@ -1,10 +1,9 @@
 ---
-path: '/aliases-you-didnt-know-you-wanted-options-iv/'
 category: 'technology'
 featured: false
-tags: ['shell', 'zsh', 'terminal']
 title: "Aliases You Didn't Know You Wanted: Options `-iv`"
 date: '2020-11-08T15:11:00.000Z'
+tags: ['shell', 'zsh', 'terminal']
 images: ['https://images.unsplash.com/photo-1517242810446-cc8951b2be40?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 

@@ -28,6 +28,14 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
       }),
     ],
+    module: {
+      rules: [
+        {
+          test: /\.md$/,
+          use: ['html-loader', 'markdown-loader'],
+        },
+      ],
+    },
   });
 };
 
@@ -39,8 +47,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allProjectsJson(filter: { hide: { ne: true } }) {
         edges {
           node {
-            path
             type
+            fields {
+              path
+            }
           }
         }
       }
@@ -51,10 +61,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             frontmatter {
-              path
               category
               tags
               type
+            }
+            fields {
+              path
             }
           }
         }
@@ -80,7 +92,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const albums = path.resolve('./src/templates/Albums.jsx');
   const album = path.resolve('./src/templates/Album.jsx');
 
-  projectEdges.forEach(({ node: { path, type } }) => {
+  projectEdges.forEach(({ node: { type, fields: { path } } }) => {
     let component = null;
     switch (type) {
       case ALBUM:
@@ -102,7 +114,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tagMatrix = [];
   const categoryMatrix = [];
 
-  postEdges.forEach(({ node: { frontmatter: { path, tags, category, type } } }) => {
+  postEdges.forEach(({
+    node: {
+      frontmatter: { tags, category, type },
+      fields: { path },
+    },
+  }) => {
     if (Array.isArray(tags)) {
       tagMatrix.push(tags);
     }
@@ -222,14 +239,52 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+  const isProject = node.internal.type === 'ProjectsJson';
+  const isMarkdown = node.internal.type === 'MarkdownRemark';
+  const isPost = isMarkdown && !node.frontmatter.type;
+  const isPage = isMarkdown && node.frontmatter.type;
 
-  if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode });
+  if (isProject) {
+    const path = createFilePath({
+      node,
+      getNode,
+      basePath: 'projects',
+      trailingSlash: false,
+    });
 
     createNodeField({
       node,
-      name: 'slug',
-      value,
+      name: 'path',
+      value: path,
+    });
+  }
+
+  if (isPost) {
+    const path = createFilePath({
+      node,
+      getNode,
+      basePath: 'posts',
+      trailingSlash: false,
+    });
+
+    createNodeField({
+      node,
+      name: 'path',
+      value: path,
+    });
+  }
+
+  if (isPage) {
+    const path = createFilePath({
+      node,
+      getNode,
+      trailingSlash: false,
+    });
+
+    createNodeField({
+      node,
+      name: 'path',
+      value: path,
     });
   }
 };

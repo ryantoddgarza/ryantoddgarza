@@ -1,10 +1,9 @@
 ---
-path: '/the-ashtanga-of-patanjali/'
 category: 'yoga'
 featured: true
-tags: ['yoga', 'white-notebook', 'sutra']
 title: 'White Notebook - The Ashtanga of Patanjali'
 date: '2020-08-08T22:09:00.000Z'
+tags: ['yoga', 'white-notebook', 'sutra']
 summary: 'The Yoga Sūtras of Patañjali are a condensed and systematic exposition of the essential philosophy and technique of Yoga in...'
 banner: './images/yoga-0455.jpg'
 images: ['images/yoga-0455.jpg']

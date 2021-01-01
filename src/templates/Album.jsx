@@ -18,7 +18,7 @@ export default AlbumTemplate;
 
 export const pageQuery = graphql`
   query AlbumQuery($path: String!) {
-    album: projectsJson(path: { eq: $path }) {
+    album: projectsJson(fields: { path: { eq: $path } }) {
       type
       metadata {
         title

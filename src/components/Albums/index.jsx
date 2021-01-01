@@ -12,9 +12,16 @@ const Albums = ({
   <>
     <SEO title="Albums" />
     <Wrapper>
-      {albums.map(({ node: { path, metadata: { title, cover } } }) => (
-        <AlbumCard key={title} title={title} image={cover} path={path} />
-      ))}
+      {albums.map(
+        ({
+          node: {
+            metadata: { title, cover },
+            fields: { path },
+          },
+        }) => (
+          <AlbumCard key={title} title={title} image={cover} path={path} />
+        )
+      )}
     </Wrapper>
   </>
 );

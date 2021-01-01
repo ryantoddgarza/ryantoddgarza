@@ -1,9 +1,20 @@
-const { TITLE, DESCRIPTION, SITE_URL } = require('./src/constants');
+const {
+  TITLE,
+  DESCRIPTION,
+  KEYWORDS,
+  IMAGE,
+  SITE_URL,
+  AUTHOR,
+} = require('./src/constants');
 
 const siteMetadata = {
   title: TITLE,
+  titleTemplate: `%s | ${TITLE}`,
   description: DESCRIPTION,
-  siteUrl: SITE_URL,
+  keywords: KEYWORDS,
+  image: IMAGE,
+  url: SITE_URL,
+  author: AUTHOR,
 };
 
 module.exports = {
@@ -80,6 +91,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -103,7 +115,7 @@ module.exports = {
           {
             userAgent: '*',
             allow: '/',
-            disallow: ['/linkinbio/'],
+            disallow: [],
             crawlDelay: 10,
           },
         ],

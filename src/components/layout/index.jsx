@@ -13,7 +13,6 @@ const Layout = ({ children, location }) => {
       ) {
         edges {
           node {
-            path
             type
             featured
             metadata {
@@ -27,6 +26,9 @@ const Layout = ({ children, location }) => {
                 }
               }
             }
+            fields {
+              path
+            }
           }
         }
       }
@@ -39,7 +41,6 @@ const Layout = ({ children, location }) => {
             html
             excerpt
             frontmatter {
-              path
               type
               title
               category
@@ -47,6 +48,9 @@ const Layout = ({ children, location }) => {
               summary
               tags
               images
+            }
+            fields {
+              path
             }
           }
         }
@@ -91,8 +95,9 @@ const Layout = ({ children, location }) => {
   );
 
   const postInformations = postEdges.reduce(
-    (postInformations, { node: { frontmatter } }) => {
-      const { type, path, title, summary, tags = [], category } = frontmatter;
+    (postInformations, { node: { frontmatter, fields } }) => {
+      const { type, title, summary, tags = [], category } = frontmatter;
+      const { path } = fields;
 
       if (type === POST || type === null) {
         return [

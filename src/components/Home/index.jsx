@@ -8,7 +8,6 @@ import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import {
-  TITLE as SITE_TITLE,
   ALBUMS_PATH,
   PORTFOLIOS_PATH,
   POSTS_PATH,
@@ -17,9 +16,23 @@ import makeTypist from '~/utils/makeTypist';
 import { Title } from './styled';
 
 const Home = ({ posts, albums, portfolios }) => {
-  const featuredAlbums = albums.filter(({ node: { featured } }) => featured === true);
-  const featuredPosts = posts.filter(({ node: { frontmatter: { featured } } }) => featured === true);
-  const featuredPortfolios = portfolios.filter(({ node: { frontmatter: { featured } } }) => featured === true);
+  const featuredAlbums = albums.filter(
+    ({ node: { featured } }) => featured === true
+  );
+  const featuredPosts = posts.filter(
+    ({
+      node: {
+        frontmatter: { featured },
+      },
+    }) => featured === true
+  );
+  const featuredPortfolios = portfolios.filter(
+    ({
+      node: {
+        frontmatter: { featured },
+      },
+    }) => featured === true
+  );
 
   const [intro, setIntro] = useState('');
   const introduction = makeTypist("Hi, I'm Ryan.", setIntro);
@@ -34,7 +47,7 @@ const Home = ({ posts, albums, portfolios }) => {
 
   return (
     <>
-      <SEO title={SITE_TITLE} />
+      <SEO />
       <Hero>
         <Title>{intro}</Title>
       </Hero>
@@ -48,14 +61,21 @@ const Home = ({ posts, albums, portfolios }) => {
             />
             {featuredAlbums
               .slice(0, 1)
-              .map(({ node: { path, metadata: { title, cover } } }) => (
-                <AlbumCard
-                  key={title}
-                  title={title}
-                  path={path}
-                  image={cover}
-                />
-              ))}
+              .map(
+                ({
+                  node: {
+                    metadata: { title, cover },
+                    fields: { path },
+                  },
+                }) => (
+                  <AlbumCard
+                    key={title}
+                    title={title}
+                    path={path}
+                    image={cover}
+                  />
+                )
+              )}
           </SimpleWrapper>
         ) : null}
         {featuredPortfolios.length >= 4 ? (
@@ -70,7 +90,8 @@ const Home = ({ posts, albums, portfolios }) => {
               .map(
                 ({
                   node: {
-                    frontmatter: { path, title, summary, images },
+                    frontmatter: { title, summary, images },
+                    fields: { path },
                   },
                 }) => (
                   <PortfolioCard
@@ -97,7 +118,8 @@ const Home = ({ posts, albums, portfolios }) => {
                 ({
                   node: {
                     excerpt,
-                    frontmatter: { title, summary, tags, path, images },
+                    frontmatter: { title, summary, tags, images },
+                    fields: { path },
                   },
                 }) => (
                   <PostCard

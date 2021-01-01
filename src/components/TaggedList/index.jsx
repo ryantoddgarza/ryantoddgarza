@@ -26,7 +26,8 @@ const TaggedList = ({ data, location }) => {
           ({
             node: {
               excerpt,
-              frontmatter: { title, summary, tags, path, images },
+              frontmatter: { title, summary, tags, images },
+              fields: { path },
             },
           }) => (
             <PostCard

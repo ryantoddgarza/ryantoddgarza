@@ -1,11 +1,10 @@
 import React from 'react';
 import SEO from '~/components/Common/SEO';
-import { TITLE } from '~/constants';
 import { Wrapper } from './styled';
 
 const NotFound = () => (
   <>
-    <SEO title={TITLE} />
+    <SEO />
     <Wrapper>
       <header>
         <h2>Error 404</h2>

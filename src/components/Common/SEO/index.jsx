@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from '@reach/router';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -22,7 +23,8 @@ const SEO = ({ title, type, description, author }) => {
     `
   );
 
-  const { pathname } = window !== 'undefined' ? window.location : '';
+  const location = useLocation();
+  const { pathname } = location;
 
   const {
     defaultTitle,

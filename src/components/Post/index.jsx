@@ -172,9 +172,6 @@ Post.propTypes = {
       }),
     }),
   }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default Post;

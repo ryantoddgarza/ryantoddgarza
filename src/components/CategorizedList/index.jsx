@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from '@reach/router';
 import SEO from '~/components/Common/SEO';
 import PostsWrapper from '~/components/Common/PostsWrapper';
 import PostCard from '~/components/Common/PostCard';
@@ -9,7 +10,8 @@ import getPage from '~/utils/getPage';
 import titleCase from '~/utils/titleCase';
 import { CONTENT_PER_PAGE } from '~/constants';
 
-const CategorizedList = ({ data, location }) => {
+const CategorizedList = ({ data }) => {
+  const location = useLocation();
   const page = getPage(location);
   const [, , category] = location.pathname.split('/');
   const allPosts = data
@@ -53,9 +55,6 @@ const CategorizedList = ({ data, location }) => {
 
 CategorizedList.propTypes = {
   data: PropTypes.shape({}).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default CategorizedList;

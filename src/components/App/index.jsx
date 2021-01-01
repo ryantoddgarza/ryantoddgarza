@@ -34,7 +34,6 @@ export default class App extends Component {
 
   render() {
     const {
-      location,
       categories,
       postInformations,
       hasPost,
@@ -62,7 +61,6 @@ export default class App extends Component {
         <Wrapper>
           <nav>
             <Gnb
-              location={location}
               categories={categories}
               postInformations={postInformations}
               hasPost={hasPost}
@@ -86,7 +84,6 @@ export default class App extends Component {
 
 App.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
   categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   postInformations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   hasPost: PropTypes.bool.isRequired,

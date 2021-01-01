@@ -8,12 +8,12 @@ const {
 } = require('./src/constants');
 
 const siteMetadata = {
+  siteUrl: SITE_URL,
   title: TITLE,
   titleTemplate: `%s | ${TITLE}`,
   description: DESCRIPTION,
   keywords: KEYWORDS,
   image: IMAGE,
-  url: SITE_URL,
   author: AUTHOR,
 };
 

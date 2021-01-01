@@ -10,12 +10,12 @@ const SEO = ({ title, type, description, author }) => {
       query {
         site {
           siteMetadata {
+            siteUrl
             defaultTitle: title
             titleTemplate
             defaultDescription: description
             keywords
             defaultImage: image
-            siteUrl: url
             defaultAuthor: author
           }
         }
@@ -27,12 +27,12 @@ const SEO = ({ title, type, description, author }) => {
   const { pathname } = location;
 
   const {
+    siteUrl,
     defaultTitle,
     titleTemplate,
     defaultDescription,
     keywords,
     defaultImage,
-    siteUrl,
     defaultAuthor,
   } = site.siteMetadata;
 

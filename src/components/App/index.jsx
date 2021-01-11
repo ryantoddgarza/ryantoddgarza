@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import Gnb from '~/components/Gnb';
 import Footer from '~/components/Footer';
 import { textColor, backgroundColor } from '~/design-system';
-import { Wrapper } from './styled';
+import { GlobalStyle, SiteWrapper } from './styled';
 
 export default class App extends Component {
   constructor(props) {
@@ -58,7 +58,8 @@ export default class App extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <Wrapper>
+        <GlobalStyle />
+        <SiteWrapper>
           <nav>
             <Gnb
               categories={categories}
@@ -76,7 +77,7 @@ export default class App extends Component {
           <footer>
             <Footer />
           </footer>
-        </Wrapper>
+        </SiteWrapper>
       </ThemeProvider>
     );
   }

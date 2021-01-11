@@ -4,9 +4,7 @@ title: 'Web Development'
 date: '2020-07-30:00:00.000Z'
 featured: true
 summary: 'Striving to write elegant solutions for web applications in which design, performance, user experience, and accessibility all coexist.'
-images: [
-  'web-development/images/web-dev-01.jpg',
-]
+images: ['web-development/images/web-dev-01.jpg']
 ---
 
 # Web Development
@@ -18,13 +16,14 @@ My focus is writing readable, maintainable, and scalable code for web applicatio
 <!-- Svara -->
 <article class="tech-card">
 
-[View project in portfolio](/svara/)
+[View project in portfolio](/svara)
 
 ### Svara
 
 - Dynamic
 - Application
 - 2020
+- 2021
 
 Tech stack
 
@@ -40,6 +39,28 @@ Tech stack
 
 </article>
 
+<!-- autonoME -->
+<article class="tech-card">
+
+[View project in portfolio](/autonome)
+
+### autonoME
+
+- Chrome extension
+- Productivity
+- 2020
+- 2021
+
+Tech stack
+
+- JavaScript
+- Shell script
+- Git
+
+[GitHub →](https://github.com/ryantoddgarza/autonoME)
+
+</article>
+
 <!-- Ryan Todd Garza -->
 <article class="tech-card">
 
@@ -49,6 +70,7 @@ Tech stack
 - Portfolio
 - Blog
 - 2020
+- 2021
 
 Tech stack
 
@@ -57,7 +79,6 @@ Tech stack
 - Styled Components
 - GraphQL
 - Markdown
-- Jest
 - Continuous Integration
 - Google Analytics
 - Git
@@ -86,28 +107,10 @@ Tech stack
 
 </article>
 
-<!-- autonoME -->
-<article class="tech-card">
-
-### autonoME
-
-- Chrome extension
-- Productivity
-- 2020
-
-Tech stack
-
-- JavaScript
-- Git
-
-[GitHub →](https://github.com/ryantoddgarza/autonoME)
-
-</article>
-
 <!-- Toward The South Plains -->
 <article class="tech-card">
 
-[View project in portfolio](/toward-the-south-plains/)
+[View project in portfolio](/toward-the-south-plains)
 
 ### Toward The South Plains
 

@@ -1,17 +1,12 @@
 import styled from 'styled-components';
-import {
-  backgroundColor,
-  heading,
-  primaryColor,
-  space,
-  textColor,
-} from '~/design-system';
+import { space, textColor } from '~/design-system';
 import styledCodeBlock from './styledCodeBlock';
+import { typography, font } from '~/styles';
 
 export const PostHeader = styled.header`
   h1 {
-    margin: ${space.x6} 0 ${space.x12};
-    font-size: ${heading.lvl1.size.desktop};
+    ${font.h1}
+    margin: 2rem 0 1.5rem;
   }
 
   ul {
@@ -41,77 +36,32 @@ export const Tags = styled.div`
 `;
 
 export const PostContent = styled.section`
+  ${typography}
   padding: ${space.x8} 0 ${space.x16};
-  line-height: 1.6;
-
-  h2 {
-    margin: ${space.x6} 0 ${space.x4};
-    font-size: ${heading.lvl2.size.desktop};
-  }
-
-  h3 {
-    margin: ${space.x6} 0 ${space.x4};
-    font-size: ${heading.lvl3.size.desktop};
-  }
-
-  h4 {
-    margin: ${space.x6} 0 ${space.x4};
-    font-size: ${heading.lvl4.size.desktop};
-  }
-
-  p {
-    margin: ${space.x4} 0 0;
-  }
 
   blockquote {
-    margin: ${space.x12} 0;
-    padding: 0 0 0 ${space.x8};
-    line-height: 1.2;
-    color: ${textColor.light};
-    font-style: italic;
-    font-size: 1.5rem;
-  }
+    p {
+      margin: ${space.x12} 0;
+      padding: 0 0 0 ${space.x8};
+      font-size: 1.5rem;
+      line-height: 1.2;
+      color: ${textColor.light};
+      font-style: italic;
+    }
 
-  cite {
-    display: block;
-    font-size: 0.8em;
-    text-align: right;
+    cite {
+      display: block;
+      font-size: 0.625em;
+      text-align: right;
+    }
   }
 
   pre {
     margin: ${space.x6} 0;
   }
 
-  code {
-    padding: 0.15em 0.3em;
-    font-size: 85%;
-    background-color: ${backgroundColor.darker};
-    border-radius: 5px;
-  }
-
-  figcaption {
-    font-size: 11px;
-    text-align: center;
-    color: ${textColor.light};
-  }
-
-  ul {
-    list-style-type: disc;
-    list-style-position: inside;
-  }
-
-  li {
-    margin: ${space.x3} 0 0 ${space.x6};
-  }
-
-  em,
-  i {
-    font-style: italic;
-  }
-
-  strong,
-  b {
-    font-weight: 600;
+  figure {
+    margin: 1rem 0;
   }
 
   sup,
@@ -127,14 +77,6 @@ export const PostContent = styled.section`
 
   sub {
     vertical-align: sub;
-  }
-
-  a {
-    color: ${primaryColor.default};
-
-    &:hover {
-      color: ${textColor.default};
-    }
   }
 
   ${styledCodeBlock}

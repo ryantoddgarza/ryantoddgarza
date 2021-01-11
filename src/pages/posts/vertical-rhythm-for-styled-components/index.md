@@ -46,7 +46,6 @@ const config = {
     size: unit(4),
     margin: unit(4),
   },
-  spacing: '0.1em',
 };
 
 export const h1 = css`
@@ -130,7 +129,7 @@ Use the default export as a base for global styles.
 import { createGlobalStyle } from 'styled-components';
 import typography from '@styles/typography'; // replace with your path
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${typography}
 `;
 ```
@@ -141,7 +140,7 @@ Use module exports for granulated element styling.
 import styled from 'styled-components';
 import { h3, p } from '@styles/typography'; // replace with your path
 
-export const Card = styled.div`
+const Card = styled.div`
   .title {
     ${h3}
   }
@@ -158,8 +157,12 @@ export const Card = styled.div`
 
 `baseUnit` is directly related to the typographic scale. Values passed to the `unit()` function return multiples of the `baseUnit`.
 
-The `config` object defines scales relative to the `baseunit` and is where most modification should take place.
+The `config` object defines scales relative to the `baseUnit` and is where most modification should take place.
 
 Individual element exports contain implementation detail but can serve more specialized modifications as well. For example, the keen eyed may have noticed that setting the line-height to equal the font size is the same as setting it to `1` and therefore redundant. However, in the case that it needs to be expanded as in the `p` element, this makes it easier to maintain the vertical rhythm by appending units to the configured size: `rem(config.p.size + unit(2))`
 
 The `typography` variable wraps the individual elements for default export.
+
+## Further reading
+
+- [Why is Vertical Rhythm an Important Typography Practice?](https://zellwk.com/blog/why-vertical-rhythms/)

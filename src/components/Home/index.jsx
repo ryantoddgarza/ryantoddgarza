@@ -78,7 +78,7 @@ const Home = ({ posts, albums, portfolios }) => {
               )}
           </SimpleWrapper>
         ) : null}
-        {featuredPortfolios.length >= 4 ? (
+        {featuredPortfolios.length >= 2 ? (
           <SimpleWrapper>
             <SectionHeader
               title="Featured Projects"
@@ -86,7 +86,12 @@ const Home = ({ posts, albums, portfolios }) => {
               linkURL={PORTFOLIOS_PATH}
             />
             {featuredPortfolios
-              .slice(0, 4)
+              .slice(
+                0,
+                featuredPortfolios.length % 2 === 0
+                  ? featuredPortfolios.length
+                  : featuredPortfolios.length - 1
+              )
               .map(
                 ({
                   node: {

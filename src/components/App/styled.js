@@ -1,15 +1,19 @@
-import styled from 'styled-components';
-import { textColor, backgroundColor, navbar } from '~/design-system';
+import styled, { createGlobalStyle } from 'styled-components';
+import { navbar } from '~/design-system';
+import { reset, global } from '~/styles';
 
-export const Wrapper = styled.div`
+export const GlobalStyle = createGlobalStyle`
+  ${reset}
+  ${global}
+`;
+
+export const SiteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  color: ${textColor.default};
-  background-color: ${backgroundColor.default};
 
   & > main {
-    flex: 1 0 auto;
+    flex: 1;
     padding: ${navbar.height} 0 0;
   }
 

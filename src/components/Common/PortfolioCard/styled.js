@@ -78,7 +78,7 @@ export const CardBody = styled.div`
   max-width: calc(288px + 10vw);
   padding: ${space.x4};
   color: ${textColor.onDark};
-  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3), 0 0 32px rgba(0, 0, 0, 0.2);
 
   p {
     font-size: 0.875rem;

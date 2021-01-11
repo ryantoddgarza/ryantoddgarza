@@ -1,113 +1,67 @@
 import styled from 'styled-components';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { breakpoint, primaryColor, heading, space } from '~/design-system';
+import { breakpoint, primaryColor } from '~/design-system';
 import styledTechCard from './styledTechCard';
+import { typography } from '~/styles';
 
 export const Wrapper = styled(SimpleWrapper)`
-  width: 90%;
-  margin: 0 auto;
-  padding: 3rem 0 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
 
-  &:before,
-  &:after {
-    display: block;
-    content: '';
-    clear: both;
-  }
-
-  & > section {
-    ${breakpoint.from('tablet-l')} {
-      float: left;
-      width: 50%;
-      max-height: calc(100vh - 100px);
-      overflow-y: scroll;
-    }
-
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 6px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: ${primaryColor.default};
-      border-radius: 6px;
-    }
+  ${breakpoint.from('tablet-l')} {
+    flex-direction: row;
   }
 `;
 
-export const PortfolioDescription = styled.section`
-  padding: 0 ${space.x4} ${space.x4} 0;
-  font-size: 14px;
-  line-height: 1.6em;
-  ${breakpoint.to('phone')} {
-    margin: 0 0 16px;
-    padding: 0 0 16px;
+const Column = styled.section`
+  flex: 1;
+  padding: 1rem 0;
+
+  ${breakpoint.from('tablet-l')} {
+    max-height: calc(100vh - 3rem);
+    overflow-y: scroll;
+    padding: 1rem;
   }
 
-  h1 {
-    margin: 0 0 ${space.x6};
-    font-size: ${heading.lvl1.size.desktop};
-    line-height: 1;
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
   }
 
-  h2 {
-    margin: 24px 0 10px;
-    font-size: ${heading.lvl2.size.desktop};
+  ::-webkit-scrollbar-thumb {
+    background-color: ${primaryColor.default};
+    border-radius: 6px;
   }
+`;
 
-  h3 {
-    margin: 24px 0 10px;
-    font-size: ${heading.lvl3.size.desktop};
-  }
-
-  p {
-    margin: ${space.x4} 0 0;
-  }
-
-  ol,
-  ul {
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    padding-inline-start: 3em;
-  }
+export const PortfolioDescription = styled(Column)`
+  ${typography}
 
   ol {
-    list-style: decimal-leading-zero;
+    list-style-type: decimal-leading-zero;
   }
 
-  ul {
-    list-style: disc;
+  figure {
+    margin: 1rem 0;
   }
 
-  em,
-  i {
-    font-style: italic;
-  }
-
-  strong,
-  b {
-    font-weight: 600;
-  }
-
-  a {
-    color: ${primaryColor.default};
+  .gatsby-resp-image-wrapper,
+  .gatsby-resp-iframe-wrapper {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
   }
 
   ${styledTechCard}
 `;
 
-export const PortfolioImages = styled.section`
+export const PortfolioImages = styled(Column)`
   img {
-    padding: 0 ${space.x4} ${space.x4};
     width: 100%;
     height: auto;
-    ${breakpoint.to('phone')} {
-      float: left;
-      margin: 0 0 ${space.x2};
-      padding: 0;
-      &:last-child {
-        margin: 0 0 ${space.x4};
-      }
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+
+    &:not(:last-child) {
+      margin: 0 0 1rem;
     }
   }
 `;

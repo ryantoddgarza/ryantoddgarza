@@ -37,14 +37,13 @@ Tech stack
 - SEO
 - Google Analytics
 
-[Visit site →](https://inaminitmusic.com)
+[Visit site →](https://inaminitmusic.com)<br>
+[GitHub →](https://github.com/ryantoddgarza/inaminit-music)
 
 </article>
 
 <!-- Svara -->
 <article class="tech-card">
-
-[View project in portfolio](/svara)
 
 ### Svara
 
@@ -69,14 +68,14 @@ Tech stack
 - Web Workers API
 - Git
 
-[Visit site →](https://svara.dev)
+[View project in portfolio](/svara)<br>
+[Visit site →](https://svara.dev)<br>
+[GitHub →](https://github.com/ryantoddgarza/svara)
 
 </article>
 
 <!-- autonoME -->
 <article class="tech-card">
-
-[View project in portfolio](/autonome)
 
 ### autonoME
 
@@ -91,6 +90,8 @@ Tech stack
 - Shell script
 - Git
 
+[View project in portfolio](/autonome)<br>
+[View in the Chrome Web Store →](https://chrome.google.com/webstore/detail/autonome/ejffjoifollhhakdacnepnkoidpjkhdg)<br>
 [GitHub →](https://github.com/ryantoddgarza/autonoME)
 
 </article>
@@ -125,7 +126,8 @@ Tech stack
 - SEO
 - Google Analytics
 
-[Visit site →](https://ryantoddgarza.com)
+[Visit site →](https://ryantoddgarza.com)<br>
+[GitHub →](https://github.com/ryantoddgarza/ryantoddgarza)
 
 </article>
 
@@ -152,8 +154,6 @@ Tech stack
 <!-- Toward The South Plains -->
 <article class="tech-card">
 
-[View project in portfolio](/toward-the-south-plains)
-
 ### Toward The South Plains
 
 - Static
@@ -167,6 +167,7 @@ Tech stack
 - Bootstrap
 - Git
 
+[View project in portfolio](/toward-the-south-plains)<br>
 [Visit site →](http://towardthesouthplains.com)
 
 </article>

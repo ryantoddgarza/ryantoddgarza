@@ -13,7 +13,7 @@ const styledTechCard = css`
 
     h3 {
       margin: 0 0 ${space.x6};
-      font-size: 1.25rem;
+      font-size: 1.375rem;
     }
 
     p {

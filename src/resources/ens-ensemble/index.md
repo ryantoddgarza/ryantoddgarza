@@ -4,16 +4,15 @@ title: 'Ens Ensemble'
 date: '2019-06-11T00:00:00.000Z'
 featured: true
 summary: 'Ens Ensemble is a moniker used as an outlet to voice creative musical expressions regardless of the state of proficiency or perfection.'
-images: [
-  'ens-ensemble/images/modular-synth-01.jpg',
-  'ens-ensemble/images/modular-synth-02.jpg',
-  'ens-ensemble/images/modular-synth-03.jpg',
-  'ens-ensemble/images/modular-synth-04.jpg',
-  'ens-ensemble/images/tele-gretsch-amp.jpg',
-]
+images:
+  [
+    'ens-ensemble/images/modular-synth-01.jpg',
+    'ens-ensemble/images/modular-synth-02.jpg',
+    'ens-ensemble/images/modular-synth-03.jpg',
+    'ens-ensemble/images/modular-synth-04.jpg',
+    'ens-ensemble/images/tele-gretsch-amp.jpg',
+  ]
 ---
-
-# Ens Ensemble
 
 [Listen on Bandcamp →](https://ensensemble.bandcamp.com/)
 

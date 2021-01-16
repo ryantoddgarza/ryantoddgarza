@@ -7,8 +7,6 @@ summary: 'Striving to create elegant solutions for web applications in which des
 images: ['web-development/images/web-dev-01.jpg']
 ---
 
-# Web Development
-
 My focus is writing readable, maintainable, and scalable code for web applications that provides for a market where design, efficiency, user experience, and accessibility must all coexist.Striving to create elegant solutions to complex problems keeps me in search of opportunity for constant challenge, learning, and growth.
 
 ## Projects

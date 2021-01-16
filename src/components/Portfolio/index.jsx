@@ -16,6 +16,7 @@ const Portfolio = ({
     <SEO title={title} />
     <Wrapper>
       <PortfolioDescription>
+        <h1>{title}</h1>
         <section dangerouslySetInnerHTML={{ __html: html }} />
       </PortfolioDescription>
       {images ? (

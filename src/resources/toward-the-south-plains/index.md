@@ -4,15 +4,14 @@ title: 'Toward the South Plains'
 date: '2019-10-12T00:00:00.000Z'
 featured: true
 summary: 'Multimedia collaborative work centered around the cyclical nature of existence and the constant presence of change in our lives.'
-images: [
-  'toward-the-south-plains/images/ttsp-01.jpg',
-  'toward-the-south-plains/images/ttsp-02.jpg',
-  'toward-the-south-plains/images/ttsp-03.jpg',
-  'toward-the-south-plains/images/ttsp-04.jpg',
-]
+images:
+  [
+    'toward-the-south-plains/images/ttsp-01.jpg',
+    'toward-the-south-plains/images/ttsp-02.jpg',
+    'toward-the-south-plains/images/ttsp-03.jpg',
+    'toward-the-south-plains/images/ttsp-04.jpg',
+  ]
 ---
-
-# Toward the South Plains
 
 (Ongoing)
 
@@ -37,7 +36,6 @@ Over the years the work has widened from focus on this singular circumstance to 
 **Centered around the cyclical nature of existence, cycles of the moon and of water, stages of grief, the transmigration of the soul, and the constant presence of change in our lives, the work is highly conceptual and multidimensional in scope.** In its entirety it contains not only 30 pieces of written music for piano, organ, orchestra, and choir, but field recordings and photographs from across the southwestern united states, sound design,video, and animation. Plans for geomapped interactivity are being discussed as well.
 
 ### Programming
-
 
 <article class="tech-card">
 

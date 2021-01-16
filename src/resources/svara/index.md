@@ -4,12 +4,8 @@ title: 'Svara'
 date: '2020-08-08:00:00.000Z'
 featured: true
 summary: 'Svara is a generative music application based on the traditional rules of Hindustani ragas.'
-images: [
-  'svara/images/svara-01.jpg',
-]
+images: ['svara/images/svara-01.jpg']
 ---
-
-# Svara
 
 Svara is a generative music application based on the traditional rules of Hindustani ragas. Ragas being rule based systems in which to improvise, they are a perfect source for a generative framework and a great opportunity to execute a historical tradition in a modern medium.
 
@@ -28,6 +24,7 @@ Tech stack
 - ReactJS
 - SASS
 - Webpack
+- Babel
 - Web Audio API
 - Canvas API
 - Web Worker API

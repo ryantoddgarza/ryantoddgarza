@@ -12,8 +12,6 @@ images:
   ]
 ---
 
-# Music for Media
-
 Sound & music department for film, television and commercial work.
 
 [IMDB →](https://www.imdb.com/name/nm9906654/)

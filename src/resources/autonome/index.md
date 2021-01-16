@@ -7,8 +7,6 @@ summary: 'autonoME is a Chrome extension that hides select YouTube components pu
 images: ['autonome/images/autonome-tile.jpg']
 ---
 
-# autonoME
-
 autonoME is a Chrome extension that hides YouTube components purposed to algorithmically suggest content; promoting more autonomous engagement.
 
 [View in the Chrome Web Store →](https://chrome.google.com/webstore/detail/autonome/ejffjoifollhhakdacnepnkoidpjkhdg)
@@ -19,10 +17,10 @@ On load, a [mutation observer](https://developer.mozilla.org/en-US/docs/Web/API/
 
 Hidden elements:
 
-- browse (home)
-- related (watch)
-- comments (watch)
-- list renderers (results)
+- Browse (home)
+- Related (watch)
+- Comments (watch)
+- List renderers (results)
 
 <article class="tech-card">
 

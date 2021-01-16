@@ -3,15 +3,45 @@ type: 'portfolio'
 title: 'Web Development'
 date: '2020-07-30:00:00.000Z'
 featured: true
-summary: 'Striving to write elegant solutions for web applications in which design, performance, user experience, and accessibility all coexist.'
+summary: 'Striving to create elegant solutions for web applications in which design, performance, user experience, and accessibility all coexist.'
 images: ['web-development/images/web-dev-01.jpg']
 ---
 
 # Web Development
 
-My focus is writing readable, maintainable, and scalable code for web applications that provides for a market where design, efficiency, user experience, and accessibility must all coexist. Striving to create elegant solutions to complex problems keeps me in search of opportunity for constant challenge, learning, and growth.
+My focus is writing readable, maintainable, and scalable code for web applications that provides for a market where design, efficiency, user experience, and accessibility must all coexist.Striving to create elegant solutions to complex problems keeps me in search of opportunity for constant challenge, learning, and growth.
 
 ## Projects
+
+<!-- Inaminit Music -->
+<article class="tech-card">
+
+### Inaminit Music
+
+- Static
+- Website
+- 2021
+
+Tech stack
+
+- TypeScript
+- React
+- Gatsby
+- Styled Components
+- GraphQL
+- Webpack
+- Babel
+- ESLint
+- Prettier
+- Node.js
+- npm
+- Git
+- SEO
+- Google Analytics
+
+[Visit site →](https://inaminitmusic.com)
+
+</article>
 
 <!-- Svara -->
 <article class="tech-card">
@@ -27,9 +57,15 @@ My focus is writing readable, maintainable, and scalable code for web applicatio
 
 Tech stack
 
+- JavaScript
 - React
 - SCSS
 - Webpack
+- Babel
+- ESLint
+- Prettier
+- Node.js
+- npm
 - Web Audio API
 - Canvas API
 - Web Workers API
@@ -74,14 +110,22 @@ Tech stack
 
 Tech stack
 
+- JavaScript
 - React
 - Gatsby
 - Styled Components
 - GraphQL
 - Markdown
-- Continuous Integration
-- Google Analytics
+- Webpack
+- ESLint
+- Prettier
+- Node.js
+- npm
+- Husky
+- lint-staged
 - Git
+- SEO
+- Google Analytics
 
 [Visit site →](https://ryantoddgarza.com)
 

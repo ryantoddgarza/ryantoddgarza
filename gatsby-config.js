@@ -1,19 +1,35 @@
-const website = require('./config/website');
+const site = require('./config');
 
-const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix;
+const pathPrefix = site.pathPrefix === '/' ? '' : site.pathPrefix;
 
 module.exports = {
   pathPrefix,
   siteMetadata: {
-    siteUrl: website.url,
-    title: website.title,
-    titleTemplate: `%s | ${website.title}`,
-    description: website.description,
-    keywords: website.keywords,
-    image: website.image,
-    author: website.author,
+    siteUrl: site.url,
+    title: site.title,
+    titleTemplate: `%s | ${site.title}`,
+    description: site.description,
+    keywords: site.keywords,
+    image: site.image,
+    author: site.author,
   },
   plugins: [
+    // First-priority plugins
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [site.gaMeasurementId, site.uaMeasurementId],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
+      },
+    },
+    // Other plugins
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -75,35 +91,26 @@ module.exports = {
       },
     },
     'gatsby-plugin-catch-links',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: website.googleAnalyticsId,
-        respectDNT: true,
-      },
-    },
-    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: website.title,
-        short_name: website.shortName,
-        start_url: website.pathPrefix,
-        background_color: website.backgroundColor,
-        theme_color: website.themeColor,
+        name: site.title,
+        short_name: site.shortName,
+        start_url: site.pathPrefix,
+        background_color: site.backgroundColor,
+        theme_color: site.themeColor,
         display: 'minimal-ui',
-        icon: website.favicon,
+        icon: site.favicon,
       },
     },
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: website.url,
-        sitemap: `${website.url}/sitemap.xml`,
+        host: site.url,
+        sitemap: `${site.url}/sitemap.xml`,
         policy: [
           {
             userAgent: '*',
@@ -114,5 +121,8 @@ module.exports = {
         ],
       },
     },
+    // Last-priority plugins
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline',
   ],
 };

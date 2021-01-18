@@ -7,11 +7,7 @@ import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
-import {
-  ALBUMS_PATH,
-  PORTFOLIOS_PATH,
-  POSTS_PATH,
-} from '~/constants';
+import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import makeTypist from '~/utils/makeTypist';
 import { Title } from './styled';
 
@@ -35,13 +31,39 @@ const Home = ({ posts, albums, portfolios }) => {
   );
 
   const [intro, setIntro] = useState('');
-  const introduction = makeTypist("Hi, I'm Ryan.", setIntro);
+  const introduction = makeTypist(setIntro);
+
+  const [declare, setDeclare] = useState('');
+  const declaration = makeTypist(setDeclare);
 
   useEffect(() => {
-    introduction.type();
+    // prettier-ignore
+    introduction
+      .type("Hi, I'm Ryan.")
+      .then(() => introduction.wait(120))
+      .then(() =>
+        declaration
+          .type('A developer')
+          .then(() => declaration.wait(120))
+          .then(() => declaration.backspace(9)))
+      .then(() =>
+        declaration
+          .type('musican')
+          .then(() => declaration.wait(120))
+          .then(() => declaration.backspace(7)))
+      .then(() =>
+        declaration
+          .type('yogi')
+          .then(() => declaration.wait(120))
+          .then(() => declaration.backspace(4)))
+      .then(() =>
+        declaration.type('photogra')
+          .then(() => declaration.backspace(8)))
+      .then(() => declaration.type('creative.'));
 
     return function cleanup() {
       introduction.stop();
+      declaration.stop();
     };
   }, []);
 
@@ -49,7 +71,10 @@ const Home = ({ posts, albums, portfolios }) => {
     <>
       <SEO />
       <Hero>
-        <Title>{intro}</Title>
+        <Title>
+          <div>{intro}</div>
+          <div>{declare}</div>
+        </Title>
       </Hero>
       <SimpleWrapper>
         {featuredAlbums.length >= 1 ? (

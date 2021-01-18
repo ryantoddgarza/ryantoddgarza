@@ -130,6 +130,35 @@ firstProject // 'Still working!'
 
 ## Some use cases
 
+### Unpack, rename AND assign defaults
+
+Can we do all three? Why yes we can.
+
+```js
+const obj = {
+  foo: 1,
+  bar: 0,
+  baz: undefined,
+};
+
+// unpack, rename, and assign defaults
+const {
+  foo: apple = 500,
+  bar: banana = 501,
+  baz: orange = 502,
+  qux: mango = 503,
+} = obj;
+
+apple // 1
+banana // 0
+orange // 502
+mango // 503
+```
+
+One by one: the alias `apple` resolves the value `1` from `foo` as expected. `banana` also resolves `bar`'s value but a value of zero. Shouldn't the falsy value of `0` fall back to the default? Well no…remember from the assigning defaults section that "Defaults are applied in the case that the value returned is `undefined`," not necessarily falsy. This brings us to `orange` which does in fact resolve a value of `undefined` and falls back to the default value of `502`.
+
+As for `mango`, how can we unpack an object property that doesn't exist? Well if we go back to JavaScript 101 for a second, we'll recall that undeclared and uninitialized variables return a value of `undefined`, so we can in fact query for `qux` in this case and rely on the default value we've set to catch any instances in which it doesn't exist. No `if` statements, ternary, boolean, or logical operators; just pure JavaScript wizardry!
+
 ### Unpacking objects passed as a function parameter
 
 Destructuring arguments passed function parameters avoids the need for arbitrary argument names within the function.

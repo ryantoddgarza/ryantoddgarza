@@ -8,12 +8,11 @@ export const Title = styled.div`
   right: 0;
   left: 0;
   margin: auto;
+  padding: 2rem 0;
   width: 80%;
-  height: 1.5em;
   overflow: hidden;
   font-size: ${fontSizeFluid(48, 16)};
   line-height: 1.5;
-  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;

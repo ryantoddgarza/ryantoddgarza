@@ -1,0 +1,3 @@
+[submodule "src/lib/typist"]
+	path = src/lib/typist
+	url = https://github.com/ryantoddgarza/typist.git

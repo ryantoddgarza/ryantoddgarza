@@ -8,7 +8,7 @@ import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
-import Typist from '~/lib/typist/dist/typist';
+import Typist from '~/lib/typist/dist/typist.es.min';
 import { Title } from './styled';
 
 const Home = ({ posts, albums, portfolios }) => {

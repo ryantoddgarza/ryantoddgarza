@@ -172,11 +172,11 @@ const book = {
   },
 };
 
-function getAuthorName({author: { firstName, lastName}) {
+function getAuthorName({ author: { firstName, lastName }) {
   return `The author is ${firstName} ${lastName}`;
 };
 
-logAuthorName(book); // 'The author is Seymour Penman'
+getAuthorName(book); // 'The author is Seymour Penman'
 ```
 
 I find this particularly useful in working with array methods run on arrays of objects. For the array

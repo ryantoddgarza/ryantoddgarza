@@ -8,7 +8,7 @@ import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
-import makeTypist from '~/utils/makeTypist';
+import Typist from '~/lib/typist/dist/typist';
 import { Title } from './styled';
 
 const Home = ({ posts, albums, portfolios }) => {
@@ -31,39 +31,28 @@ const Home = ({ posts, albums, portfolios }) => {
   );
 
   const [intro, setIntro] = useState('');
-  const introduction = makeTypist(setIntro);
-
-  const [declare, setDeclare] = useState('');
-  const declaration = makeTypist(setDeclare);
+  const introduction = Typist(setIntro);
 
   useEffect(() => {
-    // prettier-ignore
     introduction
-      .type("Hi, I'm Ryan.")
-      .then(() => introduction.wait(120))
-      .then(() =>
-        declaration
-          .type('A developer')
-          .then(() => declaration.wait(120))
-          .then(() => declaration.backspace(9)))
-      .then(() =>
-        declaration
-          .type('musican')
-          .then(() => declaration.wait(120))
-          .then(() => declaration.backspace(7)))
-      .then(() =>
-        declaration
-          .type('yogi')
-          .then(() => declaration.wait(120))
-          .then(() => declaration.backspace(4)))
-      .then(() =>
-        declaration.type('photogra')
-          .then(() => declaration.backspace(8)))
-      .then(() => declaration.type('creative.'));
+      .type("Hi, I'm Ryan.\n")
+      .pause(120)
+      .type('A developer')
+      .pause(120)
+      .backspace(9)
+      .type('musician')
+      .pause(120)
+      .backspace(8)
+      .type('yogi')
+      .pause(120)
+      .backspace(4)
+      .type('creative')
+      .pause(240)
+      .type('.')
+      .start();
 
     return function cleanup() {
       introduction.stop();
-      declaration.stop();
     };
   }, []);
 
@@ -73,7 +62,6 @@ const Home = ({ posts, albums, portfolios }) => {
       <Hero>
         <Title>
           <div>{intro}</div>
-          <div>{declare}</div>
         </Title>
       </Hero>
       <SimpleWrapper>

@@ -5,3 +5,4 @@ package-lock.json
 package.json
 public/
 src/html.jsx
+src/lib/

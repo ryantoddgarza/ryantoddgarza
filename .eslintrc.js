@@ -3,13 +3,37 @@ const warn = 1;
 const error = 2;
 
 module.exports = {
-  extends: ['airbnb', 'plugin:import/errors', 'plugin:import/warnings'],
-  plugins: ['react', 'import'],
   env: {
     es6: true,
     node: true,
     browser: true,
-    jest: true,
+  },
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+      experimentalObjectRestSpread: true,
+    },
+    babelOptions: {
+      configFile: '.babelrc.js',
+    },
+  },
+  extends: ['airbnb', 'plugin:import/errors', 'plugin:import/warnings'],
+  plugins: ['react', 'import'],
+  settings: {
+    'react': {
+      pragma: 'React',
+      version: 'detect',
+    },
+    'import/resolver': {
+      alias: {
+        map: [['~', './src']],
+        extensions: ['.js', '.jsx', 'json'],
+      },
+    },
   },
   rules: {
     'comma-dangle': [
@@ -53,7 +77,7 @@ module.exports = {
         ignoreTemplateLiterals: true,
       },
     ],
-    'no-console': error,
+    'no-console': warn,
     'no-lonely-if': off,
     'no-multiple-empty-lines': [error, { max: error, maxEOF: error }],
     'no-implicit-coercion': error,
@@ -71,21 +95,6 @@ module.exports = {
     'react/no-typos': error,
     'react/no-unescaped-entities': off,
   },
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    allowImportExportEverywhere: false,
-    ecmaFeatures: {
-      jsx: true,
-      modules: true,
-      globalReturn: false,
-      experimentalObjectRestSpread: true,
-    },
-    babelOptions: {
-      configFile: '.babelrc.js',
-    },
-  },
   overrides: [
     {
       files: ['gatsby-node.js'],
@@ -95,38 +104,12 @@ module.exports = {
     },
     {
       files: [
-        'src/components/Resume/index.jsx',
         'src/components/Portfolio/index.jsx',
         'src/components/Post/index.jsx',
-        'src/templates/*.jsx',
       ],
       rules: {
         'react/no-danger': off,
       },
     },
-    {
-      files: ['src/html.jsx'],
-      rules: {
-        'react/prefer-stateless-function': off,
-        'react/prop-types': off,
-        'react/no-danger': off,
-      },
-    },
-    {
-      files: ['src/**/*.test.js'],
-      rules: {},
-    },
   ],
-  settings: {
-    'react': {
-      pragma: 'React',
-      version: 'detect',
-    },
-    'import/resolver': {
-      alias: {
-        map: [['~', './src']],
-        extensions: ['.js', '.jsx', 'json'],
-      },
-    },
-  },
 };

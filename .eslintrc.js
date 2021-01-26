@@ -1,5 +1,4 @@
 const off = 0;
-const warn = 1;
 const error = 2;
 
 module.exports = {
@@ -17,7 +16,18 @@ module.exports = {
   ],
   plugins: ['react', 'jsx-a11y', 'import'],
   settings: {
-    react: {
+    'import/resolver': {
+      'babel-module': {},
+      'alias': {
+        map: [
+          ['@components', './src/components'],
+          ['@resources', './src/resources'],
+          ['@styles', './src/styles'],
+        ],
+        extensions: ['.js', '.jsx'],
+      },
+    },
+    'react': {
       pragma: 'React',
       version: 'detect',
     },
@@ -33,6 +43,7 @@ module.exports = {
         functions: 'only-multiline',
       },
     ],
+    'import/prefer-default-export': off,
     'quote-props': [error, 'consistent'],
   },
 };

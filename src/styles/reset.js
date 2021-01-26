@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-const reset = css`
+export default css`
   * {
     margin: 0;
     padding: 0;
@@ -126,5 +126,3 @@ const reset = css`
     white-space: normal;
   }
 `;
-
-export default reset;

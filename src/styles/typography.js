@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import theme from './theme';
+import { colors } from './theme';
 import { rem, unit } from './utils';
 
 export const config = {
@@ -76,10 +76,10 @@ export const p = css`
 `;
 
 export const a = css`
-  color: ${theme.colors.primary};
+  color: ${colors.primary};
 
   &:hover {
-    color: ${theme.colors.fg};
+    color: ${colors.fg};
   }
 `;
 
@@ -129,7 +129,7 @@ const figcaption = css`
   color: #757575;
 `;
 
-const typography = css`
+export default css`
   h1 {
     ${h1}
   }
@@ -192,5 +192,3 @@ const typography = css`
     ${figcaption}
   }
 `;
-
-export default typography;

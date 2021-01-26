@@ -1,10 +1,8 @@
-import theme from './theme';
+import { layout } from './theme';
 
 const {
-  layout: {
-    base: { fontSize: baseFontSize, unit: baseUnit },
-  },
-} = theme;
+  base: { fontSize: baseFontSize, unit: baseUnit },
+} = layout;
 
 export const rem = (px) => `${px / baseFontSize}rem`;
 export const unit = (n) => n * baseUnit;

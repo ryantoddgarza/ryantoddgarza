@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { textColor, backgroundColor } from '~/design-system';
 
-const global = css`
+export default css`
   html {
     box-sizing: border-box;
   }
@@ -17,6 +17,7 @@ const global = css`
   }
 
   body {
+    /* prettier-ignore */
     font-family:
       -apple-system,
       BlinkMacSystemFont,
@@ -34,6 +35,7 @@ const global = css`
   }
 
   code {
+    /* prettier-ignore */
     font-family:
       Menlo,
       Consolas,
@@ -54,5 +56,3 @@ const global = css`
     cursor: pointer;
   }
 `;
-
-export default global;

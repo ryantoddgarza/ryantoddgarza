@@ -4,6 +4,11 @@
   "description": "portfolio site",
   "main": "n/a",
   "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "test": ""
   },
   "repository": {
@@ -15,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ryantoddgarza/ryantoddgarza/issues"
   },
-  "homepage": "https://github.com/ryantoddgarza/ryantoddgarza#readme"
+  "homepage": "https://github.com/ryantoddgarza/ryantoddgarza#readme",
+  "dependencies": {
+    "gatsby": "^2.31.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
 }

@@ -1,103 +1,19 @@
 {
   "name": "ryantoddgarza",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "portfolio site",
   "main": "n/a",
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://ryantoddgarza.com",
-  "keywords": [],
+  "scripts": {
+    "test": ""
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ryantoddgarza/ryantoddgarza.git"
   },
+  "author": "Ryan Todd Garza <ryantoddgarza@gmail.com> (https://ryantoddgarza.com)",
+  "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ryantoddgarza/ryantoddgarza/issues"
   },
-  "scripts": {
-    "precommit": "lint-staged",
-    "lint": "eslint --ext .js,.jsx --config .eslintrc.js",
-    "develop": "gatsby clean && gatsby develop",
-    "clean": "gatsby clean",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "deploy": "gatsby build --prefix-paths"
-  },
-  "dependencies": {
-    "@reach/router": "^1.3.4",
-    "clipboard": "^2.0.6",
-    "gatsby": "^2.31.1",
-    "gatsby-image": "^2.7.0",
-    "gatsby-plugin-catch-links": "^2.7.0",
-    "gatsby-plugin-google-gtag": "^2.6.0",
-    "gatsby-plugin-manifest": "^2.4.34",
-    "gatsby-plugin-offline": "^3.2.31",
-    "gatsby-plugin-react-helmet": "^3.9.0",
-    "gatsby-plugin-remove-trailing-slashes": "^2.7.0",
-    "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sharp": "^2.10.1",
-    "gatsby-plugin-sitemap": "^2.9.0",
-    "gatsby-plugin-styled-components": "^3.9.0",
-    "gatsby-remark-copy-linked-files": "^2.3.19",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^3.3.33",
-    "gatsby-remark-prismjs": "^3.5.16",
-    "gatsby-remark-responsive-iframe": "^2.4.17",
-    "gatsby-remark-smartypants": "^2.3.13",
-    "gatsby-source-filesystem": "^2.3.34",
-    "gatsby-transformer-json": "^2.8.0",
-    "gatsby-transformer-remark": "^2.8.39",
-    "gatsby-transformer-sharp": "^2.8.0",
-    "html-loader": "^1.3.2",
-    "markdown-loader": "^6.0.0",
-    "nanoid": "^3.1.16",
-    "prismjs": "^1.22.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.1.0",
-    "react-toggle": "^4.1.1",
-    "react-truncate": "^2.4.0",
-    "react-twitter-widgets": "^1.9.5",
-    "styled-components": "^5.2.0"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-pipeline-operator": "^7.10.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/polyfill": "^7.11.5",
-    "@babel/preset-env": "^7.12.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-emotion": "^11.0.0",
-    "babel-plugin-styled-components": "^1.11.1",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-import-resolver-webpack": "^0.13.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.21.4",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2",
-    "prettier-eslint-cli": "^5.0.0"
-  },
-  "browserslist": [
-    "> 10%",
-    "IE >= 9",
-    "last 2 versions"
-  ],
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "npm run lint"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
-  }
+  "homepage": "https://github.com/ryantoddgarza/ryantoddgarza#readme"
 }

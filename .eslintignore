@@ -1,8 +1,0 @@
-.cache/
-external_dependencies/
-node_modules/
-package-lock.json
-package.json
-public/
-src/html.jsx
-src/lib/

@@ -36,6 +36,7 @@ ENV/
 
 # cached files
 .cache/
+.eslintcache
 
 # generated files
 public/

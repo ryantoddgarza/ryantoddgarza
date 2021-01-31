@@ -29,6 +29,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@resources', './src/resources'],
           ['@styles', './src/styles'],
+          ['@utils', './src/utils'],
         ],
         extensions: ['.js', '.jsx'],
       },

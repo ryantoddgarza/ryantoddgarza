@@ -8,13 +8,19 @@ module.exports = {
     node: true,
     browser: true,
   },
+  parserOptions: {
+    sourceType: 'module',
+  },
   extends: [
     'airbnb',
-    'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+    'prettier/react',
   ],
-  plugins: ['react', 'jsx-a11y', 'import'],
+  plugins: ['import', 'jsx-a11y', 'prettier', 'react'],
   settings: {
     'import/resolver': {
       'babel-module': {},

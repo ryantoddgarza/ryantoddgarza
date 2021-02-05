@@ -9,7 +9,6 @@
     "deploy": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "lint": "eslint --cache --ext .js,.jsx .",
-    "precommit": "lint-staged",
     "serve": "gatsby serve",
     "test": ""
   },
@@ -50,13 +49,11 @@
     "prettier": "^2.2.1"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "npm run lint"
-    ]
+    "*.{js,jsx}": "eslint --cache --ext .js,.jsx --fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "lint-staged"
     }
   }
 }

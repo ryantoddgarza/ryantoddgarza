@@ -14,5 +14,22 @@ module.exports = {
     email: site.email,
     twitter: site.twitter,
   },
-  plugins: ['gatsby-plugin-styled-components'],
+  plugins: [
+    // First-priority plugins
+    // Other plugins
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: site.title,
+        short_name: site.shortName,
+        start_url: site.pathPrefix,
+        background_color: site.backgroundColor,
+        theme_color: site.themeColor,
+        display: 'minimal-ui',
+        icon: site.favicon,
+      },
+    },
+    // Last-priority plugins
+  ],
 };

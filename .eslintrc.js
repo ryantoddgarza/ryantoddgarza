@@ -15,12 +15,11 @@ module.exports = {
     'airbnb',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'prettier/react',
   ],
-  plugins: ['import', 'jsx-a11y', 'prettier', 'react'],
+  plugins: ['import', 'prettier', 'react'],
   settings: {
     'import/resolver': {
       'babel-module': {},

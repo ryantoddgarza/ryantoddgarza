@@ -11,13 +11,8 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  extends: [
-    'airbnb',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:prettier/recommended',
-  ],
-  plugins: ['import', 'prettier'],
+  extends: ['airbnb', 'plugin:prettier/recommended'],
+  plugins: ['import'],
   rules: {
     'comma-dangle': [
       error,

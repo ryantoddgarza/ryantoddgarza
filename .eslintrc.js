@@ -4,9 +4,9 @@ const error = 2;
 module.exports = {
   root: true,
   env: {
+    browser: true,
     es6: true,
     node: true,
-    browser: true,
   },
   parserOptions: {
     sourceType: 'module',
@@ -16,28 +16,8 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:prettier/recommended',
-    'plugin:react/recommended',
-    'prettier/react',
   ],
-  plugins: ['import', 'prettier', 'react'],
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
-      'alias': {
-        map: [
-          ['@components', './src/components'],
-          ['@resources', './src/resources'],
-          ['@styles', './src/styles'],
-          ['@utils', './src/utils'],
-        ],
-        extensions: ['.js', '.jsx'],
-      },
-    },
-    'react': {
-      pragma: 'React',
-      version: 'detect',
-    },
-  },
+  plugins: ['import', 'prettier'],
   rules: {
     'comma-dangle': [
       error,
@@ -51,5 +31,19 @@ module.exports = {
     ],
     'import/prefer-default-export': off,
     'quote-props': [error, 'consistent'],
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+      'alias': {
+        map: [
+          ['@components', './src/components'],
+          ['@resources', './src/resources'],
+          ['@styles', './src/styles'],
+          ['@utils', './src/utils'],
+        ],
+        extensions: ['.js', '.jsx'],
+      },
+    },
   },
 };

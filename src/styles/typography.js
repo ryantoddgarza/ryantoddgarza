@@ -93,10 +93,9 @@ const italic = css`
 
 const list = css`
   margin: 0 0 ${rem(unit(6))};
-  list-style-position: inside;
 
   li {
-    margin: ${rem(unit(4))} 0 0 ${rem(unit(4))};
+    margin: ${rem(unit(4))} 0 0 ${rem(unit(8))};
   }
 `;
 

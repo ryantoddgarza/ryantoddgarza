@@ -8,6 +8,8 @@ summary: 'Through subsequent modulations to closely related meters, distantly re
 images: ['https://images.unsplash.com/photo-1532908336432-6ab8ec3d56c1?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
 ---
 
+**Update: This post inspired its own [repository on GitHub](https://github.com/ryantoddgarza/rhythmanalysis). Visit the project for an evolution of the ideas.**
+
 ## Concept
 
 It is my intention to posit "superimposed recursive metric modulation" as a musical device used to alter the substructure upon which commonly used rhythmic devices are based.

@@ -14,7 +14,7 @@ export default class App extends Component {
     };
   }
 
-  toggleTheme = () => {
+  toggleTheme() {
     const { isDracula } = this.state;
 
     if (isDracula) {
@@ -30,7 +30,7 @@ export default class App extends Component {
     this.setState({
       isDracula: !isDracula,
     });
-  };
+  }
 
   render() {
     const {

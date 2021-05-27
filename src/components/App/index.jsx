@@ -45,15 +45,15 @@ export default class App extends Component {
       children,
     } = this.props;
     const { isDracula } = this.state;
-    const theme = isDracula
-      ? {
-        color: textColor.onDark,
-        backgroundColor: backgroundColor.dark,
-      }
-      : {
-        color: textColor.onLight,
-        backgroundColor: backgroundColor.default,
-      };
+    const darkTheme = {
+      color: textColor.onDark,
+      backgroundColor: backgroundColor.dark,
+    };
+    const lightTheme = {
+      color: textColor.onLight,
+      backgroundColor: backgroundColor.default,
+    };
+    const theme = isDracula ? darkTheme : lightTheme;
 
     // Reverts theme for users who have
     // used the temporarily deprecated toggle.

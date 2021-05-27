@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-import { fontSizeFluid } from '~/design-system';
+import { breakpoint, fontSizeFluid } from '~/design-system';
 
 export const Title = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  padding: 2rem 0;
-  width: 80%;
+  height: 2.8em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   font-size: ${fontSizeFluid(48, 16)};
-  line-height: 1.5;
+  line-height: 1.4;
   white-space: pre;
+
+  ${breakpoint.from('tablet-l')} {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
 `;

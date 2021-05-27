@@ -14,9 +14,8 @@ const TaggedList = ({ data }) => {
   const location = useLocation();
   const page = getPage(location);
   const [, , tag] = location.pathname.split('/');
-  const allPosts = data
-    |> getPosts
-    |> ((posts) => posts.filter(({ node: { frontmatter: { tags } } }) => tags.includes(tag)));
+  const _posts = getPosts(data);
+  const allPosts = _posts.filter(({ node: { frontmatter: { tags } } }) => tags.includes(tag));
   const postCount = allPosts.length;
   const posts = allPosts.slice((page - 1) * CONTENT_PER_PAGE, page * CONTENT_PER_PAGE);
 

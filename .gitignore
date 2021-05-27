@@ -1,41 +1,5 @@
-# OS X
-.DS_Store*
-Icon?
-._*
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-.directory
-*~
-
-# npm
-node_modules/
+*.cache
+*.env
 *.log
-*.gz
-build/
-
-# configure
-.env.development
-.env.production
-
-# log
-dump.rdb
-nohup.out
-
-# dotenv
-.env
-
-# virtualenv
-.venv/
-venv/
-ENV/
-
-# cached files
-.cache/
-
-# generated files
+node_modules/
 public/

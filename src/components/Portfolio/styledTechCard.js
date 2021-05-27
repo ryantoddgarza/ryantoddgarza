@@ -3,9 +3,10 @@ import { backgroundColor, textColor, space } from '~/design-system';
 
 const styledTechCard = css`
   article.tech-card {
-    background-color: ${backgroundColor.light};
     margin: ${space.x6} 0;
     padding: ${space.x4};
+    background-color: ${backgroundColor.light};
+    box-shadow:0 8px 16px rgb(0 0 0 / 5%);
 
     & > *:last-child {
       margin-bottom: 0;

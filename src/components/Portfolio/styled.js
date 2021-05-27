@@ -42,6 +42,17 @@ export const PortfolioDescription = styled(Column)`
     list-style-type: decimal-leading-zero;
   }
 
+  .gatsby-highlight pre {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gatsby-highlight pre code {
+    background: none;
+    white-space: inherit;
+    word-wrap: normal;
+  }
+
   figure {
     margin: 1rem 0;
   }

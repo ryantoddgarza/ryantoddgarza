@@ -19,7 +19,10 @@ ListTemplate.propTypes = {
 export const pageQuery = graphql`
   query ListQuery {
     site {
-      ...SiteInformation
+      siteMetadata {
+        title
+        description
+      }
     }
     posts: allMarkdownRemark(
       filter: { frontmatter: { hide: { ne: true } } }

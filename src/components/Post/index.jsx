@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
 import PostWrapper from '~/components/Common/PostWrapper';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 import ScopedImage from '~/components/Common/ScopedImage';
 import formattedDate from '~/utils/formattedDate';
 import {

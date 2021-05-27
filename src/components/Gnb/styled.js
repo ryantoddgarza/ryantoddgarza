@@ -9,7 +9,7 @@ import {
   textColor,
 } from '~/design-system';
 import ScopedLink from '~/components/Common/ScopedLink';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 import hamburger from './hamburger';
 
 export const Gnb = styled(Container)`

@@ -7,7 +7,7 @@ import {
   textColor,
 } from '~/design-system';
 import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 
 export const Wrapper = styled(SimpleWrapper)`
   padding: 3rem 0 0;

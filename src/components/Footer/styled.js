@@ -7,7 +7,7 @@ import {
   textColor,
   transition,
 } from '~/design-system';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 
 export const FooterWrapperOuter = styled.div`
   font-size: 0.75rem;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 
 const PostsWrapper = styled(Container)`
   padding: 3rem 0 0;

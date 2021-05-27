@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '~/components/Common/Container';
+import Container from '~/components/Common/Container';
 
 export const Wrapper = styled(Container)`
   position: relative;

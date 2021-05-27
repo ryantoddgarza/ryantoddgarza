@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeroWrapperOuter, HeroWrapperInner } from './styled';
 
-const Hero = ({ children }) => (
-  <HeroWrapperOuter>
-    <HeroWrapperInner>{children}</HeroWrapperInner>
-  </HeroWrapperOuter>
-);
+const Hero = ({ children }) => <div>{children}</div>;
 
 Hero.propTypes = {
   children: PropTypes.oneOfType([
@@ -18,7 +13,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-  children: null,
+  children: undefined,
 };
 
 export default Hero;

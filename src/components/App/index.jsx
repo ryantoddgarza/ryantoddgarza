@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import Gnb from '~/components/Gnb';
+import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import { textColor, backgroundColor } from '~/design-system';
 import { GlobalStyle, SiteWrapper } from './styled';
@@ -10,7 +11,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDracula: global.localStorage && global.localStorage.getItem('theme') === 'dracula',
+      isDracula:
+        global.localStorage
+        && global.localStorage.getItem('theme') === 'dracula',
     };
   }
 
@@ -42,13 +45,15 @@ export default class App extends Component {
       children,
     } = this.props;
     const { isDracula } = this.state;
-    const theme = isDracula ? {
-      color: textColor.onDark,
-      backgroundColor: backgroundColor.dark,
-    } : {
-      color: textColor.onLight,
-      backgroundColor: backgroundColor.default,
-    };
+    const theme = isDracula
+      ? {
+        color: textColor.onDark,
+        backgroundColor: backgroundColor.dark,
+      }
+      : {
+        color: textColor.onLight,
+        backgroundColor: backgroundColor.default,
+      };
 
     // Reverts theme for users who have
     // used the temporarily deprecated toggle.
@@ -60,7 +65,7 @@ export default class App extends Component {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <SiteWrapper>
-          <nav>
+          <Header>
             <Gnb
               categories={categories}
               postInformations={postInformations}
@@ -70,10 +75,8 @@ export default class App extends Component {
               toggleTheme={this.toggleTheme}
               isDracula={isDracula}
             />
-          </nav>
-          <main>
-            {children}
-          </main>
+          </Header>
+          <main>{children}</main>
           <footer>
             <Footer />
           </footer>

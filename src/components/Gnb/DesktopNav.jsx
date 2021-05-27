@@ -3,26 +3,24 @@ import PropTypes from 'prop-types';
 import { MdExpandMore } from 'react-icons/md';
 import { NavList, NavListItem, StyledLink } from './styled';
 
-const DesktopNav = ({ navLists }) => {
-  const catNavList = Object.values(navLists).flat();
-
-  return (
+const DesktopNav = ({ navList }) => (
+  <nav>
     <NavList>
-      {catNavList.map(({ name, url, isActive, subMenu }) => (
+      {navList.map(({ name, url, isActive, subMenu }) => (
         <NavListItem key={name}>
-          <StyledLink to={url} className={isActive ? 'active' : ''}>
+          <StyledLink to={url} className={isActive && 'active'}>
             {subMenu ? `${name} ` : name}
           </StyledLink>
-          {subMenu ? <MdExpandMore /> : null}
-          {subMenu ? subMenu.component : null}
+          {subMenu && <MdExpandMore />}
+          {subMenu && subMenu.component}
         </NavListItem>
       ))}
     </NavList>
-  );
-};
+  </nav>
+);
 
 DesktopNav.propTypes = {
-  navLists: PropTypes.shape({}).isRequired,
+  navList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default DesktopNav;

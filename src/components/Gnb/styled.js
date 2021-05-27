@@ -12,18 +12,7 @@ import ScopedLink from '~/components/Common/ScopedLink';
 import { Container } from '~/components/Common/Container';
 import hamburger from './hamburger';
 
-export const GnbWrapperOuter = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  font-size: 0.875rem;
-  background-color: ${backgroundColor.default};
-  border-bottom: 1px solid ${backgroundColor.darker};
-  z-index: 3000;
-`;
-
-export const GnbWrapperInner = styled(Container)`
+export const Gnb = styled(Container)`
   position: relative;
   display: flex;
   align-items: center;
@@ -76,7 +65,10 @@ export const NavMenu = styled.ul`
   white-space: nowrap;
   background-color: ${backgroundColor.default};
   overflow: hidden;
-  transition: max-height 0.4s ease-out 0.1s;
+  transition-property: max-height;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.1s;
   ${breakpoint.from('tablet')} {
     position: absolute;
     top: ${navbar.height};
@@ -107,11 +99,13 @@ export const Hamburger = styled.div`
 `;
 
 export const MovableCaretDown = styled(MdExpandMore)`
-  transition: transform 0.4s ease-out 0.1s;
-  transform: rotate(180deg);
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.1s;
 
-  &.is-active {
-    transform: rotate(0deg);
+  &.is-open {
+    transform: rotate(180deg);
   }
 `;
 
@@ -139,7 +133,10 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${backgroundColor.default};
-  transition: opacity 0.4s ease-out 0.1s;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.1s;
   opacity: ${({ isActive }) => (isActive ? '.5' : '0')};
   ${breakpoint.from('tablet')} {
     display: none;
@@ -164,7 +161,7 @@ export const MobileMenus = styled.div`
   }
 `;
 
-export const MobileMenu = styled.section`
+export const MobileMenu = styled.div`
   position: fixed;
   top: ${navbar.height};
   left: 0;
@@ -183,7 +180,8 @@ export const MobileMenu = styled.section`
   }
 
   li > ul {
-    max-height: ${({ isSubActive }) => (isSubActive ? '0' : '360px')} !important;
+    max-height: ${({ isSubActive }) =>
+    (isSubActive ? '360px' : '0')} !important;
   }
 
   & > div + div {

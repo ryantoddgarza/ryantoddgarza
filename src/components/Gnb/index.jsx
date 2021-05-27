@@ -12,12 +12,7 @@ import {
   PORTFOLIOS_PATH,
   POSTS_PATH,
 } from '~/constants';
-import {
-  GnbWrapperOuter,
-  GnbWrapperInner,
-  HeaderName,
-  StyledLink,
-} from './styled';
+import { Gnb as StyledGnB, HeaderName, StyledLink } from './styled';
 
 const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
   const { site } = useStaticQuery(graphql`
@@ -76,23 +71,24 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
     mainNav.push(albumNavData);
   }
 
-  const mobileAppendNav = [
+  const mobileNavAppend = [
     {
       name: 'Contact',
       url: `mailto:${EMAIL}`,
     },
   ];
 
+  const mobileNavList = [...mainNav, ...mobileNavAppend];
+  const desktopNavList = [...mainNav];
+
   return (
-    <GnbWrapperOuter>
-      <GnbWrapperInner>
-        <HeaderName>
-          <StyledLink to={HOME_PATH}>{siteTitle}</StyledLink>
-        </HeaderName>
-        <MobileNav navLists={{ mainNav, mobileAppendNav }} />
-        <DesktopNav navLists={{ mainNav }} />
-      </GnbWrapperInner>
-    </GnbWrapperOuter>
+    <StyledGnB>
+      <HeaderName>
+        <StyledLink to={HOME_PATH}>{siteTitle}</StyledLink>
+      </HeaderName>
+      <MobileNav navList={mobileNavList} />
+      <DesktopNav navList={desktopNavList} />
+    </StyledGnB>
   );
 };
 

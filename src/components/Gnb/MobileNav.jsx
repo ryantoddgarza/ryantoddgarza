@@ -15,26 +15,26 @@ const TOGGLE_MENU = 'TOGGLE_MENU';
 const TOGGLE_SUB_MENU = 'TOGGLE_SUB_MENU';
 
 const initialState = {
-  isMenuOpened: false,
-  isSubMenuClosed: true,
+  isMenuOpen: false,
+  isSubmenuOpen: false,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_MENU: {
-      const isMenuOpened = !state.isMenuOpened;
+      const isMenuOpen = !state.isMenuOpen;
 
       return {
         ...state,
-        isMenuOpened,
+        isMenuOpen,
       };
     }
     case TOGGLE_SUB_MENU: {
-      const isSubMenuClosed = !state.isSubMenuClosed;
+      const isSubmenuOpen = !state.isSubmenuOpen;
 
       return {
         ...state,
-        isSubMenuClosed,
+        isSubmenuOpen,
       };
     }
     default:
@@ -42,55 +42,52 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const MobileNav = ({ navLists }) => {
-  const catNavList = Object.values(navLists).flat();
-  const [{ isMenuOpened, isSubMenuClosed }, dispatch] = useReducer(
+const MobileNav = ({ navList }) => {
+  const [{ isMenuOpen, isSubmenuOpen }, dispatch] = useReducer(
     reducer,
     initialState
   );
   const toggleMenu = useCallback(() => {
     dispatch({ type: TOGGLE_MENU });
   }, []);
-  const toggleSubMenu = useCallback(() => {
+  const toggleSubmenu = useCallback(() => {
     dispatch({ type: TOGGLE_SUB_MENU });
   }, []);
   useEffect(() => {
-    if (isMenuOpened) {
+    if (isMenuOpen) {
       global.document.body.style.overflow = 'hidden';
     } else {
       global.document.body.style.overflow = 'visible';
     }
-  }, [isMenuOpened]);
+  }, [isMenuOpen]);
 
   return (
     <>
-      <MobileMenu isActive={isMenuOpened} isSubActive={isSubMenuClosed}>
-        <Background onClick={toggleMenu} isActive={isMenuOpened} />
+      <MobileMenu isActive={isMenuOpen} isSubActive={isSubmenuOpen}>
+        <Background onClick={toggleMenu} isActive={isMenuOpen} />
         <MobileMenus>
-          <NavList>
-            {catNavList.map(({ name, url, isActive, subMenu }) => (
-              <NavListItem key={name}>
-                <StyledLink
-                  to={url}
-                  className={isActive ? 'active' : ''}
-                  onClick={toggleSubMenu}
-                >
-                  {subMenu ? `${name} ` : name}
-                </StyledLink>
-                {subMenu ? (
-                  <MovableCaretDown
-                    className={isSubMenuClosed ? 'is-active' : ''}
-                    onClick={toggleSubMenu}
-                  />
-                ) : null}
-                {subMenu ? subMenu.component : null}
-              </NavListItem>
-            ))}
-          </NavList>
+          <nav>
+            <NavList>
+              {navList.map(({ name, url, isActive, subMenu }) => (
+                <NavListItem key={name}>
+                  <StyledLink to={url} className={isActive && 'active'}>
+                    {subMenu ? `${name} ` : name}
+                  </StyledLink>
+                  {subMenu && (
+                    <MovableCaretDown
+                      className={isSubmenuOpen && 'is-open'}
+                      onClick={toggleSubmenu}
+                    />
+                  )}
+                  {subMenu && subMenu.component}
+                </NavListItem>
+              ))}
+            </NavList>
+          </nav>
         </MobileMenus>
       </MobileMenu>
       <Hamburger
-        className={`hamburger ${isMenuOpened ? 'is-active' : ''}`}
+        className={`hamburger ${isMenuOpen && 'is-open'}`}
         onClick={toggleMenu}
       >
         <div className="hamburger-box">
@@ -102,7 +99,7 @@ const MobileNav = ({ navLists }) => {
 };
 
 MobileNav.propTypes = {
-  navLists: PropTypes.shape({}).isRequired,
+  navList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default MobileNav;

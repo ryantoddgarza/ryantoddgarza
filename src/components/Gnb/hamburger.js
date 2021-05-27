@@ -63,17 +63,17 @@ export default css`
     transition: bottom 0.1s ease-in 0.25s,
       transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
-  .is-active .hamburger-inner {
+  .is-open .hamburger-inner {
     transition-delay: 0.12s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     transform: rotate(225deg);
   }
-  .is-active .hamburger-inner:before {
+  .is-open .hamburger-inner:before {
     top: 0;
     transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
     opacity: 0;
   }
-  .is-active .hamburger-inner:after {
+  .is-open .hamburger-inner:after {
     bottom: 0;
     transition: bottom 0.1s ease-out,
       transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;

@@ -13,9 +13,8 @@ const SubMenu = ({ listItems }) => (
       return (
         <NavMenuItem key={key}>
           <Link to={`/categories/${key}/1`}>
-            {key}
-            &nbsp;
-            <small>{`(${length})`}</small>
+            {`${key} `}
+            <small>{length.toString()}</small>
           </Link>
         </NavMenuItem>
       );

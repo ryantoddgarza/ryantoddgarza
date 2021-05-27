@@ -14,10 +14,6 @@ const {
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
-    externals: {
-      document: true,
-      discus_config: true,
-    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, 'src'),

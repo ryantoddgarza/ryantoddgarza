@@ -4,30 +4,20 @@ const error = 2;
 
 module.exports = {
   env: {
-    es6: true,
+    es2021: true,
     node: true,
     browser: true,
   },
-  parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
       modules: true,
-      experimentalObjectRestSpread: true,
-    },
-    babelOptions: {
-      configFile: '.babelrc.js',
     },
   },
-  extends: ['airbnb', 'plugin:import/errors', 'plugin:import/warnings'],
+  extends: ['airbnb'],
   plugins: ['react', 'import'],
   settings: {
-    'react': {
-      pragma: 'React',
-      version: 'detect',
-    },
     'import/resolver': {
       alias: {
         map: [['~', './src']],
@@ -90,10 +80,6 @@ module.exports = {
     'object-curly-newline': [error, { consistent: true }],
     'prefer-spread': off,
     'quote-props': [error, 'consistent'],
-    'react/jsx-filename-extension': [error, { extensions: ['.js', '.jsx'] }],
-    'react/jsx-no-target-blank': error,
-    'react/no-typos': error,
-    'react/no-unescaped-entities': off,
   },
   overrides: [
     {

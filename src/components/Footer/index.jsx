@@ -36,6 +36,9 @@ const Footer = () => {
               <Link to={`${POSTS_PATH}/1`}>Blog</Link>
             </li>
             <li>
+              <a href="https://wiki.ryantoddgarza.com">Wiki</a>
+            </li>
+            <li>
               <a href={`mailto:${EMAIL}`}>Contact</a>
             </li>
           </ul>

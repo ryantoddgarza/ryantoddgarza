@@ -6,11 +6,8 @@ import {
   space,
   textColor,
 } from '~/design-system';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import Container from '~/components/Common/Container';
 
-export const Wrapper = styled(SimpleWrapper)`
-  padding: 3rem 0 0;
+export const Wrapper = styled.div`
   font-size: 0.875rem;
 
   h2 {
@@ -25,7 +22,7 @@ export const Wrapper = styled(SimpleWrapper)`
   }
 `;
 
-export const AlbumPrimary = styled(Container)`
+export const AlbumPrimary = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoint.from('tablet-l')} {
@@ -33,7 +30,7 @@ export const AlbumPrimary = styled(Container)`
   }
 `;
 
-export const AlbumSecondary = styled(Container)`
+export const AlbumSecondary = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoint.from('tablet-l')} {

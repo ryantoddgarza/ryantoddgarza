@@ -1,9 +1,22 @@
 import styled from 'styled-components';
-import { fontSizeFluid, primaryColor, space, transition } from '~/design-system';
+import {
+  breakpoint,
+  fontSizeFluid,
+  primaryColor,
+  space,
+  transition,
+} from '~/design-system';
 
 export const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
   padding: ${space.x12} 0;
-  text-align: center;
+
+  ${breakpoint.from('tablet')} {
+    flex-direction: row;
+  }
 
   a {
     font-size: 1rem;
@@ -20,6 +33,8 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h2`
-  margin: ${space.x6} 0 ${space.x4};
-  font-size: ${fontSizeFluid(28, 2)};
+  margin-top: ${space.x8};
+  margin-bottom: ${space.x4};
+  font-size: ${fontSizeFluid(32, 2)};
+  line-height: 1;
 `;

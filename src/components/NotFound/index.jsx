@@ -5,11 +5,9 @@ import { Wrapper } from './styled';
 const NotFound = () => (
   <>
     <SEO />
-    <Wrapper>
-      <header>
-        <h2>Error 404</h2>
-        <h1>Page Not Found</h1>
-      </header>
+    <Wrapper className="layout__main">
+      <h2>Error 404</h2>
+      <h1>Page Not Found</h1>
     </Wrapper>
   </>
 );

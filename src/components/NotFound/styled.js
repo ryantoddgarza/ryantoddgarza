@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
 
-export const Wrapper = styled(SimpleWrapper)`
-  padding: 20% 0 0;
+export const Wrapper = styled.div`
   text-align: center;
 
   h1 {

@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
 import { breakpoint, primaryColor } from '~/design-system';
 import styledTechCard from './styledTechCard';
 import { typography } from '~/styles';
 
-export const Wrapper = styled(SimpleWrapper)`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 5%;
 
   ${breakpoint.from('tablet-l')} {
     flex-direction: row;

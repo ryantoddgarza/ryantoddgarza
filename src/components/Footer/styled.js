@@ -1,21 +1,12 @@
 import styled from 'styled-components';
 import {
-  backgroundColor,
   breakpoint,
   primaryColor,
   space,
-  textColor,
   transition,
 } from '~/design-system';
-import Container from '~/components/Common/Container';
 
-export const FooterWrapperOuter = styled.div`
-  font-size: 0.75rem;
-  color: ${textColor.light};
-  background-color: ${backgroundColor.darker};
-`;
-
-export const FooterWrapperInner = styled(Container)`
+export const FooterWrapperInner = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: 'links' 'social' 'copyright';
@@ -30,6 +21,7 @@ export const FooterWrapperInner = styled(Container)`
 export const SocialInformation = styled.div`
   grid-area: social;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 0 ${space.x6};
   font-size: 20px;
   ${breakpoint.from('tablet')} {
@@ -38,6 +30,7 @@ export const SocialInformation = styled.div`
 
   a {
     display: inline-flex;
+    margin-top: 8px;
     transition: all ${transition.duration.normal} ${transition.function.default};
 
     &:not(:last-of-type) {

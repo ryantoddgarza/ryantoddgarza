@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from '@reach/router';
 import SEO from '~/components/Common/SEO';
-import PostsWrapper from '~/components/Common/PostsWrapper';
 import PostCard from '~/components/Common/PostCard';
 import Pagination from '~/components/Common/Pagination';
 import getPosts from '~/utils/getPosts';
@@ -31,27 +30,29 @@ const CategorizedList = ({ data }) => {
   return (
     <>
       <SEO title={titleCase(category)} />
-      <PostsWrapper>
-        {posts.length === 0 ? <div>No posts.</div> : null}
-        {posts.map(
-          ({
-            node: {
-              excerpt,
-              frontmatter: { title, summary, tags, banner },
-              fields: { path },
-            },
-          }) => (
-            <PostCard
-              key={path}
-              title={title}
-              summary={summary || excerpt}
-              path={path}
-              tags={tags}
-              image={banner}
-            />
-          )
-        )}
-      </PostsWrapper>
+      <div className="layout__main">
+        <div className="container posts-container">
+          {posts.length === 0 ? <div>No posts.</div> : null}
+          {posts.map(
+            ({
+              node: {
+                excerpt,
+                frontmatter: { title, summary, tags, banner },
+                fields: { path },
+              },
+            }) => (
+              <PostCard
+                key={path}
+                title={title}
+                summary={summary || excerpt}
+                path={path}
+                tags={tags}
+                image={banner}
+              />
+            )
+          )}
+        </div>
+      </div>
       <Pagination
         prefix={`/categories/${category}/`}
         postCount={postCount}

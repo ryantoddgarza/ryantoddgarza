@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { space, textColor } from '~/design-system';
 import { typography, font } from '~/styles';
 
+export const PostWrapper = styled.section`
+  max-width: 800px;
+  margin: auto;
+`;
+
 export const PostHeader = styled.header`
   h1 {
     ${font.h1}
@@ -37,6 +42,7 @@ export const Tags = styled.div`
 export const PostContent = styled.section`
   ${typography}
   padding: ${space.x8} 0 ${space.x16};
+  word-break: break-word;
 
   blockquote {
     p {

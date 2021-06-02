@@ -50,8 +50,8 @@ const Album = ({
   return (
     <>
       <SEO title={title} />
-      <Wrapper>
-        <AlbumPrimary>
+      <Wrapper className="layout__main">
+        <AlbumPrimary className="container">
           <ContentLeft>
             <Cover>
               <GatsbyImage
@@ -87,7 +87,7 @@ const Album = ({
             </Links>
           </ContentRight>
         </AlbumPrimary>
-        <AlbumSecondary>
+        <AlbumSecondary className="container">
           <ContentLeft>
             {tracks ? (
               <Tracklist>

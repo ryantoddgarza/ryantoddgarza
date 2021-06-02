@@ -82,7 +82,7 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
   const desktopNavList = [...mainNav];
 
   return (
-    <StyledGnB>
+    <StyledGnB className="container">
       <HeaderName>
         <StyledLink to={HOME_PATH}>{siteTitle}</StyledLink>
       </HeaderName>

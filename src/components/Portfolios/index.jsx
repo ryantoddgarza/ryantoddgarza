@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import SEO from '~/components/Common/SEO';
 import PortfolioCard from '~/components/Common/PortfolioCard';
-import { Wrapper } from './styled';
 
 const Portfolios = ({
   data: {
@@ -11,7 +10,7 @@ const Portfolios = ({
 }) => (
   <>
     <SEO title="Portfolios" />
-    <Wrapper>
+    <div>
       {portfolios.map(
         ({
           node: {
@@ -28,7 +27,7 @@ const Portfolios = ({
           />
         )
       )}
-    </Wrapper>
+    </div>
   </>
 );
 

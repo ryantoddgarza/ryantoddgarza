@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SEO from '~/components/Common/SEO';
-import SimpleWrapper from '~/components/Common/SimpleWrapper';
-import Hero from '~/components/Common/Hero';
-import Container from '~/components/Common/Container';
 import AlbumCard from '~/components/Common/AlbumCard';
 import PortfolioCard from '~/components/Common/PortfolioCard';
 import PostCard from '~/components/Common/PostCard';
@@ -60,18 +57,20 @@ const Home = ({ posts, albums, portfolios }) => {
   return (
     <>
       <SEO />
-      <Hero>
-        <Container>
+      <div className="hero">
+        <div className="container">
           <Title>{intro}</Title>
-        </Container>
-      </Hero>
+        </div>
+      </div>
       {featuredAlbums.length >= 1 && (
-        <SimpleWrapper>
-          <SectionHeader
-            title="Featured Albums"
-            linkName="View All"
-            linkURL={ALBUMS_PATH}
-          />
+        <section>
+          <div className="container">
+            <SectionHeader
+              title="Featured Albums"
+              linkName="View All"
+              linkURL={ALBUMS_PATH}
+            />
+          </div>
           {featuredAlbums.slice(0, 1).map(
             ({
               node: {
@@ -82,15 +81,17 @@ const Home = ({ posts, albums, portfolios }) => {
               <AlbumCard key={title} title={title} path={path} image={cover} />
             )
           )}
-        </SimpleWrapper>
+        </section>
       )}
       {featuredPortfolios.length >= 2 && (
-        <SimpleWrapper>
-          <SectionHeader
-            title="Featured Projects"
-            linkName="View All"
-            linkURL={PORTFOLIOS_PATH}
-          />
+        <section>
+          <div className="container">
+            <SectionHeader
+              title="Featured Projects"
+              linkName="View All"
+              linkURL={PORTFOLIOS_PATH}
+            />
+          </div>
           {featuredPortfolios
             .slice(
               0,
@@ -114,15 +115,17 @@ const Home = ({ posts, albums, portfolios }) => {
                 />
               )
             )}
-        </SimpleWrapper>
+        </section>
       )}
       {featuredPosts.length >= 8 && (
-        <SimpleWrapper>
-          <SectionHeader
-            title="Featured Posts"
-            linkName="View All"
-            linkURL={`${POSTS_PATH}/1`}
-          />
+        <section className="posts-container">
+          <div className="container">
+            <SectionHeader
+              title="Featured Posts"
+              linkName="View All"
+              linkURL={`${POSTS_PATH}/1`}
+            />
+          </div>
           {featuredPosts.slice(0, 8).map(
             ({
               node: {
@@ -141,7 +144,7 @@ const Home = ({ posts, albums, portfolios }) => {
               />
             )
           )}
-        </SimpleWrapper>
+        </section>
       )}
     </>
   );

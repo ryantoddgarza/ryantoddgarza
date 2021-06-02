@@ -17,7 +17,7 @@ const Portfolio = (props) => {
   return (
     <>
       <SEO title={title} />
-      <Wrapper>
+      <Wrapper className="container">
         <PortfolioDescription>
           <h1>{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />

@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
-import { POSTS_PATH, EMAIL } from '~/constants';
+import { graphql, useStaticQuery } from 'gatsby';
+import { EMAIL } from '~/constants';
 import SocialLinks from '~/components/Common/SocialLinks';
 import {
-  FooterWrapperOuter,
   FooterWrapperInner,
   SocialInformation,
   Copyright,
@@ -24,17 +23,14 @@ const Footer = () => {
   const { siteAuthor } = site.siteMetadata;
 
   return (
-    <FooterWrapperOuter>
-      <FooterWrapperInner>
+    <footer className="footer">
+      <FooterWrapperInner className="container">
         <SocialInformation>
           <SocialLinks />
         </SocialInformation>
         <Copyright>{`© ${new Date().getFullYear()} ${siteAuthor}`}</Copyright>
         <Links>
           <ul>
-            <li>
-              <Link to={`${POSTS_PATH}/1`}>Blog</Link>
-            </li>
             <li>
               <a href="https://wiki.ryantoddgarza.com">Wiki</a>
             </li>
@@ -44,7 +40,7 @@ const Footer = () => {
           </ul>
         </Links>
       </FooterWrapperInner>
-    </FooterWrapperOuter>
+    </footer>
   );
 };
 

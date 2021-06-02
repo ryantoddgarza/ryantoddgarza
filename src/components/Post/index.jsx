@@ -6,14 +6,13 @@ import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
-import PostWrapper from '~/components/Common/PostWrapper';
-import Container from '~/components/Common/Container';
 import formattedDate from '~/utils/formattedDate';
 import {
-  ComponentInPost,
   BannerWrapper,
+  ComponentInPost,
   PostContent,
   PostHeader,
+  PostWrapper,
   Tags,
 } from './styled';
 
@@ -25,7 +24,6 @@ const Post = ({
         banner,
         components = [],
         date,
-        images = [],
         tags = [],
         title,
         tweets = [],
@@ -108,7 +106,7 @@ const Post = ({
     <>
       <SEO title={title} />
       <PostWrapper>
-        <Container>
+        <div className="container">
           <PostHeader>
             <ul>
               <li>
@@ -129,10 +127,7 @@ const Post = ({
             <h1>{title}</h1>
             {banner && (
               <BannerWrapper>
-                <GatsbyImage
-                  image={getImage(banner)}
-                  alt={banner.name}
-                />
+                <GatsbyImage image={getImage(banner)} alt={banner.name} />
               </BannerWrapper>
             )}
           </PostHeader>
@@ -142,7 +137,7 @@ const Post = ({
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </PostContent>
-        </Container>
+        </div>
       </PostWrapper>
     </>
   );

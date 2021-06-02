@@ -14,7 +14,10 @@ const List = ({ data }) => {
   const page = getPage(location);
   const allPosts = getPosts(data);
   const postCount = allPosts.length;
-  const posts = allPosts.slice((page - 1) * CONTENT_PER_PAGE, page * CONTENT_PER_PAGE);
+  const posts = allPosts.slice(
+    (page - 1) * CONTENT_PER_PAGE,
+    page * CONTENT_PER_PAGE
+  );
 
   return (
     <>
@@ -24,7 +27,7 @@ const List = ({ data }) => {
           ({
             node: {
               excerpt,
-              frontmatter: { title, summary, tags, images },
+              frontmatter: { title, summary, tags, banner },
               fields: { path },
             },
           }) => (
@@ -34,7 +37,7 @@ const List = ({ data }) => {
               summary={summary || excerpt}
               path={path}
               tags={tags}
-              image={images[0]}
+              image={banner}
             />
           )
         )}

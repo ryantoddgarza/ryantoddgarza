@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Truncate from 'react-truncate';
-import ScopedImage from '~/components/Common/ScopedImage';
 import { Container, ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
 const PostCard = ({ title, summary, path, tags, image }) => (
@@ -10,7 +10,7 @@ const PostCard = ({ title, summary, path, tags, image }) => (
     <Container>
       <Link to={path}>
         <ImageWrapper>
-          <ScopedImage src={image} alt="title" />
+          <GatsbyImage image={getImage(image)} alt="" className="image" />
         </ImageWrapper>
         <h5>
           <Truncate lines={2} ellipsis={<span>...</span>}>
@@ -39,12 +39,13 @@ PostCard.propTypes = {
   summary: PropTypes.string,
   path: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({}),
 };
 
 PostCard.defaultProps = {
   summary: '',
   tags: [],
+  image: {},
 };
 
 export default PostCard;

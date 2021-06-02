@@ -2,11 +2,12 @@ module.exports = {
   pathPrefix: '/',
   url: 'https://ryantoddgarza.com',
   title: 'Ryan Todd Garza',
-  description: 'A creative based in Los Angeles, CA',
+  description: 'Creative exploring sound, movement, and technology. Los Angeles, CA',
   keywords: [
     'portfolio',
-    'developer',
     'software',
+    'developer',
+    'engineer',
     'web',
     'music',
     'musician',
@@ -23,7 +24,6 @@ module.exports = {
   backgroundColor: '#ffffff',
   themeColor: '#a88f48',
 
-  uaMeasurementId: 'UA-107706366-2',
   gaMeasurementId: 'G-T260F8WSHG',
   twitter: '@ryantoddgarza',
 };

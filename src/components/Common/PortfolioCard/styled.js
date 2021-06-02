@@ -29,7 +29,7 @@ export const StyledArticle = styled.article`
   }
 
   &:hover {
-    img {
+    .image {
       width: 110%;
       left: -5%;
     }
@@ -40,7 +40,7 @@ export const StyledArticle = styled.article`
     }
   }
 
-  img {
+  .image {
     position: absolute;
     top: 0;
     bottom: 0;

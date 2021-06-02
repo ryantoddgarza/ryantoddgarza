@@ -4,7 +4,7 @@ featured: true
 title: 'Vertical Rhythm for styled-components'
 date: '2021-01-04T05:46:00.000Z'
 tags: ['typography', 'design', 'frontend']
-images: ['images/type.jpg']
+banner: 'images/type.jpg'
 ---
 
 Simple implementation of typographical vertical rhythm for styled-components that is flexible and modular.

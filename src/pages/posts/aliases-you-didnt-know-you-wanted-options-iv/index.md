@@ -4,7 +4,7 @@ featured: false
 title: "Aliases You Didn't Know You Wanted: Options `-iv`"
 date: '2020-11-08T15:11:00.000Z'
 tags: ['shell', 'zsh', 'terminal']
-images: ['https://images.unsplash.com/photo-1517242810446-cc8951b2be40?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
+banner: 'images/hello-i-m-nik-OOJAUol19oo-unsplash.jpg'
 ---
 
 Today we’ll look at aliasing two options, `-i` and `-v`, to three common Unix commands, `cp`, `mv`, and `rm`.
@@ -47,7 +47,7 @@ Source the alias file and let’s test the alias. For our purposes here, I’ll 
 
 If we copy _foo.txt_ to a new directory, we will see confirmation via the `-v` option printed to standard output. Now if we copy _foo.txt_ to _bar.txt_, we will see the `-i` option give a prompt asking to overwrite _bar.txt_ and if we confirm, another verbose confirmation printed to standard output.
 
-![cp-screenshot](./images/copy.png "`cp` with aliased options always prompts prior to destructive actions and gives verbose feedback")
+![cp-screenshot](./images/copy.png '`cp` with aliased options always prompts prior to destructive actions and gives verbose feedback')
 
 ### Move
 
@@ -59,7 +59,7 @@ alias mv="mv -iv"
 
 Source the alias file and let’s test the alias. If we move bar.txt into a new directory, we will again see confirmation via `-v.` Now if we move foo.txt into the same directory as the version copied from the previous section, we will see a prompt via the `-i` option and if we confirm, confirmation of the move.
 
-![mv-screenshot](./images/move.png "`mv` with aliased options always prompts prior to destructive actions and gives verbose feedback")
+![mv-screenshot](./images/move.png '`mv` with aliased options always prompts prior to destructive actions and gives verbose feedback')
 
 ### Remove
 
@@ -71,11 +71,10 @@ alias rm="rm -iv"
 
 Source the alias file and let’s test the alias. If we remove _foo.txt_, the `-i` option prompts confirmation of the deletion. Confirm and see verbose confirmation of the deletion (although admittedly vague). For giggles, let’s remove _bar.txt_ but decline when prompted. Because no action was taken, there is no `-v` info provided to standard output.
 
-![rm-screenshot](./images/remove.png "`rm` with aliased options always prompts prior to destructive actions and gives verbose feedback")
+![rm-screenshot](./images/remove.png '`rm` with aliased options always prompts prior to destructive actions and gives verbose feedback')
 
 Don’t worry, the options give very useful feedback when dealing with directories and recursive deletion, so try the alias out for a while and see what you think.
 
 ## Wrapping Up
 
 And there you have it! Three aliases you didn’t even know you wanted. I hope they make your life in the terminal easier. Would love to hear the ways you’ve used or extended the options for these commands or any aliases you can’t live without! Keep an eye out for more stories in [this series](/tags/alias/1) and take a look at my [personal aliases](https://github.com/ryantoddgarza/dotfiles/blob/master/.zsh/aliases.zsh) in my [dotfiles](https://github.com/ryantoddgarza/dotfiles) repo if you need a little inspiration. Happy aliasing!
-

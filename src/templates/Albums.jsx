@@ -16,30 +16,26 @@ AlbumsTemplate.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
-export const pageQuery = graphql`
-  query AlbumsQuery {
-    albums: allProjectsJson(
-      filter: { type: { eq: "album" } }
-      sort: { fields: [metadata___date], order: DESC }
-    ) {
-      edges {
-        node {
-          metadata {
-            title
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 1600) {
-                  ...GatsbyImageSharpFluid
-                  ...GatsbyImageSharpFluidLimitPresentationSize
-                }
-              }
+export const pageQuery = graphql`query AlbumsQuery {
+  albums: allProjectsJson(
+    filter: {type: {eq: "album"}}
+    sort: {fields: [metadata___date], order: DESC}
+  ) {
+    edges {
+      node {
+        metadata {
+          title
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 1600, layout: CONSTRAINED)
             }
           }
-          fields {
-            path
-          }
+        }
+        fields {
+          path
         }
       }
     }
   }
+}
 `;

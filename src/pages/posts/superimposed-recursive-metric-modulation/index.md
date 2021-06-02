@@ -5,7 +5,7 @@ title: 'Superimposed Recursive Metric Modulation - Rough Draft'
 date: '2020-08-23T23:44:00.000Z'
 tags: ['music', 'rhythm', 'meter']
 summary: 'Through subsequent modulations to closely related meters, distantly related meters can be accessed while maintaining a relationship to the original.'
-images: ['https://images.unsplash.com/photo-1532908336432-6ab8ec3d56c1?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
+banner: 'images/ross-sneddon-67qtlH5gxU4-unsplash.jpg'
 ---
 
 **Update: This post inspired its own [repository on GitHub](https://github.com/ryantoddgarza/rhythmanalysis). Visit the project for an evolution of the ideas.**

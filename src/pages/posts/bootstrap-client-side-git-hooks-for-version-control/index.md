@@ -4,7 +4,7 @@ featured: true
 title: 'Bootstrap client-side Git hooks for version control'
 date: '2021-04-20T15:11:12.000Z'
 tags: ['git', 'npm']
-images: ['https://images.unsplash.com/photo-1511283402428-355853756676?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&w=1600&q=80']
+banner: 'images/oziel-gomez-x7gz40Z9ObM-unsplash.jpg'
 ---
 
 There are lots of great primers on [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) out there, so if you’re new to the concept, take a little time to get comfortable first; we’ll get straight to the point here.

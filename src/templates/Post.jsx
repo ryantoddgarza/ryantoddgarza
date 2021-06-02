@@ -16,37 +16,33 @@ PostTemplate.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
-export const pageQuery = graphql`
-  query PostByPath($path: String!) {
-    post: markdownRemark(fields: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        title
-        path
-        banner {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+export const pageQuery = graphql`query PostByPath($path: String!) {
+  post: markdownRemark(fields: {path: {eq: $path}}) {
+    id
+    html
+    frontmatter {
+      title
+      path
+      banner {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED)
         }
-        images
-        category
-        tags
-        date
-        components {
-          rootId
-          fileName
-        }
-        tweets {
-          rootId
-          userId
-          tweetId
-        }
-        summary
+        name
       }
+      category
+      tags
+      date
+      components {
+        rootId
+        fileName
+      }
+      tweets {
+        rootId
+        userId
+        tweetId
+      }
+      summary
     }
   }
+}
 `;

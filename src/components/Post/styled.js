@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { space, textColor } from '~/design-system';
-import styledCodeBlock from './styledCodeBlock';
 import { typography, font } from '~/styles';
 
 export const PostHeader = styled.header`
@@ -78,8 +77,6 @@ export const PostContent = styled.section`
   sub {
     vertical-align: sub;
   }
-
-  ${styledCodeBlock}
 `;
 
 export const BannerWrapper = styled.figure`

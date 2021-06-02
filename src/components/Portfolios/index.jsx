@@ -15,7 +15,7 @@ const Portfolios = ({
       {portfolios.map(
         ({
           node: {
-            frontmatter: { title, summary, images },
+            frontmatter: { title, summary, banner },
             fields: { path },
           },
         }) => (
@@ -24,7 +24,7 @@ const Portfolios = ({
             title={title}
             summary={summary}
             path={path}
-            image={images[0]}
+            image={banner}
           />
         )
       )}

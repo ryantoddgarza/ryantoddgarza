@@ -29,10 +29,14 @@ export const pageQuery = graphql`
             type
             title
             category
-            images
             tags
             date
             summary
+            banner {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
           }
           fields {
             path

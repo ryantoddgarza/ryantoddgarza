@@ -38,6 +38,10 @@ const Column = styled.section`
 export const PortfolioDescription = styled(Column)`
   ${typography}
 
+  & > :first-child {
+    margin-top: 0;
+  }
+
   ol {
     list-style-type: decimal-leading-zero;
   }
@@ -45,12 +49,6 @@ export const PortfolioDescription = styled(Column)`
   .gatsby-highlight pre {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-
-  .gatsby-highlight pre code {
-    background: none;
-    white-space: inherit;
-    word-wrap: normal;
   }
 
   figure {

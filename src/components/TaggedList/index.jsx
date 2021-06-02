@@ -27,7 +27,7 @@ const TaggedList = ({ data }) => {
           ({
             node: {
               excerpt,
-              frontmatter: { title, summary, tags, images },
+              frontmatter: { title, summary, tags, banner },
               fields: { path },
             },
           }) => (
@@ -37,7 +37,7 @@ const TaggedList = ({ data }) => {
               summary={summary || excerpt}
               path={path}
               tags={tags}
-              image={images[0]}
+              image={banner}
             />
           )
         )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import SEO from '~/components/Common/SEO';
@@ -54,7 +54,10 @@ const Album = ({
         <AlbumPrimary>
           <ContentLeft>
             <Cover>
-              <Img fluid={cover.childImageSharp.fluid} />
+              <GatsbyImage
+                image={getImage(cover)}
+                alt=""
+              />
             </Cover>
           </ContentLeft>
           <ContentRight>

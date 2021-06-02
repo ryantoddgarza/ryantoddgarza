@@ -4,7 +4,7 @@ featured: true
 title: 'A Better Zsh History, pt. 2'
 date: '2020-10-02T12:03:00.000Z'
 tags: ['shell', 'zsh', 'terminal']
-images: ['https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
+banner: 'images/kimon-maritz-mQiZnKwGXW0-unsplash.jpg'
 ---
 
 In [part 1](/a-better-zsh-history-pt-1) we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment using `setopt` in the _.zshrc_. The full list of options can be found in the [documentation](http://zsh.sourceforge.net/Doc/Release/Options.html#History).

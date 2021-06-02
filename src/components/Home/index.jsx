@@ -101,7 +101,7 @@ const Home = ({ posts, albums, portfolios }) => {
             .map(
               ({
                 node: {
-                  frontmatter: { title, summary, images },
+                  frontmatter: { title, summary, banner },
                   fields: { path },
                 },
               }) => (
@@ -110,24 +110,24 @@ const Home = ({ posts, albums, portfolios }) => {
                   title={title}
                   summary={summary}
                   path={path}
-                  image={images[0]}
+                  image={banner}
                 />
               )
             )}
         </SimpleWrapper>
       )}
-      {featuredPosts.length >= 4 && (
+      {featuredPosts.length >= 8 && (
         <SimpleWrapper>
           <SectionHeader
             title="Featured Posts"
             linkName="View All"
             linkURL={`${POSTS_PATH}/1`}
           />
-          {featuredPosts.slice(0, 4).map(
+          {featuredPosts.slice(0, 8).map(
             ({
               node: {
                 excerpt,
-                frontmatter: { title, summary, tags, images },
+                frontmatter: { title, summary, tags, banner },
                 fields: { path },
               },
             }) => (
@@ -137,7 +137,7 @@ const Home = ({ posts, albums, portfolios }) => {
                 summary={summary || excerpt}
                 tags={tags}
                 path={path}
-                image={images[0]}
+                image={banner}
               />
             )
           )}

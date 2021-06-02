@@ -3,12 +3,11 @@ import { render } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
 import PostWrapper from '~/components/Common/PostWrapper';
 import Container from '~/components/Common/Container';
-import ScopedImage from '~/components/Common/ScopedImage';
 import formattedDate from '~/utils/formattedDate';
 import {
   ComponentInPost,
@@ -61,11 +60,10 @@ const Post = ({
       try {
         components.forEach(
           ({ rootId: componentRootId, fileName: componentFileName }) => {
-            const $componentContainer = global.document.getElementById(
-              componentRootId
-            );
-            const App = require(`~/postComponents/${componentFileName}`)
-              .default;
+            const $componentContainer =
+              global.document.getElementById(componentRootId);
+            const App =
+              require(`~/postComponents/${componentFileName}`).default;
 
             render(
               <ComponentInPost>
@@ -106,8 +104,6 @@ const Post = ({
     renderComponents(components);
   }, []);
 
-  const [image = null] = images;
-
   return (
     <>
       <SEO title={title} />
@@ -131,13 +127,12 @@ const Post = ({
               </li>
             </ul>
             <h1>{title}</h1>
-            {image === null && banner === null ? null : (
+            {banner && (
               <BannerWrapper>
-                {banner ? (
-                  <Img fluid={banner.childImageSharp.fluid} />
-                ) : (
-                  <ScopedImage src={image} alt={title} />
-                )}
+                <GatsbyImage
+                  image={getImage(banner)}
+                  alt={banner.name}
+                />
               </BannerWrapper>
             )}
           </PostHeader>

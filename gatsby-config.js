@@ -14,11 +14,11 @@ module.exports = {
     author: site.author,
   },
   plugins: [
-    // First-priority plugins
+    // 1. first priority plugins
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: [site.gaMeasurementId, site.uaMeasurementId],
+        trackingIds: [site.gaMeasurementId],
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,
@@ -29,7 +29,7 @@ module.exports = {
         },
       },
     },
-    // Other plugins
+    // 2.source plugins
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -37,22 +37,10 @@ module.exports = {
         name: 'pages',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/resources`,
-        name: 'resources',
-      },
-    },
+    // 3. transformer plugins
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 75,
-      },
-    },
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-transformer-remark',
@@ -90,9 +78,11 @@ module.exports = {
         ],
       },
     },
+    // 4. other plugins
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -121,7 +111,7 @@ module.exports = {
         ],
       },
     },
-    // Last-priority plugins
+    // 5. last priority plugins
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
   ],

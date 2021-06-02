@@ -77,13 +77,16 @@ export const ImageWrapper = styled.figure`
     clear: both;
   }
 
-  img {
+  .image {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
-    margin: auto;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     height: auto;
   }

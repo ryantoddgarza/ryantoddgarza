@@ -4,7 +4,7 @@ featured: true
 title: 'Cleaner JavaScript with Destructuring'
 date: '2021-01-17T15:14:23.000Z'
 tags: ['javascript']
-images: ['https://images.unsplash.com/photo-1493217465235-252dd9c0d632?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
+banner: 'images/iker-urteaga-TL5Vy1IM-uA-unsplash.jpg'
 ---
 
 First of all, I’m a little upset it has taken me this long to realize that destructuring is so awesome! I find myself using it more and more for basic tasks on arrays and objects like unpacking, unnecessarily verbose tasks like assigning defaults, or giving data semantic meaning by assigning new variable names. There are the obvious ways to go about each of these, but I’ve really fallen in love with how much destructuring syntax allows me to express while keeping my code clean. It can turn some pretty hairy operations into one liners.
@@ -30,10 +30,10 @@ const c = foo[2];
 const d = foo[3];
 
 // in both cases
-a // 'zero'
-b // 'one'
-c // 'two'
-d // 'three
+a; // 'zero'
+b; // 'one'
+c; // 'two'
+d; // 'three
 ```
 
 We can also ignore values by leaving its index empty
@@ -46,8 +46,8 @@ const a = foo[0];
 const b = foo[3];
 
 // in both cases
-a // 'zero'
-b // 'three'
+a; // 'zero'
+b; // 'three'
 ```
 
 or assign the remaining values to a variable using spread syntax.
@@ -60,8 +60,8 @@ const a = foo[0];
 const b = foo.slice(1);
 
 // in both cases
-a // 'zero'
-b // ['one', 'two', 'three']
+a; // 'zero'
+b; // ['one', 'two', 'three']
 ```
 
 ## Basic object unpacking
@@ -85,8 +85,8 @@ const id = bar.id;
 const hidden = bar.hidden;
 
 // in both cases
-id // 11
-hidden // false
+id; // 11
+hidden; // false
 ```
 
 We can also rename object properties to new variables.
@@ -106,9 +106,9 @@ rename the object properties to
 ```js
 const { id: userId, name: userName, active: userIsActive } = user;
 
-userId // 8164
-userName // 'Tom'
-userIsActive // true
+userId; // 8164
+userName; // 'Tom'
+userIsActive; // true
 ```
 
 avoiding clashes with other variables or giving semantic meaning to the data.
@@ -124,8 +124,8 @@ const [firstSkill = 'Still learning!'] = skills;
 const projects = {};
 const { firstProject = 'Still working!' } = projects;
 
-firstSkill // 'Still learning!'
-firstProject // 'Still working!'
+firstSkill; // 'Still learning!'
+firstProject; // 'Still working!'
 ```
 
 ## Some use cases
@@ -149,10 +149,10 @@ const {
   qux: mango = 503,
 } = obj;
 
-apple // 1
-banana // 0
-orange // 502
-mango // 503
+apple; // 1
+banana; // 0
+orange; // 502
+mango; // 503
 ```
 
 One by one: the alias `apple` resolves the value `1` from `foo` as expected. `banana` also resolves `bar`'s value but a value of zero. Shouldn't the falsy value of `0` fall back to the default? Well no…remember from the assigning defaults section that "Defaults are applied in the case that the value returned is `undefined`," not necessarily falsy. This brings us to `orange` which does in fact resolve a value of `undefined` and falls back to the default value of `502`.
@@ -271,7 +271,7 @@ const {
 const slug = data.node.fields.slug;
 
 // in both cases
-slug // 'a-blog-post'
+slug; // 'a-blog-post'
 ```
 
 Or we might pull out more than just one parameter and add some line breaks for readability. Let’s destructure once to perform an array method on the credits and again destructure the credits in the callback.

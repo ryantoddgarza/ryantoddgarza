@@ -19,10 +19,7 @@ const Layout = ({ children }) => {
               title
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 1600) {
-                    ...GatsbyImageSharpFluid
-                    ...GatsbyImageSharpFluidLimitPresentationSize
-                  }
+                  gatsbyImageData(width: 1600, layout: CONSTRAINED)
                 }
               }
             }
@@ -47,6 +44,11 @@ const Layout = ({ children }) => {
               featured
               summary
               tags
+              banner {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED)
+                }
+              }
               images
             }
             fields {
@@ -62,8 +64,20 @@ const Layout = ({ children }) => {
   const projectEdges = allProjectsJson.edges;
 
   const albums = projectEdges.filter(({ node: { type } }) => type === ALBUM);
-  const posts = postEdges.filter(({ node: { frontmatter: { type } } }) => type === POST || type === null);
-  const portfolios = postEdges.filter(({ node: { frontmatter: { type } } }) => type === PORTFOLIO);
+  const posts = postEdges.filter(
+    ({
+      node: {
+        frontmatter: { type },
+      },
+    }) => type === POST || type === null
+  );
+  const portfolios = postEdges.filter(
+    ({
+      node: {
+        frontmatter: { type },
+      },
+    }) => type === PORTFOLIO
+  );
 
   const categories = postEdges.reduce(
     (categories, { node }) => {
@@ -122,7 +136,8 @@ const Layout = ({ children }) => {
   const hasAlbum = albums.length > 0;
 
   const childrenWithProps = Children.map(children, (child) =>
-    cloneElement(child, { posts, albums, portfolios }));
+    cloneElement(child, { posts, albums, portfolios })
+  );
 
   return (
     <App

@@ -34,10 +34,14 @@ export const pageQuery = graphql`
           frontmatter {
             type
             title
-            images
             tags
             date
             summary
+            banner {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
+            }
           }
           fields {
             path

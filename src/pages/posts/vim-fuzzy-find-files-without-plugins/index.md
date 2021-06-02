@@ -4,7 +4,7 @@ featured: true
 title: 'Vim Fuzzy Find Files Without Plugins'
 date: '2020-11-17T15:12:00.000Z'
 tags: ['vim', 'terminal']
-images: ['https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600&q=80']
+banner: 'images/andrew-neel-1-29wyvvLJA-unsplash.jpg'
 ---
 
 Attempting to stick to an ethos of understanding my tools, I try to take my vim configuration as far as possible before reaching for a plugin. Not that plugins are bad. In fact, there are some that I’d have a hard time living without (thanks to [Tim Pope](https://github.com/tpope)). But in doing so, I always manage to learn something about Vim itself which is part of the joy of learning it in the first place. So let’s see what Vim has for us under the hood.

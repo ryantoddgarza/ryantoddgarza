@@ -23,8 +23,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        images
         date
+        banner {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
+        }
+        images
       }
     }
   }

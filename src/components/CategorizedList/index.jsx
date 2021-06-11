@@ -31,26 +31,28 @@ const CategorizedList = ({ data }) => {
     <>
       <SEO title={titleCase(category)} />
       <div className="layout__main">
-        <div className="container posts-container">
-          {posts.length === 0 ? <div>No posts.</div> : null}
-          {posts.map(
-            ({
-              node: {
-                excerpt,
-                frontmatter: { title, summary, tags, banner },
-                fields: { path },
-              },
-            }) => (
-              <PostCard
-                key={path}
-                title={title}
-                summary={summary || excerpt}
-                path={path}
-                tags={tags}
-                image={banner}
-              />
-            )
-          )}
+        <div className="container">
+          <div className="posts-container">
+            {posts.length === 0 && <div>No posts.</div>}
+            {posts.map(
+              ({
+                node: {
+                  excerpt,
+                  frontmatter: { title, summary, tags, banner },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  summary={summary || excerpt}
+                  path={path}
+                  tags={tags}
+                  image={banner}
+                />
+              )
+            )}
+          </div>
         </div>
       </div>
       <Pagination

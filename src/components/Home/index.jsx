@@ -118,7 +118,7 @@ const Home = ({ posts, albums, portfolios }) => {
         </section>
       )}
       {featuredPosts.length >= 8 && (
-        <section className="posts-container">
+        <section>
           <div className="container">
             <SectionHeader
               title="Featured Posts"
@@ -126,24 +126,26 @@ const Home = ({ posts, albums, portfolios }) => {
               linkURL={`${POSTS_PATH}/1`}
             />
           </div>
-          {featuredPosts.slice(0, 8).map(
-            ({
-              node: {
-                excerpt,
-                frontmatter: { title, summary, tags, banner },
-                fields: { path },
-              },
-            }) => (
-              <PostCard
-                key={path}
-                title={title}
-                summary={summary || excerpt}
-                tags={tags}
-                path={path}
-                image={banner}
-              />
-            )
-          )}
+          <div className="posts-container">
+            {featuredPosts.slice(0, 8).map(
+              ({
+                node: {
+                  excerpt,
+                  frontmatter: { title, summary, tags, banner },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  summary={summary || excerpt}
+                  tags={tags}
+                  path={path}
+                  image={banner}
+                />
+              )
+            )}
+          </div>
         </section>
       )}
     </>

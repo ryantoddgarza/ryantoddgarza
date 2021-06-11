@@ -22,25 +22,27 @@ const List = ({ data }) => {
     <>
       <SEO title="Posts" />
       <div className="layout__main">
-        <div className="container posts-container">
-          {posts.map(
-            ({
-              node: {
-                excerpt,
-                frontmatter: { title, summary, tags, banner },
-                fields: { path },
-              },
-            }) => (
-              <PostCard
-                key={path}
-                title={title}
-                summary={summary || excerpt}
-                path={path}
-                tags={tags}
-                image={banner}
-              />
-            )
-          )}
+        <div className="container">
+          <div className="posts-container">
+            {posts.map(
+              ({
+                node: {
+                  excerpt,
+                  frontmatter: { title, summary, tags, banner },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  summary={summary || excerpt}
+                  path={path}
+                  tags={tags}
+                  image={banner}
+                />
+              )
+            )}
+          </div>
         </div>
       </div>
       <Pagination postCount={postCount} location={location} />

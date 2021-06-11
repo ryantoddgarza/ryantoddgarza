@@ -3,35 +3,38 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Truncate from 'react-truncate';
-import { Container, ImageWrapper, TagWrapper, StyledArticle } from './styled';
 
 const PostCard = ({ title, summary, path, tags, image }) => (
-  <StyledArticle>
-    <Container>
+  <div className="post-card">
+    <div className="inner">
       <Link to={path}>
-        <ImageWrapper>
+        <div className="image-container">
           <GatsbyImage image={getImage(image)} alt="" className="image" />
-        </ImageWrapper>
-        <h5>
-          <Truncate lines={2} ellipsis={<span>...</span>}>
-            {title}
-          </Truncate>
-        </h5>
-        <p>
-          <Truncate lines={3} ellipsis={<span>...</span>}>
-            {summary}
-          </Truncate>
-        </p>
+        </div>
+        <div className="body">
+          <h5 className="title">
+            <Truncate lines={2} ellipsis={<span>...</span>}>
+              {title}
+            </Truncate>
+          </h5>
+          <p className="copy">
+            <Truncate lines={3} ellipsis={<span>...</span>}>
+              {summary}
+            </Truncate>
+          </p>
+          <div className="meta">
+            <div className="tag-container">
+              {tags.map((tag) => (
+                <Link key={tag} to={`/tags/${tag}/1`} className="tag">
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </Link>
-      <TagWrapper>
-        {tags.map((tag) => (
-          <Link key={tag} to={`/tags/${tag}/1`}>
-            <span>{`${tag} `}</span>
-          </Link>
-        ))}
-      </TagWrapper>
-    </Container>
-  </StyledArticle>
+    </div>
+  </div>
 );
 
 PostCard.propTypes = {

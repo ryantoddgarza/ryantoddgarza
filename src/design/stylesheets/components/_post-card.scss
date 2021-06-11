@@ -1,0 +1,92 @@
+.post-card {
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+
+  @include at-media("tablet") {
+    width: 50%;
+  }
+
+  @include at-media("desktop") {
+    width: 33.3333%;
+  }
+
+  @include at-media("widescreen") {
+    width: 25%;
+  }
+}
+
+.post-card .inner {
+  position: relative;
+  background-color: $theme-color-background-weak;
+  overflow: hidden;
+}
+
+.post-card .body {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.post-card .title {
+  height: 2 * ($theme-line-height-heading * $theme-font-size-lg);
+  margin-bottom: 16px;
+  font-size: $theme-font-size-lg;
+  font-weight: 500;
+  line-height: $theme-line-height-heading;
+}
+
+.post-card .copy {
+  height: 3 * ($theme-line-height-body * $theme-font-size-md);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: $theme-font-size-md;
+  line-height: $theme-line-height-body;
+}
+
+.post-card .meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: $theme-font-size-xs;
+  color: $theme-color-text-weak;
+}
+
+.post-card .tag {
+  color: $theme-color-text-weak;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &:hover {
+    color: $theme-color-text-weak-hover;
+  }
+
+  &:not(last-child) {
+    margin-right: 8px;
+  }
+}
+
+.post-card .image-container {
+  position: relative;
+  height: 0;
+  padding-top: 50%;
+  overflow: hidden;
+}
+
+.post-card:nth-child(odd) .image-container {
+  background-color: $theme-color-background-strong;
+}
+
+.post-card:nth-child(even) .image-container {
+  background-color: $theme-color-background-inverse;
+}
+
+.post-card .image-container .image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}

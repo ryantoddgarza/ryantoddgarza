@@ -1,5 +1,5 @@
-.posts {
-  &-container {
-    @include clearfix;
-  }
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  @include clearfix;
 }

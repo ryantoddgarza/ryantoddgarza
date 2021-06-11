@@ -5,7 +5,6 @@ title: 'White Notebook - A Brief Note On Sanskrit'
 date: '2020-08-08T18:34:00.000Z'
 tags: ['yoga', 'white-notebook', 'sanskrit']
 banner: './images/yoga-0629.jpg'
-images: ['images/yoga-0629.jpg']
 ---
 
 Considering that I have chosen to leave many Sanskrit terms untranslated, I figured I might say a few words about the language. In order be as concise as possible I have included a few resources at the end of this section that explore Sanskrit in much greater depth than the scope of this document allows.

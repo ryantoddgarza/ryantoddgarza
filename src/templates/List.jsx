@@ -26,7 +26,10 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       filter: { frontmatter: { hide: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: {
+        order: [DESC, ASC]
+        fields: [frontmatter___date, frontmatter___title]
+      }
     ) {
       edges {
         node {

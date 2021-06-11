@@ -1,10 +1,22 @@
+$theme-font-size-xs: 12px;
+$theme-font-size-sm: 14px;
+$theme-font-size-md: 16px;
+$theme-font-size-lg: 24px;
+$theme-font-size-xl: 32px;
+$theme-font-size-2xl: 40px;
+
+$theme-line-height-ui: 1;
+$theme-line-height-heading: 1.2;
+$theme-line-height-body: 1.5;
+$theme-line-height-extended: 1.75;
+
 $theme-color-text: $color-gray-90;
 $theme-color-text-inverse: $color-gray-2;
 $theme-color-text-weak: $color-gray-40;
 $theme-color-text-weak-hover: $color-gray-90;
 
-$theme-color-background: $color-gray-2;
-$theme-color-background-weak: $color-gray-1;
+$theme-color-background: $color-gray-3;
+$theme-color-background-weak: white;
 $theme-color-background-strong: $color-gray-10;
 $theme-color-background-inverse: $color-gray-90;
 

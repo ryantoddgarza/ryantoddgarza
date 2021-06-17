@@ -1,7 +1,7 @@
 {
   "type": "album",
   "hide": false,
-  "featured": false,
+  "featured": true,
   "metadata": {
     "title": "wk02",
     "artist": "Ens Ensemble",

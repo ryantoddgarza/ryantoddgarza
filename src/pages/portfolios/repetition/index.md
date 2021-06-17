@@ -2,7 +2,6 @@
 type: 'portfolio'
 title: 'Repetition'
 date: '2019-05-01T00:00:01.000Z'
-featured: true
 summary: 'Repetition is an ongoing photo essay depicting the forgotten and entropic corners of West Texas.'
 banner: 'images/repetition-01.jpg'
 images:

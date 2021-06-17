@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SEO from '~/components/Common/SEO';
-import AlbumCard from '~/components/Common/AlbumCard';
-import PortfolioCard from '~/components/Common/PortfolioCard';
-import PostCard from '~/components/Common/PostCard';
 import SectionHeader from '~/components/Common/SectionHeader';
+import { PostCard, cardAspect } from '~/design/components';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 import Typist from '~/lib/typist/dist/typist.es.min';
 import { Title } from './styled';
@@ -62,51 +60,53 @@ const Home = ({ posts, albums, portfolios }) => {
           <Title>{intro}</Title>
         </div>
       </div>
-      {featuredAlbums.length >= 1 && (
-        <section>
-          <div className="container">
-            <SectionHeader
-              title="Featured Albums"
-              linkName="View All"
-              linkURL={ALBUMS_PATH}
-            />
+      {featuredAlbums && (
+        <section className="container">
+          <SectionHeader
+            title="Featured Albums"
+            linkName="View All"
+            linkURL={ALBUMS_PATH}
+          />
+          <div className="posts-container">
+            {featuredAlbums.map(
+              ({
+                node: {
+                  type,
+                  metadata: { title, artist, date, cover },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  aspect={cardAspect.SQUARE}
+                  key={title}
+                  title={title}
+                  summary={`${
+                    type[0].toUpperCase() + type.slice(1)
+                  } by ${artist} (${date.split('-')[0]})`}
+                  path={path}
+                  image={cover}
+                />
+              )
+            )}
           </div>
-          {featuredAlbums.slice(0, 1).map(
-            ({
-              node: {
-                metadata: { title, cover },
-                fields: { path },
-              },
-            }) => (
-              <AlbumCard key={title} title={title} path={path} image={cover} />
-            )
-          )}
         </section>
       )}
-      {featuredPortfolios.length >= 2 && (
-        <section>
-          <div className="container">
-            <SectionHeader
-              title="Featured Projects"
-              linkName="View All"
-              linkURL={PORTFOLIOS_PATH}
-            />
-          </div>
-          {featuredPortfolios
-            .slice(
-              0,
-              featuredPortfolios.length % 2 === 0
-                ? featuredPortfolios.length
-                : featuredPortfolios.length - 1
-            )
-            .map(
+      {featuredPortfolios && (
+        <section className="container">
+          <SectionHeader
+            title="Featured Projects"
+            linkName="View All"
+            linkURL={PORTFOLIOS_PATH}
+          />
+          <div className="posts-container">
+            {featuredPortfolios.map(
               ({
                 node: {
                   frontmatter: { title, summary, banner },
                   fields: { path },
                 },
               }) => (
-                <PortfolioCard
+                <PostCard
                   key={path}
                   title={title}
                   summary={summary}
@@ -115,17 +115,16 @@ const Home = ({ posts, albums, portfolios }) => {
                 />
               )
             )}
+          </div>
         </section>
       )}
-      {featuredPosts.length >= 8 && (
-        <section>
-          <div className="container">
-            <SectionHeader
-              title="Featured Posts"
-              linkName="View All"
-              linkURL={`${POSTS_PATH}/1`}
-            />
-          </div>
+      {featuredPosts && (
+        <section className="container">
+          <SectionHeader
+            title="Featured Posts"
+            linkName="View All"
+            linkURL={`${POSTS_PATH}/1`}
+          />
           <div className="posts-container">
             {featuredPosts.slice(0, 8).map(
               ({

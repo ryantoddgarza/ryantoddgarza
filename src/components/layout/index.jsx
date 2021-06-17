@@ -17,6 +17,8 @@ const Layout = ({ children }) => {
             featured
             metadata {
               title
+              artist
+              date
               cover {
                 childImageSharp {
                   gatsbyImageData(width: 1600, layout: CONSTRAINED)
@@ -136,8 +138,7 @@ const Layout = ({ children }) => {
   const hasAlbum = albums.length > 0;
 
   const childrenWithProps = Children.map(children, (child) =>
-    cloneElement(child, { posts, albums, portfolios })
-  );
+    cloneElement(child, { posts, albums, portfolios }));
 
   return (
     <App

@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { breakpoint, fontSizeFluid } from '~/design-system';
 
 export const Title = styled.div`
-  height: 2.8em;
+  height: 2.4em;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-size: ${fontSizeFluid(48, 16)};
-  line-height: 1.4;
+  line-height: 1.2;
   white-space: pre;
 
   ${breakpoint.from('tablet-l')} {

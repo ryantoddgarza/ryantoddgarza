@@ -73,14 +73,19 @@
   height: 0;
   padding-top: 50%;
   overflow: hidden;
-}
-
-.post-card:nth-child(odd) .image-container {
   background-color: $theme-color-background-strong;
 }
 
-.post-card:nth-child(even) .image-container {
-  background-color: $theme-color-background-inverse;
+.post-card.square .image-container {
+  padding-top: 100%;
+}
+
+.post-card.standard .image-container {
+  padding-top: 66%;
+}
+
+.post-card.widescreen .image-container {
+  padding-top: 56.25%;
 }
 
 .post-card .image-container .image {

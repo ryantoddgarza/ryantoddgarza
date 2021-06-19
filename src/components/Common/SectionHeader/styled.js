@@ -36,5 +36,6 @@ export const Title = styled.h2`
   margin-top: ${space.x8};
   margin-bottom: ${space.x4};
   font-size: ${fontSizeFluid(32, 2)};
+  font-weight: 700;
   line-height: 1;
 `;

@@ -1,8 +1,8 @@
 .post-card {
   width: 100%;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-bottom: 16px;
+  padding-left: space(3);
+  padding-right: space(3);
+  padding-bottom: space(5);
 
   @include at-media("tablet") {
     width: 50%;
@@ -19,37 +19,32 @@
 
 .post-card .inner {
   position: relative;
-  background-color: $theme-color-background-weak;
+  background-color: transparent;
   overflow: hidden;
 }
 
 .post-card .body {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 .post-card .title {
-  height: 2 * ($theme-line-height-heading * $theme-font-size-lg);
-  margin-bottom: 16px;
-  font-size: $theme-font-size-lg;
-  font-weight: 500;
-  line-height: $theme-line-height-heading;
+  margin-top: space(5);
+  font-size: font-size(10);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
 }
 
 .post-card .copy {
-  height: 3 * ($theme-line-height-body * $theme-font-size-md);
-  margin-top: 16px;
-  margin-bottom: 16px;
-  font-size: $theme-font-size-md;
-  line-height: $theme-line-height-body;
+  margin-top: space(4);
+  margin-bottom: space(4);
+  font-size: font-size($theme-font-size-md);
+  line-height: line-height($theme-line-height-body);
 }
 
 .post-card .meta {
+  margin-top: space(4);
   display: flex;
   justify-content: space-between;
-  font-size: $theme-font-size-xs;
+  font-size: font-size($theme-font-size-xs);
   color: $theme-color-text-weak;
 }
 
@@ -64,7 +59,7 @@
   }
 
   &:not(last-child) {
-    margin-right: 8px;
+    margin-right: space(3);
   }
 }
 

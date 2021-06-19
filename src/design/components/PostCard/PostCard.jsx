@@ -10,6 +10,7 @@ const PostCard = ({ title, summary, path, tags, image, aspect }) => {
     const cardClasses = ['post-card', aspect];
     return cardClasses.join(' ');
   };
+
   return (
     <div className={getCardClasses()}>
       <div className="inner">
@@ -18,25 +19,23 @@ const PostCard = ({ title, summary, path, tags, image, aspect }) => {
             <GatsbyImage image={getImage(image)} alt="" className="image" />
           </div>
           <div className="body">
-            <h5 className="title">
-              <Truncate lines={2} ellipsis={<span>...</span>}>
-                {title}
-              </Truncate>
-            </h5>
+            <h5 className="title">{title}</h5>
             <p className="copy">
               <Truncate lines={3} ellipsis={<span>...</span>}>
                 {summary}
               </Truncate>
             </p>
-            <div className="meta">
-              <div className="tag-container">
-                {tags.map((tag) => (
-                  <Link key={tag} to={`/tags/${tag}/1`} className="tag">
-                    {tag}
-                  </Link>
-                ))}
+            {tags && (
+              <div className="meta">
+                <div className="tag-container">
+                  {tags.map((tag) => (
+                    <Link key={tag} to={`/tags/${tag}/1`} className="tag">
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </Link>
       </div>

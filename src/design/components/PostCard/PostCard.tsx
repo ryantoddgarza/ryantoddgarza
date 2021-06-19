@@ -1,11 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Truncate from 'react-truncate';
 import { cardAspect } from './variants';
 
-const PostCard = ({ title, summary, path, tags, image, aspect }) => {
+interface Props {
+  title: string;
+  summary?: string;
+  path: string;
+  tags?: string[];
+  image?: any;
+  aspect: string;
+}
+
+const PostCard: FunctionComponent<Props> = ({
+  title,
+  summary,
+  path,
+  tags,
+  image,
+  aspect,
+}: Props) => {
   const getCardClasses = () => {
     const cardClasses = ['post-card', aspect];
     return cardClasses.join(' ');
@@ -16,7 +31,7 @@ const PostCard = ({ title, summary, path, tags, image, aspect }) => {
       <div className="inner">
         <Link to={path}>
           <div className="image-container">
-            <GatsbyImage image={getImage(image)} alt="" className="image" />
+            <GatsbyImage image={image && getImage(image)} alt="" className="image" />
           </div>
           <div className="body">
             <h5 className="title">{title}</h5>
@@ -41,15 +56,6 @@ const PostCard = ({ title, summary, path, tags, image, aspect }) => {
       </div>
     </div>
   );
-};
-
-PostCard.propTypes = {
-  aspect: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  summary: PropTypes.string,
-  path: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string),
-  image: PropTypes.shape({}),
 };
 
 PostCard.defaultProps = {

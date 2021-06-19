@@ -2,8 +2,8 @@ body {
   color: $theme-color-text;
   background-color: $theme-color-background;
   overflow-x: hidden;
+}
 
-  img {
-    user-select: none;
-  }
+img {
+  user-select: none;
 }

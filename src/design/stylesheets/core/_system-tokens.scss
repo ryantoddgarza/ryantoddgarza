@@ -1,3 +1,27 @@
+$system-font-stack: (
+  system: (
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Helvetica,
+    Arial,
+    sans-serif,
+  ),
+  helvetica: (
+    Helvetica Neue,
+    Helvetica,
+    arial,
+    sans-serif,
+  ),
+  monospace: (
+    SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace,
+  ),
+);
+
 $system-breakpoint: (
   phone: 320px,
   phone-lg: 480px,

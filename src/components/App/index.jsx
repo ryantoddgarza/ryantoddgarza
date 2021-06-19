@@ -5,7 +5,6 @@ import { Header } from '../../design/components';
 import Gnb from '~/components/Gnb';
 import Footer from '~/components/Footer';
 import { textColor, backgroundColor } from '~/design-system';
-import { SiteWrapper } from './styled';
 
 export default class App extends Component {
   constructor(props) {
@@ -63,7 +62,7 @@ export default class App extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <SiteWrapper>
+        <div className="app__root">
           <Header>
             <Gnb
               categories={categories}
@@ -75,9 +74,9 @@ export default class App extends Component {
               isDracula={isDracula}
             />
           </Header>
-          <main>{children}</main>
+          <main className="app__main">{children}</main>
           <Footer />
-        </SiteWrapper>
+        </div>
       </ThemeProvider>
     );
   }

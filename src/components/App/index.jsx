@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
+import { Header } from '../../design/components';
 import Gnb from '~/components/Gnb';
-import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import { textColor, backgroundColor } from '~/design-system';
 import { SiteWrapper } from './styled';

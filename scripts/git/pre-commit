@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+hookName="$(basename "$0")"
+stagedChanges="$(git diff --cached)"
+
+printHookName() {
+  echo "[git] $hookName"
+  echo
+}
+
+runHook() {
+  node ./node_modules/lint-staged/bin/lint-staged.js
+}
+
+main() {
+  if [[ $stagedChanges ]]
+  then
+    printHookName
+    runHook
+  fi
+}
+
+main

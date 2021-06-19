@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import SEO from '~/components/Common/SEO';
 import SectionHeader from '~/components/Common/SectionHeader';
-import { PostCard, cardAspect } from '~/design/components';
+import { Hero, PostCard, cardAspect } from '~/design/components';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
-import Typist from '~/lib/typist/dist/typist.es.min';
-import { Title } from './styled';
+
+const content = {
+  hero: {
+    heading: 'I build practical systems to actualize creative concepts.',
+    copy: "I'm Ryan Todd Garza. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions to artistic and entrepreneurial ventures.",
+  },
+};
 
 const Home = ({ posts, albums, portfolios }) => {
   const featuredAlbums = albums.filter(
@@ -26,40 +31,10 @@ const Home = ({ posts, albums, portfolios }) => {
     }) => featured === true
   );
 
-  const [intro, setIntro] = useState('');
-  const introduction = Typist(setIntro);
-
-  useEffect(() => {
-    introduction
-      .type("Hi, I'm Ryan.\n")
-      .pause(120)
-      .type('A developer')
-      .pause(120)
-      .backspace(9)
-      .type('musician')
-      .pause(120)
-      .backspace(8)
-      .type('yogi')
-      .pause(120)
-      .backspace(4)
-      .type('creative')
-      .pause(240)
-      .type('.')
-      .start();
-
-    return function cleanup() {
-      introduction.stop();
-    };
-  }, []);
-
   return (
     <>
       <SEO />
-      <div className="hero">
-        <div className="container">
-          <Title>{intro}</Title>
-        </div>
-      </div>
+      <Hero heading={content.hero.heading} copy={content.hero.copy} />
       {featuredAlbums && (
         <section className="container">
           <SectionHeader

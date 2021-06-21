@@ -1,0 +1,39 @@
+.post .content {
+  margin-top: space(6);
+  margin-bottom: space(6);
+}
+
+.post .header {
+  margin-bottom: space(6);
+}
+
+.post .header .title {
+  font-size: font-size($theme-font-size-3xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+}
+
+.post .header .metadata {
+  margin-top: space(4);
+  font-size: font-size($theme-font-size-sm);
+  line-height: line-height($theme-line-height-body);
+}
+
+.post .header .metadata a.tag {
+  color: $theme-color-text-link;
+
+  &:hover {
+    color: $theme-color-text-link-hover;
+  }
+}
+
+.post .header .metadata > .date,
+.post .header .metadata > .tag {
+  &:not(:last-child) {
+    margin-right: space(2);
+  }
+}
+
+.post .header .banner {
+  margin-top: space(6);
+}

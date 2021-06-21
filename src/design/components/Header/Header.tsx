@@ -6,7 +6,7 @@ interface Props {
 
 const Header: FunctionComponent<Props> = ({ children }: Props) => {
   const getHeaderClasses = () => {
-    const headerClasses = ['header'];
+    const headerClasses = ['app__header'];
     return headerClasses.join(' ');
   };
 

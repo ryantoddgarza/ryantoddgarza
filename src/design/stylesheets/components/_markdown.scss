@@ -1,0 +1,13 @@
+.markdown {
+  line-height: line-height($theme-line-height-body);
+  word-wrap: break-word;
+  @include content;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  .gatsby-highlight pre {
+    margin-top: space(4);
+  }
+}

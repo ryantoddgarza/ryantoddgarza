@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { breakpoint, primaryColor } from '~/design-system';
 import styledTechCard from './styledTechCard';
-import { typography } from '~/styles';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -34,25 +33,6 @@ const Column = styled.section`
 `;
 
 export const PortfolioDescription = styled(Column)`
-  ${typography}
-
-  & > :first-child {
-    margin-top: 0;
-  }
-
-  ol {
-    list-style-type: decimal-leading-zero;
-  }
-
-  .gatsby-highlight pre {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  figure {
-    margin: 1rem 0;
-  }
-
   .gatsby-resp-image-wrapper,
   .gatsby-resp-iframe-wrapper {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);

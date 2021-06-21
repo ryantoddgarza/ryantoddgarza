@@ -7,14 +7,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
 import SEO from '~/components/Common/SEO';
 import formattedDate from '~/utils/formattedDate';
-import {
-  BannerWrapper,
-  ComponentInPost,
-  PostContent,
-  PostHeader,
-  PostWrapper,
-  Tags,
-} from './styled';
 
 const Post = ({
   data: {
@@ -64,9 +56,9 @@ const Post = ({
               require(`~/postComponents/${componentFileName}`).default;
 
             render(
-              <ComponentInPost>
+              <div className="component-in-post">
                 <App />
-              </ComponentInPost>,
+              </div>,
               $componentContainer
             );
           }
@@ -105,40 +97,35 @@ const Post = ({
   return (
     <>
       <SEO title={title} />
-      <PostWrapper>
-        <div className="container">
-          <PostHeader>
-            <ul>
-              <li>
-                <time>{formattedDate(date)}</time>
-              </li>
-              <li>
-                {tags.length === 0 ? null : (
-                  <Tags>
-                    {tags.map((tag) => (
-                      <Link key={tag} to={`/tags/${tag}/1`}>
-                        <small>{tag}</small>
-                      </Link>
-                    ))}
-                  </Tags>
-                )}
-              </li>
-            </ul>
-            <h1>{title}</h1>
+      <div className="post container tablet-lg">
+        <div className="content">
+          <header className="header">
+            <h1 className="title">{title}</h1>
+            <div className="metadata">
+              <span>{`— `}</span>
+              <span className="date">{formattedDate(date)}</span>
+              {tags &&
+                tags.map((tag) => (
+                  <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
+                    {tag}
+                  </Link>
+                ))}
+            </div>
             {banner && (
-              <BannerWrapper>
-                <GatsbyImage image={getImage(banner)} alt={banner.name} />
-              </BannerWrapper>
+              <GatsbyImage
+                className="banner"
+                image={getImage(banner)}
+                alt={banner.name}
+              />
             )}
-          </PostHeader>
-          <PostContent>
-            <div
-              id="post-contents"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </PostContent>
+          </header>
+          <div
+            className="markdown"
+            id="post-contents"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </div>
-      </PostWrapper>
+      </div>
     </>
   );
 };

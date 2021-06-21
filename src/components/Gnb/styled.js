@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { MdExpandMore } from 'react-icons/md';
+import hamburger from './hamburger';
 import {
   backgroundColor,
   breakpoint,
@@ -9,7 +10,6 @@ import {
   textColor,
 } from '~/design-system';
 import ScopedLink from '~/components/Common/ScopedLink';
-import hamburger from './hamburger';
 
 export const Gnb = styled.div`
   position: relative;
@@ -90,7 +90,7 @@ export const HeaderName = styled.h1`
 
 export const Hamburger = styled.div`
   position: absolute;
-  right: 0;
+  right: 5%;
   z-index: 5000;
   ${breakpoint.from('tablet')} {
     display: none;

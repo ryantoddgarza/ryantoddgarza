@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { Hero, PostCard, cardAspect, Section } from '../../design/components';
 import SEO from '~/components/Common/SEO';
-import SectionHeader from '~/components/Common/SectionHeader';
-import { Hero, PostCard, cardAspect } from '~/design/components';
 import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 
 const content = {
@@ -35,93 +35,89 @@ const Home = ({ posts, albums, portfolios }) => {
     <>
       <SEO />
       <Hero heading={content.hero.heading} copy={content.hero.copy} />
-      {featuredAlbums && (
-        <section className="container">
-          <SectionHeader
+      <div className="container">
+        {featuredAlbums && (
+          <Section
             title="Featured Albums"
-            linkName="View All"
-            linkURL={ALBUMS_PATH}
-          />
-          <div className="posts-container">
-            {featuredAlbums.map(
-              ({
-                node: {
-                  type,
-                  metadata: { title, artist, date, cover },
-                  fields: { path },
-                },
-              }) => (
-                <PostCard
-                  aspect={cardAspect.SQUARE}
-                  key={title}
-                  title={title}
-                  summary={`${
-                    type[0].toUpperCase() + type.slice(1)
-                  } by ${artist} (${date.split('-')[0]})`}
-                  path={path}
-                  image={cover}
-                />
-              )
-            )}
-          </div>
-        </section>
-      )}
-      {featuredPortfolios && (
-        <section className="container">
-          <SectionHeader
+            subtitle={<Link to={ALBUMS_PATH}>View All</Link>}
+          >
+            <div className="posts-container">
+              {featuredAlbums.map(
+                ({
+                  node: {
+                    type,
+                    metadata: { title, artist, date, cover },
+                    fields: { path },
+                  },
+                }) => (
+                  <PostCard
+                    aspect={cardAspect.SQUARE}
+                    key={title}
+                    title={title}
+                    summary={`${
+                      type[0].toUpperCase() + type.slice(1)
+                    } by ${artist} (${date.split('-')[0]})`}
+                    path={path}
+                    image={cover}
+                  />
+                )
+              )}
+            </div>
+          </Section>
+        )}
+        {featuredPortfolios && (
+          <Section
             title="Featured Projects"
-            linkName="View All"
-            linkURL={PORTFOLIOS_PATH}
-          />
-          <div className="posts-container">
-            {featuredPortfolios.map(
-              ({
-                node: {
-                  frontmatter: { title, summary, banner },
-                  fields: { path },
-                },
-              }) => (
-                <PostCard
-                  key={path}
-                  title={title}
-                  summary={summary}
-                  path={path}
-                  image={banner}
-                />
-              )
-            )}
-          </div>
-        </section>
-      )}
-      {featuredPosts && (
-        <section className="container">
-          <SectionHeader
+            subtitle={<Link to={PORTFOLIOS_PATH}>View All</Link>}
+          >
+            <div className="posts-container">
+              {featuredPortfolios.map(
+                ({
+                  node: {
+                    frontmatter: { title, summary, banner },
+                    fields: { path },
+                  },
+                }) => (
+                  <PostCard
+                    key={path}
+                    title={title}
+                    summary={summary}
+                    path={path}
+                    image={banner}
+                  />
+                )
+              )}
+            </div>
+          </Section>
+        )}
+        {featuredPosts && (
+          <Section
             title="Featured Posts"
-            linkName="View All"
-            linkURL={`${POSTS_PATH}/1`}
-          />
-          <div className="posts-container">
-            {featuredPosts.slice(0, 8).map(
-              ({
-                node: {
-                  excerpt,
-                  frontmatter: { title, summary, tags, banner },
-                  fields: { path },
-                },
-              }) => (
-                <PostCard
-                  key={path}
-                  title={title}
-                  summary={summary || excerpt}
-                  tags={tags}
-                  path={path}
-                  image={banner}
-                />
-              )
-            )}
-          </div>
-        </section>
-      )}
+            subtitle={<Link to={`${POSTS_PATH}/1`}>View All</Link>}
+          >
+            <div className="posts-container">
+              {featuredPosts.slice(0, 8).map(
+                ({
+                  node: {
+                    excerpt,
+                    frontmatter: { title, summary, tags, banner },
+                    fields: { path },
+                  },
+                }) => (
+                  <PostCard
+                    key={path}
+                    title={title}
+                    summary={summary || excerpt}
+                    tags={tags}
+                    path={path}
+                    image={banner}
+                  />
+                )
+              )}
+            </div>
+          </Section>
+        )}
+      </div>
     </>
   );
 };

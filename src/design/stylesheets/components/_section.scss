@@ -1,0 +1,35 @@
+.section {
+  padding-top: space(8);
+  padding-bottom: space(8);
+}
+
+.section .header {
+  margin-bottom: space(6);
+}
+
+.section .header .title {
+  font-size: font-size($theme-font-size-2xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+
+  @include at-media("tablet") {
+    font-size: font-size($theme-font-size-3xl);
+  }
+}
+
+.section .header .subtitle {
+  display: block;
+  margin-top: space(3);
+  font-size: font-size($theme-font-size-md);
+  line-height: line-height($theme-line-height-ui);
+}
+
+.section .header .subtitle a {
+  &::after {
+    content: " →";
+  }
+
+  &:hover {
+    color: $theme-color-primary;
+  }
+}

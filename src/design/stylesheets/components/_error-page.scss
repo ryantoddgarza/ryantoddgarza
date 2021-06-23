@@ -1,0 +1,23 @@
+.error-page {
+  max-width: breakpoint("phone");
+}
+
+.error-page.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-page .message {
+  text-align: center;
+}
+
+.error-page .title {
+  font-size: font-size($theme-font-size-2xl);
+  line-height: line-height($theme-line-height-heading);
+}
+
+.error-page .paragraph {
+  margin-top: space(3);
+  font-size: font-size($theme-font-size-md);
+  line-height: line-height($theme-line-height-body);
+}

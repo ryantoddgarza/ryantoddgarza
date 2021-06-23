@@ -13,9 +13,11 @@ const Hero: FunctionComponent<Props> = ({ heading, copy }: Props) => {
 
   return (
     <div className={getHeroClasses()}>
-      <div className="body">
-        <div className="heading">{heading}</div>
-        <p className="copy">{copy}</p>
+      <div className="content">
+        <div className="body">
+          <div className="heading">{heading}</div>
+          <p className="copy">{copy}</p>
+        </div>
       </div>
     </div>
   );

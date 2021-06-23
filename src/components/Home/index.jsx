@@ -8,7 +8,7 @@ import { ALBUMS_PATH, PORTFOLIOS_PATH, POSTS_PATH } from '~/constants';
 const content = {
   hero: {
     heading: 'I build practical systems to actualize creative concepts.',
-    copy: "I'm Ryan Todd Garza. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions to artistic and entrepreneurial ventures.",
+    copy: "I'm Ryan Todd Garza. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions for artistic and entrepreneurial ventures.",
   },
 };
 

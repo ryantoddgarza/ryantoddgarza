@@ -3,10 +3,17 @@
   padding-bottom: unit(7);
 }
 
-.hero .body {
-  max-width: breakpoint("tablet-lg");
+.hero .content {
   padding-left: $theme-site-margin;
   padding-right: $theme-site-margin;
+}
+
+.hero .body {
+  max-width: breakpoint("tablet");
+
+  @include at-media("tablet") {
+    margin-left: 25%;
+  }
 }
 
 .hero .heading {

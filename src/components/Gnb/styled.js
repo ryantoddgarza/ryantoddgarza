@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { MdExpandMore } from 'react-icons/md';
 import hamburger from './hamburger';
 import {
@@ -9,7 +10,6 @@ import {
   space,
   textColor,
 } from '~/design-system';
-import ScopedLink from '~/components/Common/ScopedLink';
 
 export const Gnb = styled.div`
   position: relative;
@@ -108,7 +108,7 @@ export const MovableCaretDown = styled(MdExpandMore)`
   }
 `;
 
-export const StyledLink = styled(ScopedLink)`
+export const StyledLink = styled(Link)`
   ${breakpoint.to('phone')} {
     &[href='/'] {
       display: flex;
@@ -180,7 +180,7 @@ export const MobileMenu = styled.div`
 
   li > ul {
     max-height: ${({ isSubActive }) =>
-    (isSubActive ? '360px' : '0')} !important;
+      isSubActive ? '360px' : '0'} !important;
   }
 
   & > div + div {

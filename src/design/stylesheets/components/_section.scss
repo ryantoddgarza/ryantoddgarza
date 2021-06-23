@@ -1,10 +1,10 @@
 .section {
-  padding-top: space(8);
-  padding-bottom: space(8);
+  padding-top: unit(8);
+  padding-bottom: unit(8);
 }
 
 .section .header {
-  margin-bottom: space(6);
+  margin-bottom: unit(4);
 }
 
 .section .header .title {
@@ -19,7 +19,7 @@
 
 .section .header .subtitle {
   display: block;
-  margin-top: space(3);
+  margin-top: unit(1.5);
   font-size: font-size($theme-font-size-md);
   line-height: line-height($theme-line-height-ui);
 }

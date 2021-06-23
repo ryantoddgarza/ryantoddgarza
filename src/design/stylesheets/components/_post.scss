@@ -1,20 +1,20 @@
 .post .content {
-  margin-top: space(6);
-  margin-bottom: space(6);
+  margin-top: unit(4);
+  margin-bottom: unit(4);
 }
 
 .post .header {
-  margin-bottom: space(6);
+  margin-bottom: unit(4);
 }
 
 .post .header .title {
+  margin-top: unit(1);
   font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
   line-height: line-height($theme-line-height-heading);
 }
 
 .post .header .metadata {
-  margin-top: space(4);
   font-size: font-size($theme-font-size-sm);
   line-height: line-height($theme-line-height-body);
 }
@@ -30,10 +30,10 @@
 .post .header .metadata > .date,
 .post .header .metadata > .tag {
   &:not(:last-child) {
-    margin-right: space(2);
+    margin-right: unit(1);
   }
 }
 
 .post .header .banner {
-  margin-top: space(6);
+  margin-top: unit(4);
 }

@@ -1,43 +1,43 @@
 @mixin content {
   h1 {
-    margin-top: space(6);
+    margin-top: unit(4);
     font-size: font-size($theme-font-size-3xl);
     line-height: line-height($theme-line-height-heading);
   }
 
   h2 {
-    margin-top: space(5);
+    margin-top: unit(3);
     font-size: font-size($theme-font-size-2xl);
     line-height: line-height($theme-line-height-heading);
   }
 
   h3 {
-    margin-top: space(5);
+    margin-top: unit(3);
     font-size: font-size($theme-font-size-xl);
     line-height: line-height($theme-line-height-heading);
   }
 
   h4 {
-    margin-top: space(5);
+    margin-top: unit(3);
     font-size: font-size($theme-font-size-lg);
     line-height: line-height($theme-line-height-heading);
   }
 
   h5 {
-    margin-top: space(4);
+    margin-top: unit(2);
     font-size: font-size($theme-font-size-md);
     line-height: line-height($theme-line-height-heading);
   }
 
   h6 {
-    margin-top: space(4);
+    margin-top: unit(2);
     font-size: font-size($theme-font-size-sm);
     line-height: line-height($theme-line-height-heading);
   }
 
   p {
-    margin-top: space(4);
-    margin-bottom: space(4);
+    margin-top: unit(2);
+    margin-bottom: unit(2);
     font-size: font-size($theme-font-size-md);
     line-height: line-height($theme-line-height-extended);
   }
@@ -78,12 +78,12 @@
 
   ul,
   ol {
-    margin-top: space(4);
-    margin-bottom: space(4);
+    margin-top: unit(2);
+    margin-bottom: unit(2);
 
     li {
-      margin-top: space(2);
-      margin-left: space(4);
+      margin-top: unit(1);
+      margin-left: unit(2);
     }
   }
 
@@ -111,9 +111,9 @@
   }
 
   blockquote {
-    margin-top: space(6);
-    margin-bottom: space(6);
-    margin-left: space(6);
+    margin-top: unit(4);
+    margin-bottom: unit(4);
+    margin-left: unit(4);
   }
 
   blockquote p {
@@ -128,12 +128,12 @@
   }
 
   figure {
-    margin-top: space(4);
-    margin-bottom: space(4);
+    margin-top: unit(2);
+    margin-bottom: unit(2);
   }
 
   figcaption {
-    margin-top: space(2);
+    margin-top: unit(1);
     text-align: center;
     font-size: font-size($theme-font-size-xs);
   }

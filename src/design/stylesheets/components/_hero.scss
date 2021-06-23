@@ -1,6 +1,6 @@
 .hero {
-  padding-top: space(8);
-  padding-bottom: space(8);
+  padding-top: unit(7);
+  padding-bottom: unit(7);
 }
 
 .hero .body {
@@ -10,7 +10,6 @@
 }
 
 .hero .heading {
-  margin-bottom: space(5);
   font-size: font-size($theme-font-size-2xl);
   font-weight: font-weight($theme-font-weight-bold);
   line-height: line-height($theme-line-height-heading);
@@ -21,7 +20,7 @@
 }
 
 .hero .copy {
-  margin-bottom: space(4);
+  margin-top: unit(3);
   font-size: font-size($theme-font-size-lg);
   line-height: line-height($theme-line-height-extended);
 }

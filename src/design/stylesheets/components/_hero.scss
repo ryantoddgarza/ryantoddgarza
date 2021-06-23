@@ -9,10 +9,8 @@
 }
 
 .hero .body {
-  max-width: breakpoint("tablet");
-
   @include at-media("tablet") {
-    margin-left: 25%;
+    width: 66.6666%;
   }
 }
 

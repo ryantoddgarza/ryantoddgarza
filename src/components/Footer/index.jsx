@@ -1,11 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import {
-  FooterWrapperInner,
-  SocialInformation,
-  Copyright,
-  Links,
-} from './styled';
+import { SocialInformation, Copyright, Links } from './styled';
 import { EMAIL } from '~/constants';
 import SocialLinks from '~/components/Common/SocialLinks';
 
@@ -23,8 +18,8 @@ const Footer = () => {
   const { siteAuthor } = site.siteMetadata;
 
   return (
-    <footer className="footer container">
-      <FooterWrapperInner>
+    <footer className="footer">
+      <div className="content container">
         <SocialInformation>
           <SocialLinks />
         </SocialInformation>
@@ -39,7 +34,7 @@ const Footer = () => {
             </li>
           </ul>
         </Links>
-      </FooterWrapperInner>
+      </div>
     </footer>
   );
 };

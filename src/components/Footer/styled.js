@@ -1,22 +1,5 @@
 import styled from 'styled-components';
-import {
-  breakpoint,
-  primaryColor,
-  space,
-  transition,
-} from '~/design-system';
-
-export const FooterWrapperInner = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: 'links' 'social' 'copyright';
-  align-items: end;
-  padding: ${space.x8} 0;
-  ${breakpoint.from('tablet')} {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 'social copyright links';
-  }
-`;
+import { breakpoint, primaryColor, space, transition } from '~/design-system';
 
 export const SocialInformation = styled.div`
   grid-area: social;

@@ -1,9 +1,20 @@
 .footer {
-  font-size: 14px;
-  color: $theme-color-text-weak;
-  background-color: $theme-color-background-strong;
-  border-width: 1px;
-  border-color: $theme-color-border;
-  border-top-style: solid;
+  font-size: font-size($theme-font-size-xs);
+  color: $theme-color-text;
+  background-color: $theme-color-background;
   z-index: 2000;
+}
+
+.footer .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "links" "social" "copyright";
+  align-items: end;
+  padding-top: unit(2);
+  padding-bottom: unit(2);
+
+  @include at-media("tablet") {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "social copyright links";
+  }
 }

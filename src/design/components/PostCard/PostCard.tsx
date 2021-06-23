@@ -6,18 +6,18 @@ import { cardAspect } from './variants';
 
 interface Props {
   title: string;
+  subtitle?: string;
   summary?: string;
   path: string;
-  tags?: string[];
   image?: any;
   aspect: string;
 }
 
 const PostCard: FunctionComponent<Props> = ({
   title,
+  subtitle,
   summary,
   path,
-  tags,
   image,
   aspect,
 }: Props) => {
@@ -31,26 +31,20 @@ const PostCard: FunctionComponent<Props> = ({
       <div className="inner">
         <Link to={path}>
           <div className="image-container">
-            <GatsbyImage image={image && getImage(image)} alt="" className="image" />
+            <GatsbyImage
+              image={image && getImage(image)}
+              alt=""
+              className="image"
+            />
           </div>
           <div className="body">
+            {subtitle && <h6 className="subtitle">{subtitle}</h6>}
             <h5 className="title">{title}</h5>
             <p className="copy">
               <Truncate lines={3} ellipsis={<span>...</span>}>
                 {summary}
               </Truncate>
             </p>
-            {tags && (
-              <div className="meta">
-                <div className="tag-container">
-                  {tags.map((tag) => (
-                    <Link key={tag} to={`/tags/${tag}/1`} className="tag">
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </Link>
       </div>
@@ -60,8 +54,8 @@ const PostCard: FunctionComponent<Props> = ({
 
 PostCard.defaultProps = {
   aspect: cardAspect.WIDESCREEN,
+  subtitle: '',
   summary: '',
-  tags: [],
   image: {},
 };
 

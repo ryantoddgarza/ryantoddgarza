@@ -8,29 +8,42 @@
 }
 
 .post .header .title {
-  margin-top: unit(1);
   font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
   line-height: line-height($theme-line-height-heading);
 }
 
 .post .header .metadata {
+  margin-top: unit(1);
   font-size: font-size($theme-font-size-sm);
   line-height: line-height($theme-line-height-body);
 }
 
-.post .header .metadata a.tag {
+.post .header .metadata a.category {
   color: $theme-color-text-link;
+  font-weight: font-weight($theme-font-weight-medium);
+  text-transform: uppercase;
 
   &:hover {
     color: $theme-color-text-link-hover;
   }
 }
 
-.post .header .metadata > .date,
-.post .header .metadata > .tag {
-  &:not(:last-child) {
+.post .tags {
+  margin-top: unit(6);
+  font-size: font-size($theme-font-size-sm);
+
+  & > :not(:last-child) {
     margin-right: unit(1);
+  }
+}
+
+.post .tags a.tag {
+  color: $theme-color-text-link;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $theme-color-text-link-hover;
   }
 }
 

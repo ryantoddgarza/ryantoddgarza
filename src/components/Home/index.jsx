@@ -100,15 +100,17 @@ const Home = ({ posts, albums, portfolios }) => {
                 ({
                   node: {
                     excerpt,
-                    frontmatter: { title, summary, tags, banner },
+                    frontmatter: { title, summary, category, banner },
                     fields: { path },
                   },
                 }) => (
                   <PostCard
                     key={path}
                     title={title}
+                    subtitle={
+                      <Link to={`/categories/${category}/1`}>{category}</Link>
+                    }
                     summary={summary || excerpt}
-                    tags={tags}
                     path={path}
                     image={banner}
                   />

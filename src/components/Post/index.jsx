@@ -16,6 +16,7 @@ const Post = ({
         banner,
         components = [],
         date,
+        category,
         tags = [],
         title,
         tweets = [],
@@ -102,14 +103,14 @@ const Post = ({
           <header className="header">
             <h1 className="title">{title}</h1>
             <div className="metadata">
-              <span>{`— `}</span>
-              <span className="date">{formattedDate(date)}</span>
-              {tags &&
-                tags.map((tag) => (
-                  <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
-                    {tag}
-                  </Link>
-                ))}
+              <span>{`— ${formattedDate(date)} in `}</span>
+              <Link
+                className="category"
+                key={`category__${category}`}
+                to={`/categories/${category}/1`}
+              >
+                {category}
+              </Link>
             </div>
             {banner && (
               <GatsbyImage
@@ -124,6 +125,16 @@ const Post = ({
             id="post-contents"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          {tags && (
+            <div className="tags">
+              <span>Tags:</span>
+              {tags.map((tag) => (
+                <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -143,6 +154,7 @@ Post.propTypes = {
         components: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
         date: PropTypes.string.isRequired,
         images: PropTypes.arrayOf(PropTypes.string),
+        category: PropTypes.string.isRequired,
         tags: PropTypes.arrayOf(PropTypes.string),
         title: PropTypes.string.isRequired,
         tweets: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),

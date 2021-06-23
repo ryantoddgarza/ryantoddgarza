@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { useLocation } from '@reach/router';
+import { PostCard } from '../../design/components';
 import SEO from '~/components/Common/SEO';
 import Pagination from '~/components/Common/Pagination';
-import { PostCard } from '~/design/components';
 import getPosts from '~/utils/getPosts';
 import getPage from '~/utils/getPage';
 import titleCase from '~/utils/titleCase';
@@ -38,16 +39,18 @@ const TaggedList = ({ data }) => {
               ({
                 node: {
                   excerpt,
-                  frontmatter: { title, summary, tags, banner },
+                  frontmatter: { title, summary, category, banner },
                   fields: { path },
                 },
               }) => (
                 <PostCard
                   key={path}
                   title={title}
+                  subtitle={
+                    <Link to={`/categories/${category}/1`}>{category}</Link>
+                  }
                   summary={summary || excerpt}
                   path={path}
-                  tags={tags}
                   image={banner}
                 />
               )

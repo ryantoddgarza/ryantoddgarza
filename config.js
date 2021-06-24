@@ -2,7 +2,8 @@ module.exports = {
   pathPrefix: '/',
   url: 'https://ryantoddgarza.com',
   title: 'Ryan Todd Garza',
-  description: 'Creative exploring sound, movement, and technology. Los Angeles, CA',
+  description:
+    'I build practical systems to actualize creative concepts. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions for artistic and entrepreneurial ventures.',
   keywords: [
     'portfolio',
     'software',

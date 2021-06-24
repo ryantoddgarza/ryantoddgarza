@@ -6,9 +6,9 @@ import { NavList, NavListItem, StyledLink } from './styled';
 const DesktopNav = ({ navList }) => (
   <nav>
     <NavList>
-      {navList.map(({ name, url, isActive, subMenu }) => (
+      {navList.map(({ name, url, subMenu }) => (
         <NavListItem key={name}>
-          <StyledLink to={url} className={isActive && 'active'}>
+          <StyledLink to={url} activeClassName="active">
             {subMenu ? `${name} ` : name}
           </StyledLink>
           {subMenu && <MdExpandMore />}

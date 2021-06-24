@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
-import { useMatch } from '@reach/router';
-import MobileNav from './MobileNav';
-import DesktopNav from './DesktopNav';
-import SubMenu from './SubMenu';
 import {
+  ABOUT_PATH,
   ALBUMS_PATH,
   EMAIL,
   HOME_PATH,
   PORTFOLIOS_PATH,
   POSTS_PATH,
-} from '~/constants';
+} from '../../constants';
+import MobileNav from './MobileNav';
+import DesktopNav from './DesktopNav';
+import SubMenu from './SubMenu';
 import { Gnb as StyledGnB, HeaderName, StyledLink } from './styled';
 
 const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
@@ -27,49 +27,53 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
 
   const { siteTitle } = site.siteMetadata;
 
-  const isMusic = useMatch(ALBUMS_PATH);
-  const isPortfolio = useMatch(PORTFOLIOS_PATH);
-  const isPost = useMatch(`${POSTS_PATH}/:page`);
-
-  const subMenus = {
-    postCategories: {
-      list: categories,
-      component: <SubMenu listItems={categories} />,
-    },
-  };
-
   const mainNav = [];
 
-  if (hasPost) {
-    const postNavData = {
-      name: 'Posts',
-      url: `${POSTS_PATH}/1`,
-      subMenu: subMenus.postCategories,
-      isActive: isPost,
+  const constructMainNav = () => {
+    const subMenus = {
+      postCategories: {
+        list: categories,
+        component: <SubMenu listItems={categories} />,
+      },
     };
 
-    mainNav.push(postNavData);
-  }
+    if (hasPost) {
+      const postNavData = {
+        name: 'Posts',
+        url: `${POSTS_PATH}/1`,
+        subMenu: subMenus.postCategories,
+      };
 
-  if (hasPortfolio) {
-    const portfolioNavData = {
-      name: 'Portfolio',
-      url: PORTFOLIOS_PATH,
-      isActive: isPortfolio,
+      mainNav.push(postNavData);
+    }
+
+    if (hasPortfolio) {
+      const portfolioNavData = {
+        name: 'Portfolio',
+        url: PORTFOLIOS_PATH,
+      };
+
+      mainNav.push(portfolioNavData);
+    }
+
+    if (hasAlbum) {
+      const albumNavData = {
+        name: 'Music',
+        url: ALBUMS_PATH,
+      };
+
+      mainNav.push(albumNavData);
+    }
+
+    const aboutNavData = {
+      name: 'About',
+      url: ABOUT_PATH,
     };
 
-    mainNav.push(portfolioNavData);
-  }
+    mainNav.push(aboutNavData);
+  };
 
-  if (hasAlbum) {
-    const albumNavData = {
-      name: 'Music',
-      url: ALBUMS_PATH,
-      isActive: isMusic,
-    };
-
-    mainNav.push(albumNavData);
-  }
+  constructMainNav();
 
   const mobileNavAppend = [
     {

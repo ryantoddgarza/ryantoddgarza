@@ -37,6 +37,13 @@ module.exports = {
         name: 'pages',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/resources`,
+        name: 'resources',
+      },
+    },
     // 3. transformer plugins
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

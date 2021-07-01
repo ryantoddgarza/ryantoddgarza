@@ -1,0 +1,19 @@
+$size-pre: "size";
+$offset-pre: "offset";
+
+.row {
+  @include make-grid-row;
+}
+
+.col {
+  @include make-grid-col;
+  @include make-grid-props("width", $size-pre);
+  @include make-grid-props("margin-left", $offset-pre);
+
+  @each $breakpoint, $val in $system-breakpoint {
+    @include at-media($breakpoint) {
+      @include make-grid-props("width", $size-pre, #{-$breakpoint});
+      @include make-grid-props("margin-left", $offset-pre, #{-$breakpoint});
+    }
+  }
+}

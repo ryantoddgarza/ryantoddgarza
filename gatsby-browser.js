@@ -1,1 +1,1 @@
-import './src/design/stylesheets/rtgds.scss';
+import './src/stylesheets/style.scss';

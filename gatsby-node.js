@@ -5,10 +5,8 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const {
   CONTENT_PER_PAGE,
   ALBUM,
-  PORTFOLIO,
   POST,
   ALBUMS_PATH,
-  PORTFOLIOS_PATH,
   POSTS_PATH,
 } = require('./src/constants');
 
@@ -37,11 +35,10 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-
   const { data, errors } = await graphql(`
     {
       allProjectsJson(filter: { hide: { ne: true } }) {
-        edges {
+        projectEdges: edges {
           node {
             type
             fields {
@@ -54,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         limit: 10000
         filter: { frontmatter: { hide: { ne: true } } }
       ) {
-        edges {
+        postEdges: edges {
           node {
             frontmatter {
               category
@@ -75,28 +72,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const { allProjectsJson, allMarkdownRemark } = data;
-  const postEdges = allMarkdownRemark.edges;
-  const projectEdges = allProjectsJson.edges;
+  const {
+    allProjectsJson: { projectEdges },
+    allMarkdownRemark: { postEdges },
+  } = data;
 
-  const post = path.resolve('./src/templates/Post.jsx');
-  const list = path.resolve('./src/templates/List.jsx');
-  const taggedList = path.resolve('./src/templates/TaggedList.jsx');
-  const categorizedList = path.resolve('./src/templates/CategorizedList.jsx');
-  const portfolios = path.resolve('./src/templates/Portfolios.jsx');
-  const portfolio = path.resolve('./src/templates/Portfolio.jsx');
-  const albums = path.resolve('./src/templates/Albums.jsx');
-  const album = path.resolve('./src/templates/Album.jsx');
+  const c = {
+    post: path.resolve('./src/templates/Post.jsx'),
+    list: path.resolve('./src/templates/List.jsx'),
+    taggedList: path.resolve('./src/templates/TaggedList.jsx'),
+    categorizedList: path.resolve('./src/templates/CategorizedList.jsx'),
+    albums: path.resolve('./src/templates/Albums.jsx'),
+    album: path.resolve('./src/templates/Album.jsx'),
+  };
 
   projectEdges.forEach(({ node: { type, fields: { path } } }) => {
-    let component = null;
-    switch (type) {
-      case ALBUM:
-        component = album;
-        break;
-      default:
-        break;
-    }
+    const projectComponents = {
+      default: null,
+      album: c.album,
+    };
+
+    let component = type ? projectComponents[type] : projectComponents.default;
 
     if (component !== null) {
       createPage({
@@ -124,16 +120,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       categoryMatrix.push(category);
     }
 
-    let component = null;
-    switch (type) {
-      case PORTFOLIO:
-        component = portfolio;
-        break;
-      default:
-      case POST:
-        component = post;
-        break;
-    }
+    const postComponents = {
+      default: c.post,
+      content: null,
+      portfolio: null,
+      post: c.post,
+    };
+
+    let component = type ? postComponents[type] : postComponents.default;
 
     if (component !== null) {
       createPage({
@@ -150,18 +144,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (albumsCount) {
     createPage({
       path: ALBUMS_PATH,
-      component: albums,
-      context: {},
-    });
-  }
-
-  const portfoliosCount = postEdges.filter(({ node: { frontmatter: { type } } }) =>
-    type === PORTFOLIO).length;
-
-  if (portfoliosCount) {
-    createPage({
-      path: PORTFOLIOS_PATH,
-      component: portfolios,
+      component: c.albums,
       context: {},
     });
   }
@@ -177,7 +160,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   pages.forEach((page) => {
     createPage({
       path: `${POSTS_PATH}/${page}`,
-      component: list,
+      component: c.list,
       context: {},
     });
   });
@@ -204,7 +187,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     taggedListPages.forEach((taggedListPage) => {
       createPage({
         path: `/tags/${tag}/${taggedListPage}`,
-        component: taggedList,
+        component: c.taggedList,
         context: {},
       });
     });
@@ -226,7 +209,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     categorizedListPages.forEach((categorizedListPage) => {
       createPage({
         path: `/categories/${category}/${categorizedListPage}`,
-        component: categorizedList,
+        component: c.categorizedList,
         context: {},
       });
     });

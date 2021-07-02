@@ -9,7 +9,7 @@ banner: 'images/andrew-neel-1-29wyvvLJA-unsplash.jpg'
 
 Attempting to stick to an ethos of understanding my tools, I try to take my vim configuration as far as possible before reaching for a plugin. Not that plugins are bad. In fact, there are some that I’d have a hard time living without (thanks to [Tim Pope](https://github.com/tpope)). But in doing so, I always manage to learn something about Vim itself which is part of the joy of learning it in the first place. So let’s see what Vim has for us under the hood.
 
-If you learn better by video, [this](https://youtu.be/XA2WjJbmmoM) is a great one to get you up and running quick. (Start from [*finding files*](https://youtu.be/XA2WjJbmmoM?t=378))
+If you learn better by video, [this](https://youtu.be/XA2WjJbmmoM) is a great one to get you up and running quick. (Start from [_finding files_](https://youtu.be/XA2WjJbmmoM?t=378))
 
 ## Setup
 
@@ -41,7 +41,7 @@ I do however want to note this eccentric behavior until I can find a solution: `
 
 Of course, this isn’t a one size fits all solution. You may prefer the way certain plugins handle larger projects or run into edge cases where this is just not the answer for you. But I’ve enjoyed this setup for a while and hope this has been helpful in some way!
 
-### More resources
+#### Resources
 
 - [My personal .vimrc](https://github.com/ryantoddgarza/dotfiles/blob/master/.vimrc)
 - [Vim Fuzzy Find Files Without a Plugin](http://www.akhatib.com/fuzzy-find-files-in-vim-without-a-plugin/) by Ahmad Khatib

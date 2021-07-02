@@ -25,4 +25,5 @@ I owe a great deal of thanks to many people. To my teachers Noah Williams, Art L
 It is with great humility and in simple hopes of being but a conduit that I present this material.
 
 With gratitude,
+
 Ryan

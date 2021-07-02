@@ -125,7 +125,7 @@ _Apologies. The 3/5 section is incorrectly performed in this video. New video so
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Ym9WgisuBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<!-- Footnotes -->
+#### References
 
 [^1]: [Music Theory](https://2012books.lardbucket.org/books/music-theory/index.html) by Mark Andrew Cook is licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)
 [^2]: Slonimsky, Nicolas. "Metric Modulation." _A Dictionary of the Avant-Gardes_, third edition, edited by Richard Kostelanetz, Routeledge, 2019, pp. 281.

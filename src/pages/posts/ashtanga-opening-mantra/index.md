@@ -71,11 +71,11 @@ I prostrate before Patañjali.
 - ṇam णम् - to bow down
 - patañjali पतञ्जलि - Patañjali
 
-###### Resources
+#### Resources
 
-- [Exploring The Invocation To Patanjali - Peggy Cady](http://www.iyengaryogacentre.ca/wp-content/uploads/2014/07/Patanjali-2.pdf)
+- [Exploring The Invocation To Patanjali](http://www.iyengaryogacentre.ca/wp-content/uploads/2014/07/Patanjali-2.pdf) by Peggy Cady
 
-###### References
+#### References
 
 [^1]: Translation: Jois, Pattabhi. (2002). Yoga Mala. North Point Press. pp. 3.
 [^2]: Translation: Iyengar, Geeta.

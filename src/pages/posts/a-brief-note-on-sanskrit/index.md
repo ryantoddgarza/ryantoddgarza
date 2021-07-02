@@ -29,12 +29,11 @@ This may have all seemed self explanatory or maybe it didn't, but believe me, on
 
 #### Resources
 
-- [Sanskrit Pronunciation Key](<http://www.trinitywebmanager.com/sanskrit/uploads/SanskritPronunciationKey(1).jpg>)
-  - Originally from this [article](http://www.sanskritsounds.com/about-sanskrit/46/index.html)
-- [americansanskrit.com](https://americansanskrit.com/) The American Sanskrit Institute is an incredible resource for learning the language. There are classes, a learn at home program, and atlas courses that incorporate texts like the Yoga Sutras and the Bhagavad Gita.
-- [ashtangayoga.info](https://ashtangayoga.info/) Dr. Ronald Steiner has a brilliant thing going here. You can find transliterations of the asanas, mantras, entire source texts, tools for learning Sanskrit and much more.
-- [lexilogos.com](https://lexilogos.com/keyboard/sanskrit_latin.htm) The Lexilogos site makes typing the diacritical markings way less daunting of a task. I keep this link bookmarked in my browser.
+- [Sanskrit Pronunciation Key](<https://www.sanskritsounds.com/wp-content/uploads/2014/06/SanskritPronunciationKey(1).jpg>) (originally from [this article](https://www.sanskritsounds.com/about/sanskrit/))
+- [americansanskrit.com](https://americansanskrit.com/) - The American Sanskrit Institute is an incredible resource for learning the language. There are classes, a learn at home program, and atlas courses that incorporate texts like the Yoga Sutras and the Bhagavad Gita.
+- [ashtangayoga.info](https://ashtangayoga.info/) - Dr. Ronald Steiner has a brilliant thing going here. You can find transliterations of the asanas, mantras, entire source texts, tools for learning Sanskrit and much more.
+- [lexilogos.com](https://lexilogos.com/keyboard/sanskrit_latin.htm) - The Lexilogos site makes the task of typing the diacritical markings way less daunting. I keep this link bookmarked in my browser.
 
-<!-- Footnotes -->
+#### References
 
 [^1]: Pinker, Steven (1994). [_The Language Instinct_](https://archive.org/details/languageinstinct00pink/page/209). W. Morrow and Co. pp. 209.

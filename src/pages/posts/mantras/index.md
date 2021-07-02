@@ -24,9 +24,9 @@ I have no "formal" training or initiation into a chanting tradition, but followi
 
 The mantras appear as the Sanskrit mantra in Devanagari, the full romanized transliteration, an English translation, and finally a transliteration.
 
-###### Resources
+#### Resources
 
-- [Intro to Vedic Chanting - Pandit Ub.Ve Sri Rama Ramanuja Achari](http://www.srimatham.com/uploads/5/5/4/9/5549439/intro_to_vedic_chanting.pdf)
+- [Intro to Vedic Chanting](http://www.srimatham.com/uploads/5/5/4/9/5549439/intro_to_vedic_chanting.pdf) by Pandit Ub.Ve Sri Rama Ramanuja Achari
 
 Used in translation
 
@@ -36,6 +36,6 @@ Used in translation
 - [sanskritdictionary.org](https://sanskritdictionary.org/)
 - [spokensanskrit.org](https://spokensanskrit.org/)
 
-###### References
+#### References
 
-[^1]: Achari, Pandit Ub.Ve Sri Rama Ramanuja. (2013). Introduction to Vedic Chanting.
+[^1]: Pandit Ub.Ve Sri Rama Ramanuja Achari. (2013). Introduction to Vedic Chanting.

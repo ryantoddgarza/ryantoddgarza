@@ -24,7 +24,7 @@ Shiva Shiva Sarveshwaraya
 Shambho Shambho Mahadevaya
 </p>
 
-###### References
+#### References
 
-[^1]: [isha.sadhguru.org/mahashivratri/shiva-adiyogi/forms-of-shiva/](https://isha.sadhguru.org/mahashivratri/shiva-adiyogi/forms-of-shiva/)
-[^2]: [https://home.cern/science/physics/dark-matter](https://home.cern/science/physics/dark-matter)
+[^1]: Vasudev, Jagadish. [Forms of Shiva](https://isha.sadhguru.org/mahashivratri/shiva-adiyogi/forms-of-shiva/). Retreived August 8, 2020.
+[^2]: CERN. [Dark Matter](https://home.cern/science/physics/dark-matter). Retreived August 8, 2020.

@@ -32,6 +32,6 @@ svasti nas tārkṣyo ariṣṭanemiḥ
 svasti no bṛhaspatir dadātu
 </p>
 
-###### Resources
+#### Resources
 
-- [Om Bhadram Karnebhi](https://learning-sanskrit.blogspot.com/2012/05/om-bhadram-karnebhi.html)
+- Learning Sanskrit: [Om Bhadram Karnebhi](https://learning-sanskrit.blogspot.com/2012/05/om-bhadram-karnebhi.html)

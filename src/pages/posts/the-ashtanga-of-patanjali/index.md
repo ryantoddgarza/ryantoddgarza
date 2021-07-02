@@ -120,11 +120,11 @@ Patañjali posits three _mārgas_ meaning literally “paths.”
 
 > “On hearing that excellent story that heightened devotion, knowledge and detachment and yielded liberation, she became greatly blessed.” - Śivapurāṇa-māhātmya 4.32
 
-<!-- Footnotes -->
+#### References
 
 [^1]: Patañjali , Hariharānanda Āraṇya, Swami , Mukerji, P. N. , & Vyāsa . (1983). Yoga Philosophy of Patañjali: Containing His Yoga Aphorisms with Vyāsas Commentary in Sanskrit and a Translation with Annotations Including Many Suggestions for the Practice of Yoga. State University of New York Press. pp. 6.
 [^2]: Maehle, Gregor. (2007). Ashtanga Yoga: Practice & Philosophy. New World Library. pp. 141.
-[^3]: yuj. In _sanskritdictionary.com_. Retrieved March 21, 2020, from [https://sanskritdictionary.com/?iencoding=iast&q=yuj&lang=sans&action=Search](https://sanskritdictionary.com/?iencoding=iast&q=yuj&lang=sans&action=Search)
+[^3]: yuj. In _sanskritdictionary.com_. Retrieved March 21, 2020, from [sanskritdictionary.com](https://sanskritdictionary.com/?iencoding=iast&q=yuj&lang=sans)
 [^4]: _Missing citation_
 [^5]: Taimni, I. K. The Science of Yoga. The Theosophical Publishing House, 2007, pp. 252.
 [^6]: Taimni. The Science. pp. 253.

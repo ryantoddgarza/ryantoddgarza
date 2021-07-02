@@ -45,6 +45,6 @@ Like the fruit falls off from the bondage of the stem, may we be liberated from 
 - amṛta अमृत - immortal
 - amṛtāt अमृतात् - from immortality
 
-###### Resources
+#### Resources
 
-- [greenmessage.org](https://greenmesg.org/stotras/shiva/mahamrityunjaya_mantra.php)
+- greenmessage.org: [mahamrityunjaya mantra](https://greenmesg.org/stotras/shiva/mahamrityunjaya_mantra.php)

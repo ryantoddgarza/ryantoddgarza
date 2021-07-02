@@ -5,7 +5,6 @@ module.exports = {
   description:
     'I build practical systems to actualize creative concepts. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions for artistic and entrepreneurial ventures.',
   keywords: [
-    'portfolio',
     'software',
     'developer',
     'engineer',

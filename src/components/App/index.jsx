@@ -35,14 +35,8 @@ export default class App extends Component {
   }
 
   render() {
-    const {
-      categories,
-      postInformations,
-      hasPost,
-      hasPortfolio,
-      hasAlbum,
-      children,
-    } = this.props;
+    const { categories, postInformations, hasPost, hasAlbum, children } =
+      this.props;
     const { isDracula } = this.state;
     const darkTheme = {
       color: textColor.onDark,
@@ -68,7 +62,6 @@ export default class App extends Component {
               categories={categories}
               postInformations={postInformations}
               hasPost={hasPost}
-              hasPortfolio={hasPortfolio}
               hasAlbum={hasAlbum}
               toggleTheme={this.toggleTheme}
               isDracula={isDracula}
@@ -87,6 +80,5 @@ App.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   postInformations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   hasPost: PropTypes.bool.isRequired,
-  hasPortfolio: PropTypes.bool.isRequired,
   hasAlbum: PropTypes.bool.isRequired,
 };

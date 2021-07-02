@@ -6,7 +6,6 @@ import {
   ALBUMS_PATH,
   EMAIL,
   HOME_PATH,
-  PORTFOLIOS_PATH,
   POSTS_PATH,
 } from '../../constants';
 import MobileNav from './MobileNav';
@@ -14,7 +13,7 @@ import DesktopNav from './DesktopNav';
 import SubMenu from './SubMenu';
 import { Gnb as StyledGnB, HeaderName, StyledLink } from './styled';
 
-const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
+const Gnb = ({ categories, hasPost, hasAlbum }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -45,15 +44,6 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
       };
 
       mainNav.push(postNavData);
-    }
-
-    if (hasPortfolio) {
-      const portfolioNavData = {
-        name: 'Portfolio',
-        url: PORTFOLIOS_PATH,
-      };
-
-      mainNav.push(portfolioNavData);
     }
 
     if (hasAlbum) {
@@ -99,7 +89,6 @@ const Gnb = ({ categories, hasPost, hasPortfolio, hasAlbum }) => {
 Gnb.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.shape({})),
   hasPost: PropTypes.bool.isRequired,
-  hasPortfolio: PropTypes.bool.isRequired,
   hasAlbum: PropTypes.bool.isRequired,
 };
 

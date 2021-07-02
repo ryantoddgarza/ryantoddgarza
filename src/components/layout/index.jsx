@@ -1,7 +1,7 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { POST, PORTFOLIO, ALBUM } from '~/constants';
+import { POST, ALBUM } from '~/constants';
 import App from '~/components/App';
 
 const Layout = ({ children }) => {
@@ -73,13 +73,6 @@ const Layout = ({ children }) => {
       },
     }) => type === POST || type === null
   );
-  const portfolios = postEdges.filter(
-    ({
-      node: {
-        frontmatter: { type },
-      },
-    }) => type === PORTFOLIO
-  );
 
   const categories = postEdges.reduce(
     (categories, { node }) => {
@@ -134,18 +127,17 @@ const Layout = ({ children }) => {
   );
 
   const hasPost = categories.length > 0;
-  const hasPortfolio = portfolios.length > 0;
   const hasAlbum = albums.length > 0;
 
   const childrenWithProps = Children.map(children, (child) =>
-    cloneElement(child, { posts, albums, portfolios }));
+    cloneElement(child, { posts, albums })
+  );
 
   return (
     <App
       categories={categories}
       postInformations={postInformations}
       hasPost={hasPost}
-      hasPortfolio={hasPortfolio}
       hasAlbum={hasAlbum}
     >
       {childrenWithProps}

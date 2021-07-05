@@ -10,7 +10,7 @@ interface Props {
   summary?: string;
   path: string;
   image?: any;
-  aspect: string;
+  aspect?: string;
 }
 
 const PostCard: FunctionComponent<Props> = ({

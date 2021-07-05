@@ -2,7 +2,6 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-import SEO from '~/components/Common/SEO';
 import {
   Wrapper,
   AlbumPrimary,
@@ -16,6 +15,7 @@ import {
   Links,
   Credits,
 } from './styled';
+import SEO from '~/components/Common/SEO';
 
 const Credit = (name, role) => {
   const id1 = nanoid();

@@ -16,36 +16,37 @@ AlbumTemplate.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
 
-export const pageQuery = graphql`query AlbumQuery($path: String!) {
-  album: projectsJson(fields: {path: {eq: $path}}) {
-    type
-    metadata {
-      title
-      artist
-      cover {
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED)
+export const pageQuery = graphql`
+  query AlbumQuery($path: String!) {
+    album: projectsJson(fields: { path: { eq: $path } }) {
+      type
+      metadata {
+        title
+        artist
+        cover {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
+        date
+        format
+        upc
+        publishing
       }
-      date
-      format
-      upc
-      publishing
-    }
-    tracks {
-      title
-      runtime
-      lyrics
-      video
-    }
-    credits {
-      name
-      role
-    }
-    links {
-      distributor
-      url
+      tracks {
+        title
+        runtime
+        lyrics
+        video
+      }
+      credits {
+        name
+        role
+      }
+      links {
+        distributor
+        url
+      }
     }
   }
-}
 `;

@@ -43,7 +43,7 @@ export const pageQuery = graphql`
             summary
             banner {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData
               }
             }
           }

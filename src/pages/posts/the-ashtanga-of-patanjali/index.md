@@ -108,16 +108,20 @@ _Prāṇāyāma_ is often seen translated as "breath control." This is fine as a
 
 _Prāṇa_ is a word that has no definitive equivalent in English. It can be conceptualized as the infinite and omnipresent manifesting power or energy in the universe. In a dualistic framework, it is the counterpart to _ākāśa_—the infinite, omnipresent material of the universe.
 
-On February 10, 2020, I spoke with my teacher Noah Williams about the best time to do _prāṇāyāma_. Noah said that Guruji taught to wait 20 minutes after _āsana_—no sooner—and that _prāṇāyāma_ is only to be practiced during Brahma Muhūrta—approximately one and a half hours before sunrise when the air is coolest and most oxygenated since the trees and plants “exhale” at this time. Noah added that _prāṇāyāma_ before _āsana_ is also an option. When I asked if he teaches prāṇāyāma, Noah responded that he makes people practice 20 years of _āsana_ before teaching _prāṇāyāma_. After 30 years it can become a focus and after 40 years it can take priority over _āsana_. For the first 40 years, _āsana_ should be priority. He said, “Āsana _is_ prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.”
-
 > Āsana is prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.
 > <cite>— Noah Williams</cite>
+
+On February 10, 2020, I spoke with my teacher Noah Williams about the best time to do _prāṇāyāma_. Noah said that Guruji taught to wait 20 minutes after _āsana_—no sooner—and that _prāṇāyāma_ is only to be practiced during Brahma Muhūrta—approximately one and a half hours before sunrise when the air is coolest and most oxygenated since the trees and plants “exhale” at this time. Noah added that _prāṇāyāma_ before _āsana_ is also an option. When I asked if he teaches prāṇāyāma, Noah responded that he makes people practice 20 years of _āsana_ before teaching _prāṇāyāma_. After 30 years it can become a focus and after 40 years it can take priority over _āsana_. For the first 40 years, _āsana_ should be priority. He said, “Āsana _is_ prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.”
 
 #### Pratyahara - abstraction
 
 (YS 2.54-55)
 
-The withdrawal of the senses.
+_Pratyāhāra_ means something along the lines of "the withdrawal of the senses." Because the senses follow where the mind leads, logically, when the mind is directed externally, internal phenomena is inaccessible; when the mind is directed internally, external phenomena is inaccessible. Whereas substances, physiological trauma, as well as hysteric and suggestible temperaments can manifest a sort of involuntary _pratyāhāra_ like state in individuals, the Yoga system advocates for a completely self-regulated state of _pratyāhāra_.
+
+Development of _pratyāhāra_ makes perception subject to the individual's will rather than the individual being subject to involuntarily mutations of the senses. For a mind not established in _pratyāhāra_, the smallest distraction will attract the senses.
+
+It should also be noted that Yoga is not a proponent of aversion to sense objects. In a state of _pratyāhāra_, sense objects are no longer perceived consciously resulting in the dissolution of effort required to subjugate their influence.
 
 #### Dharana - concentration
 
@@ -139,13 +143,14 @@ A merging with the object of meditation.
 
 ### The Three Paths
 
-Patañjali posits three _mārgas_ meaning literally “paths.”
+> “On hearing that excellent story that heightened devotion, knowledge and detachment and yielded liberation, she became greatly blessed.”
+> <cite>— Śivapurāṇa-māhātmya 4.32</cite>
+
+Patañjali posits three _mārgas_—literally meaning “paths.”
 
 - _karma-mārga_ - path of action (YS 2.30-45)
 - _jñana-mārga_ - path of knowledge (YS 2.46-55)
 - _bhakti-mārga_ - path of devotion (YS 3.1-4)
-
-> “On hearing that excellent story that heightened devotion, knowledge and detachment and yielded liberation, she became greatly blessed.” - Śivapurāṇa-māhātmya 4.32
 
 #### References
 

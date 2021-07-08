@@ -8,6 +8,8 @@ summary: 'The Yoga Sūtras of Patañjali are a condensed and systematic expositi
 banner: 'images/yoga-0455.jpg'
 ---
 
+**Updated July 2021**
+
 The _Yoga Sūtras of Patañjali_ are a condensed and systematic exposition of the essential philosophy and technique of Yoga in 196 _sūtras_ (aphorisms). Because the text is inherently cryptic, it requires a great deal of unpacking and interpretation. It has therefore been recommended by my teacher Noah Williams not as a guide but as a resource for gaining familiarity with Yogic terms so that as certain experiences unfold, there is some context for what is occurring.
 
 The _Sūtras_ begin with a succinct definition of Yoga in no more than four terms — _yogaś-citta-vṛtti-nirodhaḥ_. The remaining one hundred ninety-four sutras are an explication of this declaration. Patañjali goes on to describe _aṣṭāṅga_ (Eight Limbs) — _yama_, _niyama_, _asana_, _pranayama_, _pratyahara_, _dharana_, _dhyana_, and _samadhi_ — and _trimārga_ (Three Paths) — _karma_, _jnana_, and _bhakti_.
@@ -60,9 +62,11 @@ Transliteration:
 - Dhyana (ध्यान, dhyāna) - contemplation
 - Samadhi (समाधि, samādhi) - absorption
 - Ashta (अष्ट, aṣṭa) - eight
-- Angani (अङ्ग​, aṅgāni) - limbs, branches.
+- Angani (अङ्ग​, aṅgāni) - limbs, branches
 
-The first five limbs are considered _bahiraṅga_ (external) and the last three are _antaraṅga_ (internal). Each constituent is elaborated upon in the following sutras but this one line reveals the systematic steps of the Yoga system that can take lifetimes to understand let alone perfect.
+Each constituent is elaborated upon in the following sutras but this one line reveals the systematic steps of the Yoga system that can take lifetimes to understand let alone perfect. There is a sequential relationship to the limbs and even if it doesn't seem apparent at the outset, to become established in any step requires some level of mastery in those that precede it.
+
+The first five limbs are considered _bahiraṅga_ (external) and the last three are _antaraṅga_ (internal). If we look pragmatically at the five external limbs of Patañjali's system, we can see how the focus introverts. _Yama_ and _niyama_ address moral processes. _Āsana_ and _prāṇāyāma_ address the processes of the gross and subtle body. _Pratyāhāra_ addresses sensory processes. The three internal limbs address purely mental phenomena which together are successive stages of a singular process called _saṃyama_.
 
 #### Yama - abstention
 
@@ -104,9 +108,9 @@ B.K.S. Iyengar comments that perfection of _āsana_ brings about the divine unio
 
 (YS 2.49-53)
 
-_Prāṇāyāma_ is often seen translated as "breath control." This is fine as an elementary explanation but lacks the depth of its intent. The breath is merely our most visceral experience of _prāṇa_ in the body and therefore the gross mechanism used.
+_Prāṇāyāma_ is often seen translated as "breath control." This is fine as an elementary explanation but lacks the depth of its intent. The breath is merely our most visceral experience of _prāṇa_ in the body and therefore the most effective mechanism for accessing it.
 
-_Prāṇa_ is a word that has no definitive equivalent in English. It can be conceptualized as the infinite and omnipresent manifesting power or energy in the universe. In a dualistic framework, it is the counterpart to _ākāśa_—the infinite, omnipresent material of the universe.
+_Prāṇa_ is a word that has no definitive equivalent in English. It can be conceptualized as "the infinite and omnipresent manifesting power or energy in the universe." In a dualistic framework, it is the counterpart to _ākāśa_—the infinite, omnipresent material of the universe.
 
 > Āsana is prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.
 > <cite>— Noah Williams</cite>

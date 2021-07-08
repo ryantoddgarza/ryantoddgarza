@@ -19,7 +19,7 @@
     "develop": "gatsby develop",
     "format": "npm run format:code && npm run format:other",
     "format:code": "npm run lint:code -- --fix",
-    "format:other": "npm run prettier -- --write",
+    "format:other": "npm run lint:other -- --write",
     "hooks:install": "git config core.hooksPath ./scripts/git",
     "hooks:uninstall": "git config --unset core.hooksPath",
     "lint": "npm run lint:code && npm run lint:other",

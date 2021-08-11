@@ -8,6 +8,7 @@ const About: FunctionComponent = () => {
     query {
       allMarkdownRemark(
         filter: { fields: { path: { glob: "/about-col[1,2]" } } }
+        sort: { fields: frontmatter___sort }
       ) {
         cols: nodes {
           html

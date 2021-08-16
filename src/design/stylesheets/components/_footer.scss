@@ -1,20 +1,89 @@
 .footer {
-  font-size: font-size($theme-font-size-xs);
   color: $theme-color-text;
   background-color: $theme-color-background;
   z-index: 2000;
 }
 
-.footer .content {
+.footer .item {
+  &:not(:last-of-type) {
+    margin-bottom: unit(2);
+  }
+
+  @include at-media("tablet") {
+    display: inline-block;
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+      margin-right: unit(2);
+    }
+  }
+}
+
+.footer .link {
+  color: $theme-color-text;
+  // transition: color ${transition.duration.normal} ${transition.function.default};
+
+  &:hover,
+  &:active {
+    color: $theme-color-primary;
+  }
+}
+
+.footer > .content {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "links" "social" "copyright";
   align-items: end;
   padding-top: unit(2);
   padding-bottom: unit(2);
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-ui);
 
   @include at-media("tablet") {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "social copyright links";
+  }
+}
+
+.footer > .content > .links {
+  grid-area: links;
+  margin-bottom: unit(3);
+
+  @include at-media("tablet") {
+    margin-bottom: 0;
+    text-align: right;
+  }
+}
+
+.footer > .content > .copyright {
+  grid-area: copyright;
+
+  @include at-media("tablet") {
+    text-align: center;
+  }
+}
+
+.footer > .content > .social {
+  grid-area: social;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: unit(3);
+  font-size: font-size($theme-font-size-lg);
+
+  @include at-media("tablet") {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-flex;
+    // transition: color ${transition.duration.normal} ${transition.function.default};
+
+    &:not(:last-of-type) {
+      margin-right: unit(1.5);
+    }
+
+    &:hover,
+    &:active {
+      color: $theme-color-primary;
+    }
   }
 }

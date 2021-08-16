@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { SocialInformation, Copyright, Links } from './styled';
 import { EMAIL } from '~/constants';
 import SocialLinks from '~/components/Common/SocialLinks';
 
 const Footer = () => {
-  const { site } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -15,25 +14,37 @@ const Footer = () => {
     }
   `);
 
-  const { siteAuthor } = site.siteMetadata;
+  const {
+    site: {
+      siteMetadata: { siteAuthor },
+    },
+  } = data;
+
+  const content = {
+    links: [
+      { name: 'Wiki', url: 'https://wiki.ryantoddgarza.com' },
+      { name: 'Contact', url: `mailto:${EMAIL}` },
+    ],
+  };
 
   return (
     <footer className="footer">
       <div className="content container">
-        <SocialInformation>
+        <div className="social">
           <SocialLinks />
-        </SocialInformation>
-        <Copyright>{`© ${new Date().getFullYear()} ${siteAuthor}`}</Copyright>
-        <Links>
+        </div>
+        <div className="copyright">{`© ${new Date().getFullYear()} ${siteAuthor}`}</div>
+        <div className="links">
           <ul>
-            <li>
-              <a href="https://wiki.ryantoddgarza.com">Wiki</a>
-            </li>
-            <li>
-              <a href={`mailto:${EMAIL}`}>Contact</a>
-            </li>
+            {content.links.map(({ name, url }) => (
+              <li className="item" key={name}>
+                <a className="link" href={url}>
+                  {name}
+                </a>
+              </li>
+            ))}
           </ul>
-        </Links>
+        </div>
       </div>
     </footer>
   );

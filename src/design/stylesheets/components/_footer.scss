@@ -20,7 +20,7 @@
 
 .footer .link {
   color: $theme-color-text;
-  // transition: color ${transition.duration.normal} ${transition.function.default};
+  @include transition(color);
 
   &:hover,
   &:active {
@@ -75,7 +75,7 @@
 
   a {
     display: inline-flex;
-    // transition: color ${transition.duration.normal} ${transition.function.default};
+    @include transition(color);
 
     &:not(:last-of-type) {
       margin-right: unit(1.5);

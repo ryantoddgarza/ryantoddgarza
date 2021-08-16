@@ -25,6 +25,7 @@
 }
 
 .section .header .subtitle a {
+  @include transition(color);
   &::after {
     content: " →";
   }

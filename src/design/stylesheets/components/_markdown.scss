@@ -7,6 +7,10 @@
     margin-top: 0;
   }
 
+  a {
+    @include transition(color);
+  }
+
   .gatsby-highlight pre {
     margin-top: unit(2);
   }

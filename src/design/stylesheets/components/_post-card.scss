@@ -53,6 +53,7 @@
 }
 .post-card .subtitle a {
   color: $theme-color-primary;
+  @include transition(color);
 
   &:hover {
     color: $theme-color-text;

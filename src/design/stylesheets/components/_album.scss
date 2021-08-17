@@ -1,0 +1,178 @@
+@use 'sass:math';
+
+// Grid
+
+.album .album-row {
+  display: flex;
+  flex-direction: column;
+
+  @include at-media("tablet-lg") {
+    flex-direction: row;
+  }
+}
+
+.album .album-col {
+  position: relative;
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: unit(2);
+  }
+
+  @include at-media("tablet-lg") {
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+.album .album-col.left {
+  @include at-media("tablet-lg") {
+    width: math.percentage(math.div(3, 5));
+    margin-right: 5%;
+  }
+}
+
+.album .album-col.right {
+  @include at-media("tablet-lg") {
+    width: math.percentage(math.div(2, 5));
+  }
+}
+
+// Section
+
+.album .section-heading {
+  margin-bottom: unit(4);
+  font-size: font-size($theme-font-size-sm);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+}
+
+// List
+
+.album .list-item {
+  line-height: line-height($theme-line-height-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.album .list-item.sm {
+  margin-bottom: unit(1);
+}
+
+.album .list-item.md {
+  margin-bottom: unit(2);
+}
+
+.album .list-link {
+  color: $theme-color-primary;
+  @include transition(color);
+
+  &:hover {
+    color: $theme-color-text;
+  }
+}
+
+// Cover
+
+.album .cover-container {
+  max-width: breakpoint("tablet");
+}
+
+// Album info
+
+.album .info .info-section:not(:first-child) {
+  margin-top: unit(6);
+}
+
+.album .info .info-section .album-title {
+  font-size: font-size($theme-font-size-3xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+}
+
+.album .info .info-section .album-subtitle {
+  margin-top: unit(2);
+  font-size: font-size($theme-font-size-md);
+  line-height: line-height($theme-line-height-heading);
+}
+
+.album .info .info-section .panel {
+  font-size: font-size($theme-font-size-sm);
+  color: $theme-color-text-weak;
+}
+
+// Tracks
+
+.album .track-list .track-row {
+  display: flex;
+  margin-left: unit(0.5) * -1;
+  margin-right: unit(0.5) * -1;
+}
+
+.album .track-list .track-row > .track-col {
+  padding-left: unit(0.5);
+  padding-right: unit(0.5);
+}
+
+.album .track-list .data {
+  font-size: font-size($theme-font-size-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include at-media("tablet-lg") {
+    font-size: font-size($theme-font-size-md);
+  }
+}
+
+.album .track-list .data.counter {
+  flex: 0 0 2em;
+  min-width: 2em;
+}
+
+.album .track-list .data.name {
+  flex: 1 1 auto;
+  min-width: 4em;
+}
+
+.album .track-list .data.link {
+  flex: 0 0 10%;
+  min-width: 4em;
+  text-transform: lowercase;
+  text-align: right;
+}
+
+// Credits
+
+.album .credits {
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-body);
+}
+
+.album .credits .credit-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: unit(4);
+  margin-bottom: unit(4);
+
+  & > :nth-child(odd) {
+    margin-right: unit(1);
+  }
+}
+
+// Praise
+
+.album .praise .title {
+  font-size: font-size($theme-font-size-sm);
+}
+
+.album .praise .detail {
+  color: $theme-color-text-weak;
+  font-size: font-size($theme-font-size-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

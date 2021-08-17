@@ -1,26 +1,21 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
-import {
-  Wrapper,
-  AlbumPrimary,
-  AlbumSecondary,
-  ContentLeft,
-  ContentRight,
-  Title,
-  Cover,
-  Details,
-  Tracklist,
-  Links,
-  Credits,
-} from './styled';
 import SEO from '~/components/Common/SEO';
 
 const Credit = (name, role) => {
-  const id1 = nanoid();
-  const id2 = nanoid();
-  const componentArray = [<dt key={id1}>{name}</dt>, <dd key={id2}>{role}</dd>];
+  const nameKey = `${name.substr(0, 3)}${role.substr(0, 7)}`;
+  const roleKey = `${role.substr(0, 7)}${name.substr(0, 3)}`;
+  const trailChar = '.';
+
+  const componentArray = [
+    <dt className="list-item md" key={nameKey}>
+      {name + trailChar.repeat(220)}
+    </dt>,
+    <dd className="list-item md" key={roleKey}>
+      {role}
+    </dd>,
+  ];
 
   return componentArray;
 };
@@ -32,6 +27,7 @@ const Album = ({
       tracks,
       credits,
       links,
+      praise,
     },
   },
 }) => {
@@ -47,93 +43,160 @@ const Album = ({
     return Math.round(seconds / 60);
   };
 
+  const formatDate = (date) => {
+    return new Date(date).toLocaleDateString('default', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const content = {
+    details: [
+      { key: 'artist', value: artist },
+      { key: 'date', value: date.split('-')[0] },
+      { key: 'runtime', value: `${getAlbumRuntime()} minutes` },
+      { key: 'format', value: format },
+      { key: 'upc', value: upc },
+    ],
+  };
+
+  const layout = {
+    hasCredits: credits || publishing,
+    hasPraise: praise,
+  };
+
   return (
     <>
       <SEO title={title} />
-      <Wrapper className="layout__main">
-        <AlbumPrimary className="container">
-          <ContentLeft>
-            <Cover>
-              <GatsbyImage
-                image={getImage(cover)}
-                alt=""
-              />
-            </Cover>
-          </ContentLeft>
-          <ContentRight>
-            <Title>
-              <h1>{title}</h1>
-              <p>{artist}</p>
-            </Title>
-            <Details>
-              <h2>Info</h2>
-              <ul>
-                <li>{artist}</li>
-                <li>{date.split('-')[0]}</li>
-                <li>{`${getAlbumRuntime()} minutes`}</li>
-                <li>{format}</li>
-                <li>{upc}</li>
+      <div className="layout__main album">
+        <div className="section album-row container">
+          <div className="album-col left">
+            <div className="cover-container">
+              <GatsbyImage image={getImage(cover)} alt="" />
+            </div>
+          </div>
+          <div className="album-col right">
+            <div className="info">
+              <div className="info-section">
+                <h1 className="album-title">{title}</h1>
+                <h2 className="album-subtitle">{artist}</h2>
+              </div>
+              <div className="info-section details">
+                <h3 className="section-heading">Info</h3>
+                <div className="panel">
+                  {content.details.map(({ key, value }) => (
+                    <div className="list-item sm" key={key}>
+                      {value}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="info-section links">
+                <h3 className="section-heading">Listen</h3>
+                <div className="panel">
+                  {links.map(({ distributor, url }) => (
+                    <div className="list-item sm" key={distributor}>
+                      <a
+                        className="list-link"
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        {`${distributor} →`}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="section album-row container">
+          <div className="album-col left">
+            <div className="tracks">
+              <h3 className="section-heading">Tracks</h3>
+              <ul className="track-list">
+                {tracks.map(({ title, lyrics, video }, i) => {
+                  const trackNum = i + 1;
+                  return (
+                    <li
+                      className="list-item md track-row"
+                      key={trackNum.toString()}
+                    >
+                      <div className="track-col data counter">
+                        {trackNum.toString().padStart(2, '0')}
+                      </div>
+                      <div className="track-col data name">{title}</div>
+                      <div className="track-col data link">
+                        {lyrics && <a href={lyrics}>Lyrics</a>}
+                      </div>
+                      <div className="track-col data link">
+                        {video && (
+                          <a
+                            className="list-link"
+                            href={video}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            Video
+                          </a>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
-            </Details>
-            <Links>
-              <h2>Listen</h2>
-              {links.map(({ distributor, url }) => (
-                <li key={distributor}>
-                  <a href={url} target="_blank" rel="noreferrer noopener">
-                    {`${distributor} →`}
-                  </a>
-                </li>
-              ))}
-            </Links>
-          </ContentRight>
-        </AlbumPrimary>
-        <AlbumSecondary className="container">
-          <ContentLeft>
-            {tracks ? (
-              <Tracklist>
-                <h2>Tracks</h2>
-                <ul>
-                  {tracks.map(({ title, lyrics, video }, i) => {
-                    const trackNum = i + 1;
-                    return (
-                      <li className="track-row" key={trackNum.toString()}>
-                        <div className="track-counter">
-                          {trackNum.toString().padStart(2, '0')}
-                        </div>
-                        <div className="track-name">{title}</div>
-                        <div className="track-lyrics">
-                          {lyrics ? <a href="">Lyrics</a> : null}
-                        </div>
-                        <div className="track-video">
-                          {video ? (
-                            <a
-                              href={video}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                            >
-                              Video
-                            </a>
-                          ) : null}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </Tracklist>
-            ) : null}
-            {credits || publishing ? (
-              <Credits>
-                <h2>Credits</h2>
-                {credits ? (
-                  <dl>{credits.map(({ role, name }) => Credit(role, name))}</dl>
-                ) : null}
-                {publishing ? <p>{publishing}</p> : null}
-              </Credits>
-            ) : null}
-          </ContentLeft>
-          <ContentRight />
-        </AlbumSecondary>
-      </Wrapper>
+            </div>
+          </div>
+          <div className="album-col right" />
+        </div>
+        <div className="section album-row container">
+          <div className="album-col left">
+            {layout.hasCredits && (
+              <div className="credits">
+                <h3 className="section-heading">Credits</h3>
+                {credits && (
+                  <dl className="credit-list">
+                    {credits.map(({ role, name }) => Credit(role, name))}
+                  </dl>
+                )}
+                {publishing && <p>{publishing}</p>}
+              </div>
+            )}
+          </div>
+          <div className="album-col right">
+            {layout.hasPraise && (
+              <div className="praise">
+                <h3 className="section-heading">Praise</h3>
+                <div className="praise-list">
+                  {praise.map(({ publication, title, author, date, url }) => (
+                    <div className="list-item sm" key={url}>
+                      <div className="title">
+                        <a
+                          className="list-link"
+                          href={url}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          {publication}
+                        </a>
+                      </div>
+                      <div className="detail">
+                        {`
+                          ${formatDate(date)}
+                          ${title ? `“${title}”` : ''}
+                          ${author ? ` by ${author}` : ''}
+                        `}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -154,9 +217,11 @@ Album.propTypes = {
         upc: PropTypes.string,
         publishing: PropTypes.string,
       }),
-      tracks: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+      tracks: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
+        .isRequired,
       credits: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-      links: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+      links: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+      praise: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
     }).isRequired,
   }).isRequired,
 };

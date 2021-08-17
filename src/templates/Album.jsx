@@ -47,6 +47,13 @@ export const pageQuery = graphql`
         distributor
         url
       }
+      praise {
+        publication
+        title
+        author
+        date
+        url
+      }
     }
   }
 `;

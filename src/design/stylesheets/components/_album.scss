@@ -1,10 +1,14 @@
 @use 'sass:math';
 
+$album-grid-gap: $theme-site-margin;
+
 // Grid
 
 .album .album-row {
   display: flex;
   flex-direction: column;
+  margin-left: $album-grid-gap * -0.5;
+  margin-right: $album-grid-gap * -0.5;
 
   @include at-media("tablet-lg") {
     flex-direction: row;
@@ -14,6 +18,8 @@
 .album .album-col {
   position: relative;
   width: 100%;
+  padding-left: $album-grid-gap * 0.5;
+  padding-right: $album-grid-gap * 0.5;
 
   &:not(:first-child) {
     margin-top: unit(2);
@@ -29,7 +35,6 @@
 .album .album-col.left {
   @include at-media("tablet-lg") {
     width: math.percentage(math.div(3, 5));
-    margin-right: 5%;
   }
 }
 

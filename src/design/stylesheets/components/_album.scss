@@ -75,11 +75,11 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .list-link {
-  color: $theme-color-primary;
+  color: color($theme-color-primary);
   @include transition(color);
 
   &:hover {
-    color: $theme-color-text;
+    color: color($theme-color-text);
   }
 }
 
@@ -115,7 +115,7 @@ $album-grid-gap: $theme-site-margin;
 
 .album .info .info-section .panel {
   font-size: font-size($theme-font-size-sm);
-  color: $theme-color-text-weak;
+  color: color($theme-color-text-weak);
 }
 
 // Tracks
@@ -195,7 +195,7 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .praise .detail {
-  color: $theme-color-text-weak;
+  color: color($theme-color-text-weak);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

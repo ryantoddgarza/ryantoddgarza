@@ -1,6 +1,6 @@
 body {
-  color: $theme-color-text;
-  background-color: $theme-color-background;
+  color: color($theme-color-text);
+  background-color: color($theme-color-background);
   overflow-x: hidden;
 }
 

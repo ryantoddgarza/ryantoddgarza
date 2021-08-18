@@ -27,7 +27,7 @@
 
 .post-card .inner {
   position: relative;
-  background-color: transparent;
+  background-color: color(transparent);
   overflow: hidden;
 }
 
@@ -60,11 +60,11 @@
 }
 
 .post-card .body > .subtitle a {
-  color: $theme-color-primary;
+  color: color($theme-color-primary);
   @include transition(color);
 
   &:hover {
-    color: $theme-color-text;
+    color: color($theme-color-text);
   }
 }
 
@@ -83,7 +83,7 @@
   height: 0;
   padding-top: 50%;
   overflow: hidden;
-  background-color: $theme-color-background-strong;
+  background-color: color($theme-color-background-strong);
 }
 
 .post-card .image-container .image {

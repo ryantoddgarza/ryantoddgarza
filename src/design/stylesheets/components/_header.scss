@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: $theme-color-background;
+  color: color($theme-color-text);
+  background-color: color($theme-color-background);
   z-index: 3000;
   @include typeset(
     $theme-font-role-body,

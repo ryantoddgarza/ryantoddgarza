@@ -1,6 +1,6 @@
 .footer {
-  color: $theme-color-text;
-  background-color: $theme-color-background;
+  color: color($theme-color-text);
+  background-color: color($theme-color-background);
   z-index: 2000;
 }
 
@@ -19,12 +19,12 @@
 }
 
 .footer .link {
-  color: $theme-color-text;
+  color: color($theme-color-text);
   @include transition(color);
 
   &:hover,
   &:active {
-    color: $theme-color-primary;
+    color: color($theme-color-primary);
   }
 }
 
@@ -86,7 +86,7 @@
 
     &:hover,
     &:active {
-      color: $theme-color-primary;
+      color: color($theme-color-primary);
     }
   }
 }

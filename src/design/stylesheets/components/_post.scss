@@ -24,13 +24,13 @@
 }
 
 .post .article > .header > .metadata a.category {
-  color: $theme-color-text-link;
+  color: color($theme-color-text-link);
   font-weight: font-weight($theme-font-weight-medium);
   text-transform: uppercase;
   @include transition(color);
 
   &:hover {
-    color: $theme-color-text-link-hover;
+    color: color($theme-color-text-link-hover);
   }
 }
 
@@ -61,11 +61,11 @@
 }
 
 .post .tags a.tag {
-  color: $theme-color-text-link;
+  color: color($theme-color-text-link);
   text-transform: uppercase;
   @include transition(color);
 
   &:hover {
-    color: $theme-color-text-link-hover;
+    color: color($theme-color-text-link-hover);
   }
 }

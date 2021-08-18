@@ -35,8 +35,11 @@
   align-items: end;
   padding-top: unit(2);
   padding-bottom: unit(2);
-  font-size: font-size($theme-font-size-xs);
-  line-height: line-height($theme-line-height-ui);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-sm,
+    $theme-line-height-ui
+  );
 
   @include at-media("tablet") {
     grid-template-columns: 1fr 1fr 1fr;

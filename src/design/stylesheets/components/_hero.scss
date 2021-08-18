@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .hero {
   padding-top: unit(7);
   padding-bottom: unit(7);
@@ -10,22 +12,28 @@
 
 .hero .body {
   @include at-media("tablet") {
-    width: 66.6666%;
+    width: math.percentage(math.div(2, 3));
   }
 }
 
-.hero .heading {
-  font-size: font-size($theme-font-size-2xl);
+.hero .body > .heading {
   font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-2xl,
+    $theme-line-height-heading
+  );
 
   @include at-media("tablet") {
     font-size: font-size($theme-font-size-3xl);
   }
 }
 
-.hero .copy {
+.hero .body > .copy {
   margin-top: unit(3);
-  font-size: font-size($theme-font-size-lg);
-  line-height: line-height($theme-line-height-extended);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-lg,
+    $theme-line-height-extended
+  );
 }

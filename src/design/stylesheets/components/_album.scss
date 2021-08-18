@@ -48,10 +48,13 @@ $album-grid-gap: $theme-site-margin;
 
 .album .section-heading {
   margin-bottom: unit(4);
-  font-size: font-size($theme-font-size-sm);
-  font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
   text-transform: uppercase;
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-sm,
+    $theme-line-height-heading
+  );
 }
 
 // List
@@ -93,15 +96,21 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .info .info-section .album-title {
-  font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-3xl,
+    $theme-line-height-heading
+  );
 }
 
 .album .info .info-section .album-subtitle {
   margin-top: unit(2);
-  font-size: font-size($theme-font-size-md);
-  line-height: line-height($theme-line-height-heading);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-md,
+    $theme-line-height-heading
+  );
 }
 
 .album .info .info-section .panel {
@@ -123,10 +132,14 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .track-list .data {
-  font-size: font-size($theme-font-size-sm);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-sm,
+    $theme-line-height-body
+  );
 
   @include at-media("tablet-lg") {
     font-size: font-size($theme-font-size-md);
@@ -153,8 +166,11 @@ $album-grid-gap: $theme-site-margin;
 // Credits
 
 .album .credits {
-  font-size: font-size($theme-font-size-xs);
-  line-height: line-height($theme-line-height-body);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-xs,
+    $theme-line-height-body
+  );
 }
 
 .album .credits .credit-list {
@@ -171,13 +187,21 @@ $album-grid-gap: $theme-site-margin;
 // Praise
 
 .album .praise .title {
-  font-size: font-size($theme-font-size-sm);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-sm,
+    $theme-line-height-body
+  );
 }
 
 .album .praise .detail {
   color: $theme-color-text-weak;
-  font-size: font-size($theme-font-size-xs);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-xs,
+    $theme-line-height-body
+  );
 }

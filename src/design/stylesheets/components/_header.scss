@@ -2,7 +2,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: font-size($theme-font-size-sm);
   background-color: $theme-color-background;
   z-index: 3000;
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-sm,
+    $theme-line-height-ui
+  );
 }

@@ -39,19 +39,27 @@
   }
 }
 
-.post-card .title {
+.post-card .body > .title {
   margin-top: unit(2);
-  font-size: font-size(10);
   font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-xl,
+    $theme-line-height-heading
+  );
 }
 
-.post-card .subtitle {
-  font-size: font-size($theme-font-size-xs);
-  font-weight: font-weight($theme-font-weight-medium);
+.post-card .body > .subtitle {
   text-transform: uppercase;
+  font-weight: font-weight($theme-font-weight-medium);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-xs,
+    $theme-line-height-ui
+  );
 }
-.post-card .subtitle a {
+
+.post-card .body > .subtitle a {
   color: $theme-color-primary;
   @include transition(color);
 
@@ -60,11 +68,14 @@
   }
 }
 
-.post-card .copy {
+.post-card .body > .copy {
   margin-top: unit(2);
   margin-bottom: unit(2);
-  font-size: font-size($theme-font-size-md);
-  line-height: line-height($theme-line-height-body);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-body
+  );
 }
 
 .post-card .image-container {

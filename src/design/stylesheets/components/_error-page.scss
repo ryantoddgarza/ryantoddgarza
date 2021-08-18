@@ -11,13 +11,20 @@
   text-align: center;
 }
 
-.error-page .title {
-  font-size: font-size($theme-font-size-2xl);
-  line-height: line-height($theme-line-height-heading);
+.error-page .message > .title {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-2xl,
+    $theme-line-height-heading
+  );
 }
 
-.error-page .paragraph {
+.error-page .message > .paragraph {
   margin-top: unit(1.5);
-  font-size: font-size($theme-font-size-md);
-  line-height: line-height($theme-line-height-body);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-body
+  );
 }

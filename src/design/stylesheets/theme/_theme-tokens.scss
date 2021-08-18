@@ -1,3 +1,12 @@
+$theme-font-type-sans: helvetica;
+$theme-font-type-serif: false;
+$theme-font-type-mono: monospace;
+
+$theme-font-role-body: helvetica;
+$theme-font-role-heading: helvetica;
+$theme-font-role-ui: helvetica;
+$theme-font-role-code: monospace;
+
 $theme-font-size-1xs: 1;
 $theme-font-size-xs: 2;
 $theme-font-size-sm: 4;
@@ -21,20 +30,19 @@ $theme-line-height-heading: 3;
 $theme-line-height-body: 5;
 $theme-line-height-extended: 7;
 
-$theme-site-margin: 5%;
-
 $theme-color-primary: #a88f48;
-
 $theme-color-text: $color-gray-90;
 $theme-color-text-inverse: $color-gray-2;
 $theme-color-text-weak: $color-gray-40;
 $theme-color-text-weak-hover: $color-gray-90;
 $theme-color-text-link: $theme-color-primary;
 $theme-color-text-link-hover: $theme-color-text;
-
 $theme-color-background: $color-gray-3;
 $theme-color-background-weak: white;
 $theme-color-background-strong: $color-gray-10;
 $theme-color-background-inverse: $color-gray-90;
-
 $theme-color-border: $color-gray-10;
+
+// General
+
+$theme-site-margin: 5%;

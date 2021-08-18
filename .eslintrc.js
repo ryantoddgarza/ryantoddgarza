@@ -1,5 +1,8 @@
 module.exports = {
   extends: ['@bitpas/eslint-config'],
+  env: {
+    browser: true,
+  },
   plugins: ['import'],
   settings: {
     'import/resolver': {

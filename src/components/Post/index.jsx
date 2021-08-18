@@ -95,11 +95,15 @@ const Post = ({
     renderComponents(components);
   }, []);
 
+  const layout = {
+    hasFooter: tags,
+  };
+
   return (
     <>
       <SEO title={title} />
       <div className="post container tablet-lg">
-        <div className="content">
+        <article className="article">
           <header className="header">
             <h1 className="title">{title}</h1>
             <div className="metadata">
@@ -121,21 +125,24 @@ const Post = ({
             )}
           </header>
           <div
-            className="markdown"
+            className="body markdown"
             id="post-contents"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-          {tags && (
-            <div className="tags">
-              <span>Tags:</span>
-              {tags.map((tag) => (
-                <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
-                  {tag}
-                </Link>
-              ))}
-            </div>
+          {layout.hasFooter && (
+            <footer className="post-footer">
+              {tags && (
+                <div className="tags">
+                  {tags.map((tag) => (
+                    <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </footer>
           )}
-        </div>
+        </article>
       </div>
     </>
   );
@@ -147,9 +154,7 @@ Post.propTypes = {
       html: PropTypes.string,
       frontmatter: PropTypes.shape({
         banner: PropTypes.shape({
-          childImageSharp: PropTypes.shape({
-            fluid: PropTypes.shape({}),
-          }),
+          name: PropTypes.shape({}),
         }),
         components: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
         date: PropTypes.string.isRequired,

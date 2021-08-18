@@ -1,0 +1,21 @@
+.pagination {
+  margin-top: unit(2);
+  margin-bottom: unit(2);
+  text-align: center;
+}
+
+.pagination .nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pagination .nav-list > .item {
+  padding-left: unit(0.5);
+  padding-right: unit(0.5);
+}
+
+.pagination .nav-list > .item a {
+  color: color($theme-color-primary);
+}

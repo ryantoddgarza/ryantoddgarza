@@ -8,7 +8,6 @@ import {
   FaAngleRight,
   FaEllipsisH,
 } from 'react-icons/fa';
-import { Wrapper } from './styled';
 import { CONTENT_PER_PAGE, PAGE_PER_SCREEN, POSTS_PATH } from '~/constants';
 import getPage from '~/utils/getPage';
 
@@ -28,22 +27,22 @@ const Pagination = ({ postCount, location, prefix }) => {
   }
 
   return (
-    <Wrapper>
-      <ul>
+    <div className="pagination">
+      <ul className="nav-list">
         {hasManyPages && !isNearStart ? (
           <>
-            <li>
+            <li className="item">
               <Link to={`${prefix}1`}>
                 <FaAngleDoubleLeft />
               </Link>
             </li>
-            <li>
+            <li className="item">
               <FaEllipsisH />
             </li>
           </>
         ) : null}
         {page !== 1 ? (
-          <li>
+          <li className="item">
             <Link to={`${prefix}${page - 1}`}>
               <FaAngleLeft />
             </Link>
@@ -52,20 +51,20 @@ const Pagination = ({ postCount, location, prefix }) => {
         {filteredPages.map((i) => {
           if (page === i) {
             return (
-              <li key={i} className={page === i ? 'active' : ''}>
+              <li key={i} className={`item ${page === i ? 'active' : ''}`}>
                 {i}
               </li>
             );
           }
 
           return (
-            <li key={i} className={page === i ? 'active' : ''}>
+            <li key={i} className={`item ${page === i ? 'active' : ''}`}>
               <Link to={`${prefix}${i}`}>{i}</Link>
             </li>
           );
         })}
         {pageCount !== page ? (
-          <li>
+          <li className="item">
             <Link to={`${prefix}${page + 1}`}>
               <FaAngleRight />
             </Link>
@@ -73,10 +72,10 @@ const Pagination = ({ postCount, location, prefix }) => {
         ) : null}
         {hasManyPages && !isNearEnd ? (
           <>
-            <li>
+            <li className="item">
               <FaEllipsisH />
             </li>
-            <li>
+            <li className="item">
               <Link to={`${prefix}${pageCount}`}>
                 <FaAngleDoubleRight />
               </Link>
@@ -84,7 +83,7 @@ const Pagination = ({ postCount, location, prefix }) => {
           </>
         ) : null}
       </ul>
-    </Wrapper>
+    </div>
   );
 };
 

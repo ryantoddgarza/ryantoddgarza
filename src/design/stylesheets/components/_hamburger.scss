@@ -1,0 +1,77 @@
+@use "sass:math";
+
+$hamburger-width: 28px;
+$hamburger-weight: 3px;
+$hamburger-gap: 8px;
+
+.hamburger {
+  font: inherit;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: $hamburger-width;
+  height: $hamburger-weight + $hamburger-gap * 2;
+}
+.hamburger-inner {
+  top: 50%;
+  display: block;
+  margin-top: math.div($hamburger-weight, -3);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-duration: 0.22s;
+}
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner:before {
+  position: absolute;
+  width: $hamburger-width;
+  height: $hamburger-weight;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  background-color: color($theme-color-text);
+}
+.hamburger-inner:after,
+.hamburger-inner:before {
+  display: block;
+  content: "";
+}
+.hamburger-inner:before {
+  top: $hamburger-gap * -1;
+  transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+.hamburger-inner:after {
+  bottom: $hamburger-gap * -1;
+  transition: bottom 0.1s ease-in 0.25s,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.is-open .hamburger-inner {
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: rotate(225deg);
+}
+.is-open .hamburger-inner:before {
+  top: 0;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+  opacity: 0;
+}
+.is-open .hamburger-inner:after {
+  bottom: 0;
+  transition: bottom 0.1s ease-out,
+    transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+  transform: rotate(-90deg);
+}

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MdExpandMore } from 'react-icons/md';
-import hamburger from './hamburger';
 import {
   backgroundColor,
   breakpoint,
@@ -16,9 +15,6 @@ export const Gnb = styled.div`
   display: flex;
   align-items: center;
   height: ${navbar.height};
-  ${breakpoint.to('phone')} {
-    ${hamburger}
-  }
 `;
 
 export const NavList = styled.ul`

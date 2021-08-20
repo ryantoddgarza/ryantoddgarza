@@ -5,7 +5,7 @@ sort: 0
 
 My name is Ryan Todd Garza. I build practical systems to actualize creative concepts. I draw from a broad background of interdisciplinary pattern abstraction to develop effective technical and creative solutions for artistic and entrepreneurial ventures.
 
-These systems typically manifest to address a specific need within a defined domain, and mature along the paths necessary for them to function where the seen and unforseen branches of those disciplines lead. This type of engagement has resulted in over a decade of creative and professional experience with countless clients and collaborators.
+These systems typically manifest to address a specific need within a defined domain, and mature along the paths necessary for them to function where the seen and unforeseen branches of those disciplines lead. This type of engagement has resulted in over a decade of creative and professional experience with countless clients and collaborators.
 
 I began my career in the music industry as multi-instrumentalist in 2007. Throughout the following decade, I toured and recorded as a supporting musician, continued both formal and informal studies of Hindustani music, Afro-Cuban percussion, tonal and post tonal theory, and took on regular work as a recording/mixing engineer and eventually a producer.
 

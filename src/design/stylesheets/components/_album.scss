@@ -122,8 +122,8 @@ $album-grid-gap: $theme-site-margin;
 
 .album .track-list .track-row {
   display: flex;
-  margin-left: unit(0.5) * -1;
-  margin-right: unit(0.5) * -1;
+  margin-left: unit(-0.5);
+  margin-right: unit(-0.5);
 }
 
 .album .track-list .track-row > .track-col {

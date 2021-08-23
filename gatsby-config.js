@@ -103,23 +103,14 @@ module.exports = {
         icon: site.favicon,
       },
     },
+    // 5. last priority plugins
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: site.url,
-        sitemap: `${site.url}/sitemap.xml`,
-        policy: [
-          {
-            userAgent: '*',
-            allow: '/',
-            disallow: [],
-            crawlDelay: 10,
-          },
-        ],
+        configFile: 'robots-txt.config.js',
       },
     },
-    // 5. last priority plugins
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
   ],
 };

@@ -12,6 +12,7 @@ module.exports = {
     keywords: site.keywords,
     image: site.image,
     author: site.author,
+    email: site.email,
   },
   plugins: [
     // 1. first priority plugins

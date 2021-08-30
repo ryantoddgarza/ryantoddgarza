@@ -18,6 +18,7 @@ module.exports = {
   ].join(', '),
   image: '/images/site.jpg', // relative to site root
   author: 'Ryan Todd Garza',
+  email: 'ryantoddgarza@gmail.com',
 
   favicon: 'static/images/icon.png',
   shortName: 'ryantoddgarza',

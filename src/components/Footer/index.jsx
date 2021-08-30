@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { EMAIL } from '~/constants';
+import { CONTACT_PATH } from '~/constants';
 import SocialLinks from '~/components/Common/SocialLinks';
 
 const Footer = () => {
@@ -23,7 +23,7 @@ const Footer = () => {
   const content = {
     links: [
       { name: 'Wiki', url: 'https://wiki.ryantoddgarza.com' },
-      { name: 'Contact', url: `mailto:${EMAIL}` },
+      { name: 'Contact', url: CONTACT_PATH },
     ],
   };
 

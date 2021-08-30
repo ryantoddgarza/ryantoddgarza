@@ -1,0 +1,55 @@
+.button {
+  display: inline-block;
+  height: unit($theme-button-height);
+  padding-left: unit(2);
+  padding-right: unit(2);
+  text-align: center;
+  vertical-align: middle;
+  font-family: font-family($theme-font-role-body);
+  font-size: font-size($theme-font-size-md);
+  font-weight: font-weight($theme-font-weight-medium);
+  line-height: unit($theme-button-height) - (2 * $theme-button-border-width);
+  white-space: nowrap;
+  overflow: hidden;
+  border-width: $theme-button-border-width;
+  border-style: $theme-button-border-style;
+  border-radius: $theme-button-border-radius;
+  @include transition();
+}
+
+// Width variants
+
+.button.wide {
+  padding-left: unit(4);
+  padding-right: unit(4);
+}
+
+.button.full-width {
+  width: 100%;
+}
+
+// Theme variants
+
+.button.light {
+  color: color($theme-color-text);
+  background-color: color($theme-color-background);
+  border-color: color($theme-color-background-inverse);
+
+  &:hover {
+    color: color($theme-color-text-inverse);
+    background-color: color($theme-color-background-inverse);
+    border-color: color($theme-color-background-inverse);
+  }
+}
+
+.button.dark {
+  color: color($theme-color-text-inverse);
+  background-color: color($theme-color-background-inverse);
+  border-color: color($theme-color-background-inverse);
+
+  &:hover {
+    color: color($theme-color-text);
+    background-color: color($theme-color-background);
+    border-color: color($theme-color-background-inverse);
+  }
+}

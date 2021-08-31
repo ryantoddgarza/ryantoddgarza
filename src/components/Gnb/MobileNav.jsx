@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useEffect } from 'react';
+import React, { Fragment, useReducer, useCallback, useEffect } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { MdExpandMore } from 'react-icons/md';
@@ -84,7 +84,7 @@ const MobileNav = ({ navList }) => {
           <nav>
             <ul className="nav-list">
               {navList.map(({ name, url, submenu }) => (
-                <>
+                <Fragment key={name}>
                   <li
                     key={name}
                     className={getNavItemClasses([
@@ -111,7 +111,7 @@ const MobileNav = ({ navList }) => {
                       expanded={isSubmenuOpen}
                     />
                   )}
-                </>
+                </Fragment>
               ))}
             </ul>
           </nav>

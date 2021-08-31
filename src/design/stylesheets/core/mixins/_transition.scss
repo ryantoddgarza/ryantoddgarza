@@ -1,9 +1,6 @@
-@mixin transition(
-  $property: all,
-  $duration: 0.2s,
-  $function: cubic-bezier(0.2, 1, 0.3, 1)
-) {
+@mixin transition($property: all, $duration: normal, $delay: null) {
   transition-property: $property;
-  transition-duration: $duration;
-  transition-timing-function: $function;
+  transition-duration: transition-duration($duration);
+  transition-delay: transition-duration($delay);
+  transition-timing-function: ease-in-out;
 }

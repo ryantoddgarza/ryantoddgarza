@@ -57,6 +57,14 @@ $system-spacing: (
   base: 8px,
 );
 
+$system-transition: (
+  duration: (
+    fast: 0.1s,
+    normal: 0.2s,
+    slow: 0.4s,
+  ),
+);
+
 $system-type-scale: (
   1: 10px,
   2: 12px,

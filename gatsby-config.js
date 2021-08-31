@@ -91,7 +91,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-sass',
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

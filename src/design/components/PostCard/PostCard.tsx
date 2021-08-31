@@ -31,11 +31,13 @@ const PostCard: FunctionComponent<Props> = ({
       <div className="inner">
         <Link to={path}>
           <div className="image-container">
-            <GatsbyImage
-              image={image && getImage(image)}
-              alt=""
-              className="image"
-            />
+            {image && (
+              <GatsbyImage
+                image={image && getImage(image)}
+                alt=""
+                className="image"
+              />
+            )}
           </div>
           <div className="body">
             {subtitle && <h6 className="subtitle">{subtitle}</h6>}

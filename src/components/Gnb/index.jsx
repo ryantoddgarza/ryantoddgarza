@@ -1,74 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
 import {
   ABOUT_PATH,
   ALBUMS_PATH,
-  EMAIL,
-  HOME_PATH,
+  CONTACT_PATH,
   POSTS_PATH,
 } from '../../constants';
 import MobileNav from './MobileNav';
 import DesktopNav from './DesktopNav';
-import SubMenu from './SubMenu';
-import { Gnb as StyledGnB, HeaderName, StyledLink } from './styled';
 
 const Gnb = ({ categories, hasPost, hasAlbum }) => {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          siteTitle: title
-        }
-      }
-    }
-  `);
-
-  const { siteTitle } = site.siteMetadata;
-
-  const mainNav = [];
-
-  const constructMainNav = () => {
-    const subMenus = {
-      postCategories: {
+  const mainNav = [
+    hasPost && {
+      name: 'Posts',
+      url: `${POSTS_PATH}/1`,
+      submenu: {
         list: categories,
-        component: <SubMenu listItems={categories} />,
       },
-    };
-
-    if (hasPost) {
-      const postNavData = {
-        name: 'Posts',
-        url: `${POSTS_PATH}/1`,
-        subMenu: subMenus.postCategories,
-      };
-
-      mainNav.push(postNavData);
-    }
-
-    if (hasAlbum) {
-      const albumNavData = {
-        name: 'Music',
-        url: ALBUMS_PATH,
-      };
-
-      mainNav.push(albumNavData);
-    }
-
-    const aboutNavData = {
+    },
+    hasAlbum && {
+      name: 'Music',
+      url: ALBUMS_PATH,
+    },
+    {
       name: 'About',
       url: ABOUT_PATH,
-    };
-
-    mainNav.push(aboutNavData);
-  };
-
-  constructMainNav();
+    },
+  ];
 
   const mobileNavAppend = [
     {
       name: 'Contact',
-      url: `mailto:${EMAIL}`,
+      url: CONTACT_PATH,
     },
   ];
 
@@ -76,13 +39,10 @@ const Gnb = ({ categories, hasPost, hasAlbum }) => {
   const desktopNavList = [...mainNav];
 
   return (
-    <StyledGnB className="container">
-      <HeaderName>
-        <StyledLink to={HOME_PATH}>{siteTitle}</StyledLink>
-      </HeaderName>
+    <>
       <MobileNav navList={mobileNavList} />
       <DesktopNav navList={desktopNavList} />
-    </StyledGnB>
+    </>
   );
 };
 

@@ -28,8 +28,12 @@ const Submenu = ({ listItems, expanded }) => {
 };
 
 Submenu.propTypes = {
-  expanded: PropTypes.bool.isRequired,
+  expanded: PropTypes.bool,
   listItems: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
+
+Submenu.defaultProps = {
+  expanded: false,
 };
 
 export default Submenu;

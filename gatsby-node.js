@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     allMarkdownRemark: { postEdges },
   } = data;
 
-  const c = {
+  const templates = {
     post: path.resolve('./src/templates/Post.jsx'),
     list: path.resolve('./src/templates/List.jsx'),
     taggedList: path.resolve('./src/templates/TaggedList.jsx'),
@@ -89,7 +89,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   projectEdges.forEach(({ node: { type, fields: { path } } }) => {
     const projectComponents = {
       default: null,
-      album: c.album,
+      album: templates.album,
     };
 
     let component = type ? projectComponents[type] : projectComponents.default;
@@ -121,10 +121,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     const postComponents = {
-      default: c.post,
+      default: templates.post,
       content: null,
       portfolio: null,
-      post: c.post,
+      post: templates.post,
     };
 
     let component = type ? postComponents[type] : postComponents.default;
@@ -144,7 +144,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (albumsCount) {
     createPage({
       path: ALBUMS_PATH,
-      component: c.albums,
+      component: templates.albums,
       context: {},
     });
   }
@@ -160,7 +160,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   pages.forEach((page) => {
     createPage({
       path: `${POSTS_PATH}/${page}`,
-      component: c.list,
+      component: templates.list,
       context: {},
     });
   });
@@ -187,7 +187,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     taggedListPages.forEach((taggedListPage) => {
       createPage({
         path: `/tags/${tag}/${taggedListPage}`,
-        component: c.taggedList,
+        component: templates.taggedList,
         context: {},
       });
     });
@@ -209,7 +209,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     categorizedListPages.forEach((categorizedListPage) => {
       createPage({
         path: `/categories/${category}/${categorizedListPage}`,
-        component: c.categorizedList,
+        component: templates.categorizedList,
         context: {},
       });
     });

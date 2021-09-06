@@ -218,16 +218,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  const isProject = node.internal.type === 'ProjectsJson';
-  const isMarkdown = node.internal.type === 'MarkdownRemark';
-  const isPost = isMarkdown && !node.frontmatter.type;
-  const isPage = isMarkdown && node.frontmatter.type;
 
-  if (isProject) {
+  const createPathField = (basePath) => {
     const path = createFilePath({
       node,
       getNode,
-      basePath: 'projects',
+      basePath,
       trailingSlash: false,
     });
 
@@ -238,32 +234,31 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 
-  if (isPost) {
-    const path = createFilePath({
-      node,
-      getNode,
-      basePath: 'posts',
-      trailingSlash: false,
-    });
+  const baseNames = {
+    project: 'projects',
+    post: 'posts',
+    page: undefined,
+  };
 
-    createNodeField({
-      node,
-      name: 'path',
-      value: path,
-    });
+  const main = () => {
+    const isProject = node.internal.type === 'ProjectsJson';
+    const isMarkdown = node.internal.type === 'MarkdownRemark';
+    const isPost = isMarkdown && !node.frontmatter.type;
+    const isPortfolio = isMarkdown && node.frontmatter.type === 'portfolio';
+    const isContent = isMarkdown && node.frontmatter.type === 'content';
+
+    if (isProject) {
+      createPathField(baseNames.project);
+    }
+
+    if (isPost) {
+      createPathField(baseNames.post);
+    }
+
+    if (isPortfolio || isContent) {
+      createPathField(baseNames.page);
+    }
   }
 
-  if (isPage) {
-    const path = createFilePath({
-      node,
-      getNode,
-      trailingSlash: false,
-    });
-
-    createNodeField({
-      node,
-      name: 'path',
-      value: path,
-    });
-  }
+  main();
 };

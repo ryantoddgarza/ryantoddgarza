@@ -8,8 +8,12 @@ import {
   FaAngleRight,
   FaEllipsisH,
 } from 'react-icons/fa';
-import { CONTENT_PER_PAGE, PAGE_PER_SCREEN, POSTS_PATH } from '~/constants';
-import getPage from '~/utils/getPage';
+import {
+  CONTENT_PER_PAGE,
+  PAGE_PER_SCREEN,
+  POSTS_PATH,
+} from '../../../constants';
+import getPage from '../../../utils/getPage';
 
 const Pagination = ({ postCount, location, prefix }) => {
   const pageCount = postCount ? Math.ceil(postCount / CONTENT_PER_PAGE) : 0;

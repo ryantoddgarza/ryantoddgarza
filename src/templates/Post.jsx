@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Layout from '~/components/layout';
-import Post from '~/components/Post';
+import Layout from '../components/layout';
+import Post from '../components/Post';
 
 const PostTemplate = ({ data, ...props }) => (
   <Layout {...props}>

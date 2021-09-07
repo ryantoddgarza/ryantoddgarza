@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CONTACT_PATH } from '~/constants';
-import SocialLinks from '~/components/Common/SocialLinks';
+import { CONTACT_PATH } from '../../constants';
+import SocialLinks from '../Common/SocialLinks';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`

@@ -4,14 +4,6 @@ module.exports = {
     browser: true,
   },
   plugins: ['import'],
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [['~', './src']],
-        extensions: ['.js', '.jsx', 'json'],
-      },
-    },
-  },
   overrides: [
     {
       files: ['gatsby-node.js'],

@@ -1,4 +1,4 @@
-import { POST } from '~/constants';
+import { POST } from '../constants';
 
 const getPosts = (data) =>
   data.posts.edges.filter(({ node: { frontmatter: { type } } }) => (

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { PostCard } from '../../design/components';
-import SEO from '~/components/Common/SEO';
-import Pagination from '~/components/Common/Pagination';
-import getPosts from '~/utils/getPosts';
-import getPage from '~/utils/getPage';
-import titleCase from '~/utils/titleCase';
-import { CONTENT_PER_PAGE } from '~/constants';
+import SEO from '../Common/SEO';
+import Pagination from '../Common/Pagination';
+import getPosts from '../../utils/getPosts';
+import getPage from '../../utils/getPage';
+import titleCase from '../../utils/titleCase';
+import { CONTENT_PER_PAGE } from '../../constants';
 
 const CategorizedList = ({ data }) => {
   const location = useLocation();

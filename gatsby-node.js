@@ -12,11 +12,6 @@ const {
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        '~': path.resolve(__dirname, 'src'),
-      },
-    },
     plugins: [
       plugins.define({
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',

@@ -5,8 +5,8 @@ import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
-import SEO from '~/components/Common/SEO';
-import formattedDate from '~/utils/formattedDate';
+import SEO from '../Common/SEO';
+import formattedDate from '../../utils/formattedDate';
 
 const Post = ({
   data: {
@@ -54,7 +54,7 @@ const Post = ({
             const $componentContainer =
               global.document.getElementById(componentRootId);
             const App =
-              require(`~/postComponents/${componentFileName}`).default;
+              require(`../../postComponents/${componentFileName}`).default;
 
             render(
               <div className="component-in-post">

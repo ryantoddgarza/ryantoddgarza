@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '~/components/layout';
-import TaggedList from '~/components/TaggedList';
+import Layout from '../components/layout';
+import TaggedList from '../components/TaggedList';
 
 const TaggedListTemplate = ({ data, ...props }) => (
   <Layout {...props}>

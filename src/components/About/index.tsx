@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Hero } from '../../design/components';
-import SEO from '../../components/Common/SEO';
+import SEO from '../Common/SEO';
 
 const About: FunctionComponent = () => {
   const { col1, col2 } = useStaticQuery(graphql`

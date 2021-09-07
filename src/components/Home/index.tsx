@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FeatureGrid, Hero } from '../../design/components';
-import SEO from '../../components/Common/SEO';
+import SEO from '../Common/SEO';
 
 const Home: FunctionComponent = () => {
   const {

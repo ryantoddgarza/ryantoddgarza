@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Layout from '~/components/layout';
-import Album from '~/components/Album';
+import Layout from '../components/layout';
+import Album from '../components/Album';
 
 const AlbumTemplate = ({ data, ...props }) => (
   <Layout {...props}>

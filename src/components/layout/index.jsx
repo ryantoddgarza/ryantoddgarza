@@ -1,8 +1,8 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { POST, ALBUM } from '~/constants';
-import App from '~/components/App';
+import { POST, ALBUM } from '../../constants';
+import App from '../App';
 
 const Layout = ({ children }) => {
   const { allProjectsJson, allMarkdownRemark } = useStaticQuery(graphql`

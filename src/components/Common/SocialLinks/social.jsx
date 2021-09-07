@@ -16,7 +16,7 @@ import {
   MEDIUM_ID,
   PATREON_ID,
   TWITTER_ID,
-} from '~/constants';
+} from '../../../constants';
 
 export default [
   {

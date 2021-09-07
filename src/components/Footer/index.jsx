@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { CONTACT_PATH } from '../../constants';
-import SocialLinks from '../Common/SocialLinks';
+import SocialGrid from '../SocialGrid';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="content container">
         <div className="social">
-          <SocialLinks />
+          <SocialGrid />
         </div>
         <div className="copyright">{`© ${new Date().getFullYear()} ${siteAuthor}`}</div>
         <div className="links">

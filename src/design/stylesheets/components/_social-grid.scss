@@ -1,0 +1,46 @@
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social-grid .item {
+  display: inline-flex;
+
+  &:not(:last-of-type) {
+    margin-right: unit(1.5);
+  }
+}
+
+.social-grid .link {
+  @include transition(color);
+}
+
+// Size variants
+
+.social-grid.medium {
+  font-size: font-size($theme-font-size-lg);
+}
+
+.social-grid.large {
+  font-size: font-size($theme-font-size-xl);
+}
+
+// Theme variants
+
+.social-grid.light .link {
+  color: color($theme-color-text-inverse);
+
+  &:hover,
+  &:active {
+    color: color($theme-color-primary);
+  }
+}
+
+.social-grid.dark .link {
+  color: color($theme-color-text);
+
+  &:hover,
+  &:active {
+    color: color($theme-color-primary);
+  }
+}

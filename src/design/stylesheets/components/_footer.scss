@@ -67,26 +67,9 @@
 
 .footer > .content > .social {
   grid-area: social;
-  display: flex;
-  flex-wrap: wrap;
   margin-bottom: unit(3);
-  font-size: font-size($theme-font-size-lg);
 
   @include at-media("tablet") {
     margin-bottom: 0;
-  }
-
-  a {
-    display: inline-flex;
-    @include transition(color);
-
-    &:not(:last-of-type) {
-      margin-right: unit(1.5);
-    }
-
-    &:hover,
-    &:active {
-      color: color($theme-color-primary);
-    }
   }
 }

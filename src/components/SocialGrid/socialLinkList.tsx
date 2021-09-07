@@ -16,9 +16,10 @@ import {
   MEDIUM_ID,
   PATREON_ID,
   TWITTER_ID,
-} from '../../../constants';
+} from '../../constants';
+import type { SocialLinkList } from './types';
 
-export default [
+const socialLinkList: SocialLinkList[] = [
   {
     name: 'Github',
     url: `https://github.com/${GITHUB_ID}`,
@@ -62,3 +63,5 @@ export default [
     display: true,
   },
 ];
+
+export default socialLinkList;

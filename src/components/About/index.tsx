@@ -4,20 +4,20 @@ import { Hero } from '../../design/components';
 import SEO from '../../components/Common/SEO';
 
 const About: FunctionComponent = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        filter: { fields: { path: { glob: "/about-col[1,2]" } } }
-        sort: { fields: frontmatter___sort }
-      ) {
-        cols: nodes {
+  const { col1, col2 } = useStaticQuery(graphql`
+    query AboutQuery {
+      col1: file(name: { eq: "about-col1" }) {
+        childMarkdownRemark {
+          html
+        }
+      }
+      col2: file(name: { eq: "about-col2" }) {
+        childMarkdownRemark {
           html
         }
       }
     }
   `);
-
-  const { cols } = data.allMarkdownRemark;
 
   return (
     <div className="about">
@@ -30,11 +30,11 @@ const About: FunctionComponent = () => {
         <div className="row">
           <div
             className="col markdown"
-            dangerouslySetInnerHTML={{ __html: cols[0].html }}
+            dangerouslySetInnerHTML={{ __html: col1.childMarkdownRemark.html }}
           />
           <div
             className="col markdown"
-            dangerouslySetInnerHTML={{ __html: cols[1].html }}
+            dangerouslySetInnerHTML={{ __html: col2.childMarkdownRemark.html }}
           />
         </div>
       </div>

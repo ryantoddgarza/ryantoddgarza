@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import Contact from '../components/Contact';
 import Layout from '../components/layout';
+import Contact from '../components/Contact';
 
 const ContactPage: FunctionComponent = () => (
   <Layout>

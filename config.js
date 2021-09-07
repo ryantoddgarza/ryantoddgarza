@@ -19,12 +19,10 @@ module.exports = {
   image: '/images/site.jpg', // relative to site root
   author: 'Ryan Todd Garza',
   email: 'ryantoddgarza@gmail.com',
+  twitter: '@ryantoddgarza',
 
   favicon: 'static/images/icon.png',
   shortName: 'ryantoddgarza',
   backgroundColor: '#ffffff',
   themeColor: '#a88f48',
-
-  gaMeasurementId: 'G-T260F8WSHG',
-  twitter: '@ryantoddgarza',
 };

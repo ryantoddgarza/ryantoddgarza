@@ -1,3 +1,4 @@
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
 const site = require('./config');
 
 const pathPrefix = site.pathPrefix === '/' ? '' : site.pathPrefix;
@@ -19,7 +20,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: [site.gaMeasurementId],
+        trackingIds: [process.env.GA_MEASUREMENT_ID],
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 0,

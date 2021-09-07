@@ -1,0 +1,28 @@
+.feature-card {
+  @include at-media("tablet") {
+    padding-right: unit(5);
+    padding-bottom: unit(5);
+  }
+}
+
+.feature-card .heading {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-lg,
+    $theme-line-height-heading
+  );
+}
+
+.feature-card .body {
+  margin-top: unit(2);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-extended
+  );
+}
+
+.feature-card .body a {
+  color: color($theme-color-text-link);
+}

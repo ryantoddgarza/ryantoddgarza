@@ -1,11 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import type { FunctionComponent } from 'react';
+import type { HeroProps } from './types';
 
-interface Props {
-  heading: string;
-  copy: string;
-}
-
-const Hero: FunctionComponent<Props> = ({ heading, copy }: Props) => {
+const Hero: FunctionComponent<HeroProps> = ({ heading, copy }: HeroProps) => {
   const getHeroClasses = () => {
     const heroClasses = ['hero'];
     return heroClasses.join(' ');

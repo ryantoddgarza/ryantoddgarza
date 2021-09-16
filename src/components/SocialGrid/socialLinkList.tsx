@@ -17,9 +17,9 @@ import {
   PATREON_ID,
   TWITTER_ID,
 } from '../../constants';
-import type { SocialLinkList } from './types';
+import type { SocialLinkListItem } from './types';
 
-const socialLinkList: SocialLinkList[] = [
+const socialLinkList: SocialLinkListItem[] = [
   {
     name: 'Github',
     url: `https://github.com/${GITHUB_ID}`,

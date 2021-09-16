@@ -71,12 +71,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   } = data;
 
   const templates = {
-    post: path.resolve('./src/templates/Post.jsx'),
-    list: path.resolve('./src/templates/List.jsx'),
-    taggedList: path.resolve('./src/templates/TaggedList.jsx'),
-    categorizedList: path.resolve('./src/templates/CategorizedList.jsx'),
-    albums: path.resolve('./src/templates/Albums.jsx'),
-    album: path.resolve('./src/templates/Album.jsx'),
+    post: path.resolve('./src/templates/Post.tsx'),
+    list: path.resolve('./src/templates/List.tsx'),
+    taggedList: path.resolve('./src/templates/TaggedList.tsx'),
+    categorizedList: path.resolve('./src/templates/CategorizedList.tsx'),
+    albums: path.resolve('./src/templates/Albums.tsx'),
+    album: path.resolve('./src/templates/Album.tsx'),
   };
 
   projectEdges.forEach(({ node: { type, fields: { path } } }) => {

@@ -5,12 +5,12 @@ export interface SocialGridProps {
   theme?: string;
 }
 
-export interface SocialLink {
+export interface SocialLinkData {
   name: string;
   url: string;
   icon: ReactNode;
 }
 
-export interface SocialLinkList extends SocialLink {
+export interface SocialLinkListItem extends SocialLinkData {
   display: boolean;
 }

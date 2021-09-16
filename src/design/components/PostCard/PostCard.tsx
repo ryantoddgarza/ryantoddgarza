@@ -1,28 +1,22 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Truncate from 'react-truncate';
-import { cardAspect } from './variants';
+import { cardAspect, cardThemes } from './variants';
+import type { PostCardProps } from './types';
 
-interface Props {
-  title: string;
-  subtitle?: string;
-  summary?: string;
-  path: string;
-  image?: any;
-  aspect?: string;
-}
-
-const PostCard: FunctionComponent<Props> = ({
+const PostCard: FunctionComponent<PostCardProps> = ({
   title,
   subtitle,
   summary,
   path,
   image,
   aspect,
-}: Props) => {
+  theme,
+}: PostCardProps) => {
   const getCardClasses = () => {
-    const cardClasses = ['post-card', aspect];
+    const cardClasses = ['post-card', aspect, theme];
     return cardClasses.join(' ');
   };
 
@@ -33,9 +27,9 @@ const PostCard: FunctionComponent<Props> = ({
           <div className="image-container">
             {image && (
               <GatsbyImage
-                image={image && getImage(image)}
-                alt=""
                 className="image"
+                image={image.childImageSharp.gatsbyImageData}
+                alt=""
               />
             )}
           </div>
@@ -55,10 +49,11 @@ const PostCard: FunctionComponent<Props> = ({
 };
 
 PostCard.defaultProps = {
-  aspect: cardAspect.WIDESCREEN,
   subtitle: '',
   summary: '',
-  image: {},
+  image: undefined,
+  theme: cardThemes.LIGHT,
+  aspect: cardAspect.WIDESCREEN,
 };
 
 export default PostCard;

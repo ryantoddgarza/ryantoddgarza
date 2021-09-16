@@ -1,16 +1,12 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React from 'react';
+import type { FunctionComponent } from 'react';
+import type { SectionProps } from './types';
 
-interface Props {
-  title?: string;
-  subtitle?: string;
-  children: ReactNode;
-}
-
-const Section: FunctionComponent<Props> = ({
+const Section: FunctionComponent<SectionProps> = ({
   title,
   subtitle,
   children,
-}: Props) => {
+}: SectionProps) => {
   const getSectionClasses = () => {
     const sectionClasses = ['section'];
     return sectionClasses.join(' ');

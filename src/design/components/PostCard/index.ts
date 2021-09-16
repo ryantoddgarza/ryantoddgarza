@@ -1,2 +1,5 @@
-export { default as PostCard } from './PostCard';
+import PostCard from './PostCard';
+
+export default PostCard;
+export * from './types';
 export * from './variants';

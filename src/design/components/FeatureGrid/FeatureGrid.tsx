@@ -1,4 +1,5 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import type { FunctionComponent } from 'react';
 import type { Feature, FeatureGridProps } from './types';
 
 const FeatureGrid: FunctionComponent<FeatureGridProps> = ({

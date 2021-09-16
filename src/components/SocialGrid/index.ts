@@ -1,5 +1,5 @@
 import SocialGrid from './SocialGrid';
 
-export * from './variants';
-export * from './types';
 export default SocialGrid;
+export * from './types';
+export * from './variants';

@@ -1,13 +1,13 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React from 'react';
+import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { HOME_PATH } from '../../../constants';
+import type { HeaderProps } from './types';
 
-interface Props {
-  name?: string;
-  children: ReactNode;
-}
-
-const Header: FunctionComponent<Props> = ({ name, children }: Props) => {
+const Header: FunctionComponent<HeaderProps> = ({
+  name,
+  children,
+}: HeaderProps) => {
   const getHeaderClasses = () => {
     const headerClasses = ['global-header'];
     return headerClasses.join(' ');
@@ -20,9 +20,7 @@ const Header: FunctionComponent<Props> = ({ name, children }: Props) => {
           {name}
         </Link>
       )}
-      <div className="header-content">
-        {children}
-      </div>
+      <div className="header-content">{children}</div>
     </header>
   );
 };

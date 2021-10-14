@@ -54,4 +54,4 @@ export SAVEHIST=$HISTSIZE
 
 And that’s all there is to the initial setup. We’ve defined the history file’s location using `HISTFILE`, specified how many lines will be saved using `SAVEHIST`, and how many the shell keeps in the session with `HISTSIZE`.
 
-In [part 2](/a-better-zsh-history-pt-2) we will dive into the history options that make zsh customizable to your workflow.
+In [part 2](/a-better-zsh-history-pt2) we will dive into the history options that make zsh customizable to your workflow.

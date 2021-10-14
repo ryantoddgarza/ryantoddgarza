@@ -7,7 +7,7 @@ tags: ['shell', 'zsh', 'terminal']
 banner: 'images/kimon-maritz-mQiZnKwGXW0-unsplash.jpg'
 ---
 
-In [part 1](/a-better-zsh-history-pt-1) we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment using `setopt` in the _.zshrc_. The full list of options can be found in the [documentation](http://zsh.sourceforge.net/Doc/Release/Options.html#History).
+In [part 1](/a-better-zsh-history-pt1) we did some basic setup to get the history mechanism working in Zsh. In this article we will explore a few options to customize the Zsh environment using `setopt` in the _.zshrc_. The full list of options can be found in the [documentation](http://zsh.sourceforge.net/Doc/Release/Options.html#History).
 
 ## Persistence
 

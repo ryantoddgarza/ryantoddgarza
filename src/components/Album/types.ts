@@ -16,8 +16,10 @@ export interface AlbumMetadata {
   };
   date: string;
   format: string;
+  label: string;
+  sku: string;
   upc: string;
-  publishing: string;
+  copyright: string;
 }
 
 export interface TrackData {

@@ -27,8 +27,10 @@ export const pageQuery = graphql`
         }
         date
         format
+        label
+        sku
         upc
-        publishing
+        copyright
       }
       tracks {
         title

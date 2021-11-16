@@ -7,7 +7,17 @@ import type { AlbumProps, CreditData, TrackData } from './types';
 const Album: FunctionComponent<AlbumProps> = ({
   data: {
     album: {
-      metadata: { title, artist, cover, date, format, upc, publishing },
+      metadata: {
+        title,
+        artist,
+        cover,
+        date,
+        format,
+        label,
+        sku,
+        upc,
+        copyright,
+      },
       tracks,
       credits,
       links,
@@ -54,16 +64,18 @@ const Album: FunctionComponent<AlbumProps> = ({
 
   const content = {
     details: [
-      { key: 'artist', value: artist },
-      { key: 'date', value: date.split('-')[0] },
-      { key: 'runtime', value: `${getAlbumRuntime()} minutes` },
-      { key: 'format', value: format },
-      { key: 'upc', value: upc },
+      { key: 'Artist', value: artist },
+      { key: 'Date', value: date.split('-')[0] },
+      { key: 'Runtime', value: `${getAlbumRuntime()} minutes` },
+      { key: 'Format', value: format },
+      { key: 'Label', value: label },
+      { key: 'SKU', value: sku },
+      { key: 'UPC', value: upc },
     ],
   };
 
   const layout = {
-    hasCredits: credits || publishing,
+    hasCredits: credits || copyright,
     hasPraise: praise,
   };
 
@@ -90,11 +102,14 @@ const Album: FunctionComponent<AlbumProps> = ({
                 <div className="info-section details">
                   <h3 className="section-heading">Info</h3>
                   <div className="panel">
-                    {content.details.map(({ key, value }) => (
-                      <div className="list-item sm" key={key}>
-                        {value}
-                      </div>
-                    ))}
+                    {content.details.map(
+                      ({ key, value }) =>
+                        value && (
+                          <div className="list-item sm" key={key}>
+                            {key}: {value}
+                          </div>
+                        )
+                    )}
                   </div>
                 </div>
                 <div className="info-section links">
@@ -171,7 +186,7 @@ const Album: FunctionComponent<AlbumProps> = ({
                       )}
                     </dl>
                   )}
-                  {publishing && <p>{publishing}</p>}
+                  {copyright && <p>{copyright}</p>}
                 </div>
               </div>
             )}

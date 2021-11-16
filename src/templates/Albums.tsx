@@ -18,7 +18,7 @@ export default AlbumsTemplate;
 export const pageQuery = graphql`
   query AlbumsQuery {
     albums: allProjectsJson(
-      filter: { type: { eq: "album" } }
+      filter: { type: { eq: "album" }, hide: { ne: true } }
       sort: { fields: [metadata___date], order: DESC }
     ) {
       nodes {

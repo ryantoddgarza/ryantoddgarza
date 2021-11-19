@@ -1,0 +1,60 @@
+{
+  "type": "album",
+  "hide": false,
+  "featured": false,
+  "metadata": {
+    "title": "Dialogue",
+    "artist": "Ryan Todd Garza & Tyler Simpson",
+    "cover": "images/dialogue-cover.jpg",
+    "date": "2021-11-18",
+    "format": "Digital",
+    "label": "Full Spectrum Records",
+    "sku": "FS122",
+    "upc": "",
+    "copyright": "© 2021 Ryan Todd Garza & Tyler Simpson."
+  },
+  "tracks": [
+    {
+      "title": "Dialogue: hello modular, I'm analogue",
+      "runtime": "40:49",
+      "lyrics": "",
+      "video": ""
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tyler Simpson & Ryan Todd Garza",
+      "role": "Live improvisaton by"
+    },
+    {
+      "name": "Andrew Weathers",
+      "role": "Mastered by"
+    },
+    {
+      "name": "Wallace Townsend",
+      "role": "Mixed by"
+    },
+    {
+      "name": "Ryan Todd Garza",
+      "role": "Synthesizer"
+    },
+    {
+      "name": "Tyler Simpson",
+      "role": "Synthesizer"
+    },
+    {
+      "name": "Amy DeVoge",
+      "role": "Recording engineer"
+    },
+    {
+      "name": "Gretchen Korsmo",
+      "role": "Artwork"
+    }
+  ],
+  "links": [
+    {
+      "distributor": "Bandcamp",
+      "url": "https://fullspectrumrecords.bandcamp.com/album/dialogue-hello-modular-i-m-analogue"
+    }
+  ]
+}

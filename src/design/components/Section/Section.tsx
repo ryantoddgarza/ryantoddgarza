@@ -12,12 +12,18 @@ const Section: FunctionComponent<SectionProps> = ({
     return sectionClasses.join(' ');
   };
 
+  const layout = {
+    withHeader: title || subtitle,
+  };
+
   return (
     <section className={getSectionClasses()}>
-      <div className="header">
-        <h2 className="title">{title}</h2>
-        <h3 className="subtitle">{subtitle}</h3>
-      </div>
+      {layout.withHeader && (
+        <div className="header">
+          {title && <h2 className="title">{title}</h2>}
+          {subtitle && <h3 className="subtitle">{subtitle}</h3>}
+        </div>
+      )}
       {children}
     </section>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Hero } from '../../design/components';
 import SEO from '../SEO';
 
 const About: FunctionComponent = () => {
@@ -23,20 +22,24 @@ const About: FunctionComponent = () => {
   return (
     <div className="about">
       <SEO title="About" />
-      <Hero
-        heading="About"
-        copy="I build practical systems to actualize creative concepts."
-      />
-      <div className="article container widescreen">
-        <div className="row">
-          <div
-            className="col markdown"
-            dangerouslySetInnerHTML={{ __html: col1.childMarkdownRemark.html }}
-          />
-          <div
-            className="col markdown"
-            dangerouslySetInnerHTML={{ __html: col2.childMarkdownRemark.html }}
-          />
+      <div className="section">
+        <div className="container widescreen">
+          <div className="article">
+            <div className="row">
+              <div
+                className="col markdown"
+                dangerouslySetInnerHTML={{
+                  __html: col1.childMarkdownRemark.html,
+                }}
+              />
+              <div
+                className="col markdown"
+                dangerouslySetInnerHTML={{
+                  __html: col2.childMarkdownRemark.html,
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

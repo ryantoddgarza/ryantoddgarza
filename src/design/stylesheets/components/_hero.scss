@@ -1,22 +1,16 @@
 @use 'sass:math';
 
-.hero {
-  padding-top: unit(7);
-  padding-bottom: unit(7);
-}
-
 .hero .content {
-  padding-left: $theme-site-margin;
-  padding-right: $theme-site-margin;
-}
-
-.hero .body {
   @include at-media("tablet") {
-    width: math.percentage(math.div(2, 3));
+    width: math.percentage(math.div(3, 4));
+  }
+
+  @include at-media("desktop") {
+    width: math.percentage(math.div(1, 2));
   }
 }
 
-.hero .body > .heading {
+.hero .heading {
   font-weight: font-weight($theme-font-weight-bold);
   @include typeset(
     $theme-font-role-heading,
@@ -29,11 +23,15 @@
   }
 }
 
-.hero .body > .copy {
-  margin-top: unit(3);
+.hero .copy {
+  margin-top: unit(4);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-lg,
     $theme-line-height-extended
   );
+}
+
+.hero .cta-row {
+  margin-top: unit(4);
 }

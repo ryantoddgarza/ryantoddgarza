@@ -5,14 +5,18 @@ import SEO from '../SEO';
 
 const Contact: FunctionComponent = () => {
   const {
-    site: {
-      siteMetadata: { email },
+    content: {
+      childResourcesJson: { title, emailBtn },
     },
   } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          email
+    query ContactQuery {
+      content: file(name: { eq: "content-contact" }) {
+        childResourcesJson {
+          title
+          emailBtn {
+            name
+            url
+          }
         }
       }
     }
@@ -20,15 +24,17 @@ const Contact: FunctionComponent = () => {
 
   return (
     <div className="contact">
-      <SEO title="Contact" />
-      <section className="container section">
-        <div className="header">
-          <div className="title">Contact</div>
-        </div>
-        <div>
-          <a className="button dark wide" href={`mailto:${email}`}>
-            Email
-          </a>
+      <SEO title={title} />
+      <section className="section">
+        <div className="container">
+          <div className="header">
+            <div className="title">{title}</div>
+          </div>
+          <div>
+            <a className="button dark wide" href={emailBtn.url}>
+              {emailBtn.name}
+            </a>
+          </div>
         </div>
       </section>
     </div>

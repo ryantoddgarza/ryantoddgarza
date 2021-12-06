@@ -16,6 +16,14 @@ const Home: FunctionComponent = () => {
           hero {
             copy
             heading
+            btn1 {
+              name
+              url
+            }
+            btn2 {
+              name
+              url
+            }
           }
           features {
             body
@@ -29,7 +37,14 @@ const Home: FunctionComponent = () => {
   return (
     <div className="home">
       <SEO />
-      <Hero heading={hero.heading} copy={hero.copy} />
+      <div className="container section">
+        <Hero
+          heading={hero.heading}
+          copy={hero.copy}
+          btn1={{ name: hero.btn1.name, url: hero.btn1.url }}
+          btn2={{ name: hero.btn2.name, url: hero.btn2.url }}
+        />
+      </div>
       <div className="container section">
         <FeatureGrid features={features} />
       </div>

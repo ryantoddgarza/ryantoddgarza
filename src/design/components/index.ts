@@ -1,3 +1,6 @@
+export { default as BigList } from './BigList';
+export * from './BigList';
+
 export { default as ErrorPage } from './ErrorPage';
 
 export { default as FeatureGrid } from './FeatureGrid';

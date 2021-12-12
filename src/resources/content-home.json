@@ -11,6 +11,24 @@
       "url": "/contact"
     }
   },
+  "navList": [
+    {
+      "name": "Software",
+      "link": "https://github.com/ryantoddgarza"
+    },
+    {
+      "name": "Music",
+      "link": "/albums"
+    },
+    {
+      "name": "Yoga",
+      "link": "/categories/yoga/1"
+    },
+    {
+      "name": "Blog",
+      "link": "/posts/1"
+    }
+  ],
   "features": [
     {
       "heading": "Software",

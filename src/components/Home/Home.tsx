@@ -1,13 +1,13 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FeatureGrid, Hero } from '../../design/components';
+import { FeatureGrid, Hero, BigList } from '../../design/components';
 import SEO from '../SEO';
 
 const Home: FunctionComponent = () => {
   const {
     content: {
-      childResourcesJson: { hero, features },
+      childResourcesJson: { hero, navList, features },
     },
   } = useStaticQuery(graphql`
     query HomeQuery {
@@ -24,6 +24,10 @@ const Home: FunctionComponent = () => {
               name
               url
             }
+          }
+          navList {
+            name
+            link
           }
           features {
             body
@@ -44,6 +48,13 @@ const Home: FunctionComponent = () => {
           btn1={{ name: hero.btn1.name, url: hero.btn1.url }}
           btn2={{ name: hero.btn2.name, url: hero.btn2.url }}
         />
+      </div>
+      <div className="container section">
+        <div className="row">
+          <div className="col size3of4-tablet offset1of4-tablet size2of3-desktop offset1of3-desktop">
+            <BigList list={navList} numbered />
+          </div>
+        </div>
       </div>
       <div className="container section">
         <FeatureGrid features={features} />

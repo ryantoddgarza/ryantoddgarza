@@ -14,6 +14,3 @@ export * from './Hero';
 
 export { default as PostCard } from './PostCard';
 export * from './PostCard';
-
-export { default as Section } from './Section';
-export * from './Section';

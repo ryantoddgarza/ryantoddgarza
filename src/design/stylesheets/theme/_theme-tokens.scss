@@ -32,7 +32,7 @@ $theme-line-height-extended: 7;
 
 $theme-color-primary: gold-40;
 $theme-color-text: gray-90;
-$theme-color-text-inverse: gray-2;
+$theme-color-text-inverse: gray-3;
 $theme-color-text-weak: gray-40;
 $theme-color-text-weak-hover: gray-90;
 $theme-color-text-link: $theme-color-primary;
@@ -54,3 +54,10 @@ $theme-nav-height: 6;
 $theme-nav-breakpoint: tablet;
 
 $theme-site-margin: 5%;
+
+// Components
+
+$theme-avatar-size-xs: 4;
+$theme-avatar-size-sm: 8;
+$theme-avatar-size-md: 12;
+$theme-avatar-size-lg: 32;

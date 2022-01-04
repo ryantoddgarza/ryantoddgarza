@@ -1,0 +1,27 @@
+.avatar {
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+// Size variants
+
+.avatar.xs {
+  width: unit($theme-avatar-size-xs);
+  height: unit($theme-avatar-size-xs);
+}
+
+.avatar.sm {
+  width: unit($theme-avatar-size-sm);
+  height: unit($theme-avatar-size-sm);
+}
+
+.avatar.md {
+  width: unit($theme-avatar-size-md);
+  height: unit($theme-avatar-size-md);
+}
+
+.avatar.lg {
+  width: unit($theme-avatar-size-lg);
+  height: unit($theme-avatar-size-lg);
+}

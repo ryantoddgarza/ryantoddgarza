@@ -24,6 +24,15 @@ const About: FunctionComponent = () => {
       <SEO title="About" />
       <div className="section">
         <div className="container widescreen">
+          <div className="header">
+            <div className="profile-photo">
+              <img
+                className="avatar lg"
+                src="/images/me.jpg"
+                alt="Ryan Todd Garza"
+              />
+            </div>
+          </div>
           <div className="article">
             <div className="row">
               <div

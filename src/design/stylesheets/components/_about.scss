@@ -1,5 +1,16 @@
 $about-article-col-gap: unit(4);
 
+.about .header {
+  margin-bottom: unit(6);
+}
+
+.about .profile-photo {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .about .article .row {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 ---
-category: 'technology'
+category: 'programming'
 featured: true
 title: 'Bootstrap client-side Git hooks for version control'
 date: '2021-04-20T15:11:12.000Z'

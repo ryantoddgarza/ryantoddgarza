@@ -1,5 +1,5 @@
 ---
-category: 'technology'
+category: 'programming'
 featured: true
 title: 'Cleaner JavaScript with Destructuring'
 date: '2021-01-17T15:14:23.000Z'

@@ -1,5 +1,5 @@
 ---
-category: 'technology'
+category: 'programming'
 featured: true
 title: 'Vertical Rhythm for styled-components'
 date: '2021-01-04T05:46:00.000Z'

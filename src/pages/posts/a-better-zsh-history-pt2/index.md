@@ -1,5 +1,5 @@
 ---
-category: 'technology'
+category: 'programming'
 featured: true
 title: 'A Better Zsh History, pt. 2'
 date: '2020-10-02T12:03:00.000Z'

@@ -1,5 +1,5 @@
 ---
-category: 'technology'
+category: 'programming'
 featured: false
 title: "Aliases You Didn't Know You Wanted: Options `-iv`"
 date: '2020-11-08T15:11:00.000Z'

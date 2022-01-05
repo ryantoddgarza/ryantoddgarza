@@ -9,6 +9,8 @@ export * from './FeatureGrid';
 export { default as Header } from './Header';
 export * from './Header';
 
+export * from './Headliner';
+
 export { default as Hero } from './Hero';
 export * from './Hero';
 

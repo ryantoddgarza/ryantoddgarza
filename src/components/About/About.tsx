@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../SEO';
 
 const About: FunctionComponent = () => {
@@ -24,10 +25,12 @@ const About: FunctionComponent = () => {
       <SEO title="About" />
       <section className="layout--margin">
         <div className="profile-photo">
-          <img
+          <StaticImage
             className="avatar lg"
-            src="/images/me.jpg"
+            src="../../resources/images/me.jpg"
             alt="Ryan Todd Garza"
+            quality={80}
+            loading="eager"
           />
         </div>
       </section>

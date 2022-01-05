@@ -32,27 +32,31 @@
   "features": [
     {
       "heading": "Software",
-      "body": "I design and develop enterprise software solutions and open-source services and libraries. Bit Pas—my creative development organization—is the consolidation and continuation of my freelance work in the tech domain."
+      "body": "I design and develop enterprise software solutions and open-source services and libraries. Bit Pas—my creative development studio—is the consolidation and continuation of my freelance work in the tech domain."
     },
     {
       "heading": "Music",
-      "body": "I have worked professionally in the music and film industry as an artist, multi-instrumentalist, songwriter, producer, and audio engineer in varying degrees of emphasis for most of my life. This framework informs everything I do today."
+      "body": "I have worked professionally in the music and film industry as an artist, multi-instrumentalist, songwriter, producer, and audio engineer in varying degrees of emphasis for most of my life. The allure of music informs everything I do today."
+    },
+    {
+      "heading": "Yoga",
+      "body": "I am both student and teacher of Ashtanga Vinyasa Yoga and the analysis of texts explicating the philosophy and technique of Yogic systems. In 2021 I established Ashtanga Yoga Bhavana to bolster the local community."
+    },
+    {
+      "heading": "Ballet",
+      "body": "Dancing ballet has become my favorite way to explore form and push my body as of late. I am grateful to be a under the tutelage of Ballet Lubbock and a part of their performances."
     },
     {
       "heading": "Generative",
-      "body": "Ongoing interest in generative art and creative systems provides me the opportunity for interdisciplinary study and inspires collaborations among experts in artificial intelligence, cognitive science, design, and the arts."
-    },
-    {
-      "heading": "Rhythmanalysis",
-      "body": "Exposure and study of cross-cultural traditional rhythmic expression mixed with programming and combinatorics have inspired theoretical rhythmic musings and the practical application thereof."
+      "body": "Ongoing interest in generative art and creative systems provides me the opportunity for interdisciplinary study and collaborations among experts in artificial intelligence, cognitive science, design, and the arts."
     },
     {
       "heading": "Design",
       "body": "Though my UI/UX and graphic design work is borne out of necessity, a number of brand and web designs have emerged over the years. I am a design system advocate and help digital product owners develop and integrate them."
     },
     {
-      "heading": "Yoga",
-      "body": "I am both student and teacher of Ashtanga Vinyasa Yoga and the analysis of texts explicating the philosophy and technique of Yogic systems. In 2021 I established Ashtanga Yoga Bhavana to bolster the local community."
+      "heading": "Rhythmanalysis",
+      "body": "Exposure and study of cross-cultural traditional rhythmic expression mixed with programming and combinatorics have inspired theoretical rhythmic musings and the practical application thereof."
     },
     {
       "heading": "Business",
@@ -61,10 +65,6 @@
     {
       "heading": "Writing",
       "body": "Writing is easy; communicating is hard. I enjoy the challenge of communicating a variety of technical and subjective matters which can be found in my blog and on the web as contributions to various publications."
-    },
-    {
-      "heading": "Learning",
-      "body": "The most valuable asset I posses is my aptitude for learning. My recent undertakings are to master the Hammond B3, dance in a local ballet production, and transition to and stand up multi-model databases."
     }
   ]
 }

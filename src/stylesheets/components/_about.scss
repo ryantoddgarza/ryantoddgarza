@@ -1,4 +1,4 @@
-$about-article-col-gap: unit(4);
+$about-col-gap: unit(4);
 
 .about .header {
   margin-bottom: unit(6);
@@ -11,19 +11,19 @@ $about-article-col-gap: unit(4);
   margin-right: auto;
 }
 
-.about .article .row {
+.about .row {
   display: flex;
   flex-direction: column;
-  margin-left: $about-article-col-gap * -0.5;
-  margin-right: $about-article-col-gap * -0.5;
+  margin-left: $about-col-gap * -0.5;
+  margin-right: $about-col-gap * -0.5;
 
   @include at-media("tablet") {
     flex-direction: row;
   }
 }
 
-.about .article .col {
+.about .col {
   flex: 1;
-  padding-left: $about-article-col-gap * 0.5;
-  padding-right: $about-article-col-gap * 0.5;
+  padding-left: $about-col-gap * 0.5;
+  padding-right: $about-col-gap * 0.5;
 }

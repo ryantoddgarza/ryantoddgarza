@@ -1,11 +1,6 @@
 // Article
 
-.post .article {
-  margin-top: unit(4);
-  margin-bottom: unit(4);
-}
-
-.post .article > .header > .title {
+.post .header > .title {
   font-weight: font-weight($theme-font-weight-bold);
   @include typeset(
     $theme-font-role-heading,
@@ -14,7 +9,7 @@
   );
 }
 
-.post .article > .header > .metadata {
+.post .header > .metadata {
   margin-top: unit(1);
   @include typeset(
     $theme-font-role-body,
@@ -23,7 +18,7 @@
   );
 }
 
-.post .article > .header > .metadata a.category {
+.post .header > .metadata a.category {
   color: color($theme-color-text-link);
   font-weight: font-weight($theme-font-weight-medium);
   text-transform: uppercase;
@@ -34,15 +29,15 @@
   }
 }
 
-.post .article > .header > .banner {
+.post .header > .banner {
   margin-top: unit(4);
 }
 
-.post .article > .body {
+.post .body {
   margin-top: unit(4);
 }
 
-.post .article > .post-footer {
+.post .post-footer {
   margin-top: unit(6);
 }
 

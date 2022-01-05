@@ -1,4 +1,2 @@
-import FeatureGrid from './FeatureGrid';
-
-export default FeatureGrid;
+export { default as FeatureGrid } from './FeatureGrid';
 export * from './types';

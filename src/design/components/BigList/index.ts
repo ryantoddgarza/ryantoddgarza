@@ -1,4 +1,2 @@
-import BigList from './BigList';
-
-export default BigList;
+export { default as BigList } from './BigList';
 export * from './types';

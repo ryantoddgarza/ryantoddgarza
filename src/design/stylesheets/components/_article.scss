@@ -1,0 +1,9 @@
+.article {
+  padding-top: unit($theme-article-margin-phone);
+  padding-bottom: unit($theme-article-margin-phone);
+
+  @include at-media("tablet") {
+    padding-top: unit($theme-article-margin-tablet);
+    padding-bottom: unit($theme-article-margin-tablet);
+  }
+}

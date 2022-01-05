@@ -1,3 +1,19 @@
-.layout__main {
-  padding-top: unit(6);
+.layout--margin {
+  padding-top: unit($theme-layout-margin-phone);
+  padding-bottom: unit($theme-layout-margin-phone);
+
+  @include at-media("tablet") {
+    padding-top: unit($theme-layout-margin-tablet);
+    padding-bottom: unit($theme-layout-margin-tablet);
+  }
+
+  @include at-media("desktop") {
+    padding-top: unit($theme-layout-margin-desktop);
+    padding-bottom: unit($theme-layout-margin-desktop);
+  }
+
+  @include at-media("widescreen") {
+    padding-top: unit($theme-layout-margin-widescreen);
+    padding-bottom: unit($theme-layout-margin-widescreen);
+  }
 }

@@ -10,9 +10,9 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
   } = data;
 
   return (
-    <>
+    <div className="albums">
       <SEO title="Albums" />
-      <div className="section">
+      <section className="layout--margin">
         <div className="container">
           <div className="posts-container">
             {albums.map(
@@ -32,8 +32,8 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
             )}
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 

@@ -22,17 +22,17 @@ const About: FunctionComponent = () => {
   return (
     <div className="about">
       <SEO title="About" />
-      <div className="section">
+      <section className="layout--margin">
+        <div className="profile-photo">
+          <img
+            className="avatar lg"
+            src="/images/me.jpg"
+            alt="Ryan Todd Garza"
+          />
+        </div>
+      </section>
+      <section>
         <div className="container widescreen">
-          <div className="header">
-            <div className="profile-photo">
-              <img
-                className="avatar lg"
-                src="/images/me.jpg"
-                alt="Ryan Todd Garza"
-              />
-            </div>
-          </div>
           <div className="article">
             <div className="row">
               <div
@@ -50,7 +50,7 @@ const About: FunctionComponent = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

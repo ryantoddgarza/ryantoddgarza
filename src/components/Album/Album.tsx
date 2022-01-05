@@ -80,10 +80,10 @@ const Album: FunctionComponent<AlbumProps> = ({
   };
 
   return (
-    <>
+    <div className="album">
       <SEO title={title} />
-      <div className="layout__main album">
-        <section className="section container">
+      <section className="layout--margin">
+        <div className="container">
           <div className="album-row">
             <div className="album-col left">
               <div className="cover-container">
@@ -132,8 +132,10 @@ const Album: FunctionComponent<AlbumProps> = ({
               </div>
             </div>
           </div>
-        </section>
-        <section className="section container">
+        </div>
+      </section>
+      <section className="layout--margin">
+        <div className="container">
           <div className="album-row">
             <div className="album-col left">
               <div className="tracks">
@@ -172,8 +174,10 @@ const Album: FunctionComponent<AlbumProps> = ({
               </div>
             </div>
           </div>
-        </section>
-        <section className="section container">
+        </div>
+      </section>
+      <section className="layout--margin">
+        <div className="container">
           <div className="album-row">
             {layout.hasCredits && (
               <div className="album-col left">
@@ -221,9 +225,9 @@ const Album: FunctionComponent<AlbumProps> = ({
               </div>
             )}
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
   );
 };
 

@@ -41,24 +41,30 @@ const Home: FunctionComponent = () => {
   return (
     <div className="home">
       <SEO />
-      <div className="container section">
-        <Hero
-          heading={hero.heading}
-          copy={hero.copy}
-          btn1={{ name: hero.btn1.name, url: hero.btn1.url }}
-          btn2={{ name: hero.btn2.name, url: hero.btn2.url }}
-        />
-      </div>
-      <div className="container section">
-        <div className="row">
-          <div className="col size3of4-tablet offset1of4-tablet size2of3-desktop offset1of3-desktop">
-            <BigList list={navList} numbered />
+      <section className="layout--margin">
+        <div className="container">
+          <Hero
+            heading={hero.heading}
+            copy={hero.copy}
+            btn1={{ name: hero.btn1.name, url: hero.btn1.url }}
+            btn2={{ name: hero.btn2.name, url: hero.btn2.url }}
+          />
+        </div>
+      </section>
+      <section className="layout--margin">
+        <div className="container">
+          <div className="row">
+            <div className="col size3of4-tablet offset1of4-tablet size2of3-desktop offset1of3-desktop">
+              <BigList list={navList} numbered />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container section">
-        <FeatureGrid features={features} />
-      </div>
+      </section>
+      <section className="layout--margin">
+        <div className="container">
+          <FeatureGrid features={features} />
+        </div>
+      </section>
     </div>
   );
 };

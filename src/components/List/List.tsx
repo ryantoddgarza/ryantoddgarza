@@ -21,34 +21,36 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
   );
 
   return (
-    <div className="layout__main">
+    <>
       <SEO title="Posts" />
-      <div className="container">
-        <div className="posts-container">
-          {posts.map(
-            ({
-              node: {
-                excerpt,
-                frontmatter: { title, summary, category, banner },
-                fields: { path },
-              },
-            }) => (
-              <PostCard
-                key={path}
-                title={title}
-                subtitle={
-                  <Link to={`/categories/${category}/1`}>{category}</Link>
-                }
-                summary={summary || excerpt}
-                path={path}
-                image={banner}
-              />
-            )
-          )}
+      <div className="layout--margin">
+        <div className="container">
+          <div className="posts-container">
+            {posts.map(
+              ({
+                node: {
+                  excerpt,
+                  frontmatter: { title, summary, category, banner },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  subtitle={
+                    <Link to={`/categories/${category}/1`}>{category}</Link>
+                  }
+                  summary={summary || excerpt}
+                  path={path}
+                  image={banner}
+                />
+              )
+            )}
+          </div>
         </div>
+        <Pagination postCount={postCount} location={location} />
       </div>
-      <Pagination postCount={postCount} location={location} />
-    </div>
+    </>
   );
 };
 

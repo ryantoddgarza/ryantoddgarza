@@ -28,39 +28,41 @@ const CategorizedList: FunctionComponent<CategorizedListProps> = ({
   );
 
   return (
-    <div className="layout__main">
+    <>
       <SEO title={titleCase(category)} />
-      <div className="container">
-        <div className="posts-container">
-          {posts.length === 0 && <div>No posts.</div>}
-          {posts.map(
-            ({
-              node: {
-                excerpt,
-                frontmatter: { title, summary, category, banner },
-                fields: { path },
-              },
-            }) => (
-              <PostCard
-                key={path}
-                title={title}
-                subtitle={
-                  <Link to={`/categories/${category}/1`}>{category}</Link>
-                }
-                summary={summary || excerpt}
-                path={path}
-                image={banner}
-              />
-            )
-          )}
+      <div className="layout--margin">
+        <div className="container">
+          <div className="posts-container">
+            {posts.length === 0 && <div>No posts.</div>}
+            {posts.map(
+              ({
+                node: {
+                  excerpt,
+                  frontmatter: { title, summary, category, banner },
+                  fields: { path },
+                },
+              }) => (
+                <PostCard
+                  key={path}
+                  title={title}
+                  subtitle={
+                    <Link to={`/categories/${category}/1`}>{category}</Link>
+                  }
+                  summary={summary || excerpt}
+                  path={path}
+                  image={banner}
+                />
+              )
+            )}
+          </div>
         </div>
+        <Pagination
+          prefix={`/categories/${category}/`}
+          postCount={postCount}
+          location={location}
+        />
       </div>
-      <Pagination
-        prefix={`/categories/${category}/`}
-        postCount={postCount}
-        location={location}
-      />
-    </div>
+    </>
   );
 };
 

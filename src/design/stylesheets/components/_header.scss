@@ -94,12 +94,16 @@
   color: color($theme-color-text);
   @include typeset(
     $theme-font-role-ui,
-    $theme-font-size-sm,
+    $theme-font-size-lg,
     $theme-line-height-ui
   );
 
   &:hover {
     color: color($theme-color-primary);
+  }
+
+  @include at-media($theme-nav-breakpoint) {
+    font-size: font-size($theme-font-size-sm);
   }
 }
 

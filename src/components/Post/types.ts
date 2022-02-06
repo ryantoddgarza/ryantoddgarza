@@ -36,6 +36,7 @@ export interface PostData {
   fields: PostFields;
   frontmatter: PostFrontmatterData;
   html: string;
+  timeToRead?: number;
   excerpt?: string;
 }
 

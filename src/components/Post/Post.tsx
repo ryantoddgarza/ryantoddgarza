@@ -13,6 +13,7 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
   const {
     post: {
       html,
+      timeToRead,
       frontmatter: { title, date, category, tags, banner, components, tweets },
     },
   } = data;
@@ -99,14 +100,17 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
         <header className="header">
           <h1 className="title">{title}</h1>
           <div className="metadata">
-            <span>{`— ${formattedDate(date)} in `}</span>
-            <Link
-              className="category"
-              key={`category__${category}`}
-              to={`/categories/${category}/1`}
-            >
-              {category}
-            </Link>
+            <span className="date">
+              {`${formattedDate(date)} in `}
+              <Link
+                className="category"
+                key={`category__${category}`}
+                to={`/categories/${category}/1`}
+              >
+                {category}
+              </Link>
+            </span>
+            <span className="readtime">{` • ${timeToRead} minute read`}</span>
           </div>
           {banner && (
             <GatsbyImage

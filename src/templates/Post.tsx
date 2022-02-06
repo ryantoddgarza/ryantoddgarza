@@ -17,6 +17,7 @@ export const pageQuery = graphql`
   query PostByPath($path: String!) {
     post: markdownRemark(fields: { path: { eq: $path } }) {
       html
+      timeToRead
       frontmatter {
         title
         date

@@ -42,8 +42,7 @@ An elementary example being that a value of 1/4 (quarter note) at the **beat lev
 
 ## Metric Modulation
 
-> ...metric modulation is a technique in which a rhythmic pattern is superposed on another, heterometrically, and then supersedes it and becomes the basic meter.
-> <cite>-- Nicolas Slonimsky [^2]</cite>
+> ...metric modulation is a technique in which a rhythmic pattern is superposed on another, heterometrically, and then supersedes it and becomes the basic meter.[^2] <cite>Nicolas Slonimsky</cite>
 
 What differentiates a metric modulation from any other tempo change is that the superposed rhythm is based on a note value from the preceding meter, making the duration of the minimal denominator consistent. For example, the superposition of 6/8 over 4/4 yields a consistent 1/8 note value.
 

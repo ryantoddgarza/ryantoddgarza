@@ -127,6 +127,10 @@
     font-size: font-size($theme-font-size-md);
   }
 
+  blockquote p cite::before {
+    content: "— ";
+  }
+
   figure {
     margin-top: unit(2);
     margin-bottom: unit(2);

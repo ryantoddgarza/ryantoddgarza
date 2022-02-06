@@ -112,8 +112,7 @@ _Prāṇāyāma_ is often seen translated as "breath control." This is fine as a
 
 _Prāṇa_ is a word that has no definitive equivalent in English. It can be conceptualized as "the infinite and omnipresent manifesting power or energy in the universe." In a dualistic framework, it is the counterpart to _ākāśa_—the infinite, omnipresent material of the universe.
 
-> Āsana is prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.
-> <cite>— Noah Williams</cite>
+> Āsana is prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety. <cite>Noah Williams</cite>
 
 On February 10, 2020, I spoke with my teacher Noah Williams about the best time to do _prāṇāyāma_. Noah said that Guruji taught to wait 20 minutes after _āsana_—no sooner—and that _prāṇāyāma_ is only to be practiced during Brahma Muhūrta—approximately one and a half hours before sunrise when the air is coolest and most oxygenated since the trees and plants “exhale” at this time. Noah added that _prāṇāyāma_ before _āsana_ is also an option. When I asked if he teaches prāṇāyāma, Noah responded that he makes people practice 20 years of _āsana_ before teaching _prāṇāyāma_. After 30 years it can become a focus and after 40 years it can take priority over _āsana_. For the first 40 years, _āsana_ should be priority. He said, “Āsana _is_ prāṇāyāma when done correctly. If you cheat in āsana, then prāṇāyāma will cause lots of anxiety.”
 
@@ -147,8 +146,7 @@ A merging with the object of meditation.
 
 ### The Three Paths
 
-> “On hearing that excellent story that heightened devotion, knowledge and detachment and yielded liberation, she became greatly blessed.”
-> <cite>— Śivapurāṇa-māhātmya 4.32</cite>
+> On hearing that excellent story that heightened devotion, knowledge and detachment and yielded liberation, she became greatly blessed. <cite>Śivapurāṇa-māhātmya 4.32</cite>
 
 Patañjali posits three _mārgas_—literally meaning “paths.”
 

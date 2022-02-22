@@ -5,13 +5,16 @@ import SEO from '../SEO';
 import { TitledSection, PostCard, cardAspect } from '../../design/components';
 import { ALBUMS_PATH } from '../../constants';
 import { AlbumData } from '../Album';
-import content from './content';
 
 const Music: FunctionComponent = () => {
   const {
     featAlbums: { nodes: albums },
+    content: { title },
   } = useStaticQuery(graphql`
     query MusicQuery {
+      content: resourcesJson(name: { eq: "music" }) {
+        title
+      }
       featAlbums: allProjectsJson(
         filter: {
           type: { eq: "album" }
@@ -41,7 +44,7 @@ const Music: FunctionComponent = () => {
 
   return (
     <div className="music">
-      <SEO title={content.title} />
+      <SEO title={title} />
       <div className="container">
         <section className="layout--margin">
           <TitledSection

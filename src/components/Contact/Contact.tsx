@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Headliner } from '../../design/components';
+import { TitledSection } from '../../design/components';
 import SEO from '../SEO';
 
 const Contact: FunctionComponent = () => {
@@ -28,16 +28,13 @@ const Contact: FunctionComponent = () => {
       <SEO title={title} />
       <section className="layout--margin">
         <div className="container">
-          <Headliner title={title} />
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <div>
-            <a className="button dark wide" href={emailBtn.url}>
-              {emailBtn.name}
-            </a>
-          </div>
+          <TitledSection title={title}>
+            <div>
+              <a className="button dark wide" href={emailBtn.url}>
+                {emailBtn.name}
+              </a>
+            </div>
+          </TitledSection>
         </div>
       </section>
     </div>

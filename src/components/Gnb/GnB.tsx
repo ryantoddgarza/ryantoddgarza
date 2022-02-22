@@ -2,7 +2,7 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import {
   ABOUT_PATH,
-  ALBUMS_PATH,
+  MUSIC_PATH,
   CONTACT_PATH,
   POSTS_PATH,
 } from '../../constants';
@@ -28,7 +28,7 @@ const Gnb: FunctionComponent<GnbProps> = ({
     url: `${POSTS_PATH}/1`,
     submenu: { list: categories },
   });
-  const music = NavigationItem({ name: 'Music', url: ALBUMS_PATH });
+  const music = NavigationItem({ name: 'Music', url: MUSIC_PATH });
   const about = NavigationItem({ name: 'About', url: ABOUT_PATH });
   const contact = NavigationItem({ name: 'Contact', url: CONTACT_PATH });
 

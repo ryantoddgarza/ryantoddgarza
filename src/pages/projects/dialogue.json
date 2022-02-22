@@ -1,6 +1,6 @@
 {
   "type": "album",
-  "hide": true,
+  "hide": false,
   "featured": false,
   "metadata": {
     "title": "Dialogue",

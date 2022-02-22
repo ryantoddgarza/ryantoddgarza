@@ -92,6 +92,7 @@
   align-items: center;
   min-height: unit($theme-nav-height);
   color: color($theme-color-text);
+  @include transition(color);
   @include typeset(
     $theme-font-role-ui,
     $theme-font-size-lg,

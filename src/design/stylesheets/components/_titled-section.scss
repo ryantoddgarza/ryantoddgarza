@@ -31,8 +31,13 @@
     $theme-font-size-md,
     $theme-line-height-body
   );
-}
+  @include transition(color);
 
-.titled-section .link::after {
-  content: " →";
+  &.link::after {
+    content: " →";
+  }
+
+  &:hover {
+    color: color($theme-color-primary);
+  }
 }

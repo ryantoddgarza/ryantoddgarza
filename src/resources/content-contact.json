@@ -1,4 +1,6 @@
 {
+  "type": "content",
+  "name": "contact",
   "title": "Contact",
   "emailBtn": {
     "name": "Email",

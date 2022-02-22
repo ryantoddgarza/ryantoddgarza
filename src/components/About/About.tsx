@@ -5,20 +5,27 @@ import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../SEO';
 
 const About: FunctionComponent = () => {
-  const { col1, col2 } = useStaticQuery(graphql`
+  const {
+    about: { html },
+  } = useStaticQuery(graphql`
     query AboutQuery {
-      col1: file(name: { eq: "about-col1" }) {
-        childMarkdownRemark {
-          html
-        }
-      }
-      col2: file(name: { eq: "about-col2" }) {
-        childMarkdownRemark {
-          html
-        }
+      about: markdownRemark(frontmatter: { name: { eq: "about" } }) {
+        html
       }
     }
   `);
+
+  const columns = () => {
+    const midIndex = Math.floor(html.length / 2);
+    const splitHtml = [html.substring(0, midIndex), html.substring(midIndex)];
+    const regexp = /\n/g;
+    const newlines = [...splitHtml[1].matchAll(regexp)];
+    const bpIndex = splitHtml[0].length + newlines[0].index;
+
+    return [html.substring(0, bpIndex), html.substring(bpIndex)];
+  };
+
+  const [col0, col1] = columns();
 
   return (
     <div className="about">
@@ -41,13 +48,13 @@ const About: FunctionComponent = () => {
               <div
                 className="col markdown"
                 dangerouslySetInnerHTML={{
-                  __html: col1.childMarkdownRemark.html,
+                  __html: col0,
                 }}
               />
               <div
                 className="col markdown"
                 dangerouslySetInnerHTML={{
-                  __html: col2.childMarkdownRemark.html,
+                  __html: col1,
                 }}
               />
             </div>

@@ -2,36 +2,42 @@
   h1 {
     margin-top: unit(4);
     font-size: font-size($theme-font-size-3xl);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 
   h2 {
     margin-top: unit(3);
     font-size: font-size($theme-font-size-2xl);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 
   h3 {
     margin-top: unit(3);
     font-size: font-size($theme-font-size-xl);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 
   h4 {
     margin-top: unit(3);
     font-size: font-size($theme-font-size-lg);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 
   h5 {
     margin-top: unit(2);
     font-size: font-size($theme-font-size-md);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 
   h6 {
     margin-top: unit(2);
     font-size: font-size($theme-font-size-sm);
+    font-weight: font-weight($theme-font-weight-bold);
     line-height: line-height($theme-line-height-heading);
   }
 

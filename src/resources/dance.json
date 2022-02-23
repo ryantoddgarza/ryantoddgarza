@@ -1,0 +1,106 @@
+{
+  "name": "dance",
+  "companies": [
+    {
+      "name": "Ballet Lubbock",
+      "city": "Lubbock",
+      "state": "Texas",
+      "position": "Guest Performer",
+      "start": {
+        "year": "2021",
+        "month": "10"
+      },
+      "end": {
+        "year": "",
+        "month": ""
+      }
+    },
+    {
+      "name": "Flatlands Dance Theatre",
+      "city": "Lubbock",
+      "state": "Texas",
+      "position": "Company Member",
+      "start": {
+        "year": "2022",
+        "month": "02"
+      },
+      "end": {
+        "year": "",
+        "month": ""
+      }
+    }
+  ],
+  "productions": [
+    {
+      "name": "The Nutcracker",
+      "company": "Ballet Lubbock",
+      "roles": ["Party Parent", "Dragon Attendant"],
+      "performances": [
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-08T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-09T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-10T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-11T14:00:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-11T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2021-12-12T14:00:00"
+        }
+      ]
+    },
+    {
+      "name": "Cinderella",
+      "company": "Ballet Lubbock",
+      "roles": ["Cinderella's Father", "Coachman", "Ball Guest"],
+      "performances": [
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2022-04-08T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall",
+          "space": "Helen Devitt Jones Theater",
+          "date": "2022-04-10T14:00:00"
+        }
+      ]
+    },
+    {
+      "name": "Dances, Alfresco",
+      "company": "Flatlands Dance Theatre",
+      "roles": ["Dancer"],
+      "performances": [
+        {
+          "venue": "The Louise Hopkins Underwood Center for the Arts",
+          "space": "Outdoor Plaza Stage",
+          "date": "2022-04-29T19:30:00"
+        },
+        {
+          "venue": "The Louise Hopkins Underwood Center for the Arts",
+          "space": "Outdoor Plaza Stage",
+          "date": "2022-04-30T19:30:00"
+        }
+      ]
+    }
+  ]
+}

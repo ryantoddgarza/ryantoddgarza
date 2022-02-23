@@ -1,0 +1,15 @@
+.cv a {
+  color: color($theme-color-text);
+
+  &:hover {
+    color: color($theme-color-primary);
+  }
+}
+
+.cv .detail {
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-sm,
+    $theme-line-height-body
+  );
+}

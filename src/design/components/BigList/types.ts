@@ -1,6 +1,6 @@
 export interface BigListItem {
   name: string;
-  link?: string;
+  url?: string;
 }
 
 export interface BigListProps {

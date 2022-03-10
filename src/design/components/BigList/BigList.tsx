@@ -18,12 +18,12 @@ const BigList: FunctionComponent<BigListProps> = ({
 
   return (
     <div className={getBigListClasses()}>
-      {list.map(({ name, link }: BigListItem, i: number) => (
+      {list.map(({ name, url }: BigListItem, i: number) => (
         <div className="list-row" key={name}>
           {numbered && <div className="numeral">{formatNum(i + 1)}</div>}
           <div className="name">
-            {link ? (
-              <Link className="link" to={link}>
+            {url ? (
+              <Link className="link" to={url}>
                 {name}
               </Link>
             ) : (

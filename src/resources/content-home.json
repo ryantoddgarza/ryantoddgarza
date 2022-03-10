@@ -16,19 +16,19 @@
   "navList": [
     {
       "name": "Software",
-      "link": "https://github.com/ryantoddgarza"
+      "url": "https://github.com/ryantoddgarza"
     },
     {
       "name": "Music",
-      "link": "/music"
+      "url": "/music"
     },
     {
       "name": "Yoga",
-      "link": "/categories/yoga/1"
+      "url": "/categories/yoga/1"
     },
     {
       "name": "Blog",
-      "link": "/posts/1"
+      "url": "/posts/1"
     }
   ],
   "features": [

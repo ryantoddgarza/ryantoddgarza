@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FeatureGrid, Hero, BigList } from '../../design/components';
+import { FeatureGrid, Hero, List, listSize } from '../../design/components';
 import SEO from '../SEO';
 
 const Home: FunctionComponent = () => {
@@ -27,7 +27,7 @@ const Home: FunctionComponent = () => {
           }
           navList {
             name
-            link
+            url
           }
           features {
             body
@@ -37,6 +37,14 @@ const Home: FunctionComponent = () => {
       }
     }
   `);
+
+  const navNodes = navList.map(
+    ({ name, url }: { name: string; url: string }) => (
+      <div key={name}>
+        <a href={url}>{name}</a>
+      </div>
+    )
+  );
 
   return (
     <div className="home">
@@ -53,11 +61,7 @@ const Home: FunctionComponent = () => {
       </section>
       <section className="layout--margin">
         <div className="container">
-          <div className="row">
-            <div className="col size3of4-tablet offset1of4-tablet size2of3-desktop offset1of3-desktop">
-              <BigList list={navList} numbered />
-            </div>
-          </div>
+          <List nodes={navNodes} size={listSize.DISPLAY} ordered />
         </div>
       </section>
       <section className="layout--margin">

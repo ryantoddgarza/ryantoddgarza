@@ -1,0 +1,144 @@
+@use 'sass:math';
+
+.list a {
+  @include transition(color);
+}
+
+.list .list-row {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  @include at-media("tablet") {
+    flex-direction: row;
+  }
+}
+
+.list .item {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-md,
+    $theme-line-height-heading
+  );
+}
+
+.list .numeral {
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-body
+  );
+}
+
+// Size variants
+
+.list.small {
+  .list-row {
+    padding-top: unit(1);
+    padding-bottom: unit(1);
+  }
+
+  .item {
+    margin-top: unit(1);
+    font-size: font-size($theme-font-size-sm);
+  }
+
+  .numeral {
+    margin-top: unit(1);
+    margin-right: unit(2);
+    font-size: font-size($theme-font-size-sm);
+  }
+}
+
+.list.medium {
+  .list-row {
+    padding-top: unit(2);
+    padding-bottom: unit(2);
+  }
+
+  .item {
+    margin-top: unit(2);
+    font-size: font-size($theme-font-size-md);
+  }
+
+  .numeral {
+    margin-top: unit(1);
+    margin-right: unit(2);
+    font-size: font-size($theme-font-size-md);
+  }
+}
+
+.list.large {
+  .list-row {
+    padding-top: unit(2.5);
+    padding-bottom: unit(2.5);
+  }
+
+  .item {
+    margin-top: unit(2.5);
+    font-size: font-size($theme-font-size-xl);
+  }
+
+  .numeral {
+    margin-top: unit(1);
+    margin-right: unit(2);
+    font-size: font-size($theme-font-size-md);
+  }
+}
+
+.list.display {
+  .list-row {
+    padding-top: unit(3);
+    padding-bottom: unit(3);
+  }
+
+  .item {
+    margin-top: unit(3);
+    font-size: font-size($theme-font-size-3xl);
+  }
+
+  .numeral {
+    margin-top: unit(1);
+    width: math.percentage(math.div(1, 12));
+    font-size: font-size($theme-font-size-lg);
+  }
+}
+
+// Theme variants
+
+.list.light {
+  color: color($theme-color-text-inverse);
+
+  a {
+    color: color($theme-color-primary);
+
+    &:hover {
+      color: color($theme-color-text-inverse);
+    }
+  }
+}
+
+.list.dark {
+  color: color($theme-color-text);
+
+  a {
+    color: color($theme-color-primary);
+
+    &:hover {
+      color: color($theme-color-text);
+    }
+  }
+}
+
+.list.inherit {
+  color: inherit;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: color($theme-color-primary);
+    }
+  }
+}

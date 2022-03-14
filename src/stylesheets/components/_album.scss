@@ -4,7 +4,7 @@ $album-grid-gap: $theme-site-margin;
 
 // Grid
 
-.album .album-row {
+.album .row {
   display: flex;
   flex-direction: column;
   margin-left: $album-grid-gap * -0.5;
@@ -15,7 +15,7 @@ $album-grid-gap: $theme-site-margin;
   }
 }
 
-.album .album-col {
+.album .col {
   position: relative;
   width: 100%;
   padding-left: $album-grid-gap * 0.5;
@@ -32,13 +32,13 @@ $album-grid-gap: $theme-site-margin;
   }
 }
 
-.album .album-col.left {
+.album .col.left {
   @include at-media("tablet-lg") {
     width: math.percentage(math.div(3, 5));
   }
 }
 
-.album .album-col.right {
+.album .col.right {
   @include at-media("tablet-lg") {
     width: math.percentage(math.div(2, 5));
   }

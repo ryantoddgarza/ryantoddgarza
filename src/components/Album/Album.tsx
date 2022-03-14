@@ -84,8 +84,8 @@ const Album: FunctionComponent<AlbumProps> = ({
       <SEO title={title} />
       <section className="layout--margin">
         <div className="container">
-          <div className="album-row">
-            <div className="album-col left">
+          <div className="row">
+            <div className="col left">
               <div className="cover-container">
                 <GatsbyImage
                   image={cover.childImageSharp.gatsbyImageData}
@@ -93,7 +93,7 @@ const Album: FunctionComponent<AlbumProps> = ({
                 />
               </div>
             </div>
-            <div className="album-col right">
+            <div className="col right">
               <div className="info">
                 <div className="info-section">
                   <h1 className="album-title">{title}</h1>
@@ -136,8 +136,8 @@ const Album: FunctionComponent<AlbumProps> = ({
       </section>
       <section className="layout--margin">
         <div className="container">
-          <div className="album-row">
-            <div className="album-col left">
+          <div className="row">
+            <div className="col left">
               <div className="tracks">
                 <h3 className="section-heading">Tracks</h3>
                 <ul className="track-list">
@@ -178,9 +178,9 @@ const Album: FunctionComponent<AlbumProps> = ({
       </section>
       <section className="layout--margin">
         <div className="container">
-          <div className="album-row">
+          <div className="row">
             {layout.hasCredits && (
-              <div className="album-col left">
+              <div className="col left">
                 <div className="credits">
                   <h3 className="section-heading">Credits</h3>
                   {credits && (
@@ -195,7 +195,7 @@ const Album: FunctionComponent<AlbumProps> = ({
               </div>
             )}
             {layout.hasPraise && (
-              <div className="album-col right">
+              <div className="col right">
                 <div className="praise">
                   <h3 className="section-heading">Praise</h3>
                   <div className="praise-list">

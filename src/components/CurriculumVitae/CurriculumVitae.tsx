@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import SEO from '../SEO';
 import compare from '../../utils/compare';
 import formattedDate from '../../utils/formattedDate';
+import commaSeparatedList from '../../utils/commaSeparatedList';
 
 const CurriculumVitae: FunctionComponent = () => {
   const {
@@ -42,6 +43,21 @@ const CurriculumVitae: FunctionComponent = () => {
             date
           }
         }
+        training {
+          name
+          location {
+            facility
+            space
+            city
+            state
+            country
+          }
+          dates {
+            start
+            end
+          }
+          faculty
+        }
       }
     }
   `);
@@ -66,7 +82,7 @@ const CurriculumVitae: FunctionComponent = () => {
             </div>
           </div>
           <div>
-            <h2>Dance</h2>
+            <h2>Professional Experience</h2>
             <h3>Companies</h3>
             {dance.companies
               .sort((a: any, b: any) =>
@@ -101,6 +117,39 @@ const CurriculumVitae: FunctionComponent = () => {
                       </li>
                     </ul>
                   ))}
+                </div>
+              ))}
+          </div>
+          <div>
+            <h2>Education and Training</h2>
+            {dance.training
+              .sort((a: any, b: any) =>
+                compare(a.dates.start, b.dates.start, 'desc')
+              )
+              .map(({ name, location, dates, faculty }) => (
+                <div key="name">
+                  <h5>{name}</h5>
+                  <ul>
+                    <li className="detail">
+                      <div>
+                        {`
+                      ${formattedDate(dates.start)}
+                      -
+                      ${formattedDate(dates.end)}
+                    `}
+                      </div>
+                      <div>{location.facility}</div>
+                      <div>{location.space}</div>
+                      <div>
+                        {location.city}
+                        {location.state && `, ${location.state}`}
+                        {location.country && `, ${location.country}`}
+                      </div>
+                      {faculty && (
+                        <div>{`With ${commaSeparatedList(faculty)}`}</div>
+                      )}
+                    </li>
+                  </ul>
                 </div>
               ))}
           </div>

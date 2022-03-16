@@ -102,5 +102,22 @@
         }
       ]
     }
+  ],
+  "training": [
+    {
+      "name": "GagaLab Summer 2022",
+      "location": {
+        "facility": "Suzanne Dellal Centre",
+        "space": "Batsheva Dance Company studios",
+        "city": "Tel Aviv",
+        "state": "",
+        "country": "Israel"
+      },
+      "dates": {
+        "start": "2022-07-31T00:00:00",
+        "end": "2022-08-12T00:00:00"
+      },
+      "faculty": ["Ohad Naharin"]
+    }
   ]
 }

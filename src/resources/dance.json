@@ -6,13 +6,9 @@
       "city": "Lubbock",
       "state": "Texas",
       "position": "Guest Performer",
-      "start": {
-        "year": "2021",
-        "month": "10"
-      },
-      "end": {
-        "year": "",
-        "month": ""
+      "dates": {
+        "start": "2021-09-28T00:00:00",
+        "end": ""
       }
     },
     {
@@ -20,13 +16,9 @@
       "city": "Lubbock",
       "state": "Texas",
       "position": "Company Member",
-      "start": {
-        "year": "2022",
-        "month": "02"
-      },
-      "end": {
-        "year": "",
-        "month": ""
+      "dates": {
+        "start": "2022-01-31T00:00:00",
+        "end": ""
       }
     }
   ],

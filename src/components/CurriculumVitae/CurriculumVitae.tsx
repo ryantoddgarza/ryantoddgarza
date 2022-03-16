@@ -26,11 +26,9 @@ const CurriculumVitae: FunctionComponent = () => {
           city
           state
           position
-          start {
-            year
-          }
-          end {
-            year
+          dates {
+            start
+            end
           }
         }
         productions {
@@ -86,17 +84,33 @@ const CurriculumVitae: FunctionComponent = () => {
             <h3>Companies</h3>
             {dance.companies
               .sort((a: any, b: any) =>
-                compare(a.start.year, b.start.year, 'desc')
+                compare(
+                  a.dates.start.split('-')[0],
+                  b.dates.start.split('-')[0],
+                  'desc'
+                )
               )
               .sort((a: any, b: any) =>
-                compare(a.end.year || 9999, b.end.year || 9999, 'desc')
+                compare(
+                  a.dates.end.split('-')[0] || 9999,
+                  b.dates.end.split('-')[0] || 9999,
+                  'desc'
+                )
               )
-              .map(({ name, city, state, position, start, end }) => (
+              .map(({ name, city, state, position, dates }) => (
                 <div key={name}>
                   <h5>{name}</h5>
-                  <div>{`${city}, ${state}`}</div>
-                  <div>{position}</div>
-                  <div>{`${start.year} - ${end.year || 'Present'}`}</div>
+                  <div className="detail">
+                    <div>{`${city}, ${state}`}</div>
+                    <div>{position}</div>
+                    <div>
+                      {`
+                      ${dates.start.split('-')[0]}
+                      -
+                      ${dates.end.split('-')[0] || 'Present'}
+                      `}
+                    </div>
+                  </div>
                 </div>
               ))}
             <h3>Performances</h3>
@@ -107,7 +121,9 @@ const CurriculumVitae: FunctionComponent = () => {
               .map(({ name, company, performances }) => (
                 <div key={name}>
                   <h5>{name}</h5>
-                  <div>{company}</div>
+                  <div className="detail">
+                    <div>{company}</div>
+                  </div>
                   {performances.map(({ venue, space, date }) => (
                     <ul key={date}>
                       <li className="detail">
@@ -129,27 +145,25 @@ const CurriculumVitae: FunctionComponent = () => {
               .map(({ name, location, dates, faculty }) => (
                 <div key="name">
                   <h5>{name}</h5>
-                  <ul>
-                    <li className="detail">
-                      <div>
-                        {`
+                  <div className="detail">
+                    <div>
+                      {`
                       ${formattedDate(dates.start)}
                       -
                       ${formattedDate(dates.end)}
-                    `}
-                      </div>
-                      <div>{location.facility}</div>
-                      <div>{location.space}</div>
-                      <div>
-                        {location.city}
-                        {location.state && `, ${location.state}`}
-                        {location.country && `, ${location.country}`}
-                      </div>
-                      {faculty && (
-                        <div>{`With ${commaSeparatedList(faculty)}`}</div>
-                      )}
-                    </li>
-                  </ul>
+                      `}
+                    </div>
+                    <div>{location.facility}</div>
+                    <div>{location.space}</div>
+                    <div>
+                      {location.city}
+                      {location.state && `, ${location.state}`}
+                      {location.country && `, ${location.country}`}
+                    </div>
+                    {faculty && (
+                      <div>{`With ${commaSeparatedList(faculty)}`}</div>
+                    )}
+                  </div>
                 </div>
               ))}
           </div>

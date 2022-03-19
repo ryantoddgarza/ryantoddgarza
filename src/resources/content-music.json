@@ -1,5 +1,39 @@
 {
   "type": "content",
   "name": "music",
-  "title": "Music"
+  "title": "Music",
+  "links": {
+    "listen": [
+      {
+        "name": "Bandcamp",
+        "url": "https://ryantoddgarza.bandcamp.com"
+      },
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/artist/7IWzHdwu7JSvad216IyNoe"
+      },
+      {
+        "name": "Tidal",
+        "url": "https://listen.tidal.com/artist/7686132"
+      },
+      {
+        "name": "Apple Music",
+        "url": "https://music.apple.com/us/artist/ryan-todd-garza/1094837829"
+      },
+      {
+        "name": "Amazon Music",
+        "url": "https://music.amazon.com/artists/B01DDC8D3W/ryan-todd-garza"
+      }
+    ],
+    "credits": [
+      {
+        "name": "AllMusic",
+        "url": "https://allmusic.com/artist/ryan-todd-garza-mn0003848531"
+      },
+      {
+        "name": "IMDB",
+        "url": "https://imdb.com/name/nm9906654"
+      }
+    ]
+  }
 }

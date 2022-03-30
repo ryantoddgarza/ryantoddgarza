@@ -95,7 +95,35 @@
       ]
     }
   ],
-  "training": [
+  "intensives": [
+    {
+      "name": "Ballet Lubbock Summer Intensive",
+      "location": {
+        "facility": "The Buddy Holly Hall of Performing Arts and Sciences",
+        "space": "Ballet Lubbock studios",
+        "city": "Lubbock",
+        "state": "Texas",
+        "country": "United States"
+      },
+      "dates": {
+        "start": "2022-06-06T00:00:00",
+        "end": "2022-06-11T00:00:00"
+      }
+    },
+    {
+      "name": "Ballet Lubbock Summer Intensive",
+      "location": {
+        "facility": "The Buddy Holly Hall of Performing Arts and Sciences",
+        "space": "Ballet Lubbock studios",
+        "city": "Lubbock",
+        "state": "Texas",
+        "country": "United States"
+      },
+      "dates": {
+        "start": "2022-06-20T00:00:00",
+        "end": "2022-06-25T00:00:00"
+      }
+    },
     {
       "name": "GagaLab Summer 2022",
       "location": {

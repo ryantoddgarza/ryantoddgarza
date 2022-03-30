@@ -41,7 +41,7 @@ const CurriculumVitae: FunctionComponent = () => {
             date
           }
         }
-        training {
+        intensives {
           name
           location {
             facility
@@ -138,12 +138,13 @@ const CurriculumVitae: FunctionComponent = () => {
           </div>
           <div>
             <h2>Education and Training</h2>
-            {dance.training
+            <h3>Intensives</h3>
+            {dance.intensives
               .sort((a: any, b: any) =>
                 compare(a.dates.start, b.dates.start, 'desc')
               )
               .map(({ name, location, dates, faculty }) => (
-                <div key="name">
+                <div key={`${name}_${dates.start}`}>
                   <h5>{name}</h5>
                   <div className="detail">
                     <div>

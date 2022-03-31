@@ -6,7 +6,7 @@ import compare from '../../utils/compare';
 import formattedDate from '../../utils/formattedDate';
 import commaSeparatedList from '../../utils/commaSeparatedList';
 
-const CurriculumVitae: FunctionComponent = () => {
+const DanceCV: FunctionComponent = () => {
   const {
     site: {
       siteMetadata: { siteUrl, email },
@@ -174,4 +174,4 @@ const CurriculumVitae: FunctionComponent = () => {
   );
 };
 
-export default CurriculumVitae;
+export default DanceCV;

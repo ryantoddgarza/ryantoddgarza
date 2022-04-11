@@ -13,3 +13,30 @@
     $theme-line-height-body
   );
 }
+
+// Collapsible component
+
+.cv .Collapsible__trigger {
+  cursor: pointer;
+  color: color($theme-color-primary);
+  @include typeset(
+    $theme-font-role-ui,
+    $theme-font-size-sm,
+    $theme-line-height-ui
+  );
+  @include transition(color);
+
+  &:hover {
+    color: color($theme-color-text);
+  }
+}
+
+@media print {
+  .cv .Collapsible__trigger {
+    display: none !important;
+  }
+
+  .cv .Collapsible__contentOuter {
+    height: auto !important;
+  }
+}

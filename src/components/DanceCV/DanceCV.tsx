@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Collapsible from 'react-collapsible';
 import SEO from '../SEO';
 import compare from '../../utils/compare';
 import formattedDate from '../../utils/formattedDate';
@@ -124,15 +125,22 @@ const DanceCV: FunctionComponent = () => {
                   <div className="detail">
                     <div>{company}</div>
                   </div>
-                  {performances.map(({ venue, space, date }) => (
-                    <ul key={date}>
-                      <li className="detail">
-                        <div>{formattedDate(date)}</div>
-                        <div>{venue}</div>
-                        <div>{space}</div>
-                      </li>
-                    </ul>
-                  ))}
+                  {performances && (
+                    <Collapsible
+                      trigger="show more"
+                      triggerWhenOpen="show less"
+                    >
+                      {performances.map(({ venue, space, date }) => (
+                        <ul key={date}>
+                          <li className="detail">
+                            <div>{formattedDate(date)}</div>
+                            <div>{venue}</div>
+                            <div>{space}</div>
+                          </li>
+                        </ul>
+                      ))}
+                    </Collapsible>
+                  )}
                 </div>
               ))}
           </div>

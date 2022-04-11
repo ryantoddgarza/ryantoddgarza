@@ -1,8 +1,9 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../SEO';
+import { DANCE_CV_PATH } from '../../constants';
 
 const About: FunctionComponent = () => {
   const {
@@ -58,6 +59,15 @@ const About: FunctionComponent = () => {
                 }}
               />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="layout--margin">
+        <div className="container widescreen">
+          <div className="button-group">
+            <Link className="button light wide" to={DANCE_CV_PATH}>
+              Dance CV
+            </Link>
           </div>
         </div>
       </section>

@@ -2,16 +2,6 @@
   "name": "dance",
   "companies": [
     {
-      "name": "Ballet Lubbock",
-      "city": "Lubbock",
-      "state": "Texas",
-      "position": "Guest Performer",
-      "dates": {
-        "start": "2021-09-28T00:00:00",
-        "end": ""
-      }
-    },
-    {
       "name": "Flatlands Dance Theatre",
       "city": "Lubbock",
       "state": "Texas",
@@ -90,6 +80,23 @@
         {
           "venue": "The Louise Hopkins Underwood Center for the Arts",
           "space": "Christine DeVitt Icehouse Gallery",
+          "date": "2022-04-30T19:30:00"
+        }
+      ]
+    },
+    {
+      "name": "Outside In Festival",
+      "company": "Engram Dance Project",
+      "roles": ["Dancer"],
+      "performances": [
+        {
+          "venue": "Charles Adams Studio Project",
+          "space": "",
+          "date": "2022-04-29T19:30:00"
+        },
+        {
+          "venue": "Charles Adams Studio Project",
+          "space": "",
           "date": "2022-04-30T19:30:00"
         }
       ]

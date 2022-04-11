@@ -65,7 +65,7 @@ const DanceCV: FunctionComponent = () => {
 
   return (
     <div className="cv">
-      <SEO title="Curriculum Vitae" />
+      <SEO title="Dance CV" />
       <section className="layout--margin">
         <div className="container desktop markdown">
           <h1>Ryan Todd Garza</h1>

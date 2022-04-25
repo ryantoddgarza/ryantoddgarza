@@ -11,7 +11,7 @@ In [part 1](/a-better-zsh-history-pt1) we did some basic setup to get the histor
 
 ## Persistence
 
-Default behavior is to overwrite the existing history file upon shell exit. The following are all methods of appending rather than rewriting the file — taking advantage of that potentially massive history size we set up in part one.
+Default behavior is to overwrite the existing history file upon shell exit. The following are all methods of appending rather than rewriting the file—taking advantage of that potentially massive history size we set up in part one.
 
 - `APPEND_HISTORY`
 - `INC_APPEND_HISTORY`

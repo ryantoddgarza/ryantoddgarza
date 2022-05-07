@@ -3,48 +3,48 @@
   "companies": [
     {
       "name": "Flatlands Dance Theatre",
-      "city": "Lubbock",
-      "state": "Texas",
-      "position": "Company Member",
+      "location": "Lubbock, Texas",
+      "title": "Company Dancer",
       "dates": {
         "start": "2022-01-31T00:00:00",
         "end": ""
-      }
+      },
+      "description": ""
     }
   ],
   "productions": [
     {
       "name": "The Nutcracker",
       "company": "Ballet Lubbock",
-      "roles": ["Party Parent", "Dragon Attendant"],
+      "description": "Role: Party parent & dragon attendant.",
       "performances": [
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-08T19:30:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-09T19:30:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-10T19:30:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-11T14:00:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-11T19:30:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2021-12-12T14:00:00"
         }
@@ -53,15 +53,15 @@
     {
       "name": "Cinderella",
       "company": "Ballet Lubbock",
-      "roles": ["Cinderella's Father", "Coachman", "Ball Guest"],
+      "description": "Role: Cinderella's father, coachman, & ball guest.",
       "performances": [
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2022-04-08T19:30:00"
         },
         {
-          "venue": "The Buddy Holly Hall",
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
           "space": "Helen DeVitt Jones Theater",
           "date": "2022-04-10T14:00:00"
         }
@@ -70,7 +70,7 @@
     {
       "name": "Dances, Alfresco",
       "company": "Flatlands Dance Theatre",
-      "roles": ["Dancer"],
+      "description": "Role: Dancer. Works: Into the Blue (Ali Duffy) & Groovy (Rachel Ure)",
       "performances": [
         {
           "venue": "The Louise Hopkins Underwood Center for the Arts",
@@ -86,8 +86,8 @@
     },
     {
       "name": "Outside In Festival",
-      "company": "Engram Dance Project",
-      "roles": ["Dancer"],
+      "company": "",
+      "description": "Role: Dancer. Works: Caged and Fleeting (Katrina Soricelli) & Gallery Walls (Lily Balogh)",
       "performances": [
         {
           "venue": "Charles Adams Studio Project",
@@ -106,7 +106,7 @@
     {
       "name": "Ballet Lubbock Summer Intensive",
       "location": {
-        "facility": "The Buddy Holly Hall",
+        "facility": "The Buddy Holly Hall of Performing Arts and Sciences",
         "space": "Ballet Lubbock studios",
         "city": "Lubbock",
         "state": "Texas",
@@ -120,7 +120,7 @@
     {
       "name": "Ballet Lubbock Summer Intensive",
       "location": {
-        "facility": "The Buddy Holly Hall",
+        "facility": "The Buddy Holly Hall of Performing Arts and Sciences",
         "space": "Ballet Lubbock studios",
         "city": "Lubbock",
         "state": "Texas",
@@ -144,7 +144,7 @@
         "start": "2022-07-31T00:00:00",
         "end": "2022-08-12T00:00:00"
       },
-      "faculty": ["Ohad Naharin"]
+      "description": "With Ohad Naharin"
     }
   ]
 }

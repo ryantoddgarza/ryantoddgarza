@@ -5,7 +5,6 @@ import Collapsible from 'react-collapsible';
 import SEO from '../SEO';
 import compare from '../../utils/compare';
 import formattedDate from '../../utils/formattedDate';
-import commaSeparatedList from '../../utils/commaSeparatedList';
 
 const DanceCV: FunctionComponent = () => {
   const {
@@ -24,18 +23,18 @@ const DanceCV: FunctionComponent = () => {
       dance: resourcesJson(name: { eq: "dance" }) {
         companies {
           name
-          city
-          state
-          position
+          title
+          location
           dates {
             start
             end
           }
+          description
         }
         productions {
           name
           company
-          roles
+          description
           performances {
             venue
             space
@@ -55,7 +54,7 @@ const DanceCV: FunctionComponent = () => {
             start
             end
           }
-          faculty
+          description
         }
       }
     }
@@ -98,12 +97,11 @@ const DanceCV: FunctionComponent = () => {
                   'desc'
                 )
               )
-              .map(({ name, city, state, position, dates }) => (
+              .map(({ name, title, location, dates, description }) => (
                 <div key={name}>
                   <h5>{name}</h5>
                   <div className="detail">
-                    <div>{`${city}, ${state}`}</div>
-                    <div>{position}</div>
+                    {title && <div>{title}</div>}
                     <div>
                       {`
                       ${dates.start.split('-')[0]}
@@ -111,7 +109,11 @@ const DanceCV: FunctionComponent = () => {
                       ${dates.end.split('-')[0] || 'Present'}
                       `}
                     </div>
+                    {location && <div>{location}</div>}
                   </div>
+                  {description && (
+                    <div className="description">{description}</div>
+                  )}
                 </div>
               ))}
             <h3>Performances</h3>
@@ -119,28 +121,26 @@ const DanceCV: FunctionComponent = () => {
               .sort((a: any, b: any) =>
                 compare(a.performances[0].date, b.performances[0].date, 'desc')
               )
-              .map(({ name, company, performances }) => (
+              .map(({ name, company, description, performances }) => (
                 <div key={name}>
                   <h5>{name}</h5>
                   <div className="detail">
                     <div>{company}</div>
                   </div>
-                  {performances && (
-                    <Collapsible
-                      trigger="show more"
-                      triggerWhenOpen="show less"
-                    >
-                      {performances.map(({ venue, space, date }) => (
-                        <ul key={date}>
-                          <li className="detail">
-                            <div>{formattedDate(date)}</div>
-                            <div>{venue}</div>
-                            <div>{space}</div>
-                          </li>
-                        </ul>
-                      ))}
-                    </Collapsible>
-                  )}
+                  <Collapsible trigger="show more" triggerWhenOpen="show less">
+                    {description && (
+                      <div className="description">{description}</div>
+                    )}
+                    {performances.map(({ venue, space, date }) => (
+                      <ul key={date}>
+                        <li className="detail">
+                          {date && <div>{formattedDate(date)}</div>}
+                          {venue && <div>{venue}</div>}
+                          {space && <div>{space}</div>}
+                        </li>
+                      </ul>
+                    ))}
+                  </Collapsible>
                 </div>
               ))}
           </div>
@@ -151,7 +151,7 @@ const DanceCV: FunctionComponent = () => {
               .sort((a: any, b: any) =>
                 compare(a.dates.start, b.dates.start, 'desc')
               )
-              .map(({ name, location, dates, faculty }) => (
+              .map(({ name, location, dates, description }) => (
                 <div key={`${name}_${dates.start}`}>
                   <h5>{name}</h5>
                   <div className="detail">
@@ -169,10 +169,10 @@ const DanceCV: FunctionComponent = () => {
                       {location.state && `, ${location.state}`}
                       {location.country && `, ${location.country}`}
                     </div>
-                    {faculty && (
-                      <div>{`With ${commaSeparatedList(faculty)}`}</div>
-                    )}
                   </div>
+                  {description && (
+                    <div className="description">{description}</div>
+                  )}
                 </div>
               ))}
           </div>

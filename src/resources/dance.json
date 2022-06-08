@@ -115,7 +115,8 @@
       "dates": {
         "start": "2022-06-06T00:00:00",
         "end": "2022-06-11T00:00:00"
-      }
+      },
+      "description": "With Bernard Gaddis and Yvonne Racz Key."
     },
     {
       "name": "Ballet Lubbock Summer Intensive",
@@ -144,7 +145,7 @@
         "start": "2022-07-31T00:00:00",
         "end": "2022-08-12T00:00:00"
       },
-      "description": "With Ohad Naharin"
+      "description": "With Ohad Naharin."
     }
   ]
 }

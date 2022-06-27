@@ -7,6 +7,7 @@
 }
 
 .cv .detail {
+  color: color($theme-color-text-weak);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-sm,

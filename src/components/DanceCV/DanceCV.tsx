@@ -154,25 +154,27 @@ const DanceCV: FunctionComponent = () => {
               .map(({ name, location, dates, description }) => (
                 <div key={`${name}_${dates.start}`}>
                   <h5>{name}</h5>
-                  <div className="detail">
-                    <div>
-                      {`
+                  <Collapsible trigger="show more" triggerWhenOpen="show less">
+                    <div className="detail">
+                      <div>
+                        {`
                       ${formattedDate(dates.start)}
                       -
                       ${formattedDate(dates.end)}
                       `}
+                      </div>
+                      <div>{location.facility}</div>
+                      <div>{location.space}</div>
+                      <div>
+                        {location.city}
+                        {location.state && `, ${location.state}`}
+                        {location.country && `, ${location.country}`}
+                      </div>
                     </div>
-                    <div>{location.facility}</div>
-                    <div>{location.space}</div>
-                    <div>
-                      {location.city}
-                      {location.state && `, ${location.state}`}
-                      {location.country && `, ${location.country}`}
-                    </div>
-                  </div>
-                  {description && (
-                    <div className="description">{description}</div>
-                  )}
+                    {description && (
+                      <div className="description">{description}</div>
+                    )}
+                  </Collapsible>
                 </div>
               ))}
           </div>

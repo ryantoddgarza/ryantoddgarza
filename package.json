@@ -69,7 +69,7 @@
     "sass": "^1.34.0"
   },
   "devDependencies": {
-    "@bitpas/eslint-config": "^0.4.1",
+    "@bitpas/eslint-config": "^0.6.1",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
     "eslint": "^7.29.0",

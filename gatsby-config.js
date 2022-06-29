@@ -5,6 +5,7 @@ const pathPrefix = site.pathPrefix === '/' ? '' : site.pathPrefix;
 
 module.exports = {
   pathPrefix,
+  trailingSlash: 'never',
   siteMetadata: {
     siteUrl: site.url,
     title: site.title,
@@ -90,7 +91,6 @@ module.exports = {
     // 4. other plugins
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-manifest',

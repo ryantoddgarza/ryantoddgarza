@@ -1,2 +1,0 @@
-exports.CONTENT_PER_PAGE = 1000;
-exports.PAGE_PER_SCREEN = 4;

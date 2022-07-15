@@ -21,7 +21,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
 
         return (
           <div className="submenu-item" key={key}>
-            <Link className="nav-link" to={`/categories/${key}/1`}>
+            <Link className="nav-link" to={`/categories/${key}`}>
               {key}
             </Link>
           </div>

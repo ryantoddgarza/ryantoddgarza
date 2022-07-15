@@ -25,7 +25,7 @@ const Gnb: FunctionComponent<GnbProps> = ({
 
   const posts = NavigationItem({
     name: 'Posts',
-    url: `${POSTS_PATH}/1`,
+    url: POSTS_PATH,
     submenu: { list: categories },
   });
   const music = NavigationItem({ name: 'Music', url: MUSIC_PATH });

@@ -24,7 +24,7 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
                   key={title}
                   title={title}
                   subtitle={`${artist} — ${date.split('-')[0]}`}
-                  image={cover}
+                  image={cover.childImageSharp.gatsbyImageData}
                   path={path}
                   aspect={cardAspect.SQUARE}
                 />

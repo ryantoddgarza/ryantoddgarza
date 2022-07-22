@@ -1,13 +1,18 @@
-import type { PostFields, PostFrontmatterData } from '../Post';
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface ListData {
-  posts: {
-    edges: {
-      node: {
-        excerpt: string;
-        frontmatter: PostFrontmatterData;
-        fields: PostFields;
+  allContentfulBlogPost: {
+    nodes: {
+      id: string;
+      title: string;
+      slug: string;
+      description: string;
+      category: {
+        name: string;
       };
+      image: {
+        gatsbyImage: IGatsbyImageData;
+      }
     }[];
   };
 }

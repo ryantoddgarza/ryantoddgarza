@@ -21,32 +21,17 @@ interface ListTemplateProps {
 
 export const pageQuery = graphql`
   query ListQuery {
-    posts: allMarkdownRemark(
-      filter: { frontmatter: { hide: { ne: true } } }
-      sort: {
-        order: [DESC, ASC]
-        fields: [frontmatter___date, frontmatter___title]
-      }
-    ) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            type
-            title
-            category
-            tags
-            date
-            summary
-            banner {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-          fields {
-            path
-          }
+    allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
+      nodes {
+        id
+        title
+        slug
+        description
+        category {
+          name
+        }
+        image {
+          gatsbyImage(width: 800)
         }
       }
     }

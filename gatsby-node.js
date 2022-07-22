@@ -1,9 +1,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const {
-  CONTENT_PER_PAGE,
   ALBUM,
-  POST,
   ALBUMS_PATH,
   POSTS_PATH,
 } = require('./src/constants');
@@ -40,20 +38,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      allMarkdownRemark(
-        limit: 10000
-        filter: { frontmatter: { hide: { ne: true } } }
-      ) {
+      allContentfulBlogPost {
         postEdges: edges {
           node {
-            frontmatter {
-              category
-              tags
-              type
+            id
+            category {
+              name
             }
-            fields {
-              path
-            }
+            slug
           }
         }
       }
@@ -67,17 +59,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const {
     allProjectsJson: { projectEdges },
-    allMarkdownRemark: { postEdges },
+    allContentfulBlogPost: { postEdges },
   } = data;
 
   const templates = {
     post: path.resolve('./src/templates/Post.tsx'),
     list: path.resolve('./src/templates/List.tsx'),
-    taggedList: path.resolve('./src/templates/TaggedList.tsx'),
     categorizedList: path.resolve('./src/templates/CategorizedList.tsx'),
     albums: path.resolve('./src/templates/Albums.tsx'),
     album: path.resolve('./src/templates/Album.tsx'),
   };
+
+  // PROJECT PAGES
 
   projectEdges.forEach(({ node: { type, fields: { path } } }) => {
     const projectComponents = {
@@ -96,40 +89,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   });
 
-  const tagMatrix = [];
-  const categoryMatrix = [];
-
-  postEdges.forEach(({
-    node: {
-      frontmatter: { tags, category, type },
-      fields: { path },
-    },
-  }) => {
-    if (Array.isArray(tags)) {
-      tagMatrix.push(tags);
-    }
-
-    if (typeof category === 'string') {
-      categoryMatrix.push(category);
-    }
-
-    const postComponents = {
-      default: templates.post,
-      content: null,
-      portfolio: null,
-      post: templates.post,
-    };
-
-    let component = type ? postComponents[type] : postComponents.default;
-
-    if (component !== null) {
-      createPage({
-        path,
-        component,
-        context: {},
-      });
-    }
-  });
+  // PROJECT COLLECTIONS
 
   const albumsCount = projectEdges.filter(({ node: { type } }) =>
     type === ALBUM).length;
@@ -142,69 +102,47 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   }
 
-  const separatePages = (total) => (total ? Math.ceil(total / CONTENT_PER_PAGE) : 1);
-  const numberOfPages = (count) => Array.from(new Array(count), (el, i) => i + 1);
+  // POST PAGES
 
-  const postsCount = postEdges.filter(({ node: { frontmatter: { type } } }) =>
-    (type || POST) === POST).length;
-  const pagesCount = separatePages(postsCount);
-  const pages = numberOfPages(pagesCount);
+  const categoryMatrix = [];
 
-  pages.forEach((page) => {
+  postEdges.forEach(({
+    node: {
+      id,
+      category,
+      slug,
+    },
+  }) => {
+    if (typeof category.name === 'string') {
+      categoryMatrix.push(category.name);
+    }
+
     createPage({
-      path: `${POSTS_PATH}/${page}`,
+      path: `${POSTS_PATH}/${slug}`,
+      component: templates.post,
+      context: { id },
+    });
+  });
+
+  // POST COLLECTIONS
+
+  const postsCount = postEdges.length;
+
+  if (postsCount) {
+    createPage({
+      path: POSTS_PATH,
       component: templates.list,
       context: {},
     });
-  });
-
-  const tags = [
-    ...new Set(
-      tagMatrix.reduce((prev, curr) => (
-        curr !== null ? [...prev, ...curr] : prev
-      ), [])
-    ),
-  ];
-
-  tags.forEach((tag) => {
-    const taggedPostCount = postEdges.reduce((count, { node: { frontmatter: { tags: postTags } } }) => {
-      if (postTags !== null && postTags.includes(tag)) {
-        return count + 1;
-      }
-
-      return count;
-    }, 0);
-    const taggedListCount = separatePages(taggedPostCount);
-    const taggedListPages = numberOfPages(taggedListCount);
-
-    taggedListPages.forEach((taggedListPage) => {
-      createPage({
-        path: `/tags/${tag}/${taggedListPage}`,
-        component: templates.taggedList,
-        context: {},
-      });
-    });
-  });
+  }
 
   const categories = [...new Set(categoryMatrix)];
 
   categories.forEach((category) => {
-    const categorizedPostCount = postEdges.reduce((count, { node: { frontmatter: { category: postCategory } } }) => {
-      if (postCategory !== null && postCategory.includes(category)) {
-        return count + 1;
-      }
-
-      return count;
-    }, 0);
-    const categorizedListCount = separatePages(categorizedPostCount);
-    const categorizedListPages = numberOfPages(categorizedListCount);
-
-    categorizedListPages.forEach((categorizedListPage) => {
-      createPage({
-        path: `/categories/${category}/${categorizedListPage}`,
-        component: templates.categorizedList,
-        context: {},
-      });
+    createPage({
+      path: `/categories/${category}`,
+      component: templates.categorizedList,
+      context: { category },
     });
   });
 };
@@ -229,23 +167,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   const baseNames = {
     project: 'projects',
-    post: 'posts',
     page: undefined,
   };
 
   const main = () => {
     const isProject = node.internal.type === 'ProjectsJson';
     const isMarkdown = node.internal.type === 'MarkdownRemark';
-    const isPost = isMarkdown && !node.frontmatter.type;
     const isPortfolio = isMarkdown && node.frontmatter.type === 'portfolio';
     const isContent = isMarkdown && node.frontmatter.type === 'content';
 
     if (isProject) {
       createPathField(baseNames.project);
-    }
-
-    if (isPost) {
-      createPathField(baseNames.post);
     }
 
     if (isPortfolio || isContent) {

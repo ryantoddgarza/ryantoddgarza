@@ -1,26 +1,28 @@
 import React, { useCallback, useEffect } from 'react';
 import type { FunctionComponent } from 'react';
-import { render } from 'react-dom';
-import { Tweet } from 'react-twitter-widgets';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
 import SEO from '../SEO';
-import formattedDate from '../../utils/formattedDate';
 import { PostProps } from './types';
 
 const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
   const {
-    post: {
-      html,
-      timeToRead,
-      frontmatter: { title, date, category, tags, banner, components, tweets },
+    contentfulBlogPost: {
+      title,
+      author,
+      publishDate,
+      category,
+      image,
+      content: {
+        childMarkdownRemark: { html },
+      },
     },
   } = data;
 
   const createCopyButton = useCallback(() => {
     const codes = global.document.querySelectorAll(
-      '#post-contents .gatsby-highlight'
+      '#post-content .gatsby-highlight'
     );
 
     codes.forEach((code) => {
@@ -32,7 +34,7 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
     });
 
     const clipboard = new Clipboard('.copy-button', {
-      target: ({ previousElementSibling }) => previousElementSibling,
+      target: ({ previousElementSibling }) => previousElementSibling as Element,
     });
 
     clipboard.on('success', (e) => {
@@ -40,58 +42,9 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
     });
   }, []);
 
-  const renderComponents = useCallback((components) => {
-    if (Array.isArray(components)) {
-      try {
-        components.forEach(
-          ({ rootId: componentRootId, fileName: componentFileName }) => {
-            const $componentContainer =
-              global.document.getElementById(componentRootId);
-            const App =
-              require(`../../postComponents/${componentFileName}`).default;
-
-            render(
-              <div className="component-in-post">
-                <App />
-              </div>,
-              $componentContainer
-            );
-          }
-        );
-      } catch (e) {
-        console.warn(e);
-      }
-    }
-  }, []);
-
-  const renderTweets = useCallback((tweets) => {
-    if (Array.isArray(tweets)) {
-      try {
-        tweets.forEach(({ rootId: tweetRootId, tweetId, userId: username }) => {
-          const $tweetContainer = global.document.getElementById(tweetRootId);
-
-          render(
-            <div>
-              <Tweet tweetId={tweetId} options={{ username }} />
-            </div>,
-            $tweetContainer
-          );
-        });
-      } catch (e) {
-        console.warn(e);
-      }
-    }
-  }, []);
-
   useEffect(() => {
     createCopyButton();
-    renderTweets(tweets);
-    renderComponents(components);
-  }, [createCopyButton, components, renderComponents, tweets, renderTweets]);
-
-  const layout = {
-    hasFooter: tags,
-  };
+  }, [createCopyButton]);
 
   return (
     <div className="post container tablet-lg">
@@ -100,44 +53,25 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
         <header className="header">
           <h1 className="title">{title}</h1>
           <div className="metadata">
-            <span className="date">
-              {`${formattedDate(date)} in `}
-              <Link
-                className="category"
-                key={`category__${category}`}
-                to={`/categories/${category}/1`}
-              >
-                {category}
-              </Link>
-            </span>
-            <span className="readtime">{` • ${timeToRead} minute read`}</span>
+            {`By `}
+            <span className="author">{author.name}</span>
+            {` | `}
+            <span className="date">{publishDate}</span>
+            {` in `}
+            <Link className="category" to={`/categories/${category.name}`}>
+              {category.name}
+            </Link>
           </div>
-          {banner && (
-            <GatsbyImage
-              className="banner"
-              image={banner.childImageSharp.gatsbyImageData}
-              alt={banner.name}
-            />
+          {image && (
+            <GatsbyImage className="image" image={image.gatsbyImage} alt="" />
           )}
         </header>
         <div
-          className="body markdown"
-          id="post-contents"
+          id="post-content"
+          className="content markdown"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        {layout.hasFooter && (
-          <footer className="post-footer">
-            {tags && (
-              <div className="tags">
-                {tags.map((tag) => (
-                  <Link className="tag" key={tag} to={`/tags/${tag}/1`}>
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </footer>
-        )}
+        <footer className="footer"></footer>
       </article>
     </div>
   );

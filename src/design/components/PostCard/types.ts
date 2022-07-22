@@ -6,11 +6,7 @@ export interface PostCardProps {
   subtitle?: string | ReactNode;
   summary?: string;
   path: string;
-  image?: {
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-  };
+  image?: IGatsbyImageData;
   aspect?: string;
   theme?: string;
 }

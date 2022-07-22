@@ -5,47 +5,43 @@ import Layout from '../components/layout';
 import CategorizedList from '../components/CategorizedList';
 import type { CategorizedListData } from '../components/CategorizedList';
 
-const CategorizedListTemplate: FunctionComponent<CategorizedListTemplateProps> =
-  ({ data }: CategorizedListTemplateProps) => (
+const CategorizedListTemplate: FunctionComponent<
+  CategorizedListTemplateProps
+> = ({ data, pageContext }: CategorizedListTemplateProps) => {
+  const { category } = pageContext;
+
+  return (
     <Layout>
-      <CategorizedList data={data} />
+      <CategorizedList data={{ ...data, category }} />
     </Layout>
   );
+};
 
 export default CategorizedListTemplate;
 
 interface CategorizedListTemplateProps {
   data: CategorizedListData;
+  pageContext: {
+    category: string;
+  };
 }
 
 export const pageQuery = graphql`
-  query CategorizedListQuery {
-    posts: allMarkdownRemark(
-      filter: { frontmatter: { hide: { ne: true } } }
-      sort: {
-        order: [DESC, ASC]
-        fields: [frontmatter___date, frontmatter___title]
-      }
+  query CategorizedListQuery($category: String) {
+    allContentfulBlogPost(
+      filter: { category: { name: { eq: $category } } }
+      sort: { fields: publishDate, order: DESC }
     ) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            type
-            title
-            category
-            tags
-            date
-            summary
-            banner {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-          fields {
-            path
-          }
+      nodes {
+        id
+        title
+        slug
+        description
+        category {
+          name
+        }
+        image {
+          gatsbyImage(width: 800)
         }
       }
     }

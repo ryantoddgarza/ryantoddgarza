@@ -28,7 +28,7 @@ const PostCard: FunctionComponent<PostCardProps> = ({
             {image && (
               <GatsbyImage
                 className="image"
-                image={image.childImageSharp.gatsbyImageData}
+                image={image}
                 alt=""
               />
             )}

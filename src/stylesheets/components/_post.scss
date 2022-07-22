@@ -1,6 +1,6 @@
 // Article
 
-.post .header > .title {
+.post .header .title {
   font-weight: font-weight($theme-font-weight-bold);
   @include typeset(
     $theme-font-role-heading,
@@ -9,8 +9,8 @@
   );
 }
 
-.post .header > .metadata {
-  margin-top: unit(1);
+.post .header .metadata {
+  margin-top: unit(2);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-xs,
@@ -18,7 +18,11 @@
   );
 }
 
-.post .header > .metadata a.category {
+.post .header .metadata .author {
+  font-weight: font-weight($theme-font-weight-medium);
+}
+
+.post .header .metadata a.category {
   color: color($theme-color-text-link);
   font-weight: font-weight($theme-font-weight-medium);
   text-transform: uppercase;
@@ -29,38 +33,14 @@
   }
 }
 
-.post .header > .banner {
-  margin-top: unit(4);
-}
-
-.post .body {
-  margin-top: unit(4);
-}
-
-.post .post-footer {
+.post .header .image {
   margin-top: unit(6);
 }
 
-// Tags
-
-.post .tags {
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-sm,
-    $theme-line-height-body
-  );
-
-  & > :not(:last-child) {
-    margin-right: unit(1);
-  }
+.post .content {
+  margin-top: unit(6);
 }
 
-.post .tags a.tag {
-  color: color($theme-color-text-link);
-  text-transform: uppercase;
-  @include transition(color);
-
-  &:hover {
-    color: color($theme-color-text-link-hover);
-  }
+.post .footer {
+  margin-top: unit(6);
 }

@@ -14,29 +14,22 @@ const PostTemplate: FunctionComponent<PostProps> = ({ data }: PostProps) => (
 export default PostTemplate;
 
 export const pageQuery = graphql`
-  query PostByPath($path: String!) {
-    post: markdownRemark(fields: { path: { eq: $path } }) {
-      html
-      timeToRead
-      frontmatter {
-        title
-        date
-        category
-        tags
-        banner {
-          childImageSharp {
-            gatsbyImageData
-          }
-          name
-        }
-        components {
-          rootId
-          fileName
-        }
-        tweets {
-          rootId
-          userId
-          tweetId
+  query PostById($id: String!) {
+    contentfulBlogPost(id: { eq: $id }) {
+      title
+      publishDate(formatString: "MMMM D, YYYY")
+      author {
+        name
+      }
+      category {
+        name
+      }
+      image {
+        gatsbyImage(width: 1600)
+      }
+      content {
+        childMarkdownRemark {
+          html
         }
       }
     }

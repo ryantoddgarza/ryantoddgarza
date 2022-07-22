@@ -1,24 +1,15 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { useLocation } from '@reach/router';
 import { PostCard } from '../../design/components';
 import SEO from '../SEO';
-import Pagination from '../Pagination';
-import getPosts from '../../utils/getPosts';
-import getPage from '../../utils/getPage';
-import { CONTENT_PER_PAGE } from '../../constants';
+import { POSTS_PATH } from '../../constants';
 import { ListProps } from './types';
 
 const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
-  const location = useLocation();
-  const page = getPage(location);
-  const allPosts = getPosts(data);
-  const postCount = allPosts.length;
-  const posts = allPosts.slice(
-    (page - 1) * CONTENT_PER_PAGE,
-    page * CONTENT_PER_PAGE
-  );
+  const {
+    allContentfulBlogPost: { nodes: posts },
+  } = data;
 
   return (
     <>
@@ -26,29 +17,22 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
       <div className="layout--margin">
         <div className="container">
           <div className="posts-container">
-            {posts.map(
-              ({
-                node: {
-                  excerpt,
-                  frontmatter: { title, summary, category, banner },
-                  fields: { path },
-                },
-              }) => (
-                <PostCard
-                  key={path}
-                  title={title}
-                  subtitle={
-                    <Link to={`/categories/${category}/1`}>{category}</Link>
-                  }
-                  summary={summary || excerpt}
-                  path={path}
-                  image={banner}
-                />
-              )
-            )}
+            {posts.map(({ id, title, slug, description, category, image }) => (
+              <PostCard
+                key={id}
+                title={title}
+                subtitle={
+                  <Link to={`/categories/${category.name}`}>
+                    {category.name}
+                  </Link>
+                }
+                image={image?.gatsbyImage}
+                summary={description}
+                path={`${POSTS_PATH}/${slug}`}
+              />
+            ))}
           </div>
         </div>
-        <Pagination postCount={postCount} location={location} />
       </div>
     </>
   );

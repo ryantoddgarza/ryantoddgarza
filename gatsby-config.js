@@ -47,6 +47,13 @@ module.exports = {
         name: 'resources',
       },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     // 3. transformer plugins
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

@@ -25,7 +25,9 @@ const SocialGrid: FunctionComponent<SocialGridProps> = ({
                 rel="noreferrer noopener"
                 className="link"
               >
-                {icon}
+                <div className="button icon-btn ghost medium">
+                  <div className="icon">{icon}</div>
+                </div>
               </a>
             </div>
           )

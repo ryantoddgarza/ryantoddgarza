@@ -45,10 +45,12 @@ $theme-color-border: gray-10;
 
 // General
 
-$theme-button-height: 5;
 $theme-button-border-width: 2px;
 $theme-button-border-style: solid;
 $theme-button-border-radius: 0;
+$theme-button-height-small: 4;
+$theme-button-height-medium: 5;
+$theme-button-height-large: 6;
 
 $theme-nav-height: 6;
 $theme-nav-breakpoint: tablet;

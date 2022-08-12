@@ -1,39 +1,45 @@
 .button {
-  display: inline-block;
-  height: unit($theme-button-height);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding-left: unit(2);
   padding-right: unit(2);
-  text-align: center;
-  vertical-align: middle;
-  font-family: font-family($theme-font-role-body);
-  font-size: font-size($theme-font-size-md);
-  font-weight: font-weight($theme-font-weight-medium);
-  line-height: unit($theme-button-height) - (2 * $theme-button-border-width);
+  vertical-align: bottom;
   white-space: nowrap;
-  overflow: hidden;
-  border-width: $theme-button-border-width;
-  border-style: $theme-button-border-style;
-  border-radius: $theme-button-border-radius;
-  @include transition();
+  border: none;
+  user-select: none;
+  @include transition((color, background-color, border-color));
 }
 
-// Width variants
+// Size variants
 
-.button.wide {
-  padding-left: unit(4);
-  padding-right: unit(4);
+.button.small {
+  height: unit($theme-button-height-small);
 }
 
-.button.full-width {
-  width: 100%;
+.button.medium {
+  height: unit($theme-button-height-medium);
+}
+
+.button.large {
+  height: unit($theme-button-height-large);
 }
 
 // Theme variants
+
+.button.ghost {
+  padding: 0;
+  background-color: color(transparent);
+}
 
 .button.light {
   color: color($theme-color-text);
   background-color: color($theme-color-background);
   border-color: color($theme-color-background-inverse);
+  border-width: $theme-button-border-width;
+  border-style: $theme-button-border-style;
+  border-radius: $theme-button-border-radius;
 
   &:hover {
     color: color($theme-color-text-inverse);
@@ -46,10 +52,31 @@
   color: color($theme-color-text-inverse);
   background-color: color($theme-color-background-inverse);
   border-color: color($theme-color-background-inverse);
+  border-width: $theme-button-border-width;
+  border-style: $theme-button-border-style;
+  border-radius: $theme-button-border-radius;
 
   &:hover {
     color: color($theme-color-text);
     background-color: color($theme-color-background);
     border-color: color($theme-color-background-inverse);
   }
+}
+
+// Type variant: icon-btn
+
+.button.icon-btn {
+  padding: 0;
+}
+
+.button.icon-btn.small {
+  width: unit($theme-button-height-small);
+}
+
+.button.icon-btn.medium {
+  width: unit($theme-button-height-medium);
+}
+
+.button.icon-btn.large {
+  width: unit($theme-button-height-large);
 }

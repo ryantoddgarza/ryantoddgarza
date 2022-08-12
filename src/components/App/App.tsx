@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GlobalFooter, Header } from '../../design/components';
+import { GlobalFooter, GlobalHeader } from '../../design/components';
 import Gnb from '../Gnb';
 import Footer from '../Footer';
 import type { AppProps } from './types';
@@ -28,9 +28,9 @@ const App: FunctionComponent<AppProps> = ({
 
   return (
     <div className="app__root">
-      <Header name={siteTitle}>
+      <GlobalHeader name={siteTitle}>
         <Gnb categories={categories} hasPost={hasPost} hasAlbum={hasAlbum} />
-      </Header>
+      </GlobalHeader>
       <main className="app__main">{children}</main>
       <GlobalFooter>
         <Footer categories={categories} />

@@ -2,19 +2,19 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { HOME_PATH } from '../../../constants';
-import type { HeaderProps } from './types';
+import type { GlobalHeaderProps } from './types';
 
-const Header: FunctionComponent<HeaderProps> = ({
+const GlobalHeader: FunctionComponent<GlobalHeaderProps> = ({
   name,
   children,
-}: HeaderProps) => {
-  const getHeaderClasses = () => {
+}: GlobalHeaderProps) => {
+  const getGlobalHeaderClasses = () => {
     const headerClasses = ['global-header'];
     return headerClasses.join(' ');
   };
 
   return (
-    <header className={getHeaderClasses()}>
+    <header className={getGlobalHeaderClasses()}>
       {name && (
         <Link className="header-name" to={HOME_PATH}>
           {name}
@@ -25,8 +25,8 @@ const Header: FunctionComponent<HeaderProps> = ({
   );
 };
 
-Header.defaultProps = {
+GlobalHeader.defaultProps = {
   name: '',
 };
 
-export default Header;
+export default GlobalHeader;

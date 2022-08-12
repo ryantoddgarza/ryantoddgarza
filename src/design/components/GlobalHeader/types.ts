@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export interface HeaderProps {
+export interface GlobalHeaderProps {
   name?: string;
   children: ReactNode;
 }

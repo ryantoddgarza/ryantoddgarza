@@ -3,6 +3,7 @@ import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Clipboard from 'clipboard';
+import { CATEGORIES_PATH } from '../../constants';
 import SEO from '../SEO';
 import { PostProps } from './types';
 
@@ -58,7 +59,10 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
             {` | `}
             <span className="date">{publishDate}</span>
             {` in `}
-            <Link className="category" to={`/categories/${category.name}`}>
+            <Link
+              className="category"
+              to={`${CATEGORIES_PATH}/${category.name}`}
+            >
               {category.name}
             </Link>
           </div>

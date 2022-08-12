@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { PostCard } from '../../design/components';
 import SEO from '../SEO';
-import { POSTS_PATH } from '../../constants';
+import { CATEGORIES_PATH, POSTS_PATH } from '../../constants';
 import { ListProps } from './types';
 
 const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
@@ -22,7 +22,7 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
                 key={id}
                 title={title}
                 subtitle={
-                  <Link to={`/categories/${category.name}`}>
+                  <Link to={`${CATEGORIES_PATH}/${category.name}`}>
                     {category.name}
                   </Link>
                 }

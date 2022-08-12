@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
+import { CATEGORIES_PATH } from '../../constants';
 import type { SubmenuProps } from './types';
 
 const Submenu: FunctionComponent<SubmenuProps> = ({
@@ -21,7 +22,7 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
 
         return (
           <div className="submenu-item" key={key}>
-            <Link className="nav-link" to={`/categories/${key}`}>
+            <Link className="nav-link" to={`${CATEGORIES_PATH}/${key}`}>
               {key}
             </Link>
           </div>

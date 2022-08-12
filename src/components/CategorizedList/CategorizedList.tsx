@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { PostCard } from '../../design/components';
 import SEO from '../SEO';
-import { POSTS_PATH } from '../../constants';
+import { CATEGORIES_PATH, POSTS_PATH } from '../../constants';
 import titleCase from '../../utils/titleCase';
 import type { CategorizedListProps } from './types';
 
@@ -26,7 +26,7 @@ const CategorizedList: FunctionComponent<CategorizedListProps> = ({
                 key={id}
                 title={title}
                 subtitle={
-                  <Link to={`/categories/${category.name}`}>
+                  <Link to={`${CATEGORIES_PATH}/${category.name}`}>
                     {category.name}
                   </Link>
                 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CONTACT_PATH } from '../../constants';
 import SocialGrid from '../SocialGrid';
+import FooterDirectory from '../FooterDirectory';
+import type { FooterProps } from './types';
 
-const Footer: FunctionComponent = () => {
+const Footer: FunctionComponent<FooterProps> = ({
+  categories,
+}: FooterProps) => {
   const {
     site: {
       siteMetadata: { siteAuthor },
@@ -20,31 +23,27 @@ const Footer: FunctionComponent = () => {
   `);
 
   const content = {
-    links: [
-      { name: 'Wiki', url: 'https://wiki.ryantoddgarza.com' },
-      { name: 'Contact', url: CONTACT_PATH },
-    ],
     copyright: `© ${new Date().getFullYear()} ${siteAuthor}`,
   };
 
   return (
-    <footer className="footer">
-      <div className="content container">
-        <div className="social">
-          <SocialGrid />
-        </div>
-        <div className="copyright">{content.copyright}</div>
-        <div className="links">
-          {content.links.map(({ name, url }) => (
-            <div className="item" key={name}>
-              <a className="link" href={url}>
-                {name}
-              </a>
+    <div className="footer container">
+      <div className="footer-content">
+        <div className="footer-grid">
+          <div className="social">
+            <div className="social-group">
+              <SocialGrid />
             </div>
-          ))}
+          </div>
+          <div className="directory">
+            <FooterDirectory categories={categories} />
+          </div>
+          <div className="legal">
+            <div>{content.copyright}</div>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

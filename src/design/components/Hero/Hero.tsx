@@ -24,12 +24,12 @@ const Hero: FunctionComponent<HeroProps> = ({
         {hasButton && (
           <div className="cta-row button-group">
             {btn1 && (
-              <Link className="button dark wide" to={btn1.url}>
+              <Link className="button large dark" to={btn1.url}>
                 {btn1.name}
               </Link>
             )}
             {btn2 && (
-              <Link className="button light wide" to={btn2.url}>
+              <Link className="button large light" to={btn2.url}>
                 {btn2.name}
               </Link>
             )}

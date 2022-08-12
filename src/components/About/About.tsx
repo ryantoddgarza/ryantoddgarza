@@ -65,7 +65,7 @@ const About: FunctionComponent = () => {
       <section className="layout--margin">
         <div className="container widescreen">
           <div className="button-group">
-            <Link className="button light wide" to={DANCE_CV_PATH}>
+            <Link className="button large light" to={DANCE_CV_PATH}>
               Dance CV
             </Link>
           </div>

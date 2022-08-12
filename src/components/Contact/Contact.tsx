@@ -30,7 +30,7 @@ const Contact: FunctionComponent = () => {
         <div className="container">
           <TitledSection title={title}>
             <div>
-              <a className="button dark wide" href={emailBtn.url}>
+              <a className="button large dark" href={emailBtn.url}>
                 {emailBtn.name}
               </a>
             </div>

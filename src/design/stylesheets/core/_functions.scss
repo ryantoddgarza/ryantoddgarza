@@ -25,6 +25,7 @@
 @function transition-duration($value) {
   @return map-get($system-transition, "duration", $value);
 }
+
 @function unit($value) {
   @return map-get($system-spacing, "base") * $value;
 }

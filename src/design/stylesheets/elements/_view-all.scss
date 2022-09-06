@@ -1,0 +1,16 @@
+.view-all {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-body
+  );
+}
+
+.view-all a {
+  @include transition(color);
+
+  &:hover {
+    color: color($theme-color-primary);
+  }
+}

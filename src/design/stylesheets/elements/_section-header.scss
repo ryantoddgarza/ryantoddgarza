@@ -1,0 +1,32 @@
+.section-header {
+  margin-top: unit(4);
+  margin-bottom: unit(4);
+
+  @include at-media("tablet") {
+    margin-top: unit(5);
+    margin-bottom: unit(5);
+  }
+
+  @include at-media("desktop") {
+    margin-top: unit(6);
+    margin-bottom: unit(6);
+  }
+}
+
+.section-header.title.h1 {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-3xl,
+    $theme-line-height-heading
+  );
+}
+
+.section-header.title.h2 {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-2xl,
+    $theme-line-height-heading
+  );
+}

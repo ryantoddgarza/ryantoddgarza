@@ -1,14 +1,8 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import SEO from '../SEO';
-import {
-  List,
-  listSize,
-  TitledSection,
-  PostCard,
-  cardAspect,
-} from '../../design/components';
+import { List, listSize, PostCard, cardAspect } from '../../design/components';
 import { ALBUMS_PATH } from '../../constants';
 import { AlbumData } from '../Album';
 
@@ -79,11 +73,11 @@ const Music: FunctionComponent = () => {
     <div className="music">
       <SEO title={title} />
       <div className="container">
-        <section className="layout--margin">
-          <TitledSection
-            title="Featured Albums"
-            link={{ name: 'View all albums', url: ALBUMS_PATH }}
-          >
+        <section className="section light layout--margin">
+          <header className="section-header">
+            <h2 className="section-header title h2">Featured Albums</h2>
+          </header>
+          <div>
             <div className="posts-container">
               {albums.map(
                 ({
@@ -101,21 +95,30 @@ const Music: FunctionComponent = () => {
                 )
               )}
             </div>
-          </TitledSection>
+            <div className="view-all">
+              <Link to={ALBUMS_PATH}>View all albums</Link>
+            </div>
+          </div>
         </section>
-        <section className="layout--margin">
-          <TitledSection title="Listen">
+        <section className="section light layout--margin">
+          <header className="section-header">
+            <h2 className="section-header title h2">Listen</h2>
+          </header>
+          <div>
             <List nodes={parseLinkData(listen)} size={listSize.LARGE} ordered />
-          </TitledSection>
+          </div>
         </section>
-        <section className="layout--margin">
-          <TitledSection title="Credits">
+        <section className="section light layout--margin">
+          <header className="section-header">
+            <h2 className="section-header title h2">Credits</h2>
+          </header>
+          <div>
             <List
               nodes={parseLinkData(credits)}
               size={listSize.LARGE}
               ordered
             />
-          </TitledSection>
+          </div>
         </section>
       </div>
     </div>

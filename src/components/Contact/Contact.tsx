@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { TitledSection } from '../../design/components';
+import SocialGrid from '../SocialGrid';
 import SEO from '../SEO';
 
 const Contact: FunctionComponent = () => {
@@ -26,15 +26,22 @@ const Contact: FunctionComponent = () => {
   return (
     <div className="contact">
       <SEO title={title} />
-      <section className="layout--margin">
-        <div className="container">
-          <TitledSection title={title}>
-            <div>
-              <a className="button large dark" href={emailBtn.url}>
-                {emailBtn.name}
-              </a>
-            </div>
-          </TitledSection>
+      <section className="section light container layout--margin">
+        <header className="section-header">
+          <h2 className="section-header title h2">Contact</h2>
+        </header>
+        <div>
+          <a className="button large dark" href={emailBtn.url}>
+            {emailBtn.name}
+          </a>
+        </div>
+      </section>
+      <section className="section light container layout--margin">
+        <header className="section-header">
+          <h2 className="section-header title h2">Follow</h2>
+        </header>
+        <div>
+          <SocialGrid />
         </div>
       </section>
     </div>

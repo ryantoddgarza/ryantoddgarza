@@ -40,7 +40,7 @@ const Contact: FunctionComponent = () => {
         <header className="section-header">
           <h2 className="section-header title h2">Follow</h2>
         </header>
-        <div>
+        <div style={{ marginLeft: -10 }}>
           <SocialGrid />
         </div>
       </section>

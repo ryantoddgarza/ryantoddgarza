@@ -1,5 +1,6 @@
 *.cache
 *.env*
 *.log
+db/contentful-schema.json
 node_modules/
 public/

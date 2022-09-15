@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { ContentfulTSGeneratorPlugin } = require('contentful-ts-generator');
 const {
   ALBUM,
   ALBUMS_PATH,
@@ -11,6 +12,10 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
     plugins: [
       plugins.define({
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
+      }),
+      new ContentfulTSGeneratorPlugin({
+        schemaFile: 'db/contentful-schema.json',
+        outputDir: 'public/types/contentful',
       }),
     ],
     module: {

@@ -17,11 +17,9 @@ export const pageQuery = graphql`
   query PostById($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
       title
+      category
       publishDate(formatString: "MMMM D, YYYY")
       author {
-        name
-      }
-      category {
         name
       }
       image {

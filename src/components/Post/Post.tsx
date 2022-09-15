@@ -55,19 +55,16 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
           <h1 className="title">{title}</h1>
           <div className="metadata">
             {`By `}
-            <span className="author">{author.name}</span>
+            <span className="author">{author?.name}</span>
             {` | `}
             <span className="date">{publishDate}</span>
             {` in `}
-            <Link
-              className="category"
-              to={`${CATEGORIES_PATH}/${category.name}`}
-            >
-              {category.name}
+            <Link className="category" to={`${CATEGORIES_PATH}/${category}`}>
+              {category}
             </Link>
           </div>
           {image && (
-            <GatsbyImage className="image" image={image.gatsbyImage} alt="" />
+            <GatsbyImage className="image" image={image?.gatsbyImage} alt="" />
           )}
         </header>
         <div

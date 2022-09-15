@@ -22,9 +22,7 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
                 key={id}
                 title={title}
                 subtitle={
-                  <Link to={`${CATEGORIES_PATH}/${category.name}`}>
-                    {category.name}
-                  </Link>
+                  <Link to={`${CATEGORIES_PATH}/${category}`}>{category}</Link>
                 }
                 image={image?.gatsbyImage}
                 summary={description}

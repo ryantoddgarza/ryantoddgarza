@@ -3,8 +3,7 @@ import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ALBUM } from '../../constants';
 import App from '../App';
-import { PostEdge, ProjectEdge } from '../../../global.d';
-import type { Category, LayoutProps } from './types';
+import type { LayoutProps, BlogPostEdge, ProjectEdge } from './types';
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }: LayoutProps) => {
   const { allProjectsJson, allContentfulBlogPost } = useStaticQuery(graphql`
@@ -22,46 +21,42 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }: LayoutProps) => {
       allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
         edges {
           node {
-            category {
-              name
-            }
+            category
           }
         }
       }
     }
   `);
 
-  const postEdges: PostEdge[] = allContentfulBlogPost.edges;
+  const postEdges: BlogPostEdge[] = allContentfulBlogPost.edges;
   const posts = postEdges;
 
   const projectEdges: ProjectEdge[] = allProjectsJson.edges;
   const albums = projectEdges.filter(({ node: { type } }) => type === ALBUM);
 
-  const categories: Category[] = postEdges.reduce(
+  const categories = postEdges.reduce(
     (categories, { node }) => {
-      const {
-        category: { name },
-      } = node;
+      const { category } = node;
 
-      if (name === null) {
+      if (category === null) {
         return categories;
       }
 
       const [{ length: total }] = categories;
-      const categoryIndex = categories.findIndex(({ key }) => key === name);
+      const categoryIndex = categories.findIndex(({ key }) => key === category);
 
       if (categoryIndex === -1) {
         return [
           { key: '__ALL__', length: total + 1 },
           ...categories.slice(1),
-          { key: name, length: 1 },
+          { key: category, length: 1 },
         ];
       }
 
       return [
         { key: '__ALL__', length: total + 1 },
         ...categories.slice(1, categoryIndex),
-        { key: name, length: categories[categoryIndex].length + 1 },
+        { key: category, length: categories[categoryIndex].length + 1 },
         ...categories.slice(categoryIndex + 1),
       ];
     },

@@ -29,7 +29,7 @@ interface CategorizedListTemplateProps {
 export const pageQuery = graphql`
   query CategorizedListQuery($category: String) {
     allContentfulBlogPost(
-      filter: { category: { name: { eq: $category } } }
+      filter: { category: { eq: $category } }
       sort: { fields: publishDate, order: DESC }
     ) {
       nodes {
@@ -37,9 +37,7 @@ export const pageQuery = graphql`
         title
         slug
         description
-        category {
-          name
-        }
+        category
         image {
           gatsbyImage(width: 800)
         }

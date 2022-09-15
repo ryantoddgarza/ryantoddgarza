@@ -47,9 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         postEdges: edges {
           node {
             id
-            category {
-              name
-            }
+            category
             slug
           }
         }
@@ -118,8 +116,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       slug,
     },
   }) => {
-    if (typeof category.name === 'string') {
-      categoryMatrix.push(category.name);
+    if (typeof category === 'string') {
+      categoryMatrix.push(category);
     }
 
     createPage({

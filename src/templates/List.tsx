@@ -27,9 +27,7 @@ export const pageQuery = graphql`
         title
         slug
         description
-        category {
-          name
-        }
+        category
         image {
           gatsbyImage(width: 800)
         }

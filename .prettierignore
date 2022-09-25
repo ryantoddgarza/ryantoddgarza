@@ -1,5 +1,6 @@
 *.cache
 gatsby-node.js
+lib/
 package-lock.json
 package.json
 public/

@@ -17,14 +17,11 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "format": "npm run format:code && npm run format:other",
-    "format:code": "npm run lint:code -- --fix",
-    "format:other": "npm run lint:other -- --write",
+    "format": "sh ./scripts/tasks/format.sh",
     "hooks:install": "git config core.hooksPath ./scripts/git",
     "hooks:uninstall": "git config --unset core.hooksPath",
-    "lint": "npm run lint:code && npm run lint:other",
-    "lint:code": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "lint:other": "prettier \"**/*.md\" --check",
+    "lint": "sh ./scripts/tasks/lint.sh",
+    "prettier": "sh ./scripts/tasks/prettier.sh",
     "serve": "gatsby serve",
     "start": "npm run develop"
   },
@@ -84,7 +81,7 @@
     "defaults"
   ],
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx --fix",
+    "*.{js,jsx,json,ts,tsx}": "eslint --fix",
     "*.md": "prettier --write"
   }
 }

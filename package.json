@@ -1,13 +1,12 @@
 {
   "name": "ryantoddgarza",
   "description": "portfolio site",
-  "version": "1.0.0",
   "private": true,
   "author": "Ryan Todd Garza <ryantoddgarza@gmail.com>",
   "homepage": "https://ryantoddgarza.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryantoddgarza/ryantoddgarza.git"
+    "url": "git+https://github.com/ryantoddgarza/ryantoddgarza.git"
   },
   "bugs": {
     "url": "https://github.com/ryantoddgarza/ryantoddgarza/issues"

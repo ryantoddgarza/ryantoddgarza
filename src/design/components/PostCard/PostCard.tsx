@@ -25,13 +25,7 @@ const PostCard: FunctionComponent<PostCardProps> = ({
       <div className="inner">
         <Link to={path}>
           <div className="image-container">
-            {image && (
-              <GatsbyImage
-                className="image"
-                image={image}
-                alt=""
-              />
-            )}
+            {image && <GatsbyImage className="image" image={image} alt="" />}
           </div>
           <div className="body">
             {subtitle && <h6 className="subtitle">{subtitle}</h6>}

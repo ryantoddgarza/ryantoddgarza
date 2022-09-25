@@ -1,13 +1,13 @@
-@import 'core/system-tokens';
-@import 'theme/theme-tokens';
-@import 'core/functions';
-@import 'core/mixins';
+@import "core/system-tokens";
+@import "theme/theme-tokens";
+@import "core/functions";
+@import "core/mixins";
 
-@import 'global/reset';
+@import "global/reset";
 @import "global/box-sizing";
-@import 'global/cursor';
-@import 'global/typography';
-@import 'global/base';
+@import "global/cursor";
+@import "global/typography";
+@import "global/base";
 
-@import 'elements';
-@import 'components';
+@import "elements";
+@import "components";

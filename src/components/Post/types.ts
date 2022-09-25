@@ -1,4 +1,4 @@
-import type { BlogPost } from '../../../public/types/contentful/generated';
+import type { BlogPost } from '../../../lib/contentful/generated';
 
 export interface PostProps {
   data: {

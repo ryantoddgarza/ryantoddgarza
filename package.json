@@ -14,15 +14,15 @@
   },
   "scripts": {
     "bootstrap": "npm run hooks:install && npm install",
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "build": "sh ./scripts/tasks/build.sh",
+    "clean": "sh ./scripts/tasks/clean.sh",
+    "develop": "sh ./scripts/tasks/develop.sh",
     "format": "sh ./scripts/tasks/format.sh",
-    "hooks:install": "git config core.hooksPath ./scripts/git",
-    "hooks:uninstall": "git config --unset core.hooksPath",
+    "hooks:install": "sh ./scripts/tasks/hooks-install.sh",
+    "hooks:uninstall": "sh ./scripts/tasks/hooks-uninstall.sh",
     "lint": "sh ./scripts/tasks/lint.sh",
     "prettier": "sh ./scripts/tasks/prettier.sh",
-    "serve": "gatsby serve",
+    "serve": "sh ./scripts/tasks/serve.sh",
     "start": "npm run develop"
   },
   "dependencies": {
@@ -81,7 +81,7 @@
     "defaults"
   ],
   "lint-staged": {
-    "*.{js,jsx,json,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.md": "prettier --write"
   }
 }

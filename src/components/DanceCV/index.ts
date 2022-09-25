@@ -1,3 +1,1 @@
-import DanceCV from './DanceCV';
-
-export default DanceCV;
+export { default } from './DanceCV';

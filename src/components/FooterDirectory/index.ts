@@ -1,4 +1,2 @@
-import FooterDirectory from './FooterDirectory';
-
-export default FooterDirectory;
+export { default } from './FooterDirectory';
 export * from './types';

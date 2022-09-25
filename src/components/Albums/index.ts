@@ -1,4 +1,2 @@
-import Albums from './Albums';
-
-export default Albums;
+export { default } from './Albums';
 export * from './types';

@@ -1,4 +1,2 @@
-import GnB from './GnB';
-
-export default GnB;
+export { default } from './GnB';
 export * from './types';

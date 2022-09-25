@@ -1,4 +1,2 @@
-import App from './App';
-
-export default App;
+export { default } from './App';
 export * from './types';

@@ -1,4 +1,2 @@
-import CategorizedList from './CategorizedList';
-
-export default CategorizedList;
+export { default } from './CategorizedList';
 export * from './types';

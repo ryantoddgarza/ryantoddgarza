@@ -3,13 +3,14 @@ module.exports = {
   env: {
     browser: true,
   },
+  rules: {
+    'no-console': 'warn',
+  },
   overrides: [
     {
-      files: ['src/components/Post/Post.tsx'],
+      files: ['*.tsx'],
       rules: {
-        'no-console': 'off',
-        'react/no-danger': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
+        'react/no-danger': 'warn',
       },
     },
   ],

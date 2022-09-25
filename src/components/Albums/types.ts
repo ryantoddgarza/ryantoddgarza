@@ -1,9 +1,9 @@
-import type { AlbumData } from '../Album';
+import type { MusicRelease } from '../../../lib/contentful/generated';
 
 export interface AlbumsProps {
   data: {
-    albums: {
-      nodes: AlbumData[];
+    allContentfulMusicRelease: {
+      nodes: MusicRelease[];
     };
   };
 }

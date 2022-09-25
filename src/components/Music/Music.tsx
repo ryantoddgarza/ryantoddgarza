@@ -4,11 +4,11 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import SEO from '../SEO';
 import { List, listSize, PostCard, cardAspect } from '../../design/components';
 import { ALBUMS_PATH } from '../../constants';
-import { AlbumData } from '../Album';
+import type { MusicRelease } from '../../../lib/contentful/generated';
 
 const Music: FunctionComponent = () => {
   const {
-    featAlbums: { nodes: albums },
+    allContentfulMusicRelease: { nodes: albums },
     content: {
       title,
       links: { listen, credits },
@@ -28,27 +28,20 @@ const Music: FunctionComponent = () => {
           }
         }
       }
-      featAlbums: allProjectsJson(
-        filter: {
-          type: { eq: "album" }
-          hide: { ne: true }
-          featured: { eq: true }
-        }
-        sort: { fields: [metadata___date], order: DESC }
+      allContentfulMusicRelease(
+        filter: { type: { eq: "album" }, featured: { eq: true } }
+        sort: { fields: releaseDate, order: DESC }
       ) {
         nodes {
-          metadata {
-            title
-            artist
-            cover {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            date
+          id
+          slug
+          title
+          releaseDate
+          artist {
+            name
           }
-          fields {
-            path
+          image {
+            gatsbyImage(width: 1280)
           }
         }
       }
@@ -81,15 +74,19 @@ const Music: FunctionComponent = () => {
             <div className="posts-container">
               {albums.map(
                 ({
-                  metadata: { title, artist, cover, date },
-                  fields: { path },
-                }: AlbumData) => (
+                  id,
+                  slug,
+                  title,
+                  releaseDate,
+                  artist,
+                  image,
+                }: MusicRelease) => (
                   <PostCard
-                    key={title}
+                    key={id}
                     title={title}
-                    subtitle={`${artist} — ${date.split('-')[0]}`}
-                    image={cover.childImageSharp.gatsbyImageData}
-                    path={path}
+                    subtitle={`${artist?.name} — ${releaseDate?.split('-')[0]}`}
+                    image={image?.gatsbyImage}
+                    path={`/${slug}`}
                     aspect={cardAspect.SQUARE}
                   />
                 )

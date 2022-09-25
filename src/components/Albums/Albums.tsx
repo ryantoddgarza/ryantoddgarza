@@ -6,7 +6,7 @@ import type { AlbumsProps } from './types';
 
 const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
   const {
-    albums: { nodes: albums },
+    allContentfulMusicRelease: { nodes: albums },
   } = data;
 
   return (
@@ -15,21 +15,16 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
       <section className="layout--margin">
         <div className="container">
           <div className="posts-container">
-            {albums.map(
-              ({
-                metadata: { title, artist, cover, date },
-                fields: { path },
-              }) => (
-                <PostCard
-                  key={title}
-                  title={title}
-                  subtitle={`${artist} — ${date.split('-')[0]}`}
-                  image={cover.childImageSharp.gatsbyImageData}
-                  path={path}
-                  aspect={cardAspect.SQUARE}
-                />
-              )
-            )}
+            {albums.map(({ id, slug, title, artist, image, releaseDate }) => (
+              <PostCard
+                key={id}
+                title={title}
+                subtitle={`${artist?.name} — ${releaseDate?.split('-')[0]}`}
+                image={image?.gatsbyImage}
+                path={`/${slug}`}
+                aspect={cardAspect.SQUARE}
+              />
+            ))}
           </div>
         </div>
       </section>

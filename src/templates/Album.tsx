@@ -14,43 +14,38 @@ const AlbumTemplate: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => (
 export default AlbumTemplate;
 
 export const pageQuery = graphql`
-  query AlbumByPath($path: String!) {
-    album: projectsJson(fields: { path: { eq: $path } }) {
-      metadata {
-        title
-        artist
-        cover {
-          childImageSharp {
-            gatsbyImageData
-          }
-          name
-        }
-        date
-        format
-        label
-        sku
-        upc
-        copyright
+  query AlbumById($id: String!) {
+    contentfulMusicRelease(id: { eq: $id }) {
+      title
+      releaseDate(formatString: "MMMM D, YYYY")
+      label
+      format
+      upc
+      copyright
+      artist {
+        name
+      }
+      image {
+        gatsbyImage(width: 3000)
       }
       tracks {
+        id
         title
-        runtime
-        lyrics
-        video
+        videoUrl
+      }
+      links {
+        name
+        url
       }
       credits {
         name
         role
       }
-      links {
-        distributor
-        url
-      }
-      praise {
-        publication
+      writeups {
         title
+        publication
         author
-        date
+        date(formatString: "MMM D, YYYY")
         url
       }
     }

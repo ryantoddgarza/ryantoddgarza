@@ -1,60 +1,38 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import type { Track, Writeup } from '../../../lib/contentful/generated';
 import SEO from '../SEO';
-import type { AlbumProps, CreditData, TrackData } from './types';
+import type { AlbumProps } from './types';
 
-const Album: FunctionComponent<AlbumProps> = ({
-  data: {
-    album: {
-      metadata: {
-        title,
-        artist,
-        cover,
-        date,
-        format,
-        label,
-        sku,
-        upc,
-        copyright,
-      },
+const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
+  const {
+    contentfulMusicRelease: {
+      title,
+      releaseDate,
+      label,
+      format,
+      upc,
+      copyright,
+      artist,
+      image,
       tracks,
       credits,
       links,
-      praise,
+      writeups,
     },
-  },
-}: AlbumProps) => {
-  const getAlbumRuntime = () => {
-    let seconds = 0;
+  } = data;
 
-    tracks.forEach(({ runtime }: TrackData) => {
-      const min = Number(runtime.split(':')[0]) * 60;
-      const sec = Number(runtime.split(':')[1]);
-      seconds += min + sec;
-    });
-
-    return Math.round(seconds / 60);
-  };
-
-  const formatDate = (date: string) => {
-    return new Date(date).toLocaleDateString('default', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
-  const getCreditEl = ({ name, role }: CreditData) => {
+  const getCreditEl = ({ name, role }: { name: string; role: string }) => {
     const nameKey = `${name.substr(0, 3)}${role.substr(0, 7)}`;
     const roleKey = `${role.substr(0, 7)}${name.substr(0, 3)}`;
     const trailChar = '.';
 
     const componentArray = [
-      <dt className="list-item md" key={nameKey}>
+      <dt className="list-item xs" key={nameKey}>
         {name + trailChar.repeat(220)}
       </dt>,
-      <dd className="list-item md" key={roleKey}>
+      <dd className="list-item xs" key={roleKey}>
         {role}
       </dd>,
     ];
@@ -62,104 +40,102 @@ const Album: FunctionComponent<AlbumProps> = ({
     return componentArray;
   };
 
+  const layout = {
+    hasExtendedData: credits || copyright,
+  };
+
   const content = {
     details: [
-      { key: 'Artist', value: artist },
-      { key: 'Date', value: date.split('-')[0] },
-      { key: 'Runtime', value: `${getAlbumRuntime()} minutes` },
+      { key: 'Artist', value: artist?.name },
+      { key: 'Date', value: releaseDate },
       { key: 'Format', value: format },
       { key: 'Label', value: label },
-      { key: 'SKU', value: sku },
       { key: 'UPC', value: upc },
     ],
   };
 
-  const layout = {
-    hasCredits: credits || copyright,
-    hasPraise: praise,
-  };
-
   return (
-    <div className="album">
+    <article className="album">
       <SEO title={title} />
-      <section className="layout--margin">
-        <div className="container">
-          <div className="row">
-            <div className="col left">
-              <div className="cover-container">
-                <GatsbyImage
-                  image={cover.childImageSharp.gatsbyImageData}
-                  alt={cover.name}
-                />
-              </div>
-            </div>
-            <div className="col right">
-              <div className="info">
-                <div className="info-section">
-                  <h1 className="album-title">{title}</h1>
-                  <h2 className="album-subtitle">{artist}</h2>
-                </div>
-                <div className="info-section details">
-                  <h3 className="section-heading">Info</h3>
-                  <div className="panel">
-                    {content.details.map(
-                      ({ key, value }) =>
-                        value && (
-                          <div className="list-item sm" key={key}>
-                            {key}: {value}
-                          </div>
-                        )
-                    )}
-                  </div>
-                </div>
-                <div className="info-section links">
-                  <h3 className="section-heading">Listen</h3>
-                  <div className="panel">
-                    {links.map(({ distributor, url }) => (
-                      <div className="list-item sm" key={distributor}>
-                        <a
-                          className="list-link"
-                          href={url}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          {`${distributor} →`}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+      <div className="layout--margin container">
+        <div className="row">
+          <div className="col left">
+            <div className="cover-art">
+              <GatsbyImage image={image?.gatsbyImage} alt="" />
             </div>
           </div>
+          <div className="col right">
+            <header className="header">
+              <h1 className="title h1">{title}</h1>
+              <h2 className="title h2">{artist?.name}</h2>
+            </header>
+            <section className="section">
+              <header className="section-header">
+                <h3 className="title">Info</h3>
+              </header>
+              <div>
+                <ul className="meta-list">
+                  {content.details.map(
+                    ({ key, value }) =>
+                      value && (
+                        <li className="list-item sm" key={key}>
+                          {key}: {value}
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            </section>
+            {links && (
+              <section className="section">
+                <header className="section-header">
+                  <h3 className="title">Listen</h3>
+                </header>
+                <div>
+                  <ul className="listen-list">
+                    {links.map(
+                      ({ name, url }: { name: string; url: string }) => (
+                        <div className="list-item sm" key={name}>
+                          <a
+                            className="list-link"
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            {`${name} →`}
+                          </a>
+                        </div>
+                      )
+                    )}
+                  </ul>
+                </div>
+              </section>
+            )}
+          </div>
         </div>
-      </section>
-      <section className="layout--margin">
-        <div className="container">
+      </div>
+      {tracks && (
+        <div className="layout--margin container">
           <div className="row">
             <div className="col left">
+              <header className="section-header">
+                <h3 className="title">Tracks</h3>
+              </header>
               <div className="tracks">
-                <h3 className="section-heading">Tracks</h3>
                 <ul className="track-list">
-                  {tracks.map(({ title, lyrics, video }, i) => {
+                  {tracks.map(({ id, title, videoUrl }: Track, i: number) => {
                     const trackNum = i + 1;
                     return (
-                      <li
-                        className="list-item md track-row"
-                        key={trackNum.toString()}
-                      >
-                        <div className="track-col data counter">
+                      <li key={id} className="list-item md">
+                        <div className="track-col index-col">
                           {trackNum.toString().padStart(2, '0')}
                         </div>
-                        <div className="track-col data name">{title}</div>
-                        <div className="track-col data link">
-                          {lyrics && <a href={lyrics}>Lyrics</a>}
-                        </div>
-                        <div className="track-col data link">
-                          {video && (
+                        <div className="track-col title-col">{title}</div>
+                        <div className="track-col link-col">
+                          {videoUrl && (
                             <a
                               className="list-link"
-                              href={video}
+                              href={videoUrl}
                               target="_blank"
                               rel="noreferrer noopener"
                             >
@@ -175,59 +151,64 @@ const Album: FunctionComponent<AlbumProps> = ({
             </div>
           </div>
         </div>
-      </section>
-      <section className="layout--margin">
-        <div className="container">
+      )}
+      {(layout.hasExtendedData || writeups) && (
+        <div className="layout--margin container">
           <div className="row">
-            {layout.hasCredits && (
-              <div className="col left">
-                <div className="credits">
-                  <h3 className="section-heading">Credits</h3>
-                  {credits && (
-                    <dl className="credit-list">
-                      {credits.map(({ name, role }) =>
+            {credits && (
+              <div className="col left credits">
+                <header className="section-header">
+                  <h3 className="title">Credits</h3>
+                </header>
+                <div>
+                  <dl className="credit-list">
+                    {credits.map(
+                      ({ name, role }: { name: string; role: string }) =>
                         getCreditEl({ name, role })
-                      )}
-                    </dl>
-                  )}
-                  {copyright && <p>{copyright}</p>}
+                    )}
+                  </dl>
                 </div>
+                {copyright && <p>{copyright}</p>}
               </div>
             )}
-            {layout.hasPraise && (
-              <div className="col right">
-                <div className="praise">
-                  <h3 className="section-heading">Praise</h3>
-                  <div className="praise-list">
-                    {praise.map(({ publication, title, author, date, url }) => (
-                      <div className="list-item sm" key={url}>
-                        <div className="title">
-                          <a
-                            className="list-link"
-                            href={url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            {publication}
-                          </a>
-                        </div>
-                        <div className="detail">
-                          {`
-                          ${formatDate(date)}
-                          ${title ? `“${title}”` : ''}
-                          ${author ? ` by ${author}` : ''}
-                        `}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+            {writeups && (
+              <div className="col right praise">
+                <header className="section-header">
+                  <h3 className="title">Praise</h3>
+                </header>
+                <div>
+                  <ul className="praise-list">
+                    {writeups.map(
+                      ({ title, publication, author, date, url }: Writeup) => (
+                        <li className="list-item sm" key={url}>
+                          <div className="title">
+                            <a
+                              className="list-link"
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                            >
+                              {publication}
+                            </a>
+                          </div>
+                          <div className="detail">
+                            {`
+                              ${date ? date : ''}
+                              ${title}
+                              ${author ? ` by ${author}` : ''}
+                            `}
+                          </div>
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
             )}
           </div>
         </div>
-      </section>
-    </div>
+      )}
+    </article>
   );
 };
 

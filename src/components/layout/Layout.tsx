@@ -1,38 +1,33 @@
 import React, { Children, cloneElement } from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ALBUM } from '../../constants';
 import App from '../App';
-import type { LayoutProps, BlogPostEdge, ProjectEdge } from './types';
+import type { LayoutProps, BlogPostEdge } from './types';
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }: LayoutProps) => {
-  const { allProjectsJson, allContentfulBlogPost } = useStaticQuery(graphql`
-    query GatsbyQuery {
-      allProjectsJson(
-        filter: { hide: { ne: true } }
-        sort: { fields: metadata___date, order: DESC }
-      ) {
-        edges {
-          node {
-            type
+  const { allContentfulBlogPost, allContentfulMusicRelease } =
+    useStaticQuery(graphql`
+      query GatsbyQuery {
+        allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
+          edges {
+            node {
+              category
+            }
+          }
+        }
+        allContentfulMusicRelease {
+          edges {
+            node {
+              id
+            }
           }
         }
       }
-      allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
-        edges {
-          node {
-            category
-          }
-        }
-      }
-    }
-  `);
+    `);
 
   const postEdges: BlogPostEdge[] = allContentfulBlogPost.edges;
   const posts = postEdges;
-
-  const projectEdges: ProjectEdge[] = allProjectsJson.edges;
-  const albums = projectEdges.filter(({ node: { type } }) => type === ALBUM);
+  const hasPost = posts.length > 0;
 
   const categories = postEdges.reduce(
     (categories, { node }) => {
@@ -63,7 +58,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }: LayoutProps) => {
     [{ key: '__ALL__', length: 0 }]
   );
 
-  const hasPost = posts.length > 0;
+  const albums = allContentfulMusicRelease.edges;
   const hasAlbum = albums.length > 0;
 
   const childrenWithProps = Children.map(children, (child) =>

@@ -17,23 +17,20 @@ export default AlbumsTemplate;
 
 export const pageQuery = graphql`
   query AlbumsQuery {
-    albums: allProjectsJson(
-      filter: { type: { eq: "album" }, hide: { ne: true } }
-      sort: { fields: [metadata___date], order: DESC }
+    allContentfulMusicRelease(
+      filter: { type: { eq: "album" } }
+      sort: { fields: releaseDate, order: DESC }
     ) {
       nodes {
-        metadata {
-          title
-          artist
-          cover {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          date
+        id
+        slug
+        title
+        releaseDate
+        artist {
+          name
         }
-        fields {
-          path
+        image {
+          gatsbyImage(width: 1280)
         }
       }
     }

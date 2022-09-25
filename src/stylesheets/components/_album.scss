@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 $album-grid-gap: $theme-site-margin;
 
@@ -44,10 +44,37 @@ $album-grid-gap: $theme-site-margin;
   }
 }
 
-// Section
+// Header
 
-.album .section-heading {
+.album .header {
+  margin-bottom: unit(6);
+}
+
+.album .header .title.h1 {
+  font-weight: font-weight($theme-font-weight-bold);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-3xl,
+    $theme-line-height-heading
+  );
+}
+
+.album .header .title.h2 {
+  margin-top: unit(2);
+  @include typeset(
+    $theme-font-role-heading,
+    $theme-font-size-md,
+    $theme-line-height-heading
+  );
+}
+
+// Section header
+
+.album .section-header {
   margin-bottom: unit(4);
+}
+
+.album .section-header .title {
   text-transform: uppercase;
   font-weight: font-weight($theme-font-weight-bold);
   @include typeset(
@@ -57,21 +84,43 @@ $album-grid-gap: $theme-site-margin;
   );
 }
 
-// List
+// Cover
+
+.album .cover-art {
+  max-width: breakpoint("tablet");
+}
+
+// List item, link
 
 .album .list-item {
-  line-height: line-height($theme-line-height-body);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include ellipsis;
+}
+
+.album .list-item.xs {
+  margin-bottom: unit(1);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-xs,
+    $theme-line-height-body
+  );
 }
 
 .album .list-item.sm {
-  margin-bottom: unit(1);
+  margin-bottom: unit(1.5);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-sm,
+    $theme-line-height-body
+  );
 }
 
 .album .list-item.md {
   margin-bottom: unit(2);
+  @include typeset(
+    $theme-font-role-body,
+    $theme-font-size-md,
+    $theme-line-height-body
+  );
 }
 
 .album .list-link {
@@ -83,84 +132,38 @@ $album-grid-gap: $theme-site-margin;
   }
 }
 
-// Cover
-
-.album .cover-container {
-  max-width: breakpoint("tablet");
-}
-
-// Album info
-
-.album .info .info-section:not(:first-child) {
-  margin-top: unit(6);
-}
-
-.album .info .info-section .album-title {
-  font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-3xl,
-    $theme-line-height-heading
-  );
-}
-
-.album .info .info-section .album-subtitle {
-  margin-top: unit(2);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-md,
-    $theme-line-height-heading
-  );
-}
-
-.album .info .info-section .panel {
-  font-size: font-size($theme-font-size-sm);
+.album .meta-list,
+.album .listen-list,
+.album .praise-list {
   color: color($theme-color-text-weak);
+}
+
+.album .praise-list .detail {
+  font-size: font-size($theme-font-size-xs);
+  @include ellipsis;
 }
 
 // Tracks
 
-.album .track-list .track-row {
+.album .tracks .track-list .list-item {
   display: flex;
-  margin-left: unit(-0.5);
-  margin-right: unit(-0.5);
 }
 
-.album .track-list .track-row > .track-col {
-  padding-left: unit(0.5);
-  padding-right: unit(0.5);
+.album .tracks .track-list .index-col {
+  flex: 0 0 unit(3);
 }
 
-.album .track-list .data {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-sm,
-    $theme-line-height-body
-  );
-
-  @include at-media("tablet-lg") {
-    font-size: font-size($theme-font-size-md);
-  }
+.album .tracks .track-list .title-col {
+  flex: 1 1 unit(40);
+  padding-left: unit(1);
+  @include ellipsis;
 }
 
-.album .track-list .data.counter {
-  flex: 0 0 2em;
-  min-width: 2em;
-}
-
-.album .track-list .data.name {
-  flex: 1 1 auto;
-  min-width: 4em;
-}
-
-.album .track-list .data.link {
-  flex: 0 0 10%;
-  min-width: 4em;
-  text-transform: lowercase;
+.album .tracks .track-list .link-col {
+  flex: 0 0 unit(6);
+  padding-left: unit(1);
   text-align: right;
+  text-transform: lowercase;
 }
 
 // Credits
@@ -175,33 +178,14 @@ $album-grid-gap: $theme-site-margin;
 
 .album .credits .credit-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: unit(4);
-  margin-bottom: unit(4);
+  grid-template-columns: repeat(2, 1fr);
 
   & > :nth-child(odd) {
     margin-right: unit(1);
   }
 }
 
-// Praise
-
-.album .praise .title {
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-sm,
-    $theme-line-height-body
-  );
-}
-
-.album .praise .detail {
-  color: color($theme-color-text-weak);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
+.album .credits p {
+  margin-top: unit(2);
+  margin-bottom: unit(2);
 }

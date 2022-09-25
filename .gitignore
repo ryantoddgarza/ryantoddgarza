@@ -1,5 +1,6 @@
 *.cache
 *.env*
 *.log
+lib/
 node_modules/
 public/

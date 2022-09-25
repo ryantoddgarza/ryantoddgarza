@@ -2,7 +2,6 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { ContentfulTSGeneratorPlugin } = require('contentful-ts-generator');
 const {
-  ALBUM,
   ALBUMS_PATH,
   POSTS_PATH,
 } = require('./src/constants');
@@ -14,8 +13,8 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         __DEVELOPMENT__: stage === 'develop' || stage === 'develop-html',
       }),
       new ContentfulTSGeneratorPlugin({
-        schemaFile: 'db/contentful-schema.json',
-        outputDir: 'public/types/contentful',
+        downloadSchema: true,
+        schemaFile: 'lib/contentful-schema.json',
       }),
     ],
     module: {
@@ -33,21 +32,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const { data, errors } = await graphql(`
     {
-      allProjectsJson(filter: { hide: { ne: true } }) {
-        projectEdges: edges {
-          node {
-            type
-            fields {
-              path
-            }
-          }
-        }
-      }
       allContentfulBlogPost {
         postEdges: edges {
           node {
             id
             category
+            slug
+          }
+        }
+      }
+      allContentfulMusicRelease(
+        filter: { type: { eq: "album" } }
+      ) {
+        musicReleaseEdges: edges {
+          node {
+            id
             slug
           }
         }
@@ -61,8 +60,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const {
-    allProjectsJson: { projectEdges },
     allContentfulBlogPost: { postEdges },
+    allContentfulMusicRelease: { musicReleaseEdges },
   } = data;
 
   const templates = {
@@ -73,29 +72,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     album: path.resolve('./src/templates/Album.tsx'),
   };
 
-  // PROJECT PAGES
+  // MUSIC RELEASE PAGES
 
-  projectEdges.forEach(({ node: { type, fields: { path } } }) => {
-    const projectComponents = {
-      default: null,
-      album: templates.album,
-    };
-
-    let component = type ? projectComponents[type] : projectComponents.default;
-
-    if (component !== null) {
-      createPage({
-        path,
-        component,
-        context: {},
-      });
-    }
+  musicReleaseEdges.forEach(({ node: { id, slug } }) => {
+    createPage({
+      path: `/${slug}`,
+      component: templates.album,
+      context: { id },
+    });
   });
 
-  // PROJECT COLLECTIONS
+  // MUSIC RELEASE COLLECTIONS
 
-  const albumsCount = projectEdges.filter(({ node: { type } }) =>
-    type === ALBUM).length;
+  const albums = musicReleaseEdges.filter(({ node: { type } }) => type === 'album');
+  const albumsCount = albums.length;
 
   if (albumsCount) {
     createPage({
@@ -168,23 +158,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 
-  const baseNames = {
-    project: 'projects',
-    page: undefined,
-  };
-
   const main = () => {
-    const isProject = node.internal.type === 'ProjectsJson';
     const isMarkdown = node.internal.type === 'MarkdownRemark';
     const isPortfolio = isMarkdown && node.frontmatter.type === 'portfolio';
     const isContent = isMarkdown && node.frontmatter.type === 'content';
 
-    if (isProject) {
-      createPathField(baseNames.project);
-    }
-
     if (isPortfolio || isContent) {
-      createPathField(baseNames.page);
+      createPathField(undefined);
     }
   }
 

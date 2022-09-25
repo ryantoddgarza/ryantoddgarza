@@ -41,10 +41,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      allContentfulMusicRelease(
+      albums: allContentfulMusicRelease(
         filter: { type: { eq: "album" } }
       ) {
-        musicReleaseEdges: edges {
+        albumEdges: edges {
           node {
             id
             slug
@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const {
     allContentfulBlogPost: { postEdges },
-    allContentfulMusicRelease: { musicReleaseEdges },
+    albums: { albumEdges },
   } = data;
 
   const templates = {
@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // MUSIC RELEASE PAGES
 
-  musicReleaseEdges.forEach(({ node: { id, slug } }) => {
+  albumEdges.forEach(({ node: { id, slug } }) => {
     createPage({
       path: `/${slug}`,
       component: templates.album,
@@ -84,8 +84,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // MUSIC RELEASE COLLECTIONS
 
-  const albums = musicReleaseEdges.filter(({ node: { type } }) => type === 'album');
-  const albumsCount = albums.length;
+  const albumsCount = albumEdges.length;
 
   if (albumsCount) {
     createPage({

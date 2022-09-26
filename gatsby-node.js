@@ -1,5 +1,4 @@
 const path = require('path');
-const { createFilePath } = require('gatsby-source-filesystem');
 const { ContentfulTSGeneratorPlugin } = require('contentful-ts-generator');
 const {
   ALBUMS_PATH,
@@ -137,35 +136,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { category },
     });
   });
-};
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  const createPathField = (basePath) => {
-    const path = createFilePath({
-      node,
-      getNode,
-      basePath,
-      trailingSlash: false,
-    });
-
-    createNodeField({
-      node,
-      name: 'path',
-      value: path,
-    });
-  }
-
-  const main = () => {
-    const isMarkdown = node.internal.type === 'MarkdownRemark';
-    const isPortfolio = isMarkdown && node.frontmatter.type === 'portfolio';
-    const isContent = isMarkdown && node.frontmatter.type === 'content';
-
-    if (isPortfolio || isContent) {
-      createPathField(undefined);
-    }
-  }
-
-  main();
 };

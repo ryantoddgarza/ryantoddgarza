@@ -85,15 +85,15 @@ const DanceCV: FunctionComponent = () => {
             {dance.companies
               .sort((a: any, b: any) =>
                 compare(
-                  a.dates.start.split('-')[0],
-                  b.dates.start.split('-')[0],
+                  a.dates?.start.split('-')[0],
+                  b.dates?.start.split('-')[0],
                   'desc'
                 )
               )
               .sort((a: any, b: any) =>
                 compare(
-                  a.dates.end.split('-')[0] || 9999,
-                  b.dates.end.split('-')[0] || 9999,
+                  a.dates?.end.split('-')[0] || 9999,
+                  b.dates?.end.split('-')[0] || 9999,
                   'desc'
                 )
               )
@@ -119,7 +119,7 @@ const DanceCV: FunctionComponent = () => {
             <h3>Performances</h3>
             {dance.productions
               .sort((a: any, b: any) =>
-                compare(a.performances[0].date, b.performances[0].date, 'desc')
+                compare(a.performances[0]?.date, b.performances[0]?.date, 'desc')
               )
               .map(({ name, company, description, performances }) => (
                 <div key={name}>
@@ -149,7 +149,7 @@ const DanceCV: FunctionComponent = () => {
             <h3>Intensives</h3>
             {dance.intensives
               .sort((a: any, b: any) =>
-                compare(a.dates.start, b.dates.start, 'desc')
+                compare(a.dates?.start, b.dates?.start, 'desc')
               )
               .map(({ name, location, dates, description }) => (
                 <div key={`${name}_${dates.start}`}>

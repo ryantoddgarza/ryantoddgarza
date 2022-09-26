@@ -8,17 +8,18 @@ import type { AlbumProps } from './types';
 const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
   const {
     contentfulMusicRelease: {
-      title,
-      releaseDate,
-      label,
-      format,
-      upc,
-      copyright,
       artist,
-      image,
-      tracks,
+      copyright,
       credits,
+      description,
+      format,
+      image,
+      label,
       links,
+      releaseDate,
+      title,
+      tracks,
+      upc,
       writeups,
     },
   } = data;
@@ -69,6 +70,15 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
               <h1 className="title h1">{title}</h1>
               <h2 className="title h2">{artist?.name}</h2>
             </header>
+            {description && (
+              <section className="section">
+                <div className="description"
+                  dangerouslySetInnerHTML={{
+                    __html: description.childMarkdownRemark.html,
+                  }}
+                />
+              </section>
+            )}
             <section className="section">
               <header className="section-header">
                 <h3 className="title">Info</h3>

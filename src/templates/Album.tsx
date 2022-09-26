@@ -22,6 +22,11 @@ export const pageQuery = graphql`
       format
       upc
       copyright
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
       artist {
         name
       }

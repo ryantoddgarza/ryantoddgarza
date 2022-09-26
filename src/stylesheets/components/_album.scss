@@ -90,6 +90,12 @@ $album-grid-gap: $theme-site-margin;
   max-width: breakpoint("tablet");
 }
 
+// Description
+
+.album .description {
+  @include content;
+}
+
 // List item, link
 
 .album .list-item {

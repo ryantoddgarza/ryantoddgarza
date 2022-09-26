@@ -15,8 +15,8 @@ git clone https://github.com/ryantoddgarza/ryantoddgarza.git
 # Move into the project
 cd ryantoddgarza
 
-# Install dependencies
-npm install
+# Bootstrap project
+npm run bootstrap
 ```
 
 ### Step 2: Configure `env` variables

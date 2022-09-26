@@ -15,7 +15,7 @@
   },
   "navList": [
     {
-      "name": "Software",
+      "name": "Code",
       "url": "https://github.com/ryantoddgarza"
     },
     {
@@ -25,6 +25,10 @@
     {
       "name": "Yoga",
       "url": "/categories/yoga"
+    },
+    {
+      "name": "Dance",
+      "url": "/dance-cv"
     },
     {
       "name": "Blog",

@@ -100,6 +100,60 @@
           "date": "2022-04-30T19:30:00"
         }
       ]
+    },
+    {
+      "name": "Evolution of Gaia",
+      "company": "Flatlands Dance Theatre",
+      "description": "Role: Dancer",
+      "performances": [
+        {
+          "venue": "The Louise Hopkins Underwood Center for the Arts",
+          "space": "Firehouse Theatre",
+          "date": "2022-10-04T19:30:00"
+        },
+        {
+          "venue": "The Louise Hopkins Underwood Center for the Arts",
+          "space": "Firehouse Theatre",
+          "date": "2022-10-05T19:30:00"
+        }
+      ]
+    },
+    {
+      "name": "The Nutcracker",
+      "company": "Ballet Lubbock",
+      "description": "Role: Party parent & dragon attendant",
+      "performances": [
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-07T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-08T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-09T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-10T14:00:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-10T19:30:00"
+        },
+        {
+          "venue": "The Buddy Holly Hall of Performing Arts and Sciences",
+          "space": "Helen DeVitt Jones Theater",
+          "date": "2022-12-11T14:00:00"
+        }
+      ]
     }
   ],
   "intensives": [
@@ -116,7 +170,7 @@
         "start": "2022-06-06T00:00:00",
         "end": "2022-06-11T00:00:00"
       },
-      "description": "With Bernard Gaddis and Yvonne Racz Key."
+      "description": "With Bernard Gaddis, Contemporary West Dance Theatre, and Yvonne Racz Key."
     },
     {
       "name": "Ballet Lubbock Summer 2022 Intensive II",
@@ -146,7 +200,7 @@
         "start": "2022-07-31T00:00:00",
         "end": "2022-08-12T00:00:00"
       },
-      "description": "With Ohad Naharin."
+      "description": "With Ohad Naharin and Batsheva Dance Company."
     }
   ]
 }

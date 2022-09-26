@@ -1,9 +1,6 @@
 const path = require('path');
 const { ContentfulTSGeneratorPlugin } = require('contentful-ts-generator');
-const {
-  ALBUMS_PATH,
-  POSTS_PATH,
-} = require('./src/constants');
+const { ALBUMS_PATH, POSTS_PATH } = require('./src/constants');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
@@ -40,9 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      albums: allContentfulMusicRelease(
-        filter: { type: { eq: "album" } }
-      ) {
+      albums: allContentfulMusicRelease(filter: { type: { eq: "album" } }) {
         albumEdges: edges {
           node {
             id
@@ -97,13 +92,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const categoryMatrix = [];
 
-  postEdges.forEach(({
-    node: {
-      id,
-      category,
-      slug,
-    },
-  }) => {
+  postEdges.forEach(({ node: { id, category, slug } }) => {
     if (typeof category === 'string') {
       categoryMatrix.push(category);
     }

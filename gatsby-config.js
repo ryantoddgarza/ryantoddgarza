@@ -111,6 +111,7 @@ module.exports = {
         icon: site.favicon,
       },
     },
+    'gatsby-plugin-netlify',
     // 5. last priority plugins
     'gatsby-plugin-sitemap',
     {

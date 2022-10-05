@@ -1,3 +1,5 @@
+@use "rtg-design-web" as *;
+
 .markdown {
   line-height: line-height($theme-line-height-body);
   word-wrap: break-word;
@@ -12,6 +14,6 @@
   }
 
   .gatsby-highlight pre {
-    margin-top: unit(2);
+    margin-top: units(2);
   }
 }

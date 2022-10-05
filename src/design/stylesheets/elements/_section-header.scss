@@ -1,15 +1,17 @@
+@use "rtg-design-web" as *;
+
 .section-header {
-  margin-top: unit(4);
-  margin-bottom: unit(4);
+  margin-top: units(4);
+  margin-bottom: units(4);
 
   @include at-media("tablet") {
-    margin-top: unit(5);
-    margin-bottom: unit(5);
+    margin-top: units(5);
+    margin-bottom: units(5);
   }
 
   @include at-media("desktop") {
-    margin-top: unit(6);
-    margin-bottom: unit(6);
+    margin-top: units(6);
+    margin-bottom: units(6);
   }
 }
 

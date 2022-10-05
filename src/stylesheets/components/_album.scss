@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "rtg-design-web" as *;
 
 $album-grid-gap: $theme-site-margin;
 
@@ -22,7 +23,7 @@ $album-grid-gap: $theme-site-margin;
   padding-right: $album-grid-gap * 0.5;
 
   &:not(:first-child) {
-    margin-top: unit(2);
+    margin-top: units(2);
   }
 
   @include at-media("tablet-lg") {
@@ -47,7 +48,7 @@ $album-grid-gap: $theme-site-margin;
 // Header
 
 .album .header {
-  margin-bottom: unit(6);
+  margin-bottom: units(6);
 }
 
 .album .header .title.h1 {
@@ -60,7 +61,7 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .header .title.h2 {
-  margin-top: unit(2);
+  margin-top: units(2);
   @include typeset(
     $theme-font-role-heading,
     $theme-font-size-md,
@@ -71,7 +72,7 @@ $album-grid-gap: $theme-site-margin;
 // Section header
 
 .album .section-header {
-  margin-bottom: unit(4);
+  margin-bottom: units(4);
 }
 
 .album .section-header .title {
@@ -103,7 +104,7 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .list-item.xs {
-  margin-bottom: unit(1);
+  margin-bottom: units(1);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-xs,
@@ -112,7 +113,7 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .list-item.sm {
-  margin-bottom: unit(1.5);
+  margin-bottom: units(1.5);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-sm,
@@ -121,7 +122,7 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .list-item.md {
-  margin-bottom: unit(2);
+  margin-bottom: units(2);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-md,
@@ -156,18 +157,18 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .tracks .track-list .index-col {
-  flex: 0 0 unit(3);
+  flex: 0 0 units(3);
 }
 
 .album .tracks .track-list .title-col {
-  flex: 1 1 unit(40);
-  padding-left: unit(1);
+  flex: 1 1 units(40);
+  padding-left: units(1);
   @include ellipsis;
 }
 
 .album .tracks .track-list .link-col {
-  flex: 0 0 unit(6);
-  padding-left: unit(1);
+  flex: 0 0 units(6);
+  padding-left: units(1);
   text-align: right;
   text-transform: lowercase;
 }
@@ -187,11 +188,11 @@ $album-grid-gap: $theme-site-margin;
   grid-template-columns: repeat(2, 1fr);
 
   & > :nth-child(odd) {
-    margin-right: unit(1);
+    margin-right: units(1);
   }
 }
 
 .album .credits p {
-  margin-top: unit(2);
-  margin-bottom: unit(2);
+  margin-top: units(2);
+  margin-bottom: units(2);
 }

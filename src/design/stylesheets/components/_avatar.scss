@@ -1,3 +1,5 @@
+@use "rtg-design-web" as *;
+
 .avatar {
   overflow: hidden;
   object-fit: cover;
@@ -7,21 +9,21 @@
 // Size variants
 
 .avatar.xs {
-  width: unit($theme-avatar-size-xs);
-  height: unit($theme-avatar-size-xs);
+  width: units($theme-avatar-size-xs);
+  height: units($theme-avatar-size-xs);
 }
 
 .avatar.sm {
-  width: unit($theme-avatar-size-sm);
-  height: unit($theme-avatar-size-sm);
+  width: units($theme-avatar-size-sm);
+  height: units($theme-avatar-size-sm);
 }
 
 .avatar.md {
-  width: unit($theme-avatar-size-md);
-  height: unit($theme-avatar-size-md);
+  width: units($theme-avatar-size-md);
+  height: units($theme-avatar-size-md);
 }
 
 .avatar.lg {
-  width: unit($theme-avatar-size-lg);
-  height: unit($theme-avatar-size-lg);
+  width: units($theme-avatar-size-lg);
+  height: units($theme-avatar-size-lg);
 }

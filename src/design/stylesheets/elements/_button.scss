@@ -1,10 +1,12 @@
+@use "rtg-design-web" as *;
+
 .button {
   position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding-left: unit(2);
-  padding-right: unit(2);
+  padding-left: units(2);
+  padding-right: units(2);
   vertical-align: bottom;
   white-space: nowrap;
   border: none;
@@ -15,15 +17,15 @@
 // Size variants
 
 .button.small {
-  height: unit($theme-button-height-small);
+  height: units($theme-button-height-small);
 }
 
 .button.medium {
-  height: unit($theme-button-height-medium);
+  height: units($theme-button-height-medium);
 }
 
 .button.large {
-  height: unit($theme-button-height-large);
+  height: units($theme-button-height-large);
 }
 
 // Theme variants
@@ -70,27 +72,27 @@
 }
 
 .button.icon-btn.small {
-  width: unit($theme-button-height-small);
+  width: units($theme-button-height-small);
 }
 
 .button.icon-btn.medium {
-  width: unit($theme-button-height-medium);
+  width: units($theme-button-height-medium);
 }
 
 .button.icon-btn.large {
-  width: unit($theme-button-height-large);
+  width: units($theme-button-height-large);
 }
 
 // Group
 
 .button-group {
-  margin-bottom: unit(-2);
+  margin-bottom: units(-2);
 }
 
 .button-group .button {
-  margin-bottom: unit(2);
+  margin-bottom: units(2);
 
   &:not(:last-child) {
-    margin-right: unit(2);
+    margin-right: units(2);
   }
 }

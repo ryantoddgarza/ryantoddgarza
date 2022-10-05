@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "rtg-design-web" as *;
 
 .hero .content {
   @include at-media("tablet") {
@@ -24,7 +25,7 @@
 }
 
 .hero .copy {
-  margin-top: unit(4);
+  margin-top: units(4);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-lg,
@@ -33,5 +34,5 @@
 }
 
 .hero .cta-row {
-  margin-top: unit(4);
+  margin-top: units(4);
 }

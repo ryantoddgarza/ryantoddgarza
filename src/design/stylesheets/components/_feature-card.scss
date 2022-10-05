@@ -1,7 +1,9 @@
+@use "rtg-design-web" as *;
+
 .feature-card {
   @include at-media("tablet") {
-    padding-right: unit(5);
-    padding-bottom: unit(5);
+    padding-right: units(5);
+    padding-bottom: units(5);
   }
 }
 
@@ -15,7 +17,7 @@
 }
 
 .feature-card .body {
-  margin-top: unit(2);
+  margin-top: units(2);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-md,

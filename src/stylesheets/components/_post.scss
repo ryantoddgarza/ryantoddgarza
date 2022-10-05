@@ -1,3 +1,5 @@
+@use "rtg-design-web" as *;
+
 // Article
 
 .post .header .title {
@@ -10,7 +12,7 @@
 }
 
 .post .header .metadata {
-  margin-top: unit(2);
+  margin-top: units(2);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-xs,
@@ -34,13 +36,13 @@
 }
 
 .post .header .image {
-  margin-top: unit(6);
+  margin-top: units(6);
 }
 
 .post .content {
-  margin-top: unit(6);
+  margin-top: units(6);
 }
 
 .post .footer {
-  margin-top: unit(6);
+  margin-top: units(6);
 }

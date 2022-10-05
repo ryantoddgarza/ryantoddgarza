@@ -1,3 +1,5 @@
+@use "rtg-design-web" as *;
+
 .error-page {
   max-width: breakpoint("phone");
 }
@@ -21,7 +23,7 @@
 }
 
 .error-page .message > .paragraph {
-  margin-top: unit(1.5);
+  margin-top: units(1.5);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-md,

@@ -1,3 +1,5 @@
+@use "rtg-design-web" as *;
+
 .cv a {
   color: color($theme-color-text);
 
@@ -16,7 +18,7 @@
 }
 
 .cv .description {
-  margin-top: unit(1);
+  margin-top: units(1);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-sm,

@@ -1,6 +1,8 @@
+@use "rtg-design-web" as *;
+
 .icon {
-  width: unit(2.5);
-  height: unit(2.5);
+  width: units(2.5);
+  height: units(2.5);
 }
 
 .icon svg,

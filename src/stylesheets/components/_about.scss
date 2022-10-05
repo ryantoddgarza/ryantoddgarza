@@ -1,7 +1,9 @@
-$about-col-gap: unit(4);
+@use "rtg-design-web" as *;
+
+$about-col-gap: units(4);
 
 .about .header {
-  margin-bottom: unit(6);
+  margin-bottom: units(6);
 }
 
 .about .profile-photo {

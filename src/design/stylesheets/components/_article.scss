@@ -1,9 +1,11 @@
+@use "rtg-design-web" as *;
+
 .article {
-  padding-top: unit($theme-article-margin-phone);
-  padding-bottom: unit($theme-article-margin-phone);
+  padding-top: units($theme-article-margin-phone);
+  padding-bottom: units($theme-article-margin-phone);
 
   @include at-media("tablet") {
-    padding-top: unit($theme-article-margin-tablet);
-    padding-bottom: unit($theme-article-margin-tablet);
+    padding-top: units($theme-article-margin-tablet);
+    padding-bottom: units($theme-article-margin-tablet);
   }
 }

@@ -1,7 +1,9 @@
+@use "rtg-design-web" as *;
+
 body {
-  font-family: font-family("helvetica");
+  font-family: family("body");
 }
 
 code {
-  font-family: font-family("monospace");
+  font-family: family("code");
 }

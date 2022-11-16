@@ -7,11 +7,19 @@ import { DANCE_CV_PATH } from '../../constants';
 
 const About: FunctionComponent = () => {
   const {
-    about: { html },
+    contentfulTextBlock: {
+      content: {
+        childMarkdownRemark: { html },
+      },
+    },
   } = useStaticQuery(graphql`
     query AboutQuery {
-      about: markdownRemark(frontmatter: { name: { eq: "about" } }) {
-        html
+      contentfulTextBlock(contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }) {
+        content {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   `);
@@ -48,15 +56,11 @@ const About: FunctionComponent = () => {
             <div className="row">
               <div
                 className="col markdown"
-                dangerouslySetInnerHTML={{
-                  __html: col0,
-                }}
+                dangerouslySetInnerHTML={{ __html: col0 }}
               />
               <div
                 className="col markdown"
-                dangerouslySetInnerHTML={{
-                  __html: col1,
-                }}
+                dangerouslySetInnerHTML={{ __html: col1 }}
               />
             </div>
           </div>

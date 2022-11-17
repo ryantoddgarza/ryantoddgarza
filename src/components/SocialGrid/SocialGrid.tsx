@@ -26,7 +26,7 @@ const SocialGrid: FunctionComponent<SocialGridProps> = ({
                 className="link"
               >
                 <div className="button icon-btn ghost medium">
-                  <div className="icon">{icon}</div>
+                  <div className="icon small">{icon}</div>
                 </div>
               </a>
             </div>

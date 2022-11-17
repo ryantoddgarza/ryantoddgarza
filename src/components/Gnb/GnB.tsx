@@ -2,8 +2,9 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import {
   ABOUT_PATH,
-  MUSIC_PATH,
+  CODE_PATH,
   CONTACT_PATH,
+  MUSIC_PATH,
   POSTS_PATH,
 } from '../../constants';
 import MobileNav from './MobileNav';
@@ -29,10 +30,11 @@ const Gnb: FunctionComponent<GnbProps> = ({
     submenu: { list: categories },
   });
   const music = NavigationItem({ name: 'Music', url: MUSIC_PATH });
+  const code = NavigationItem({ name: 'Code', url: CODE_PATH });
   const about = NavigationItem({ name: 'About', url: ABOUT_PATH });
   const contact = NavigationItem({ name: 'Contact', url: CONTACT_PATH });
 
-  const mainNav: NavItem[] = [hasPost && posts, hasAlbum && music, about];
+  const mainNav: NavItem[] = [hasPost && posts, code, hasAlbum && music, about];
   const mobileNavAppend: NavItem[] = [contact];
 
   const mobileNavList = [...mainNav, ...mobileNavAppend];

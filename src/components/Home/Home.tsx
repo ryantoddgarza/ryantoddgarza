@@ -6,33 +6,29 @@ import SEO from '../SEO';
 
 const Home: FunctionComponent = () => {
   const {
-    content: {
-      childResourcesJson: { hero, navList, features },
-    },
+    content: { hero, navList, features },
   } = useStaticQuery(graphql`
     query HomeQuery {
-      content: file(name: { eq: "content-home" }) {
-        childResourcesJson {
-          hero {
-            copy
-            heading
-            btn1 {
-              name
-              url
-            }
-            btn2 {
-              name
-              url
-            }
-          }
-          navList {
+      content: resourcesJson(name: { eq: "home" }) {
+        hero {
+          copy
+          heading
+          btn1 {
             name
             url
           }
-          features {
-            body
-            heading
+          btn2 {
+            name
+            url
           }
+        }
+        navList {
+          name
+          url
+        }
+        features {
+          body
+          heading
         }
       }
     }

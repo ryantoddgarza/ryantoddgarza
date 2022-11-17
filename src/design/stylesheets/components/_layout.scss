@@ -1,21 +1,21 @@
 @use "rtg-design-web" as *;
 
 .layout--margin {
-  padding-top: units($theme-layout-margin-phone);
-  padding-bottom: units($theme-layout-margin-phone);
+  margin-top: units($theme-layout-margin-phone);
+  margin-bottom: units($theme-layout-margin-phone);
 
   @include at-media("tablet") {
-    padding-top: units($theme-layout-margin-tablet);
-    padding-bottom: units($theme-layout-margin-tablet);
+    margin-top: units($theme-layout-margin-tablet);
+    margin-bottom: units($theme-layout-margin-tablet);
   }
 
   @include at-media("desktop") {
-    padding-top: units($theme-layout-margin-desktop);
-    padding-bottom: units($theme-layout-margin-desktop);
+    margin-top: units($theme-layout-margin-desktop);
+    margin-bottom: units($theme-layout-margin-desktop);
   }
 
   @include at-media("widescreen") {
-    padding-top: units($theme-layout-margin-widescreen);
-    padding-bottom: units($theme-layout-margin-widescreen);
+    margin-top: units($theme-layout-margin-widescreen);
+    margin-bottom: units($theme-layout-margin-widescreen);
   }
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FaGithub } from 'react-icons/fa';
-import { GITHUB_ID } from '../../constants';
 import { Hero } from '../../design/components';
-import { socialGridThemes } from '../SocialGrid';
+import FeaturedProjectCard from '../FeaturedProjectCard';
 import SEO from '../SEO';
+import type { ProgrammingProject } from '../../../lib/contentful/generated';
 
 const Code: FunctionComponent = () => {
   const {
     content: { title, hero },
+    allContentfulProgrammingProject: { projects },
   } = useStaticQuery(graphql`
     query CodeQuery {
       content: resourcesJson(name: { eq: "code" }) {
@@ -17,6 +17,22 @@ const Code: FunctionComponent = () => {
         hero {
           heading
           body
+        }
+      }
+      allContentfulProgrammingProject(
+        sort: { fields: [featured, date], order: [DESC, DESC] }
+      ) {
+        projects: nodes {
+          name
+          featured
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectLink
+          gitHubLink
+          techList
         }
       }
     }
@@ -31,24 +47,30 @@ const Code: FunctionComponent = () => {
         </section>
         <section className="section light layout--margin">
           <header className="section-header">
-            <h2 className="section-header title h2">GitHub</h2>
+            <h2 className="section-header title h2">Recent Projects</h2>
           </header>
-          <div className={`social-grid ${socialGridThemes.DARK}`}>
-            <div className="item">
-              <a
-                href={`https://github.com/${GITHUB_ID}`}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="link"
-              >
-                <div className="button icon-btn ghost large">
-                  <div className="icon large">
-                    <FaGithub />
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+          {projects.map(
+            ({
+              name,
+              featured,
+              projectLink,
+              gitHubLink,
+              techList,
+              description: {
+                childMarkdownRemark: { html },
+              },
+            }: ProgrammingProject) => (
+              <FeaturedProjectCard
+                key={name}
+                name={name}
+                featured={featured}
+                descriptionHTML={html}
+                projectLink={projectLink}
+                gitHubLink={gitHubLink}
+                techList={techList}
+              />
+            )
+          )}
         </section>
       </div>
     </div>

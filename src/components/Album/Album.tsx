@@ -72,7 +72,8 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
             </header>
             {description && (
               <section className="section">
-                <div className="description"
+                <div
+                  className="description"
                   dangerouslySetInnerHTML={{
                     __html: description.childMarkdownRemark.html,
                   }}

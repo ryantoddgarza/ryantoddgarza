@@ -119,7 +119,11 @@ const DanceCV: FunctionComponent = () => {
             <h3>Performances</h3>
             {dance.productions
               .sort((a: any, b: any) =>
-                compare(a.performances[0]?.date, b.performances[0]?.date, 'desc')
+                compare(
+                  a.performances[0]?.date,
+                  b.performances[0]?.date,
+                  'desc'
+                )
               )
               .map(({ name, company, description, performances }) => (
                 <div key={name}>

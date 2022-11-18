@@ -4,7 +4,7 @@ import type { HeroProps } from './types';
 
 const Hero: FunctionComponent<HeroProps> = ({
   heading,
-  copy,
+  body,
   children,
 }: HeroProps) => {
   const getHeroClasses = () => {
@@ -16,7 +16,7 @@ const Hero: FunctionComponent<HeroProps> = ({
     <div className={getHeroClasses()}>
       <div className="content">
         <div className="heading">{heading}</div>
-        <p className="copy">{copy}</p>
+        <p className="body">{body}</p>
         {children}
       </div>
     </div>

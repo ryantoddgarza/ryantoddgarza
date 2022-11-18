@@ -2,6 +2,6 @@ import type { ReactNode } from 'react';
 
 export interface HeroProps {
   heading: string;
-  copy: string;
+  body: string;
   children?: ReactNode;
 }

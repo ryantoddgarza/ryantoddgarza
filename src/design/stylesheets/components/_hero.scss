@@ -24,15 +24,11 @@
   }
 }
 
-.hero .copy {
+.hero .body {
   margin-top: units(4);
   @include typeset(
     $theme-font-role-body,
     $theme-font-size-lg,
     $theme-line-height-extended
   );
-}
-
-.hero .cta-row {
-  margin-top: units(4);
 }

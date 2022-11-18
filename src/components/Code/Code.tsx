@@ -16,7 +16,7 @@ const Code: FunctionComponent = () => {
         title
         hero {
           heading
-          copy
+          body
         }
       }
     }
@@ -27,7 +27,7 @@ const Code: FunctionComponent = () => {
       <SEO title={title} />
       <div className="container">
         <section className="section light layout--margin">
-          <Hero heading={hero.heading} copy={hero.copy} />
+          <Hero heading={hero.heading} body={hero.body} />
         </section>
         <section className="section light layout--margin">
           <header className="section-header">

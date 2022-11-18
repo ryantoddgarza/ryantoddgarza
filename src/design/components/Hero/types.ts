@@ -1,11 +1,7 @@
-interface HeroButton {
-  name: string;
-  url: string;
-}
+import type { ReactNode } from 'react';
 
 export interface HeroProps {
   heading: string;
   copy: string;
-  btn1?: HeroButton;
-  btn2?: HeroButton;
+  children?: ReactNode;
 }

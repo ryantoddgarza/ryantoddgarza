@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { FeatureGrid, Hero, List, listSize } from '../../design/components';
 import SEO from '../SEO';
 
@@ -47,12 +47,16 @@ const Home: FunctionComponent = () => {
       <SEO />
       <section className="layout--margin">
         <div className="container">
-          <Hero
-            heading={hero.heading}
-            copy={hero.copy}
-            btn1={{ name: hero.btn1.name, url: hero.btn1.url }}
-            btn2={{ name: hero.btn2.name, url: hero.btn2.url }}
-          />
+          <Hero heading={hero.heading} copy={hero.copy}>
+            <div className="cta-row button-group">
+              <Link className="button large dark" to={hero.btn1.url}>
+                {hero.btn1.name}
+              </Link>
+              <Link className="button large light" to={hero.btn2.url}>
+                {hero.btn2.name}
+              </Link>
+            </div>
+          </Hero>
         </div>
       </section>
       <section className="layout--margin">

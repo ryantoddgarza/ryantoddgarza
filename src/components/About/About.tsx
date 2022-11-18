@@ -12,6 +12,7 @@ const About: FunctionComponent = () => {
         childMarkdownRemark: { html },
       },
     },
+    technicalCV,
   } = useStaticQuery(graphql`
     query AboutQuery {
       contentfulTextBlock(contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }) {
@@ -19,6 +20,13 @@ const About: FunctionComponent = () => {
           childMarkdownRemark {
             html
           }
+        }
+      }
+      technicalCV: contentfulAsset(
+        contentful_id: { eq: "7DcZhy0JJdUllG60wwoeC6" }
+      ) {
+        file {
+          url
         }
       }
     }
@@ -69,6 +77,14 @@ const About: FunctionComponent = () => {
       <section className="layout--margin">
         <div className="container widescreen">
           <div className="button-group">
+            <a
+              className="button large light"
+              href={technicalCV.file.url}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Technical CV
+            </a>
             <Link className="button large light" to={DANCE_CV_PATH}>
               Dance CV
             </Link>

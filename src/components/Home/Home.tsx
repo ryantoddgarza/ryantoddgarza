@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { List, listSize } from '../../design/components';
 import SEO from '../SEO';
 
@@ -21,7 +21,7 @@ const Home: FunctionComponent = () => {
   const navNodes = navList.map(
     ({ name, url }: { name: string; url: string }) => (
       <div key={name}>
-        <a href={url}>{name}</a>
+        <Link to={url}>{name}</Link>
       </div>
     )
   );

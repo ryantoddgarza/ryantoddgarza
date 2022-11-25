@@ -27,3 +27,9 @@ npm run bootstrap
 | `CONTENTFUL_ACCESS_TOKEN`     | The Contentful Content API access token.             |
 | `CONTENTFUL_SPACE_ID`         | The Contentful Space ID.                             |
 | `CONTENTFUL_MANAGEMENT_TOKEN` | Your Contentful Content Management API access token. |
+
+### Step 3: Start the development server
+
+```shell
+npm run develop
+```

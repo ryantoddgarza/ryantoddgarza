@@ -20,7 +20,13 @@ const FeaturedProjectCard: FunctionComponent<FeaturedProjectCardProps> = ({
     <div className={getCardClasses()}>
       {featured && <p className="overline">Featured Project</p>}
       <h3 className="title">
-        <a href={projectLink}>{name}</a>
+        {projectLink ? (
+          <a href={projectLink} target="_blank" rel="noreferrer noopener">
+            {name}
+          </a>
+        ) : (
+          name
+        )}
       </h3>
       <div
         className="description"

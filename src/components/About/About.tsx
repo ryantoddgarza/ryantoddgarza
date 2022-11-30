@@ -1,9 +1,8 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../SEO';
-import { DANCE_CV_PATH } from '../../constants';
 
 const About: FunctionComponent = () => {
   const {
@@ -13,6 +12,7 @@ const About: FunctionComponent = () => {
       },
     },
     technicalCV,
+    artisticCV,
   } = useStaticQuery(graphql`
     query AboutQuery {
       contentfulTextBlock(contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }) {
@@ -24,6 +24,13 @@ const About: FunctionComponent = () => {
       }
       technicalCV: contentfulAsset(
         contentful_id: { eq: "7DcZhy0JJdUllG60wwoeC6" }
+      ) {
+        file {
+          url
+        }
+      }
+      artisticCV: contentfulAsset(
+        contentful_id: { eq: "25YrXSisO1MVgwNiXxhgl4" }
       ) {
         file {
           url
@@ -85,9 +92,14 @@ const About: FunctionComponent = () => {
             >
               Technical CV
             </a>
-            <Link className="button large light" to={DANCE_CV_PATH}>
-              Dance CV
-            </Link>
+            <a
+              className="button large light"
+              href={artisticCV.file.url}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Artistic CV
+            </a>
           </div>
         </div>
       </section>

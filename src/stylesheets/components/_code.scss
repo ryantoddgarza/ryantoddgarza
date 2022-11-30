@@ -1,0 +1,6 @@
+@use "rtg-design-web" as *;
+
+.code .projects {
+  width: 100%;
+  max-width: breakpoint("phone-lg");
+}

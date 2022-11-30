@@ -42,10 +42,10 @@ const Code: FunctionComponent = () => {
     <div className="code">
       <SEO title={title} />
       <div className="container">
-        <section className="section light layout--margin">
+        <div className="section light layout--margin">
           <Hero heading={hero.heading} body={hero.body} />
-        </section>
-        <section className="section light layout--margin">
+        </div>
+        <div className="projects section light layout--margin">
           <header className="section-header">
             <h2 className="section-header title h2">Recent Projects</h2>
           </header>
@@ -71,7 +71,7 @@ const Code: FunctionComponent = () => {
               />
             )
           )}
-        </section>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 @use "rtg-design-web" as *;
 
 .featured-project-card {
-  max-width: breakpoint("phone-lg");
-
   &:not(:last-of-type) {
     margin-bottom: units(10);
   }

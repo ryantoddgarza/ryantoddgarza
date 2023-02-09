@@ -36,10 +36,7 @@ const FooterDirectory: FunctionComponent<FooterDirectoryProps> = ({
     },
     {
       title: 'Extras',
-      items: [
-        { name: 'Wiki', url: 'https://wiki.ryantoddgarza.com' },
-        { name: 'Study Cards', url: 'https://study.ryantoddgarza.com' },
-      ],
+      items: [{ name: 'Wiki', url: 'https://wiki.ryantoddgarza.com' }],
     },
   ];
 

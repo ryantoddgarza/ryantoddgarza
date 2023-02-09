@@ -1,91 +1,150 @@
 @use "rtg-design-web" as *;
 
 .featured-project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  padding-top: units(4);
+  padding-bottom: units(4);
+  padding-left: units(4);
+  padding-right: units(4);
+  background-color: color($theme-color-background-weak);
+  overflow: hidden;
+
   &:not(:last-of-type) {
     margin-bottom: units(10);
   }
-}
 
-// Header
+  // Layout
 
-.featured-project-card .title {
-  margin-bottom: units(3);
-  font-size: font-size($theme-font-size-xl);
-  font-weight: font-weight($theme-font-weight-bold);
-}
+  .project-content {
+    position: relative;
+    grid-area: 1 / -1;
+    z-index: 2;
+    background-color: color(transparent);
 
-.featured-project-card .overline {
-  margin-bottom: units(1);
-  @include typeset(
-    $theme-font-role-code,
-    $theme-font-size-xs,
-    $theme-line-height-heading
-  );
-}
+    @include at-media("tablet") {
+      grid-area: 1 / 1 / -1 / 9;
+    }
 
-// Description
+    @include at-media("tablet-lg") {
+      grid-area: 1 / 1 / -1 / 8;
+    }
 
-.featured-project-card .description {
-  padding: units(3);
-  border-color: color($theme-color-background-inverse);
-  border-width: 2px;
-  border-style: solid;
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-md,
-    $theme-line-height-body
-  );
-}
-
-.featured-project-card .description p {
-  margin-bottom: units(2);
-
-  &:last-child {
-    margin-bottom: 0;
+    @include at-media("desktop") {
+      grid-area: 1 / 1 / -1 / 7;
+    }
   }
-}
 
-.featured-project-card .description a {
-  color: color($theme-color-primary);
-  @include transition(color);
+  .project-image {
+    position: relative;
+    grid-area: 1 / -1;
+    z-index: 1;
+    background-color: color($theme-color-background);
+    box-shadow: 0 0 units(4) color($theme-color-background);
+    border-radius: units(0.5);
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
 
-  &:hover {
-    color: color($theme-color-text);
+    @include at-media("tablet") {
+      grid-area: 1 / 6 / -1 / -1;
+      visibility: visible;
+      height: auto;
+    }
   }
-}
 
-// Tech list
+  // Header
 
-.featured-project-card .tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: units(3);
-  @include typeset(
-    $theme-font-role-code,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
-}
+  .title {
+    margin-bottom: units(3);
+    font-weight: font-weight($theme-font-weight-bold);
+    @include typeset(
+      $theme-font-role-heading,
+      $theme-font-size-xl,
+      $theme-line-height-heading
+    );
+  }
 
-.featured-project-card .tech-list .tag {
-  margin-right: units(2);
-  margin-bottom: units(0.5);
-}
+  .overline {
+    margin-bottom: units(1);
+    @include typeset(
+      $theme-font-role-code,
+      $theme-font-size-xs,
+      $theme-line-height-heading
+    );
+  }
 
-// Links
+  // Description
 
-.featured-project-card .links {
-  display: flex;
-  margin-top: units(2);
-  margin-left: units(-1);
-}
+  .description {
+    background-color: color($theme-color-background-weak);
+    @include typeset(
+      $theme-font-role-body,
+      $theme-font-size-md,
+      $theme-line-height-body
+    );
 
-.featured-project-card .links .link {
-  padding: units(1);
-  color: color($theme-color-text);
-  @include transition(color);
+    @include at-media("tablet") {
+      padding: units(3);
+      border-color: color($theme-color-background-inverse);
+      border-width: 2px;
+      border-style: solid;
+    }
+  }
 
-  &:hover {
+  .description p {
+    margin-bottom: units(2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .description a {
     color: color($theme-color-primary);
+    @include transition(color);
+
+    &:hover {
+      color: color($theme-color-text);
+    }
+  }
+
+  // Tech list
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: units(3);
+    @include typeset(
+      $theme-font-role-code,
+      $theme-font-size-xs,
+      $theme-line-height-body
+    );
+  }
+
+  .tech-list .tag {
+    margin-right: units(2);
+    margin-bottom: units(0.5);
+  }
+
+  // Links
+
+  .links {
+    display: flex;
+    margin-top: units(2);
+    margin-bottom: units(-1);
+    margin-left: units(-1);
+  }
+
+  .links a {
+    padding: units(1);
+    color: color($theme-color-text);
+    @include transition(color);
+
+    &:hover {
+      color: color($theme-color-primary);
+    }
   }
 }

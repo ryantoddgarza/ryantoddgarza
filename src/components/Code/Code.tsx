@@ -3,13 +3,15 @@ import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Hero } from '../../design/components';
 import FeaturedProjectCard from '../FeaturedProjectCard';
+import PrgmgProjectCard from '../PrgmgProjectCard';
 import SEO from '../SEO';
 import type { ProgrammingProject } from '../../../lib/contentful/generated';
 
 const Code: FunctionComponent = () => {
   const {
     content: { title, hero },
-    allContentfulProgrammingProject: { projects },
+    featuredProjects,
+    nonFeaturedProjects,
   } = useStaticQuery(graphql`
     query CodeQuery {
       content: resourcesJson(name: { eq: "code" }) {
@@ -19,12 +21,32 @@ const Code: FunctionComponent = () => {
           body
         }
       }
-      allContentfulProgrammingProject(
-        sort: { fields: [featured, date], order: [DESC, DESC] }
+      featuredProjects: allContentfulProgrammingProject(
+        filter: { featured: { eq: true } }
+        sort: { fields: [date], order: [DESC] }
       ) {
-        projects: nodes {
+        nodes {
           name
-          featured
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          projectLink
+          gitHubLink
+          techList
+          image {
+            gatsbyImageData(width: 1920, quality: 80, formats: JPG)
+            title
+          }
+        }
+      }
+      nonFeaturedProjects: allContentfulProgrammingProject(
+        filter: { featured: { eq: false } }
+        sort: { fields: [date], order: [DESC] }
+      ) {
+        nodes {
+          name
           description {
             childMarkdownRemark {
               html
@@ -45,32 +67,64 @@ const Code: FunctionComponent = () => {
         <div className="section light layout--margin">
           <Hero heading={hero.heading} body={hero.body} />
         </div>
-        <div className="projects section light layout--margin">
+        <div className="section light layout--margin">
+          <div className="featured-projects">
+            <header className="section-header">
+              <h2 className="section-header title h2">Featured Projects</h2>
+            </header>
+            <div>
+              {featuredProjects.nodes.map(
+                ({
+                  name,
+                  projectLink,
+                  gitHubLink,
+                  techList,
+                  description: {
+                    childMarkdownRemark: { html },
+                  },
+                  image,
+                }: ProgrammingProject) => (
+                  <FeaturedProjectCard
+                    key={name}
+                    name={name}
+                    descriptionHTML={html}
+                    projectLink={projectLink}
+                    gitHubLink={gitHubLink}
+                    techList={techList}
+                    image={image?.gatsbyImageData}
+                    imageAlt={image?.title}
+                  />
+                )
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="section light layout--margin">
           <header className="section-header">
-            <h2 className="section-header title h2">Recent Projects</h2>
+            <h2 className="section-header title h2">Other Recent Projects</h2>
           </header>
-          {projects.map(
-            ({
-              name,
-              featured,
-              projectLink,
-              gitHubLink,
-              techList,
-              description: {
-                childMarkdownRemark: { html },
-              },
-            }: ProgrammingProject) => (
-              <FeaturedProjectCard
-                key={name}
-                name={name}
-                featured={featured}
-                descriptionHTML={html}
-                projectLink={projectLink}
-                gitHubLink={gitHubLink}
-                techList={techList}
-              />
-            )
-          )}
+          <div className="prgmg-project-grid">
+            {nonFeaturedProjects.nodes.map(
+              ({
+                name,
+                projectLink,
+                gitHubLink,
+                techList,
+                description: {
+                  childMarkdownRemark: { html },
+                },
+              }: ProgrammingProject) => (
+                <PrgmgProjectCard
+                  key={name}
+                  name={name}
+                  descriptionHTML={html}
+                  projectLink={projectLink}
+                  gitHubLink={gitHubLink}
+                  techList={techList}
+                />
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>

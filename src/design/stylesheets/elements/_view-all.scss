@@ -1,10 +1,8 @@
 .view-all {
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-md);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-md,
-    $theme-line-height-body
-  );
+  line-height: line-height($theme-line-height-body);
 }
 
 .view-all a {

@@ -16,19 +16,15 @@
 }
 
 .section-header.title.h1 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-3xl,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
 }
 
 .section-header.title.h2 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-2xl);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-2xl,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
 }

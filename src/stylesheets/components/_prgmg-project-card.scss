@@ -32,22 +32,19 @@
 
   .title {
     margin-bottom: units(3);
+    margin-bottom: units(3);
+    font-family: font-family("heading");
+    font-size: font-size($theme-font-size-lg);
     font-weight: font-weight($theme-font-weight-bold);
-    @include typeset(
-      $theme-font-role-heading,
-      $theme-font-size-lg,
-      $theme-line-height-heading
-    );
+    line-height: line-height($theme-line-height-heading);
   }
 
   // Description
 
   .description {
-    @include typeset(
-      $theme-font-role-body,
-      $theme-font-size-md,
-      $theme-line-height-body
-    );
+    font-family: font-family("body");
+    font-size: font-size($theme-font-size-md);
+    line-height: line-height($theme-line-height-body);
   }
 
   .description p {
@@ -73,11 +70,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: units(3);
-    @include typeset(
-      $theme-font-role-code,
-      $theme-font-size-xs,
-      $theme-line-height-body
-    );
+    font-family: font-family("code");
+    font-size: font-size($theme-font-size-xs);
+    line-height: line-height($theme-line-height-body);
   }
 
   .tech-list .tag {

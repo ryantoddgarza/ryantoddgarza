@@ -52,21 +52,18 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .header .title.h1 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-3xl,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
 }
 
 .album .header .title.h2 {
   margin-top: units(2);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-md,
-    $theme-line-height-heading
-  );
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-md);
+  font-weight: font-weight($theme-font-weight-medium);
+  line-height: line-height($theme-line-height-heading);
 }
 
 // Section header
@@ -76,13 +73,11 @@ $album-grid-gap: $theme-site-margin;
 }
 
 .album .section-header .title {
-  text-transform: uppercase;
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-sm);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-sm,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
 }
 
 // Cover
@@ -100,34 +95,24 @@ $album-grid-gap: $theme-site-margin;
 // List item, link
 
 .album .list-item {
+  font-family: font-family("body");
+  line-height: line-height($theme-line-height-body);
   @include ellipsis;
 }
 
 .album .list-item.xs {
   margin-bottom: units(1);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
+  font-size: font-size($theme-font-size-xs);
 }
 
 .album .list-item.sm {
   margin-bottom: units(1.5);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-sm,
-    $theme-line-height-body
-  );
+  font-size: font-size($theme-font-size-sm);
 }
 
 .album .list-item.md {
   margin-bottom: units(2);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-md,
-    $theme-line-height-body
-  );
+  font-size: font-size($theme-font-size-md);
 }
 
 .album .list-link {
@@ -176,11 +161,9 @@ $album-grid-gap: $theme-site-margin;
 // Credits
 
 .album .credits {
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-body);
 }
 
 .album .credits .credit-list {

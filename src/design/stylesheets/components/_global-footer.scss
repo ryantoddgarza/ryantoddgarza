@@ -1,11 +1,9 @@
 .global-footer {
   position: relative;
   z-index: 2000;
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-body);
 }
 
 // Theme variants

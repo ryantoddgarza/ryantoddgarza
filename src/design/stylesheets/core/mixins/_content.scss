@@ -132,11 +132,9 @@
   }
 
   blockquote p {
-    @include typeset(
-      $theme-font-role-body,
-      $theme-font-size-xl,
-      $theme-line-height-body
-    );
+    font-family: family("body");
+    font-size: font-size($theme-font-size-xl);
+    line-height: line-height($theme-line-height-body);
   }
 
   blockquote p cite {

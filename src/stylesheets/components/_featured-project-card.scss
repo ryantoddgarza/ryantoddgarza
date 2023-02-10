@@ -59,32 +59,26 @@
 
   .title {
     margin-bottom: units(3);
+    font-family: font-family("heading");
+    font-size: font-size($theme-font-size-xl);
     font-weight: font-weight($theme-font-weight-bold);
-    @include typeset(
-      $theme-font-role-heading,
-      $theme-font-size-xl,
-      $theme-line-height-heading
-    );
+    line-height: line-height($theme-line-height-heading);
   }
 
   .overline {
     margin-bottom: units(1);
-    @include typeset(
-      $theme-font-role-code,
-      $theme-font-size-xs,
-      $theme-line-height-heading
-    );
+    font-family: font-family("code");
+    font-size: font-size($theme-font-size-xs);
+    line-height: line-height($theme-line-height-heading);
   }
 
   // Description
 
   .description {
     background-color: color($theme-color-background-weak);
-    @include typeset(
-      $theme-font-role-body,
-      $theme-font-size-md,
-      $theme-line-height-body
-    );
+    font-family: font-family("body");
+    font-size: font-size($theme-font-size-md);
+    line-height: line-height($theme-line-height-body);
 
     @include at-media("tablet") {
       padding: units(3);
@@ -117,11 +111,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: units(3);
-    @include typeset(
-      $theme-font-role-code,
-      $theme-font-size-xs,
-      $theme-line-height-body
-    );
+    font-family: font-family("code");
+    font-size: font-size($theme-font-size-xs);
+    line-height: line-height($theme-line-height-body);
   }
 
   .tech-list .tag {

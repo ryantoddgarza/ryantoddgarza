@@ -12,12 +12,10 @@
 }
 
 .hero .heading {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-2xl);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-2xl,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
 
   @include at-media("tablet") {
     font-size: font-size($theme-font-size-3xl);
@@ -26,9 +24,7 @@
 
 .hero .body {
   margin-top: units(4);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-lg,
-    $theme-line-height-extended
-  );
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-lg);
+  line-height: line-height($theme-line-height-extended);
 }

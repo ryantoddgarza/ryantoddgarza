@@ -3,21 +3,17 @@
 // Article
 
 .post .header .title {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight($theme-font-weight-bold);
-  @include typeset(
-    $theme-font-role-heading,
-    $theme-font-size-3xl,
-    $theme-line-height-heading
-  );
+  line-height: line-height($theme-line-height-heading);
 }
 
 .post .header .metadata {
   margin-top: units(2);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-xs,
-    $theme-line-height-body
-  );
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-body);
 }
 
 .post .header .metadata .author {

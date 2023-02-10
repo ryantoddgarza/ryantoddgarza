@@ -10,12 +10,10 @@
   height: units($theme-nav-height);
   color: color($theme-color-text);
   background-color: color($theme-color-background);
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-sm);
+  line-height: line-height($theme-line-height-ui);
   z-index: 10000;
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-sm,
-    $theme-line-height-ui
-  );
 }
 
 .global-header .header-name {
@@ -25,12 +23,10 @@
   margin-left: $theme-site-margin;
   margin-right: units(2);
   white-space: nowrap;
+  font-family: font-family("body");
+  font-size: font-size($theme-font-size-sm);
   font-weight: font-weight($theme-font-weight-medium);
-  @include typeset(
-    $theme-font-role-body,
-    $theme-font-size-sm,
-    $theme-line-height-ui
-  );
+  line-height: line-height($theme-line-height-ui);
 }
 
 .global-header .header-content {
@@ -92,12 +88,10 @@
   align-items: center;
   min-height: units($theme-nav-height);
   color: color($theme-color-text);
+  font-family: font-family("ui");
+  font-size: font-size($theme-font-size-lg);
+  line-height: line-height($theme-line-height-ui);
   @include transition(color);
-  @include typeset(
-    $theme-font-role-ui,
-    $theme-font-size-lg,
-    $theme-line-height-ui
-  );
 
   &:hover {
     color: color($theme-color-primary);

@@ -1,2 +1,2 @@
-prettier --write --loglevel=warn .
+prettier --write --check .
 eslint --fix .

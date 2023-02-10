@@ -48,7 +48,7 @@ const Music: FunctionComponent = () => {
     }
   `);
 
-  const parseLinkData = (arr: any[]) =>
+  const parseLinkData = (arr: { name: string; url: string }[]) =>
     arr.map(({ name, url }) => (
       <div key={name}>
         <a

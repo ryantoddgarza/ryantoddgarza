@@ -1,5 +1,4 @@
 export * from './ErrorPage';
-export * from './FeatureGrid';
 export * from './GlobalFooter';
 export * from './GlobalHeader';
 export * from './Hero';

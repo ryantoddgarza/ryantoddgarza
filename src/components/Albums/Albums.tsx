@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import { PostCard, cardAspect } from '../../design/components';
+import { PostCard, cardAspect } from '../PostCard';
 import SEO from '../SEO';
 import type { AlbumsProps } from './types';
 

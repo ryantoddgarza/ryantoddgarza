@@ -2,7 +2,8 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import SEO from '../SEO';
-import { List, listSize, PostCard, cardAspect } from '../../design/components';
+import { PostCard, cardAspect } from '../PostCard';
+import { List, listSize } from '../../design/components';
 import { ALBUMS_PATH } from '../../constants';
 import type { MusicRelease } from '../../../lib/contentful/generated';
 

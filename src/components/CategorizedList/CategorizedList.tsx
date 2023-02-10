@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { PostCard } from '../../design/components';
+import { PostCard } from '../PostCard';
 import SEO from '../SEO';
 import { CATEGORIES_PATH, POSTS_PATH } from '../../constants';
 import titleCase from '../../utils/titleCase';

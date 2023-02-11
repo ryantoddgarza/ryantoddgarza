@@ -69,9 +69,7 @@ const Code: FunctionComponent = () => {
         </div>
         <div className="section light layout--margin">
           <div className="featured-projects">
-            <header className="section-header">
-              <h2 className="section-header title h2">Featured Projects</h2>
-            </header>
+            <h2 className="h2 margin">Featured Projects</h2>
             <div>
               {featuredProjects.nodes.map(
                 ({
@@ -100,9 +98,7 @@ const Code: FunctionComponent = () => {
           </div>
         </div>
         <div className="section light layout--margin">
-          <header className="section-header">
-            <h2 className="section-header title h2">Other Recent Projects</h2>
-          </header>
+          <h2 className="h2 margin">Other Recent Projects</h2>
           <div className="prgmg-project-grid">
             {nonFeaturedProjects.nodes.map(
               ({

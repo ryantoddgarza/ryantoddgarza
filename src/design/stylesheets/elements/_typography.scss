@@ -1,0 +1,99 @@
+@use "rtg-design-web" as *;
+
+.h1 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-3xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+
+  &.margin {
+    margin-top: units(4);
+    margin-bottom: units(3);
+  }
+}
+
+.h2 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-2xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+
+  &.margin {
+    margin-top: units(3);
+    margin-bottom: units(2);
+  }
+}
+
+.h3 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-xl);
+  font-weight: font-weight($theme-font-weight-bold);
+  line-height: line-height($theme-line-height-heading);
+
+  &.margin {
+    margin-top: units(3);
+    margin-bottom: units(2);
+  }
+}
+
+.h4 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-lg);
+  font-weight: font-weight($theme-font-weight-medium);
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+
+  &.margin {
+    margin-top: units(3);
+    margin-bottom: units(2);
+  }
+}
+
+.h5 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-md);
+  font-weight: font-weight($theme-font-weight-medium);
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+
+  &.margin {
+    margin-top: units(3);
+    margin-bottom: units(2);
+  }
+}
+
+.h6 {
+  font-family: font-family("heading");
+  font-size: font-size($theme-font-size-sm);
+  font-weight: font-weight($theme-font-weight-medium);
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+
+  &.margin {
+    margin-top: units(3);
+    margin-bottom: units(2);
+  }
+}
+
+.copy {
+  font-family: font-family("body");
+  font-weight: font-weight($theme-font-weight-normal);
+  line-height: line-height($theme-line-height-body);
+
+  &.sm {
+    font-size: font-size($theme-font-size-sm);
+  }
+
+  &.md {
+    font-size: font-size($theme-font-size-md);
+  }
+
+  &.lg {
+    font-size: font-size($theme-font-size-lg);
+  }
+
+  &.margin {
+    margin-top: units(2);
+    margin-bottom: units(2);
+  }
+}

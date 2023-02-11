@@ -68,9 +68,7 @@ const Music: FunctionComponent = () => {
       <SEO title={title} />
       <div className="container">
         <section className="section light layout--margin">
-          <header className="section-header">
-            <h2 className="section-header title h2">Featured Albums</h2>
-          </header>
+          <h2 className="h2 margin">Featured Albums</h2>
           <div>
             <div className="posts-container">
               {albums.map(
@@ -99,17 +97,13 @@ const Music: FunctionComponent = () => {
           </div>
         </section>
         <section className="section light layout--margin">
-          <header className="section-header">
-            <h2 className="section-header title h2">Listen</h2>
-          </header>
+          <h2 className="h2 margin">Listen</h2>
           <div>
             <List nodes={parseLinkData(listen)} size={listSize.LARGE} ordered />
           </div>
         </section>
         <section className="section light layout--margin">
-          <header className="section-header">
-            <h2 className="section-header title h2">Credits</h2>
-          </header>
+          <h2 className="h2 margin">Credits</h2>
           <div>
             <List
               nodes={parseLinkData(credits)}

@@ -58,7 +58,7 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
   return (
     <article className="album">
       <SEO title={title} />
-      <div className="layout--margin container">
+      <div className="module container">
         <div className="row">
           <div className="col left">
             <div className="cover-art">
@@ -126,7 +126,7 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
         </div>
       </div>
       {tracks && (
-        <div className="layout--margin container">
+        <div className="module container">
           <div className="row">
             <div className="col left">
               <header className="section-header">
@@ -164,7 +164,7 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
         </div>
       )}
       {(layout.hasExtendedData || writeups) && (
-        <div className="layout--margin container">
+        <div className="module container">
           <div className="row">
             {credits && (
               <div className="col left credits">

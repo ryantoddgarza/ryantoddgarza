@@ -26,17 +26,19 @@ const Contact: FunctionComponent = () => {
   return (
     <div className="contact">
       <SEO title={title} />
-      <section className="section light container layout--margin">
-        <h2 className="h2 margin">Contact</h2>
-        <div>
-          <a className="button large dark" href={emailBtn.url}>
-            {emailBtn.name}
-          </a>
+      <section className="section light module">
+        <div className="container align-center">
+          <h2 className="h2 margin">Contact</h2>
+          <div>
+            <a className="button large dark" href={emailBtn.url}>
+              {emailBtn.name}
+            </a>
+          </div>
         </div>
       </section>
-      <section className="section light container layout--margin">
-        <h2 className="h2 margin">Follow</h2>
-        <div style={{ marginLeft: -10 }}>
+      <section className="section light module">
+        <div className="container align-center">
+          <h2 className="h3 margin">Follow</h2>
           <SocialGrid />
         </div>
       </section>

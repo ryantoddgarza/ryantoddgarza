@@ -2,12 +2,10 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 
 const ErrorPage: FunctionComponent = () => (
-  <div className="layout--margin">
-    <div className="error-page center">
-      <div className="message">
-        <h2 className="title">404</h2>
-        <p className="paragraph">Page not found</p>
-      </div>
+  <div className="error-page">
+    <div className="align-center">
+      <h1 className="h1">404</h1>
+      <p className="copy md margin">Page not found</p>
     </div>
   </div>
 );

@@ -12,27 +12,25 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
   } = data;
 
   return (
-    <>
+    <div className="module">
       <SEO title="Posts" />
-      <div className="layout--margin">
-        <div className="container">
-          <div className="posts-container">
-            {posts.map(({ id, title, slug, description, category, image }) => (
-              <PostCard
-                key={id}
-                title={title}
-                subtitle={
-                  <Link to={`${CATEGORIES_PATH}/${category}`}>{category}</Link>
-                }
-                image={image?.gatsbyImage}
-                summary={description}
-                path={`${POSTS_PATH}/${slug}`}
-              />
-            ))}
-          </div>
+      <div className="container">
+        <div className="posts-container">
+          {posts.map(({ id, title, slug, description, category, image }) => (
+            <PostCard
+              key={id}
+              title={title}
+              subtitle={
+                <Link to={`${CATEGORIES_PATH}/${category}`}>{category}</Link>
+              }
+              image={image?.gatsbyImage}
+              summary={description}
+              path={`${POSTS_PATH}/${slug}`}
+            />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

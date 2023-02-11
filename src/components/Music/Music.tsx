@@ -66,9 +66,14 @@ const Music: FunctionComponent = () => {
   return (
     <div className="music">
       <SEO title={title} />
-      <div className="container">
-        <section className="section light layout--margin">
-          <h2 className="h2 margin">Featured Albums</h2>
+      <section className="section light">
+        <div className="container">
+          <div className="module">
+            <h2 className="h2 margin">Featured Albums</h2>
+            <div className="h6 view-all">
+              <Link to={ALBUMS_PATH}>View all albums</Link>
+            </div>
+          </div>
           <div>
             <div className="posts-container">
               {albums.map(
@@ -91,19 +96,24 @@ const Music: FunctionComponent = () => {
                 )
               )}
             </div>
-            <div className="view-all">
-              <Link to={ALBUMS_PATH}>View all albums</Link>
-            </div>
           </div>
-        </section>
-        <section className="section light layout--margin">
-          <h2 className="h2 margin">Listen</h2>
+        </div>
+      </section>
+      <section className="section light">
+        <div className="container">
+          <div className="module">
+            <h2 className="h2 margin">Listen</h2>
+          </div>
           <div>
             <List nodes={parseLinkData(listen)} size={listSize.LARGE} ordered />
           </div>
-        </section>
-        <section className="section light layout--margin">
-          <h2 className="h2 margin">Credits</h2>
+        </div>
+      </section>
+      <section className="section light">
+        <div className="container">
+          <div className="module">
+            <h2 className="h2 margin">Credits</h2>
+          </div>
           <div>
             <List
               nodes={parseLinkData(credits)}
@@ -111,8 +121,16 @@ const Music: FunctionComponent = () => {
               ordered
             />
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      <section className="section light module">
+        <div className="container tablet align-center">
+          <h2 className="h3 margin">Inquire</h2>
+          <p className="copy md margin">
+            Email for licensing, press, and radio.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

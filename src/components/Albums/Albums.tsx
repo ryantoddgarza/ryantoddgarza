@@ -12,7 +12,7 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
   return (
     <div className="albums">
       <SEO title="Albums" />
-      <section className="layout--margin">
+      <section className="section light module">
         <div className="container">
           <div className="posts-container">
             {albums.map(({ id, slug, title, artist, image, releaseDate }) => (

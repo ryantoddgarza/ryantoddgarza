@@ -63,42 +63,48 @@ const Code: FunctionComponent = () => {
   return (
     <div className="code">
       <SEO title={title} />
-      <div className="container">
-        <div className="section light layout--margin">
+      <div className="module">
+        <div className="container">
           <Hero heading={hero.heading} body={hero.body} />
         </div>
-        <div className="section light layout--margin">
-          <div className="featured-projects">
-            <h2 className="h2 margin">Featured Projects</h2>
-            <div>
-              {featuredProjects.nodes.map(
-                ({
-                  name,
-                  projectLink,
-                  gitHubLink,
-                  techList,
-                  description: {
-                    childMarkdownRemark: { html },
-                  },
-                  image,
-                }: ProgrammingProject) => (
-                  <FeaturedProjectCard
-                    key={name}
-                    name={name}
-                    descriptionHTML={html}
-                    projectLink={projectLink}
-                    gitHubLink={gitHubLink}
-                    techList={techList}
-                    image={image?.gatsbyImageData}
-                    imageAlt={image?.title}
-                  />
-                )
-              )}
-            </div>
+      </div>
+      <section className="section light">
+        <div className="container featured-projects">
+          <div className="module align-center">
+            <h2 className="h2">Featured Projects</h2>
+          </div>
+          <div>
+            {featuredProjects.nodes.map(
+              ({
+                name,
+                projectLink,
+                gitHubLink,
+                techList,
+                description: {
+                  childMarkdownRemark: { html },
+                },
+                image,
+              }: ProgrammingProject) => (
+                <FeaturedProjectCard
+                  key={name}
+                  name={name}
+                  descriptionHTML={html}
+                  projectLink={projectLink}
+                  gitHubLink={gitHubLink}
+                  techList={techList}
+                  image={image?.gatsbyImageData}
+                  imageAlt={image?.title}
+                />
+              )
+            )}
           </div>
         </div>
-        <div className="section light layout--margin">
-          <h2 className="h2 margin">Other Recent Projects</h2>
+      </section>
+      <section className="section light">
+        <div className="container projects">
+          <div className="module align-center">
+            <h2 className="h2">Other Recent Projects</h2>
+          </div>
           <div className="prgmg-project-grid">
             {nonFeaturedProjects.nodes.map(
               ({
@@ -122,7 +128,7 @@ const Code: FunctionComponent = () => {
             )}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

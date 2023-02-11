@@ -29,7 +29,7 @@ const Home: FunctionComponent = () => {
   return (
     <div className="home">
       <SEO />
-      <section className="layout--margin">
+      <section className="section light module">
         <div className="container">
           <List nodes={navNodes} size={listSize.DISPLAY} ordered />
         </div>

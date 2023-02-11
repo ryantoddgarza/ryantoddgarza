@@ -54,7 +54,7 @@ const About: FunctionComponent = () => {
   return (
     <div className="about">
       <SEO title="About" />
-      <section className="layout--margin">
+      <section className="section light module">
         <div className="profile-photo">
           <StaticImage
             className="avatar lg"
@@ -65,24 +65,22 @@ const About: FunctionComponent = () => {
           />
         </div>
       </section>
-      <section>
+      <section className="section light">
         <div className="container widescreen">
-          <div className="article">
-            <div className="row">
-              <div
-                className="col markdown"
-                dangerouslySetInnerHTML={{ __html: col0 }}
-              />
-              <div
-                className="col markdown"
-                dangerouslySetInnerHTML={{ __html: col1 }}
-              />
-            </div>
+          <div className="row">
+            <div
+              className="col markdown"
+              dangerouslySetInnerHTML={{ __html: col0 }}
+            />
+            <div
+              className="col markdown"
+              dangerouslySetInnerHTML={{ __html: col1 }}
+            />
           </div>
         </div>
       </section>
-      <section className="layout--margin">
-        <div className="container widescreen">
+      <section className="section light module">
+        <div className="container widescreen align-center">
           <div className="button-group">
             <a
               className="button large light"

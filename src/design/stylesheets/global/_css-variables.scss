@@ -23,3 +23,10 @@
     --spacing-8: #{units(12)};
   }
 }
+
+// Components
+
+:root {
+  // Module
+  --module-padding: var(--spacing-7);
+}

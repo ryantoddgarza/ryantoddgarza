@@ -1,10 +1,9 @@
 .social-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
 }
 
 .social-grid .item {
-  display: block;
+  display: inline-block;
 }
 
 .social-grid .link {

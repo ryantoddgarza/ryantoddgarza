@@ -1,131 +1,99 @@
 @use "rtg-design-web" as *;
 
-.posts-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: units(-2);
-  margin-right: units(-2);
-  @include clearfix;
-}
-
 .post-card {
-  width: 100%;
-  padding-left: units(2);
-  padding-right: units(2);
-  padding-bottom: units(4);
-
-  @include at-media("tablet") {
-    width: 50%;
-  }
-
-  @include at-media("desktop") {
-    width: 33.3333%;
-  }
-
-  @include at-media("widescreen") {
-    width: 25%;
-  }
-}
-
-.post-card .inner {
   position: relative;
   overflow: hidden;
-}
-
-.post-card .body {
-  padding-top: units(3);
-
-  & > :first-child {
-    margin-top: 0;
-  }
-}
-
-.post-card .body > .title {
-  margin-top: units(2);
-  font-family: font-family("heading");
-  font-size: font-size($theme-font-size-xl);
-  font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
-}
-
-.post-card .body > .subtitle {
-  font-family: font-family("heading");
-  font-size: font-size($theme-font-size-xs);
-  font-weight: font-weight($theme-font-weight-medium);
-  line-height: line-height($theme-line-height-ui);
-  text-transform: uppercase;
-}
-
-.post-card .body > .subtitle a {
-  @include transition(color);
-}
-
-.post-card .body > .copy {
-  margin-top: units(2);
-  margin-bottom: units(2);
-  font-family: font-family("body");
-  font-size: font-size($theme-font-size-md);
-  line-height: line-height($theme-line-height-body);
-}
-
-.post-card .image-container {
-  position: relative;
-  height: 0;
-  padding-top: 50%;
-  overflow: hidden;
-  background-color: color($theme-color-background-strong);
-}
-
-.post-card .image-container .image {
-  position: absolute;
-  top: 0;
-  bottom: 0;
   width: 100%;
-  height: auto;
-}
 
-// Aspect variants
+  // Layout
 
-.post-card.square .image-container {
-  padding-top: 100%;
-}
+  .body {
+    padding-top: units(3);
+  }
 
-.post-card.standard .image-container {
-  padding-top: 66%;
-}
+  .body .title {
+    margin-top: units(2);
+    font-family: font-family("heading");
+    font-size: font-size($theme-font-size-xl);
+    font-weight: font-weight($theme-font-weight-bold);
+    line-height: line-height($theme-line-height-heading);
+  }
 
-.post-card.widescreen .image-container {
-  padding-top: 56.25%;
-}
+  .body .subtitle {
+    font-family: font-family("heading");
+    font-size: font-size($theme-font-size-xs);
+    font-weight: font-weight($theme-font-weight-medium);
+    line-height: line-height($theme-line-height-ui);
+    text-transform: uppercase;
+  }
 
-// Theme variants
+  .body .subtitle a {
+    @include transition(color);
+  }
 
-.post-card.light {
-  & .inner {
+  .body .copy {
+    margin-top: units(2);
+    margin-bottom: units(2);
+    font-family: font-family("body");
+    font-size: font-size($theme-font-size-md);
+    line-height: line-height($theme-line-height-body);
+  }
+
+  .image-container {
+    position: relative;
+    height: 0;
+    padding-top: 50%;
+    overflow: hidden;
+    background-color: color($theme-color-background-strong);
+  }
+
+  .image-container .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  // Aspect variants
+
+  &.square .image-container {
+    padding-top: 100%;
+  }
+
+  &.standard .image-container {
+    padding-top: 66%;
+  }
+
+  &.widescreen .image-container {
+    padding-top: 56.25%;
+  }
+
+  // Theme variants
+
+  &.light {
     color: color($theme-color-text);
     background-color: color($theme-color-background);
-  }
 
-  & .body > .subtitle a {
-    color: color($theme-color-primary);
+    & .body .subtitle a {
+      color: color($theme-color-primary);
 
-    &:hover {
-      color: color($theme-color-text);
+      &:hover {
+        color: color($theme-color-text);
+      }
     }
   }
-}
 
-.post-card.dark {
-  & .inner {
+  &.dark {
     color: color($theme-color-text-inverse);
     background-color: color($theme-color-background-inverse);
-  }
 
-  & .body > .subtitle a {
-    color: color($theme-color-primary);
+    & .body .subtitle a {
+      color: color($theme-color-primary);
 
-    &:hover {
-      color: color($theme-color-text-inverse);
+      &:hover {
+        color: color($theme-color-text-inverse);
+      }
     }
   }
 }

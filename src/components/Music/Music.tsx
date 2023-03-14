@@ -75,7 +75,7 @@ const Music: FunctionComponent = () => {
             </div>
           </div>
           <div>
-            <div className="posts-container">
+            <div className="post-grid">
               {albums.map(
                 ({
                   id,

@@ -14,7 +14,7 @@ const Albums: FunctionComponent<AlbumsProps> = ({ data }: AlbumsProps) => {
       <SEO title="Albums" />
       <section className="section light module">
         <div className="container">
-          <div className="posts-container">
+          <div className="post-grid">
             {albums.map(({ id, slug, title, artist, image, releaseDate }) => (
               <PostCard
                 key={id}

@@ -15,7 +15,7 @@ const List: FunctionComponent<ListProps> = ({ data }: ListProps) => {
     <div className="module">
       <SEO title="Posts" />
       <div className="container">
-        <div className="posts-container">
+        <div className="post-grid">
           {posts.map(({ id, title, slug, description, category, image }) => (
             <PostCard
               key={id}

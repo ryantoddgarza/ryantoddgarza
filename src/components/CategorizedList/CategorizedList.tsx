@@ -19,7 +19,7 @@ const CategorizedList: FunctionComponent<CategorizedListProps> = ({
     <div className="module">
       <SEO title={titleCase(category)} />
       <div className="container">
-        <div className="posts-container">
+        <div className="post-grid">
           {posts.map(({ id, title, slug, description, category, image }) => (
             <PostCard
               key={id}

@@ -22,22 +22,20 @@ const PostCard: FunctionComponent<PostCardProps> = ({
 
   return (
     <div className={getCardClasses()}>
-      <div className="inner">
-        <Link to={path}>
-          <div className="image-container">
-            {image && <GatsbyImage className="image" image={image} alt="" />}
-          </div>
-          <div className="body">
-            {subtitle && <h6 className="subtitle">{subtitle}</h6>}
-            <h5 className="title">{title}</h5>
-            <p className="copy">
-              <Truncate lines={3} ellipsis={<span>...</span>}>
-                {summary}
-              </Truncate>
-            </p>
-          </div>
-        </Link>
-      </div>
+      <Link to={path}>
+        <div className="image-container">
+          {image && <GatsbyImage className="image" image={image} alt="" />}
+        </div>
+        <div className="body">
+          {subtitle && <h6 className="subtitle">{subtitle}</h6>}
+          <h5 className="title">{title}</h5>
+          <p className="copy">
+            <Truncate lines={3} ellipsis={<span>...</span>}>
+              {summary}
+            </Truncate>
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };

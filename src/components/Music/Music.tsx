@@ -70,7 +70,7 @@ const Music: FunctionComponent = () => {
         <div className="container">
           <div className="module">
             <h2 className="h2 margin">Featured Albums</h2>
-            <div className="h6 view-all">
+            <div className="h6 link">
               <Link to={ALBUMS_PATH}>View all albums</Link>
             </div>
           </div>

@@ -97,3 +97,11 @@
     margin-bottom: units(2);
   }
 }
+
+.link {
+  @include transition(color);
+
+  &:hover {
+    color: color($theme-color-primary);
+  }
+}

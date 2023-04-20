@@ -1,1 +1,2 @@
+prettier --check .
 eslint .

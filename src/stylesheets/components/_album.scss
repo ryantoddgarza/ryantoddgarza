@@ -3,179 +3,168 @@
 
 $album-grid-gap: $theme-site-margin;
 
-// Grid
+.album {
+  // Grid
 
-.album .row {
-  display: flex;
-  flex-direction: column;
-  margin-left: $album-grid-gap * -0.5;
-  margin-right: $album-grid-gap * -0.5;
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin-left: $album-grid-gap * -0.5;
+    margin-right: $album-grid-gap * -0.5;
 
-  @include at-media("tablet-lg") {
-    flex-direction: row;
-  }
-}
-
-.album .col {
-  position: relative;
-  width: 100%;
-  padding-left: $album-grid-gap * 0.5;
-  padding-right: $album-grid-gap * 0.5;
-
-  &:not(:first-child) {
-    margin-top: units(2);
-  }
-
-  @include at-media("tablet-lg") {
-    &:not(:first-child) {
-      margin-top: 0;
+    @include at-media("tablet-lg") {
+      flex-direction: row;
     }
   }
-}
 
-.album .col.left {
-  @include at-media("tablet-lg") {
-    width: math.percentage(math.div(3, 5));
+  .col {
+    position: relative;
+    width: 100%;
+    padding-left: $album-grid-gap * 0.5;
+    padding-right: $album-grid-gap * 0.5;
+
+    &:not(:first-child) {
+      margin-top: units(2);
+    }
+
+    @include at-media("tablet-lg") {
+      &:not(:first-child) {
+        margin-top: 0;
+      }
+    }
+
+    &.left {
+      @include at-media("tablet-lg") {
+        width: math.percentage(math.div(3, 5));
+      }
+    }
+
+    &.right {
+      @include at-media("tablet-lg") {
+        width: math.percentage(math.div(2, 5));
+      }
+    }
   }
-}
 
-.album .col.right {
-  @include at-media("tablet-lg") {
-    width: math.percentage(math.div(2, 5));
+  // Layout
+
+  .section {
+    &:not(:last-child) {
+      margin-bottom: units(4);
+    }
+
+    > .title {
+      margin-bottom: units(4);
+      font-family: font-family("heading");
+      font-size: font-size($theme-font-size-sm);
+      font-weight: font-weight($theme-font-weight-bold);
+      line-height: line-height($theme-line-height-heading);
+      text-transform: uppercase;
+    }
   }
-}
 
-// Header
+  .header {
+    margin-bottom: units(6);
 
-.album .header {
-  margin-bottom: units(6);
-}
+    > .title.h1 {
+      font-family: font-family("heading");
+      font-size: font-size($theme-font-size-3xl);
+      font-weight: font-weight($theme-font-weight-bold);
+      line-height: line-height($theme-line-height-heading);
+    }
 
-.album .header .title.h1 {
-  font-family: font-family("heading");
-  font-size: font-size($theme-font-size-3xl);
-  font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
-}
-
-.album .header .title.h2 {
-  margin-top: units(2);
-  font-family: font-family("heading");
-  font-size: font-size($theme-font-size-md);
-  font-weight: font-weight($theme-font-weight-medium);
-  line-height: line-height($theme-line-height-heading);
-}
-
-// Section header
-
-.album .section-header {
-  margin-bottom: units(4);
-}
-
-.album .section-header .title {
-  font-family: font-family("heading");
-  font-size: font-size($theme-font-size-sm);
-  font-weight: font-weight($theme-font-weight-bold);
-  line-height: line-height($theme-line-height-heading);
-  text-transform: uppercase;
-}
-
-// Cover
-
-.album .cover-art {
-  max-width: breakpoint("tablet");
-}
-
-// Description
-
-.album .description {
-  @include content;
-}
-
-// List item, link
-
-.album .list-item {
-  font-family: font-family("body");
-  line-height: line-height($theme-line-height-body);
-  @include ellipsis;
-}
-
-.album .list-item.xs {
-  margin-bottom: units(1);
-  font-size: font-size($theme-font-size-xs);
-}
-
-.album .list-item.sm {
-  margin-bottom: units(1.5);
-  font-size: font-size($theme-font-size-sm);
-}
-
-.album .list-item.md {
-  margin-bottom: units(2);
-  font-size: font-size($theme-font-size-md);
-}
-
-.album .list-link {
-  color: color($theme-color-primary);
-  @include transition(color);
-
-  &:hover {
-    color: color($theme-color-text);
+    > .title.h2 {
+      margin-top: units(2);
+      font-family: font-family("heading");
+      font-size: font-size($theme-font-size-md);
+      font-weight: font-weight($theme-font-weight-medium);
+      line-height: line-height($theme-line-height-heading);
+    }
   }
-}
 
-.album .meta-list,
-.album .listen-list,
-.album .praise-list {
-  color: color($theme-color-text-weak);
-}
+  // Album elements
 
-.album .praise-list .detail {
-  font-size: font-size($theme-font-size-xs);
-  @include ellipsis;
-}
-
-// Tracks
-
-.album .tracks .track-list .list-item {
-  display: flex;
-}
-
-.album .tracks .track-list .index-col {
-  flex: 0 0 units(3);
-}
-
-.album .tracks .track-list .title-col {
-  flex: 1 1 units(40);
-  padding-left: units(1);
-  @include ellipsis;
-}
-
-.album .tracks .track-list .link-col {
-  flex: 0 0 units(6);
-  padding-left: units(1);
-  text-align: right;
-  text-transform: lowercase;
-}
-
-// Credits
-
-.album .credits {
-  font-family: font-family("body");
-  font-size: font-size($theme-font-size-xs);
-  line-height: line-height($theme-line-height-body);
-}
-
-.album .credits .credit-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  & > :nth-child(odd) {
-    margin-right: units(1);
+  .cover-art {
+    max-width: breakpoint("tablet");
   }
-}
 
-.album .credits p {
-  margin-top: units(2);
-  margin-bottom: units(2);
+  .description {
+    @include content;
+  }
+
+  .copyright {
+    margin-top: units(2);
+    font-size: font-size($theme-font-size-xs);
+  }
+
+  // Lists
+
+  .list-item {
+    font-family: font-family("body");
+    line-height: line-height($theme-line-height-body);
+    @include ellipsis;
+
+    &.xs {
+      margin-bottom: units(1);
+      font-size: font-size($theme-font-size-xs);
+    }
+
+    &.sm {
+      margin-bottom: units(1.5);
+      font-size: font-size($theme-font-size-sm);
+    }
+
+    &.md {
+      margin-bottom: units(2);
+      font-size: font-size($theme-font-size-md);
+    }
+  }
+
+  .list-link {
+    color: color($theme-color-primary);
+    @include transition(color);
+
+    &:hover {
+      color: color($theme-color-text);
+    }
+  }
+
+  .meta-list,
+  .listen-list,
+  .praise-list {
+    color: color($theme-color-text-weak);
+    font-size: font-size($theme-font-size-sm);
+  }
+
+  .track-list {
+    .track-row {
+      display: flex;
+    }
+
+    .index-col {
+      flex: 0 0 units(3);
+    }
+
+    .title-col {
+      flex: 1 1 units(40);
+      padding-left: units(1);
+      @include ellipsis;
+    }
+
+    .link-col {
+      flex: 0 0 units(6);
+      padding-left: units(1);
+      text-align: right;
+      text-transform: lowercase;
+    }
+  }
+
+  .credit-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & > :nth-child(odd) {
+      margin-right: units(1);
+    }
+  }
 }

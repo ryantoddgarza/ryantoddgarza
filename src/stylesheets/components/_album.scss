@@ -49,9 +49,7 @@ $album-grid-gap: $theme-site-margin;
   // Layout
 
   .section {
-    &:not(:last-child) {
-      margin-bottom: units(4);
-    }
+    margin-bottom: units(4);
 
     > .title {
       margin-bottom: units(4);

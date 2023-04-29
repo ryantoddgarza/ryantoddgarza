@@ -8,41 +8,6 @@ $system-breakpoint: (
   widescreen: 1400px,
 );
 
-$system-font-stack: (
-  system: (
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Helvetica,
-    Arial,
-    sans-serif,
-  ),
-  helvetica: (
-    Helvetica Neue,
-    Helvetica,
-    arial,
-    sans-serif,
-  ),
-  monospace: (
-    SFMono-Regular,
-    Consolas,
-    Liberation Mono,
-    Menlo,
-    monospace,
-  ),
-);
-
-$system-font-weight: (
-  1: 100,
-  2: 200,
-  3: 300,
-  4: 400,
-  5: 500,
-  6: 600,
-  7: 700,
-  8: 800,
-);
-
 $system-line-height: (
   1: 1,
   2: 1.125,

@@ -53,7 +53,7 @@ $album-grid-gap: $theme-site-margin;
 
     > .title {
       margin-bottom: units(4);
-      font-family: font-family("heading");
+      font-family: family("heading");
       font-size: font-size($theme-font-size-sm);
       font-weight: font-weight("bold");
       line-height: line-height($theme-line-height-heading);
@@ -65,7 +65,7 @@ $album-grid-gap: $theme-site-margin;
     margin-bottom: units(6);
 
     > .title.h1 {
-      font-family: font-family("heading");
+      font-family: family("heading");
       font-size: font-size($theme-font-size-3xl);
       font-weight: font-weight("bold");
       line-height: line-height($theme-line-height-heading);
@@ -73,7 +73,7 @@ $album-grid-gap: $theme-site-margin;
 
     > .title.h2 {
       margin-top: units(2);
-      font-family: font-family("heading");
+      font-family: family("heading");
       font-size: font-size($theme-font-size-md);
       font-weight: font-weight("medium");
       line-height: line-height($theme-line-height-heading);
@@ -98,7 +98,7 @@ $album-grid-gap: $theme-site-margin;
   // Lists
 
   .list-item {
-    font-family: font-family("body");
+    font-family: family("body");
     line-height: line-height($theme-line-height-body);
     @include ellipsis;
 

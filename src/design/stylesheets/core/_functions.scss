@@ -2,10 +2,6 @@
   @return map-get($system-color, $value);
 }
 
-@function font-family($value) {
-  @return map-get($system-font-stack, $value);
-}
-
 @function font-size($value) {
   @return map-get($system-type-scale, $value);
 }

@@ -3,7 +3,7 @@
 // Article
 
 .post .header .title {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
@@ -11,7 +11,7 @@
 
 .post .header .metadata {
   margin-top: units(2);
-  font-family: font-family("body");
+  font-family: family("body");
   font-size: font-size($theme-font-size-xs);
   line-height: line-height($theme-line-height-body);
 }

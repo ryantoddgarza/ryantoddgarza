@@ -68,7 +68,7 @@
 
   .title {
     margin-bottom: units(3);
-    font-family: font-family("heading");
+    font-family: family("heading");
     font-size: font-size($theme-font-size-xl);
     font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
@@ -76,7 +76,7 @@
 
   .overline {
     margin-bottom: units(1);
-    font-family: font-family("code");
+    font-family: family("code");
     font-size: font-size($theme-font-size-xs);
     line-height: line-height($theme-line-height-heading);
   }
@@ -85,7 +85,7 @@
 
   .description {
     background-color: color($theme-color-background-weak);
-    font-family: font-family("body");
+    font-family: family("body");
     font-size: font-size($theme-font-size-md);
     line-height: line-height($theme-line-height-body);
 
@@ -120,7 +120,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: units(3);
-    font-family: font-family("code");
+    font-family: family("code");
     font-size: font-size($theme-font-size-xs);
     line-height: line-height($theme-line-height-body);
   }

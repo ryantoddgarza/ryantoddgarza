@@ -1,7 +1,7 @@
 @use "rtg-design-web" as *;
 
 .h1 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-3xl);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
@@ -13,7 +13,7 @@
 }
 
 .h2 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-2xl);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
@@ -25,7 +25,7 @@
 }
 
 .h3 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-xl);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
@@ -37,7 +37,7 @@
 }
 
 .h4 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-lg);
   font-weight: font-weight("medium");
   line-height: line-height($theme-line-height-heading);
@@ -50,7 +50,7 @@
 }
 
 .h5 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-md);
   font-weight: font-weight("medium");
   line-height: line-height($theme-line-height-heading);
@@ -63,7 +63,7 @@
 }
 
 .h6 {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-sm);
   font-weight: font-weight("medium");
   line-height: line-height($theme-line-height-heading);
@@ -76,7 +76,7 @@
 }
 
 .copy {
-  font-family: font-family("body");
+  font-family: family("body");
   font-weight: font-weight("normal");
   line-height: line-height($theme-line-height-body);
 

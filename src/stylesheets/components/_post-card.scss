@@ -13,14 +13,14 @@
 
   .body .title {
     margin-top: units(2);
-    font-family: font-family("heading");
+    font-family: family("heading");
     font-size: font-size($theme-font-size-xl);
     font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
   }
 
   .body .subtitle {
-    font-family: font-family("heading");
+    font-family: family("heading");
     font-size: font-size($theme-font-size-xs);
     font-weight: font-weight("medium");
     line-height: line-height($theme-line-height-ui);
@@ -34,7 +34,7 @@
   .body .copy {
     margin-top: units(2);
     margin-bottom: units(2);
-    font-family: font-family("body");
+    font-family: family("body");
     font-size: font-size($theme-font-size-md);
     line-height: line-height($theme-line-height-body);
   }

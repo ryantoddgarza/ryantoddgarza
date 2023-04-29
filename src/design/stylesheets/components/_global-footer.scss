@@ -1,9 +1,14 @@
+@use "rtg-design-web" as *;
+
 .global-footer {
   position: relative;
   z-index: 2000;
-  font-family: font-family("body");
-  font-size: font-size($theme-font-size-xs);
-  line-height: line-height($theme-line-height-body);
+
+  .footer-content {
+    font-family: family("body");
+    font-size: font-size($theme-font-size-xs);
+    line-height: line-height($theme-line-height-body);
+  }
 }
 
 // Theme variants

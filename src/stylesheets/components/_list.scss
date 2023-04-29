@@ -16,14 +16,14 @@
 }
 
 .list .item {
-  font-family: font-family("heading");
+  font-family: family("heading");
   font-size: font-size($theme-font-size-md);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 }
 
 .list .numeral {
-  font-family: font-family("body");
+  font-family: family("body");
   font-size: font-size($theme-font-size-md);
   line-height: line-height($theme-line-height-body);
 }

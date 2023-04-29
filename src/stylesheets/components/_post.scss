@@ -5,7 +5,7 @@
 .post .header .title {
   font-family: font-family("heading");
   font-size: font-size($theme-font-size-3xl);
-  font-weight: font-weight($theme-font-weight-bold);
+  font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 }
 
@@ -17,12 +17,12 @@
 }
 
 .post .header .metadata .author {
-  font-weight: font-weight($theme-font-weight-medium);
+  font-weight: font-weight("medium");
 }
 
 .post .header .metadata a.category {
   color: color($theme-color-text-link);
-  font-weight: font-weight($theme-font-weight-medium);
+  font-weight: font-weight("medium");
   text-transform: uppercase;
   @include transition(color);
 

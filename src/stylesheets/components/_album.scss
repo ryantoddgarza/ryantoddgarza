@@ -55,7 +55,7 @@ $album-grid-gap: $theme-site-margin;
       margin-bottom: units(4);
       font-family: font-family("heading");
       font-size: font-size($theme-font-size-sm);
-      font-weight: font-weight($theme-font-weight-bold);
+      font-weight: font-weight("bold");
       line-height: line-height($theme-line-height-heading);
       text-transform: uppercase;
     }
@@ -67,7 +67,7 @@ $album-grid-gap: $theme-site-margin;
     > .title.h1 {
       font-family: font-family("heading");
       font-size: font-size($theme-font-size-3xl);
-      font-weight: font-weight($theme-font-weight-bold);
+      font-weight: font-weight("bold");
       line-height: line-height($theme-line-height-heading);
     }
 
@@ -75,7 +75,7 @@ $album-grid-gap: $theme-site-margin;
       margin-top: units(2);
       font-family: font-family("heading");
       font-size: font-size($theme-font-size-md);
-      font-weight: font-weight($theme-font-weight-medium);
+      font-weight: font-weight("medium");
       line-height: line-height($theme-line-height-heading);
     }
   }

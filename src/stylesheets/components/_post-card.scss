@@ -15,14 +15,14 @@
     margin-top: units(2);
     font-family: font-family("heading");
     font-size: font-size($theme-font-size-xl);
-    font-weight: font-weight($theme-font-weight-bold);
+    font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
   }
 
   .body .subtitle {
     font-family: font-family("heading");
     font-size: font-size($theme-font-size-xs);
-    font-weight: font-weight($theme-font-weight-medium);
+    font-weight: font-weight("medium");
     line-height: line-height($theme-line-height-ui);
     text-transform: uppercase;
   }

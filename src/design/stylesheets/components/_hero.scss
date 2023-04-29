@@ -14,7 +14,7 @@
 .hero .heading {
   font-family: font-family("heading");
   font-size: font-size($theme-font-size-2xl);
-  font-weight: font-weight($theme-font-weight-bold);
+  font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 
   @include at-media("tablet") {

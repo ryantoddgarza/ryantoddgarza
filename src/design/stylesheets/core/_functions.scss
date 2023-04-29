@@ -10,10 +10,6 @@
   @return map-get($system-type-scale, $value);
 }
 
-@function font-weight($value) {
-  @return map-get($system-font-weight, $value);
-}
-
 @function line-height($value) {
   @return map-get($system-line-height, $value);
 }

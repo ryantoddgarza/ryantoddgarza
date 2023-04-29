@@ -1,7 +1,7 @@
 @use "global/css-variables";
 
-@import "core/system-tokens";
-@import "theme/theme-tokens";
+@import "tokens/system-tokens";
+@import "tokens/theme-tokens";
 @import "core/functions";
 @import "core/mixins";
 

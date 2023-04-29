@@ -1,31 +1,35 @@
 .social-grid {
   display: block;
-}
 
-.social-grid .item {
-  display: inline-block;
-}
-
-.social-grid .link {
-  @include transition(color);
-}
-
-// Theme variants
-
-.social-grid.light .link {
-  color: color($theme-color-text-inverse);
-
-  &:hover,
-  &:active {
-    color: color($theme-color-primary);
+  .item {
+    display: inline-block;
   }
-}
 
-.social-grid.dark .link {
-  color: color($theme-color-text);
+  .link {
+    @include transition(color);
+  }
 
-  &:hover,
-  &:active {
-    color: color($theme-color-primary);
+  // Theme variants
+
+  &.light {
+    .link {
+      color: color($theme-color-text-inverse);
+
+      &:hover,
+      &:active {
+        color: color($theme-color-primary);
+      }
+    }
+  }
+
+  &.dark {
+    .link {
+      color: color($theme-color-text);
+
+      &:hover,
+      &:active {
+        color: color($theme-color-primary);
+      }
+    }
   }
 }

@@ -41,22 +41,24 @@ const FooterDirectory: FunctionComponent<FooterDirectoryProps> = ({
   ];
 
   return (
-    <nav className="directory-nav">
-      {directory.map(({ title, items }) => (
-        <div className="directory-group" key={title}>
-          <h6 className="directory-title">{title}</h6>
-          <ul className="directory-list">
-            {items.map(({ name, url }) => (
-              <li className="directory-item" key={name}>
-                <Link className="directory-link" to={url}>
-                  {name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </nav>
+    <div className="footer-directory">
+      <nav className="directory-nav">
+        {directory.map(({ title, items }) => (
+          <div className="directory-group" key={title}>
+            <h6 className="directory-title">{title}</h6>
+            <ul className="directory-list">
+              {items.map(({ name, url }) => (
+                <li className="directory-item" key={name}>
+                  <Link className="directory-link" to={url}>
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
+    </div>
   );
 };
 

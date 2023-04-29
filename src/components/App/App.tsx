@@ -27,11 +27,11 @@ const App: FunctionComponent<AppProps> = ({
   `);
 
   return (
-    <div className="app__root">
+    <div className="app root">
       <GlobalHeader name={siteTitle}>
         <Gnb categories={categories} hasPost={hasPost} hasAlbum={hasAlbum} />
       </GlobalHeader>
-      <main className="app__main">{children}</main>
+      <main className="app main">{children}</main>
       <GlobalFooter>
         <Footer categories={categories} />
       </GlobalFooter>

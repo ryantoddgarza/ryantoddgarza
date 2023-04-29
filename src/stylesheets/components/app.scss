@@ -1,22 +1,25 @@
-.app__root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.app {
+  &.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-  @media print {
-    & > header,
-    & > footer {
-      display: none;
-    }
+    // Hide elements when printing
+    @media print {
+      & > header,
+      & > footer {
+        display: none;
+      }
 
-    button {
-      display: none;
+      button {
+        display: none;
+      }
     }
   }
-}
 
-.app__main {
-  position: relative;
-  flex: 1;
-  margin-top: 3rem;
+  &.main {
+    position: relative;
+    flex: 1;
+    margin-top: 3rem;
+  }
 }

@@ -1,141 +1,145 @@
 @use "sass:math";
 @use "rtg-design-web" as *;
 
-.list a {
-  @include transition(color);
-}
+.list {
+  // Layout
 
-.list .list-row {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-
-  @include at-media("tablet") {
-    flex-direction: row;
-  }
-}
-
-.list .item {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-md);
-  font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
-}
-
-.list .numeral {
-  font-family: family("body");
-  font-size: font-size($theme-font-size-md);
-  line-height: line-height($theme-line-height-body);
-}
-
-// Size variants
-
-.list.small {
   .list-row {
-    padding-top: units(1);
-    padding-bottom: units(1);
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 
-  .item {
-    margin-top: units(1);
-    font-size: font-size($theme-font-size-sm);
-  }
-
-  .numeral {
-    margin-top: units(1);
-    margin-right: units(2);
-    font-size: font-size($theme-font-size-sm);
-  }
-}
-
-.list.medium {
-  .list-row {
-    padding-top: units(2);
-    padding-bottom: units(2);
-  }
-
-  .item {
-    margin-top: units(2);
-    font-size: font-size($theme-font-size-md);
-  }
-
-  .numeral {
-    margin-top: units(1);
-    margin-right: units(2);
-    font-size: font-size($theme-font-size-md);
-  }
-}
-
-.list.large {
-  .list-row {
-    padding-top: units(2.5);
-    padding-bottom: units(2.5);
-  }
-
-  .item {
-    margin-top: units(2.5);
-    font-size: font-size($theme-font-size-xl);
-  }
-
-  .numeral {
-    margin-top: units(1);
-    margin-right: units(2);
-    font-size: font-size($theme-font-size-md);
-  }
-}
-
-.list.display {
-  .list-row {
-    padding-top: units(3);
-    padding-bottom: units(3);
-  }
-
-  .item {
-    margin-top: units(3);
-    font-size: font-size($theme-font-size-3xl);
-  }
-
-  .numeral {
-    margin-top: units(1);
-    width: math.percentage(math.div(1, 12));
-    font-size: font-size($theme-font-size-lg);
-  }
-}
-
-// Theme variants
-
-.list.light {
-  color: color($theme-color-text-inverse);
-
-  a {
-    color: color($theme-color-primary);
-
-    &:hover {
-      color: color($theme-color-text-inverse);
+    @include at-media("tablet") {
+      flex-direction: row;
     }
   }
-}
 
-.list.dark {
-  color: color($theme-color-text);
+  .item {
+    font-family: family("heading");
+    font-size: font-size($theme-font-size-md);
+    font-weight: font-weight("bold");
+    line-height: line-height($theme-line-height-heading);
 
-  a {
-    color: color($theme-color-primary);
-
-    &:hover {
-      color: color($theme-color-text);
+    a {
+      @include transition(color);
     }
   }
-}
 
-.list.inherit {
-  color: inherit;
+  .numeral {
+    font-family: family("body");
+    font-size: font-size($theme-font-size-md);
+    line-height: line-height($theme-line-height-body);
+  }
 
-  a {
+  // Size variants
+
+  &.small {
+    .list-row {
+      padding-top: units(1);
+      padding-bottom: units(1);
+    }
+
+    .item {
+      margin-top: units(1);
+      font-size: font-size($theme-font-size-sm);
+    }
+
+    .numeral {
+      margin-top: units(1);
+      margin-right: units(2);
+      font-size: font-size($theme-font-size-sm);
+    }
+  }
+
+  &.medium {
+    .list-row {
+      padding-top: units(2);
+      padding-bottom: units(2);
+    }
+
+    .item {
+      margin-top: units(2);
+      font-size: font-size($theme-font-size-md);
+    }
+
+    .numeral {
+      margin-top: units(1);
+      margin-right: units(2);
+      font-size: font-size($theme-font-size-md);
+    }
+  }
+
+  &.large {
+    .list-row {
+      padding-top: units(2.5);
+      padding-bottom: units(2.5);
+    }
+
+    .item {
+      margin-top: units(2.5);
+      font-size: font-size($theme-font-size-xl);
+    }
+
+    .numeral {
+      margin-top: units(1);
+      margin-right: units(2);
+      font-size: font-size($theme-font-size-md);
+    }
+  }
+
+  &.display {
+    .list-row {
+      padding-top: units(3);
+      padding-bottom: units(3);
+    }
+
+    .item {
+      margin-top: units(3);
+      font-size: font-size($theme-font-size-3xl);
+    }
+
+    .numeral {
+      margin-top: units(1);
+      width: math.percentage(math.div(1, 12));
+      font-size: font-size($theme-font-size-lg);
+    }
+  }
+
+  // Theme variants
+
+  &.light {
+    color: color($theme-color-text-inverse);
+
+    a {
+      color: color($theme-color-primary);
+
+      &:hover {
+        color: color($theme-color-text-inverse);
+      }
+    }
+  }
+
+  &.dark {
+    color: color($theme-color-text);
+
+    a {
+      color: color($theme-color-primary);
+
+      &:hover {
+        color: color($theme-color-text);
+      }
+    }
+  }
+
+  &.inherit {
     color: inherit;
 
-    &:hover {
-      color: color($theme-color-primary);
+    a {
+      color: inherit;
+
+      &:hover {
+        color: color($theme-color-primary);
+      }
     }
   }
 }

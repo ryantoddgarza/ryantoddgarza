@@ -31,7 +31,7 @@ const Footer: FunctionComponent<FooterProps> = ({
       <div className="footer-content">
         <div className="footer-grid">
           <div className="social">
-            <div className="social-group">
+            <div className="social-icon-group">
               <SocialGrid />
             </div>
           </div>

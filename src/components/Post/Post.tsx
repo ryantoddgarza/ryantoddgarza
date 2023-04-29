@@ -72,7 +72,6 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
           className="content markdown"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <footer className="footer"></footer>
       </article>
     </div>
   );

@@ -2,30 +2,30 @@
 
 $about-col-gap: units(4);
 
-.about .header {
-  margin-bottom: units(6);
-}
-
-.about .profile-photo {
-  display: block;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about .row {
-  display: flex;
-  flex-direction: column;
-  margin-left: $about-col-gap * -0.5;
-  margin-right: $about-col-gap * -0.5;
-
-  @include at-media("tablet") {
-    flex-direction: row;
+.about {
+  .profile-photo {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
-.about .col {
-  flex: 1;
-  padding-left: $about-col-gap * 0.5;
-  padding-right: $about-col-gap * 0.5;
+  // Layout
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin-left: $about-col-gap * -0.5;
+    margin-right: $about-col-gap * -0.5;
+
+    @include at-media("tablet") {
+      flex-direction: row;
+    }
+  }
+
+  .col {
+    flex: 1;
+    padding-left: $about-col-gap * 0.5;
+    padding-right: $about-col-gap * 0.5;
+  }
 }

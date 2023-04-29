@@ -3,12 +3,6 @@
 .global-footer {
   position: relative;
   z-index: 2000;
-
-  .footer-content {
-    font-family: family("body");
-    font-size: font-size($theme-font-size-xs);
-    line-height: line-height($theme-line-height-body);
-  }
 }
 
 // Theme variants

@@ -1,83 +1,47 @@
 @use "rtg-design-web" as *;
 
-.footer .footer-content {
-  padding-top: units(6);
-  padding-bottom: units(4);
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: color($theme-color-border);
-}
-
-// Grid
-
-.footer .footer-grid {
-  display: grid;
-  grid-column-gap: units(6);
-  grid-template-columns: 1fr;
-  grid-template-areas: "social" "directory" "legal";
-  align-items: stretch;
-
-  @include at-media("tablet") {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "social social directory" "social social legal";
+.footer {
+  .footer-content {
+    padding-top: units(6);
+    padding-bottom: units(4);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: color($theme-color-border);
+    font-family: family("body");
+    font-size: font-size($theme-font-size-xs);
+    line-height: line-height($theme-line-height-body);
   }
-}
 
-.footer .footer-grid .directory {
-  grid-area: directory;
-}
+  // Grid
 
-.footer .footer-grid .legal {
-  grid-area: legal;
-}
+  .footer-grid {
+    display: grid;
+    grid-column-gap: units(6);
+    grid-template-columns: 1fr;
+    grid-template-areas: "social" "directory" "legal";
+    align-items: stretch;
 
-.footer .footer-grid .social {
-  grid-area: social;
-}
-
-// Social
-
-.footer .social .social-group {
-  margin-top: units(-1.25);
-  margin-left: units(-1.25);
-  margin-bottom: units(6);
-}
-
-// Directory
-
-.footer .directory .directory-nav {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: units(3);
-}
-
-.footer .directory .directory-group {
-  width: 50%;
-  margin-bottom: units(3);
-}
-
-.footer .directory .directory-title {
-  font-weight: font-weight("bold");
-}
-
-.footer .directory .directory-list {
-  list-style-type: none;
-  margin-top: units(1);
-}
-
-.footer .directory .directory-item {
-  margin-bottom: units(1);
-
-  &:last-child {
-    margin-bottom: 0;
+    @include at-media("tablet") {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "social social directory" "social social legal";
+    }
   }
-}
 
-.footer .directory .directory-link {
-  @include transition(color);
+  .directory {
+    grid-area: directory;
+  }
 
-  &:hover,
-  &:active {
-    color: color($theme-color-primary);
+  .legal {
+    grid-area: legal;
+  }
+
+  .social {
+    grid-area: social;
+
+    .social-icon-group {
+      margin-top: units(-1.25); // Align icon top
+      margin-left: units(-1.25); // Align icon left
+      margin-bottom: units(6);
+    }
   }
 }

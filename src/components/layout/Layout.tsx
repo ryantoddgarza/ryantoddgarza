@@ -1,4 +1,4 @@
-import React, { Children, cloneElement } from 'react';
+import React from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import App from '../App';
@@ -61,13 +61,9 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }: LayoutProps) => {
   const albums = allContentfulMusicRelease.edges;
   const hasAlbum = albums.length > 0;
 
-  const childrenWithProps = Children.map(children, (child) =>
-    cloneElement(child, { posts, albums })
-  );
-
   return (
     <App categories={categories} hasPost={hasPost} hasAlbum={hasAlbum}>
-      {childrenWithProps}
+      {children}
     </App>
   );
 };

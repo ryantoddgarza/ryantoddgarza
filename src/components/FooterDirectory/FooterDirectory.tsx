@@ -8,6 +8,7 @@ import {
   MUSIC_PATH,
   POSTS_PATH,
 } from '../../constants';
+import isInternal from '../../utils/isInternal';
 import titleCase from '../../utils/titleCase';
 import { FooterDirectoryProps } from './types';
 
@@ -49,9 +50,20 @@ const FooterDirectory: FunctionComponent<FooterDirectoryProps> = ({
             <ul className="directory-list">
               {items.map(({ name, url }) => (
                 <li className="directory-item" key={name}>
-                  <Link className="directory-link" to={url}>
-                    {name}
-                  </Link>
+                  {isInternal(url) ? (
+                    <Link className="directory-link" to={url}>
+                      {name}
+                    </Link>
+                  ) : (
+                    <a
+                      className="directory-link"
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

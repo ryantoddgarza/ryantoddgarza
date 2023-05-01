@@ -4,12 +4,12 @@ import { Link } from 'gatsby';
 import { PostCard } from '../PostCard';
 import SEO from '../SEO';
 import { CATEGORIES_PATH, POSTS_PATH } from '../../constants';
-import { PostCollectionProps } from './types';
+import { PostsProps } from './types';
 
-const PostCollection: FunctionComponent<PostCollectionProps> = ({
+const Posts: FunctionComponent<PostsProps> = ({
   posts,
   category,
-}: PostCollectionProps) => (
+}: PostsProps) => (
   <div className="module">
     <SEO title={category ?? 'Posts'} />
     <div className="container">
@@ -31,4 +31,4 @@ const PostCollection: FunctionComponent<PostCollectionProps> = ({
   </div>
 );
 
-export default PostCollection;
+export default Posts;

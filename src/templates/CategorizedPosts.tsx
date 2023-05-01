@@ -2,7 +2,7 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import PostCollection from '../components/PostCollection';
+import Posts from '../components/Posts';
 import titleCase from '../utils/titleCase';
 import { BlogPost } from '../../lib/contentful/generated';
 
@@ -16,7 +16,7 @@ const CategorizedPostsTemplate: FunctionComponent<
 
   return (
     <Layout>
-      <PostCollection posts={nodes} category={titleCase(category)} />
+      <Posts posts={nodes} category={titleCase(category)} />
     </Layout>
   );
 };

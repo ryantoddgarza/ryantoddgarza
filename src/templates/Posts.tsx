@@ -2,7 +2,7 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import PostCollection from '../components/PostCollection';
+import Posts from '../components/Posts';
 import { BlogPost } from '../../lib/contentful/generated';
 
 const PostsTemplate: FunctionComponent<PostsTemplateProps> = ({
@@ -14,7 +14,7 @@ const PostsTemplate: FunctionComponent<PostsTemplateProps> = ({
 
   return (
     <Layout>
-      <PostCollection posts={nodes} />
+      <Posts posts={nodes} />
     </Layout>
   );
 };

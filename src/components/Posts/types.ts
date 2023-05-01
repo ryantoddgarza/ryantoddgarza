@@ -1,6 +1,6 @@
 import type { BlogPost } from '../../../lib/contentful/generated';
 
-export interface PostCollectionProps {
+export interface PostsProps {
   category?: string;
   posts: BlogPost[];
 }

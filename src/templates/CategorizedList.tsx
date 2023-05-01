@@ -2,17 +2,21 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import CategorizedList from '../components/CategorizedList';
-import type { CategorizedListData } from '../components/CategorizedList';
+import PostCollection from '../components/PostCollection';
+import titleCase from '../utils/titleCase';
+import { BlogPost } from '../../lib/contentful/generated';
 
 const CategorizedListTemplate: FunctionComponent<
   CategorizedListTemplateProps
 > = ({ data, pageContext }: CategorizedListTemplateProps) => {
   const { category } = pageContext;
+  const {
+    allContentfulBlogPost: { nodes },
+  } = data;
 
   return (
     <Layout>
-      <CategorizedList data={{ ...data, category }} />
+      <PostCollection posts={nodes} category={titleCase(category)} />
     </Layout>
   );
 };
@@ -20,7 +24,11 @@ const CategorizedListTemplate: FunctionComponent<
 export default CategorizedListTemplate;
 
 interface CategorizedListTemplateProps {
-  data: CategorizedListData;
+  data: {
+    allContentfulBlogPost: {
+      nodes: BlogPost[];
+    };
+  };
   pageContext: {
     category: string;
   };

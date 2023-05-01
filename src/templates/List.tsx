@@ -2,21 +2,31 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import List from '../components/List';
-import type { ListData } from '../components/List';
+import PostCollection from '../components/PostCollection';
+import { BlogPost } from '../../lib/contentful/generated';
 
 const ListTemplate: FunctionComponent<ListTemplateProps> = ({
   data,
-}: ListTemplateProps) => (
-  <Layout>
-    <List data={data} />
-  </Layout>
-);
+}: ListTemplateProps) => {
+  const {
+    allContentfulBlogPost: { nodes },
+  } = data;
+
+  return (
+    <Layout>
+      <PostCollection posts={nodes} />
+    </Layout>
+  );
+};
 
 export default ListTemplate;
 
 interface ListTemplateProps {
-  data: ListData;
+  data: {
+    allContentfulBlogPost: {
+      nodes: BlogPost[];
+    };
+  };
 }
 
 export const pageQuery = graphql`

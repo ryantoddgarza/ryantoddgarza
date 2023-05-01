@@ -1,6 +1,6 @@
 const path = require('path');
 const { ContentfulTSGeneratorPlugin } = require('contentful-ts-generator');
-const { ALBUMS_PATH, POSTS_PATH } = require('./src/constants');
+const { ALBUMS_PATH, CATEGORIES_PATH, POSTS_PATH } = require('./src/constants');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
@@ -120,7 +120,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   categories.forEach((category) => {
     createPage({
-      path: `/categories/${category}`,
+      path: `${CATEGORIES_PATH}/${category}`,
       component: templates.categorizedList,
       context: { category },
     });

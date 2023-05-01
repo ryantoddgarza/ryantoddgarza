@@ -5,9 +5,9 @@ import Layout from '../components/layout';
 import PostCollection from '../components/PostCollection';
 import { BlogPost } from '../../lib/contentful/generated';
 
-const ListTemplate: FunctionComponent<ListTemplateProps> = ({
+const PostsTemplate: FunctionComponent<PostsTemplateProps> = ({
   data,
-}: ListTemplateProps) => {
+}: PostsTemplateProps) => {
   const {
     allContentfulBlogPost: { nodes },
   } = data;
@@ -19,9 +19,9 @@ const ListTemplate: FunctionComponent<ListTemplateProps> = ({
   );
 };
 
-export default ListTemplate;
+export default PostsTemplate;
 
-interface ListTemplateProps {
+interface PostsTemplateProps {
   data: {
     allContentfulBlogPost: {
       nodes: BlogPost[];
@@ -30,7 +30,7 @@ interface ListTemplateProps {
 }
 
 export const pageQuery = graphql`
-  query ListQuery {
+  query PostsQuery {
     allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
       nodes {
         id

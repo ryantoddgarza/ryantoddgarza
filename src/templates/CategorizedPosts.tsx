@@ -6,9 +6,9 @@ import PostCollection from '../components/PostCollection';
 import titleCase from '../utils/titleCase';
 import { BlogPost } from '../../lib/contentful/generated';
 
-const CategorizedListTemplate: FunctionComponent<
-  CategorizedListTemplateProps
-> = ({ data, pageContext }: CategorizedListTemplateProps) => {
+const CategorizedPostsTemplate: FunctionComponent<
+  CategorizedPostsTemplateProps
+> = ({ data, pageContext }: CategorizedPostsTemplateProps) => {
   const { category } = pageContext;
   const {
     allContentfulBlogPost: { nodes },
@@ -21,9 +21,9 @@ const CategorizedListTemplate: FunctionComponent<
   );
 };
 
-export default CategorizedListTemplate;
+export default CategorizedPostsTemplate;
 
-interface CategorizedListTemplateProps {
+interface CategorizedPostsTemplateProps {
   data: {
     allContentfulBlogPost: {
       nodes: BlogPost[];
@@ -35,7 +35,7 @@ interface CategorizedListTemplateProps {
 }
 
 export const pageQuery = graphql`
-  query CategorizedListQuery($category: String) {
+  query CategorizedPostsQuery($category: String) {
     allContentfulBlogPost(
       filter: { category: { eq: $category } }
       sort: { fields: publishDate, order: DESC }

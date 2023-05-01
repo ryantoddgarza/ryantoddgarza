@@ -60,8 +60,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const templates = {
     post: path.resolve('./src/templates/Post.tsx'),
-    list: path.resolve('./src/templates/List.tsx'),
-    categorizedList: path.resolve('./src/templates/CategorizedList.tsx'),
+    posts: path.resolve('./src/templates/Posts.tsx'),
+    categorizedPosts: path.resolve('./src/templates/CategorizedPosts.tsx'),
     albums: path.resolve('./src/templates/Albums.tsx'),
     album: path.resolve('./src/templates/Album.tsx'),
   };
@@ -111,7 +111,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (postsCount) {
     createPage({
       path: POSTS_PATH,
-      component: templates.list,
+      component: templates.posts,
       context: {},
     });
   }
@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   categories.forEach((category) => {
     createPage({
       path: `${CATEGORIES_PATH}/${category}`,
-      component: templates.categorizedList,
+      component: templates.categorizedPosts,
       context: { category },
     });
   });

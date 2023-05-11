@@ -1,9 +1,5 @@
 {
   "type": "content",
   "name": "code",
-  "title": "Code",
-  "hero": {
-    "heading": "Ryan Todd Garza",
-    "body": "I am a software engineer and analytical thinker specializing in building creative digital experiences. Currently, I'm focused on building generative audio systems that react to unconventional input."
-  }
+  "title": "Code"
 }

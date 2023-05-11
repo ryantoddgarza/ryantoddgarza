@@ -1,7 +1,6 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Hero } from '../../design/components';
 import FeaturedProjectCard from '../FeaturedProjectCard';
 import PrgmgProjectCard from '../PrgmgProjectCard';
 import SEO from '../SEO';
@@ -9,17 +8,13 @@ import type { ProgrammingProject } from '../../../lib/contentful/generated';
 
 const Code: FunctionComponent = () => {
   const {
-    content: { title, hero },
+    content: { title },
     featuredProjects,
     nonFeaturedProjects,
   } = useStaticQuery(graphql`
     query CodeQuery {
       content: resourcesJson(name: { eq: "code" }) {
         title
-        hero {
-          heading
-          body
-        }
       }
       featuredProjects: allContentfulProgrammingProject(
         filter: { featured: { eq: true } }
@@ -63,11 +58,6 @@ const Code: FunctionComponent = () => {
   return (
     <div className="code">
       <SEO title={title} />
-      <div className="module">
-        <div className="container">
-          <Hero heading={hero.heading} body={hero.body} />
-        </div>
-      </div>
       <section className="section light">
         <div className="container featured-projects">
           <div className="module align-center">

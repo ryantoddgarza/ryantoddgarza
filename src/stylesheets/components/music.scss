@@ -1,0 +1,45 @@
+@use "rtg-design-web" as *;
+
+.music {
+  .featured-albums {
+    padding-bottom: var(--module-padding);
+  }
+
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: units(4);
+
+    @include at-media("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include at-media("desktop") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include at-media("widescreen") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .inquire {
+      text-align: center;
+
+      @include at-media("tablet") {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+      }
+
+      @include at-media("desktop") {
+        grid-column-start: 1;
+        grid-column-end: span 3;
+      }
+
+      @include at-media("widescreen") {
+        grid-column-start: 4;
+        grid-column-end: span 1;
+        text-align: left;
+      }
+    }
+  }
+}

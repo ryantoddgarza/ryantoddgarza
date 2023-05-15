@@ -74,7 +74,7 @@ const Music: FunctionComponent = () => {
               <Link to={ALBUMS_PATH}>View all albums</Link>
             </div>
           </div>
-          <div>
+          <div className="featured-albums">
             <div className="post-grid">
               {albums.map(
                 ({
@@ -101,34 +101,30 @@ const Music: FunctionComponent = () => {
       </section>
       <section className="section light">
         <div className="container">
-          <div className="module">
-            <h2 className="h2 margin">Listen</h2>
+          <div className="explore-grid">
+            <div className="module">
+              <h2 className="h2 margin">Listen</h2>
+              <List
+                nodes={parseLinkData(listen)}
+                size={listSize.LARGE}
+                ordered
+              />
+            </div>
+            <div className="module">
+              <h2 className="h2 margin">Credits</h2>
+              <List
+                nodes={parseLinkData(credits)}
+                size={listSize.LARGE}
+                ordered
+              />
+            </div>
+            <div className="module inquire">
+              <h2 className="h3 margin">Inquire</h2>
+              <p className="copy md margin">
+                Email for licensing, press, and radio.
+              </p>
+            </div>
           </div>
-          <div>
-            <List nodes={parseLinkData(listen)} size={listSize.LARGE} ordered />
-          </div>
-        </div>
-      </section>
-      <section className="section light">
-        <div className="container">
-          <div className="module">
-            <h2 className="h2 margin">Credits</h2>
-          </div>
-          <div>
-            <List
-              nodes={parseLinkData(credits)}
-              size={listSize.LARGE}
-              ordered
-            />
-          </div>
-        </div>
-      </section>
-      <section className="section light module">
-        <div className="container tablet align-center">
-          <h2 className="h3 margin">Inquire</h2>
-          <p className="copy md margin">
-            Email for licensing, press, and radio.
-          </p>
         </div>
       </section>
     </div>

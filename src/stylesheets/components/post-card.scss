@@ -12,33 +12,33 @@
     padding-bottom: units(2);
     padding-left: units(2);
     padding-right: units(2);
-  }
 
-  .body .title {
-    margin-top: units(2);
-    font-family: family("heading");
-    font-size: font-size($theme-font-size-lg);
-    font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
-  }
+    .title {
+      margin-top: units(2);
+      font-family: family("heading");
+      font-size: font-size($theme-font-size-lg);
+      font-weight: font-weight("bold");
+      line-height: line-height($theme-line-height-heading);
+    }
 
-  .body .subtitle {
-    font-family: family("heading");
-    font-size: font-size($theme-font-size-xs);
-    font-weight: font-weight("medium");
-    line-height: line-height($theme-line-height-ui);
-    text-transform: uppercase;
-  }
+    .subtitle {
+      font-family: family("heading");
+      font-size: font-size($theme-font-size-xs);
+      font-weight: font-weight("medium");
+      line-height: line-height($theme-line-height-ui);
+      text-transform: uppercase;
 
-  .body .subtitle a {
-    @include transition(color);
-  }
+      a {
+        @include transition(color);
+      }
+    }
 
-  .body .copy {
-    margin-top: units(3);
-    font-family: family("body");
-    font-size: font-size($theme-font-size-md);
-    line-height: line-height($theme-line-height-body);
+    .copy {
+      margin-top: units(3);
+      font-family: family("body");
+      font-size: font-size($theme-font-size-md);
+      line-height: line-height($theme-line-height-body);
+    }
   }
 
   .image-container {
@@ -47,14 +47,14 @@
     padding-top: 50%;
     overflow: hidden;
     background-color: color($theme-color-background-strong);
-  }
 
-  .image-container .image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
+    .image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
   }
 
   // Aspect variants

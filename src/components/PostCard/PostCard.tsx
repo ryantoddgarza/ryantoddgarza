@@ -29,11 +29,13 @@ const PostCard: FunctionComponent<PostCardProps> = ({
         <div className="body">
           {subtitle && <h6 className="subtitle">{subtitle}</h6>}
           <h5 className="title">{title}</h5>
-          <p className="copy">
-            <Truncate lines={3} ellipsis={<span>...</span>}>
-              {summary}
-            </Truncate>
-          </p>
+          {summary && (
+            <p className="copy">
+              <Truncate lines={3} ellipsis={<span>...</span>}>
+                {summary}
+              </Truncate>
+            </p>
+          )}
         </div>
       </Link>
     </div>

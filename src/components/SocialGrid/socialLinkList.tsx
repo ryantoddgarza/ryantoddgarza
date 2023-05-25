@@ -4,8 +4,6 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaMediumM,
-  FaPatreon,
   FaTwitter,
 } from 'react-icons/fa';
 import {
@@ -13,8 +11,6 @@ import {
   GITHUB_ID,
   INSTAGRAM_ID,
   LINKEDIN_ID,
-  MEDIUM_ID,
-  PATREON_ID,
   TWITTER_ID,
 } from '../../constants';
 import type { SocialLinkListItem } from './types';
@@ -48,18 +44,6 @@ const socialLinkList: SocialLinkListItem[] = [
     name: 'Linkedin',
     url: `https://www.linkedin.com/in/${LINKEDIN_ID}`,
     icon: <FaLinkedin />,
-    display: true,
-  },
-  {
-    name: 'Patreon',
-    url: `https://patreon.com/${PATREON_ID}`,
-    icon: <FaPatreon />,
-    display: false,
-  },
-  {
-    name: 'Medium',
-    url: `https://${MEDIUM_ID}.medium.com`,
-    icon: <FaMediumM />,
     display: true,
   },
 ];

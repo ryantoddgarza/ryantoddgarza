@@ -1,7 +1,6 @@
 @use "rtg-design-web" as *;
 
 .markdown {
-  line-height: line-height($theme-line-height-body);
   word-wrap: break-word;
   @include content;
 

@@ -27,7 +27,9 @@ $theme-color-border: gray-10;
 
 // General
 
-$theme-button-border-width: 2px;
+$theme-border-width: 2px;
+
+$theme-button-border-width: $theme-border-width;
 $theme-button-border-style: solid;
 $theme-button-border-radius: 0;
 $theme-button-height-small: 4;

@@ -1,0 +1,32 @@
+@use "rtg-design-web" as *;
+
+.landing {
+  .content {
+    max-width: breakpoint("widescreen");
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--spacing-5);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: var(--spacing-5);
+    min-height: 100vh;
+
+    @include at-media("tablet") {
+      grid-template-columns: 2fr 3fr;
+    }
+
+    @include at-media("desktop") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cell {
+      padding-top: var(--spacing-5);
+      border-top-color: color($theme-color-text);
+      border-top-style: solid;
+      border-top-width: 1px;
+    }
+  }
+}

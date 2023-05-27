@@ -43,9 +43,11 @@
 }
 
 // Menu
-
 .global-header .menu-toggle {
+  // Override user agent button styles
   border: none;
+  background-color: transparent;
+  margin: 0;
 
   @include at-media($theme-nav-breakpoint) {
     display: none;

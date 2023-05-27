@@ -1,3 +1,3 @@
-export { default as List } from './List';
+export { default } from './GlobalFooter';
 export * from './types';
 export * from './variants';

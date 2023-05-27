@@ -1,7 +1,8 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GlobalFooter, GlobalHeader } from '../../design/components';
+import GlobalHeader from '../GlobalHeader';
+import GlobalFooter from '../GlobalFooter';
 import Gnb from '../Gnb';
 import Footer from '../Footer';
 import type { AppProps } from './types';

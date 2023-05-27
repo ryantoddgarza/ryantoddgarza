@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { HOME_PATH } from '../../../constants';
+import { HOME_PATH } from '../../constants';
 import type { GlobalHeaderProps } from './types';
 
 const GlobalHeader: FunctionComponent<GlobalHeaderProps> = ({

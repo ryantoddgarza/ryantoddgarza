@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { ErrorPage } from '../../design/components';
+import ErrorPage from '../ErrorPage';
 import SEO from '../SEO';
 
 const NotFound: FunctionComponent = () => (

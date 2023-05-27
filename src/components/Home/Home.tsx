@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { List, listSize } from '../../design/components';
+import List, { listSize } from '../List';
 import SEO from '../SEO';
 
 const Home: FunctionComponent = () => {

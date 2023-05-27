@@ -1,12 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
-import Layout from '../components/layout';
-import Home from '../components/Home';
+import Landing from '../components/Landing';
 
-const HomePage: FunctionComponent = () => (
-  <Layout>
-    <Home />
-  </Layout>
-);
+const HomePage: FunctionComponent = () => <Landing />;
 
 export default HomePage;

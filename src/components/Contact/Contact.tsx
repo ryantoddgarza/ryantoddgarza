@@ -6,18 +6,14 @@ import SEO from '../SEO';
 
 const Contact: FunctionComponent = () => {
   const {
-    content: {
-      childResourcesJson: { title, emailBtn },
-    },
+    content: { title, emailBtn },
   } = useStaticQuery(graphql`
     query ContactQuery {
-      content: file(name: { eq: "content-contact" }) {
-        childResourcesJson {
-          title
-          emailBtn {
-            name
-            url
-          }
+      content: resourcesJson(name: { eq: "contact" }) {
+        title
+        emailBtn {
+          name
+          url
         }
       }
     }

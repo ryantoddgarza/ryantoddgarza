@@ -45,7 +45,6 @@
 
   p {
     margin-top: units(2);
-    margin-bottom: units(2);
     font-size: font-size($theme-font-size-md);
     line-height: line-height($theme-line-height-body);
   }
@@ -130,22 +129,22 @@
     @include at-media("tablet") {
       margin-left: units(2) * -1;
     }
-  }
 
-  blockquote p {
-    font-family: family("body");
-    font-size: font-size($theme-font-size-xl);
-    line-height: line-height($theme-line-height-body);
-  }
+    p {
+      font-family: family("body");
+      font-size: font-size($theme-font-size-xl);
+      line-height: line-height($theme-line-height-body);
 
-  blockquote p cite {
-    display: block;
-    margin-top: units(2);
-    font-size: font-size($theme-font-size-md);
-  }
+      cite {
+        display: block;
+        margin-top: units(2);
+        font-size: font-size($theme-font-size-md);
+      }
 
-  blockquote p cite::before {
-    content: "— ";
+      cite::before {
+        content: "— ";
+      }
+    }
   }
 
   figure {

@@ -1,0 +1,9 @@
+@use "rtg-design-web" as *;
+
+.button-group {
+  .button {
+    &:not(:last-child) {
+      margin-right: units(2);
+    }
+  }
+}

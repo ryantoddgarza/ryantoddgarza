@@ -82,17 +82,3 @@
 .button.icon-btn.large {
   width: units($theme-button-height-large);
 }
-
-// Group
-
-.button-group {
-  margin-bottom: units(-2);
-}
-
-.button-group .button {
-  margin-bottom: units(2);
-
-  &:not(:last-child) {
-    margin-right: units(2);
-  }
-}

@@ -3,7 +3,7 @@
   "name": "contact",
   "title": "Contact",
   "emailBtn": {
-    "name": "Email",
+    "name": "Send me an email",
     "url": "mailto:ryantoddgarza@gmail.com"
   }
 }

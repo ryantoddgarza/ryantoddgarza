@@ -25,7 +25,7 @@ const Contact: FunctionComponent = () => {
       <section className="section light module">
         <div className="container align-center">
           <h2 className="h2 margin">Contact</h2>
-          <div>
+          <div className="cta-links">
             <a className="button large dark" href={emailBtn.url}>
               {emailBtn.name}
             </a>
@@ -35,7 +35,9 @@ const Contact: FunctionComponent = () => {
       <section className="section light module">
         <div className="container align-center">
           <h2 className="h3 margin">Follow</h2>
-          <SocialGrid />
+          <div className="cta-links">
+            <SocialGrid />
+          </div>
         </div>
       </section>
     </div>

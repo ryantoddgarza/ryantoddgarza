@@ -6,16 +6,14 @@ import SEO from '../SEO';
 
 const About: FunctionComponent = () => {
   const {
-    contentfulTextBlock: {
-      content: {
-        childMarkdownRemark: { html },
-      },
-    },
+    aboutTextBlock,
     technicalCV,
     artisticCV,
   } = useStaticQuery(graphql`
     query AboutQuery {
-      contentfulTextBlock(contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }) {
+      aboutTextBlock: contentfulTextBlock(
+        contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }
+      ) {
         content {
           childMarkdownRemark {
             html
@@ -39,18 +37,6 @@ const About: FunctionComponent = () => {
     }
   `);
 
-  const columns = () => {
-    const midIndex = Math.floor(html.length / 2);
-    const splitHtml = [html.substring(0, midIndex), html.substring(midIndex)];
-    const regexp = /\n/g;
-    const newlines = [...splitHtml[1].matchAll(regexp)];
-    const bpIndex = splitHtml[0].length + newlines[0].index;
-
-    return [html.substring(0, bpIndex), html.substring(bpIndex)];
-  };
-
-  const [col0, col1] = columns();
-
   return (
     <div className="about">
       <SEO title="About" />
@@ -66,17 +52,13 @@ const About: FunctionComponent = () => {
         </div>
       </section>
       <section className="section light">
-        <div className="container widescreen">
-          <div className="row">
-            <div
-              className="col markdown"
-              dangerouslySetInnerHTML={{ __html: col0 }}
-            />
-            <div
-              className="col markdown"
-              dangerouslySetInnerHTML={{ __html: col1 }}
-            />
-          </div>
+        <div className="container tablet">
+          <div
+            className="markdown"
+            dangerouslySetInnerHTML={{
+              __html: aboutTextBlock.content.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </section>
       <section className="section light module">

@@ -52,9 +52,9 @@ const About: FunctionComponent = () => {
         </div>
       </section>
       <section className="section light">
-        <div className="container tablet">
+        <div className="container">
           <div
-            className="markdown"
+            className="max-width-container prose markdown"
             dangerouslySetInnerHTML={{
               __html: aboutTextBlock.content.childMarkdownRemark.html,
             }}

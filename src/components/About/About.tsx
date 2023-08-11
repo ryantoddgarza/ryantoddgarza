@@ -5,11 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import SEO from '../SEO';
 
 const About: FunctionComponent = () => {
-  const {
-    aboutTextBlock,
-    technicalCV,
-    artisticCV,
-  } = useStaticQuery(graphql`
+  const { aboutTextBlock, technicalCV, artisticCV } = useStaticQuery(graphql`
     query AboutQuery {
       aboutTextBlock: contentfulTextBlock(
         contentful_id: { eq: "3SuARzclwfWYiDg41lEVDu" }
@@ -37,6 +33,20 @@ const About: FunctionComponent = () => {
     }
   `);
 
+  const content = Object.freeze({
+    about: {
+      html: aboutTextBlock?.content?.childMarkdownRemark?.html,
+    },
+    file: {
+      technicalCV: {
+        url: technicalCV.file.url,
+      },
+      artisticCV: {
+        url: artisticCV.file.url,
+      },
+    },
+  });
+
   return (
     <div className="about">
       <SEO title="About" />
@@ -55,9 +65,7 @@ const About: FunctionComponent = () => {
         <div className="container">
           <div
             className="max-width-container prose markdown"
-            dangerouslySetInnerHTML={{
-              __html: aboutTextBlock.content.childMarkdownRemark.html,
-            }}
+            dangerouslySetInnerHTML={{ __html: content.about.html }}
           />
         </div>
       </section>
@@ -66,7 +74,7 @@ const About: FunctionComponent = () => {
           <div className="button-group">
             <a
               className="button large light"
-              href={technicalCV.file.url}
+              href={content.file.technicalCV.url}
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -74,7 +82,7 @@ const About: FunctionComponent = () => {
             </a>
             <a
               className="button large light"
-              href={artisticCV.file.url}
+              href={content.file.artisticCV.url}
               target="_blank"
               rel="noreferrer noopener"
             >

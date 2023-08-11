@@ -6,33 +6,41 @@
   margin-right: auto;
   padding-left: 5%;
   padding-right: 5%;
-  @include clearfix;
-}
 
-.container.phone {
-  max-width: breakpoint("phone");
-}
+  .max-width-container {
+    margin-left: auto;
+    margin-right: auto;
 
-.container.phone-lg {
-  max-width: breakpoint("phone-lg");
-}
+    &.prose {
+      max-width: 80ex;
+    }
+  }
 
-.container.tablet {
-  max-width: breakpoint("tablet");
-}
+  &.phone {
+    max-width: breakpoint("phone");
+  }
 
-.container.tablet-lg {
-  max-width: breakpoint("tablet-lg");
-}
+  &.phone-lg {
+    max-width: breakpoint("phone-lg");
+  }
 
-.container.desktop {
-  max-width: breakpoint("desktop");
-}
+  &.tablet {
+    max-width: breakpoint("tablet");
+  }
 
-.container.desktop-lg {
-  max-width: breakpoint("desktop-lg");
-}
+  &.tablet-lg {
+    max-width: breakpoint("tablet-lg");
+  }
 
-.container.widescreen {
-  max-width: breakpoint("widescreen");
+  &.desktop {
+    max-width: breakpoint("desktop");
+  }
+
+  &.desktop-lg {
+    max-width: breakpoint("desktop-lg");
+  }
+
+  &.widescreen {
+    max-width: breakpoint("widescreen");
+  }
 }

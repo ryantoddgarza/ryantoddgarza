@@ -48,9 +48,9 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
   }, [createCopyButton]);
 
   return (
-    <div className="post container tablet-lg">
+    <div className="post container">
       <SEO title={title} />
-      <article className="module">
+      <article className="content max-width-container prose module">
         <header className="header">
           <h1 className="title">{title}</h1>
           <div className="metadata">
@@ -63,13 +63,13 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
               {category}
             </Link>
           </div>
-          {image && (
-            <GatsbyImage className="image" image={image?.gatsbyImage} alt="" />
-          )}
         </header>
+        {image && (
+          <GatsbyImage className="image" image={image?.gatsbyImage} alt="" />
+        )}
         <div
           id="post-content"
-          className="content markdown"
+          className="body markdown"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </article>

@@ -1,35 +1,39 @@
 @use "rtg-design-web" as *;
 
 .post {
-  .header {
-    .title {
-      font-family: family("heading");
-      font-size: font-size($theme-font-size-3xl);
-      font-weight: font-weight("bold");
-      line-height: line-height($theme-line-height-heading);
-    }
+  .content {
+    font-size: font-size($theme-font-size-md);
 
-    .metadata {
-      margin-top: units(2);
-      font-family: family("body");
-      font-size: font-size($theme-font-size-xs);
-      line-height: line-height($theme-line-height-body);
-
-      .author {
-        font-weight: font-weight("medium");
+    .header {
+      .title {
+        font-family: family("heading");
+        font-size: font-size($theme-font-size-3xl);
+        font-weight: font-weight("bold");
+        line-height: line-height($theme-line-height-heading);
       }
 
-      .category {
-        font-weight: font-weight("medium");
-        text-transform: uppercase;
-      }
+      .metadata {
+        margin-top: units(2);
+        font-family: family("body");
+        font-size: font-size($theme-font-size-xs);
+        line-height: line-height($theme-line-height-body);
 
-      a {
-        color: color($theme-color-text-link);
-        @include transition(color);
+        .author {
+          font-weight: font-weight("medium");
+        }
 
-        &:hover {
-          color: color($theme-color-text-link-hover);
+        .category {
+          font-weight: font-weight("medium");
+          text-transform: uppercase;
+        }
+
+        a {
+          color: color($theme-color-text-link);
+          @include transition(color);
+
+          &:hover {
+            color: color($theme-color-text-link-hover);
+          }
         }
       }
     }
@@ -37,9 +41,9 @@
     .image {
       margin-top: units(6);
     }
-  }
 
-  .content {
-    margin-top: units(6);
+    .body {
+      margin-top: units(6);
+    }
   }
 }

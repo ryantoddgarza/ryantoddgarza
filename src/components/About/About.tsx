@@ -70,7 +70,7 @@ const About: FunctionComponent = () => {
         </div>
       </section>
       <section className="section light module">
-        <div className="container widescreen align-center">
+        <div className="container align-center">
           <div className="button-group">
             <a
               className="button large light"

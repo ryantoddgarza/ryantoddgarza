@@ -2,6 +2,7 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import type { Track, Writeup } from '../../../lib/contentful/generated';
+import { EMAIL } from '../../constants';
 import SEO from '../SEO';
 import type { AlbumProps } from './types';
 
@@ -182,10 +183,10 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                 </section>
               </div>
             )}
-            {writeups && (
-              <div className="col right">
-                <section className="section praise">
-                  <h3 className="title">Praise</h3>
+            <div className="col right">
+              <section className="section praise">
+                <h3 className="title">Praise</h3>
+                {writeups && (
                   <ul className="praise-list">
                     {writeups?.map(
                       ({
@@ -215,9 +216,12 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                       )
                     )}
                   </ul>
-                </section>
-              </div>
-            )}
+                )}
+                <a className="button small light" href={`mailto:${EMAIL}`}>
+                  Contact to submit
+                </a>
+              </section>
+            </div>
           </div>
         </div>
       )}

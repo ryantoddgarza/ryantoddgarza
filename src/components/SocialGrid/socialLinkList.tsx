@@ -4,14 +4,12 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaTwitter,
 } from 'react-icons/fa';
 import {
   FACEBOOK_ID,
   GITHUB_ID,
   INSTAGRAM_ID,
   LINKEDIN_ID,
-  TWITTER_ID,
 } from '../../constants';
 import type { SocialLinkListItem } from './types';
 
@@ -20,12 +18,6 @@ const socialLinkList: SocialLinkListItem[] = [
     name: 'Github',
     url: `https://github.com/${GITHUB_ID}`,
     icon: <FaGithub />,
-    display: true,
-  },
-  {
-    name: 'Twitter',
-    url: `https://twitter.com/${TWITTER_ID}`,
-    icon: <FaTwitter />,
     display: true,
   },
   {

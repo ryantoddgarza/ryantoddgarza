@@ -1,11 +1,11 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import Layout from '../components/layout';
-import About from '../components/About';
+import Home from '../components/Home';
 
 const HomePage: FunctionComponent = () => (
   <Layout>
-    <About />
+    <Home />
   </Layout>
 );
 

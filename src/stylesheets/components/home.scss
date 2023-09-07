@@ -1,0 +1,72 @@
+@use "rtg-design-web" as *;
+
+.home {
+  .about {
+    display: flex;
+    flex-direction: column;
+
+    @include at-media("tablet") {
+      flex-direction: row;
+    }
+
+    .col {
+      @include at-media("tablet") {
+        padding-left: units(2);
+        padding-right: units(2);
+      }
+
+      @include at-media("desktop") {
+        padding-left: units(3);
+        padding-right: units(3);
+      }
+
+      @include at-media("widescreen") {
+        padding-left: units(4);
+        padding-right: units(4);
+      }
+    }
+
+    .image-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include at-media("tablet") {
+        align-items: flex-end;
+      }
+    }
+
+    .copy-wrapper {
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: units(6);
+
+      @include at-media("tablet") {
+        padding-top: units(0);
+      }
+
+      .headline {
+        font-family: family("heading");
+        font-size: font-size($theme-font-size-xl);
+        font-weight: font-weight("medium");
+        line-height: line-height($theme-line-height-heading);
+      }
+
+      .text {
+        margin-top: units(3);
+        font-family: family("body");
+        font-size: font-size($theme-font-size-md);
+        line-height: line-height($theme-line-height-body);
+      }
+
+      .cta-links {
+        margin-top: units(6);
+      }
+    }
+  }
+}

@@ -1,13 +1,14 @@
 @use "sass:math";
 @use "rtg-design-web" as *;
 
-$album-grid-gap: $theme-site-margin;
-
 .album {
+  $album-grid-gap: $theme-site-margin;
+
   // Grid
 
   .row {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     margin-left: $album-grid-gap * -0.5;
     margin-right: $album-grid-gap * -0.5;
@@ -20,6 +21,7 @@ $album-grid-gap: $theme-site-margin;
   .col {
     position: relative;
     width: 100%;
+    max-width: breakpoint("tablet-lg");
     padding-left: $album-grid-gap * 0.5;
     padding-right: $album-grid-gap * 0.5;
 
@@ -29,7 +31,7 @@ $album-grid-gap: $theme-site-margin;
 
     @include at-media("tablet-lg") {
       &:not(:first-child) {
-        margin-top: 0;
+        margin-top: units(0);
       }
     }
 
@@ -84,6 +86,13 @@ $album-grid-gap: $theme-site-margin;
 
   .cover-art {
     max-width: breakpoint("tablet");
+    margin: auto;
+    padding-bottom: units(4);
+
+    @include at-media("tablet-lg") {
+      margin: units(0);
+      padding-bottom: units(0);
+    }
   }
 
   .description {

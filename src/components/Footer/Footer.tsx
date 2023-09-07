@@ -27,7 +27,7 @@ const Footer: FunctionComponent<FooterProps> = ({
   };
 
   return (
-    <div className="footer container">
+    <div className="footer-content container">
       <div className="footer-grid">
         <div className="social">
           <div className="social-icon-group">

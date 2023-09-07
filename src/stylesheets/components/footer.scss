@@ -1,16 +1,14 @@
 @use "rtg-design-web" as *;
 
 .footer {
-  .footer-content {
-    padding-top: units(6);
-    padding-bottom: units(4);
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: color($theme-color-border);
-    font-family: family("body");
-    font-size: font-size($theme-font-size-xs);
-    line-height: line-height($theme-line-height-body);
-  }
+  padding-top: units(6);
+  padding-bottom: units(4);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: color($theme-color-border);
+  font-family: family("body");
+  font-size: font-size($theme-font-size-xs);
+  line-height: line-height($theme-line-height-body);
 
   // Grid
 

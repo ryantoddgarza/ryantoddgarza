@@ -62,14 +62,14 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
   return (
     <article className="album">
       <SEO title={title} />
-      <div className="module container">
+      <div className="container">
         <div className="row">
-          <div className="col left">
+          <div className="module col left">
             <div className="cover-art">
               <GatsbyImage image={image?.gatsbyImage} alt="" />
             </div>
           </div>
-          <div className="col right">
+          <div className="module col right">
             <header className="header">
               <h1 className="title h1">{title}</h1>
               <h2 className="title h2">{artist?.name}</h2>
@@ -86,9 +86,9 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
         </div>
       </div>
       {(tracks || metadata || links) && (
-        <div className="module container">
+        <div className="container">
           <div className="row">
-            <div className="col left">
+            <div className="module col left">
               {tracks && (
                 <section className="section">
                   <h3 className="title">Tracks</h3>
@@ -119,11 +119,11 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                 </section>
               )}
             </div>
-            <div className="col right">
-              {metadata && (
-                <section className="section">
-                  <h3 className="title">Info</h3>
-                  <div>
+            <div className="module col right">
+              <section className="section">
+                {metadata && (
+                  <>
+                    <h3 className="title">Info</h3>
                     <ul className="meta-list">
                       {metadata?.map(
                         ({ key, value }) =>
@@ -134,13 +134,11 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                           )
                       )}
                     </ul>
-                  </div>
-                </section>
-              )}
-              {links && (
-                <section className="section">
-                  <h3 className="title">Listen</h3>
-                  <div>
+                  </>
+                )}
+                {links && (
+                  <>
+                    <h3 className="title">Listen</h3>
                     <ul className="listen-list">
                       {links?.map(
                         ({ name, url }: { name: string; url: string }) => (
@@ -157,33 +155,31 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                         )
                       )}
                     </ul>
-                  </div>
-                </section>
-              )}
+                  </>
+                )}
+              </section>
             </div>
           </div>
         </div>
       )}
       {(credits || copyright || writeups) && (
-        <div className="module container">
+        <div className="container">
           <div className="row">
             {credits && (
-              <div className="col left">
+              <div className="module col left">
                 <section className="section">
                   <h3 className="title">Credits</h3>
-                  <div>
-                    <dl className="credit-list">
-                      {credits?.map(
-                        ({ name, role }: { name: string; role: string }) =>
-                          getCreditDetailElements({ name, role })
-                      )}
-                    </dl>
-                  </div>
+                  <dl className="credit-list">
+                    {credits?.map(
+                      ({ name, role }: { name: string; role: string }) =>
+                        getCreditDetailElements({ name, role })
+                    )}
+                  </dl>
                   {copyright && <p className="copyright">{copyright}</p>}
                 </section>
               </div>
             )}
-            <div className="col right">
+            <div className="module col right">
               <section className="section praise">
                 <h3 className="title">Praise</h3>
                 {writeups && (

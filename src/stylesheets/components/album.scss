@@ -25,16 +25,6 @@
     padding-left: $album-grid-gap * 0.5;
     padding-right: $album-grid-gap * 0.5;
 
-    &:not(:first-child) {
-      margin-top: units(2);
-    }
-
-    @include at-media("tablet-lg") {
-      &:not(:first-child) {
-        margin-top: units(0);
-      }
-    }
-
     &.left {
       @include at-media("tablet-lg") {
         width: math.percentage(math.div(3, 5));
@@ -51,10 +41,8 @@
   // Layout
 
   .section {
-    margin-bottom: units(4);
-
     > .title {
-      margin-bottom: units(4);
+      margin-bottom: var(--spacing-5);
       font-family: family("heading");
       font-size: font-size($theme-font-size-sm);
       font-weight: font-weight("bold");
@@ -64,7 +52,7 @@
   }
 
   .header {
-    margin-bottom: units(6);
+    margin-bottom: var(--spacing-6);
 
     > .title.h1 {
       font-family: family("heading");
@@ -74,7 +62,7 @@
     }
 
     > .title.h2 {
-      margin-top: units(2);
+      margin-top: var(--spacing-2);
       font-family: family("heading");
       font-size: font-size($theme-font-size-md);
       font-weight: font-weight("medium");
@@ -87,11 +75,9 @@
   .cover-art {
     max-width: breakpoint("tablet");
     margin: auto;
-    padding-bottom: units(4);
 
     @include at-media("tablet-lg") {
       margin: units(0);
-      padding-bottom: units(0);
     }
   }
 
@@ -141,6 +127,10 @@
   .praise-list {
     color: color($theme-color-text-weak);
     font-size: font-size($theme-font-size-sm);
+
+    &:not(:last-child) {
+      margin-bottom: var(--spacing-5);
+    }
   }
 
   .track-list {
@@ -173,9 +163,5 @@
     & > :nth-child(odd) {
       margin-right: units(1);
     }
-  }
-
-  .praise-list {
-    margin-bottom: var(--spacing-5)
   }
 }

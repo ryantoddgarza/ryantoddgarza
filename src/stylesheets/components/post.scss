@@ -10,13 +10,26 @@
         font-size: font-size($theme-font-size-3xl);
         font-weight: font-weight("bold");
         line-height: line-height($theme-line-height-heading);
+        text-align: center;
+
+        &:after {
+          content: "";
+          display: block;
+          width: units(6);
+          height: 1px;
+          background-color: color($theme-color-text);
+          margin-top: units(2.5);
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
 
       .metadata {
-        margin-top: units(2);
+        margin-top: units(2.5);
         font-family: family("body");
         font-size: font-size($theme-font-size-xs);
         line-height: line-height($theme-line-height-body);
+        text-align: center;
 
         .author {
           font-weight: font-weight("medium");

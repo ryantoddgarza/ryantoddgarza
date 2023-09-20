@@ -1,4 +1,29 @@
+@use "sass:math";
 @use "rtg-design-web" as *;
+
+// Typography
+
+:root {
+  $scale-phone: 1.2;
+
+  --font-size-xs: #{type-scale(-3, $scale-phone)};
+  --font-size-sm: #{type-scale(-2, $scale-phone)};
+  --font-size-md: #{type-scale(0, $scale-phone)};
+  --font-size-lg: #{type-scale(1, $scale-phone)};
+  --font-size-xl: #{type-scale(2, $scale-phone)};
+  --font-size-display-sm: #{type-scale(3, $scale-phone)};
+  --font-size-display-md: #{type-scale(4, $scale-phone)};
+  --font-size-display-lg: #{type-scale(5, $scale-phone)};
+
+  @media screen and (min-width: breakpoint("tablet")) {
+    --font-size-md: #{type-scale(0)};
+    --font-size-lg: #{type-scale(1)};
+    --font-size-xl: #{type-scale(2)};
+    --font-size-display-sm: #{type-scale(3)};
+    --font-size-display-md: #{type-scale(4)};
+    --font-size-display-lg: #{type-scale(5)};
+  }
+}
 
 // Spacing
 

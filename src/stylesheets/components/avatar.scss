@@ -4,26 +4,30 @@
   overflow: hidden;
   object-fit: cover;
   border-radius: 50%;
-}
 
-// Size variants
+  // Size variants
+  $size-xs: 4;
+  $size-sm: 8;
+  $size-md: 12;
+  $size-lg: 32;
 
-.avatar.xs {
-  width: units($theme-avatar-size-xs);
-  height: units($theme-avatar-size-xs);
-}
+  &.xs {
+    width: units($size-xs);
+    height: units($size-xs);
+  }
 
-.avatar.sm {
-  width: units($theme-avatar-size-sm);
-  height: units($theme-avatar-size-sm);
-}
+  &.sm {
+    width: units($size-sm);
+    height: units($size-sm);
+  }
 
-.avatar.md {
-  width: units($theme-avatar-size-md);
-  height: units($theme-avatar-size-md);
-}
+  &.md {
+    width: units($size-md);
+    height: units($size-md);
+  }
 
-.avatar.lg {
-  width: units($theme-avatar-size-lg);
-  height: units($theme-avatar-size-lg);
+  &.lg {
+    width: units($size-lg);
+    height: units($size-lg);
+  }
 }

@@ -2,12 +2,10 @@
 
 .post {
   .content {
-    font-size: font-size($theme-font-size-md);
-
     .header {
       .title {
         font-family: family("heading");
-        font-size: font-size($theme-font-size-3xl);
+        font-size: var(--font-size-display-lg);
         font-weight: font-weight("bold");
         line-height: line-height($theme-line-height-heading);
         text-align: center;
@@ -18,16 +16,16 @@
           width: units(6);
           height: 1px;
           background-color: color($theme-color-text);
-          margin-top: units(2.5);
+          margin-top: var(--spacing-5);
           margin-left: auto;
           margin-right: auto;
         }
       }
 
       .metadata {
-        margin-top: units(2.5);
+        margin-top: var(--spacing-5);
         font-family: family("body");
-        font-size: font-size($theme-font-size-xs);
+        font-size: var(--font-size-sm);
         line-height: line-height($theme-line-height-body);
         text-align: center;
 
@@ -52,11 +50,11 @@
     }
 
     .image {
-      margin-top: units(6);
+      margin-top: var(--spacing-6);
     }
 
     .body {
-      margin-top: units(6);
+      margin-top: var(--spacing-6);
     }
   }
 }

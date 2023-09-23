@@ -2,21 +2,21 @@
 
 @mixin h1 {
   font-family: family("heading");
-  font-size: font-size($theme-font-size-3xl);
+  font-size: var(--font-size-display-md);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 }
 
 @mixin h2 {
   font-family: family("heading");
-  font-size: font-size($theme-font-size-2xl);
+  font-size: var(--font-size-display-sm);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 }
 
 @mixin h3 {
   font-family: family("heading");
-  font-size: font-size($theme-font-size-xl);
+  font-size: var(--font-size-xl);
   font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
 }

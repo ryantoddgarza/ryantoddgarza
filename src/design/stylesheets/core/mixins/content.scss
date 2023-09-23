@@ -5,51 +5,62 @@
   line-height: line-height($theme-line-height-body);
 
   h1 {
-    margin-top: var(--spacing-6);
+    font-family: family("heading");
     font-size: var(--font-size-display-md);
     font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
+    margin-top: var(--spacing-6);
   }
 
   h2 {
-    margin-top: var(--spacing-5);
+    font-family: family("heading");
     font-size: var(--font-size-display-sm);
     font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
+    margin-top: var(--spacing-5);
   }
 
   h3 {
-    margin-top: var(--spacing-5);
+    font-family: family("heading");
     font-size: var(--font-size-xl);
     font-weight: font-weight("bold");
     line-height: line-height($theme-line-height-heading);
+    margin-top: var(--spacing-5);
   }
 
   h4 {
-    margin-top: var(--spacing-5);
+    font-family: family("heading");
     font-size: var(--font-size-lg);
-    font-weight: font-weight("bold");
+    font-weight: font-weight("medium");
     line-height: line-height($theme-line-height-heading);
+    text-transform: uppercase;
+    margin-top: var(--spacing-5);
   }
 
   h5 {
-    margin-top: var(--spacing-4);
+    font-family: family("heading");
     font-size: var(--font-size-md);
-    font-weight: font-weight("bold");
+    font-weight: font-weight("medium");
     line-height: line-height($theme-line-height-heading);
+    text-transform: uppercase;
+    margin-top: var(--spacing-4);
   }
 
   h6 {
-    margin-top: var(--spacing-4);
+    font-family: family("heading");
     font-size: var(--font-size-sm);
-    font-weight: font-weight("bold");
+    font-weight: font-weight("medium");
     line-height: line-height($theme-line-height-heading);
+    text-transform: uppercase;
+    margin-top: var(--spacing-4);
   }
 
   p {
-    margin-top: units(2);
+    font-family: family("body");
     font-size: var(--font-size-md);
+    font-weight: font-weight("normal");
     line-height: line-height($theme-line-height-body);
+    margin-top: units(2);
   }
 
   a {
@@ -73,9 +84,7 @@
 
   sup,
   sub {
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    font-size: 75%;
+    font-size: 80%;
     line-height: line-height($theme-line-height-ui);
   }
 
@@ -89,11 +98,11 @@
 
   ul,
   ol {
-    margin-top: var(--spacing-4);
-    margin-bottom: var(--spacing-4);
+    margin-top: units(2);
+    margin-bottom: units(2);
 
     li {
-      margin-top: var(--spacing-2);
+      margin-top: units(1);
       margin-left: units(2);
     }
   }
@@ -118,13 +127,14 @@
     font-family: family("code");
     font-size: 85%;
     line-height: line-height($theme-line-height-body);
+    white-space: break-spaces;
     background-color: color($theme-color-background-strong);
     border-radius: 6px;
   }
 
   blockquote {
     margin-top: var(--spacing-5);
-    margin-top: var(--spacing-5);
+    margin-bottom: var(--spacing-5);
     padding-left: units(2);
     border-left-width: 2px;
     border-left-style: solid;
@@ -138,14 +148,14 @@
       font-family: family("body");
       font-size: var(--font-size-lg);
       line-height: line-height($theme-line-height-body);
+    }
 
-      cite {
-        display: block;
-        margin-top: units(2);
-        font-size: var(--font-size-sm);
-      }
+    cite {
+      display: block;
+      margin-top: var(--spacing-3);
+      font-size: var(--font-size-sm);
 
-      cite::before {
+      &::before {
         content: "— ";
       }
     }
@@ -157,8 +167,8 @@
   }
 
   figcaption {
-    margin-bottom: var(--spacing-2);
-    text-align: center;
+    margin-top: var(--spacing-2);
     font-size: var(--font-size-sm);
+    text-align: center;
   }
 }

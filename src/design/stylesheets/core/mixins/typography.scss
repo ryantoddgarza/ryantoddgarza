@@ -1,0 +1,80 @@
+@use "rtg-design-web" as *;
+
+@mixin h1 {
+  font-family: family("heading");
+  font-size: font-size($theme-font-size-3xl);
+  font-weight: font-weight("bold");
+  line-height: line-height($theme-line-height-heading);
+}
+
+@mixin h2 {
+  font-family: family("heading");
+  font-size: font-size($theme-font-size-2xl);
+  font-weight: font-weight("bold");
+  line-height: line-height($theme-line-height-heading);
+}
+
+@mixin h3 {
+  font-family: family("heading");
+  font-size: font-size($theme-font-size-xl);
+  font-weight: font-weight("bold");
+  line-height: line-height($theme-line-height-heading);
+}
+
+@mixin h4 {
+  font-family: family("heading");
+  font-size: var(--font-size-lg);
+  font-weight: font-weight("medium");
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+}
+
+@mixin h5 {
+  font-family: family("heading");
+  font-size: var(--font-size-md);
+  font-weight: font-weight("medium");
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+}
+
+@mixin h6 {
+  font-family: family("heading");
+  font-size: var(--font-size-sm);
+  font-weight: font-weight("medium");
+  line-height: line-height($theme-line-height-heading);
+  text-transform: uppercase;
+}
+
+@mixin copy {
+  font-family: family("body");
+  font-size: var(--font-size-md);
+  font-weight: font-weight("normal");
+  line-height: line-height($theme-line-height-body);
+}
+
+@mixin link {
+  color: color($theme-color-text-link);
+  @include transition(color);
+
+  &:hover {
+    color: color($theme-color-text-link-hover);
+  }
+}
+
+// Margins
+
+@mixin heading-margin-sm {
+  margin-top: var(--spacing-4);
+}
+
+@mixin heading-margin-md {
+  margin-top: var(--spacing-5);
+}
+
+@mixin heading-margin-lg {
+  margin-top: var(--spacing-6);
+}
+
+@mixin copy-margin {
+  margin-top: units(2);
+}

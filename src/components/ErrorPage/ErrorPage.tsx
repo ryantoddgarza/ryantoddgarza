@@ -4,8 +4,8 @@ import type { FunctionComponent } from 'react';
 const ErrorPage: FunctionComponent = () => (
   <div className="error-page">
     <div className="align-center">
-      <h1 className="h1">404</h1>
-      <p className="copy md margin">Page not found</p>
+      <h1 className="u-h1">404</h1>
+      <p className="u-copy margin">Page not found</p>
     </div>
   </div>
 );

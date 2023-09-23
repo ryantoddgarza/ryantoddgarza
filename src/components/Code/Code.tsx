@@ -61,7 +61,7 @@ const Code: FunctionComponent = () => {
       <section className="section light">
         <div className="container featured-projects">
           <div className="module align-center">
-            <h2 className="h2">Featured Projects</h2>
+            <h2 className="u-h2">Featured Projects</h2>
           </div>
           <div>
             {featuredProjects.nodes.map(
@@ -93,7 +93,7 @@ const Code: FunctionComponent = () => {
       <section className="section light">
         <div className="container projects">
           <div className="module align-center">
-            <h2 className="h2">Other Recent Projects</h2>
+            <h2 className="u-h2">Other Recent Projects</h2>
           </div>
           <div className="prgmg-project-grid">
             {nonFeaturedProjects.nodes.map(

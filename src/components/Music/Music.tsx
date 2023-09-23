@@ -69,8 +69,8 @@ const Music: FunctionComponent = () => {
       <section className="section light">
         <div className="container">
           <div className="module">
-            <h2 className="h2 margin">Featured Albums</h2>
-            <div className="h6 link">
+            <h2 className="u-h2">Featured Albums</h2>
+            <div className="u-h6 link">
               <Link to={ALBUMS_PATH}>View all albums</Link>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Music: FunctionComponent = () => {
         <div className="container">
           <div className="explore-grid">
             <div className="module">
-              <h2 className="h2 margin">Listen</h2>
+              <h2 className="u-h2">Listen</h2>
               <List
                 nodes={parseLinkData(listen)}
                 size={listSize.LARGE}
@@ -111,7 +111,7 @@ const Music: FunctionComponent = () => {
               />
             </div>
             <div className="module">
-              <h2 className="h2 margin">Credits</h2>
+              <h2 className="u-h2">Credits</h2>
               <List
                 nodes={parseLinkData(credits)}
                 size={listSize.LARGE}
@@ -119,8 +119,8 @@ const Music: FunctionComponent = () => {
               />
             </div>
             <div className="module inquire">
-              <h2 className="h3 margin">Inquire</h2>
-              <p className="copy md margin">
+              <h2 className="u-h3">Inquire</h2>
+              <p className="u-copy margin">
                 Email for licensing, press, and radio.
               </p>
             </div>

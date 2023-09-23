@@ -1,100 +1,61 @@
 @use "rtg-design-web" as *;
 
-.h1 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-3xl);
-  font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+.u-h1 {
+  @include h1;
 
   &.margin {
-    margin-top: units(4);
+    @include heading-margin-lg;
   }
 }
 
-.h2 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-2xl);
-  font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+.u-h2 {
+  @include h2;
 
   &.margin {
-    margin-top: units(3);
+    @include heading-margin-md;
   }
 }
 
-.h3 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-xl);
-  font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+.u-h3 {
+  @include h3;
 
   &.margin {
-    margin-top: units(3);
+    @include heading-margin-md;
   }
 }
 
-.h4 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-lg);
-  font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-heading);
-  text-transform: uppercase;
+.u-h4 {
+  @include h4;
 
   &.margin {
-    margin-top: units(3);
+    @include heading-margin-md;
   }
 }
 
-.h5 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-md);
-  font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-heading);
-  text-transform: uppercase;
+.u-h5 {
+  @include h5;
 
   &.margin {
-    margin-top: units(3);
+    @include heading-margin-sm;
   }
 }
 
-.h6 {
-  font-family: family("heading");
-  font-size: font-size($theme-font-size-sm);
-  font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-heading);
-  text-transform: uppercase;
+.u-h6 {
+  @include h6;
 
   &.margin {
-    margin-top: units(3);
+    @include heading-margin-sm;
   }
 }
 
-.copy {
-  font-family: family("body");
-  font-weight: font-weight("normal");
-  line-height: line-height($theme-line-height-body);
-
-  &.sm {
-    font-size: font-size($theme-font-size-sm);
-  }
-
-  &.md {
-    font-size: font-size($theme-font-size-md);
-  }
-
-  &.lg {
-    font-size: font-size($theme-font-size-lg);
-  }
+.u-copy {
+  @include copy;
 
   &.margin {
-    margin-top: units(2);
+    @include copy-margin;
   }
 }
 
-.link {
-  @include transition(color);
-
-  &:hover {
-    color: color($theme-color-primary);
-  }
+.u-link {
+  @include link;
 }

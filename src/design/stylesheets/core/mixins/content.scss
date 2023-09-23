@@ -5,71 +5,42 @@
   line-height: line-height($theme-line-height-body);
 
   h1 {
-    font-family: family("heading");
-    font-size: var(--font-size-display-md);
-    font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
-    margin-top: var(--spacing-6);
+    @include h1;
+    @include heading-margin-lg;
   }
 
   h2 {
-    font-family: family("heading");
-    font-size: var(--font-size-display-sm);
-    font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
-    margin-top: var(--spacing-5);
+    @include h2;
+    @include heading-margin-md;
   }
 
   h3 {
-    font-family: family("heading");
-    font-size: var(--font-size-xl);
-    font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
-    margin-top: var(--spacing-5);
+    @include h3;
+    @include heading-margin-md;
   }
 
   h4 {
-    font-family: family("heading");
-    font-size: var(--font-size-lg);
-    font-weight: font-weight("medium");
-    line-height: line-height($theme-line-height-heading);
-    text-transform: uppercase;
-    margin-top: var(--spacing-5);
+    @include h4;
+    @include heading-margin-md;
   }
 
   h5 {
-    font-family: family("heading");
-    font-size: var(--font-size-md);
-    font-weight: font-weight("medium");
-    line-height: line-height($theme-line-height-heading);
-    text-transform: uppercase;
-    margin-top: var(--spacing-4);
+    @include h5;
+    @include heading-margin-sm;
   }
 
   h6 {
-    font-family: family("heading");
-    font-size: var(--font-size-sm);
-    font-weight: font-weight("medium");
-    line-height: line-height($theme-line-height-heading);
-    text-transform: uppercase;
-    margin-top: var(--spacing-4);
+    @include h6;
+    @include heading-margin-sm;
   }
 
   p {
-    font-family: family("body");
-    font-size: var(--font-size-md);
-    font-weight: font-weight("normal");
-    line-height: line-height($theme-line-height-body);
-    margin-top: units(2);
+    @include copy;
+    @include copy-margin;
   }
 
   a {
-    color: color($theme-color-text-link);
-    @include transition(color);
-
-    &:hover {
-      color: color($theme-color-text-link-hover);
-    }
+    @include link;
   }
 
   b,

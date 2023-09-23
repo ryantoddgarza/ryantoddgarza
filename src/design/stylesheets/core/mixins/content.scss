@@ -161,18 +161,4 @@
     text-align: center;
     font-size: var(--font-size-sm);
   }
-
-  .footnotes {
-    margin-top: var(--spacing-5);
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: color($theme-color-border);
-    font-size: var(--font-size-sm);
-    line-height: line-height($theme-line-height-extended);
-
-    ol li {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
 }

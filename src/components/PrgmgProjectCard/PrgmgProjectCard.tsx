@@ -46,7 +46,6 @@ const PrgmgProjectCard: FunctionComponent<PrgmgProjectCardProps> = ({
           <div className="links">
             {gitHubLink && (
               <a
-                className="link"
                 href={gitHubLink}
                 target="_blank"
                 rel="noreferrer noopener"

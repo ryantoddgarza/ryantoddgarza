@@ -1,7 +1,8 @@
 @use "rtg-design-web" as *;
 
 .markdown {
-  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
   @include content;
 
   & > :first-child {

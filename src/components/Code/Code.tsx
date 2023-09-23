@@ -60,7 +60,7 @@ const Code: FunctionComponent = () => {
       <SEO title={title} />
       <section className="section light">
         <div className="container featured-projects">
-          <div className="module align-center">
+          <div className="module u-align-center">
             <h2 className="u-h2">Featured Projects</h2>
           </div>
           <div>
@@ -92,7 +92,7 @@ const Code: FunctionComponent = () => {
       </section>
       <section className="section light">
         <div className="container projects">
-          <div className="module align-center">
+          <div className="module u-align-center">
             <h2 className="u-h2">Other Recent Projects</h2>
           </div>
           <div className="prgmg-project-grid">

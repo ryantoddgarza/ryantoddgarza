@@ -23,7 +23,7 @@ const Contact: FunctionComponent = () => {
     <div className="contact">
       <SEO title={title} />
       <section className="section light module">
-        <div className="container align-center">
+        <div className="container u-align-center">
           <h2 className="u-h2 margin">Contact</h2>
           <div className="cta-links">
             <a className="button large dark" href={emailBtn.url}>
@@ -33,7 +33,7 @@ const Contact: FunctionComponent = () => {
         </div>
       </section>
       <section className="section light module">
-        <div className="container align-center">
+        <div className="container u-align-center">
           <h2 className="u-h3 margin">Follow</h2>
           <div className="cta-links">
             <SocialGrid />

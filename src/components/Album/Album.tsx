@@ -48,10 +48,10 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
     const trailChar = '.';
 
     const componentArray = [
-      <dt className="list-item xs" key={nameKey}>
+      <dt className="list-item sm" key={nameKey}>
         {name + trailChar.repeat(220)}
       </dt>,
-      <dd className="list-item xs" key={roleKey}>
+      <dd className="list-item sm" key={roleKey}>
         {role}
       </dd>,
     ];
@@ -142,7 +142,7 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                     <ul className="listen-list">
                       {links?.map(
                         ({ name, url }: { name: string; url: string }) => (
-                          <div className="list-item sm" key={name}>
+                          <div className="list-item md" key={name}>
                             <a
                               className="list-link"
                               href={url}
@@ -192,23 +192,25 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                         date,
                         url,
                       }: Writeup | null) => (
-                        <li className="" key={url}>
-                          <a
-                            className="list-link"
-                            href={url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            {publication}
-                          </a>
-                          <div className="list-item xs">
+                        <dl className="list-item md" key={url}>
+                          <dt>
+                            <a
+                              className="title list-link"
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                            >
+                              {publication}
+                            </a>
+                          </dt>
+                          <dd className="detail">
                             {`
                               ${date ? date : ''}
                               ${title}
                               ${author ? ` by ${author}` : ''}
                               `}
-                          </div>
-                        </li>
+                          </dd>
+                        </dl>
                       )
                     )}
                   </ul>

@@ -43,11 +43,7 @@
   .section {
     > .title {
       margin-bottom: var(--spacing-5);
-      font-family: family("heading");
-      font-size: font-size($theme-font-size-sm);
-      font-weight: font-weight("bold");
-      line-height: line-height($theme-line-height-heading);
-      text-transform: uppercase;
+      @include h5;
     }
   }
 
@@ -55,16 +51,13 @@
     margin-bottom: var(--spacing-6);
 
     > .title.h1 {
-      font-family: family("heading");
-      font-size: font-size($theme-font-size-3xl);
-      font-weight: font-weight("bold");
-      line-height: line-height($theme-line-height-heading);
+      @include h1;
     }
 
     > .title.h2 {
       margin-top: var(--spacing-2);
       font-family: family("heading");
-      font-size: font-size($theme-font-size-md);
+      font-size: var(--font-size-md);
       font-weight: font-weight("medium");
       line-height: line-height($theme-line-height-heading);
     }
@@ -86,50 +79,48 @@
   }
 
   .copyright {
-    margin-top: units(2);
-    font-size: font-size($theme-font-size-xs);
+    @include copy-margin;
+    font-size: var(--font-size-sm);
   }
 
   // Lists
 
   .list-item {
+    margin-bottom: var(--spacing-2);
     font-family: family("body");
     line-height: line-height($theme-line-height-body);
     @include ellipsis;
 
-    &.xs {
-      margin-bottom: units(1);
-      font-size: font-size($theme-font-size-xs);
-    }
-
     &.sm {
-      margin-bottom: units(1.5);
-      font-size: font-size($theme-font-size-sm);
+      font-size: var(--font-size-sm);
     }
 
     &.md {
-      margin-bottom: units(2);
-      font-size: font-size($theme-font-size-md);
+      font-size: var(--font-size-md);
     }
   }
 
   .list-link {
-    color: color($theme-color-primary);
-    @include transition(color);
-
-    &:hover {
-      color: color($theme-color-text);
-    }
+    @include link;
   }
 
   .meta-list,
   .listen-list,
   .praise-list {
     color: color($theme-color-text-weak);
-    font-size: font-size($theme-font-size-sm);
 
     &:not(:last-child) {
       margin-bottom: var(--spacing-5);
+    }
+  }
+
+  .praise-list {
+    .title {
+      font-size: var(--font-size-sm);
+    }
+
+    .detail {
+      font-size: var(--font-size-xs);
     }
   }
 

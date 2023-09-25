@@ -11,18 +11,18 @@
 
     .col {
       @include at-media("tablet") {
-        padding-left: units(2);
-        padding-right: units(2);
+        padding-left: var(--spacing-3);
+        padding-right: var(--spacing-3);
       }
 
       @include at-media("desktop") {
-        padding-left: units(3);
-        padding-right: units(3);
+        padding-left: var(--spacing-4);
+        padding-right: var(--spacing-4);
       }
 
       @include at-media("widescreen") {
-        padding-left: units(4);
-        padding-right: units(4);
+        padding-left: var(--spacing-5);
+        padding-right: var(--spacing-5);
       }
     }
 
@@ -51,21 +51,16 @@
       }
 
       .headline {
-        font-family: family("heading");
-        font-size: font-size($theme-font-size-xl);
-        font-weight: font-weight("medium");
-        line-height: line-height($theme-line-height-heading);
+        @include h3;
       }
 
       .text {
-        margin-top: units(3);
-        font-family: family("body");
-        font-size: font-size($theme-font-size-md);
-        line-height: line-height($theme-line-height-body);
+        @include copy;
+        @include heading-margin-sm;
       }
 
       .cta-links {
-        margin-top: units(6);
+        margin-top: var(--spacing-5);
       }
     }
   }

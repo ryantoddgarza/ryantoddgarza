@@ -7,7 +7,7 @@
   align-items: center;
   padding-left: units(2);
   padding-right: units(2);
-  font-size: font-size($theme-font-size-md);
+  font-size: var(--font-size-md);
   font-weight: font-weight("normal");
   line-height: line-height($theme-line-height-ui);
   vertical-align: bottom;

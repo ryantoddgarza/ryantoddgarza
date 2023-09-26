@@ -10,10 +10,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: units(4);
-    padding-bottom: units(4);
-    padding-left: units(4);
-    padding-right: units(4);
+    padding: var(--spacing-4);
     color: color($theme-color-text);
     background: color($theme-color-background-weak);
   }
@@ -22,6 +19,7 @@
   }
 
   .body {
+    margin-top: var(--spacing-5);
   }
 
   .footer {
@@ -31,36 +29,24 @@
   // Header
 
   .title {
-    margin-bottom: units(3);
-    margin-bottom: units(3);
-    font-family: family("heading");
-    font-size: font-size($theme-font-size-lg);
-    font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
+    @include h4;
   }
 
   // Description
 
   .description {
-    font-family: family("body");
-    font-size: font-size($theme-font-size-md);
-    line-height: line-height($theme-line-height-body);
+    @include copy;
 
     p {
-      margin-bottom: units(2);
+      @include copy-margin;
 
-      &:last-child {
-        margin-bottom: 0;
+      &:first-child {
+        margin-top: 0;
       }
     }
 
     a {
-      color: color($theme-color-primary);
-      @include transition(color);
-
-      &:hover {
-        color: color($theme-color-text);
-      }
+      @include link;
     }
   }
 
@@ -69,9 +55,9 @@
   .tech-list {
     display: flex;
     flex-wrap: wrap;
-    margin-top: units(3);
+    margin-top: var(--spacing-5);
     font-family: family("code");
-    font-size: font-size($theme-font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: line-height($theme-line-height-body);
 
     .tag {

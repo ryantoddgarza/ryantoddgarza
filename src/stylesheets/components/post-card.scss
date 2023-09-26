@@ -8,36 +8,24 @@
   // Layout
 
   .body {
-    padding-top: units(2);
-    padding-bottom: units(2);
-    padding-left: units(2);
-    padding-right: units(2);
+    padding: var(--spacing-3);
 
     .title {
-      margin-top: units(2);
-      font-family: family("heading");
-      font-size: font-size($theme-font-size-lg);
-      font-weight: font-weight("bold");
-      line-height: line-height($theme-line-height-heading);
+      @include h4;
+      margin-top: var(--spacing-3);
     }
 
     .subtitle {
-      font-family: family("heading");
-      font-size: font-size($theme-font-size-xs);
-      font-weight: font-weight("medium");
-      line-height: line-height($theme-line-height-ui);
-      text-transform: uppercase;
+      @include h6;
 
       a {
-        @include transition(color);
+        @include link;
       }
     }
 
     .copy {
-      margin-top: units(3);
-      font-family: family("body");
-      font-size: font-size($theme-font-size-md);
-      line-height: line-height($theme-line-height-body);
+      margin-top: var(--spacing-3);
+      @include copy;
     }
   }
 
@@ -76,23 +64,13 @@
   &.light {
     color: color($theme-color-text);
     background-color: color($theme-color-background-weak);
-
-    & .body .subtitle a {
-      color: color($theme-color-primary);
-
-      &:hover {
-        color: color($theme-color-text);
-      }
-    }
   }
 
   &.dark {
     color: color($theme-color-text-inverse);
     background-color: color($theme-color-background-inverse);
 
-    & .body .subtitle a {
-      color: color($theme-color-primary);
-
+    & .body a {
       &:hover {
         color: color($theme-color-text-inverse);
       }

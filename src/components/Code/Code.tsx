@@ -58,8 +58,8 @@ const Code: FunctionComponent = () => {
   return (
     <div className="code">
       <SEO title={title} />
-      <section className="section light">
-        <div className="container featured-projects">
+      <section className="section light container">
+        <div className="featured-projects">
           <div className="module u-align-center">
             <h2 className="u-h2">Featured Projects</h2>
           </div>

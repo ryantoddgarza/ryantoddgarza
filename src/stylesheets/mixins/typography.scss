@@ -24,9 +24,8 @@
 @mixin h4 {
   font-family: family("heading");
   font-size: var(--font-size-lg);
-  font-weight: font-weight("medium");
+  font-weight: font-weight("bold");
   line-height: line-height($theme-line-height-heading);
-  text-transform: uppercase;
 }
 
 @mixin h5 {

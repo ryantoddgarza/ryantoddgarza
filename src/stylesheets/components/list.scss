@@ -2,6 +2,18 @@
 @use "rtg-design-web" as *;
 
 .list {
+  color: inherit;
+  font-family: family("body");
+  line-height: line-height($theme-line-height-ui);
+
+  a {
+    color: color($theme-color-primary);
+    @include transition(color);
+
+    &:hover {
+      color: inherit;
+    }
+  }
   // Layout
 
   .list-row {
@@ -15,93 +27,68 @@
   }
 
   .item {
-    font-family: family("heading");
-    font-size: font-size($theme-font-size-md);
     font-weight: font-weight("bold");
-    line-height: line-height($theme-line-height-heading);
-
-    a {
-      @include transition(color);
-    }
   }
 
   .numeral {
-    font-family: family("body");
-    font-size: font-size($theme-font-size-md);
-    line-height: line-height($theme-line-height-body);
+    margin-right: units(2);
+    margin-bottom: var(--spacing-1);
+
+    @include at-media("tablet") {
+      margin-top: 0;
+    }
   }
 
   // Size variants
 
   &.small {
-    .list-row {
-      padding-top: units(1);
-      padding-bottom: units(1);
+    .list-row:not(:first-of-type) {
+      padding-top: var(--spacing-2);
     }
 
-    .item {
-      margin-top: units(1);
-      font-size: font-size($theme-font-size-sm);
-    }
-
+    .item,
     .numeral {
-      margin-top: units(1);
-      margin-right: units(2);
-      font-size: font-size($theme-font-size-sm);
+      font-size: var(--font-size-sm);
     }
   }
 
   &.medium {
-    .list-row {
-      padding-top: units(2);
-      padding-bottom: units(2);
+    .list-row:not(:first-of-type) {
+      padding-top: var(--spacing-3);
     }
 
-    .item {
-      margin-top: units(2);
-      font-size: font-size($theme-font-size-md);
-    }
-
+    .item,
     .numeral {
-      margin-top: units(1);
-      margin-right: units(2);
-      font-size: font-size($theme-font-size-md);
+      font-size: var(--font-size-md);
     }
   }
 
   &.large {
-    .list-row {
-      padding-top: units(2.5);
-      padding-bottom: units(2.5);
+    .list-row:not(:first-of-type) {
+      padding-top: var(--spacing-4);
     }
 
     .item {
-      margin-top: units(2.5);
-      font-size: font-size($theme-font-size-xl);
+      font-size: var(--font-size-lg);
     }
 
     .numeral {
-      margin-top: units(1);
-      margin-right: units(2);
-      font-size: font-size($theme-font-size-md);
+      font-size: var(--font-size-md);
     }
   }
 
   &.display {
-    .list-row {
-      padding-top: units(3);
-      padding-bottom: units(3);
+    .list-row:not(:first-of-type) {
+      padding-top: var(--spacing-5);
     }
 
     .item {
-      margin-top: units(3);
-      font-size: font-size($theme-font-size-3xl);
+      font-size: var(--font-size-display-sm);
     }
 
     .numeral {
-      margin-top: units(1);
       width: math.percentage(math.div(1, 12));
-      font-size: font-size($theme-font-size-lg);
+      font-size: var(--font-size-lg);
     }
   }
 
@@ -111,10 +98,10 @@
     color: color($theme-color-text-inverse);
 
     a {
-      color: color($theme-color-primary);
+      color: color($theme-color-text-inverse);
 
       &:hover {
-        color: color($theme-color-text-inverse);
+        color: color($theme-color-primary);
       }
     }
   }
@@ -123,19 +110,7 @@
     color: color($theme-color-text);
 
     a {
-      color: color($theme-color-primary);
-
-      &:hover {
-        color: color($theme-color-text);
-      }
-    }
-  }
-
-  &.inherit {
-    color: inherit;
-
-    a {
-      color: inherit;
+      color: color($theme-color-text);
 
       &:hover {
         color: color($theme-color-primary);

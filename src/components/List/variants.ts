@@ -8,5 +8,4 @@ export const listSize = {
 export const listTheme = {
   LIGHT: 'light',
   DARK: 'dark',
-  INHERIT: 'inherit',
 };

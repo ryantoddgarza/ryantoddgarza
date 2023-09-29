@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import type { ListProps } from './types';
-import { listSize, listTheme } from './variants';
+import { listSize } from './variants';
 
 const List: FunctionComponent<ListProps> = ({
   nodes,
@@ -11,7 +11,7 @@ const List: FunctionComponent<ListProps> = ({
 }: ListProps) => {
   const getListClasses = () => {
     const listClasses = ['list', theme, size];
-    return listClasses.join(' ');
+    return listClasses.filter((c) => c != undefined).join(' ');
   };
 
   const formatNum = (n: number) => {
@@ -33,7 +33,7 @@ const List: FunctionComponent<ListProps> = ({
 List.defaultProps = {
   ordered: false,
   size: listSize.SMALL,
-  theme: listTheme.INHERIT,
+  theme: undefined,
 };
 
 export default List;

@@ -3,16 +3,16 @@
 .global-footer {
   position: relative;
   z-index: 2000;
-}
 
-// Theme variants
+  // Theme variants
 
-.global-footer.light {
-  color: color($theme-color-text);
-  background-color: color($theme-color-background);
-}
+  &.light {
+    color: color($theme-color-text);
+    background-color: color($theme-color-background);
+  }
 
-.global-footer.dark {
-  color: color($theme-color-text-inverse);
-  background-color: color($theme-color-background-inverse);
+  &.dark {
+    color: color($theme-color-text-inverse);
+    background-color: color($theme-color-background-inverse);
+  }
 }

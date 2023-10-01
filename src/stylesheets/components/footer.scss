@@ -7,19 +7,24 @@
   border-top-style: solid;
   border-top-color: color($theme-color-border);
   font-family: family("body");
-  font-size: font-size($theme-font-size-xs);
+  font-size: var(--font-size-sm);
   line-height: line-height($theme-line-height-body);
 
   // Grid
 
   .footer-grid {
     display: grid;
-    grid-column-gap: units(6);
+    grid-gap: var(--spacing-7);
     grid-template-columns: 1fr;
     grid-template-areas: "social" "directory" "legal";
     align-items: stretch;
 
     @include at-media("tablet") {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "social directory" "social legal";
+    }
+
+    @include at-media("desktop") {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "social social directory" "social social legal";
     }
@@ -39,7 +44,6 @@
     .social-icon-group {
       margin-top: units(-1.25); // Align icon top
       margin-left: units(-1.25); // Align icon left
-      margin-bottom: units(6);
     }
   }
 }

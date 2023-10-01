@@ -2,39 +2,31 @@
 
 .footer-directory {
   .directory-nav {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: units(3);
+    display: grid;
+    grid-gap: var(--spacing-5);
+    grid-template-columns: 1fr 1fr;
   }
 
   .directory-group {
-    width: 50%;
-    margin-bottom: units(3);
-  }
-
-  .directory-title {
-    font-weight: font-weight("bold");
-  }
-
-  .directory-list {
-    list-style-type: none;
-    margin-top: units(1);
-  }
-
-  .directory-item {
-    margin-bottom: units(1);
-
-    &:last-child {
-      margin-bottom: 0;
+    .directory-title {
+      font-weight: font-weight("bold");
     }
-  }
 
-  .directory-link {
-    @include transition(color);
+    .directory-list {
+      list-style-type: none;
 
-    &:hover,
-    &:active {
-      color: color($theme-color-primary);
+      .directory-item {
+        margin-top: var(--spacing-2);
+      }
+    }
+
+    .directory-link {
+      @include transition(color);
+
+      &:hover,
+      &:active {
+        color: color($theme-color-primary);
+      }
     }
   }
 }

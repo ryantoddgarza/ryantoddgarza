@@ -9,18 +9,18 @@ const GlobalHeader: FunctionComponent<GlobalHeaderProps> = ({
   children,
 }: GlobalHeaderProps) => {
   const getGlobalHeaderClasses = () => {
-    const headerClasses = ['global-header'];
-    return headerClasses.join(' ');
+    const classes = ['global-header'];
+    return classes.join(' ');
   };
 
   return (
     <header className={getGlobalHeaderClasses()}>
       {name && (
-        <Link className="header-name" to={HOME_PATH}>
+        <Link className="header-item header-name" to={HOME_PATH}>
           {name}
         </Link>
       )}
-      <div className="header-content">{children}</div>
+      <div className="header-item header-content">{children}</div>
     </header>
   );
 };

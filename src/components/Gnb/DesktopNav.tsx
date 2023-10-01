@@ -6,9 +6,9 @@ import Submenu from './Submenu';
 import { NavProps } from './types';
 
 const DesktopNav: FunctionComponent<NavProps> = ({ navList }: NavProps) => {
-  const getNavItemClasses = (modifiers = []) => {
-    const navItemClasses = ['nav-item', ...modifiers];
-    return navItemClasses.join(' ');
+  const getNavItemClasses = (modifiers: string[]) => {
+    const classes = ['nav-item', ...modifiers];
+    return classes.filter((c) => c !== '').join(' ');
   };
 
   return (
@@ -17,7 +17,9 @@ const DesktopNav: FunctionComponent<NavProps> = ({ navList }: NavProps) => {
         {navList.map(({ name, url, submenu }) => (
           <li
             key={name}
-            className={getNavItemClasses([submenu && 'nav-item--collapsible'])}
+            className={getNavItemClasses([
+              submenu ? 'nav-item--collapsible' : '',
+            ])}
           >
             <Link className="nav-link" activeClassName="active" to={url}>
               {name}

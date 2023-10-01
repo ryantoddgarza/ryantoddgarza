@@ -1,212 +1,41 @@
 @use "rtg-design-web" as *;
 
 .global-header {
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
+  margin-left: $theme-site-margin;
+  margin-right: $theme-site-margin;
   height: units($theme-nav-height);
   color: color($theme-color-text);
   background-color: color($theme-color-background);
   z-index: 10000;
+  white-space: nowrap;
+  font-family: family("body");
+  font-size: var(--font-size-sm);
+  line-height: line-height($theme-line-height-ui);
+
+  .header-item {
+    display: flex;
+    align-items: center;
+    height: units($theme-nav-height);
+  }
+
+  .header-name {
+    margin-right: units(2);
+    font-weight: font-weight("medium");
+  }
 
   .header-content {
     flex: auto;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    height: units($theme-nav-height);
-    margin-right: $theme-site-margin;
-    font-family: family("body");
-    font-size: font-size($theme-font-size-sm);
-    line-height: line-height($theme-line-height-ui);
 
     @include at-media($theme-nav-breakpoint) {
       justify-content: flex-start;
     }
   }
 }
-
-.global-header .header-name {
-  display: flex;
-  align-items: center;
-  height: units($theme-nav-height);
-  margin-left: $theme-site-margin;
-  margin-right: units(2);
-  white-space: nowrap;
-  font-family: family("body");
-  font-size: font-size($theme-font-size-sm);
-  font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-ui);
-}
-
-// Menu
-.global-header .menu-toggle {
-  // Override user agent button styles
-  border: none;
-  background-color: transparent;
-  margin: 0;
-
-  @include at-media($theme-nav-breakpoint) {
-    display: none;
-  }
-}
-
-// Navigation
-
-.global-header .nav-list {
-  display: none;
-
-  @include at-media($theme-nav-breakpoint) {
-    display: flex;
-  }
-}
-
-.global-header .nav-item {
-  @include at-media($theme-nav-breakpoint) {
-    padding-left: units(2);
-    padding-right: units(2);
-  }
-}
-
-.global-header .nav-item--collapsible {
-  display: flex;
-  align-items: center;
-}
-
-.global-header .nav-item--collapsible .chevron {
-  margin-left: units(0.5);
-  @include transition(transform, slow, fast);
-}
-
-.global-header .nav-item--collapsible .chevron.expanded {
-  transform: rotate(180deg);
-}
-
-.global-header .nav-link {
-  display: flex;
-  align-items: center;
-  min-height: units($theme-nav-height);
-  color: color($theme-color-text);
-  font-family: family("ui");
-  font-size: font-size($theme-font-size-lg);
-  line-height: line-height($theme-line-height-ui);
-  @include transition(color);
-
-  &:hover {
-    color: color($theme-color-primary);
-  }
-
-  @include at-media($theme-nav-breakpoint) {
-    font-size: font-size($theme-font-size-sm);
-  }
-}
-
-.global-header .nav-link.active {
-  color: color($theme-color-primary);
-}
-
-// Submenu
-
-.global-header .submenu {
-  position: static;
-  white-space: nowrap;
-  background-color: color($theme-color-background-weak);
-  max-height: 0;
-  overflow: hidden;
-  @include transition(max-height, slow, fast);
-
-  @include at-media($theme-nav-breakpoint) {
-    position: absolute;
-    top: units($theme-nav-height);
-  }
-}
-
-.global-header .nav-item:hover .submenu,
-.global-header .submenu.expanded {
-  max-height: 360px;
-}
-
-.global-header .submenu-item {
-  padding-left: units(2);
-  padding-right: units(2);
-}
-
-// Mobile menu
-
-.global-header .mobile-menu {
-  position: fixed;
-  top: units($theme-nav-height);
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  @include at-media($theme-nav-breakpoint) {
-    display: none;
-  }
-}
-
-.global-header .mobile-menu.is-closed {
-  pointer-events: none;
-}
-
-.global-header .mobile-menu.is-open {
-  pointer-events: all;
-}
-
-.global-header .mobile-menu .content {
-  position: absolute;
-  top: 0;
-  width: 80%;
-  height: 100vh;
-  background-color: color($theme-color-background-weak);
-  padding-left: $theme-site-margin;
-  padding-right: $theme-site-margin;
-  overflow-y: auto;
-  @include transition(left, slow, fast);
-}
-
-// TODO: Use own class to toggle
-
-.global-header .mobile-menu.is-closed .content {
-  left: -100%;
-}
-
-.global-header .mobile-menu.is-open .content {
-  left: 0;
-}
-
-// END TODO
-
-.global-header .mobile-menu .nav-list {
-  display: block;
-}
-
-// Background overlay
-
-.global-header .background-overlay {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: color($theme-color-background);
-  @include transition(opacity, slow, fast);
-
-  @include at-media($theme-nav-breakpoint) {
-    display: none;
-  }
-}
-
-// TODO: Use own class to toggle
-
-.global-header .mobile-menu.is-closed .background-overlay {
-  opacity: 0;
-}
-
-.global-header .mobile-menu.is-open .background-overlay {
-  opacity: 0.5;
-}
-
-// END TODO

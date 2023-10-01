@@ -41,10 +41,10 @@ const Gnb: FunctionComponent<GnbProps> = ({
   const desktopNavList = [...mainNav];
 
   return (
-    <>
+    <div className="global-navigation">
       <MobileNav navList={mobileNavList} />
       <DesktopNav navList={desktopNavList} />
-    </>
+    </div>
   );
 };
 

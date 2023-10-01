@@ -9,13 +9,13 @@ const Submenu: FunctionComponent<SubmenuProps> = ({
   listItems,
   expanded,
 }: SubmenuProps) => {
-  const getSubmenuClasses = () => {
-    const submenuClasses = ['submenu', expanded && 'expanded'];
-    return submenuClasses.join(' ');
+  const getSubmenuClasses = (modifiers: string[]) => {
+    const classes = ['submenu', ...modifiers];
+    return classes.filter((c) => c !== '').join(' ');
   };
 
   return (
-    <div className={getSubmenuClasses()}>
+    <div className={getSubmenuClasses([expanded ? 'expanded' : ''])}>
       {listItems.map(({ key }) => {
         if (key === '__ALL__') {
           return null;

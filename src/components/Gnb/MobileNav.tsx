@@ -59,18 +59,23 @@ const MobileNav: FunctionComponent<NavProps> = ({ navList }: NavProps) => {
   }, [isMenuOpen]);
 
   const getMenuStateClasses = () => {
-    const menuStateClasses = [isMenuOpen ? 'is-open' : 'is-closed'];
-    return menuStateClasses.join(' ');
+    const classes = [isMenuOpen ? 'is-open' : 'is-closed'];
+    return classes.join(' ');
   };
 
   const getNavItemClasses = (modifiers = []) => {
-    const navItemClasses = ['nav-item', ...modifiers];
-    return navItemClasses.join(' ');
+    const classes = ['nav-item', ...modifiers];
+    return classes.join(' ');
   };
 
   const getExpandIconClasses = (expanded = false) => {
-    const expandIconClasses = ['chevron', expanded && 'expanded'];
-    return expandIconClasses.join(' ');
+    const classes = ['chevron'];
+
+    if (expanded) {
+      classes.push('expanded');
+    }
+
+    return classes.join(' ');
   };
 
   return (

@@ -58,7 +58,7 @@
     color: color($theme-color-text-link);
 
     &:hover {
-      color: color($theme-color-text-link-hover);
+      color: inherit;
     }
   }
 

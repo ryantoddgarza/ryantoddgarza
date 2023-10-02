@@ -1,22 +1,25 @@
 @use "rtg-design-web" as *;
 
 .global-header {
-  display: flex;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  margin-left: $theme-site-margin;
-  margin-right: $theme-site-margin;
-  height: units($theme-nav-height);
   color: color($theme-color-text);
   background-color: color($theme-color-background);
   z-index: 10000;
-  white-space: nowrap;
-  font-family: family("body");
-  font-size: var(--font-size-sm);
-  line-height: line-height($theme-line-height-ui);
+
+  &-content-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: $theme-site-margin;
+    margin-right: $theme-site-margin;
+    height: units($theme-nav-height);
+    white-space: nowrap;
+    font-family: family("body");
+    font-size: var(--font-size-sm);
+    line-height: line-height($theme-line-height-ui);
+  }
 
   .header-item {
     display: flex;

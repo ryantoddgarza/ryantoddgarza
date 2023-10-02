@@ -15,12 +15,14 @@ const GlobalHeader: FunctionComponent<GlobalHeaderProps> = ({
 
   return (
     <header className={getGlobalHeaderClasses()}>
-      {name && (
-        <Link className="header-item header-name" to={HOME_PATH}>
-          {name}
-        </Link>
-      )}
-      <div className="header-item header-content">{children}</div>
+      <div className="global-header-content-wrapper">
+        {name && (
+          <Link className="header-item header-name" to={HOME_PATH}>
+            {name}
+          </Link>
+        )}
+        <div className="header-item header-content">{children}</div>
+      </div>
     </header>
   );
 };

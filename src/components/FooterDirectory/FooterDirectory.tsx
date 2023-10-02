@@ -38,35 +38,33 @@ const FooterDirectory: FunctionComponent<FooterDirectoryProps> = ({
   ];
 
   return (
-    <div className="footer-directory">
-      <nav className="directory-nav">
-        {directory.map(({ title, items }) => (
-          <div className="directory-group" key={title}>
-            <h6 className="directory-title">{title}</h6>
-            <ul className="directory-list">
-              {items.map(({ name, url }) => (
-                <li className="directory-item" key={name}>
-                  {isInternal(url) ? (
-                    <Link className="directory-link" to={url}>
-                      {name}
-                    </Link>
-                  ) : (
-                    <a
-                      className="directory-link"
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {name}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </nav>
-    </div>
+    <nav className="footer-nav">
+      {directory.map(({ title, items }) => (
+        <div className="nav-group" key={title}>
+          <h6 className="nav-title">{title}</h6>
+          <ul className="nav-list">
+            {items.map(({ name, url }) => (
+              <li className="nav-list-item" key={name}>
+                {isInternal(url) ? (
+                  <Link className="nav-link" to={url}>
+                    {name}
+                  </Link>
+                ) : (
+                  <a
+                    className="nav-link"
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {name}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
   );
 };
 

@@ -27,19 +27,17 @@ const Footer: FunctionComponent<FooterProps> = ({
   };
 
   return (
-    <div className="footer-content container">
-      <div className="footer-grid">
-        <div className="social">
-          <div className="social-icon-group">
-            <SocialGrid />
-          </div>
+    <div className="footer-grid">
+      <div className="social">
+        <div className="social-icons">
+          <SocialGrid />
         </div>
-        <div className="directory">
-          <FooterDirectory categories={categories} />
-        </div>
-        <div className="legal">
-          <div>{content.copyright}</div>
-        </div>
+      </div>
+      <div className="directory">
+        <FooterDirectory categories={categories} />
+      </div>
+      <div className="legal">
+        <div>{content.copyright}</div>
       </div>
     </div>
   );

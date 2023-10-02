@@ -12,7 +12,11 @@ const GlobalFooter: FunctionComponent<GlobalFooterProps> = ({
     return globalFooterClasses.join(' ');
   };
 
-  return <footer className={getGlobalFooterClasses()}>{children}</footer>;
+  return (
+    <footer className={getGlobalFooterClasses()}>
+      <div className="global-footer-content-wrapper">{children}</div>
+    </footer>
+  );
 };
 
 GlobalFooter.defaultProps = {

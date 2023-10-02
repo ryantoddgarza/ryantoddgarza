@@ -75,12 +75,7 @@
         }
 
         .nav-link {
-          @include transition(color);
-
-          &:hover,
-          &:active {
-            color: color($theme-color-primary);
-          }
+          @include link("inherit");
         }
       }
     }

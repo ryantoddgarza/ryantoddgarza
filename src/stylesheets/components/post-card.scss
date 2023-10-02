@@ -69,11 +69,5 @@
   &.dark {
     color: color($theme-color-text-inverse);
     background-color: color($theme-color-background-inverse);
-
-    & .body a {
-      &:hover {
-        color: color($theme-color-text-inverse);
-      }
-    }
   }
 }

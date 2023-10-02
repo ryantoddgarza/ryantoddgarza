@@ -39,12 +39,7 @@
         }
 
         a {
-          color: color($theme-color-text-link);
-          @include transition(color);
-
-          &:hover {
-            color: color($theme-color-text-link-hover);
-          }
+          @include link;
         }
       }
     }

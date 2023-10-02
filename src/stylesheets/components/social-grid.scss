@@ -6,35 +6,16 @@
   }
 
   .link {
-    @include transition(color);
-
-    &:hover,
-    &:active {
-      color: color($theme-color-primary);
-    }
+    @include link("inherit");
   }
 
   // Theme variants
 
   &.light {
-    .link {
-      color: color($theme-color-text-inverse);
-
-      &:hover,
-      &:active {
-        color: color($theme-color-primary);
-      }
-    }
+    color: color($theme-color-text-inverse);
   }
 
   &.dark {
-    .link {
-      color: color($theme-color-text);
-
-      &:hover,
-      &:active {
-        color: color($theme-color-primary);
-      }
-    }
+    color: color($theme-color-text);
   }
 }

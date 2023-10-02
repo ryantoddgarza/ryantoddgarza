@@ -75,13 +75,8 @@
     margin-left: units(-1);
 
     a {
-      padding: units(1);
-      color: color($theme-color-text);
-      @include transition(color);
-
-      &:hover {
-        color: color($theme-color-primary);
-      }
+      padding: var(--spacing-2);
+      @include link("inherit");
     }
   }
 }

@@ -124,15 +124,10 @@
     margin-top: units(2);
     margin-bottom: units(-1);
     margin-left: units(-1);
-  }
 
-  .links a {
-    padding: var(--spacing-2);
-    color: color($theme-color-text);
-    @include transition(color);
-
-    &:hover {
-      color: color($theme-color-primary);
+    a {
+      padding: var(--spacing-2);
+      @include link("inherit");
     }
   }
 }

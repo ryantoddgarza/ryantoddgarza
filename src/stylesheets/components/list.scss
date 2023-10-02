@@ -7,13 +7,9 @@
   line-height: line-height($theme-line-height-ui);
 
   a {
-    color: color($theme-color-primary);
-    @include transition(color);
-
-    &:hover {
-      color: inherit;
-    }
+    @include link;
   }
+
   // Layout
 
   .list-row {
@@ -98,11 +94,7 @@
     color: color($theme-color-text-inverse);
 
     a {
-      color: color($theme-color-text-inverse);
-
-      &:hover {
-        color: color($theme-color-primary);
-      }
+      @include link("inherit");
     }
   }
 
@@ -110,11 +102,7 @@
     color: color($theme-color-text);
 
     a {
-      color: color($theme-color-text);
-
-      &:hover {
-        color: color($theme-color-primary);
-      }
+      @include link("inherit");
     }
   }
 }

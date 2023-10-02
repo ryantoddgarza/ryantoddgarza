@@ -54,11 +54,9 @@
   }
 
   .nav-link {
-    color: color($theme-color-text);
-    @include transition(color);
+    @include link("inherit");
 
-    &.active,
-    &:hover {
+    &.active {
       color: color($theme-color-primary);
     }
   }

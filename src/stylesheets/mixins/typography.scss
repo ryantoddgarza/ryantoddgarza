@@ -51,12 +51,23 @@
   line-height: line-height($theme-line-height-body);
 }
 
-@mixin link {
-  color: color($theme-color-text-link);
-  @include transition(color);
+@mixin link($theme: "default") {
+  @include transition(color, fast);
 
-  &:hover {
-    color: color($theme-color-text-link-hover);
+  @if $theme == "default" {
+    color: color($theme-color-text-link);
+
+    &:hover {
+      color: color($theme-color-text-link-hover);
+    }
+  }
+
+  @if $theme == "inherit" {
+    color: inherit;
+
+    &:hover {
+      color: color($theme-color-primary);
+    }
   }
 }
 

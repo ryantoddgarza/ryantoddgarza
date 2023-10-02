@@ -2,14 +2,6 @@
 
 .prgmg-project-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(breakpoint("phone"), 1fr));
   grid-gap: var(--spacing-4);
-
-  @include at-media("tablet") {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include at-media("desktop") {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { FunctionComponent } from 'react';
 import socialLinkList from './socialLinkList';
-import { socialGridSizes, socialGridThemes } from './variants';
+import { socialGridSizes } from './variants';
 import type { SocialGridProps } from './types';
 
 const SocialGrid: FunctionComponent<SocialGridProps> = ({
@@ -38,7 +38,6 @@ const SocialGrid: FunctionComponent<SocialGridProps> = ({
 
 SocialGrid.defaultProps = {
   size: socialGridSizes.MEDIUM,
-  theme: socialGridThemes.DARK,
 };
 
 export default SocialGrid;

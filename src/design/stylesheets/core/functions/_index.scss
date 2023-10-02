@@ -5,7 +5,3 @@
 @function line-height($value) {
   @return map-get($system-line-height, $value);
 }
-
-@function transition-duration($value) {
-  @return map-get($system-transition, "duration", $value);
-}

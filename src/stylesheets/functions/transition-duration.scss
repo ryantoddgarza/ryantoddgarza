@@ -1,0 +1,3 @@
+@function transition-duration($value) {
+  @return map-get($system-transition, "duration", $value);
+}

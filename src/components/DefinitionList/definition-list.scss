@@ -1,0 +1,26 @@
+@use "rtg-design-web" as *;
+
+.definition-list {
+  margin-top: var(--spacing-4);
+  list-style: none;
+
+  .term {
+    font-family: family("body");
+    font-weight: font-weight("medium");
+    font-size: var(--font-size-sm);
+    line-height: line-height("body");
+    padding-top: var(--spacing-3);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .definition {
+    font-family: family("body");
+    font-weight: font-weight("normal");
+    font-size: var(--font-size-sm);
+    line-height: line-height("body");
+    padding-bottom: var(--spacing-3);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: color("text");
+  }
+}

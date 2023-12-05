@@ -104,11 +104,8 @@
     @include link;
   }
 
-  .meta-list,
   .listen-list,
   .praise-list {
-    color: color($theme-color-text-weak);
-
     &:not(:last-child) {
       margin-bottom: var(--spacing-5);
     }

@@ -3,6 +3,7 @@ import type { FunctionComponent } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import type { Track, Writeup } from '../../../lib/contentful/generated';
 import { EMAIL } from '../../constants';
+import DefinitionList, { DefinitionListItem } from '../DefinitionList';
 import SEO from '../SEO';
 import type { AlbumProps } from './types';
 
@@ -25,16 +26,28 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
     },
   } = data;
 
-  const metadata: { key: string; value: string }[] = [];
-  const buildMetadataList = () => {
-    artist?.name && metadata.push({ key: 'Artist', value: artist.name });
-    releaseDate && metadata.push({ key: 'Date', value: releaseDate });
-    format && metadata.push({ key: 'Format', value: format });
-    label && metadata.push({ key: 'Label', value: label });
-    upc && metadata.push({ key: 'UPC', value: upc });
-  };
+  const metadataDefinitionList: DefinitionListItem[] = [];
+  (function buildMetadataDefinitionList() {
+    if (artist?.name) {
+      metadataDefinitionList.push({ term: 'Artist', definition: artist.name });
+    }
 
-  buildMetadataList();
+    if (releaseDate) {
+      metadataDefinitionList.push({ term: 'Date', definition: releaseDate });
+    }
+
+    if (format) {
+      metadataDefinitionList.push({ term: 'Format', definition: format });
+    }
+
+    if (label) {
+      metadataDefinitionList.push({ term: 'Label', definition: label });
+    }
+
+    if (upc) {
+      metadataDefinitionList.push({ term: 'UPC', definition: upc });
+    }
+  })();
 
   const getCreditDetailElements = ({
     name,
@@ -82,10 +95,13 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
                 }}
               />
             )}
+            {metadataDefinitionList.length > 0 && (
+              <DefinitionList nodes={metadataDefinitionList} />
+            )}
           </div>
         </div>
       </div>
-      {(tracks || metadata || links) && (
+      {(tracks || metadataDefinitionList.length > 0 || links) && (
         <div className="container">
           <div className="row">
             <div className="module col left">
@@ -121,21 +137,6 @@ const Album: FunctionComponent<AlbumProps> = ({ data }: AlbumProps) => {
             </div>
             <div className="module col right">
               <section className="section">
-                {metadata && (
-                  <>
-                    <h3 className="title">Info</h3>
-                    <ul className="meta-list">
-                      {metadata?.map(
-                        ({ key, value }) =>
-                          value && (
-                            <li className="list-item sm" key={key}>
-                              {key}: {value}
-                            </li>
-                          )
-                      )}
-                    </ul>
-                  </>
-                )}
                 {links && (
                   <>
                     <h3 className="title">Listen</h3>

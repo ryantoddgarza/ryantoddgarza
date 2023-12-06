@@ -1,16 +1,20 @@
+@use "../../design/stylesheets/rtgds" as deprecated;
+
 // Theme variants
 
 .section.light {
-  color: color($theme-color-text);
-  background-color: color($theme-color-background);
+  color: color("text");
+  background-color: color("background");
 }
 
 .section.dark {
-  color: color($theme-color-text-inverse);
-  background-color: color($theme-color-background-inverse);
+  color: deprecated.color(deprecated.$theme-color-text-inverse);
+  background-color: deprecated.color(
+    deprecated.$theme-color-background-inverse
+  );
 }
 
 .section.strong {
-  color: color($theme-color-text);
-  background-color: color($theme-color-background-strong);
+  color: color("text");
+  background-color: deprecated.color(deprecated.$theme-color-background-strong);
 }

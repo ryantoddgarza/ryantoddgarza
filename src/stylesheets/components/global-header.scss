@@ -1,20 +1,21 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .global-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  color: color($theme-color-text);
-  background-color: color($theme-color-background);
+  color: color("text");
+  background-color: color("background");
   z-index: 10000;
 
   &-content-wrapper {
     display: flex;
     align-items: center;
-    margin-left: $theme-site-margin;
-    margin-right: $theme-site-margin;
-    height: units($theme-nav-height);
+    margin-left: deprecated.$theme-site-margin;
+    margin-right: deprecated.$theme-site-margin;
+    height: units(deprecated.$theme-nav-height);
     white-space: nowrap;
     font-family: family("body");
     font-size: var(--font-size-sm);
@@ -24,7 +25,7 @@
   .header-item {
     display: flex;
     align-items: center;
-    height: units($theme-nav-height);
+    height: units(deprecated.$theme-nav-height);
   }
 
   .header-name {
@@ -37,7 +38,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @include at-media($theme-nav-breakpoint) {
+    @include at-media(deprecated.$theme-nav-breakpoint) {
       justify-content: flex-start;
     }
   }

@@ -1,8 +1,9 @@
 @use "sass:math";
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .album {
-  $album-grid-gap: $theme-site-margin;
+  $album-grid-gap: deprecated.$theme-site-margin;
 
   // Grid
 

@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 @mixin h1 {
   font-family: family("heading");
@@ -55,7 +56,7 @@
   @include transition(color, fast);
 
   @if $theme == "default" {
-    color: color($theme-color-text-link);
+    color: deprecated.color(deprecated.$theme-color-text-link);
 
     &:hover {
       color: inherit;
@@ -66,7 +67,7 @@
     color: inherit;
 
     &:hover {
-      color: color($theme-color-primary);
+      color: deprecated.color(deprecated.$theme-color-primary);
     }
   }
 }

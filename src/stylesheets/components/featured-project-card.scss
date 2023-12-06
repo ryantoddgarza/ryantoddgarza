@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .featured-project-card {
   position: relative;
@@ -6,8 +7,8 @@
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   padding: var(--spacing-4);
-  color: color($theme-color-text);
-  background-color: color($theme-color-background-weak);
+  color: color("text");
+  background-color: deprecated.color(deprecated.$theme-color-background-weak);
   overflow: hidden;
 
   @include at-media("tablet") {
@@ -28,7 +29,7 @@
     position: relative;
     grid-area: 1 / -1;
     z-index: 2;
-    background-color: color(transparent);
+    background-color: deprecated.color(transparent);
 
     @include at-media("tablet") {
       grid-area: 1 / 1 / -1 / 9;
@@ -47,8 +48,8 @@
     position: relative;
     grid-area: 1 / -1;
     z-index: 1;
-    background-color: color($theme-color-background);
-    box-shadow: 0 0 units(4) color($theme-color-background);
+    background-color: color("background");
+    box-shadow: 0 0 units(4) color("background");
     border-radius: units(0.5);
     overflow: hidden;
     visibility: hidden;
@@ -78,12 +79,14 @@
 
   .description {
     @include copy;
-    background-color: color($theme-color-background-weak);
+    background-color: deprecated.color(deprecated.$theme-color-background-weak);
     margin-top: var(--spacing-5);
 
     @include at-media("tablet") {
       padding: var(--spacing-4);
-      border-color: color($theme-color-background-inverse);
+      border-color: deprecated.color(
+        deprecated.$theme-color-background-inverse
+      );
       border-width: 2px;
       border-style: solid;
     }

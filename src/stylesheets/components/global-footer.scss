@@ -1,12 +1,13 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .global-footer {
   position: relative;
   z-index: 2000;
 
   &-content-wrapper {
-    margin-left: $theme-site-margin;
-    margin-right: $theme-site-margin;
+    margin-left: deprecated.$theme-site-margin;
+    margin-right: deprecated.$theme-site-margin;
     padding-top: var(--spacing-7);
     padding-bottom: var(--spacing-5);
     font-family: family("body");
@@ -14,7 +15,7 @@
     line-height: line-height("body");
     border-top-width: 1px;
     border-top-style: solid;
-    border-top-color: color($theme-color-border);
+    border-top-color: color("border");
   }
 
   // Grid
@@ -84,12 +85,14 @@
   // Theme variants
 
   &.light {
-    color: color($theme-color-text);
-    background-color: color($theme-color-background);
+    color: color("text");
+    background-color: color("background");
   }
 
   &.dark {
-    color: color($theme-color-text-inverse);
-    background-color: color($theme-color-background-inverse);
+    color: deprecated.color(deprecated.$theme-color-text-inverse);
+    background-color: deprecated.color(
+      deprecated.$theme-color-background-inverse
+    );
   }
 }

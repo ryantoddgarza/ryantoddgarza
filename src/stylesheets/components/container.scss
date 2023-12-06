@@ -1,9 +1,10 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .container {
   width: 100%;
-  padding-left: $theme-site-margin;
-  padding-right: $theme-site-margin;
+  padding-left: deprecated.$theme-site-margin;
+  padding-right: deprecated.$theme-site-margin;
 }
 
 .max-width-container {

@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .app {
   &.root {
@@ -22,6 +23,6 @@
   &.main {
     position: relative;
     flex: 1;
-    margin-top: units($theme-nav-height);
+    margin-top: units(deprecated.$theme-nav-height);
   }
 }

@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 @mixin content {
   font-size: var(--font-size-md);
@@ -99,7 +100,7 @@
     font-size: 85%;
     line-height: line-height("body");
     white-space: break-spaces;
-    background-color: color($theme-color-background-strong);
+    background-color: deprecated.color(deprecated.$theme-color-background-strong);
     border-radius: 6px;
   }
 
@@ -109,7 +110,7 @@
     padding-left: units(2);
     border-left-width: 2px;
     border-left-style: solid;
-    border-left-color: color($theme-color-text);
+    border-left-color: color("text");
 
     @include at-media("tablet") {
       margin-left: units(2) * -1;

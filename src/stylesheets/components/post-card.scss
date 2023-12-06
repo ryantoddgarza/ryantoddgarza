@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .post-card {
   position: relative;
@@ -34,7 +35,9 @@
     height: 0;
     padding-top: 50%;
     overflow: hidden;
-    background-color: color($theme-color-background-strong);
+    background-color: deprecated.color(
+      deprecated.$theme-color-background-strong
+    );
 
     .image {
       position: absolute;
@@ -62,12 +65,14 @@
   // Theme variants
 
   &.light {
-    color: color($theme-color-text);
-    background-color: color($theme-color-background-weak);
+    color: color("text");
+    background-color: deprecated.color(deprecated.$theme-color-background-weak);
   }
 
   &.dark {
-    color: color($theme-color-text-inverse);
-    background-color: color($theme-color-background-inverse);
+    color: deprecated.color(deprecated.$theme-color-text-inverse);
+    background-color: deprecated.color(
+      deprecated.$theme-color-background-inverse
+    );
   }
 }

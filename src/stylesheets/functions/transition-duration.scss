@@ -1,3 +1,5 @@
+@use "../../design/stylesheets/rtgds" as deprecated;
+
 @function transition-duration($value) {
-  @return map-get($system-transition, "duration", $value);
+  @return map-get(deprecated.$system-transition, "duration", $value);
 }

@@ -12,10 +12,10 @@
   // Theme variants
 
   &.light {
-    color: color($theme-color-text-inverse);
+    color: color("background");
   }
 
   &.dark {
-    color: color($theme-color-text);
+    color: color("text");
   }
 }

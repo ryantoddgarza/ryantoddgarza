@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 .prgmg-project-card {
   position: relative;
@@ -11,8 +12,8 @@
     flex-direction: column;
     height: 100%;
     padding: var(--spacing-4);
-    color: color($theme-color-text);
-    background: color($theme-color-background-weak);
+    color: color("text");
+    background: deprecated.color(deprecated.$theme-color-background-weak);
   }
 
   .header {

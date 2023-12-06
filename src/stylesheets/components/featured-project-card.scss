@@ -48,8 +48,8 @@
     position: relative;
     grid-area: 1 / -1;
     z-index: 1;
-    background-color: color("background");
-    box-shadow: 0 0 units(4) color("background");
+    background-color: var(--color-background);
+    box-shadow: 0 0 units(4) var(--color-background);
     border-radius: units(0.5);
     overflow: hidden;
     visibility: hidden;

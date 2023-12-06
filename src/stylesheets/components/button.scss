@@ -54,15 +54,13 @@ $button-height-large: 6;
 
 .button.light {
   color: var(--color-text);
-  background-color: color("background");
+  background-color: var(--color-background);
   border-color: deprecated.color(deprecated.$theme-color-background-inverse);
   @include with-border;
 
   &:hover {
     color: var(--color-text-inverse);
-    background-color: deprecated.color(
-      deprecated.$theme-color-background-inverse
-    );
+    background-color: deprecated.color( deprecated.$theme-color-background-inverse);
     border-color: deprecated.color(deprecated.$theme-color-background-inverse);
   }
 }

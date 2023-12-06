@@ -86,7 +86,7 @@
 
   &.light {
     color: var(--color-text);
-    background-color: color("background");
+    background-color: var(--color-background);
   }
 
   &.dark {

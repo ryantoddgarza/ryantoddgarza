@@ -1,8 +1,6 @@
-@use "rtg-design-web" as *;
-
 body {
   color: var(--color-text);
-  background-color: color("background");
+  background-color: var(--color-background);
   overflow-x: hidden;
 }
 

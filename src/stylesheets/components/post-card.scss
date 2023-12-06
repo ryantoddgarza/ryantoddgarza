@@ -71,8 +71,6 @@
 
   &.dark {
     color: var(--color-text-inverse);
-    background-color: deprecated.color(
-      deprecated.$theme-color-background-inverse
-    );
+    background-color: var(--color-background-inverse);
   }
 }

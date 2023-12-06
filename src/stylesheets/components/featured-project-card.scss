@@ -84,9 +84,7 @@
 
     @include at-media("tablet") {
       padding: var(--spacing-4);
-      border-color: deprecated.color(
-        deprecated.$theme-color-background-inverse
-      );
+      border-color: var(--color-text);
       border-width: 2px;
       border-style: solid;
     }

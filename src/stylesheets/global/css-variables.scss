@@ -5,10 +5,11 @@
 // Colors
 
 :root {
-  --color-text: #{color("text")};
-  --color-text-inverse: #{deprecated.color(deprecated.$theme-color-text-inverse)};
   --color-border: #{color("border")};
   --color-primary: #{deprecated.color(deprecated.$theme-color-primary)};
+  --color-text: #{color("text")};
+  --color-text-inverse: #{deprecated.color(deprecated.$theme-color-text-inverse)};
+  --color-text-weak: #{deprecated.color(deprecated.$theme-color-text-weak)};
 }
 
 // Typography

@@ -12,7 +12,7 @@
     flex-direction: column;
     height: 100%;
     padding: var(--spacing-4);
-    color: color("text");
+    color: var(--color-text);
     background: deprecated.color(deprecated.$theme-color-background-weak);
   }
 

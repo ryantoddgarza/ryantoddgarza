@@ -65,7 +65,7 @@
   // Theme variants
 
   &.light {
-    color: color("text");
+    color: var(--color-text);
     background-color: deprecated.color(deprecated.$theme-color-background-weak);
   }
 

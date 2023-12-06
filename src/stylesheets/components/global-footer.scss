@@ -85,7 +85,7 @@
   // Theme variants
 
   &.light {
-    color: color("text");
+    color: var(--color-text);
     background-color: color("background");
   }
 

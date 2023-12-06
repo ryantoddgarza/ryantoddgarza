@@ -16,7 +16,7 @@
           display: block;
           width: units(6);
           height: 1px;
-          background-color: color("text");
+          background-color: var(--color-text);
           margin-top: var(--spacing-5);
           margin-left: auto;
           margin-right: auto;

@@ -100,7 +100,7 @@
   }
 
   &.dark {
-    color: color("text");
+    color: var(--color-text);
 
     a {
       @include link("inherit");

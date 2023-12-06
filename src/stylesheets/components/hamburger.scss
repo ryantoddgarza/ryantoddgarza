@@ -43,7 +43,7 @@ $hamburger-gap: 8px;
   transition-timing-function: ease;
   transition-duration: 0.15s;
   transition-property: transform;
-  background-color: color("text");
+  background-color: var(--color-text);
 }
 .hamburger-inner:after,
 .hamburger-inner:before {

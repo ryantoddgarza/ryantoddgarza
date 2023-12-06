@@ -53,7 +53,7 @@ $button-height-large: 6;
 }
 
 .button.light {
-  color: color("text");
+  color: var(--color-text);
   background-color: color("background");
   border-color: deprecated.color(deprecated.$theme-color-background-inverse);
   @include with-border;
@@ -76,7 +76,7 @@ $button-height-large: 6;
   @include with-border;
 
   &:hover {
-    color: deprecated.color(deprecated.$theme-color-text);
+    color: var(--color-text);
     background-color: deprecated.color(deprecated.$theme-color-background);
     border-color: deprecated.color(deprecated.$theme-color-background-inverse);
   }

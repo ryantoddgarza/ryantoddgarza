@@ -1,3 +1,5 @@
+@use "../../design/stylesheets/rtgds" as deprecated;
+
 .social-grid {
   display: block;
 
@@ -12,10 +14,10 @@
   // Theme variants
 
   &.light {
-    color: color("background");
+    color: deprecated.color(deprecated.$theme-color-text-inverse);
   }
 
   &.dark {
-    color: color("text");
+    color: var(--color-text);
   }
 }

@@ -1,7 +1,7 @@
 @use "rtg-design-web" as *;
 
 body {
-  color: color("text");
+  color: var(--color-text);
   background-color: color("background");
   overflow-x: hidden;
 }

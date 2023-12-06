@@ -3,7 +3,7 @@
 // Theme variants
 
 .section.light {
-  color: color("text");
+  color: var(--color-text);
   background-color: color("background");
 }
 
@@ -15,6 +15,6 @@
 }
 
 .section.strong {
-  color: color("text");
+  color: var(--color-text);
   background-color: deprecated.color(deprecated.$theme-color-background-strong);
 }

@@ -5,6 +5,7 @@
 // Colors
 
 :root {
+  --color-text: #{color("text")};
   --color-border: #{color("border")};
   --color-primary: #{deprecated.color(deprecated.$theme-color-primary)};
 }

@@ -1,4 +1,18 @@
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
+
+$button-border-width: deprecated.$theme-border-width;
+$button-border-style: solid;
+$button-border-radius: 0;
+$button-height-small: 4;
+$button-height-medium: 5;
+$button-height-large: 6;
+
+@mixin with-border {
+  border-width: $button-border-width;
+  border-style: $button-border-style;
+  border-radius: $button-border-radius;
+}
 
 .button {
   position: relative;
@@ -20,15 +34,15 @@
 // Size variants
 
 .button.small {
-  height: units($theme-button-height-small);
+  height: units($button-height-small);
 }
 
 .button.medium {
-  height: units($theme-button-height-medium);
+  height: units($button-height-medium);
 }
 
 .button.large {
-  height: units($theme-button-height-large);
+  height: units($button-height-large);
 }
 
 // Theme variants
@@ -42,9 +56,7 @@
   color: color($theme-color-text);
   background-color: color($theme-color-background);
   border-color: color($theme-color-background-inverse);
-  border-width: $theme-button-border-width;
-  border-style: $theme-button-border-style;
-  border-radius: $theme-button-border-radius;
+  @include with-border;
 
   &:hover {
     color: color($theme-color-text-inverse);
@@ -57,9 +69,7 @@
   color: color($theme-color-text-inverse);
   background-color: color($theme-color-background-inverse);
   border-color: color($theme-color-background-inverse);
-  border-width: $theme-button-border-width;
-  border-style: $theme-button-border-style;
-  border-radius: $theme-button-border-radius;
+  @include with-border;
 
   &:hover {
     color: color($theme-color-text);
@@ -75,13 +85,13 @@
 }
 
 .button.icon-btn.small {
-  width: units($theme-button-height-small);
+  width: units($button-height-small);
 }
 
 .button.icon-btn.medium {
-  width: units($theme-button-height-medium);
+  width: units($button-height-medium);
 }
 
 .button.icon-btn.large {
-  width: units($theme-button-height-large);
+  width: units($button-height-large);
 }

@@ -8,7 +8,7 @@
   align-items: center;
   padding: var(--spacing-4);
   color: var(--color-text);
-  background-color: deprecated.color(deprecated.$theme-color-background-weak);
+  background-color: var(--color-background-weak);
   overflow: hidden;
 
   @include at-media("tablet") {
@@ -79,7 +79,7 @@
 
   .description {
     @include copy;
-    background-color: deprecated.color(deprecated.$theme-color-background-weak);
+    background-color: var(--color-background-weak);
     margin-top: var(--spacing-5);
 
     @include at-media("tablet") {

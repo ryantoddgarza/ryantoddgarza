@@ -9,6 +9,9 @@
   --color-background-inverse: #{deprecated.color(
       deprecated.$theme-color-background-inverse
     )};
+  --color-background-weak: #{deprecated.color(
+      deprecated.$theme-color-background-weak
+    )};
   --color-border: #{color("border")};
   --color-primary: #{deprecated.color(deprecated.$theme-color-primary)};
   --color-text: #{color("text")};

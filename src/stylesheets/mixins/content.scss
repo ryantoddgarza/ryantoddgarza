@@ -100,7 +100,7 @@
     font-size: 85%;
     line-height: line-height("body");
     white-space: break-spaces;
-    background-color: deprecated.color(deprecated.$theme-color-background-strong);
+    background-color: var(--color-background-strong);
     border-radius: 6px;
   }
 

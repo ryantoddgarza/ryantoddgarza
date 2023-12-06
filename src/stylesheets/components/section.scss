@@ -1,5 +1,3 @@
-@use "../../design/stylesheets/rtgds" as deprecated;
-
 // Theme variants
 
 .section.light {
@@ -14,5 +12,5 @@
 
 .section.strong {
   color: var(--color-text);
-  background-color: deprecated.color(deprecated.$theme-color-background-strong);
+  background-color: var(--color-background-strong);
 }

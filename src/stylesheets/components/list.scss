@@ -1,6 +1,5 @@
 @use "sass:math";
 @use "rtg-design-web" as *;
-@use "../../design/stylesheets/rtgds" as deprecated;
 
 .list {
   color: inherit;
@@ -92,7 +91,7 @@
   // Theme variants
 
   &.light {
-    color: deprecated.color(deprecated.$theme-color-text-inverse);
+    color: var(--color-text-inverse);
 
     a {
       @include link("inherit");

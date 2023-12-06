@@ -1,11 +1,3 @@
-@use "global/css-variables";
-
 @import "tokens/system-tokens";
 @import "tokens/theme-tokens";
 @import "core/functions";
-
-@import "global/reset";
-@import "global/box-sizing";
-@import "global/cursor";
-@import "global/typography";
-@import "global/base";

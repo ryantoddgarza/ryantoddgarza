@@ -1,6 +1,8 @@
+@use "rtg-design-web" as *;
+
 body {
-  color: color($theme-color-text);
-  background-color: color($theme-color-background);
+  color: color("text");
+  background-color: color("background");
   overflow-x: hidden;
 }
 

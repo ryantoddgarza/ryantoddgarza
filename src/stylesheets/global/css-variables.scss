@@ -1,10 +1,12 @@
 @use "sass:math";
 @use "rtg-design-web" as *;
+@use "../../design/stylesheets/rtgds" as deprecated;
 
 // Colors
 
 :root {
   --color-border: #{color("border")};
+  --color-primary: #{deprecated.color(deprecated.$theme-color-primary)};
 }
 
 // Typography

@@ -56,7 +56,7 @@
   @include transition(color, fast);
 
   @if $theme == "default" {
-    color: deprecated.color(deprecated.$theme-color-text-link);
+    color: var(--color-primary);
 
     &:hover {
       color: inherit;
@@ -67,7 +67,7 @@
     color: inherit;
 
     &:hover {
-      color: deprecated.color(deprecated.$theme-color-primary);
+      color: var(--color-primary);
     }
   }
 }

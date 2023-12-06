@@ -58,7 +58,7 @@
     @include link("inherit");
 
     &.active {
-      color: deprecated.color(deprecated.$theme-color-primary);
+      color: var(--color-primary);
     }
   }
 

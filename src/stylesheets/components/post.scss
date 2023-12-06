@@ -7,7 +7,7 @@
         font-family: family("heading");
         font-size: var(--font-size-display-lg);
         font-weight: font-weight("bold");
-        line-height: line-height($theme-line-height-heading);
+        line-height: line-height("heading");
         text-align: center;
 
         &:after {
@@ -26,7 +26,7 @@
         margin-top: var(--spacing-5);
         font-family: family("body");
         font-size: var(--font-size-sm);
-        line-height: line-height($theme-line-height-body);
+        line-height: line-height("body");
         text-align: center;
 
         .author {

@@ -1,6 +1,8 @@
+@use "rtg-design-web" as *;
+
 .sk-pre {
   white-space: pre-line;
-  line-height: $theme-line-height-extended;
+  line-height: line-height("extended");
 }
 
 .sk-dev {

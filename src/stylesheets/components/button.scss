@@ -9,7 +9,7 @@
   padding-right: units(2);
   font-size: var(--font-size-md);
   font-weight: font-weight("normal");
-  line-height: line-height($theme-line-height-ui);
+  line-height: line-height("ui");
   vertical-align: bottom;
   white-space: nowrap;
   border: none;

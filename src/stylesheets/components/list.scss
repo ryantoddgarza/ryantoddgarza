@@ -4,7 +4,7 @@
 .list {
   color: inherit;
   font-family: family("body");
-  line-height: line-height($theme-line-height-ui);
+  line-height: line-height("ui");
 
   a {
     @include link;

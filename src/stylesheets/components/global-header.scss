@@ -18,7 +18,7 @@
     white-space: nowrap;
     font-family: family("body");
     font-size: var(--font-size-sm);
-    line-height: line-height($theme-line-height-ui);
+    line-height: line-height("ui");
   }
 
   .header-item {

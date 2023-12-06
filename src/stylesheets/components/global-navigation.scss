@@ -29,7 +29,7 @@
     height: units($theme-nav-height);
     font-family: family("ui");
     font-size: var(--font-size-lg);
-    line-height: line-height($theme-line-height-ui);
+    line-height: line-height("ui");
 
     @include at-media($theme-nav-breakpoint) {
       padding-left: units(2);
@@ -86,7 +86,7 @@
       min-height: units(5);
       font-family: family("ui");
       font-size: var(--font-size-md);
-      line-height: line-height($theme-line-height-ui);
+      line-height: line-height("ui");
 
       @include at-media($theme-nav-breakpoint) {
         min-height: units(4);

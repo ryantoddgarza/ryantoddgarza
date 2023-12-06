@@ -1,7 +1,3 @@
 @function color($value) {
   @return map-get($system-color, $value);
 }
-
-@function line-height($value) {
-  @return map-get($system-line-height, $value);
-}

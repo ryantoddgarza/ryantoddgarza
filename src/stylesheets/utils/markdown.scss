@@ -19,7 +19,7 @@
     border-top-style: solid;
     border-top-color: color($theme-color-border);
     font-size: var(--font-size-sm);
-    line-height: line-height($theme-line-height-extended);
+    line-height: line-height("extended");
 
     ol li {
       margin-top: 0;

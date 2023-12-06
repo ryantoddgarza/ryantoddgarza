@@ -71,7 +71,7 @@
   .overline {
     font-family: family("code");
     font-size: var(--font-size-sm);
-    line-height: line-height($theme-line-height-heading);
+    line-height: line-height("heading");
   }
 
   // Description
@@ -109,7 +109,7 @@
     margin-top: var(--spacing-5);
     font-family: family("code");
     font-size: var(--font-size-sm);
-    line-height: line-height($theme-line-height-body);
+    line-height: line-height("body");
   }
 
   .tech-list .tag {

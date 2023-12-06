@@ -4,35 +4,35 @@
   font-family: family("heading");
   font-size: var(--font-size-display-md);
   font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
 }
 
 @mixin h2 {
   font-family: family("heading");
   font-size: var(--font-size-display-sm);
   font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
 }
 
 @mixin h3 {
   font-family: family("heading");
   font-size: var(--font-size-xl);
   font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
 }
 
 @mixin h4 {
   font-family: family("heading");
   font-size: var(--font-size-lg);
   font-weight: font-weight("bold");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
 }
 
 @mixin h5 {
   font-family: family("heading");
   font-size: var(--font-size-md);
   font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
   text-transform: uppercase;
 }
 
@@ -40,7 +40,7 @@
   font-family: family("heading");
   font-size: var(--font-size-sm);
   font-weight: font-weight("medium");
-  line-height: line-height($theme-line-height-heading);
+  line-height: line-height("heading");
   text-transform: uppercase;
 }
 
@@ -48,7 +48,7 @@
   font-family: family("body");
   font-size: var(--font-size-md);
   font-weight: font-weight("normal");
-  line-height: line-height($theme-line-height-body);
+  line-height: line-height("body");
 }
 
 @mixin link($theme: "default") {

@@ -59,7 +59,7 @@
       font-family: family("heading");
       font-size: var(--font-size-md);
       font-weight: font-weight("medium");
-      line-height: line-height($theme-line-height-heading);
+      line-height: line-height("heading");
     }
   }
 
@@ -88,7 +88,7 @@
   .list-item {
     margin-bottom: var(--spacing-2);
     font-family: family("body");
-    line-height: line-height($theme-line-height-body);
+    line-height: line-height("body");
     @include ellipsis;
 
     &.sm {

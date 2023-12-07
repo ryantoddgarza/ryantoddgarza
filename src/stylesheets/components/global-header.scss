@@ -1,6 +1,9 @@
 @use "rtg-design-web" as *;
 @use "../../design/stylesheets/rtgds" as deprecated;
 
+$height: units(6);
+$breakpoint-token: "tablet";
+
 .global-header {
   position: fixed;
   top: 0;
@@ -15,7 +18,7 @@
     align-items: center;
     margin-left: deprecated.$theme-site-margin;
     margin-right: deprecated.$theme-site-margin;
-    height: units(deprecated.$theme-nav-height);
+    height: $height;
     white-space: nowrap;
     font-family: family("body");
     font-size: var(--font-size-sm);
@@ -25,7 +28,7 @@
   .header-item {
     display: flex;
     align-items: center;
-    height: units(deprecated.$theme-nav-height);
+    height: $height;
   }
 
   .header-name {
@@ -38,7 +41,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @include at-media(deprecated.$theme-nav-breakpoint) {
+    @include at-media($breakpoint-token) {
       justify-content: flex-start;
     }
   }

@@ -1,9 +1,10 @@
 @use "rtg-design-web" as *;
 @use "../../design/stylesheets/rtgds" as deprecated;
+@use "./global-header";
 
 .global-navigation {
   @mixin mobile-only {
-    @include at-media(deprecated.$theme-nav-breakpoint) {
+    @include at-media(global-header.$breakpoint-token) {
       display: none;
     }
   }
@@ -19,7 +20,7 @@
   .nav-list {
     display: none;
 
-    @include at-media(deprecated.$theme-nav-breakpoint) {
+    @include at-media(global-header.$breakpoint-token) {
       display: flex;
     }
   }
@@ -27,12 +28,12 @@
   .nav-item {
     display: flex;
     align-items: center;
-    height: units(deprecated.$theme-nav-height);
+    height: global-header.$height;
     font-family: family("ui");
     font-size: var(--font-size-lg);
     line-height: line-height("ui");
 
-    @include at-media(deprecated.$theme-nav-breakpoint) {
+    @include at-media(global-header.$breakpoint-token) {
       padding-left: units(2);
       padding-right: units(2);
       font-size: var(--font-size-sm);
@@ -47,7 +48,7 @@
         margin-left: auto;
         @include transition(transform, slow, fast);
 
-        @include at-media(deprecated.$theme-nav-breakpoint) {
+        @include at-media(global-header.$breakpoint-token) {
           margin-left: units(0.5);
         }
       }
@@ -75,9 +76,9 @@
     white-space: nowrap;
     background-color: var(--color-background-weak);
 
-    @include at-media(deprecated.$theme-nav-breakpoint) {
+    @include at-media(global-header.$breakpoint-token) {
       position: absolute;
-      top: units(deprecated.$theme-nav-height);
+      top: global-header.$height;
       transform: translate(units($horizontal-padding-token) * -1);
     }
 
@@ -89,7 +90,7 @@
       font-size: var(--font-size-md);
       line-height: line-height("ui");
 
-      @include at-media(deprecated.$theme-nav-breakpoint) {
+      @include at-media(global-header.$breakpoint-token) {
         min-height: units(4);
         font-size: var(--font-size-sm);
       }
@@ -105,7 +106,7 @@
 
   .mobile-menu {
     position: fixed;
-    top: units(deprecated.$theme-nav-height);
+    top: global-header.$height;
     left: 0;
     width: 100%;
     height: 100%;

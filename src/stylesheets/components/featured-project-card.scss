@@ -1,5 +1,4 @@
 @use "rtg-design-web" as *;
-@use "../../design/stylesheets/rtgds" as deprecated;
 
 .featured-project-card {
   position: relative;
@@ -29,7 +28,6 @@
     position: relative;
     grid-area: 1 / -1;
     z-index: 2;
-    background-color: deprecated.color(transparent);
 
     @include at-media("tablet") {
       grid-area: 1 / 1 / -1 / 9;

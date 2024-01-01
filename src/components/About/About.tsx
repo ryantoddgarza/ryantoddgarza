@@ -2,7 +2,9 @@ import React from 'react';
 import type { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import DefinitionList from '../DefinitionList';
 import SEO from '../SEO';
+import './about.scss';
 
 const About: FunctionComponent = () => {
   const { aboutTextBlock, technicalCV, artisticCV } = useStaticQuery(graphql`
@@ -36,6 +38,18 @@ const About: FunctionComponent = () => {
   const content = Object.freeze({
     about: {
       html: aboutTextBlock?.content?.childMarkdownRemark?.html,
+      name: 'Ryan Todd Garza',
+      details: [
+        {
+          term: 'Currently',
+          definition: 'Computer science major, Texas Tech Universtiy',
+        },
+        { term: 'Focus', definition: 'Music technology' },
+        {
+          term: 'Exploring',
+          definition: 'DeepLearning.AI TensorFlow Developer Certificate',
+        },
+      ],
     },
     file: {
       technicalCV: {
@@ -50,27 +64,27 @@ const About: FunctionComponent = () => {
   return (
     <div className="about">
       <SEO title="About" />
-      <section className="section light module">
-        <div className="profile-photo">
-          <StaticImage
-            className="avatar lg"
-            src="../../resources/images/me.jpg"
-            alt="Ryan Todd Garza"
-            quality={80}
-            loading="eager"
-          />
+      <section className="sidebar section light module">
+        <StaticImage
+          className="avatar lg"
+          src="../../resources/images/me.jpg"
+          alt="Ryan Todd Garza"
+          quality={80}
+          loading="eager"
+        />
+        <div className="details">
+          <h1 className="u-h4">{content.about.name}</h1>
+          <DefinitionList nodes={content.about.details} />
         </div>
       </section>
-      <section className="section light">
-        <div className="container">
+      <section className="content section light module">
+        <div className="body-copy">
           <div
-            className="max-width-container prose markdown"
+            className="markdown"
             dangerouslySetInnerHTML={{ __html: content.about.html }}
           />
         </div>
-      </section>
-      <section className="section light module">
-        <div className="container u-align-center">
+        <div className="module container u-align-center">
           <div className="button-group">
             <a
               className="button large light"

@@ -55,7 +55,7 @@
       }
 
       .text {
-        @include copy;
+        @include copy-md;
         @include heading-margin-sm;
       }
 

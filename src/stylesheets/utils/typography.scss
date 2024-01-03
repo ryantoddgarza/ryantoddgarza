@@ -49,7 +49,7 @@
 }
 
 .u-copy {
-  @include copy;
+  @include copy-md;
 
   &.margin {
     @include copy-margin;

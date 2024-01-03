@@ -45,11 +45,20 @@
   text-transform: uppercase;
 }
 
-@mixin copy {
+@mixin _copy {
   font-family: family("body");
-  font-size: var(--font-size-md);
   font-weight: font-weight("normal");
   line-height: line-height("body");
+}
+
+@mixin copy-md {
+  @include _copy;
+  font-size: var(--font-size-md);
+}
+
+@mixin copy-sm {
+  @include _copy;
+  font-size: var(--font-size-sm);
 }
 
 @mixin link($theme: "default") {

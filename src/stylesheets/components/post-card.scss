@@ -26,7 +26,7 @@
 
     .copy {
       margin-top: var(--spacing-3);
-      @include copy;
+      @include copy-md;
     }
   }
 

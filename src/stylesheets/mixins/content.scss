@@ -36,7 +36,7 @@
   }
 
   p {
-    @include copy;
+    @include copy-md;
     @include copy-margin;
   }
 

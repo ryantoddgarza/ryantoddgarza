@@ -76,7 +76,7 @@
   // Description
 
   .description {
-    @include copy;
+    @include copy-md;
     background-color: var(--color-background-weak);
     margin-top: var(--spacing-5);
 

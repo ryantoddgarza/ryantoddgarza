@@ -50,7 +50,7 @@ const Post: FunctionComponent<PostProps> = ({ data }: PostProps) => {
   return (
     <div className="post container">
       <SEO title={title} />
-      <article className="content max-width-container prose module">
+      <article className="content module">
         <header className="header">
           <h1 className="title">{title}</h1>
           <div className="metadata">

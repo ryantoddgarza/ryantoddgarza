@@ -1,4 +1,5 @@
 @use "rtg-design-web" as *;
+@use "../../stylesheets/mixins/container";
 @use "../../design/stylesheets/rtgds" as deprecated;
 
 .about {
@@ -23,8 +24,7 @@
 
     .body-copy {
       margin-inline: deprecated.$theme-site-margin;
-      max-width: 72ex;
-      font-size: var(--font-size-md);
+      @include container.max-width-prose(var(--font-size-md));
 
       @include at-media($breakpoint-token) {
         margin-inline: 5vw;

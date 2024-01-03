@@ -1,8 +1,12 @@
 @use "rtg-design-web" as *;
+@use "../mixins/container";
 @use "../../design/stylesheets/rtgds" as deprecated;
 
 .post {
   .content {
+    @include container.max-width-prose(var(--font-size-md));
+    margin-inline: auto;
+
     .header {
       .title {
         font-family: family("heading");

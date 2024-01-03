@@ -1,0 +1,4 @@
+@mixin max-width-prose($font-size) {
+  max-width: 72ex;
+  font-size: $font-size;
+}

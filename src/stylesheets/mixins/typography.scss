@@ -1,49 +1,66 @@
 @use "rtg-design-web" as *;
 @use "../../design/stylesheets/rtgds" as deprecated;
 
-@mixin h1 {
+// Heading: Typesetting
+
+@mixin _heading {
   font-family: family("heading");
+  line-height: line-height("heading");
+}
+
+@mixin h1 {
+  @include _heading;
   font-size: var(--font-size-display-md);
   font-weight: font-weight("bold");
-  line-height: line-height("heading");
 }
 
 @mixin h2 {
-  font-family: family("heading");
+  @include _heading;
   font-size: var(--font-size-display-sm);
   font-weight: font-weight("bold");
-  line-height: line-height("heading");
 }
 
 @mixin h3 {
-  font-family: family("heading");
+  @include _heading;
   font-size: var(--font-size-xl);
   font-weight: font-weight("bold");
-  line-height: line-height("heading");
 }
 
 @mixin h4 {
-  font-family: family("heading");
+  @include _heading;
   font-size: var(--font-size-lg);
   font-weight: font-weight("bold");
-  line-height: line-height("heading");
 }
 
 @mixin h5 {
-  font-family: family("heading");
+  @include _heading;
   font-size: var(--font-size-md);
   font-weight: font-weight("medium");
-  line-height: line-height("heading");
   text-transform: uppercase;
 }
 
 @mixin h6 {
-  font-family: family("heading");
+  @include _heading;
   font-size: var(--font-size-sm);
   font-weight: font-weight("medium");
-  line-height: line-height("heading");
   text-transform: uppercase;
 }
+
+// Heading: Margins
+
+@mixin heading-margin-sm {
+  margin-top: var(--spacing-4);
+}
+
+@mixin heading-margin-md {
+  margin-top: var(--spacing-5);
+}
+
+@mixin heading-margin-lg {
+  margin-top: var(--spacing-6);
+}
+
+// Copy: Typesetting
 
 @mixin _copy {
   font-family: family("body");
@@ -51,15 +68,23 @@
   line-height: line-height("body");
 }
 
+@mixin copy-sm {
+  @include _copy;
+  font-size: var(--font-size-sm);
+}
+
 @mixin copy-md {
   @include _copy;
   font-size: var(--font-size-md);
 }
 
-@mixin copy-sm {
-  @include _copy;
-  font-size: var(--font-size-sm);
+// Copy: Margins
+
+@mixin copy-margin {
+  margin-top: units(2);
 }
+
+// Links
 
 @mixin link($theme: "default") {
   @include transition(color, fast);
@@ -79,22 +104,4 @@
       color: var(--color-primary);
     }
   }
-}
-
-// Margins
-
-@mixin heading-margin-sm {
-  margin-top: var(--spacing-4);
-}
-
-@mixin heading-margin-md {
-  margin-top: var(--spacing-5);
-}
-
-@mixin heading-margin-lg {
-  margin-top: var(--spacing-6);
-}
-
-@mixin copy-margin {
-  margin-top: units(2);
 }

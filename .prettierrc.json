@@ -3,6 +3,7 @@
   "quoteProps": "consistent",
   "semi": true,
   "singleQuote": true,
+  "printWidth": 120,
   "overrides": [
     {
       "files": ["*.[s]css"],

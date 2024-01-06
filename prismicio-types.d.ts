@@ -69,7 +69,72 @@ export type HomePageDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomePageDocument;
+/**
+ * Content for Settings documents
+ */
+interface SettingsDocumentData {
+  /**
+   * Site Name field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.site_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  site_name: prismic.KeyTextField;
+
+  /**
+   * Site Description field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.site_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  site_description: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Favicon field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.favicon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  favicon: prismic.ImageField<never>;
+}
+
+/**
+ * Settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SettingsDocumentData>,
+    "settings",
+    Lang
+  >;
+
+export type AllDocumentTypes = HomePageDocument | SettingsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -84,6 +149,8 @@ declare module "@prismicio/client" {
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
+      SettingsDocument,
+      SettingsDocumentData,
       AllDocumentTypes,
     };
   }

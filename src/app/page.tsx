@@ -1,19 +1,14 @@
-export default function Home() {
+import { SliceZone } from '@prismicio/react';
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+
+export default async function Home() {
+  const client = createClient();
+  const page = await client.getSingle('home_page');
+
   return (
-    <main
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    >
-      <h1
-        style={{
-          fontSize: '14px',
-          fontWeight: '400'
-        }}
-      >Breathe.</h1>
+    <main>
+      <SliceZone slices={page.data.slices} components={components} />
     </main>
   );
 }

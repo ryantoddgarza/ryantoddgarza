@@ -1,0 +1,28 @@
+{
+  "id": "text_block_section",
+  "type": "SharedSlice",
+  "name": "TextBlockSection",
+  "description": "TextBlockSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "body_copy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body Copy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

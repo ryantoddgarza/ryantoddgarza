@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"body_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure ex aute in labore tempor reprehenderit. Aliquip irure officia deserunt velit sunt. Sit et esse ea veniam dolor sit dolor reprehenderit qui ad laborum."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

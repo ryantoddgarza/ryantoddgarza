@@ -10,7 +10,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "text_block_section": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

@@ -12,7 +12,9 @@ export async function generateMetadata() {
   } = await client.getSingle('settings');
 
   const title = isFilled.keyText(site_name) ? site_name : '';
-  const description = isFilled.keyText(site_description) ? site_description : '';
+  const description = isFilled.keyText(site_description)
+    ? site_description
+    : '';
   const icon = isFilled.image(favicon) ? favicon.url : undefined;
 
   const metadata: Metadata = {

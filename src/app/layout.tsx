@@ -1,11 +1,9 @@
 import { createClient } from '@/prismicio';
 import { isFilled } from '@prismicio/client';
-import { Inter } from 'next/font/google';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { globalFontVariables } from '@/styles/scripts/fonts';
 import './globals.scss';
 import type { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata() {
   const client = createClient();
@@ -32,10 +30,22 @@ export async function generateMetadata() {
   return metadata;
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  function getBodyClasses(): string {
+    let classes: string[] = [];
+
+    globalFontVariables.forEach((variable) => classes.push(variable));
+
+    return classes.join(' ');
+  }
+
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={getBodyClasses()}>
         {children}
         <GoogleAnalytics />
       </body>

@@ -1,0 +1,30 @@
+@use "../../styles/mixins/container";
+@use "../../styles/mixins/typography";
+
+.base {
+  composes: base from "../../styles/elements/section.scss";
+  // WORKAROUND: Temporarily style as a centered full-page text block.
+  --spacing-y: calc(var(--line-height-body) * var(--font-size-md));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 2 * var(--spacing-y));
+  padding-block: var(--spacing-y);
+}
+
+.contentContainer {
+  margin-inline: var(--section-spacing-inline);
+}
+
+.content {
+  @include container.max-width-prose(var(--font-size-md));
+  margin-inline: auto;
+
+  p {
+    @include typography.copy-md;
+
+    &:not(:first-child) {
+      @include typography.copy-margin;
+    }
+  }
+}

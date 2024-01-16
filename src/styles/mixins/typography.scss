@@ -1,0 +1,29 @@
+// Copy
+
+@mixin -copy {
+  font-family: var(--font-serif);
+  line-height: var(--line-height-body);
+}
+
+// Copy: T-shirt sizes
+
+@mixin copy-sm {
+  @include -copy;
+  font-size: var(--font-size-sm);
+}
+
+@mixin copy-md {
+  @include -copy;
+  font-size: var(--font-size-md);
+}
+
+@mixin copy-lg {
+  @include -copy;
+  font-size: var(--font-size-lg);
+}
+
+// Copy: Margin
+
+@mixin copy-margin {
+  margin-top: 1em;
+}

@@ -1,5 +1,19 @@
 @import "../styles/global/reset";
 
+:root {
+  --font-size-sm: 12px;
+  --font-size-md: 15px;
+  --font-size-lg: 18px;
+}
+
+:root {
+  --line-height-body: 1.5;
+}
+
+:root {
+  --section-spacing-inline: 5%;
+}
+
 body {
   font-family: var(--font-sans);
 }

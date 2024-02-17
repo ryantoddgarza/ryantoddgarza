@@ -62,11 +62,12 @@ interface HomePageDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomePageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
-  Simplify<HomePageDocumentData>,
-  'home_page',
-  Lang
->;
+export type HomePageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomePageDocumentData>,
+    'home_page',
+    Lang
+  >;
 
 /**
  * Content for Settings documents
@@ -104,17 +105,6 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
-
-  /**
-   * Favicon field in *Settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.favicon
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  favicon: prismic.ImageField<never>;
 }
 
 /**
@@ -126,11 +116,12 @@ interface SettingsDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
-  Simplify<SettingsDocumentData>,
-  'settings',
-  Lang
->;
+export type SettingsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SettingsDocumentData>,
+    'settings',
+    Lang
+  >;
 
 export type AllDocumentTypes = HomePageDocument | SettingsDocument;
 
@@ -174,11 +165,17 @@ type TextBlockSectionSliceVariation = TextBlockSectionSliceDefault;
  * - **Description**: TextBlockSection
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSectionSlice = prismic.SharedSlice<'text_block_section', TextBlockSectionSliceVariation>;
+export type TextBlockSectionSlice = prismic.SharedSlice<
+  'text_block_section',
+  TextBlockSectionSliceVariation
+>;
 
 declare module '@prismicio/client' {
   interface CreateClient {
-    (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+    (
+      repositoryNameOrEndpoint: string,
+      options?: prismic.ClientConfig,
+    ): prismic.Client<AllDocumentTypes>;
   }
 
   namespace Content {

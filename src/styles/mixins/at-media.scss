@@ -1,0 +1,25 @@
+@use "../elements/spacing";
+
+@mixin phone {
+  @media screen and (min-width: #{spacing.$phone}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{spacing.$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{spacing.$desktop}) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media screen and (min-width: #{spacing.$widescreen}) {
+    @content;
+  }
+}

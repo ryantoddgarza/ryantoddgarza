@@ -1,9 +1,17 @@
+@use "../styles/mixins/at-media";
+
 @import "../styles/global/reset";
 
 :root {
-  --font-size-sm: 12px;
-  --font-size-md: 15px;
-  --font-size-lg: 18px;
+  --font-size-sm: 11px;
+  --font-size-md: 14px;
+  --font-size-lg: 17px;
+
+  @include at-media.tablet {
+    --font-size-sm: 12px;
+    --font-size-md: 15px;
+    --font-size-lg: 18px;
+  }
 }
 
 :root {
